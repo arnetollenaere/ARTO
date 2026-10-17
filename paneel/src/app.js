@@ -276,6 +276,7 @@ window.addEventListener("hashchange", () => { render(); window.scrollTo(0, 0); }
 (async function start() {
   try {
     const res = await fetch("data.json", { cache: "no-store" });
+    if (res.status === 401) { location.href = "/login"; return; }
     DATA = await res.json();
   } catch {
     $app.innerHTML = `<h1>Kon de gegevens niet laden</h1><p class="klein">data.json ontbreekt. Bouw het paneel opnieuw met <code>node build.mjs</code>.</p>`;

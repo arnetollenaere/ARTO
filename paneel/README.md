@@ -8,7 +8,7 @@ Dit is het paneel voor ARTO zelf. De beheerpagina per klantsite staat los daarva
 
 - `build.mjs` leest alle fiches in `bedrijven/<slug>/bedrijf.md` en `logboek.md` en schrijft `dist/data.json`. Het paneel is dus altijd zo actueel als de repo: pas een fiche aan, push, en het paneel volgt.
 - `src/` is de website zelf (HTML, CSS, JavaScript, geen frameworks).
-- `functions/_middleware.js` schermt **elke** aanvraag af: alleen wie via Cloudflare Access is aangemeld met het e-mailadres uit `TOEGESTANE_EMAIL` komt binnen. Zolang de afscherming niet is ingesteld, toont het paneel niets ("Geen toegang").
+- `functions/_middleware.js` schermt **elke** aanvraag af met een loginpagina (gebruikersnaam + wachtwoord). Wie aangemeld is, blijft 30 dagen aangemeld (cookie). Zolang het wachtwoord niet is ingesteld, toont het paneel niets.
 - `functions/api/status.js` controleert of de klantsites bereikbaar zijn (HTTP-status, laadtijd, titel, meta description). Het controleert alleen domeinen die in de fiches staan.
 
 | Pagina | Wat |
@@ -36,20 +36,17 @@ python3 -m http.server 8790 -d paneel/dist   # alleen de interface, zonder afsch
    ./paneel/deploy.sh
    ```
 
-   Het project `arto-paneel` wordt aangemaakt als het nog niet bestaat. Het paneel staat dan op `https://arto-paneel.pages.dev`, maar toont "Geen toegang" tot stap 4 klaar is.
+   Het project `arto-paneel` wordt aangemaakt als het nog niet bestaat. Het paneel staat dan op `https://arto-paneel.pages.dev`, maar toont niets tot stap 4 klaar is.
 
-4. **Afscherming met Cloudflare Access** (gratis tot 50 gebruikers):
-   1. one.dash.cloudflare.com → kies een teamnaam als dat gevraagd wordt (bv. `arto`, geeft `arto.cloudflareaccess.com`).
-   2. Access → Applications → Add an application → **Self-hosted**.
-   3. Domein: `arto-paneel.pages.dev` én een tweede regel `*.arto-paneel.pages.dev` (zodat ook previews beschermd zijn).
-   4. Policy: Action **Allow**, Include → **Emails** → `arne.tollenaere@gmail.com`. Inlogmethode: *One-time PIN* (code per e-mail) volstaat.
-   5. Kopieer na het opslaan de **Application Audience (AUD) Tag** (Overview van de applicatie).
-   6. Vul in `paneel/wrangler.toml` in: `ACCESS_TEAM_DOMAIN = "arto.cloudflareaccess.com"` en `ACCESS_AUD = "<de tag>"`. Dit zijn geen geheimen.
-   7. Publiceer opnieuw met `./paneel/deploy.sh`.
+4. **Login instellen.** De gebruikersnaam staat in `wrangler.toml` (`PANEEL_GEBRUIKER`, standaard `arne`). Het wachtwoord is een geheim van het Pages-project:
 
-   Twee sloten dus: Access laat alleen Arne door tot de site, en de middleware weigert alles zonder geldig Access-token van dat e-mailadres, ook als Access ooit per ongeluk uitgezet wordt.
+   ```bash
+   cd paneel && npx wrangler pages secret put PANEEL_WACHTWOORD --project-name arto-paneel
+   ```
 
-5. **Eigen adres (optioneel)**: Workers & Pages → arto-paneel → Custom domains → bv. `paneel.artowebdesign.com`. Voeg dat adres ook toe aan de Access-applicatie.
+   Of in het dashboard: Workers & Pages → arto-paneel → Settings → Variables and Secrets → `PANEEL_WACHTWOORD` (type *Secret*), en publiceer daarna opnieuw. Bewaar het wachtwoord in de wachtwoordmanager onder "ARTO / paneel". Een nieuw wachtwoord logt meteen iedereen uit.
+
+5. **Eigen adres (optioneel)**: Workers & Pages → arto-paneel → Custom domains → bv. `paneel.artowebdesign.com`.
 
 ## Automatisch publiceren via GitHub
 
@@ -57,4 +54,4 @@ python3 -m http.server 8790 -d paneel/dist   # alleen de interface, zonder afsch
 
 ## Toegang aanpassen
 
-Meer mensen toelaten: voeg hun e-mail toe aan de Access-policy **en** aan `TOEGESTANE_EMAIL` in `wrangler.toml` (komma-gescheiden), en publiceer opnieuw.
+Wachtwoord vergeten of gelekt: zet een nieuw `PANEEL_WACHTWOORD` (zie stap 4). Alle bestaande sessies vervallen dan. Uitloggen kan via "Uitloggen" rechtsboven.
