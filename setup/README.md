@@ -20,8 +20,9 @@ Controleer daarna of alles staat:
 | 1. Nieuwe klant aanmaken en site opzetten | [nieuwe-klant.md](nieuwe-klant.md) | `nieuwe-klant` |
 | 2. Hosting en domein koppelen | [hosting-cloudflare.md](hosting-cloudflare.md) | `site-publiceren` |
 | 3. Publiceren en aanpassen | [hosting-cloudflare.md](hosting-cloudflare.md#publiceren) | `site-publiceren`, `site-aanpassen` |
-| 4. Optimaliseren | [optimalisatie.md](optimalisatie.md) | `site-optimaliseren` |
-| 5. Overdragen aan de klant | [overdracht.md](overdracht.md) | `klant-overdragen` |
+| 4. Beheerpaneel online activeren | [beheerpaneel.md](beheerpaneel.md) | |
+| 5. Optimaliseren | [optimalisatie.md](optimalisatie.md) | `site-optimaliseren` |
+| 6. Overdragen aan de klant | [overdracht.md](overdracht.md) | `klant-overdragen` |
 
 ## Scripts
 
@@ -29,6 +30,8 @@ Controleer daarna of alles staat:
 |---|---|
 | [`scripts/nieuwe-klant.sh`](scripts/nieuwe-klant.sh) | Maakt `bedrijven/<slug>/` aan vanuit het sjabloon. |
 | [`scripts/nieuwe-site.sh`](scripts/nieuwe-site.sh) | Maakt een nieuwe site aan vanuit een template en vult de klantgegevens in. |
+| [`scripts/beheer-activeren.sh`](scripts/beheer-activeren.sh) | Zet de wachtwoorden en het GitHub-token voor het online beheerpaneel in Cloudflare. |
+| [`scripts/kern-bijwerken.sh`](scripts/kern-bijwerken.sh) | Zet de nieuwste versie van het beheerpaneel en de build in een bestaande site. |
 | [`scripts/check-tools.sh`](scripts/check-tools.sh) | Controleert of de nodige tools geïnstalleerd zijn. |
 
 ## Sjablonen

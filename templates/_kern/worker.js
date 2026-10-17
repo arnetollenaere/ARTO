@@ -5,7 +5,7 @@
 //   BEHEER_WACHTWOORD   wachtwoord van de klant (rol "klant")              verplicht
 //   ARTO_WACHTWOORD     wachtwoord van ARTO (rol "arto": alles)             aangeraden
 //   SESSIE_GEHEIM       lange willekeurige tekst om sessies te ondertekenen verplicht
-//   GITHUB_TOKEN        fine-grained token, alleen "Contents" en "Actions" (lezen/schrijven) op de site-repo
+//   GITHUB_TOKEN        fine-grained token op alleen de site-repo: Contents lezen/schrijven, Actions lezen
 //   GITHUB_REPO         eigenaar/repo, bv. arto-sites/bakkerij-peeters
 //   GITHUB_BRANCH       standaard "main"
 //   GITHUB_MAP          submap van de site in de repo, standaard leeg

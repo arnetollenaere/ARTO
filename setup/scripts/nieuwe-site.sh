@@ -40,8 +40,19 @@ for paar in "$@"; do
   done
 done
 
+# Sectortemplates (met template.json) krijgen de ARTO-kern: beheerpaneel, build en publicatie-workflow.
+if [ -f "$doel/template.json" ]; then
+  mkdir -p "$doel/arto" "$doel/.github/workflows"
+  ( cd "$root/templates/_kern" && find . -type f \
+      ! -path './proefsite/*' ! -path './sjabloon/*' ! -name 'nieuw-template.sh' \
+      -exec sh -c 'mkdir -p "$0/$(dirname "$1")" && cp "$1" "$0/$1"' "$doel/arto" {} \; )
+  cp "$root/templates/_kern/sjabloon/github/publiceer.yml" "$doel/.github/workflows/publiceer.yml"
+  rm -rf "$doel/dist" "$doel/.arto-dev"
+  node "$doel/arto/vul.mjs" "$doel" "$@"
+fi
+
 echo "Site aangemaakt in $doel"
-over="$(grep -rhoE '\{\{[A-Z]+\}\}' "$doel" --exclude=README.md | sort -u | tr '\n' ' ' || true)"
+over="$(grep -rhoE '\{\{[A-Z]+\}\}' "$doel" --exclude=README.md --exclude-dir=arto | sort -u | tr '\n' ' ' || true)"
 if [ -n "$over" ]; then
   echo "Nog in te vullen: $over"
 fi
