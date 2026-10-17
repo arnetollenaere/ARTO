@@ -77,7 +77,7 @@ export function bouw(siteMap, { stil = false, uit } = {}) {
     kopieerMap(beheerBron, path.join(dist, 'beheer'));
     fs.copyFileSync(path.join(KERN, 'engine.mjs'), path.join(dist, 'beheer', 'engine.mjs'));
     fs.copyFileSync(path.join(KERN, 'basis-schema.json'), path.join(dist, 'beheer', 'basis-schema.json'));
-    fs.writeFileSync(path.join(dist, 'beheer', 'bron.json'), JSON.stringify({ template, bestanden: bronnen, delen, arto }, null, 0));
+    fs.writeFileSync(path.join(dist, 'beheer', 'bron.json'), JSON.stringify({ template, bestanden: bronnen, delen, arto, inhoud }, null, 0));
   }
   // Beheer-API (Cloudflare Pages advanced mode).
   const worker = path.join(KERN, 'worker.js');

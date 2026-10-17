@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="stylesheet" href="/css/stijl.css">
+</head>
+<body>
+  {{> mededeling }}
+  {{> kop }}
+  <main class="contact">
+    <h1>Contact</h1>
+    <p>Je vindt ons op {{ contact.adres }} in {{ contact.gemeente }}. Bel <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a> of stuur een berichtje.</p>
+    {{#als contact.kaart}}<p><a href="{{ contact.kaart }}">Route via Google Maps</a></p>{{/als}}
+    <form class="formulier" method="post" action="/api/bericht">
+      <input type="hidden" name="_formulier" value="contact">
+      <input type="text" name="_honing" tabindex="-1" autocomplete="off" class="honing" aria-hidden="true">
+      <label>Naam <input name="naam" required autocomplete="name"></label>
+      <label>E-mail <input type="email" name="email" required autocomplete="email"></label>
+      <label>Bericht <textarea name="bericht" rows="5" required></textarea></label>
+      <button type="submit">Versturen</button>
+    </form>
+  </main>
+  {{> voet }}
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

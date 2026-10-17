@@ -8,25 +8,30 @@
       {
         "sleutel": "accent",
         "label": "Hoofdkleur (inkt)",
-        "hulp": "Koppen, knoppen en lijnen. Kies een diepe, donkere kleur."
+        "hulp": "Koppen, knoppen en lijnen. Kies een diepe, donkere kleur.",
+        "standaard": "#1E3A2F"
       },
       {
         "sleutel": "tweede",
         "label": "Tweede kleur (stempel)",
-        "hulp": "Paragraafnummers en kleine accenten. Donker genoeg voor tekst."
+        "hulp": "Paragraafnummers en kleine accenten. Donker genoeg voor tekst.",
+        "standaard": "#7B2433"
       },
       {
         "sleutel": "achtergrond",
-        "label": "Achtergrond (papier)"
+        "label": "Achtergrond (papier)",
+        "standaard": "#F3EFE6"
       },
       {
         "sleutel": "tekst",
-        "label": "Tekst"
+        "label": "Tekst",
+        "standaard": "#17201B"
       },
       {
         "sleutel": "lijn",
         "label": "Haarlijnen",
-        "hulp": "Lichte kleur voor de fijne scheidingslijnen en het kolomraster."
+        "hulp": "Lichte kleur voor de fijne scheidingslijnen en het kolomraster.",
+        "standaard": "#CBC3B2"
       }
     ]
   },

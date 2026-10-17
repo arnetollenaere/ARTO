@@ -63,7 +63,7 @@ const opslag = {
     const tekst = fs.readFileSync(vol, 'utf8');
     return { tekst, sha: sha(tekst) };
   },
-  async leesBytes(p) { return { bytes: fs.readFileSync(path.join(SITE, p)) }; },
+  async leesBytes(p) { return { bytes: fs.readFileSync(path.join(SITE, p)), type: TYPES[p.split('.').pop().toLowerCase()] }; },
   async schrijf(p, { tekst, base64 }, vorigeSha, bericht) {
     const vol = path.join(SITE, p);
     if (tekst != null && fs.existsSync(vol) && vorigeSha && sha(fs.readFileSync(vol, 'utf8')) !== vorigeSha) {
@@ -74,6 +74,7 @@ const opslag = {
     else fs.writeFileSync(vol, tekst);
     const nieuweSha = base64 != null ? sha(base64) : sha(tekst);
     if (p === 'inhoud.json') {
+      fs.mkdirSync(path.join(DEV, 'versies'), { recursive: true });
       fs.writeFileSync(path.join(DEV, 'versies', nieuweSha + '.json'), tekst);
       versies.unshift({ sha: nieuweSha, bericht, datum: new Date().toISOString(), auteur: 'lokaal' });
       fs.writeFileSync(versiesBestand, JSON.stringify(versies.slice(0, 100), null, 2));

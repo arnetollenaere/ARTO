@@ -1,2 +1,39 @@
-<!doctype html><html lang="{{ site.taal }}"><head><meta charset="utf-8">{{{ arto.kop }}}</head><body>{{> mededeling}}<h1>{{ site.naam }}</h1><ul>{{#elk menu}}<li>{{naam}} €{{prijs}}</li>{{/elk}}</ul>
-<form method="post" action="/api/bericht"><input name="naam"><button>stuur</button></form></body></html>
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="stylesheet" href="/css/stijl.css">
+</head>
+<body>
+  {{> mededeling }}
+  {{> kop }}
+  <main>
+    <section class="held">
+      <div class="held-tekst">
+        <p class="slogan">{{ site.slogan }}</p>
+        <h1>{{ intro.titel }}</h1>
+        <div class="rijk">{{ intro.tekst | md }}</div>
+        {{#als intro.knop.tekst}}<a class="knop" href="/{{ intro.knop.pagina }}">{{ intro.knop.tekst }}</a>{{/als}}
+      </div>
+      {{#als intro.foto}}<img class="held-foto" src="{{ intro.foto }}" alt="{{ intro.fotoAlt }}">{{/als}}
+    </section>
+
+    {{#als evenement.tonen}}
+    <section class="evenement" style="--kaart: {{ evenement.kleur }}">
+      <h2>{{ evenement.titel }}</h2>
+      <p>Op <time datetime="{{ evenement.datum }}">{{ evenement.datum | datum }}</time>{{#als evenement.plaatsen}} · {{ evenement.plaatsen }} plaatsen{{/als}}{{#als evenement.prijs}} · € {{ evenement.prijs }} per persoon{{/als}}</p>
+    </section>
+    {{/als}}
+
+    <section class="reserveren">
+      <h2>{{ reserveren.titel }}</h2>
+      <p>Mail naar <a href="mailto:{{ reserveren.email }}">{{ reserveren.email }}</a>{{#als reserveren.telefoon}} of bel <a href="tel:{{ reserveren.telefoon | tel }}">{{ reserveren.telefoon }}</a>{{/als}}.</p>
+      {{#als reserveren.link}}<p><a class="knop" href="{{ reserveren.link }}">Online reserveren</a></p>{{/als}}
+    </section>
+  </main>
+  {{> voet }}
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

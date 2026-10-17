@@ -8,26 +8,31 @@
       {
         "sleutel": "achtergrond",
         "label": "Achtergrond (nacht)",
-        "hulp": "Houd dit heel donker; de tekst staat erop."
+        "hulp": "Houd dit heel donker; de tekst staat erop.",
+        "standaard": "#110e0c"
       },
       {
         "sleutel": "tekst",
-        "label": "Tekst (crème)"
+        "label": "Tekst (crème)",
+        "standaard": "#f1e6d2"
       },
       {
         "sleutel": "accent",
         "label": "Accent (tomatenrood)",
-        "hulp": "Knoppen, prijzen en de grote cirkel. Moet goed leesbaar zijn op de achtergrond."
+        "hulp": "Knoppen, prijzen en de grote cirkel. Moet goed leesbaar zijn op de achtergrond.",
+        "standaard": "#ef5a3c"
       },
       {
         "sleutel": "tweede",
         "label": "Tweede accent (amber)",
-        "hulp": "Labels zoals chef's pick en de 'nu open'-stip."
+        "hulp": "Labels zoals chef's pick en de 'nu open'-stip.",
+        "standaard": "#e9a63f"
       },
       {
         "sleutel": "papier",
         "label": "Papier van het reservatiebonnetje",
-        "hulp": "Een lichte kleur; de tekst op het bonnetje is donker."
+        "hulp": "Een lichte kleur; de tekst op het bonnetje is donker.",
+        "standaard": "#f1e6d2"
       }
     ]
   },

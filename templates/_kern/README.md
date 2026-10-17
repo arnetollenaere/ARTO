@@ -90,7 +90,7 @@ Daarnaast kiest elk template zijn eigen sleutels (bv. `menu`, `diensten`, `team`
   "schemaType": "Restaurant",
   "thema": {
     "kleuren": [
-      { "sleutel": "accent", "label": "Accentkleur" },
+      { "sleutel": "accent", "label": "Accentkleur", "standaard": "#e8543a" },
       { "sleutel": "achtergrond", "label": "Achtergrond" },
       { "sleutel": "tekst", "label": "Tekst" }
     ]

@@ -7,12 +7,51 @@
       "groep": "inhoud",
       "beschrijving": "Naam, slogan en logo. Dit staat op elke pagina.",
       "velden": [
-        { "pad": "site.naam", "type": "tekst", "label": "Bedrijfsnaam", "verplicht": true, "max": 60 },
-        { "pad": "site.slogan", "type": "tekst", "label": "Slogan", "max": 90, "hulp": "Eén korte zin die zegt wat je doet." },
-        { "pad": "site.logo", "type": "afbeelding", "label": "Logo", "hulp": "Bij voorkeur SVG of PNG met transparante achtergrond." },
-        { "pad": "site.favicon", "type": "afbeelding", "label": "Favicon", "hulp": "Klein icoon in het browsertabblad (vierkant)." },
-        { "pad": "site.domein", "type": "tekst", "label": "Domein", "hulp": "Zonder https://, bv. bakkerijpeeters.be", "rol": "arto" },
-        { "pad": "site.taal", "type": "keuze", "label": "Taal", "opties": ["nl-BE", "nl-NL", "fr-BE", "en"], "rol": "arto" }
+        {
+          "pad": "site.naam",
+          "type": "tekst",
+          "label": "Bedrijfsnaam",
+          "verplicht": true,
+          "max": 60
+        },
+        {
+          "pad": "site.slogan",
+          "type": "tekst",
+          "label": "Slogan",
+          "max": 90,
+          "hulp": "Eén korte zin die zegt wat je doet."
+        },
+        {
+          "pad": "site.logo",
+          "type": "afbeelding",
+          "label": "Logo",
+          "hulp": "Bij voorkeur SVG of PNG met transparante achtergrond."
+        },
+        {
+          "pad": "site.favicon",
+          "type": "afbeelding",
+          "label": "Favicon",
+          "hulp": "Klein icoon in het browsertabblad (vierkant)."
+        },
+        {
+          "pad": "site.domein",
+          "type": "tekst",
+          "label": "Domein",
+          "hulp": "Zonder https://, bv. bakkerijpeeters.be",
+          "rol": "arto"
+        },
+        {
+          "pad": "site.taal",
+          "type": "keuze",
+          "label": "Taal",
+          "opties": [
+            "nl-BE",
+            "nl-NL",
+            "fr-BE",
+            "en"
+          ],
+          "rol": "arto"
+        }
       ]
     },
     {
@@ -21,9 +60,28 @@
       "groep": "inhoud",
       "beschrijving": "Een balk bovenaan de site, bv. voor vakantiesluiting of een actie.",
       "velden": [
-        { "pad": "mededeling.aan", "type": "schakelaar", "label": "Mededeling tonen" },
-        { "pad": "mededeling.tekst", "type": "tekst", "label": "Tekst", "max": 120 },
-        { "pad": "mededeling.link", "type": "url", "label": "Link (optioneel)" }
+        {
+          "pad": "mededeling.aan",
+          "type": "schakelaar",
+          "label": "Mededeling tonen"
+        },
+        {
+          "pad": "mededeling.tekst",
+          "type": "tekst",
+          "label": "Tekst",
+          "max": 120
+        },
+        {
+          "pad": "mededeling.link",
+          "type": "url",
+          "label": "Link (optioneel)"
+        },
+        {
+          "pad": "mededeling.tot",
+          "type": "datum",
+          "label": "Tonen tot (optioneel)",
+          "hulp": "Na deze datum meldt het paneel dat de mededeling verlopen is."
+        }
       ]
     },
     {
@@ -32,15 +90,62 @@
       "groep": "gegevens",
       "beschrijving": "Deze gegevens komen op de site én in de zoekresultaten van Google.",
       "velden": [
-        { "pad": "contact.adres", "type": "tekst", "label": "Straat en nummer" },
-        { "pad": "contact.postcode", "type": "tekst", "label": "Postcode", "breedte": "smal" },
-        { "pad": "contact.gemeente", "type": "tekst", "label": "Gemeente", "breedte": "smal" },
-        { "pad": "contact.land", "type": "keuze", "label": "Land", "opties": ["BE", "NL", "FR", "LU", "DE"], "breedte": "smal" },
-        { "pad": "contact.telefoon", "type": "telefoon", "label": "Telefoon" },
-        { "pad": "contact.email", "type": "email", "label": "E-mail" },
-        { "pad": "contact.whatsapp", "type": "telefoon", "label": "WhatsApp (optioneel)" },
-        { "pad": "contact.btw", "type": "tekst", "label": "Ondernemingsnummer / btw", "hulp": "Wettelijk verplicht op een Belgische bedrijfssite." },
-        { "pad": "contact.kaart", "type": "url", "label": "Link naar Google Maps" }
+        {
+          "pad": "contact.adres",
+          "type": "tekst",
+          "label": "Straat en nummer"
+        },
+        {
+          "pad": "contact.postcode",
+          "type": "tekst",
+          "label": "Postcode",
+          "breedte": "smal"
+        },
+        {
+          "pad": "contact.gemeente",
+          "type": "tekst",
+          "label": "Gemeente",
+          "breedte": "smal"
+        },
+        {
+          "pad": "contact.land",
+          "type": "keuze",
+          "label": "Land",
+          "opties": [
+            "BE",
+            "NL",
+            "FR",
+            "LU",
+            "DE"
+          ],
+          "breedte": "smal"
+        },
+        {
+          "pad": "contact.telefoon",
+          "type": "telefoon",
+          "label": "Telefoon"
+        },
+        {
+          "pad": "contact.email",
+          "type": "email",
+          "label": "E-mail"
+        },
+        {
+          "pad": "contact.whatsapp",
+          "type": "telefoon",
+          "label": "WhatsApp (optioneel)"
+        },
+        {
+          "pad": "contact.btw",
+          "type": "tekst",
+          "label": "Ondernemingsnummer / btw",
+          "hulp": "Wettelijk verplicht op een Belgische bedrijfssite."
+        },
+        {
+          "pad": "contact.kaart",
+          "type": "url",
+          "label": "Link naar Google Maps"
+        }
       ]
     },
     {
@@ -50,10 +155,33 @@
       "beschrijving": "Zet 'Gesloten' bij dagen waarop je dicht bent.",
       "velden": [
         {
-          "pad": "openingsuren", "type": "lijst", "label": "Uren", "itemLabel": "dag", "sorteerbaar": true,
+          "pad": "openingsuren",
+          "type": "lijst",
+          "label": "Uren",
+          "itemLabel": "dag",
+          "sorteerbaar": true,
           "velden": [
-            { "pad": "dag", "type": "keuze", "label": "Dag", "opties": ["Maandag", "Dinsdag", "Woensdag", "Donderdag", "Vrijdag", "Zaterdag", "Zondag", "Feestdagen"] },
-            { "pad": "uren", "type": "tekst", "label": "Uren", "hulp": "bv. 09:00–18:00 of Gesloten" }
+            {
+              "pad": "dag",
+              "type": "keuze",
+              "label": "Dag",
+              "opties": [
+                "Maandag",
+                "Dinsdag",
+                "Woensdag",
+                "Donderdag",
+                "Vrijdag",
+                "Zaterdag",
+                "Zondag",
+                "Feestdagen"
+              ]
+            },
+            {
+              "pad": "uren",
+              "type": "tekst",
+              "label": "Uren",
+              "hulp": "bv. 09:00–18:00 of Gesloten"
+            }
           ]
         }
       ]
@@ -64,10 +192,32 @@
       "groep": "gegevens",
       "velden": [
         {
-          "pad": "socials", "type": "lijst", "label": "Profielen", "itemLabel": "netwerk", "sorteerbaar": true,
+          "pad": "socials",
+          "type": "lijst",
+          "label": "Profielen",
+          "itemLabel": "netwerk",
+          "sorteerbaar": true,
           "velden": [
-            { "pad": "netwerk", "type": "keuze", "label": "Netwerk", "opties": ["Instagram", "Facebook", "TikTok", "LinkedIn", "YouTube", "Pinterest", "X", "Google"] },
-            { "pad": "url", "type": "url", "label": "Link" }
+            {
+              "pad": "netwerk",
+              "type": "keuze",
+              "label": "Netwerk",
+              "opties": [
+                "Instagram",
+                "Facebook",
+                "TikTok",
+                "LinkedIn",
+                "YouTube",
+                "Pinterest",
+                "X",
+                "Google"
+              ]
+            },
+            {
+              "pad": "url",
+              "type": "url",
+              "label": "Link"
+            }
           ]
         }
       ]
@@ -78,19 +228,76 @@
       "groep": "seo",
       "beschrijving": "Hoe de site verschijnt in Google en bij delen op sociale media.",
       "velden": [
-        { "pad": "seo.titel", "type": "tekst", "label": "Titel in Google (startpagina)", "max": 60, "aanbevolen": [30, 60] },
-        { "pad": "seo.beschrijving", "type": "tekstvak", "label": "Beschrijving in Google", "max": 160, "aanbevolen": [70, 155] },
-        { "pad": "seo.afbeelding", "type": "afbeelding", "label": "Deelafbeelding", "hulp": "1200×630 px. Verschijnt bij delen op WhatsApp, Facebook, LinkedIn." },
         {
-          "pad": "seo.paginas", "type": "lijst", "label": "Per pagina", "itemLabel": "pagina",
+          "pad": "seo.titel",
+          "type": "tekst",
+          "label": "Titel in Google (startpagina)",
+          "max": 60,
+          "aanbevolen": [
+            30,
+            60
+          ]
+        },
+        {
+          "pad": "seo.beschrijving",
+          "type": "tekstvak",
+          "label": "Beschrijving in Google",
+          "max": 160,
+          "aanbevolen": [
+            70,
+            155
+          ]
+        },
+        {
+          "pad": "seo.afbeelding",
+          "type": "afbeelding",
+          "label": "Deelafbeelding",
+          "hulp": "1200×630 px. Verschijnt bij delen op WhatsApp, Facebook, LinkedIn."
+        },
+        {
+          "pad": "seo.paginas",
+          "type": "lijst",
+          "label": "Per pagina",
+          "itemLabel": "pagina",
           "velden": [
-            { "pad": "pagina", "type": "pagina", "label": "Pagina" },
-            { "pad": "titel", "type": "tekst", "label": "Titel", "max": 60 },
-            { "pad": "beschrijving", "type": "tekstvak", "label": "Beschrijving", "max": 160 }
+            {
+              "pad": "pagina",
+              "type": "pagina",
+              "label": "Pagina"
+            },
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 60
+            },
+            {
+              "pad": "beschrijving",
+              "type": "tekstvak",
+              "label": "Beschrijving",
+              "max": 160
+            }
           ]
         }
       ]
     }
   ],
-  "veldtypes": ["tekst", "tekstvak", "rijk", "getal", "prijs", "email", "telefoon", "url", "kleur", "afbeelding", "schakelaar", "keuze", "datum", "pagina", "lijst", "groep"]
+  "veldtypes": [
+    "tekst",
+    "tekstvak",
+    "rijk",
+    "getal",
+    "prijs",
+    "email",
+    "telefoon",
+    "url",
+    "kleur",
+    "afbeelding",
+    "schakelaar",
+    "keuze",
+    "datum",
+    "pagina",
+    "lijst",
+    "groep"
+  ]
 }

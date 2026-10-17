@@ -8,25 +8,30 @@
       {
         "sleutel": "accent",
         "label": "Hoofdkleur (terracotta)",
-        "hulp": "Knoppen, stickers en accenten. Houd ze donker genoeg voor witte tekst."
+        "hulp": "Knoppen, stickers en accenten. Houd ze donker genoeg voor witte tekst.",
+        "standaard": "#B4471F"
       },
       {
         "sleutel": "geel",
         "label": "Tweede kleur (botergeel)",
-        "hulp": "Kleurvlakken achter producten en de cadeaubon."
+        "hulp": "Kleurvlakken achter producten en de cadeaubon.",
+        "standaard": "#F2C14E"
       },
       {
         "sleutel": "groen",
         "label": "Derde kleur (flessengroen)",
-        "hulp": "Seizoensbanner en donkere vlakken. Houd ze donker genoeg voor lichte tekst."
+        "hulp": "Seizoensbanner en donkere vlakken. Houd ze donker genoeg voor lichte tekst.",
+        "standaard": "#1E4A37"
       },
       {
         "sleutel": "achtergrond",
-        "label": "Achtergrond"
+        "label": "Achtergrond",
+        "standaard": "#F6EEDF"
       },
       {
         "sleutel": "tekst",
-        "label": "Tekst"
+        "label": "Tekst",
+        "standaard": "#2A1D15"
       }
     ]
   },

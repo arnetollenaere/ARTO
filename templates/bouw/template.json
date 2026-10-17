@@ -5,256 +5,1041 @@
   "schemaType": "HomeAndConstructionBusiness",
   "thema": {
     "kleuren": [
-      { "sleutel": "accent", "label": "Signaalgeel", "hulp": "Knoppen, markeringen en 'af te breken' op tekeningen. Kies een lichte, felle kleur: er staat donkere tekst op." },
-      { "sleutel": "signaal", "label": "Veiligheidsoranje", "hulp": "'Nieuw' op tekeningen en kleine accenten." },
-      { "sleutel": "achtergrond", "label": "Papier", "hulp": "Achtergrond van de site. Houd ze licht." },
-      { "sleutel": "tekst", "label": "Inkt", "hulp": "Tekst en lijnen. Houd ze donker." },
-      { "sleutel": "beton", "label": "Beton", "hulp": "Donkere vlakken zoals de werfplanning en de footer." }
+      {
+        "sleutel": "accent",
+        "label": "Signaalgeel",
+        "hulp": "Knoppen, markeringen en 'af te breken' op tekeningen. Kies een lichte, felle kleur: er staat donkere tekst op.",
+        "standaard": "#f5c400"
+      },
+      {
+        "sleutel": "signaal",
+        "label": "Veiligheidsoranje",
+        "hulp": "'Nieuw' op tekeningen en kleine accenten.",
+        "standaard": "#e2531f"
+      },
+      {
+        "sleutel": "achtergrond",
+        "label": "Papier",
+        "hulp": "Achtergrond van de site. Houd ze licht.",
+        "standaard": "#eeece5"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Inkt",
+        "hulp": "Tekst en lijnen. Houd ze donker.",
+        "standaard": "#17181a"
+      },
+      {
+        "sleutel": "beton",
+        "label": "Beton",
+        "hulp": "Donkere vlakken zoals de werfplanning en de footer.",
+        "standaard": "#2a2c2e"
+      }
     ]
   },
   "secties": [
     {
-      "id": "navigatie", "titel": "Menu en knoppen", "groep": "inhoud",
+      "id": "navigatie",
+      "titel": "Menu en knoppen",
+      "groep": "inhoud",
       "beschrijving": "De woorden in het menu bovenaan en in de vaste balk op de gsm.",
       "velden": [
-        { "pad": "navigatie.start", "type": "tekst", "label": "Menu: startpagina", "breedte": "smal" },
-        { "pad": "navigatie.projecten", "type": "tekst", "label": "Menu: projecten", "breedte": "smal" },
-        { "pad": "navigatie.werkwijze", "type": "tekst", "label": "Menu: werkwijze", "breedte": "smal" },
-        { "pad": "navigatie.regio", "type": "tekst", "label": "Menu: werkgebied", "breedte": "smal" },
-        { "pad": "navigatie.offerte", "type": "tekst", "label": "Menu: offerteknop", "breedte": "smal" },
-        { "pad": "navigatie.belknop", "type": "tekst", "label": "Gsm-balk: belknop", "breedte": "smal", "hulp": "Het telefoonnummer uit Contact wordt gebeld." },
-        { "pad": "navigatie.offerteknop", "type": "tekst", "label": "Gsm-balk: offerteknop", "breedte": "smal" }
+        {
+          "pad": "navigatie.start",
+          "type": "tekst",
+          "label": "Menu: startpagina",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.projecten",
+          "type": "tekst",
+          "label": "Menu: projecten",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.werkwijze",
+          "type": "tekst",
+          "label": "Menu: werkwijze",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.regio",
+          "type": "tekst",
+          "label": "Menu: werkgebied",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.offerte",
+          "type": "tekst",
+          "label": "Menu: offerteknop",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.belknop",
+          "type": "tekst",
+          "label": "Gsm-balk: belknop",
+          "breedte": "smal",
+          "hulp": "Het telefoonnummer uit Contact wordt gebeld."
+        },
+        {
+          "pad": "navigatie.offerteknop",
+          "type": "tekst",
+          "label": "Gsm-balk: offerteknop",
+          "breedte": "smal"
+        }
       ]
     },
     {
-      "id": "hero", "titel": "Startpagina: bovenaan", "groep": "inhoud",
+      "id": "hero",
+      "titel": "Startpagina: bovenaan",
+      "groep": "inhoud",
       "beschrijving": "Het eerste wat een bezoeker ziet, naast de doorsnedetekening.",
       "velden": [
-        { "pad": "hero.label", "type": "tekst", "label": "Klein label boven de titel", "max": 60 },
-        { "pad": "hero.titel", "type": "tekst", "label": "Titel", "max": 50, "hulp": "Het eerste deel van de grote titel." },
-        { "pad": "hero.titelAccent", "type": "tekst", "label": "Titel, gemarkeerd deel", "max": 40, "hulp": "Komt na de titel en krijgt een gele markering." },
-        { "pad": "hero.intro", "type": "tekstvak", "label": "Introtekst", "max": 360 },
-        { "pad": "hero.knop", "type": "tekst", "label": "Hoofdknop (naar offerte)", "breedte": "smal" },
-        { "pad": "hero.knop2", "type": "tekst", "label": "Tweede knop (naar projecten)", "breedte": "smal" },
-        { "pad": "hero.kenmerken", "type": "lijst", "label": "Kerncijfers", "itemLabel": "label", "max": 4, "sorteerbaar": true,
+        {
+          "pad": "hero.label",
+          "type": "tekst",
+          "label": "Klein label boven de titel",
+          "max": 60
+        },
+        {
+          "pad": "hero.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 50,
+          "hulp": "Het eerste deel van de grote titel."
+        },
+        {
+          "pad": "hero.titelAccent",
+          "type": "tekst",
+          "label": "Titel, gemarkeerd deel",
+          "max": 40,
+          "hulp": "Komt na de titel en krijgt een gele markering."
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Introtekst",
+          "max": 360
+        },
+        {
+          "pad": "hero.knop",
+          "type": "tekst",
+          "label": "Hoofdknop (naar offerte)",
+          "breedte": "smal"
+        },
+        {
+          "pad": "hero.knop2",
+          "type": "tekst",
+          "label": "Tweede knop (naar projecten)",
+          "breedte": "smal"
+        },
+        {
+          "pad": "hero.kenmerken",
+          "type": "lijst",
+          "label": "Kerncijfers",
+          "itemLabel": "label",
+          "max": 4,
+          "sorteerbaar": true,
           "velden": [
-            { "pad": "waarde", "type": "tekst", "label": "Getal", "breedte": "smal" },
-            { "pad": "eenheid", "type": "tekst", "label": "Eenheid", "breedte": "smal", "hulp": "bv. km, +, m²" },
-            { "pad": "label", "type": "tekst", "label": "Uitleg" }
-          ] },
-        { "pad": "hero.cartouche", "type": "lijst", "label": "Titelblok bij de tekening", "itemLabel": "label", "max": 5, "sorteerbaar": true,
+            {
+              "pad": "waarde",
+              "type": "tekst",
+              "label": "Getal",
+              "breedte": "smal"
+            },
+            {
+              "pad": "eenheid",
+              "type": "tekst",
+              "label": "Eenheid",
+              "breedte": "smal",
+              "hulp": "bv. km, +, m²"
+            },
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Uitleg"
+            }
+          ]
+        },
+        {
+          "pad": "hero.cartouche",
+          "type": "lijst",
+          "label": "Titelblok bij de tekening",
+          "itemLabel": "label",
+          "max": 5,
+          "sorteerbaar": true,
           "hulp": "Het kadertje rechtsonder op de tekening, zoals op een echt bouwplan.",
           "velden": [
-            { "pad": "label", "type": "tekst", "label": "Label", "breedte": "smal" },
-            { "pad": "waarde", "type": "tekst", "label": "Waarde" }
-          ] }
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Label",
+              "breedte": "smal"
+            },
+            {
+              "pad": "waarde",
+              "type": "tekst",
+              "label": "Waarde"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "diensten", "titel": "Diensten", "groep": "inhoud",
+      "id": "diensten",
+      "titel": "Diensten",
+      "groep": "inhoud",
       "beschrijving": "Wat je doet, als legende met arceringen zoals op een bouwplan.",
       "velden": [
-        { "pad": "diensten.label", "type": "tekst", "label": "Klein label" },
-        { "pad": "diensten.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "diensten.intro", "type": "tekstvak", "label": "Intro" },
-        { "pad": "diensten.lijst", "type": "lijst", "label": "Diensten", "itemLabel": "naam", "sorteerbaar": true,
+        {
+          "pad": "diensten.label",
+          "type": "tekst",
+          "label": "Klein label"
+        },
+        {
+          "pad": "diensten.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "diensten.intro",
+          "type": "tekstvak",
+          "label": "Intro"
+        },
+        {
+          "pad": "diensten.lijst",
+          "type": "lijst",
+          "label": "Diensten",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
           "velden": [
-            { "pad": "code", "type": "tekst", "label": "Code", "breedte": "smal", "hulp": "bv. D-01" },
-            { "pad": "naam", "type": "tekst", "label": "Naam" },
-            { "pad": "arcering", "type": "keuze", "label": "Arcering", "opties": ["metselwerk", "hout", "isolatie", "beton", "tegel", "staal"], "hulp": "Het patroon naast de dienst." },
-            { "pad": "omschrijving", "type": "tekstvak", "label": "Omschrijving", "max": 240 },
-            { "pad": "taken", "type": "lijst", "label": "Onderdelen", "itemLabel": "taak", "max": 5,
-              "velden": [ { "pad": "taak", "type": "tekst", "label": "Onderdeel" } ] }
-          ] }
+            {
+              "pad": "code",
+              "type": "tekst",
+              "label": "Code",
+              "breedte": "smal",
+              "hulp": "bv. D-01"
+            },
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "arcering",
+              "type": "keuze",
+              "label": "Arcering",
+              "opties": [
+                "metselwerk",
+                "hout",
+                "isolatie",
+                "beton",
+                "tegel",
+                "staal"
+              ],
+              "hulp": "Het patroon naast de dienst."
+            },
+            {
+              "pad": "omschrijving",
+              "type": "tekstvak",
+              "label": "Omschrijving",
+              "max": 240
+            },
+            {
+              "pad": "taken",
+              "type": "lijst",
+              "label": "Onderdelen",
+              "itemLabel": "taak",
+              "max": 5,
+              "velden": [
+                {
+                  "pad": "taak",
+                  "type": "tekst",
+                  "label": "Onderdeel"
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "projecten", "titel": "Projecten", "groep": "inhoud",
+      "id": "projecten",
+      "titel": "Projecten",
+      "groep": "inhoud",
       "beschrijving": "Je werven als technische fiche. Zet 'Op de startpagina' aan voor de drie beste. Zonder foto's toont de site een tekening.",
       "velden": [
-        { "pad": "projecten.label", "type": "tekst", "label": "Klein label" },
-        { "pad": "projecten.kop", "type": "tekst", "label": "Titel op de startpagina" },
-        { "pad": "projecten.intro", "type": "tekstvak", "label": "Intro" },
-        { "pad": "projecten.knop", "type": "tekst", "label": "Knop naar alle projecten", "breedte": "smal" },
-        { "pad": "projecten.paginaKop", "type": "tekst", "label": "Titel van de projectenpagina" },
-        { "pad": "projecten.paginaIntro", "type": "tekstvak", "label": "Intro van de projectenpagina" },
-        { "pad": "projecten.filterAlles", "type": "tekst", "label": "Filterknop 'alles'", "breedte": "smal" },
-        { "pad": "projecten.labelVoor", "type": "tekst", "label": "Label 'voor'", "breedte": "smal" },
-        { "pad": "projecten.labelNa", "type": "tekst", "label": "Label 'na'", "breedte": "smal" },
-        { "pad": "projecten.lijst", "type": "lijst", "label": "Projecten", "itemLabel": "titel", "sorteerbaar": true,
+        {
+          "pad": "projecten.label",
+          "type": "tekst",
+          "label": "Klein label"
+        },
+        {
+          "pad": "projecten.kop",
+          "type": "tekst",
+          "label": "Titel op de startpagina"
+        },
+        {
+          "pad": "projecten.intro",
+          "type": "tekstvak",
+          "label": "Intro"
+        },
+        {
+          "pad": "projecten.knop",
+          "type": "tekst",
+          "label": "Knop naar alle projecten",
+          "breedte": "smal"
+        },
+        {
+          "pad": "projecten.paginaKop",
+          "type": "tekst",
+          "label": "Titel van de projectenpagina"
+        },
+        {
+          "pad": "projecten.paginaIntro",
+          "type": "tekstvak",
+          "label": "Intro van de projectenpagina"
+        },
+        {
+          "pad": "projecten.filterAlles",
+          "type": "tekst",
+          "label": "Filterknop 'alles'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "projecten.labelVoor",
+          "type": "tekst",
+          "label": "Label 'voor'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "projecten.labelNa",
+          "type": "tekst",
+          "label": "Label 'na'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "projecten.lijst",
+          "type": "lijst",
+          "label": "Projecten",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
           "velden": [
-            { "pad": "titel", "type": "tekst", "label": "Titel", "max": 50 },
-            { "pad": "nummer", "type": "tekst", "label": "Dossiernummer", "breedte": "smal", "hulp": "bv. 2026-014" },
-            { "pad": "gemeente", "type": "tekst", "label": "Gemeente", "breedte": "smal" },
-            { "pad": "type", "type": "tekst", "label": "Type werk", "hulp": "Projecten met hetzelfde type komen samen in de filter." },
-            { "pad": "oppervlakte", "type": "getal", "label": "Oppervlakte (m²)", "breedte": "smal" },
-            { "pad": "duur", "type": "tekst", "label": "Duur", "breedte": "smal", "hulp": "bv. 9 weken" },
-            { "pad": "jaar", "type": "tekst", "label": "Jaar", "breedte": "smal" },
-            { "pad": "materialen", "type": "tekst", "label": "Materialen" },
-            { "pad": "omschrijving", "type": "tekstvak", "label": "Omschrijving", "max": 320 },
-            { "pad": "fotoVoor", "type": "afbeelding", "label": "Foto vóór", "hulp": "Liggend, minstens 1600×1200 px. Zelfde standpunt als de foto erna." },
-            { "pad": "fotoNa", "type": "afbeelding", "label": "Foto na", "hulp": "Liggend, 1600×1200 px. Laat je beide leeg, dan toont de site een tekening." },
-            { "pad": "fotoAlt", "type": "tekst", "label": "Beschrijving van de foto's", "hulp": "Voor blinden en voor Google, bv. 'Achtergevel van een rijwoning in Roeselare'." },
-            { "pad": "tekening", "type": "keuze", "label": "Tekening zonder foto's", "opties": ["gevel", "dak", "keuken", "ramen"] },
-            { "pad": "uitgelicht", "type": "schakelaar", "label": "Op de startpagina" }
-          ] }
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 50
+            },
+            {
+              "pad": "nummer",
+              "type": "tekst",
+              "label": "Dossiernummer",
+              "breedte": "smal",
+              "hulp": "bv. 2026-014"
+            },
+            {
+              "pad": "gemeente",
+              "type": "tekst",
+              "label": "Gemeente",
+              "breedte": "smal"
+            },
+            {
+              "pad": "type",
+              "type": "tekst",
+              "label": "Type werk",
+              "hulp": "Projecten met hetzelfde type komen samen in de filter."
+            },
+            {
+              "pad": "oppervlakte",
+              "type": "getal",
+              "label": "Oppervlakte (m²)",
+              "breedte": "smal"
+            },
+            {
+              "pad": "duur",
+              "type": "tekst",
+              "label": "Duur",
+              "breedte": "smal",
+              "hulp": "bv. 9 weken"
+            },
+            {
+              "pad": "jaar",
+              "type": "tekst",
+              "label": "Jaar",
+              "breedte": "smal"
+            },
+            {
+              "pad": "materialen",
+              "type": "tekst",
+              "label": "Materialen"
+            },
+            {
+              "pad": "omschrijving",
+              "type": "tekstvak",
+              "label": "Omschrijving",
+              "max": 320
+            },
+            {
+              "pad": "fotoVoor",
+              "type": "afbeelding",
+              "label": "Foto vóór",
+              "hulp": "Liggend, minstens 1600×1200 px. Zelfde standpunt als de foto erna."
+            },
+            {
+              "pad": "fotoNa",
+              "type": "afbeelding",
+              "label": "Foto na",
+              "hulp": "Liggend, 1600×1200 px. Laat je beide leeg, dan toont de site een tekening."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van de foto's",
+              "hulp": "Voor blinden en voor Google, bv. 'Achtergevel van een rijwoning in Roeselare'."
+            },
+            {
+              "pad": "tekening",
+              "type": "keuze",
+              "label": "Tekening zonder foto's",
+              "opties": [
+                "gevel",
+                "dak",
+                "keuken",
+                "ramen"
+              ]
+            },
+            {
+              "pad": "uitgelicht",
+              "type": "schakelaar",
+              "label": "Op de startpagina"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "werkwijze", "titel": "Werkwijze", "groep": "inhoud",
+      "id": "werkwijze",
+      "titel": "Werkwijze",
+      "groep": "inhoud",
       "beschrijving": "De fases van een werf, getoond als werfplanning per week.",
       "velden": [
-        { "pad": "werkwijze.label", "type": "tekst", "label": "Klein label" },
-        { "pad": "werkwijze.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "werkwijze.intro", "type": "tekstvak", "label": "Intro" },
-        { "pad": "werkwijze.weken", "type": "getal", "label": "Aantal weken in de planning", "breedte": "smal", "hulp": "De breedte van de tijdlijn, bv. 16." },
-        { "pad": "werkwijze.weekLabel", "type": "tekst", "label": "Woord voor 'week'", "breedte": "smal" },
-        { "pad": "werkwijze.fases", "type": "lijst", "label": "Fases", "itemLabel": "naam", "sorteerbaar": true,
+        {
+          "pad": "werkwijze.label",
+          "type": "tekst",
+          "label": "Klein label"
+        },
+        {
+          "pad": "werkwijze.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "werkwijze.intro",
+          "type": "tekstvak",
+          "label": "Intro"
+        },
+        {
+          "pad": "werkwijze.weken",
+          "type": "getal",
+          "label": "Aantal weken in de planning",
+          "breedte": "smal",
+          "hulp": "De breedte van de tijdlijn, bv. 16."
+        },
+        {
+          "pad": "werkwijze.weekLabel",
+          "type": "tekst",
+          "label": "Woord voor 'week'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkwijze.fases",
+          "type": "lijst",
+          "label": "Fases",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
           "velden": [
-            { "pad": "naam", "type": "tekst", "label": "Fase" },
-            { "pad": "duur", "type": "tekst", "label": "Duur in woorden", "breedte": "smal" },
-            { "pad": "start", "type": "getal", "label": "Start in week", "breedte": "smal" },
-            { "pad": "weken", "type": "getal", "label": "Aantal weken", "breedte": "smal" },
-            { "pad": "omschrijving", "type": "tekstvak", "label": "Omschrijving", "max": 200 }
-          ] }
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Fase"
+            },
+            {
+              "pad": "duur",
+              "type": "tekst",
+              "label": "Duur in woorden",
+              "breedte": "smal"
+            },
+            {
+              "pad": "start",
+              "type": "getal",
+              "label": "Start in week",
+              "breedte": "smal"
+            },
+            {
+              "pad": "weken",
+              "type": "getal",
+              "label": "Aantal weken",
+              "breedte": "smal"
+            },
+            {
+              "pad": "omschrijving",
+              "type": "tekstvak",
+              "label": "Omschrijving",
+              "max": 200
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "regio", "titel": "Werkgebied", "groep": "inhoud",
+      "id": "regio",
+      "titel": "Werkgebied",
+      "groep": "inhoud",
       "beschrijving": "De gemeenten rond je atelier, als kaartje met afstandscirkels.",
       "velden": [
-        { "pad": "regio.label", "type": "tekst", "label": "Klein label" },
-        { "pad": "regio.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "regio.intro", "type": "tekstvak", "label": "Intro" },
-        { "pad": "regio.centrumLabel", "type": "tekst", "label": "Label in het midden", "breedte": "smal", "hulp": "Naast de naam van je gemeente, bv. Atelier." },
-        { "pad": "regio.straal", "type": "getal", "label": "Straal van het werkgebied (km)", "breedte": "smal" },
-        { "pad": "regio.gemeenten", "type": "lijst", "label": "Gemeenten", "itemLabel": "naam", "sorteerbaar": true, "max": 16,
+        {
+          "pad": "regio.label",
+          "type": "tekst",
+          "label": "Klein label"
+        },
+        {
+          "pad": "regio.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "regio.intro",
+          "type": "tekstvak",
+          "label": "Intro"
+        },
+        {
+          "pad": "regio.centrumLabel",
+          "type": "tekst",
+          "label": "Label in het midden",
+          "breedte": "smal",
+          "hulp": "Naast de naam van je gemeente, bv. Atelier."
+        },
+        {
+          "pad": "regio.straal",
+          "type": "getal",
+          "label": "Straal van het werkgebied (km)",
+          "breedte": "smal"
+        },
+        {
+          "pad": "regio.gemeenten",
+          "type": "lijst",
+          "label": "Gemeenten",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "max": 16,
           "velden": [
-            { "pad": "naam", "type": "tekst", "label": "Gemeente" },
-            { "pad": "km", "type": "getal", "label": "Afstand (km)", "breedte": "smal", "hulp": "Hemelsbreed vanaf je atelier, max. 20." },
-            { "pad": "richting", "type": "keuze", "label": "Richting", "opties": ["N", "NO", "O", "ZO", "Z", "ZW", "W", "NW"], "breedte": "smal" }
-          ] }
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Gemeente"
+            },
+            {
+              "pad": "km",
+              "type": "getal",
+              "label": "Afstand (km)",
+              "breedte": "smal",
+              "hulp": "Hemelsbreed vanaf je atelier, max. 20."
+            },
+            {
+              "pad": "richting",
+              "type": "keuze",
+              "label": "Richting",
+              "opties": [
+                "N",
+                "NO",
+                "O",
+                "ZO",
+                "Z",
+                "ZW",
+                "W",
+                "NW"
+              ],
+              "breedte": "smal"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "erkenningen", "titel": "Erkenningen en premies", "groep": "inhoud",
+      "id": "erkenningen",
+      "titel": "Erkenningen en premies",
+      "groep": "inhoud",
       "beschrijving": "Certificaten, erkenningen en uitleg over premies, getoond als stempels.",
       "velden": [
-        { "pad": "erkenningen.label", "type": "tekst", "label": "Klein label" },
-        { "pad": "erkenningen.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "erkenningen.intro", "type": "tekstvak", "label": "Intro" },
-        { "pad": "erkenningen.lijst", "type": "lijst", "label": "Erkenningen", "itemLabel": "naam", "sorteerbaar": true, "max": 6,
+        {
+          "pad": "erkenningen.label",
+          "type": "tekst",
+          "label": "Klein label"
+        },
+        {
+          "pad": "erkenningen.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "erkenningen.intro",
+          "type": "tekstvak",
+          "label": "Intro"
+        },
+        {
+          "pad": "erkenningen.lijst",
+          "type": "lijst",
+          "label": "Erkenningen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "max": 6,
           "velden": [
-            { "pad": "naam", "type": "tekst", "label": "Naam", "hulp": "bv. VCA*, Erkend aannemer" },
-            { "pad": "nummer", "type": "tekst", "label": "Nummer of klasse" },
-            { "pad": "omschrijving", "type": "tekstvak", "label": "Uitleg", "max": 160 }
-          ] },
-        { "pad": "erkenningen.premie", "type": "groep", "label": "Premie",
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "hulp": "bv. VCA*, Erkend aannemer"
+            },
+            {
+              "pad": "nummer",
+              "type": "tekst",
+              "label": "Nummer of klasse"
+            },
+            {
+              "pad": "omschrijving",
+              "type": "tekstvak",
+              "label": "Uitleg",
+              "max": 160
+            }
+          ]
+        },
+        {
+          "pad": "erkenningen.premie",
+          "type": "groep",
+          "label": "Premie",
           "velden": [
-            { "pad": "titel", "type": "tekst", "label": "Titel" },
-            { "pad": "tekst", "type": "rijk", "label": "Tekst" },
-            { "pad": "link", "type": "url", "label": "Link" },
-            { "pad": "linktekst", "type": "tekst", "label": "Tekst van de link" }
-          ] }
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel"
+            },
+            {
+              "pad": "tekst",
+              "type": "rijk",
+              "label": "Tekst"
+            },
+            {
+              "pad": "link",
+              "type": "url",
+              "label": "Link"
+            },
+            {
+              "pad": "linktekst",
+              "type": "tekst",
+              "label": "Tekst van de link"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "reviews", "titel": "Getuigenissen", "groep": "inhoud",
+      "id": "reviews",
+      "titel": "Getuigenissen",
+      "groep": "inhoud",
       "velden": [
-        { "pad": "reviews.label", "type": "tekst", "label": "Klein label" },
-        { "pad": "reviews.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "reviews.lijst", "type": "lijst", "label": "Getuigenissen", "itemLabel": "naam", "sorteerbaar": true, "max": 6,
+        {
+          "pad": "reviews.label",
+          "type": "tekst",
+          "label": "Klein label"
+        },
+        {
+          "pad": "reviews.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "reviews.lijst",
+          "type": "lijst",
+          "label": "Getuigenissen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "max": 6,
           "velden": [
-            { "pad": "tekst", "type": "tekstvak", "label": "Wat zeiden ze?", "max": 260 },
-            { "pad": "naam", "type": "tekst", "label": "Naam" },
-            { "pad": "gemeente", "type": "tekst", "label": "Gemeente", "breedte": "smal" },
-            { "pad": "project", "type": "tekst", "label": "Project", "breedte": "smal" }
-          ] }
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Wat zeiden ze?",
+              "max": 260
+            },
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "gemeente",
+              "type": "tekst",
+              "label": "Gemeente",
+              "breedte": "smal"
+            },
+            {
+              "pad": "project",
+              "type": "tekst",
+              "label": "Project",
+              "breedte": "smal"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "cta", "titel": "Oproep onderaan", "groep": "inhoud",
+      "id": "cta",
+      "titel": "Oproep onderaan",
+      "groep": "inhoud",
       "beschrijving": "Het grote gele blok dat naar de offerteaanvraag leidt.",
       "velden": [
-        { "pad": "cta.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "cta.tekst", "type": "tekstvak", "label": "Tekst" },
-        { "pad": "cta.knop", "type": "tekst", "label": "Knop", "breedte": "smal" }
+        {
+          "pad": "cta.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "cta.tekst",
+          "type": "tekstvak",
+          "label": "Tekst"
+        },
+        {
+          "pad": "cta.knop",
+          "type": "tekst",
+          "label": "Knop",
+          "breedte": "smal"
+        }
       ]
     },
     {
-      "id": "offerte", "titel": "Offertepagina", "groep": "inhoud",
+      "id": "offerte",
+      "titel": "Offertepagina",
+      "groep": "inhoud",
       "beschrijving": "De pagina met de offerteaanvraag in drie stappen. Aanvragen komen binnen onder Berichten.",
       "velden": [
-        { "pad": "offerte.label", "type": "tekst", "label": "Klein label" },
-        { "pad": "offerte.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "offerte.intro", "type": "tekstvak", "label": "Intro" },
-        { "pad": "offerte.stap1", "type": "tekst", "label": "Naam stap 1", "breedte": "smal" },
-        { "pad": "offerte.stap2", "type": "tekst", "label": "Naam stap 2", "breedte": "smal" },
-        { "pad": "offerte.stap3", "type": "tekst", "label": "Naam stap 3", "breedte": "smal" },
-        { "pad": "offerte.volgende", "type": "tekst", "label": "Knop volgende", "breedte": "smal" },
-        { "pad": "offerte.vorige", "type": "tekst", "label": "Knop terug", "breedte": "smal" },
-        { "pad": "offerte.verzend", "type": "tekst", "label": "Knop versturen", "breedte": "smal" },
-        { "pad": "offerte.privacy", "type": "tekstvak", "label": "Privacyzin onder het formulier" },
-        { "pad": "offerte.bevestigingKop", "type": "tekst", "label": "Bevestiging: titel" },
-        { "pad": "offerte.bevestiging", "type": "tekstvak", "label": "Bevestiging: tekst" },
-        { "pad": "offerte.types", "type": "lijst", "label": "Types werk (stap 1)", "itemLabel": "naam", "sorteerbaar": true, "max": 8,
+        {
+          "pad": "offerte.label",
+          "type": "tekst",
+          "label": "Klein label"
+        },
+        {
+          "pad": "offerte.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "offerte.intro",
+          "type": "tekstvak",
+          "label": "Intro"
+        },
+        {
+          "pad": "offerte.stap1",
+          "type": "tekst",
+          "label": "Naam stap 1",
+          "breedte": "smal"
+        },
+        {
+          "pad": "offerte.stap2",
+          "type": "tekst",
+          "label": "Naam stap 2",
+          "breedte": "smal"
+        },
+        {
+          "pad": "offerte.stap3",
+          "type": "tekst",
+          "label": "Naam stap 3",
+          "breedte": "smal"
+        },
+        {
+          "pad": "offerte.volgende",
+          "type": "tekst",
+          "label": "Knop volgende",
+          "breedte": "smal"
+        },
+        {
+          "pad": "offerte.vorige",
+          "type": "tekst",
+          "label": "Knop terug",
+          "breedte": "smal"
+        },
+        {
+          "pad": "offerte.verzend",
+          "type": "tekst",
+          "label": "Knop versturen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "offerte.privacy",
+          "type": "tekstvak",
+          "label": "Privacyzin onder het formulier"
+        },
+        {
+          "pad": "offerte.bevestigingKop",
+          "type": "tekst",
+          "label": "Bevestiging: titel"
+        },
+        {
+          "pad": "offerte.bevestiging",
+          "type": "tekstvak",
+          "label": "Bevestiging: tekst"
+        },
+        {
+          "pad": "offerte.types",
+          "type": "lijst",
+          "label": "Types werk (stap 1)",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "max": 8,
           "velden": [
-            { "pad": "naam", "type": "tekst", "label": "Naam" },
-            { "pad": "omschrijving", "type": "tekst", "label": "Korte uitleg" },
-            { "pad": "arcering", "type": "keuze", "label": "Arcering", "opties": ["metselwerk", "hout", "isolatie", "beton", "tegel", "staal"] }
-          ] },
-        { "pad": "offerte.timing", "type": "lijst", "label": "Keuzes 'wanneer starten'", "itemLabel": "optie", "sorteerbaar": true,
-          "velden": [ { "pad": "optie", "type": "tekst", "label": "Keuze" } ] },
-        { "pad": "offerte.budget", "type": "lijst", "label": "Keuzes 'budget'", "itemLabel": "optie", "sorteerbaar": true,
-          "velden": [ { "pad": "optie", "type": "tekst", "label": "Keuze" } ] },
-        { "pad": "offerte.naStappen", "type": "lijst", "label": "Wat gebeurt er daarna?", "itemLabel": "stap", "sorteerbaar": true, "max": 5,
-          "velden": [ { "pad": "stap", "type": "tekst", "label": "Stap" } ] },
-        { "pad": "offerte.faqKop", "type": "tekst", "label": "Titel veelgestelde vragen" },
-        { "pad": "offerte.faq", "type": "lijst", "label": "Veelgestelde vragen", "itemLabel": "vraag", "sorteerbaar": true,
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "omschrijving",
+              "type": "tekst",
+              "label": "Korte uitleg"
+            },
+            {
+              "pad": "arcering",
+              "type": "keuze",
+              "label": "Arcering",
+              "opties": [
+                "metselwerk",
+                "hout",
+                "isolatie",
+                "beton",
+                "tegel",
+                "staal"
+              ]
+            }
+          ]
+        },
+        {
+          "pad": "offerte.timing",
+          "type": "lijst",
+          "label": "Keuzes 'wanneer starten'",
+          "itemLabel": "optie",
+          "sorteerbaar": true,
           "velden": [
-            { "pad": "vraag", "type": "tekst", "label": "Vraag" },
-            { "pad": "antwoord", "type": "tekstvak", "label": "Antwoord" }
-          ] }
+            {
+              "pad": "optie",
+              "type": "tekst",
+              "label": "Keuze"
+            }
+          ]
+        },
+        {
+          "pad": "offerte.budget",
+          "type": "lijst",
+          "label": "Keuzes 'budget'",
+          "itemLabel": "optie",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "optie",
+              "type": "tekst",
+              "label": "Keuze"
+            }
+          ]
+        },
+        {
+          "pad": "offerte.naStappen",
+          "type": "lijst",
+          "label": "Wat gebeurt er daarna?",
+          "itemLabel": "stap",
+          "sorteerbaar": true,
+          "max": 5,
+          "velden": [
+            {
+              "pad": "stap",
+              "type": "tekst",
+              "label": "Stap"
+            }
+          ]
+        },
+        {
+          "pad": "offerte.faqKop",
+          "type": "tekst",
+          "label": "Titel veelgestelde vragen"
+        },
+        {
+          "pad": "offerte.faq",
+          "type": "lijst",
+          "label": "Veelgestelde vragen",
+          "itemLabel": "vraag",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "vraag",
+              "type": "tekst",
+              "label": "Vraag"
+            },
+            {
+              "pad": "antwoord",
+              "type": "tekstvak",
+              "label": "Antwoord"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "formulier", "titel": "Offerteformulier: velden", "groep": "inhoud",
+      "id": "formulier",
+      "titel": "Offerteformulier: velden",
+      "groep": "inhoud",
       "beschrijving": "De labels van de velden in het offerteformulier.",
       "velden": [
-        { "pad": "formulier.typeLabel", "type": "tekst", "label": "Vraag stap 1" },
-        { "pad": "formulier.gemeenteLabel", "type": "tekst", "label": "Gemeente" },
-        { "pad": "formulier.oppervlakteLabel", "type": "tekst", "label": "Oppervlakte" },
-        { "pad": "formulier.oppervlakteHulp", "type": "tekst", "label": "Hulptekst oppervlakte" },
-        { "pad": "formulier.bouwjaarLabel", "type": "tekst", "label": "Bouwjaar" },
-        { "pad": "formulier.timingLabel", "type": "tekst", "label": "Wanneer starten" },
-        { "pad": "formulier.budgetLabel", "type": "tekst", "label": "Budget" },
-        { "pad": "formulier.premieLabel", "type": "tekst", "label": "Vinkje premie" },
-        { "pad": "formulier.omschrijvingLabel", "type": "tekst", "label": "Omschrijving" },
-        { "pad": "formulier.omschrijvingHulp", "type": "tekst", "label": "Hulptekst omschrijving" },
-        { "pad": "formulier.naamLabel", "type": "tekst", "label": "Naam", "breedte": "smal" },
-        { "pad": "formulier.telefoonLabel", "type": "tekst", "label": "Telefoon", "breedte": "smal" },
-        { "pad": "formulier.emailLabel", "type": "tekst", "label": "E-mail", "breedte": "smal" },
-        { "pad": "formulier.adresLabel", "type": "tekst", "label": "Adres" },
-        { "pad": "formulier.contactvoorkeurLabel", "type": "tekst", "label": "Vraag contactvoorkeur" },
-        { "pad": "formulier.contactvoorkeur", "type": "lijst", "label": "Keuzes contactvoorkeur", "itemLabel": "optie",
-          "velden": [ { "pad": "optie", "type": "tekst", "label": "Keuze" } ] }
+        {
+          "pad": "formulier.typeLabel",
+          "type": "tekst",
+          "label": "Vraag stap 1"
+        },
+        {
+          "pad": "formulier.gemeenteLabel",
+          "type": "tekst",
+          "label": "Gemeente"
+        },
+        {
+          "pad": "formulier.oppervlakteLabel",
+          "type": "tekst",
+          "label": "Oppervlakte"
+        },
+        {
+          "pad": "formulier.oppervlakteHulp",
+          "type": "tekst",
+          "label": "Hulptekst oppervlakte"
+        },
+        {
+          "pad": "formulier.bouwjaarLabel",
+          "type": "tekst",
+          "label": "Bouwjaar"
+        },
+        {
+          "pad": "formulier.timingLabel",
+          "type": "tekst",
+          "label": "Wanneer starten"
+        },
+        {
+          "pad": "formulier.budgetLabel",
+          "type": "tekst",
+          "label": "Budget"
+        },
+        {
+          "pad": "formulier.premieLabel",
+          "type": "tekst",
+          "label": "Vinkje premie"
+        },
+        {
+          "pad": "formulier.omschrijvingLabel",
+          "type": "tekst",
+          "label": "Omschrijving"
+        },
+        {
+          "pad": "formulier.omschrijvingHulp",
+          "type": "tekst",
+          "label": "Hulptekst omschrijving"
+        },
+        {
+          "pad": "formulier.naamLabel",
+          "type": "tekst",
+          "label": "Naam",
+          "breedte": "smal"
+        },
+        {
+          "pad": "formulier.telefoonLabel",
+          "type": "tekst",
+          "label": "Telefoon",
+          "breedte": "smal"
+        },
+        {
+          "pad": "formulier.emailLabel",
+          "type": "tekst",
+          "label": "E-mail",
+          "breedte": "smal"
+        },
+        {
+          "pad": "formulier.adresLabel",
+          "type": "tekst",
+          "label": "Adres"
+        },
+        {
+          "pad": "formulier.contactvoorkeurLabel",
+          "type": "tekst",
+          "label": "Vraag contactvoorkeur"
+        },
+        {
+          "pad": "formulier.contactvoorkeur",
+          "type": "lijst",
+          "label": "Keuzes contactvoorkeur",
+          "itemLabel": "optie",
+          "velden": [
+            {
+              "pad": "optie",
+              "type": "tekst",
+              "label": "Keuze"
+            }
+          ]
+        }
       ]
     },
     {
-      "id": "voet", "titel": "Footer", "groep": "inhoud",
+      "id": "voet",
+      "titel": "Footer",
+      "groep": "inhoud",
       "velden": [
-        { "pad": "voet.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "voet.tekst", "type": "tekstvak", "label": "Tekst" },
-        { "pad": "voet.urenKop", "type": "tekst", "label": "Titel bij de uren", "breedte": "smal" },
-        { "pad": "voet.credit", "type": "tekst", "label": "Vermelding webbouwer", "rol": "arto" }
+        {
+          "pad": "voet.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "voet.tekst",
+          "type": "tekstvak",
+          "label": "Tekst"
+        },
+        {
+          "pad": "voet.urenKop",
+          "type": "tekst",
+          "label": "Titel bij de uren",
+          "breedte": "smal"
+        },
+        {
+          "pad": "voet.credit",
+          "type": "tekst",
+          "label": "Vermelding webbouwer",
+          "rol": "arto"
+        }
       ]
     },
     {
-      "id": "fout", "titel": "Pagina niet gevonden (404)", "groep": "inhoud",
+      "id": "fout",
+      "titel": "Pagina niet gevonden (404)",
+      "groep": "inhoud",
       "velden": [
-        { "pad": "fout.kop", "type": "tekst", "label": "Titel" },
-        { "pad": "fout.tekst", "type": "tekstvak", "label": "Tekst" },
-        { "pad": "fout.knop", "type": "tekst", "label": "Knop", "breedte": "smal" }
+        {
+          "pad": "fout.kop",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "fout.tekst",
+          "type": "tekstvak",
+          "label": "Tekst"
+        },
+        {
+          "pad": "fout.knop",
+          "type": "tekst",
+          "label": "Knop",
+          "breedte": "smal"
+        }
       ]
     }
   ]

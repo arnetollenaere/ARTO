@@ -8,22 +8,26 @@
       {
         "sleutel": "accent",
         "label": "Accentkleur",
-        "hulp": "Eén elektrische kleur, gebruikt als vlak (bv. Klein-blauw #1A2FD6 of signaalrood #C42A14). Moet goed leesbaar zijn met witte tekst erop."
+        "hulp": "Eén elektrische kleur, gebruikt als vlak (bv. Klein-blauw #1A2FD6 of signaalrood #C42A14). Moet goed leesbaar zijn met witte tekst erop.",
+        "standaard": "#1A2FD6"
       },
       {
         "sleutel": "achtergrond",
         "label": "Achtergrond (licht)",
-        "hulp": "De 'witte muur' van de zaal. Gebroken wit werkt het best."
+        "hulp": "De 'witte muur' van de zaal. Gebroken wit werkt het best.",
+        "standaard": "#EFEDE7"
       },
       {
         "sleutel": "tekst",
         "label": "Tekst",
-        "hulp": "Bijna zwart."
+        "hulp": "Bijna zwart.",
+        "standaard": "#111110"
       },
       {
         "sleutel": "donker",
         "label": "Donkere vlakken",
-        "hulp": "Voor de footer en donkere composities."
+        "hulp": "Voor de footer en donkere composities.",
+        "standaard": "#0D0D0C"
       }
     ]
   },
