@@ -1,0 +1,23 @@
+<a class="skip" href="#inhoud">{{ navigatie.skip }}</a>
+<header class="kop" data-kop>
+  <div class="kop__binnen">
+    <a class="merk" href="/" aria-label="{{ site.naam }}, naar de startpagina">
+      {{#als site.logo}}<img src="{{ site.logo }}" alt="{{ site.naam }}" width="140" height="40">{{#anders}}
+      <svg class="merk__teken" viewBox="0 0 48 48" aria-hidden="true" focusable="false"><path d="M41 22c1 9-6 18-16 19S6 35 6 25 13 6 24 7s16 6 17 15Z" fill="var(--mint)"/><path d="M12 28c5-4 10-4 14 0s9 4 12 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
+      <span class="merk__naam">{{ site.naam }}</span>{{/als}}
+    </a>
+    <nav class="hoofdnav" id="hoofdnav" aria-label="Hoofdmenu">
+      <ul>
+        <li><a href="/behandelingen"{{#als pagina.is.behandelingen}} aria-current="page"{{/als}}>{{ navigatie.behandelingen }}</a></li>
+        <li><a href="/team"{{#als pagina.is.team}} aria-current="page"{{/als}}>{{ navigatie.team }}</a></li>
+        <li><a href="/#praktisch">{{ navigatie.praktisch }}</a></li>
+        <li><a href="/#vragen">{{ navigatie.vragen }}</a></li>
+        <li class="hoofdnav__tel"><a class="knop knop--donker knop--groot hoofdnav__afspraak" href="#afspraak">{{ navigatie.afspraak }}</a><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></li>
+      </ul>
+    </nav>
+    <a class="knop knop--donker kop__afspraak" href="#afspraak"><span class="puls" aria-hidden="true"></span>{{ navigatie.afspraak }}</a>
+    <button class="menuknop" type="button" aria-expanded="false" aria-controls="hoofdnav" data-menuknop>
+      <span class="menuknop__lijnen" aria-hidden="true"></span><span class="vh">Menu</span>
+    </button>
+  </div>
+</header>

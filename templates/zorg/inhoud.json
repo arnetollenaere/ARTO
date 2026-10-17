@@ -1,0 +1,587 @@
+{
+  "site": {
+    "naam": "Oever",
+    "slogan": "Groepspraktijk voor kinesitherapie, osteopathie en psychologie in Sint-Amandsberg",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "praktijkoever.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "Tijdens de herfstvakantie zijn we open, behalve op vrijdag 30 oktober.",
+    "link": ""
+  },
+  "contact": {
+    "adres": "Dendermondsesteenweg 412",
+    "postcode": "9040",
+    "gemeente": "Sint-Amandsberg (Gent)",
+    "land": "BE",
+    "telefoon": "+32 9 228 41 70",
+    "email": "hallo@praktijkoever.be",
+    "whatsapp": "",
+    "btw": "BE0784.215.906",
+    "kaart": "https://maps.google.com/?q=Dendermondsesteenweg+412+9040+Sint-Amandsberg"
+  },
+  "openingsuren": [
+    {
+      "dag": "Maandag",
+      "uren": "07:30–20:00"
+    },
+    {
+      "dag": "Dinsdag",
+      "uren": "07:30–20:00"
+    },
+    {
+      "dag": "Woensdag",
+      "uren": "08:00–19:00"
+    },
+    {
+      "dag": "Donderdag",
+      "uren": "07:30–20:00"
+    },
+    {
+      "dag": "Vrijdag",
+      "uren": "07:30–18:00"
+    },
+    {
+      "dag": "Zaterdag",
+      "uren": "08:30–12:30"
+    },
+    {
+      "dag": "Zondag",
+      "uren": "Gesloten"
+    }
+  ],
+  "socials": [
+    {
+      "netwerk": "Instagram",
+      "url": "https://www.instagram.com/praktijkoever"
+    },
+    {
+      "netwerk": "Facebook",
+      "url": "https://www.facebook.com/praktijkoever"
+    },
+    {
+      "netwerk": "LinkedIn",
+      "url": "https://www.linkedin.com/company/praktijk-oever"
+    }
+  ],
+  "seo": {
+    "titel": "Oever · kinesitherapie, osteopathie en psychologie in Gent",
+    "beschrijving": "Groepspraktijk in Sint-Amandsberg: kinesitherapie, bekkenbodem, sportrevalidatie, osteopathie en psychologische zorg. Geconventioneerd, rolstoeltoegankelijk.",
+    "afbeelding": "",
+    "paginas": [
+      {
+        "pagina": "behandelingen.html",
+        "titel": "Behandelingen en tarieven",
+        "beschrijving": "Alle behandelingen van Oever met duur, tarief en terugbetaling door het RIZIV of je ziekenfonds. Duidelijk vooraf wat je zelf betaalt."
+      },
+      {
+        "pagina": "team.html",
+        "titel": "Ons team van zorgverleners",
+        "beschrijving": "Maak kennis met de kinesitherapeuten, osteopaat en psycholoog van Oever: specialisaties, talen, RIZIV-nummer en wanneer ze er zijn."
+      }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "achtergrond": "#F6F3EC",
+      "tekst": "#0F2E28",
+      "accent": "#2C6A55",
+      "salie": "#CFDFCF",
+      "mint": "#A9DFC6"
+    }
+  },
+  "navigatie": {
+    "behandelingen": "Behandelingen",
+    "team": "Team",
+    "praktisch": "Praktisch",
+    "vragen": "Vragen",
+    "afspraak": "Afspraak maken",
+    "skip": "Naar de inhoud"
+  },
+  "hero": {
+    "label": "Groepspraktijk · Sint-Amandsberg, Gent",
+    "titel": "Weer vrij bewegen,",
+    "titelAccent": "op je eigen tempo.",
+    "intro": "Bij Oever werken zes zorgverleners onder één dak: kinesitherapie, osteopathie en psychologie. We nemen de tijd om te luisteren, leggen uit wat er gebeurt en zoeken samen wat voor jou werkt.",
+    "knop": "Afspraak maken",
+    "knopTwee": "Bekijk behandelingen",
+    "ademIn": "adem in",
+    "ademUit": "adem uit",
+    "foto": "",
+    "fotoAlt": ""
+  },
+  "kenmerken": [
+    {
+      "waarde": "± 5 dagen",
+      "label": "tot je eerste afspraak"
+    },
+    {
+      "waarde": "6",
+      "label": "zorgverleners, 5 talen"
+    },
+    {
+      "waarde": "5 van 6",
+      "label": "geconventioneerd: de officiële RIZIV-tarieven"
+    },
+    {
+      "waarde": "0 trappen",
+      "label": "volledig rolstoeltoegankelijk"
+    }
+  ],
+  "afspraak": {
+    "label": "Afspraak maken",
+    "titel": "Kies wat voor jou het makkelijkst is.",
+    "intro": "Boek zelf een moment in onze online agenda, laat een aanvraag achter of bel ons tijdens de openingsuren. Een eerste afspraak is er meestal binnen de week.",
+    "url": "https://www.rosa.be/nl/",
+    "platform": "Rosa",
+    "knopOnline": "Boek online via Rosa",
+    "onlineUitleg": "Je kiest zelf zorgverlener, dag en uur. Je krijgt meteen een bevestiging per mail.",
+    "telefoonTekst": "Liever iemand aan de lijn? Bel ons op werkdagen tussen 8 en 18 uur.",
+    "formTitel": "Of laat een aanvraag achter",
+    "formIntro": "We bellen of mailen je binnen één werkdag terug met een voorstel. Schrijf hier geen medische details; die bespreken we liever persoonlijk.",
+    "formulier": {
+      "naam": "Je naam",
+      "telefoon": "Telefoonnummer",
+      "email": "E-mailadres",
+      "behandeling": "Waarvoor wil je komen?",
+      "zorgverlener": "Voorkeur voor een zorgverlener",
+      "geenVoorkeur": "Geen voorkeur",
+      "moment": "Wanneer past het meestal?",
+      "momenten": [
+        {
+          "tekst": "Voormiddag"
+        },
+        {
+          "tekst": "Namiddag"
+        },
+        {
+          "tekst": "Na 17 uur"
+        },
+        {
+          "tekst": "Zaterdag"
+        }
+      ],
+      "voorschrift": "Heb je een voorschrift van je arts?",
+      "ja": "Ja",
+      "nee": "Nee of weet ik niet",
+      "bericht": "Nog iets wat we moeten weten? (optioneel)",
+      "privacy": "We gebruiken je gegevens alleen om je afspraak te regelen. Ze worden niet gedeeld en na zes maanden gewist als er geen behandeling volgt.",
+      "knop": "Aanvraag versturen",
+      "bevestiging": "Dank je, je aanvraag is goed aangekomen. We nemen binnen één werkdag contact met je op."
+    }
+  },
+  "voorWie": {
+    "label": "Voor wie",
+    "titel": "Herken je jezelf hierin? Dan ben je bij ons op de juiste plek.",
+    "intro": "Je hoeft niet te weten welke behandeling je nodig hebt. Vertel ons wat er scheelt, wij zoeken wie je het best kan helpen.",
+    "situaties": [
+      {
+        "tekst": "Je rug of nek blokkeert, en het gaat niet vanzelf over.",
+        "wie": "Manuele therapie · Lotte"
+      },
+      {
+        "tekst": "Je wil na een blessure of operatie terug sporten, zonder angst.",
+        "wie": "Sportrevalidatie · Jonas"
+      },
+      {
+        "tekst": "Je bent zwanger of net bevallen, en je lichaam voelt anders.",
+        "wie": "Perinatale kine · Amira"
+      },
+      {
+        "tekst": "Je verliest urine bij lachen, hoesten of sporten.",
+        "wie": "Bekkenbodemtherapie · Amira"
+      },
+      {
+        "tekst": "Na een beroerte of bij Parkinson wil je zelfstandig blijven.",
+        "wie": "Neurologische revalidatie · Pieter"
+      },
+      {
+        "tekst": "Je slaapt slecht, piekert veel of zit vast in je hoofd.",
+        "wie": "Psychologische zorg · Elise"
+      }
+    ],
+    "niet": "**Acute nood?** Bel 112. Bij gedachten aan zelfdoding kan je dag en nacht anoniem bellen naar **1813**. Wij zijn een praktijk op afspraak en geen spoeddienst."
+  },
+  "behandelingenIntro": {
+    "label": "Behandelingen",
+    "titel": "Wat we doen, hoelang het duurt en wat het kost.",
+    "intro": "Geen verrassingen achteraf: bij elke behandeling zie je de duur, het tarief en hoeveel je terugkrijgt. De meeste zorgverleners zijn geconventioneerd en werken dus aan de officiële tarieven.",
+    "knopAlles": "Alle behandelingen en tarieven",
+    "kolomDuur": "Duur",
+    "kolomTarief": "Tarief",
+    "kolomTerug": "Terugbetaling"
+  },
+  "behandelingen": [
+    {
+      "naam": "Eerste onderzoek en bilan",
+      "categorie": "Kinesitherapie",
+      "kort": "We brengen je klacht in kaart en maken samen een plan.",
+      "beschrijving": "Een rustig gesprek over je klacht, je dagelijkse leven en wat je opnieuw wil kunnen. Daarna een lichamelijk onderzoek en een duidelijk plan: hoeveel sessies, wat je thuis kan doen en wanneer we evalueren.",
+      "duur": "45 min",
+      "tarief": "€ 45,30",
+      "terugbetaling": "RIZIV-terugbetaald",
+      "terugbetalingDetail": "Met voorschrift betaal je ± € 10,40 zelf, met verhoogde tegemoetkoming ± € 3,10.",
+      "voorschrift": true,
+      "uitgelicht": true
+    },
+    {
+      "naam": "Manuele therapie rug en nek",
+      "categorie": "Kinesitherapie",
+      "kort": "Mobilisaties en oefentherapie bij rug-, nek- en schouderklachten.",
+      "beschrijving": "Met zachte, gerichte techniek maken we vastzittende gewrichten weer soepel. We combineren dat altijd met oefeningen, zodat je zelf de klachten leert voorkomen.\n\n- Lage rugpijn en hernia\n- Nekpijn, hoofdpijn vanuit de nek\n- Stijve schouder",
+      "duur": "30 min",
+      "tarief": "€ 33,50",
+      "terugbetaling": "RIZIV-terugbetaald",
+      "terugbetalingDetail": "Met voorschrift betaal je ± € 8,90 remgeld, met verhoogde tegemoetkoming ± € 2,60.",
+      "voorschrift": true,
+      "uitgelicht": true
+    },
+    {
+      "naam": "Sportrevalidatie",
+      "categorie": "Kinesitherapie",
+      "kort": "Van operatie of blessure terug naar het veld, stap voor stap.",
+      "beschrijving": "Na een kruisbandletsel, enkelverstuiking of spierscheur bouwen we je belasting op met meetbare doelen. In onze oefenzaal met krachttoestellen en loopband test je wanneer je klaar bent om te hervatten.",
+      "duur": "45 min",
+      "tarief": "€ 38,20",
+      "terugbetaling": "RIZIV-terugbetaald",
+      "terugbetalingDetail": "Na een operatie vaak met een hogere terugbetaling (Fb-lijst). Je betaalt ± € 6,80 zelf.",
+      "voorschrift": true,
+      "uitgelicht": true
+    },
+    {
+      "naam": "Bekkenbodemtherapie",
+      "categorie": "Kinesitherapie",
+      "kort": "Bij urineverlies, pijn of na een bevalling, in een afgesloten behandelruimte.",
+      "beschrijving": "Een gevoelig onderwerp, en daarom nemen we er extra tijd voor. Je beslist zelf hoe ver het onderzoek gaat. Voor vrouwen en mannen.",
+      "duur": "45 min",
+      "tarief": "€ 38,20",
+      "terugbetaling": "RIZIV-terugbetaald",
+      "terugbetalingDetail": "Met voorschrift betaal je ± € 8,90 remgeld.",
+      "voorschrift": true,
+      "uitgelicht": false
+    },
+    {
+      "naam": "Perinatale kinesitherapie",
+      "categorie": "Kinesitherapie",
+      "kort": "Begeleiding tijdens de zwangerschap en in de maanden na de bevalling.",
+      "beschrijving": "Van bekkenpijn tijdens de zwangerschap tot herstel van je buikspieren erna. Je hebt recht op negen terugbetaalde postnatale sessies, en je baby mag mee.",
+      "duur": "45 min",
+      "tarief": "€ 38,20",
+      "terugbetaling": "RIZIV-terugbetaald",
+      "terugbetalingDetail": "Negen postnatale sessies met hoge terugbetaling: je betaalt ± € 5,20 per sessie.",
+      "voorschrift": true,
+      "uitgelicht": false
+    },
+    {
+      "naam": "Neurologische revalidatie",
+      "categorie": "Kinesitherapie",
+      "kort": "Bij beroerte, MS of Parkinson, in de praktijk of bij je thuis.",
+      "beschrijving": "We werken aan evenwicht, wandelen en dagelijkse handelingen. Kan je moeilijk tot bij ons komen? Pieter komt op huisbezoek in Gent en de randgemeenten.",
+      "duur": "30 min",
+      "tarief": "€ 33,50",
+      "terugbetaling": "RIZIV-terugbetaald",
+      "terugbetalingDetail": "Bij huisbezoek komt er een kleine verplaatsingsvergoeding bij, ook deels terugbetaald.",
+      "voorschrift": true,
+      "uitgelicht": false
+    },
+    {
+      "naam": "Osteopathie",
+      "categorie": "Osteopathie",
+      "kort": "Een zachte, manuele aanpak van het lichaam als geheel.",
+      "beschrijving": "Hanne bekijkt hoe gewrichten, spieren en weefsels op elkaar inwerken. Vaak gekozen bij hoofdpijn, kaakklachten of klachten die blijven terugkomen.",
+      "duur": "50 min",
+      "tarief": "€ 60,00",
+      "terugbetaling": "Deels via ziekenfonds",
+      "terugbetalingDetail": "Niet via het RIZIV. Je aanvullende verzekering betaalt meestal € 10 tot € 25 per sessie terug.",
+      "voorschrift": false,
+      "uitgelicht": true
+    },
+    {
+      "naam": "Eerstelijnspsychologische zorg",
+      "categorie": "Psychologie",
+      "kort": "Kortdurende begeleiding bij stress, angst, somberheid of slaapproblemen.",
+      "beschrijving": "Via het netwerk geestelijke gezondheid Gent-Eeklo. Je hebt geen verwijsbrief nodig. In het eerste gesprek kijken we samen wat je nodig hebt en hoeveel sessies zinvol zijn.",
+      "duur": "60 min",
+      "tarief": "€ 11,00",
+      "terugbetaling": "RIZIV-terugbetaald",
+      "terugbetalingDetail": "Je betaalt alleen € 11, of € 4 met verhoogde tegemoetkoming. De rest betaalt het RIZIV rechtstreeks.",
+      "voorschrift": false,
+      "uitgelicht": true
+    },
+    {
+      "naam": "Psychotherapie op lange termijn",
+      "categorie": "Psychologie",
+      "kort": "Voor wie dieper wil gaan dan een kort traject.",
+      "beschrijving": "Wekelijkse of tweewekelijkse gesprekken, gericht op patronen die al langer meegaan. Vaak een vervolg op de eerstelijnszorg.",
+      "duur": "60 min",
+      "tarief": "€ 70,00",
+      "terugbetaling": "Deels via ziekenfonds",
+      "terugbetalingDetail": "Veel ziekenfondsen betalen € 15 tot € 25 per sessie terug, voor een beperkt aantal sessies per jaar.",
+      "voorschrift": false,
+      "uitgelicht": false
+    },
+    {
+      "naam": "Loop- en loopstijlanalyse",
+      "categorie": "Sport",
+      "kort": "Videoanalyse op de loopband met concreet trainingsadvies.",
+      "beschrijving": "Voor lopers met terugkerende blessures of wie efficiënter wil lopen. Je krijgt een kort verslag met beelden en drie oefeningen mee naar huis.",
+      "duur": "60 min",
+      "tarief": "€ 75,00",
+      "terugbetaling": "Niet terugbetaald",
+      "terugbetalingDetail": "Geen terugbetaling. Sommige sportclubs geven korting; vraag het na.",
+      "voorschrift": false,
+      "uitgelicht": false
+    }
+  ],
+  "terugbetalingInfo": {
+    "titel": "Hoe werkt terugbetaling?",
+    "tekst": "**Geconventioneerd** betekent dat de zorgverlener de officiële tarieven van het RIZIV volgt. Je betaalt het tarief in de praktijk en krijgt het grootste deel terug van je ziekenfonds; wat overblijft heet het **remgeld**.\n\nVoor kinesitherapie heb je een **voorschrift** van je arts nodig. Heb je recht op een **verhoogde tegemoetkoming**, dan betaal je nog minder. Osteopathie en langere psychotherapie vallen onder de **aanvullende verzekering** van je ziekenfonds.\n\nWe werken met het elektronische getuigschrift (eAttest): de terugbetaling komt vanzelf op je rekening.",
+    "voorschriftLabel": "voorschrift nodig"
+  },
+  "teamIntro": {
+    "label": "Team",
+    "titel": "Zes zorgverleners, één dossier, korte lijnen.",
+    "intro": "We overleggen elke week samen over wie een tweede blik kan gebruiken. Zo hoef je je verhaal niet telkens opnieuw te vertellen.",
+    "knopAlles": "Maak kennis met het hele team",
+    "labelTalen": "Talen",
+    "labelRiziv": "RIZIV-nr.",
+    "labelDagen": "Aanwezig",
+    "labelConventie": "Geconventioneerd",
+    "labelNietConventie": "Niet geconventioneerd"
+  },
+  "team": [
+    {
+      "naam": "Lotte Van Damme",
+      "initialen": "LV",
+      "functie": "Kinesitherapeut · zaakvoerder",
+      "specialisaties": "Manuele therapie · rug en nek · hoofdpijn",
+      "talen": "Nederlands, Frans, Engels",
+      "riziv": "5-28417-63-527",
+      "geconventioneerd": true,
+      "dagen": "ma · di · do · vr",
+      "bio": "Lotte startte Oever in 2016, met het idee dat zorg rustiger mag. Ze is manueel therapeut en werkt vooral met mensen die al lang met rug- of nekpijn sukkelen.",
+      "foto": "",
+      "fotoAlt": ""
+    },
+    {
+      "naam": "Jonas De Smet",
+      "initialen": "JD",
+      "functie": "Sportkinesitherapeut",
+      "specialisaties": "Kruisband · enkel en knie · loopanalyse",
+      "talen": "Nederlands, Engels",
+      "riziv": "5-31902-48-527",
+      "geconventioneerd": true,
+      "dagen": "ma · wo · do · za",
+      "bio": "Jonas begeleidt de jeugdploegen van een Gentse voetbalclub en loopt zelf trails. Hij houdt van meetbare vooruitgang: elke maand test je opnieuw.",
+      "foto": "",
+      "fotoAlt": ""
+    },
+    {
+      "naam": "Amira El Idrissi",
+      "initialen": "AE",
+      "functie": "Kinesitherapeut",
+      "specialisaties": "Bekkenbodem · zwangerschap en na de bevalling",
+      "talen": "Nederlands, Frans, Arabisch",
+      "riziv": "5-29076-15-527",
+      "geconventioneerd": true,
+      "dagen": "di · wo · vr",
+      "bio": "Amira volgde een postgraduaat bekkenbodemreëducatie aan de UGent. Ze werkt in een afgesloten behandelruimte, en je baby is altijd welkom.",
+      "foto": "",
+      "fotoAlt": ""
+    },
+    {
+      "naam": "Pieter Claeys",
+      "initialen": "PC",
+      "functie": "Kinesitherapeut",
+      "specialisaties": "Neurologische revalidatie · valpreventie · huisbezoeken",
+      "talen": "Nederlands",
+      "riziv": "5-27731-02-527",
+      "geconventioneerd": true,
+      "dagen": "ma · di · wo · do",
+      "bio": "Pieter werkte tien jaar in een revalidatieziekenhuis. Nu komt hij ook aan huis, voor wie de weg naar de praktijk te zwaar is.",
+      "foto": "",
+      "fotoAlt": ""
+    },
+    {
+      "naam": "Hanne Verstraete",
+      "initialen": "HV",
+      "functie": "Osteopaat D.O. en kinesitherapeut",
+      "specialisaties": "Hoofdpijn · kaak · baby's en kinderen",
+      "talen": "Nederlands, Engels, Duits",
+      "riziv": "5-30558-91-527",
+      "geconventioneerd": false,
+      "dagen": "do · vr · za",
+      "bio": "Hanne combineert kinesitherapie met osteopathie. Ze ziet veel mensen met spanningshoofdpijn en kaakklachten, en jonge ouders met een onrustige baby.",
+      "foto": "",
+      "fotoAlt": ""
+    },
+    {
+      "naam": "Elise Moerman",
+      "initialen": "EM",
+      "functie": "Klinisch psycholoog",
+      "specialisaties": "Stress en burn-out · angst · slaap · chronische pijn",
+      "talen": "Nederlands, Engels",
+      "riziv": "Visum 917482 · RIZIV 7-51928-30-910",
+      "geconventioneerd": true,
+      "dagen": "di · do · vr",
+      "bio": "Elise werkt met cognitieve gedragstherapie en ACT. Ze begeleidt ook mensen met chronische pijn, samen met de kinesitherapeuten van het team.",
+      "foto": "",
+      "fotoAlt": ""
+    }
+  ],
+  "werkwijze": {
+    "label": "Je eerste afspraak",
+    "titel": "Zo verloopt je eerste bezoek.",
+    "stappen": [
+      {
+        "titel": "Je maakt een afspraak",
+        "tekst": "Online, met het formulier of telefonisch. Je krijgt een bevestiging met het adres en wat je moet meebrengen."
+      },
+      {
+        "titel": "We luisteren eerst",
+        "tekst": "Het eerste kwartier is een gesprek. Wat scheelt er, sinds wanneer, en wat wil je opnieuw kunnen?"
+      },
+      {
+        "titel": "Onderzoek en uitleg",
+        "tekst": "We onderzoeken rustig en leggen in gewone woorden uit wat we zien. Vragen stellen mag altijd."
+      },
+      {
+        "titel": "Een plan op maat",
+        "tekst": "Je gaat naar huis met een plan: hoeveel sessies, wat je zelf kan doen, en wanneer we samen evalueren."
+      }
+    ]
+  },
+  "praktisch": {
+    "label": "Praktisch",
+    "titel": "Goed om te weten voor je komt.",
+    "meebrengenTitel": "Breng mee naar je eerste afspraak",
+    "meebrengen": [
+      {
+        "tekst": "Je identiteitskaart (of Kids-ID)"
+      },
+      {
+        "tekst": "Het voorschrift van je arts, als je dat hebt"
+      },
+      {
+        "tekst": "Verslagen of beelden van eerdere onderzoeken"
+      },
+      {
+        "tekst": "Makkelijke kleding en sportschoenen"
+      },
+      {
+        "tekst": "Een handdoek"
+      }
+    ],
+    "blokken": [
+      {
+        "titel": "Annuleren",
+        "soort": "annuleren",
+        "tekst": "Kan je niet komen? Laat het ons minstens **24 uur op voorhand** weten, online of telefonisch. Bij een gemiste afspraak rekenen we € 25 aan, behalve bij overmacht."
+      },
+      {
+        "titel": "Rolstoeltoegankelijk",
+        "soort": "rolstoel",
+        "tekst": "De praktijk ligt volledig op het gelijkvloers, met brede deuren, een aangepast toilet en een hoog-laagbank in elke ruimte. Begeleiders en assistentiehonden zijn welkom."
+      },
+      {
+        "titel": "Parking",
+        "soort": "parking",
+        "tekst": "Gratis parking voor de deur met **twee plaatsen voor mensen met een handicap**. Fietsenstalling onder het afdak."
+      },
+      {
+        "titel": "Met het openbaar vervoer",
+        "soort": "openbaar vervoer",
+        "tekst": "Tramlijn 1 en bus 3, halte *Sint-Amandsberg Heirnislaan*, op twee minuten wandelen."
+      },
+      {
+        "titel": "Betalen",
+        "soort": "betalen",
+        "tekst": "Betalen kan met Bancontact of Payconiq na elke sessie. We sturen het getuigschrift elektronisch naar je ziekenfonds."
+      }
+    ],
+    "urenTitel": "Openingsuren",
+    "adresTitel": "Adres",
+    "routeKnop": "Route plannen"
+  },
+  "faq": {
+    "label": "Vragen",
+    "titel": "Wat mensen ons vaak vragen.",
+    "vragen": [
+      {
+        "vraag": "Heb ik een voorschrift nodig?",
+        "antwoord": "Voor terugbetaalde kinesitherapie wel. Zonder voorschrift mag je ook komen, maar dan krijg je niets terug. Voor osteopathie en psychologische zorg heb je geen voorschrift nodig."
+      },
+      {
+        "vraag": "Hoeveel sessies krijg ik terugbetaald?",
+        "antwoord": "Dat hangt af van je klacht. Voor de meeste klachten krijg je 9 tot 18 sessies per jaar terugbetaald, na een operatie vaak meer. We bekijken het samen bij je eerste afspraak."
+      },
+      {
+        "vraag": "Kan ik kiezen bij wie ik kom?",
+        "antwoord": "Ja. Kies je voorkeur in de online agenda of in het formulier. Heb je geen voorkeur, dan plannen we je in bij wie het best past bij je klacht."
+      },
+      {
+        "vraag": "Komen jullie ook aan huis?",
+        "antwoord": "Pieter doet huisbezoeken in Gent en de randgemeenten voor wie moeilijk tot in de praktijk kan komen. Vermeld het in je aanvraag."
+      },
+      {
+        "vraag": "Hoe lang moet ik wachten op een afspraak?",
+        "antwoord": "Voor kinesitherapie meestal minder dan een week. Voor psychologische zorg kan het twee tot drie weken duren. We houden altijd enkele plaatsen vrij voor dringende gevallen."
+      },
+      {
+        "vraag": "Werken jullie samen met mijn huisarts?",
+        "antwoord": "Ja, als jij dat goed vindt. We sturen een kort verslag na het eerste onderzoek en aan het einde van je behandeling."
+      }
+    ]
+  },
+  "noodnummers": {
+    "titel": "Dringend hulp nodig?",
+    "uitleg": "Wij werken op afspraak. Buiten onze uren of bij nood kan je hier terecht.",
+    "nummers": [
+      {
+        "naam": "Ambulance en brandweer",
+        "nummer": "112",
+        "wanneer": "Bij levensbedreigende nood"
+      },
+      {
+        "naam": "Huisarts van wacht",
+        "nummer": "1733",
+        "wanneer": "'s Avonds, 's nachts en in het weekend"
+      },
+      {
+        "naam": "Zelfmoordlijn",
+        "nummer": "1813",
+        "wanneer": "Dag en nacht, gratis en anoniem"
+      },
+      {
+        "naam": "Antigifcentrum",
+        "nummer": "070 245 245",
+        "wanneer": "Bij vergiftiging"
+      }
+    ]
+  },
+  "voet": {
+    "zin": "Zorg die de tijd neemt. Op afspraak, in Sint-Amandsberg.",
+    "contactTitel": "Contact",
+    "urenTitel": "Uren",
+    "volgTitel": "Volg ons",
+    "btwLabel": "Ondernemingsnr."
+  },
+  "paginaBehandelingen": {
+    "titel": "Behandelingen,",
+    "titelAccent": "helder geprijsd.",
+    "intro": "Hieronder vind je alles wat we aanbieden. Per behandeling zie je hoelang een sessie duurt, wat ze kost en wat je terugkrijgt. Twijfel je? Bel ons gerust, we denken met je mee."
+  },
+  "paginaTeam": {
+    "titel": "Mensen die",
+    "titelAccent": "de tijd nemen.",
+    "intro": "Zes zorgverleners met elk een eigen specialisatie. Hieronder lees je wie wat doet, welke talen we spreken en wanneer je wie kan treffen."
+  },
+  "fout": {
+    "titel": "Deze pagina is even uit beeld.",
+    "tekst": "De link klopt niet meer, of de pagina is verhuisd. Geen zorgen: via de startpagina vind je snel je weg terug.",
+    "knop": "Terug naar de startpagina"
+  }
+}

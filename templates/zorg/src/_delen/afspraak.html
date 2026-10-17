@@ -1,0 +1,84 @@
+<section class="afspraak" id="afspraak" aria-labelledby="afspraak-titel">
+  <svg class="afspraak__vorm" viewBox="0 0 600 600" aria-hidden="true" focusable="false"><path class="morf morf--a" d="M498.0 300.0C497.4 362.2 488.2 447.7 446.9 484.2C405.5 520.6 304.9 534.7 250.1 518.6C195.3 502.5 150.5 443.5 118.2 387.6C85.9 331.6 34.8 235.1 56.5 182.7C78.2 130.4 182.6 85.4 248.3 73.5C314.0 61.6 408.9 73.5 450.6 111.2C492.2 149.0 498.6 237.8 498.0 300.0Z"/></svg>
+  <div class="wrap afspraak__grid">
+    <div class="afspraak__links">
+      <p class="label"><span class="label__stip" aria-hidden="true"></span>{{ afspraak.label }}</p>
+      <h2 class="kop-xl" id="afspraak-titel">{{ afspraak.titel }}</h2>
+      <p class="lead">{{ afspraak.intro }}</p>
+      {{#als afspraak.url}}
+      <a class="knop knop--groot knop--donker" href="{{ afspraak.url }}" target="_blank" rel="noopener">
+        <span>{{ afspraak.knopOnline }}</span>
+        <svg viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="vh">(opent {{ afspraak.platform }} in een nieuw venster)</span>
+      </a>
+      <p class="afspraak__uitleg">{{ afspraak.onlineUitleg }}</p>
+      {{/als}}
+      <div class="afspraak__tel">
+        <p>{{ afspraak.telefoonTekst }}</p>
+        <a class="groottel" href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a>
+      </div>
+    </div>
+
+    <div class="afspraak__formulier">
+      <div class="bevestiging" id="bevestiging" role="status" tabindex="-1" hidden>
+        <svg viewBox="0 0 48 48" width="48" height="48" aria-hidden="true" focusable="false"><path d="M42 23c1 10-7 19-18 19S5 34 6 23 14 5 25 6s16 7 17 17Z" fill="var(--mint)"/><path d="m15 24 6 6 12-13" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p>{{ afspraak.formulier.bevestiging }}</p>
+      </div>
+      <h3 class="kop-m">{{ afspraak.formTitel }}</h3>
+      <p class="klein">{{ afspraak.formIntro }}</p>
+      <form method="post" action="/api/bericht" class="form" data-formulier>
+        <input type="hidden" name="_formulier" value="afspraak">
+        <input name="_honing" tabindex="-1" autocomplete="off" hidden>
+        <div class="veld">
+          <label for="f-naam">{{ afspraak.formulier.naam }}</label>
+          <input id="f-naam" name="naam" type="text" autocomplete="name" required>
+        </div>
+        <div class="veld-rij">
+          <div class="veld">
+            <label for="f-tel">{{ afspraak.formulier.telefoon }}</label>
+            <input id="f-tel" name="telefoon" type="tel" autocomplete="tel" inputmode="tel" required>
+          </div>
+          <div class="veld">
+            <label for="f-mail">{{ afspraak.formulier.email }}</label>
+            <input id="f-mail" name="email" type="email" autocomplete="email">
+          </div>
+        </div>
+        <div class="veld-rij">
+          <div class="veld">
+            <label for="f-beh">{{ afspraak.formulier.behandeling }}</label>
+            <select id="f-beh" name="behandeling" data-behandeling>
+              <option value="">{{ afspraak.formulier.geenVoorkeur }}</option>
+              {{#elk behandelingen}}<option>{{ naam }}</option>{{/elk}}
+            </select>
+          </div>
+          <div class="veld">
+            <label for="f-zorg">{{ afspraak.formulier.zorgverlener }}</label>
+            <select id="f-zorg" name="zorgverlener">
+              <option value="">{{ afspraak.formulier.geenVoorkeur }}</option>
+              {{#elk team}}<option>{{ naam }}</option>{{/elk}}
+            </select>
+          </div>
+        </div>
+        <fieldset class="veld keuzes">
+          <legend>{{ afspraak.formulier.moment }}</legend>
+          <div class="keuzes__rij">
+            {{#elk afspraak.formulier.momenten}}<label class="keus"><input type="checkbox" name="moment_{{ tekst | slug }}" value="{{ tekst }}"><span>{{ tekst }}</span></label>{{/elk}}
+          </div>
+        </fieldset>
+        <fieldset class="veld keuzes">
+          <legend>{{ afspraak.formulier.voorschrift }}</legend>
+          <div class="keuzes__rij">
+            <label class="keus"><input type="radio" name="voorschrift" value="{{ afspraak.formulier.ja }}"><span>{{ afspraak.formulier.ja }}</span></label>
+            <label class="keus"><input type="radio" name="voorschrift" value="{{ afspraak.formulier.nee }}"><span>{{ afspraak.formulier.nee }}</span></label>
+          </div>
+        </fieldset>
+        <div class="veld">
+          <label for="f-bericht">{{ afspraak.formulier.bericht }}</label>
+          <textarea id="f-bericht" name="bericht" rows="3"></textarea>
+        </div>
+        <p class="form__privacy">{{ afspraak.formulier.privacy }}</p>
+        <button class="knop knop--donker knop--vol" type="submit">{{ afspraak.formulier.knop }}</button>
+      </form>
+    </div>
+  </div>
+</section>
