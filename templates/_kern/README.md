@@ -43,7 +43,8 @@ Elke `.html`, `.xml` en `.txt` in `src/` gaat door de engine, met `inhoud.json` 
 | `{{{ arto.kop }}}` | ruwe HTML (alleen voor wat de build zelf maakt) |
 | `{{ tekst \| md }}` | mini-markdown voor velden van het type `rijk` (alinea's, **vet**, *cursief*, links, lijstjes) |
 | `{{ contact.telefoon \| tel }}` | telefoonnummer voor `tel:`-links |
-| Andere filters | `nl2br`, `klein`, `groot`, `url`, `json`, `slug`, `aantal`, `tekst`, `twee` |
+| Andere filters | `datum` (24 september 2026), `kortedatum` (24.09.2026), `nl2br`, `klein`, `groot`, `url`, `json`, `slug`, `aantal`, `tekst`, `twee` |
+| `{{#elk inzichten \| eerste3}}` | alleen de eerste 3 items (ook `eerste6`) |
 | `{{#elk menu}} … {{/elk}}` | herhaal; binnenin `{{ naam }}`, `{{ . }}`, `{{ @nr }}` (1, 2, …), `{{ @index }}`, `{{ @eerste }}`, `{{ @laatste }}`, `{{ @even }}` |
 | `{{#elk menu}} … {{#anders}} niets {{/elk}}` | met tekst als de lijst leeg is |
 | `{{#als foto}} … {{#anders}} … {{/als}}` | voorwaarde; ook `{{#als soort == "vegan"}}` en `!=` |

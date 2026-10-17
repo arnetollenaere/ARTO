@@ -2,7 +2,8 @@
 // Geen afhankelijkheden. Syntax:
 //   {{ pad.naar.veld }}          tekst, ge-escaped
 //   {{{ pad }}}                  ruwe HTML (alleen voor vertrouwde inhoud)
-//   {{ pad | filter }}           filters: tel, nl2br, md, klein, groot, url, json, slug, eerste, aantal, tekst, twee
+//   {{ pad | filter }}           filters: tel, nl2br, md, datum, kortedatum, klein, groot, url, json, slug, eerste, aantal, tekst, twee
+//   {{#elk lijst | eerste3}}     alleen de eerste 3 (of eerste6)
 //   {{#elk lijst}}…{{/elk}}      herhaal; binnenin {{ veld }}, {{ . }}, {{ @nr }}, {{ @index }}, {{ @eerste }}, {{ @laatste }}
 //   {{#als pad}}…{{#anders}}…{{/als}}     ook {{#als pad == "waarde"}} en {{#als pad != "waarde"}}
 //   {{#niet pad}}…{{/niet}}
@@ -25,6 +26,16 @@ export const filters = {
   tekst: (v) => String(v ?? '').replace(/<[^>]*>/g, ''),
   twee: (v) => String(v ?? '').padStart(2, '0'),
   md: (v) => markdown(v),
+  // 2026-09-24 -> 24 september 2026
+  datum: (v) => {
+    const m = String(v ?? '').match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return String(v ?? '');
+    const MAAND = ['januari', 'februari', 'maart', 'april', 'mei', 'juni', 'juli', 'augustus', 'september', 'oktober', 'november', 'december'];
+    return `${Number(m[3])} ${MAAND[Number(m[2]) - 1]} ${m[1]}`;
+  },
+  kortedatum: (v) => String(v ?? '').replace(/^(\d{4})-(\d{2})-(\d{2}).*$/, '$3.$2.$1'),
+  eerste3: (v) => (Array.isArray(v) ? v.slice(0, 3) : v),
+  eerste6: (v) => (Array.isArray(v) ? v.slice(0, 6) : v),
 };
 const RAUW_FILTERS = new Set(['nl2br', 'json', 'md']);
 
@@ -86,7 +97,7 @@ function inTag(voor) {
   const gt = voor.lastIndexOf('>');
   if (lt > gt) return true;
   const laag = voor.toLowerCase();
-  for (const t of ['title', 'script', 'style', 'textarea', 'option']) {
+  for (const t of ['title', 'script', 'style', 'textarea', 'option', 'svg']) {
     if (laag.lastIndexOf('<' + t) > laag.lastIndexOf('</' + t)) return true;
   }
   return false;
@@ -174,7 +185,7 @@ function render(kinderen, scopes, opties, diepte = 0) {
       }
       case 'elk': {
         const [ja, nee] = splits(k);
-        const lijst = evalExpr(k.expr, scopes).w;
+        const lijst = evalExpr(k.expr, scopes).w; // filters als | eerste3 korten de lijst in
         if (!Array.isArray(lijst) || !lijst.length) { uit += render(nee, scopes, opties, diepte); break; }
         const basisPad = volledigPad(k.expr, scopes);
         lijst.forEach((item, i) => {
