@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="preload" href="/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script src="/js/zaal.js" defer></script>
+</head>
+<body class="p-studio">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+  <section class="paginakop paginakop--studio" aria-labelledby="studio-titel">
+    <p class="zaal mono">{{ studio.zaal }}</p>
+    <h1 class="paginakop__titel paginakop__titel--zin" id="studio-titel">{{ studio.kop }}</h1>
+    <p class="paginakop__intro">{{ studio.intro }}</p>
+  </section>
+
+  <figure class="studiobeeld">
+    {{#als studio.foto}}<img src="{{ studio.foto }}" alt="{{ studio.fotoAlt }}" width="2000" height="1333" loading="lazy" decoding="async">{{#anders}}
+    <div class="studiobeeld__comp" aria-hidden="true">
+      <div class="beeld beeld--accent"><svg class="comp" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" focusable="false"><use href="#c-plan"/></svg></div>
+      <div class="beeld beeld--donker"><svg class="comp" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" focusable="false"><use href="#c-kolom"/></svg></div>
+      <div class="beeld beeld--licht"><svg class="comp" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" focusable="false"><use href="#c-trap"/></svg></div>
+    </div>{{/als}}
+    <figcaption class="mono">{{ studio.beeldBijschrift }}</figcaption>
+  </figure>
+
+  <section class="verhaal" aria-label="{{ teksten.navStudio }}">
+    <div class="verhaal__tekst">{{ studio.tekst | md }}</div>
+    <dl class="cijfers cijfers--kolom">{{#elk studio.cijfers}}<div><dt class="mono">{{ label }}</dt><dd>{{ getal }}</dd></div>{{/elk}}</dl>
+  </section>
+
+  <section class="werkwijze" aria-labelledby="ww-kop">
+    <h2 class="sectietitel" id="ww-kop">{{ studio.werkwijzeKop }}</h2>
+    <ol class="stappen">
+      {{#elk studio.werkwijze}}<li class="stap"><span class="stap__nr" aria-hidden="true">{{ @nr | twee }}</span><h3 class="stap__naam">{{ stap }}</h3><p>{{ tekst }}</p></li>{{/elk}}
+    </ol>
+  </section>
+
+  <section class="team" aria-labelledby="team-kop">
+    <h2 class="sectietitel" id="team-kop">{{ studio.teamKop }}</h2>
+    <ul class="team__lijst">
+      {{#elk studio.team}}
+      <li class="persoon">
+        <div class="persoon__beeld{{#als @even}} persoon__beeld--donker{{/als}}{{#als @eerste}} persoon__beeld--accent{{/als}}">{{#als foto}}<img src="{{ foto }}" alt="{{ fotoAlt }}" width="800" height="1000" loading="lazy" decoding="async">{{#anders}}<span class="persoon__letter" aria-hidden="true">{{ naam | eerste }}</span>{{/als}}</div>
+        <p class="mono persoon__nr">{{ @nr | twee }} — {{ rol }}</p>
+        <h3 class="persoon__naam">{{ naam }}</h3>
+        <p class="persoon__bio">{{ bio }}</p>
+      </li>
+      {{/elk}}
+    </ul>
+  </section>
+
+  <section class="erkend" aria-label="{{ erkenningen.kop }}">
+    <div class="erkend__blok">
+      <p class="zaal mono">{{ erkenningen.zaal }}</p>
+      <h2 class="sectietitel">{{ erkenningen.kop }}</h2>
+      <ol class="prijzen">
+        {{#elk erkenningen.lijst}}<li class="prijs"><span class="prijs__jaar mono">{{ jaar }}</span><span class="prijs__titel">{{ titel }}</span><span class="prijs__project">{{ project }}</span><span class="prijs__door mono">{{ instantie }}</span></li>{{/elk}}
+      </ol>
+    </div>
+    <div class="erkend__blok">
+      <p class="zaal mono">{{ klanten.zaal }}</p>
+      <h2 class="sectietitel">{{ klanten.kop }}</h2>
+      <ul class="klanten">{{#elk klanten.lijst}}<li><span>{{ naam }}</span><span class="mono">{{ soort }}</span></li>{{/elk}}</ul>
+    </div>
+  </section>
+
+  {{> aanvraag }}
+</main>
+{{> voet }}
+</body>
+</html>

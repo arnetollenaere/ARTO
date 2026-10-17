@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="preload" href="/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script src="/js/zaal.js" defer></script>
+</head>
+<body class="p-werk">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+  <section class="paginakop" aria-labelledby="werk-titel">
+    <p class="zaal mono">{{ werkpagina.zaal }}</p>
+    <h1 class="paginakop__titel" id="werk-titel">{{ werkpagina.kop }}<sup class="mono">({{ projecten | aantal | twee }})</sup></h1>
+    <p class="paginakop__intro">{{ werkpagina.intro }}</p>
+  </section>
+
+  <section class="index" aria-label="{{ werkpagina.kop }}" id="index">
+    <div class="filter" data-filter data-alles="{{ werkpagina.filterAlles }}" hidden></div>
+    <div class="index__kop mono" aria-hidden="true">
+      <span>{{ werkpagina.lNr }}</span><span>{{ werkpagina.lTitel }}</span><span>{{ werkpagina.lDiscipline }}</span><span>{{ werkpagina.lLocatie }}</span><span>{{ werkpagina.lJaar }}</span>
+    </div>
+    <ol class="index__lijst" data-index>
+      {{#elk projecten}}
+      <li class="index__rij" data-discipline="{{ discipline }}" data-nr="{{ @index }}">
+        <a href="#{{ titel | slug }}" class="index__link">
+          <span class="index__nr mono">{{ @nr | twee }}</span>
+          <span class="index__titel">{{ titel }}</span>
+          <span class="index__disc mono">{{ discipline }}</span>
+          <span class="index__plaats mono">{{ locatie }}</span>
+          <span class="index__jaar mono">{{ jaar }}</span>
+          <span class="index__mini">{{> beeld }}</span>
+        </a>
+      </li>
+      {{/elk}}
+    </ol>
+    <div class="zweef" data-zweef aria-hidden="true">
+      {{#elk projecten}}<div class="zweef__stuk" data-zweef-nr="{{ @index }}">{{> beeld }}<span class="mono">W—{{ @nr | twee }} · {{ jaar }}</span></div>{{/elk}}
+    </div>
+  </section>
+
+  <section class="cases" aria-labelledby="cases-kop">
+    <h2 class="cases__kop mono" id="cases-kop">{{ werkpagina.casesKop }}</h2>
+    {{#elk projecten}}
+    <article class="case case--{{ vlak }}{{#als @even}} case--spiegel{{/als}}" id="{{ titel | slug }}" data-discipline="{{ discipline }}" aria-labelledby="case-{{ @nr }}">
+      <header class="case__kop">
+        <span class="case__nr" aria-hidden="true">{{ @nr | twee }}</span>
+        <p class="mono case__boven">W—{{ @nr | twee }} · {{ discipline }} · {{ jaar }}</p>
+        <h3 class="case__titel" id="case-{{ @nr }}">{{ titel }}</h3>
+        <p class="case__kort">{{ kort }}</p>
+      </header>
+      <div class="case__lijf">
+        <dl class="fiche">
+          <div><dt class="mono">{{ werkpagina.lKlant }}</dt><dd>{{ klant }}</dd></div>
+          <div><dt class="mono">{{ werkpagina.lJaar }}</dt><dd>{{ jaar }}</dd></div>
+          <div><dt class="mono">{{ werkpagina.lDiscipline }}</dt><dd>{{ discipline }}</dd></div>
+          <div><dt class="mono">{{ werkpagina.lLocatie }}</dt><dd>{{ locatie }}</dd></div>
+          {{#als oppervlakte}}<div><dt class="mono">{{ werkpagina.lOppervlakte }}</dt><dd>{{ oppervlakte }}</dd></div>{{/als}}
+          {{#als status}}<div><dt class="mono">{{ werkpagina.lStatus }}</dt><dd>{{ status }}</dd></div>{{/als}}
+          {{#elk feiten}}<div><dt class="mono">{{ label }}</dt><dd>{{ waarde }}</dd></div>{{/elk}}
+        </dl>
+        <figure class="case__beeld">{{> beeld }}<figcaption class="mono">W—{{ @nr | twee }} · {{ titel }} · {{ locatie }}</figcaption></figure>
+        <div class="case__tekst">{{ tekst | md }}</div>
+        {{#als citaat}}<blockquote class="case__citaat"><p>{{ citaat }}</p>{{#als citaatVan}}<footer class="mono">— {{ citaatVan }}</footer>{{/als}}</blockquote>{{/als}}
+        <a class="case__terug mono" href="#index">{{ werkpagina.naarIndex }} ↑</a>
+      </div>
+    </article>
+    {{/elk}}
+  </section>
+</main>
+{{> voet }}
+</body>
+</html>

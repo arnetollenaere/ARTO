@@ -1,0 +1,622 @@
+{
+  "site": {
+    "naam": "Kavel Studio",
+    "slogan": "Architectuur en interieur uit Gent",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "kavelstudio.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "De studio is gesloten van 21 juli tot 4 augustus. Aanvragen beantwoorden we daarna.",
+    "link": ""
+  },
+  "contact": {
+    "adres": "Achterdok 21",
+    "postcode": "9000",
+    "gemeente": "Gent",
+    "land": "BE",
+    "telefoon": "+32 9 296 41 80",
+    "email": "hallo@kavelstudio.be",
+    "whatsapp": "",
+    "btw": "BE0734.512.906",
+    "kaart": "https://maps.google.com/?q=Achterdok+21+9000+Gent"
+  },
+  "openingsuren": [
+    {
+      "dag": "Maandag",
+      "uren": "09:00–18:00"
+    },
+    {
+      "dag": "Dinsdag",
+      "uren": "09:00–18:00"
+    },
+    {
+      "dag": "Woensdag",
+      "uren": "09:00–18:00"
+    },
+    {
+      "dag": "Donderdag",
+      "uren": "09:00–18:00"
+    },
+    {
+      "dag": "Vrijdag",
+      "uren": "09:00–17:00"
+    },
+    {
+      "dag": "Zaterdag",
+      "uren": "Op afspraak"
+    },
+    {
+      "dag": "Zondag",
+      "uren": "Gesloten"
+    }
+  ],
+  "socials": [
+    {
+      "netwerk": "Instagram",
+      "url": "https://www.instagram.com/kavelstudio"
+    },
+    {
+      "netwerk": "LinkedIn",
+      "url": "https://www.linkedin.com/company/kavelstudio"
+    },
+    {
+      "netwerk": "Pinterest",
+      "url": "https://www.pinterest.com/kavelstudio"
+    }
+  ],
+  "seo": {
+    "titel": "Kavel Studio — architectuur en interieur in Gent",
+    "beschrijving": "Kavel Studio ontwerpt woningen, renovaties, winkels en tentoonstellingen in Gent en Oost-Vlaanderen. Bekijk het werk en start een project.",
+    "afbeelding": "",
+    "paginas": [
+      {
+        "pagina": "werk.html",
+        "titel": "Werk — alle projecten",
+        "beschrijving": "Index van alle projecten van Kavel Studio: woningen, renovaties, interieurs, scenografie en meubels, met case study per project."
+      },
+      {
+        "pagina": "studio.html",
+        "titel": "Studio, team en werkwijze",
+        "beschrijving": "Wie Kavel Studio is, hoe we werken, met wie en wat het kost. Architectuur en interieur vanuit een atelier aan het Achterdok in Gent."
+      }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "accent": "#1A2FD6",
+      "achtergrond": "#EFEDE7",
+      "tekst": "#111110",
+      "donker": "#0D0D0C"
+    }
+  },
+  "teksten": {
+    "lokatie": "Gent — 51.06° N, 3.73° O",
+    "navWerk": "Werk",
+    "navStudio": "Studio",
+    "navContact": "Start een project",
+    "menuKnop": "Menu",
+    "sluitKnop": "Sluiten",
+    "skip": "Naar de inhoud",
+    "voetZin": "Een atelier voor architectuur en interieur aan het water in Gent. Bezoek op afspraak, koffie staat klaar.",
+    "urenKop": "Atelier",
+    "volgKop": "Volg",
+    "terug": "Naar boven",
+    "foutKop": "Deze zaal is leeg.",
+    "foutTekst": "De pagina die je zoekt bestaat niet (meer), of het werk is verhuisd naar een andere zaal.",
+    "foutKnop": "Terug naar de ingang",
+    "foutZaal": "Zaal 404 — Niet gevonden"
+  },
+  "hero": {
+    "zaal": "Zaal 01 — Ingang",
+    "titel": "Ruimte\nom in te\nwonen.",
+    "intro": "Kavel is een studio voor architectuur en interieur in Gent. We ontwerpen woningen, renovaties, winkels en tentoonstellingen — met weinig materialen, veel licht en een plan dat klopt tot in de plint.",
+    "knop": "Bekijk het werk",
+    "knopLink": "werk.html",
+    "bijschrift": "W—01 · Huis Ter Lucht, doorsnede · 2024",
+    "compositie": "boog",
+    "vlak": "accent",
+    "foto": "",
+    "fotoAlt": ""
+  },
+  "galerij": {
+    "zaal": "Zaal 02 — Geselecteerd werk",
+    "kop": "Zes werken, één lijn.",
+    "hint": "Scroll →",
+    "slot": "Bekijk alle werk"
+  },
+  "projecten": [
+    {
+      "titel": "Huis Ter Lucht",
+      "uitgelicht": true,
+      "klant": "Familie Van Damme-Claeys",
+      "jaar": "2024",
+      "discipline": "Architectuur",
+      "locatie": "Sint-Martens-Latem",
+      "oppervlakte": "240 m²",
+      "status": "Opgeleverd",
+      "kort": "Een woning onder één lange boog van kalkzandsteen, open naar de Leiemeersen.",
+      "tekst": "De opdracht was eenvoudig: een huis voor vier, met plaats om te werken en uitzicht op de meersen. De kavel was dat niet — smal, diep en met een strenge bouwlijn.\n\nWe legden het hele programma onder één doorlopende boog. Die boog draagt het dak, vormt de leefruimte en kadert aan de tuinzijde het landschap als een schilderij van twaalf meter breed.\n\nBinnen zijn er drie materialen: kalkzandsteen, eik en gepolierde beton. Alle techniek zit in één dikke wand die de slaapvertrekken van de leefruimte scheidt.",
+      "citaat": "We wilden geen groot huis, wel een huis met één grote kamer. Dat hebben we gekregen.",
+      "citaatVan": "Els Van Damme, bewoner",
+      "compositie": "boog",
+      "vlak": "accent",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Team",
+          "waarde": "Lotte Vanhaecke, Nour El Amrani"
+        },
+        {
+          "label": "Aannemer",
+          "waarde": "Bouwwerken Verstraete"
+        },
+        {
+          "label": "Stabiliteit",
+          "waarde": "Studiebureau Maes & De Wolf"
+        }
+      ]
+    },
+    {
+      "titel": "Bakkerij Mertens",
+      "uitgelicht": true,
+      "klant": "Bakkerij Mertens bv",
+      "jaar": "2023",
+      "discipline": "Interieur",
+      "locatie": "Sint-Amandsberg",
+      "oppervlakte": "85 m²",
+      "status": "Opgeleverd",
+      "kort": "Een buurtbakkerij als etalage van het ambacht: de oven staat vooraan, het brood in kolommen.",
+      "tekst": "Bakkerij Mertens bakt al drie generaties in dezelfde straat. Bij de overname wilde Jonas Mertens het bakken opnieuw zichtbaar maken.\n\nWe draaiden de winkel om: het atelier schoof naar voren, achter een glazen wand, de toonbank werd een lange lage plaat in terrazzo. Het brood staat in zeven eiken kolommen die tegelijk rek, wand en lichtbron zijn.\n\nDe kleuren komen uit de bakkerij zelf: meel, korst en het blauw van de oude tegels die we achter de oven terugvonden.",
+      "citaat": "Klanten blijven nu staan kijken hoe we deeg vlechten. Dat was precies de bedoeling.",
+      "citaatVan": "Jonas Mertens",
+      "compositie": "kolom",
+      "vlak": "licht",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Team",
+          "waarde": "Bram De Coninck, Wout Pieters"
+        },
+        {
+          "label": "Schrijnwerk",
+          "waarde": "Atelier Hout & Haak"
+        }
+      ]
+    },
+    {
+      "titel": "Pakhuis Achterdok",
+      "uitgelicht": true,
+      "klant": "Achterdok Vastgoed nv",
+      "jaar": "2025",
+      "discipline": "Renovatie",
+      "locatie": "Gent",
+      "oppervlakte": "1.120 m²",
+      "status": "In uitvoering",
+      "kort": "Een graanpakhuis uit 1898 wordt negen woningen en een gedeelde dakkamer aan het dok.",
+      "tekst": "Het pakhuis staat vijftig meter van onze studio. We zagen het jarenlang leegstaan, tot de eigenaar ons vroeg wat er mogelijk was.\n\nDe gietijzeren kolommen en de balklagen blijven zichtbaar. In het hart snijden we een vide van zes verdiepingen hoog, waarlangs de trappen en het daglicht naar beneden komen.\n\nBovenaan komt een gedeelde dakkamer met zicht over het dok, voor alle bewoners. Oplevering voorzien in het voorjaar van 2026.",
+      "citaat": "",
+      "citaatVan": "",
+      "compositie": "doorsnede",
+      "vlak": "donker",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Team",
+          "waarde": "Lotte Vanhaecke, Bram De Coninck, Nour El Amrani"
+        },
+        {
+          "label": "Erfgoed",
+          "waarde": "In overleg met Onroerend Erfgoed"
+        }
+      ]
+    },
+    {
+      "titel": "Tuinpaviljoen Oostakker",
+      "uitgelicht": true,
+      "klant": "Particulier",
+      "jaar": "2022",
+      "discipline": "Architectuur",
+      "locatie": "Oostakker",
+      "oppervlakte": "36 m²",
+      "status": "Opgeleverd",
+      "kort": "Een schrijfkamer achteraan de tuin: één dak, vier kolommen en een horizon van glas.",
+      "tekst": "Een schrijver vroeg ons om een kamer zonder afleiding, maar met de tuin erbij. Het werd een paviljoen van 36 m² met een dak dat net boven de hagen zweeft.\n\nDe ruiten lopen van vloer tot plafond en zijn op ooghoogte onderbroken door één doorlopende eiken plank: bureau, vensterbank en boekenrek tegelijk.",
+      "citaat": "Ik schrijf er sneller dan ooit. Het enige wat ik zie, is de hemel.",
+      "citaatVan": "Opdrachtgever",
+      "compositie": "horizon",
+      "vlak": "licht",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Team",
+          "waarde": "Lotte Vanhaecke"
+        },
+        {
+          "label": "Constructie",
+          "waarde": "Houtskelet, cederbekleding"
+        }
+      ]
+    },
+    {
+      "titel": "Woning Coupure",
+      "uitgelicht": false,
+      "klant": "Familie Desmet",
+      "jaar": "2021",
+      "discipline": "Renovatie",
+      "locatie": "Gent",
+      "oppervlakte": "190 m²",
+      "status": "Opgeleverd",
+      "kort": "Een smal herenhuis aan de Coupure, verticaal geopend met één trap als ruggengraat.",
+      "tekst": "Vier verdiepingen, vijf meter breed, en elke kamer even donker. We haalden de oude trap weg en zetten een nieuwe, open stalen trap tegen de scheimuur, onder een daklicht over de volle lengte.\n\nZo valt het licht tot in de keuken op het gelijkvloers. De trap werd de plek waar het gezin elkaar tegenkomt.",
+      "citaat": "",
+      "citaatVan": "",
+      "compositie": "trap",
+      "vlak": "licht",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Team",
+          "waarde": "Bram De Coninck"
+        },
+        {
+          "label": "Staalwerk",
+          "waarde": "Smederij Van Hecke"
+        }
+      ]
+    },
+    {
+      "titel": "Tentoonstelling ‘Grond’",
+      "uitgelicht": true,
+      "klant": "Kunsthal Rabot",
+      "jaar": "2023",
+      "discipline": "Scenografie",
+      "locatie": "Gent",
+      "oppervlakte": "620 m²",
+      "status": "Afgelopen",
+      "kort": "Scenografie voor een tentoonstelling over aarde als bouwmateriaal: zeven kamers, één dwarse as.",
+      "tekst": "Voor ‘Grond’ bouwden we zeven kamers van gestampte leem, elk een tint donkerder dan de vorige. Een dwarse as van spiegelend staal laat je in één blik door alle zalen kijken.\n\nNa de tentoonstelling werd de leem teruggegeven aan de groeve in Zelzate. Niets ging naar het containerpark.",
+      "citaat": "",
+      "citaatVan": "",
+      "compositie": "kader",
+      "vlak": "donker",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Curator",
+          "waarde": "Hanne Wouters"
+        },
+        {
+          "label": "Grafisch ontwerp",
+          "waarde": "Studio Naad"
+        }
+      ]
+    },
+    {
+      "titel": "Notariaat Verhulst",
+      "uitgelicht": true,
+      "klant": "Notariaat Verhulst & Partners",
+      "jaar": "2022",
+      "discipline": "Interieur",
+      "locatie": "Deinze",
+      "oppervlakte": "410 m²",
+      "status": "Opgeleverd",
+      "kort": "Een kantoor rond één blauwe kamer: de plek waar handtekeningen gezet worden.",
+      "tekst": "Notarissen ontvangen mensen op belangrijke momenten: een eerste huis, een erfenis, een vennootschap. We wilden dat je dat voelt zodra je binnenkomt.\n\nAlle ruimtes zijn rustig, in eik en grijs linnen, behalve één: de aktekamer, volledig in het blauw van de huisstijl. Het plan is opgebouwd rond die ene kamer.",
+      "citaat": "",
+      "citaatVan": "",
+      "compositie": "plan",
+      "vlak": "accent",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Team",
+          "waarde": "Bram De Coninck, Wout Pieters"
+        }
+      ]
+    },
+    {
+      "titel": "Meubellijn Dwars",
+      "uitgelicht": false,
+      "klant": "Eigen werk",
+      "jaar": "2024",
+      "discipline": "Meubel",
+      "locatie": "Gent",
+      "oppervlakte": "5 stukken",
+      "status": "In productie",
+      "kort": "Vijf meubels uit gevouwen staalplaat: een kruk, een bank, een rek, een tafel en een lamp.",
+      "tekst": "Dwars begon met restplaten uit een van onze werven. Elk stuk is één plaat, gelaserd en twee keer geplooid, zonder lassen of schroeven.\n\nDe lijn wordt in kleine reeksen gemaakt bij een plooierij in Lokeren en is te koop via de studio.",
+      "citaat": "",
+      "citaatVan": "",
+      "compositie": "vouw",
+      "vlak": "licht",
+      "foto": "",
+      "fotoAlt": "",
+      "feiten": [
+        {
+          "label": "Ontwerp",
+          "waarde": "Wout Pieters"
+        },
+        {
+          "label": "Prijs",
+          "waarde": "vanaf € 340"
+        }
+      ]
+    }
+  ],
+  "werkpagina": {
+    "zaal": "Zaal 03 — Index",
+    "kop": "Werk",
+    "intro": "Alle projecten sinds 2011, van een kruk van één plaat tot een pakhuis van zes verdiepingen. Beweeg over de lijst om het werk te zien, of klik door naar het verhaal.",
+    "filterAlles": "Alles",
+    "casesKop": "Case studies",
+    "lKlant": "Klant",
+    "lJaar": "Jaar",
+    "lDiscipline": "Discipline",
+    "lLocatie": "Locatie",
+    "lOppervlakte": "Omvang",
+    "lStatus": "Status",
+    "naarIndex": "Terug naar de index",
+    "lNr": "Nr",
+    "lTitel": "Titel"
+  },
+  "diensten": {
+    "zaal": "Zaal 04 — Disciplines",
+    "kop": "Wat we doen",
+    "intro": "Elk project begint met een gesprek in de studio en een eerste schets op tafel. Daarna kies je hoe ver we samen gaan: van een studie tot de volledige werfopvolging.",
+    "voetnoot": "Indicatieve tarieven, exclusief btw. Na het eerste gesprek krijg je een offerte op maat.",
+    "lijst": [
+      {
+        "naam": "Architectuur",
+        "tekst": "Nieuwbouw van woningen en kleine publieke gebouwen, van schetsontwerp en bouwaanvraag tot de oplevering.",
+        "prijs": "7–9 % van de bouwsom",
+        "duur": "12–24 maanden"
+      },
+      {
+        "naam": "Renovatie",
+        "tekst": "Verbouwen en herbestemmen van bestaande huizen, pakhuizen en erfgoed, met aandacht voor wat er al is.",
+        "prijs": "8–10 % van de bouwsom",
+        "duur": "9–18 maanden"
+      },
+      {
+        "naam": "Interieur",
+        "tekst": "Interieurs voor woningen, winkels, horeca en kantoren: plan, materialen, licht, maatwerk en meubilair.",
+        "prijs": "vanaf € 2.400",
+        "duur": "6–12 weken ontwerp"
+      },
+      {
+        "naam": "Scenografie",
+        "tekst": "Tentoonstellingen, standen en tijdelijke ruimtes die je niet vergeet, gebouwd om opnieuw te gebruiken.",
+        "prijs": "op offerte",
+        "duur": "3–6 maanden"
+      },
+      {
+        "naam": "Advies",
+        "tekst": "Een halve dag in je huis of op je kavel: wat kan er, wat kost het ongeveer, en waar begin je.",
+        "prijs": "€ 380",
+        "duur": "½ dag + verslag"
+      }
+    ]
+  },
+  "studio": {
+    "zaal": "Zaal 05 — Studio",
+    "statement": "Vijf mensen, één lange tafel en een blauwe muur aan het Achterdok. We tekenen alles zelf, tot de laatste plint.",
+    "knop": "Over de studio",
+    "kop": "Een studio van vijf mensen en één blauwe muur.",
+    "intro": "Kavel werd in 2011 opgericht door Lotte Vanhaecke en Bram De Coninck, in een voormalige zeilmakerij aan het Achterdok in Gent. We werken klein en met de hand, voor mensen die iets willen dat blijft.",
+    "tekst": "We geloven niet in een herkenbare stijl. Wel in een herkenbare manier van werken: **eerst kijken**, dan tekenen, en pas dan kiezen. Elk project begint met een maquette op onze lange tafel, die iedereen in de studio kan aanraken.\n\nWe gebruiken zo weinig mogelijk materialen, liefst uit de streek, en ontwerpen gebouwen die je later makkelijk kunt aanpassen. Een goed plan overleeft drie generaties bewoners.\n\nDe studio is ook een werkplaats: we bouwen prototypes van meubels en details zelf, en sinds 2024 ontwerpen we onze eigen meubellijn.",
+    "beeldBijschrift": "De lange tafel, Achterdok 21",
+    "foto": "",
+    "fotoAlt": "",
+    "cijfers": [
+      {
+        "getal": "2011",
+        "label": "opgericht in Gent"
+      },
+      {
+        "getal": "86",
+        "label": "projecten opgeleverd"
+      },
+      {
+        "getal": "5",
+        "label": "mensen in de studio"
+      },
+      {
+        "getal": "4",
+        "label": "prijzen en vermeldingen"
+      }
+    ],
+    "werkwijzeKop": "Hoe een project loopt",
+    "werkwijze": [
+      {
+        "stap": "Kennismaking",
+        "tekst": "Een gesprek in de studio of ter plaatse. We luisteren, stellen veel vragen en kijken naar je budget. Vrijblijvend."
+      },
+      {
+        "stap": "Studie",
+        "tekst": "Schetsen, maquettes en een eerste raming. Na deze fase weet je wat mogelijk is en wat het ongeveer kost."
+      },
+      {
+        "stap": "Ontwerp",
+        "tekst": "Het definitieve ontwerp met plannen, materialen en details, en waar nodig de bouwaanvraag."
+      },
+      {
+        "stap": "Uitvoering",
+        "tekst": "We vragen offertes op, vergelijken ze met je, en volgen de werf wekelijks op tot de oplevering."
+      }
+    ],
+    "teamKop": "Team",
+    "team": [
+      {
+        "naam": "Lotte Vanhaecke",
+        "rol": "Architect, oprichter",
+        "bio": "Studeerde in Gent en Porto. Tekent het liefst doorsneden en trekt de architectuurprojecten.",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Bram De Coninck",
+        "rol": "Interieurarchitect, partner",
+        "bio": "Werkte tien jaar in winkelinrichting voor hij Kavel mee oprichtte. Verantwoordelijk voor interieur en renovatie.",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Nour El Amrani",
+        "rol": "Projectarchitect",
+        "bio": "Volgt de grote werven op en kent elke aannemer in Oost-Vlaanderen bij naam.",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Wout Pieters",
+        "rol": "Ontwerper detail en meubel",
+        "bio": "Maakt de prototypes in de werkplaats en ontwierp de meubellijn Dwars.",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Fien Goossens",
+        "rol": "Studiomanager",
+        "bio": "Houdt de planning, de offertes en de koffie op peil. Je eerste aanspreekpunt.",
+        "foto": "",
+        "fotoAlt": ""
+      }
+    ]
+  },
+  "klanten": {
+    "zaal": "Zaal 06 — Opdrachtgevers",
+    "kop": "Met wie we werkten",
+    "lijst": [
+      {
+        "naam": "Kunsthal Rabot",
+        "soort": "Cultuur"
+      },
+      {
+        "naam": "Notariaat Verhulst & Partners",
+        "soort": "Kantoor"
+      },
+      {
+        "naam": "Achterdok Vastgoed",
+        "soort": "Ontwikkelaar"
+      },
+      {
+        "naam": "Bakkerij Mertens",
+        "soort": "Winkel"
+      },
+      {
+        "naam": "Koffiebranderij Oostkust",
+        "soort": "Horeca"
+      },
+      {
+        "naam": "Hotel Ajuin",
+        "soort": "Horeca"
+      },
+      {
+        "naam": "Basisschool De Wilg",
+        "soort": "Onderwijs"
+      },
+      {
+        "naam": "Studio Naad",
+        "soort": "Ontwerp"
+      },
+      {
+        "naam": "Woonzorg Leiehof",
+        "soort": "Zorg"
+      },
+      {
+        "naam": "Veertig particulieren",
+        "soort": "Wonen"
+      }
+    ]
+  },
+  "erkenningen": {
+    "zaal": "Zaal 07 — Erkenningen",
+    "kop": "Prijzen en vermeldingen",
+    "lijst": [
+      {
+        "jaar": "2025",
+        "titel": "Selectie jaarboek ‘Gebouwd in Gent’",
+        "project": "Huis Ter Lucht",
+        "instantie": "Architectuurforum Gent"
+      },
+      {
+        "jaar": "2024",
+        "titel": "Leieprijs voor Architectuur — laureaat",
+        "project": "Huis Ter Lucht",
+        "instantie": "Provinciale jury Oost-Vlaanderen"
+      },
+      {
+        "jaar": "2023",
+        "titel": "Prijs Jonge Interieurarchitectuur — vermelding",
+        "project": "Bakkerij Mertens",
+        "instantie": "Vakvereniging Interieur Vlaanderen"
+      },
+      {
+        "jaar": "2022",
+        "titel": "Renovatieprijs — publieksprijs",
+        "project": "Woning Coupure",
+        "instantie": "Erfgoedplatform Oost"
+      }
+    ]
+  },
+  "aanvraag": {
+    "zaal": "Zaal 08 — Uitgang",
+    "kop": "Start een project",
+    "intro": "Vertel ons kort wat je van plan bent. We antwoorden binnen twee werkdagen en nodigen je uit voor een eerste gesprek in de studio.",
+    "soortLabel": "Wat wil je maken?",
+    "soorten": [
+      {
+        "naam": "Nieuwbouw"
+      },
+      {
+        "naam": "Renovatie"
+      },
+      {
+        "naam": "Interieur"
+      },
+      {
+        "naam": "Scenografie"
+      },
+      {
+        "naam": "Iets anders"
+      }
+    ],
+    "budgetLabel": "Budget (ongeveer)",
+    "budgetten": [
+      {
+        "naam": "< € 50.000"
+      },
+      {
+        "naam": "€ 50.000 – 250.000"
+      },
+      {
+        "naam": "€ 250.000 – 750.000"
+      },
+      {
+        "naam": "> € 750.000"
+      },
+      {
+        "naam": "Weet ik nog niet"
+      }
+    ],
+    "lNaam": "Naam",
+    "lEmail": "E-mail",
+    "lTelefoon": "Telefoon",
+    "lPlaats": "Waar ligt het project?",
+    "lBericht": "Vertel ons over je project",
+    "knop": "Verstuur aanvraag",
+    "privacy": "We gebruiken je gegevens alleen om op je aanvraag te antwoorden.",
+    "bevestiging": "Bedankt, je aanvraag is bij ons. Fien neemt binnen twee werkdagen contact op.",
+    "direct": "Liever rechtstreeks?"
+  }
+}

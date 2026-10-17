@@ -1,0 +1,35 @@
+<footer class="voet">
+  <div class="voet__raster">
+    <div class="voet__kol voet__kol--breed">
+      <p class="voet__zin">{{ teksten.voetZin }}</p>
+    </div>
+    <div class="voet__kol">
+      <h2 class="mono voet__kop">{{ site.naam }}</h2>
+      <address>
+        {{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}<br>
+        <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br>
+        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+        {{#als contact.kaart}}<br><a href="{{ contact.kaart }}" rel="noopener">Route ↗</a>{{/als}}
+      </address>
+    </div>
+    <div class="voet__kol">
+      <h2 class="mono voet__kop">{{ teksten.urenKop }}</h2>
+      <dl class="uren">{{#elk openingsuren}}<div><dt>{{ dag }}</dt><dd>{{ uren }}</dd></div>{{/elk}}</dl>
+    </div>
+    <div class="voet__kol">
+      <h2 class="mono voet__kop">{{ teksten.volgKop }}</h2>
+      <ul class="voet__lijst">{{#elk socials}}{{#als url}}<li><a href="{{ url }}" rel="noopener">{{ netwerk }} ↗</a></li>{{/als}}{{/elk}}</ul>
+      <ul class="voet__lijst">
+        <li><a href="/werk">{{ teksten.navWerk }}</a></li>
+        <li><a href="/studio">{{ teksten.navStudio }}</a></li>
+        <li><a href="#top">{{ teksten.terug }} ↑</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="voet__merk" aria-hidden="true"><span data-pas>{{ site.naam }}</span></p>
+  <div class="voet__onder mono">
+    <span>© {{ jaar }} {{ site.naam }}</span>
+    {{#als contact.btw}}<span>Btw {{ contact.btw }}</span>{{/als}}
+    <span class="voet__arto">Website door <a href="https://arto.be" rel="noopener">ARTO</a></span>
+  </div>
+</footer>
