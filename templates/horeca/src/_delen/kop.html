@@ -1,0 +1,15 @@
+<a class="skip" href="#inhoud">{{ navigatie.skiplink }}</a>
+<header class="kop" data-kop>
+  <a class="kop__naam" href="/" aria-label="{{ site.naam }}, naar de startpagina">{{#als site.logo}}<img src="{{ site.logo }}" alt="{{ site.naam }}" width="140" height="40">{{#anders}}{{ navigatie.home }}{{/als}}</a>
+  <div hidden>{{> uren }}</div>
+  <p class="kop__status nu" data-nu data-status="onbekend"><span class="nu__stip" aria-hidden="true"></span><span data-nu-tekst>{{ uren.kop }}</span></p>
+  <button class="kop__knop" type="button" aria-expanded="false" aria-controls="hoofdmenu" data-menuknop><span class="kop__knop-lijn" aria-hidden="true"></span><span class="sr">Menu</span></button>
+  <nav class="kop__nav" id="hoofdmenu" aria-label="Hoofdmenu">
+    <ul>
+      <li><a href="/menu"{{#als pagina.is.menu}} aria-current="page"{{/als}}><span class="kop__nr" aria-hidden="true">01</span>{{ navigatie.kaart }}</a></li>
+      <li><a href="/#verhaal"><span class="kop__nr" aria-hidden="true">02</span>{{ navigatie.verhaal }}</a></li>
+      <li><a href="/#groepen"><span class="kop__nr" aria-hidden="true">03</span>{{ navigatie.groepen }}</a></li>
+      <li class="kop__reserveer"><a href="/reserveren"{{#als pagina.is.reserveren}} aria-current="page"{{/als}}>{{ navigatie.reserveren }}<svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></li>
+    </ul>
+  </nav>
+</header>

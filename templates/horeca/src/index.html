@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-start">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <section class="hero" aria-labelledby="hero-titel">
+    <p class="hero__boven label">{{ hero.bovenregel }}</p>
+    <h1 class="hero__titel" id="hero-titel">
+      <span class="hero__r1">{{ hero.titelRegel1 }}</span>
+      <span class="hero__r2">{{ hero.titelRegel2 }}</span>
+    </h1>
+    <div class="hero__beeld">
+      {{#als hero.foto}}<img class="hero__foto" src="{{ hero.foto }}" alt="{{ hero.fotoAlt }}" width="900" height="1200" fetchpriority="high">{{#anders}}{{> bord }}{{/als}}
+    </div>
+    <div class="hero__onder">
+      <p class="hero__intro">{{ hero.intro }}</p>
+      <p class="hero__knoppen">
+        <a class="knop knop--vol" href="/reserveren">{{ hero.knopReserveren }}</a>
+        <a class="knop knop--lijn" href="/menu">{{ hero.knopMenu }}</a>
+      </p>
+    </div>
+    <p class="hero__notitie label"><svg class="hero__ster" viewBox="0 0 20 20" width="14" height="14" aria-hidden="true"><path d="M10 1v18M1 10h18M3.6 3.6l12.8 12.8M16.4 3.6 3.6 16.4" stroke="currentColor" stroke-width="2"/></svg>{{ hero.notitie }}</p>
+  </section>
+
+  {{#als vanavond.aan}}
+  <section class="band" aria-label="{{ vanavond.label }}">
+    <p class="band__label">{{ vanavond.label }}</p>
+    <div class="band__venster">
+      <ul class="band__spoor">
+        {{#elk vanavond.items}}<li>{{ tekst }}</li>{{/elk}}
+      </ul>
+      <ul class="band__spoor" aria-hidden="true">
+        {{#elk vanavond.items}}<li>{{ tekst }}</li>{{/elk}}
+      </ul>
+    </div>
+  </section>
+  {{/als}}
+
+  <section class="manifest" aria-labelledby="manifest-label">
+    <p class="manifest__label label" id="manifest-label"><span class="label__nr">(01)</span> {{ manifest.label }}</p>
+    <div class="manifest__tekst onthul">{{ manifest.tekst | md }}</div>
+    <ul class="feiten">
+      {{#elk manifest.feiten}}<li class="feit"><span class="feit__getal">{{ getal }}</span><span class="feit__label">{{ label }}</span></li>{{/elk}}
+    </ul>
+  </section>
+
+  <section class="signatuur" aria-labelledby="signatuur-kop">
+    <div class="signatuur__kop">
+      <p class="label"><span class="label__nr">(02)</span> {{ signatuur.label }}</p>
+      <h2 id="signatuur-kop" class="kop2">{{ signatuur.kop }}</h2>
+      <p class="signatuur__intro">{{ signatuur.intro }}</p>
+    </div>
+    <ol class="signatuur__lijst">
+      {{#elk signatuur.gerechten}}
+      <li class="sig" style="--i:{{ @index }}">
+        <span class="sig__nr">{{ @nr | twee }}</span>
+        <div class="sig__tekst">
+          <h3 class="sig__naam">{{ naam }}</h3>
+          <p class="sig__besch">{{ beschrijving }}</p>
+        </div>
+        <div class="sig__beeld">
+          {{#als foto}}<img src="{{ foto }}" alt="{{ fotoAlt }}" width="400" height="400" loading="lazy">{{#anders}}<span class="sig__bord" aria-hidden="true"></span>{{/als}}
+        </div>
+        <p class="sig__zij">{{#als notitie}}<span class="tag tag--amber">{{ notitie }}</span>{{/als}}<span class="sig__prijs">€&#8239;{{ prijs }}</span></p>
+      </li>
+      {{/elk}}
+    </ol>
+    <p class="signatuur__meer"><a class="knop knop--lijn" href="/menu">{{ signatuur.knop }}</a></p>
+  </section>
+
+  <section class="verhaal" id="verhaal" aria-labelledby="verhaal-kop">
+    <div class="verhaal__beeld">
+      {{#als verhaal.foto}}<img class="verhaal__foto" src="{{ verhaal.foto }}" alt="{{ verhaal.fotoAlt }}" width="900" height="1200" loading="lazy">{{#anders}}
+      <svg class="stempel" viewBox="0 0 300 300" aria-hidden="true" focusable="false">
+        <defs><path id="stempel-cirkel" d="M150 150m-118 0a118 118 0 1 1 236 0a118 118 0 1 1-236 0"/></defs>
+        <circle cx="150" cy="150" r="146" class="stempel__rand"/>
+        <circle cx="150" cy="150" r="92" class="stempel__binnen"/>
+        <g class="stempel__draai"><text class="stempel__tekst"><textPath href="#stempel-cirkel" textLength="735">{{ verhaal.chefNaam | tekst }} · {{ verhaal.chefRol | tekst }} · {{ site.naam | tekst }} · </textPath></text></g>
+        <text x="150" y="150" class="stempel__mono" text-anchor="middle" dominant-baseline="central">{{ verhaal.chefNaam | eerste }}</text>
+      </svg>{{/als}}
+    </div>
+    <div class="verhaal__tekst">
+      <p class="label"><span class="label__nr">(03)</span> {{ verhaal.label }}</p>
+      <h2 id="verhaal-kop" class="kop2">{{ verhaal.kop }}</h2>
+      <div class="lopend">{{ verhaal.tekst | md }}</div>
+      <figure class="citaat">
+        <blockquote><p>{{ verhaal.citaat }}</p></blockquote>
+        <figcaption><span>{{ verhaal.chefNaam }}</span> {{ verhaal.chefRol }}</figcaption>
+      </figure>
+      {{#als verhaal.tweedeNaam}}<p class="verhaal__duo label">+ {{ verhaal.tweedeNaam }}, {{ verhaal.tweedeRol }}</p>{{/als}}
+    </div>
+  </section>
+
+  <section class="pers" aria-labelledby="pers-label">
+    <p class="label" id="pers-label"><span class="label__nr">(04)</span> {{ pers.label }}</p>
+    <ul class="pers__lijst">
+      {{#elk pers.citaten}}
+      <li class="pers__item">
+        <figure>
+          <blockquote><p>{{ citaat }}</p></blockquote>
+          <figcaption><strong>{{ bron }}</strong> <span>{{ detail }}</span></figcaption>
+        </figure>
+      </li>
+      {{/elk}}
+    </ul>
+  </section>
+
+  <section class="groepen" id="groepen" aria-labelledby="groepen-kop">
+    <div class="groepen__kop">
+      <p class="label"><span class="label__nr">(05)</span> {{ groepen.label }}</p>
+      <h2 id="groepen-kop" class="kop2">{{ groepen.kop }}</h2>
+      <p>{{ groepen.tekst }}</p>
+      <p><a class="knop knop--vol" href="mailto:{{ contact.email }}?subject={{ groepen.label | url }}">{{ groepen.knop }}</a></p>
+    </div>
+    <ol class="groepen__lijst">
+      {{#elk groepen.opties}}
+      <li class="optie">
+        <span class="optie__nr">{{ @nr | twee }}</span>
+        <h3 class="optie__titel">{{ titel }}</h3>
+        <span class="optie__detail">{{ detail }}</span>
+        <p class="optie__tekst">{{ tekst }}</p>
+      </li>
+      {{/elk}}
+    </ol>
+  </section>
+
+  <section class="boeken" id="reserveren" aria-labelledby="boeken-kop">
+    <div class="boeken__tekst">
+      <p class="label"><span class="label__nr">(06)</span> {{ reservatie.label }}</p>
+      <h2 id="boeken-kop" class="kop2">{{ reservatie.kop }}</h2>
+      <p>{{ reservatie.intro }}</p>
+      <p class="boeken__tel">{{ reservatie.ofBel }} <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></p>
+    </div>
+    {{> ticket }}
+  </section>
+
+  <section class="ligging" aria-labelledby="ligging-kop">
+    <div class="ligging__adres">
+      <p class="label"><span class="label__nr">(07)</span> {{ locatie.label }}</p>
+      <h2 id="ligging-kop" class="kop2">{{ locatie.kop }}</h2>
+      <p class="ligging__straat">{{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}</p>
+      <p>{{ locatie.tekst }}</p>
+      {{#als contact.kaart}}<p><a class="knop knop--lijn" href="{{ contact.kaart }}" rel="noopener">{{ locatie.knopKaart }}</a></p>{{/als}}
+    </div>
+    <div class="ligging__uren">
+      <h3 class="label">{{ uren.kop }}</h3>
+      <p class="nu nu--groot" data-nu data-status="onbekend"><span class="nu__stip" aria-hidden="true"></span><span data-nu-tekst>{{ uren.kop }}</span></p>
+      {{> uren }}
+    </div>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

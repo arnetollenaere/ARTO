@@ -1,0 +1,63 @@
+<div class="ticket" data-ticket>
+  <div class="ticket__papier">
+    <div class="ticket__boven">
+      <span>{{ site.naam }}</span>
+      <span>{{ reservatie.ticketNummerLabel }} Nº <span data-bonnr>0001</span></span>
+    </div>
+    <p class="ticket__titel" aria-hidden="true">{{ reservatie.ticketTitel }} <output class="ticket__aantal" data-aantal-toon>2</output></p>
+    <div class="ticket__bevestiging" data-bevestiging hidden role="status" tabindex="-1">
+      <p class="ticket__stempel">{{ reservatie.bevestigingKop }}</p>
+      <p>{{ reservatie.bevestiging }}</p>
+    </div>
+    <form class="ticket__form" method="post" action="/api/bericht" data-ticket-form>
+      <input type="hidden" name="_formulier" value="reservatie">
+      <input name="_honing" tabindex="-1" autocomplete="off" hidden>
+      <div class="ticket__rij ticket__rij--drie">
+        <div class="veld">
+          <label for="r-datum">{{ reservatie.labelDatum }}</label>
+          <input id="r-datum" name="datum" type="date" required data-datum>
+        </div>
+        <div class="veld">
+          <label for="r-uur">{{ reservatie.labelUur }}</label>
+          <select id="r-uur" name="uur" required>
+            {{#elk reservatie.tijdsloten}}<option>{{ uur }}</option>{{/elk}}
+          </select>
+        </div>
+        <div class="veld veld--aantal">
+          <label for="r-personen">{{ reservatie.labelPersonen }}</label>
+          <div class="stapper">
+            <button type="button" data-stap="-1" aria-label="Eén persoon minder">−</button>
+            <input id="r-personen" name="personen" type="number" inputmode="numeric" min="1" max="{{ reservatie.maxPersonen }}" value="2" required data-aantal>
+            <button type="button" data-stap="1" aria-label="Eén persoon meer">+</button>
+          </div>
+        </div>
+      </div>
+      <p class="ticket__groep">{{ reservatie.groepTekst }}</p>
+      <div class="ticket__perforatie" aria-hidden="true"></div>
+      <div class="ticket__rij">
+        <div class="veld veld--breed">
+          <label for="r-naam">{{ reservatie.labelNaam }}</label>
+          <input id="r-naam" name="naam" autocomplete="name" required>
+        </div>
+        <div class="veld">
+          <label for="r-email">{{ reservatie.labelEmail }}</label>
+          <input id="r-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="veld">
+          <label for="r-tel">{{ reservatie.labelTelefoon }}</label>
+          <input id="r-tel" name="telefoon" type="tel" autocomplete="tel">
+        </div>
+        <div class="veld veld--breed">
+          <label for="r-opm">{{ reservatie.labelOpmerking }}</label>
+          <textarea id="r-opm" name="opmerking" rows="2"></textarea>
+        </div>
+      </div>
+      <button class="ticket__knop" type="submit">{{ reservatie.knop }}<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M3 8h9M8.5 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+    </form>
+    {{#als reservatie.extern}}<p class="ticket__extern"><a href="{{ reservatie.extern }}" rel="noopener">{{ reservatie.externLabel }}</a></p>{{/als}}
+    <div class="ticket__onder" aria-hidden="true">
+      <span class="ticket__streep"></span>
+      <span>{{ contact.adres }} · {{ contact.postcode }} {{ contact.gemeente }}</span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<footer class="voet">
+  <p class="voet__groot" aria-hidden="true"><span>{{ voet.slogan }}</span><span>{{ voet.slogan }}</span></p>
+  <div class="voet__raster">
+    <div class="voet__blok">
+      <p class="voet__naam">{{ site.naam }}</p>
+      <p class="voet__slogan">{{ site.slogan }}</p>
+    </div>
+    <address class="voet__blok">
+      <span class="label">Adres</span>
+      {{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}<br>
+      <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br>
+      <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+    </address>
+    <div class="voet__blok">
+      <span class="label">Volg</span>
+      <ul class="voet__socials">
+        {{#elk socials}}{{#als url}}<li><a href="{{ url }}" rel="noopener">{{ netwerk }}</a></li>{{/als}}{{/elk}}
+      </ul>
+    </div>
+    <div class="voet__blok voet__klein">
+      <span class="label">Wettelijk</span>
+      <p>© {{ jaar }} {{ site.naam }}<br>Btw {{ contact.btw }}</p>
+      <p><a class="voet__arto" href="https://arto.be" rel="noopener">{{ voet.credits }}</a></p>
+    </div>
+  </div>
+</footer>
