@@ -8,6 +8,7 @@ Dit is de centrale repository van ARTO ([artowebdesign.com](https://artowebdesig
 |---|---|
 | [`bedrijven/`](bedrijven/README.md) | Eén map per klant waarvoor ik een website heb gemaakt: gegevens, toegang, status en logboek. |
 | [`setup/`](setup/README.md) | Alles wat ik één keer moet instellen (accounts, tools op mijn computer), de vaste procedures (nieuwe klant, hosting, domein, optimalisatie, overdracht) en sjablonen zoals de klantfiche en de offerte. |
+| [`paneel/`](paneel/README.md) | Het besloten controlepaneel van de agency: alle klanten, sitestatus, open punten en opdrachten voor Claude. Draait op Cloudflare Pages achter Cloudflare Access. |
 | [`templates/`](templates/README.md) | Websitetemplates om snel een nieuwe klantsite te starten. |
 | [`.claude/skills/`](.claude/skills/README.md) | Skills voor Claude Code, zodat ik de agency met gewone opdrachten kan beheren ("maak een nieuwe klant", "publiceer de site van X"). |
 
