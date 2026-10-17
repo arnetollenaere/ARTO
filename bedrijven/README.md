@@ -2,6 +2,17 @@
 
 Hier staat één map per bedrijf waarvoor ARTO een website heeft gemaakt (of aan het maken is).
 
+## Huidige klanten
+
+| Bedrijf | Map | Domein |
+|---|---|---|
+| AMC (Algemeen Metaal Constructiebedrijf) | [`amc/`](amc/bedrijf.md) | amc.be |
+| Dr. Yves Depaepe Orthopedie | [`orthopedie-depaepe/`](orthopedie-depaepe/bedrijf.md) | orthopedie-depaepe.be |
+| House of Beauty by Alana | [`house-of-beauty-by-alana/`](house-of-beauty-by-alana/bedrijf.md) | houseofbeautybyalana.be |
+| Arne Tollenaere (eigen portfolio) | [`arnetollenaere/`](arnetollenaere/bedrijf.md) | arnetollenaere.com |
+
+Voor de actuele status vraag je Claude om een overzicht (skill `overzicht`).
+
 ## Inhoud van een bedrijfsmap
 
 ```

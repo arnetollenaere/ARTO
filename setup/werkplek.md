@@ -24,7 +24,7 @@ Zet de beheerrepo en de klantsites naast elkaar:
 ```
 ~/arto/
 ├── ARTO/          # deze repo
-├── Margot-20/     # site van een klant
+├── amc/           # site van een klant
 └── bakkerij-peeters/
 ```
 

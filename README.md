@@ -1,6 +1,6 @@
 # ARTO
 
-Dit is de centrale repository van ARTO, mijn web agency. Van hieruit beheer ik alle klanten, hun websites, de vaste werkwijze en de sjablonen waarmee ik nieuwe sites bouw.
+Dit is de centrale repository van ARTO ([artowebdesign.com](https://artowebdesign.com)), mijn web agency. Van hieruit beheer ik alle klanten, hun websites, de vaste werkwijze en de sjablonen waarmee ik nieuwe sites bouw.
 
 ## Wat staat waar
 
@@ -14,7 +14,7 @@ Dit is de centrale repository van ARTO, mijn web agency. Van hieruit beheer ik a
 ## Hoe ik werk
 
 1. **Nieuwe klant**: ik vraag Claude "maak een nieuwe klant aan voor Bakkerij Peeters". Die maakt `bedrijven/bakkerij-peeters/` aan en zet een nieuwe site klaar vanuit een template in `templates/`.
-2. **Bouwen**: de site zelf staat in een eigen GitHub-repo per klant (zoals `Margot-20`). Zo kan ik de code later makkelijk aan de klant overdragen.
+2. **Bouwen**: de site zelf staat in een eigen GitHub-repo per klant (zoals de site van AMC). Zo kan ik de code later makkelijk aan de klant overdragen.
 3. **Publiceren**: elke site draait op Cloudflare Pages. De klant bezit het domein en een eigen Cloudflare-account; ik ben daar uitgenodigd als beheerder. Zie [`setup/hosting-cloudflare.md`](setup/hosting-cloudflare.md).
 4. **Onderhouden en optimaliseren**: aanpassingen, snelheid, SEO en toegankelijkheid doe ik met de skills `site-aanpassen` en `site-optimaliseren`. Elke wijziging komt in het logboek van de klant.
 5. **Overdragen**: als een klant vertrekt of alles zelf wil beheren, volg ik [`setup/overdracht.md`](setup/overdracht.md).
@@ -25,9 +25,9 @@ Open deze repo in Claude Code en zeg wat je wil. Voorbeelden:
 
 - "Geef me een overzicht van alle klanten."
 - "Maak een nieuwe klant aan: Bakkerij Peeters, domein bakkerijpeeters.be."
-- "Publiceer de site van Margot-20."
+- "Publiceer de site van AMC."
 - "Optimaliseer de site van Bakkerij Peeters."
-- "Verander het telefoonnummer op de site van Margot-20."
+- "Verander het telefoonnummer op de site van AMC."
 - "Draag de site van Bakkerij Peeters over aan de klant."
 
 Claude leest eerst [`CLAUDE.md`](CLAUDE.md) en kiest dan de juiste skill.

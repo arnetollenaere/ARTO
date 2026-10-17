@@ -31,6 +31,11 @@ if [ -e "$doel" ]; then
   exit 1
 fi
 
+if ! ls "$root"/setup/sjablonen/bedrijf/*.md >/dev/null 2>&1; then
+  echo "Sjabloon ontbreekt: setup/sjablonen/bedrijf/" >&2
+  exit 1
+fi
+
 mkdir -p "$doel/bestanden"
 for f in "$root"/setup/sjablonen/bedrijf/*.md; do
   sed -e "s|{{NAAM}}|$naam|g" -e "s|{{SLUG}}|$slug|g" -e "s|{{DATUM}}|$datum|g" "$f" > "$doel/$(basename "$f")"
