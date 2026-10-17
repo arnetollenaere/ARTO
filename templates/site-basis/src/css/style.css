@@ -1,0 +1,59 @@
+/* Basisstijl van ARTO. Pas de kleuren en het lettertype aan per klant. */
+:root {
+  --kleur-hoofd: #1f4e79;
+  --kleur-accent: #e07a2e;
+  --kleur-tekst: #1d1d1f;
+  --kleur-achtergrond: #ffffff;
+  --kleur-vlak: #f4f5f7;
+  --lettertype: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --breedte: 68rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--lettertype);
+  line-height: 1.6;
+  color: var(--kleur-tekst);
+  background: var(--kleur-achtergrond);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--kleur-hoofd); }
+a:focus-visible, .knop:focus-visible { outline: 3px solid var(--kleur-accent); outline-offset: 2px; }
+
+.container { max-width: var(--breedte); margin: 0 auto; padding: 0 1rem; }
+
+.site-header { border-bottom: 1px solid var(--kleur-vlak); }
+.site-header .container { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; padding-block: 1rem; }
+.logo { font-weight: 700; font-size: 1.25rem; text-decoration: none; color: var(--kleur-tekst); }
+nav { display: flex; gap: 1.25rem; }
+nav a { text-decoration: none; }
+
+section { padding-block: 4rem; }
+section:nth-of-type(even) { background: var(--kleur-vlak); }
+
+.hero { background: var(--kleur-hoofd); color: #fff; padding-block: 6rem; }
+.hero h1 { font-size: clamp(2rem, 5vw, 3.25rem); margin: 0 0 1rem; line-height: 1.15; }
+.hero p { font-size: 1.2rem; max-width: 40rem; }
+
+.knop {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background: var(--kleur-accent);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.kaarten { list-style: none; padding: 0; display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); }
+.kaarten li { background: var(--kleur-achtergrond); padding: 1.5rem; border-radius: 0.75rem; }
+.kaarten h3 { margin-top: 0; }
+
+address { font-style: normal; }
+
+.site-footer { padding-block: 2rem; font-size: 0.9rem; border-top: 1px solid var(--kleur-vlak); }

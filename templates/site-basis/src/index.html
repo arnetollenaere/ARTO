@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{NAAM}}</title>
+  <meta name="description" content="{{BESCHRIJVING}}">
+  <link rel="canonical" href="https://{{DOMEIN}}/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{NAAM}}">
+  <meta property="og:description" content="{{BESCHRIJVING}}">
+  <meta property="og:url" content="https://{{DOMEIN}}/">
+  <meta property="og:image" content="https://{{DOMEIN}}/img/og.jpg">
+
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "{{NAAM}}",
+    "url": "https://{{DOMEIN}}/",
+    "telephone": "{{TELEFOON}}",
+    "email": "{{EMAIL}}",
+    "address": "{{ADRES}}"
+  }
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="/">{{NAAM}}</a>
+      <nav aria-label="Hoofdmenu">
+        <a href="#over">Over ons</a>
+        <a href="#diensten">Diensten</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>{{NAAM}}</h1>
+        <p>{{BESCHRIJVING}}</p>
+        <a class="knop" href="#contact">Neem contact op</a>
+      </div>
+    </section>
+
+    <section id="over">
+      <div class="container">
+        <h2>Over ons</h2>
+        <p>Vertel hier het verhaal van het bedrijf.</p>
+      </div>
+    </section>
+
+    <section id="diensten">
+      <div class="container">
+        <h2>Diensten</h2>
+        <ul class="kaarten">
+          <li><h3>Dienst 1</h3><p>Korte uitleg.</p></li>
+          <li><h3>Dienst 2</h3><p>Korte uitleg.</p></li>
+          <li><h3>Dienst 3</h3><p>Korte uitleg.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <address>
+          {{ADRES}}<br>
+          <a href="tel:{{TELEFOON}}">{{TELEFOON}}</a><br>
+          <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="jaar">2026</span> {{NAAM}}. Website door ARTO.</p>
+    </div>
+  </footer>
+  <script>document.getElementById('jaar').textContent = new Date().getFullYear();</script>
+</body>
+</html>
