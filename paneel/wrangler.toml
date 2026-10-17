@@ -1,11 +1,10 @@
 # Cloudflare Pages-project voor het ARTO-controlepaneel.
-# Geen geheimen in dit bestand: de AUD-tag en het teamdomein zijn geen geheimen.
+# Geen geheimen in dit bestand.
 name = "arto-paneel"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-10-01"
 
 [vars]
-TOEGESTANE_EMAIL = "arne.tollenaere@gmail.com"
-# Vul in na het aanmaken van de Access-applicatie (zie README.md):
-ACCESS_TEAM_DOMAIN = ""
-ACCESS_AUD = ""
+PANEEL_GEBRUIKER = "arne"
+# Het wachtwoord is een geheim van het Pages-project, niet in dit bestand:
+#   npx wrangler pages secret put PANEEL_WACHTWOORD --project-name arto-paneel
