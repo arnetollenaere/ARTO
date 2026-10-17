@@ -1,0 +1,30 @@
+# Publiceert de site naar Cloudflare Pages bij elke push naar main,
+# ook wanneer de klant iets opslaat in het beheerpaneel.
+# Nodig in GitHub → Settings → Secrets and variables → Actions:
+#   CLOUDFLARE_API_TOKEN  (rechten: Cloudflare Pages: Edit)
+#   CLOUDFLARE_ACCOUNT_ID
+name: Publiceren
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+concurrency:
+  group: publiceren
+  cancel-in-progress: true
+jobs:
+  publiceer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: ./build.sh
+      - name: Naar Cloudflare Pages
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          PROJECT="$(sed -n 's/^PROJECT="\(.*\)"/\1/p' deploy.sh)"
+          npx --yes wrangler@3 pages deploy dist --project-name="$PROJECT" --branch=main --commit-dirty=true

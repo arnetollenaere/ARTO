@@ -1,0 +1,2 @@
+<!doctype html><html lang="{{ site.taal }}"><head><meta charset="utf-8">{{{ arto.kop }}}</head><body>{{> mededeling}}<h1>{{ site.naam }}</h1><ul>{{#elk menu}}<li>{{naam}} €{{prijs}}</li>{{/elk}}</ul>
+<form method="post" action="/api/bericht"><input name="naam"><button>stuur</button></form></body></html>

@@ -1,0 +1,2 @@
+{"naam":"Test","sector":"test","schemaType":"Restaurant","thema":{"kleuren":[{"sleutel":"accent","label":"Accent"}]},
+"secties":[{"id":"menu","titel":"Menukaart","groep":"inhoud","velden":[{"pad":"menu","type":"lijst","label":"Gerechten","itemLabel":"naam","velden":[{"pad":"naam","type":"tekst","label":"Naam"},{"pad":"prijs","type":"prijs","label":"Prijs"}]}]}]}
