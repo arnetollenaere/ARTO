@@ -1,0 +1,20 @@
+<ul class="passen" role="list">
+  {{#elk passen.lijst}}
+  <li class="pas{{#als uitgelicht}} pas--uit{{/als}}">
+    <div class="pas__top">
+      <span class="pas__nr">PAS {{ @nr | twee }}</span>
+      <span class="pas__soort">{{ soort }}</span>
+    </div>
+    {{#als uitgelicht}}{{#als uitgelichtTekst}}<p class="pas__badge">{{ uitgelichtTekst }}</p>{{/als}}{{/als}}
+    <h3 class="pas__naam">{{ naam }}</h3>
+    <p class="pas__prijs"><span class="pas__euro">€</span><span class="pas__bedrag">{{ prijs }}</span><span class="pas__per">{{ per }}</span></p>
+    <p class="pas__looptijd">{{ looptijd }}</p>
+    <div class="pas__perforatie" aria-hidden="true"></div>
+    <ul class="pas__lijst">{{#elk inbegrepen}}<li>{{ punt }}</li>{{/elk}}</ul>
+    <div class="pas__voet">
+      <a class="knop{{#niet uitgelicht}} knop--lijn{{/niet}}{{#als uitgelicht}} knop--zwart{{/als}}" href="/#proefles">{{ knop }}</a>
+      <span class="pas__code" aria-hidden="true"></span>
+    </div>
+  </li>
+  {{/elk}}
+</ul>

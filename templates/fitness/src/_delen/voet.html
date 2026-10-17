@@ -1,0 +1,31 @@
+<footer class="voet">
+  <div class="voet__band" aria-hidden="true"><span>{{ site.naam }}</span><span>{{ site.naam }}</span></div>
+  <div class="voet__grid">
+    <div class="voet__blok voet__blok--merk">
+      <p class="voet__slagzin">{{ voet.slagzin }}</p>
+      <p class="voet__naam">{{ site.naam }}</p>
+    </div>
+    <div class="voet__blok">
+      <h2 class="mini">Adres</h2>
+      <address>{{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}{{#als contact.kaart}}<br><a href="{{ contact.kaart }}" rel="noopener">Routebeschrijving</a>{{/als}}</address>
+      <p><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br><a href="mailto:{{ contact.email }}">{{ contact.email }}</a>{{#als contact.whatsapp}}<br><a href="https://wa.me/{{ contact.whatsapp | tel }}" rel="noopener">WhatsApp</a>{{/als}}</p>
+    </div>
+    <div class="voet__blok">
+      <h2 class="mini">{{ voet.urenKop }}</h2>
+      <dl class="uren">{{#elk openingsuren}}<div><dt>{{ dag }}</dt><dd>{{ uren }}</dd></div>{{/elk}}</dl>
+    </div>
+    <div class="voet__blok">
+      <h2 class="mini">Volg</h2>
+      <ul class="voet__socials">{{#elk socials}}{{#als url}}<li><a href="{{ url }}" rel="noopener">{{ netwerk }}</a></li>{{/als}}{{/elk}}</ul>
+      <ul class="voet__nav">
+        <li><a href="/rooster">{{ navigatie.rooster }}</a></li>
+        <li><a href="/tarieven">{{ navigatie.tarieven }}</a></li>
+        <li><a href="/#proefles">{{ navigatie.knop }}</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="voet__onder">
+    <p>© {{ jaar }} {{ site.naam }} · {{ contact.btw }}</p>
+    <p><a href="https://arto.be" rel="noopener">Website door ARTO</a></p>
+  </div>
+</footer>

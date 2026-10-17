@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  {{> hoofd }}
+</head>
+<body class="p-rooster">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <section class="paginakop" aria-labelledby="rooster-titel">
+    <p class="mono paginakop__label">{{ rooster.label }}</p>
+    <h1 class="paginakop__titel" id="rooster-titel">{{ rooster.kop }}</h1>
+    <div class="paginakop__rij">
+      <p class="paginakop__intro">{{ rooster.intro }}</p>
+      <p class="paginakop__teller" aria-hidden="true"><span data-teller>{{ rooster.lessen | aantal }}</span><small>{{ rooster.eenheid }}</small></p>
+    </div>
+  </section>
+
+  <section class="rooster" aria-label="{{ rooster.kop }}" data-rooster data-van="{{ rooster.vanUur }}" data-tot="{{ rooster.totUur }}">
+    <div class="filter" role="group" aria-label="Filter op lestype">
+      <button type="button" class="filter__knop" aria-pressed="true" data-filter="">{{ rooster.filterAlles }}</button>
+      {{#elk lestypes.lijst}}<button type="button" class="filter__knop" aria-pressed="false" data-filter="{{ naam }}"><span class="code">{{ code }}</span>{{ naam }}</button>{{/elk}}
+    </div>
+    <p class="vh" role="status" data-filter-status></p>
+
+    <div class="dagkeuze" role="tablist" aria-label="Kies een dag" data-dagkeuze hidden>
+      {{#elk rooster.dagen}}<button type="button" role="tab" class="dagkeuze__knop" data-dag="{{ naam }}" aria-selected="false">{{ kort }}</button>{{/elk}}
+    </div>
+
+    <div class="rooster__grid" data-grid>
+      <div class="rooster__as" aria-hidden="true" data-as></div>
+      {{#elk rooster.dagen}}
+      <div class="dag" data-dag="{{ naam }}">
+        <h2 class="dag__kop"><span class="dag__kort" aria-hidden="true">{{ kort }}</span><span class="dag__lang">{{ naam }}</span></h2>
+        <ol class="dag__lessen" role="list">
+          {{#elk rooster.lessen}}{{#als dag == naam}}
+          <li class="les" data-type="{{ type }}" data-start="{{ start }}" data-einde="{{ einde }}" data-niveau="{{ niveau }}">
+            <p class="les__tijd mono"><time>{{ start }}</time>–<time>{{ einde }}</time></p>
+            <h3 class="les__type">{{ type }}</h3>
+            <p class="les__meta">{{ coach }} · {{ zaal }}</p>
+            <p class="les__niveau mono"><span class="niveau" aria-hidden="true"></span>{{ niveau }}</p>
+          </li>{{/als}}{{/elk}}
+        </ol>
+      </div>
+      {{/elk}}
+    </div>
+    <p class="rooster__leeg" data-leeg hidden>{{ rooster.leeg }}</p>
+    <p class="rooster__noot">{{ rooster.noot }}</p>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-kop">
+    <h2 id="cta-kop" class="cta-band__kop">{{ proefles.kop }}</h2>
+    <a class="knop knop--zwart knop--groot" href="/#proefles">{{ proefles.knop }} <span aria-hidden="true">→</span></a>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  {{> hoofd }}
+</head>
+<body class="p-start">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <section class="held" aria-labelledby="held-titel">
+    <div class="held__baan" aria-hidden="true">
+      <svg viewBox="0 0 1200 800" preserveAspectRatio="none" focusable="false"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M-50 720 C 300 700 520 520 760 300 S 1150 40 1300 20"/><path d="M-50 760 C 320 740 560 560 800 340 S 1180 80 1300 60"/><path d="M-50 800 C 340 780 600 600 840 380 S 1210 120 1300 100"/><path d="M-50 840 C 360 820 640 640 880 420 S 1240 160 1300 140"/></g></svg>
+    </div>
+    <div class="held__snede" aria-hidden="true"></div>
+    <p class="held__label mono"><span class="puls" aria-hidden="true"></span>{{ hero.label }}</p>
+    <h1 class="held__titel" id="held-titel">
+      <span class="held__regel held__regel--1">{{ hero.regel1 }}</span>
+      <span class="held__regel held__regel--2">{{ hero.regel2 }}</span>
+      <span class="held__regel held__regel--3">{{ hero.regel3 }}</span>
+    </h1>
+    <div class="held__onder">
+      <p class="held__intro">{{ hero.intro }}</p>
+      <div class="held__knoppen">
+        <a class="knop" href="#proefles">{{ hero.knop }} <span aria-hidden="true">→</span></a>
+        <a class="knop knop--lijn" href="/rooster">{{ hero.knop2 }}</a>
+      </div>
+    </div>
+    <p class="held__nu mono" data-volgende hidden></p>
+  </section>
+
+  <section class="cijfers" aria-label="Kerncijfers">
+    <ul class="cijfers__lijst" role="list">
+      {{#elk hero.cijfers}}
+      <li class="cijfer">
+        <span class="cijfer__getal"><span data-tel="{{ getal }}">{{ getal }}</span><span class="cijfer__eenheid">{{ eenheid }}</span></span>
+        <span class="cijfer__label mono">{{ label }}</span>
+      </li>
+      {{/elk}}
+    </ul>
+  </section>
+
+  <div class="band" aria-hidden="true">
+    <div class="band__spoor">
+      {{#elk lestypes.lijst}}<span>{{ naam }}</span><i>/</i>{{/elk}}{{#elk lestypes.lijst}}<span>{{ naam }}</span><i>/</i>{{/elk}}{{#elk lestypes.lijst}}<span>{{ naam }}</span><i>/</i>{{/elk}}
+    </div>
+  </div>
+
+  <section class="lessen" id="lessen" aria-labelledby="lessen-kop">
+    <header class="sectiekop">
+      <p class="mono sectiekop__label">{{ lestypes.label }}</p>
+      <h2 class="sectiekop__titel" id="lessen-kop">{{ lestypes.kop }}</h2>
+      <p class="sectiekop__intro">{{ lestypes.intro }}</p>
+    </header>
+    <ol class="lestypes" role="list">
+      {{#elk lestypes.lijst}}
+      <li class="lestype" style="--i:{{ intensiteit }}">
+        <span class="lestype__nr" aria-hidden="true">{{ @nr | twee }}</span>
+        <div class="lestype__kern">
+          <h3 class="lestype__naam"><span class="code">{{ code }}</span>{{ naam }}</h3>
+          <p class="lestype__tekst">{{ beschrijving }}</p>
+        </div>
+        <dl class="lestype__fiche mono">
+          <div><dt>Duur</dt><dd>{{ duur }}</dd></div>
+          <div><dt>Intensiteit</dt><dd><span class="meter" role="img" aria-label="{{ intensiteit }} op 5"><span></span></span></dd></div>
+          <div><dt>Voor</dt><dd>{{ voor }}</dd></div>
+        </dl>
+      </li>
+      {{/elk}}
+    </ol>
+  </section>
+
+  <section class="vandaag" aria-labelledby="vandaag-kop">
+    <div class="vandaag__groot" aria-hidden="true">{{ rooster.lessen | aantal }}</div>
+    <div class="vandaag__tekst">
+      <p class="mono">{{ rooster.label }}</p>
+      <h2 id="vandaag-kop" class="vandaag__kop">{{ rooster.lessen | aantal }} lessen per week</h2>
+      <p>{{ rooster.intro }}</p>
+      <a class="knop knop--zwart" href="/rooster">{{ hero.knop2 }} <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="vandaag__lijst" data-vandaag hidden>
+      <p class="mono vandaag__dag" data-vandaag-dag></p>
+      <ol role="list" data-vandaag-lessen></ol>
+    </div>
+    <script type="application/json" id="rooster-data">{"dagen":{{ rooster.dagen | json }},"lessen":{{ rooster.lessen | json }}}</script>
+  </section>
+
+  <section class="passen-sectie" id="passen" aria-labelledby="passen-kop">
+    <header class="sectiekop">
+      <p class="mono sectiekop__label">{{ passen.label }}</p>
+      <h2 class="sectiekop__titel" id="passen-kop">{{ passen.kop }}</h2>
+      <p class="sectiekop__intro">{{ passen.intro }} <a class="pijllink" href="/tarieven">{{ navigatie.tarieven }} →</a></p>
+    </header>
+    {{> passen }}
+  </section>
+
+  <section class="coaches" id="coaches" aria-labelledby="coaches-kop">
+    <header class="sectiekop sectiekop--rij">
+      <p class="mono sectiekop__label">{{ coaches.label }}</p>
+      <h2 class="sectiekop__titel" id="coaches-kop">{{ coaches.kop }}</h2>
+    </header>
+    <ul class="coaches__lijst" role="list">
+      {{#elk coaches.lijst}}
+      <li class="coach">
+        <div class="coach__beeld">
+          {{#als foto}}<img src="{{ foto }}" alt="{{ fotoAlt }}" width="800" height="1000" loading="lazy">{{#anders}}<div class="coach__portret" aria-hidden="true"><span class="coach__initialen">{{ initialen }}</span><span class="coach__rugnr">{{ @nr | twee }}</span></div>{{/als}}
+        </div>
+        <h3 class="coach__naam">{{ naam }}</h3>
+        <p class="coach__rol mono">{{ rol }}</p>
+        <p class="coach__spec">{{ specialiteit }}</p>
+        <blockquote class="coach__citaat"><p>{{ citaat }}</p></blockquote>
+      </li>
+      {{/elk}}
+    </ul>
+  </section>
+
+  <section class="resultaten" aria-labelledby="resultaten-kop">
+    <header class="sectiekop">
+      <p class="mono sectiekop__label">{{ resultaten.label }}</p>
+      <h2 class="sectiekop__titel" id="resultaten-kop">{{ resultaten.kop }}</h2>
+    </header>
+    <ol class="resultaten__lijst" role="list">
+      {{#elk resultaten.lijst}}
+      <li class="resultaat">
+        <p class="resultaat__cijfer"><span>{{ cijfer }}</span><small>{{ eenheid }}</small></p>
+        <figure class="resultaat__tekst">
+          <p class="resultaat__wat mono">{{ wat }}</p>
+          <blockquote><p>“{{ citaat }}”</p></blockquote>
+          <figcaption><strong>{{ naam }}</strong> · {{ detail }}</figcaption>
+        </figure>
+      </li>
+      {{/elk}}
+    </ol>
+  </section>
+
+  <section class="proefles" id="proefles" aria-labelledby="proefles-kop">
+    <div class="proefles__links">
+      <p class="mono sectiekop__label">{{ proefles.label }}</p>
+      <h2 class="proefles__kop" id="proefles-kop">{{ proefles.kop }}</h2>
+      <p class="proefles__intro">{{ proefles.intro }}</p>
+      <ol class="stappen" role="list">
+        {{#elk proefles.stappen}}<li><span class="stappen__nr" aria-hidden="true">{{ @nr }}</span><div><strong>{{ titel }}</strong><span>{{ tekst }}</span></div></li>{{/elk}}
+      </ol>
+    </div>
+    <div class="proefles__rechts">
+      <p class="bevestiging" role="status" data-bevestiging hidden>{{ proefles.bedankt }}</p>
+      <form class="formulier" method="post" action="/api/bericht">
+        <input type="hidden" name="_formulier" value="proefles">
+        <input name="_honing" tabindex="-1" autocomplete="off" hidden>
+        <div class="veld"><label for="f-naam">Naam</label><input id="f-naam" name="naam" autocomplete="name" required></div>
+        <div class="veld veld--half"><label for="f-email">E-mail</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="veld veld--half"><label for="f-tel">Telefoon</label><input id="f-tel" name="telefoon" type="tel" autocomplete="tel"></div>
+        <div class="veld"><label for="f-les">{{ proefles.keuzeLabel }}</label>
+          <select id="f-les" name="les">{{#elk lestypes.lijst}}<option>{{ naam }}</option>{{/elk}}<option>Weet ik nog niet</option></select>
+        </div>
+        <fieldset class="veld keuzes">
+          <legend>{{ proefles.momentLabel }}</legend>
+          {{#elk proefles.momenten}}<label class="keuze"><input type="radio" name="moment" value="{{ moment }}"{{#als @eerste}} checked{{/als}}><span>{{ moment }}</span></label>{{/elk}}
+        </fieldset>
+        <div class="veld"><label for="f-bericht">Blessures, doelen of vragen <span class="optioneel">(optioneel)</span></label><textarea id="f-bericht" name="bericht" rows="3"></textarea></div>
+        <button class="knop knop--groot" type="submit">{{ proefles.knop }} <span aria-hidden="true">→</span></button>
+        <p class="formulier__privacy">{{ proefles.privacy }}</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

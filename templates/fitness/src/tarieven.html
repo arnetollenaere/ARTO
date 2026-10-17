@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  {{> hoofd }}
+</head>
+<body class="p-tarieven">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <section class="paginakop" aria-labelledby="tarieven-titel">
+    <p class="mono paginakop__label">{{ tarieven.label }}</p>
+    <h1 class="paginakop__titel" id="tarieven-titel">{{ tarieven.kop }}</h1>
+    <div class="paginakop__rij">
+      <p class="paginakop__intro">{{ tarieven.intro }}</p>
+    </div>
+  </section>
+
+  <section class="passen-sectie passen-sectie--pagina" aria-labelledby="passen-kop">
+    <h2 class="vh" id="passen-kop">{{ passen.kop }}</h2>
+    {{> passen }}
+  </section>
+
+  <section class="prijslijst" aria-labelledby="extra-kop">
+    <h2 class="sectiekop__titel" id="extra-kop">{{ tarieven.extraKop }}</h2>
+    <ul class="prijslijst__lijst" role="list">
+      {{#elk tarieven.extra}}
+      <li class="prijs">
+        <span class="prijs__nr mono" aria-hidden="true">{{ @nr | twee }}</span>
+        <span class="prijs__naam">{{ naam }}<small>{{ toelichting }}</small></span>
+        <span class="prijs__lijn" aria-hidden="true"></span>
+        <span class="prijs__bedrag">€ {{ prijs }}</span>
+      </li>
+      {{/elk}}
+    </ul>
+    <div class="voorwaarden">{{ tarieven.voorwaarden | md }}</div>
+  </section>
+
+  <section class="faq" aria-labelledby="faq-kop">
+    <h2 class="sectiekop__titel" id="faq-kop">{{ tarieven.faqKop }}</h2>
+    <div class="faq__lijst">
+      {{#elk tarieven.faq}}
+      <details class="faq__item">
+        <summary><span class="faq__nr mono" aria-hidden="true">{{ @nr | twee }}</span><span class="faq__vraag">{{ vraag }}</span><span class="faq__plus" aria-hidden="true"></span></summary>
+        <div class="faq__antwoord">{{ antwoord | md }}</div>
+      </details>
+      {{/elk}}
+    </div>
+  </section>
+
+  <section class="cta-band" aria-labelledby="cta-kop">
+    <h2 id="cta-kop" class="cta-band__kop">{{ proefles.kop }}</h2>
+    <a class="knop knop--zwart knop--groot" href="/#proefles">{{ proefles.knop }} <span aria-hidden="true">→</span></a>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>
