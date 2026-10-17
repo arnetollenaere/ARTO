@@ -1,0 +1,997 @@
+{
+  "naam": "Luwte",
+  "sector": "zorg",
+  "beschrijving": "Kalm-futuristisch template voor kinesisten, tandartsen, psychologen, osteopaten, diëtisten en groepspraktijken. Zachte organische vormen die heel traag ademen, grote leesbare letters en sterk contrast. Met behandelingen (duur, tarief, terugbetaling), team met specialisatie, talen en RIZIV-nummer, praktische info, FAQ, afspraak online of via formulier en noodnummers.",
+  "schemaType": "MedicalClinic",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "achtergrond",
+        "label": "Achtergrond (warm wit)",
+        "standaard": "#F6F3EC"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Tekst en donkere vlakken (bosgroen of inktblauw)",
+        "hulp": "Moet heel donker blijven: dit is ook de kleur van de knoppen.",
+        "standaard": "#0F2E28"
+      },
+      {
+        "sleutel": "accent",
+        "label": "Accent (middengroen)",
+        "hulp": "Voor kleine accenten en links. Houd voldoende contrast met de achtergrond.",
+        "standaard": "#2C6A55"
+      },
+      {
+        "sleutel": "salie",
+        "label": "Salie (zachte vlakken)",
+        "standaard": "#CFDFCF"
+      },
+      {
+        "sleutel": "mint",
+        "label": "Mint (vormen en markeringen)",
+        "standaard": "#A9DFC6"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "navigatie",
+      "titel": "Menu en knoppen",
+      "groep": "inhoud",
+      "beschrijving": "De woorden in het menu bovenaan en de vaste afspraakknop.",
+      "velden": [
+        {
+          "pad": "navigatie.behandelingen",
+          "type": "tekst",
+          "label": "Menu: behandelingen",
+          "max": 24
+        },
+        {
+          "pad": "navigatie.team",
+          "type": "tekst",
+          "label": "Menu: team",
+          "max": 24
+        },
+        {
+          "pad": "navigatie.praktisch",
+          "type": "tekst",
+          "label": "Menu: praktisch",
+          "max": 24
+        },
+        {
+          "pad": "navigatie.vragen",
+          "type": "tekst",
+          "label": "Menu: vragen",
+          "max": 24
+        },
+        {
+          "pad": "navigatie.afspraak",
+          "type": "tekst",
+          "label": "Knop: afspraak maken",
+          "max": 24,
+          "hulp": "Staat bovenaan elke pagina en zwevend op de gsm."
+        },
+        {
+          "pad": "navigatie.skip",
+          "type": "tekst",
+          "label": "Verborgen link 'naar de inhoud'",
+          "hulp": "Voor wie met het toetsenbord of een schermlezer surft.",
+          "rol": "arto"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "titel": "Startpagina: bovenaan",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat een bezoeker ziet.",
+      "velden": [
+        {
+          "pad": "hero.label",
+          "type": "tekst",
+          "label": "Klein label boven de titel",
+          "max": 60,
+          "hulp": "bv. Groepspraktijk kinesitherapie · Gent"
+        },
+        {
+          "pad": "hero.titel",
+          "type": "tekst",
+          "label": "Grote titel",
+          "max": 60,
+          "hulp": "Kort en rustig. Het laatste stuk komt in de accentkleur."
+        },
+        {
+          "pad": "hero.titelAccent",
+          "type": "tekst",
+          "label": "Laatste stuk van de titel (in kleur)",
+          "max": 40
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "hero.knop",
+          "type": "tekst",
+          "label": "Hoofdknop",
+          "max": 30
+        },
+        {
+          "pad": "hero.knopTwee",
+          "type": "tekst",
+          "label": "Tweede knop (naar behandelingen)",
+          "max": 30
+        },
+        {
+          "pad": "hero.ademIn",
+          "type": "tekst",
+          "label": "Ademcirkel: tekst bij inademen",
+          "max": 20
+        },
+        {
+          "pad": "hero.ademUit",
+          "type": "tekst",
+          "label": "Ademcirkel: tekst bij uitademen",
+          "max": 20
+        },
+        {
+          "pad": "hero.foto",
+          "type": "afbeelding",
+          "label": "Foto (optioneel)",
+          "hulp": "Een rustige foto van de praktijk, staand formaat, minstens 900×1100 px. Zonder foto tonen we de organische vormen."
+        },
+        {
+          "pad": "hero.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto",
+          "hulp": "Wat staat erop? Voor schermlezers en Google."
+        }
+      ]
+    },
+    {
+      "id": "kenmerken",
+      "titel": "Kerncijfers",
+      "groep": "inhoud",
+      "beschrijving": "Drie of vier korte feiten onder de titel, bv. wachttijd of aantal zorgverleners.",
+      "velden": [
+        {
+          "pad": "kenmerken",
+          "type": "lijst",
+          "label": "Feiten",
+          "itemLabel": "waarde",
+          "sorteerbaar": true,
+          "max": 4,
+          "velden": [
+            {
+              "pad": "waarde",
+              "type": "tekst",
+              "label": "Waarde",
+              "max": 12,
+              "hulp": "bv. 5 dagen"
+            },
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Uitleg",
+              "max": 50
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afspraak",
+      "titel": "Afspraak maken",
+      "groep": "inhoud",
+      "beschrijving": "De online agenda en het aanvraagformulier. Aanvragen komen binnen onder Berichten.",
+      "velden": [
+        {
+          "pad": "afspraak.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "afspraak.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 60
+        },
+        {
+          "pad": "afspraak.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "afspraak.url",
+          "type": "url",
+          "label": "Link naar je online agenda",
+          "hulp": "bv. je pagina op Rosa, Doctoranytime of Mediris. Laat leeg als je geen online agenda hebt; dan tonen we alleen het formulier."
+        },
+        {
+          "pad": "afspraak.platform",
+          "type": "tekst",
+          "label": "Naam van de online agenda",
+          "max": 30,
+          "hulp": "bv. Rosa"
+        },
+        {
+          "pad": "afspraak.knopOnline",
+          "type": "tekst",
+          "label": "Knop online agenda",
+          "max": 40
+        },
+        {
+          "pad": "afspraak.onlineUitleg",
+          "type": "tekst",
+          "label": "Zin onder de knop",
+          "max": 120
+        },
+        {
+          "pad": "afspraak.telefoonTekst",
+          "type": "tekst",
+          "label": "Zin bij het telefoonnummer",
+          "max": 80
+        },
+        {
+          "pad": "afspraak.formTitel",
+          "type": "tekst",
+          "label": "Titel formulier",
+          "max": 60
+        },
+        {
+          "pad": "afspraak.formIntro",
+          "type": "tekstvak",
+          "label": "Uitleg formulier",
+          "max": 220
+        },
+        {
+          "pad": "afspraak.formulier",
+          "type": "groep",
+          "label": "Woorden in het formulier",
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Veld naam"
+            },
+            {
+              "pad": "telefoon",
+              "type": "tekst",
+              "label": "Veld telefoon"
+            },
+            {
+              "pad": "email",
+              "type": "tekst",
+              "label": "Veld e-mail"
+            },
+            {
+              "pad": "behandeling",
+              "type": "tekst",
+              "label": "Veld behandeling"
+            },
+            {
+              "pad": "zorgverlener",
+              "type": "tekst",
+              "label": "Veld zorgverlener"
+            },
+            {
+              "pad": "geenVoorkeur",
+              "type": "tekst",
+              "label": "Keuze 'geen voorkeur'"
+            },
+            {
+              "pad": "moment",
+              "type": "tekst",
+              "label": "Vraag voorkeursmoment"
+            },
+            {
+              "pad": "momenten",
+              "type": "lijst",
+              "label": "Mogelijke momenten",
+              "itemLabel": "tekst",
+              "velden": [
+                {
+                  "pad": "tekst",
+                  "type": "tekst",
+                  "label": "Moment"
+                }
+              ]
+            },
+            {
+              "pad": "voorschrift",
+              "type": "tekst",
+              "label": "Vraag voorschrift"
+            },
+            {
+              "pad": "ja",
+              "type": "tekst",
+              "label": "Antwoord ja",
+              "breedte": "smal"
+            },
+            {
+              "pad": "nee",
+              "type": "tekst",
+              "label": "Antwoord nee",
+              "breedte": "smal"
+            },
+            {
+              "pad": "bericht",
+              "type": "tekst",
+              "label": "Veld bericht"
+            },
+            {
+              "pad": "privacy",
+              "type": "tekstvak",
+              "label": "Privacyzin onder het formulier"
+            },
+            {
+              "pad": "knop",
+              "type": "tekst",
+              "label": "Verzendknop"
+            },
+            {
+              "pad": "bevestiging",
+              "type": "tekstvak",
+              "label": "Bevestiging na verzenden"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voorwie",
+      "titel": "Voor wie / wanneer",
+      "groep": "inhoud",
+      "beschrijving": "Situaties waarin mensen bij jullie terechtkunnen, in hun eigen woorden.",
+      "velden": [
+        {
+          "pad": "voorWie.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "voorWie.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "voorWie.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "voorWie.situaties",
+          "type": "lijst",
+          "label": "Situaties",
+          "itemLabel": "tekst",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Situatie",
+              "max": 90,
+              "hulp": "In de ik- of je-vorm, bv. 'Je rug blokkeert na het tillen.'"
+            },
+            {
+              "pad": "wie",
+              "type": "tekst",
+              "label": "Wie helpt je",
+              "max": 60,
+              "hulp": "bv. Manuele therapie · Lotte"
+            }
+          ]
+        },
+        {
+          "pad": "voorWie.niet",
+          "type": "rijk",
+          "label": "Wanneer beter niet bij ons",
+          "hulp": "bv. bij acute nood: bel 112. Eerlijk zijn schept vertrouwen."
+        }
+      ]
+    },
+    {
+      "id": "behandelingen",
+      "titel": "Behandelingen en tarieven",
+      "groep": "inhoud",
+      "beschrijving": "Elke behandeling met duur, tarief en terugbetaling. 'Op de startpagina' toont ze ook bovenaan.",
+      "velden": [
+        {
+          "pad": "behandelingenIntro.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "behandelingenIntro.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "behandelingenIntro.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 300
+        },
+        {
+          "pad": "behandelingenIntro.knopAlles",
+          "type": "tekst",
+          "label": "Link naar alle behandelingen (startpagina)",
+          "max": 40
+        },
+        {
+          "pad": "behandelingenIntro.kolomDuur",
+          "type": "tekst",
+          "label": "Woord 'duur'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "behandelingenIntro.kolomTarief",
+          "type": "tekst",
+          "label": "Woord 'tarief'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "behandelingenIntro.kolomTerug",
+          "type": "tekst",
+          "label": "Woord 'terugbetaling'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "behandelingen",
+          "type": "lijst",
+          "label": "Behandelingen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 60
+            },
+            {
+              "pad": "categorie",
+              "type": "tekst",
+              "label": "Categorie",
+              "max": 30,
+              "hulp": "bv. Kinesitherapie, Osteopathie, Psychologie"
+            },
+            {
+              "pad": "kort",
+              "type": "tekst",
+              "label": "Korte zin",
+              "max": 120
+            },
+            {
+              "pad": "beschrijving",
+              "type": "rijk",
+              "label": "Uitleg (pagina behandelingen)"
+            },
+            {
+              "pad": "duur",
+              "type": "tekst",
+              "label": "Duur",
+              "breedte": "smal",
+              "hulp": "bv. 30 min"
+            },
+            {
+              "pad": "tarief",
+              "type": "tekst",
+              "label": "Tarief",
+              "breedte": "smal",
+              "hulp": "bv. € 33,50"
+            },
+            {
+              "pad": "terugbetaling",
+              "type": "keuze",
+              "label": "Terugbetaling",
+              "opties": [
+                "RIZIV-terugbetaald",
+                "Deels via ziekenfonds",
+                "Niet terugbetaald"
+              ]
+            },
+            {
+              "pad": "terugbetalingDetail",
+              "type": "tekst",
+              "label": "Wat betaal je zelf?",
+              "max": 160,
+              "hulp": "bv. Met voorschrift betaal je ± € 8,90 remgeld."
+            },
+            {
+              "pad": "voorschrift",
+              "type": "schakelaar",
+              "label": "Voorschrift van de arts nodig"
+            },
+            {
+              "pad": "uitgelicht",
+              "type": "schakelaar",
+              "label": "Op de startpagina tonen"
+            }
+          ]
+        },
+        {
+          "pad": "terugbetalingInfo.titel",
+          "type": "tekst",
+          "label": "Kader terugbetaling: titel",
+          "max": 60
+        },
+        {
+          "pad": "terugbetalingInfo.tekst",
+          "type": "rijk",
+          "label": "Kader terugbetaling: uitleg",
+          "hulp": "Leg conventie, remgeld, verhoogde tegemoetkoming en aanvullende verzekering eenvoudig uit."
+        },
+        {
+          "pad": "terugbetalingInfo.voorschriftLabel",
+          "type": "tekst",
+          "label": "Label 'voorschrift nodig'",
+          "max": 30
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "titel": "Team",
+      "groep": "inhoud",
+      "beschrijving": "De zorgverleners, met specialisatie, talen en RIZIV-nummer.",
+      "velden": [
+        {
+          "pad": "teamIntro.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "teamIntro.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "teamIntro.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 300
+        },
+        {
+          "pad": "teamIntro.knopAlles",
+          "type": "tekst",
+          "label": "Link naar het hele team (startpagina)",
+          "max": 40
+        },
+        {
+          "pad": "teamIntro.labelTalen",
+          "type": "tekst",
+          "label": "Woord 'talen'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teamIntro.labelRiziv",
+          "type": "tekst",
+          "label": "Woord 'RIZIV-nr.'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teamIntro.labelDagen",
+          "type": "tekst",
+          "label": "Woord 'aanwezig'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teamIntro.labelConventie",
+          "type": "tekst",
+          "label": "Label geconventioneerd",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teamIntro.labelNietConventie",
+          "type": "tekst",
+          "label": "Label niet-geconventioneerd",
+          "breedte": "smal"
+        },
+        {
+          "pad": "team",
+          "type": "lijst",
+          "label": "Zorgverleners",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "initialen",
+              "type": "tekst",
+              "label": "Initialen",
+              "breedte": "smal",
+              "max": 3,
+              "hulp": "Getoond in de vorm als er geen foto is."
+            },
+            {
+              "pad": "functie",
+              "type": "tekst",
+              "label": "Beroep",
+              "hulp": "bv. Kinesitherapeut"
+            },
+            {
+              "pad": "specialisaties",
+              "type": "tekst",
+              "label": "Specialisaties",
+              "hulp": "Gescheiden door komma's of · "
+            },
+            {
+              "pad": "talen",
+              "type": "tekst",
+              "label": "Talen"
+            },
+            {
+              "pad": "riziv",
+              "type": "tekst",
+              "label": "RIZIV- of erkenningsnummer"
+            },
+            {
+              "pad": "geconventioneerd",
+              "type": "schakelaar",
+              "label": "Geconventioneerd"
+            },
+            {
+              "pad": "dagen",
+              "type": "tekst",
+              "label": "Aanwezig op",
+              "hulp": "bv. ma · di · do"
+            },
+            {
+              "pad": "bio",
+              "type": "rijk",
+              "label": "Over (pagina team)"
+            },
+            {
+              "pad": "foto",
+              "type": "afbeelding",
+              "label": "Portretfoto (optioneel)",
+              "hulp": "Vierkant, minstens 800×800 px, rustige achtergrond."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van de foto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "werkwijze",
+      "titel": "Je eerste afspraak",
+      "groep": "inhoud",
+      "beschrijving": "Hoe een eerste afspraak verloopt, in stappen.",
+      "velden": [
+        {
+          "pad": "werkwijze.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "werkwijze.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "werkwijze.stappen",
+          "type": "lijst",
+          "label": "Stappen",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "max": 5,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Stap",
+              "max": 50
+            },
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Uitleg",
+              "max": 240
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "praktisch",
+      "titel": "Praktisch",
+      "groep": "inhoud",
+      "beschrijving": "Wat meebrengen, annuleren, toegankelijkheid en parking.",
+      "velden": [
+        {
+          "pad": "praktisch.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "praktisch.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "praktisch.meebrengenTitel",
+          "type": "tekst",
+          "label": "Titel 'wat meebrengen'"
+        },
+        {
+          "pad": "praktisch.meebrengen",
+          "type": "lijst",
+          "label": "Wat meebrengen",
+          "itemLabel": "tekst",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Item"
+            }
+          ]
+        },
+        {
+          "pad": "praktisch.blokken",
+          "type": "lijst",
+          "label": "Infoblokken",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "hulp": "bv. Annuleren, Rolstoeltoegankelijk, Parking"
+            },
+            {
+              "pad": "soort",
+              "type": "keuze",
+              "label": "Icoon",
+              "opties": [
+                "annuleren",
+                "rolstoel",
+                "parking",
+                "openbaar vervoer",
+                "betalen",
+                "info"
+              ]
+            },
+            {
+              "pad": "tekst",
+              "type": "rijk",
+              "label": "Uitleg"
+            }
+          ]
+        },
+        {
+          "pad": "praktisch.urenTitel",
+          "type": "tekst",
+          "label": "Titel openingsuren"
+        },
+        {
+          "pad": "praktisch.adresTitel",
+          "type": "tekst",
+          "label": "Titel adres"
+        },
+        {
+          "pad": "praktisch.routeKnop",
+          "type": "tekst",
+          "label": "Knop route",
+          "max": 30
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "titel": "Veelgestelde vragen",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "faq.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "faq.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "faq.vragen",
+          "type": "lijst",
+          "label": "Vragen",
+          "itemLabel": "vraag",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "vraag",
+              "type": "tekst",
+              "label": "Vraag"
+            },
+            {
+              "pad": "antwoord",
+              "type": "rijk",
+              "label": "Antwoord"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "noodnummers",
+      "titel": "Noodnummers",
+      "groep": "gegevens",
+      "beschrijving": "Staan onderaan elke pagina. Wettelijk niet verplicht, wel verstandig voor een zorgpraktijk.",
+      "velden": [
+        {
+          "pad": "noodnummers.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 60
+        },
+        {
+          "pad": "noodnummers.uitleg",
+          "type": "tekst",
+          "label": "Korte uitleg",
+          "max": 140
+        },
+        {
+          "pad": "noodnummers.nummers",
+          "type": "lijst",
+          "label": "Nummers",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "nummer",
+              "type": "tekst",
+              "label": "Nummer",
+              "breedte": "smal"
+            },
+            {
+              "pad": "wanneer",
+              "type": "tekst",
+              "label": "Wanneer bellen",
+              "max": 80
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "voet",
+      "titel": "Onderaan de site",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "voet.zin",
+          "type": "tekst",
+          "label": "Afsluitende zin",
+          "max": 90
+        },
+        {
+          "pad": "voet.contactTitel",
+          "type": "tekst",
+          "label": "Titel contact",
+          "breedte": "smal"
+        },
+        {
+          "pad": "voet.urenTitel",
+          "type": "tekst",
+          "label": "Titel uren",
+          "breedte": "smal"
+        },
+        {
+          "pad": "voet.volgTitel",
+          "type": "tekst",
+          "label": "Titel sociale media",
+          "breedte": "smal"
+        },
+        {
+          "pad": "voet.btwLabel",
+          "type": "tekst",
+          "label": "Label btw",
+          "breedte": "smal"
+        }
+      ]
+    },
+    {
+      "id": "subpaginas",
+      "titel": "Subpagina's: koppen",
+      "groep": "inhoud",
+      "beschrijving": "De grote titels bovenaan de pagina's behandelingen en team.",
+      "velden": [
+        {
+          "pad": "paginaBehandelingen.titel",
+          "type": "tekst",
+          "label": "Behandelingen: titel",
+          "max": 60
+        },
+        {
+          "pad": "paginaBehandelingen.titelAccent",
+          "type": "tekst",
+          "label": "Behandelingen: titel in kleur",
+          "max": 40
+        },
+        {
+          "pad": "paginaBehandelingen.intro",
+          "type": "tekstvak",
+          "label": "Behandelingen: inleiding",
+          "max": 300
+        },
+        {
+          "pad": "paginaTeam.titel",
+          "type": "tekst",
+          "label": "Team: titel",
+          "max": 60
+        },
+        {
+          "pad": "paginaTeam.titelAccent",
+          "type": "tekst",
+          "label": "Team: titel in kleur",
+          "max": 40
+        },
+        {
+          "pad": "paginaTeam.intro",
+          "type": "tekstvak",
+          "label": "Team: inleiding",
+          "max": 300
+        }
+      ]
+    },
+    {
+      "id": "fout",
+      "titel": "Pagina niet gevonden (404)",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "fout.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 60
+        },
+        {
+          "pad": "fout.tekst",
+          "type": "tekstvak",
+          "label": "Tekst",
+          "max": 200
+        },
+        {
+          "pad": "fout.knop",
+          "type": "tekst",
+          "label": "Knop terug",
+          "max": 30
+        }
+      ]
+    }
+  ]
+}

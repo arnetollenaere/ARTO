@@ -1,0 +1,908 @@
+{
+  "naam": "Omslag",
+  "sector": "kapper",
+  "beschrijving": "Voor kapsalons, barbiers, schoonheidssalons en nagelstudio's. Ontworpen als een high-fashion magazine: bone white en inkt met één signaalkleur, reusachtige didone-letters, een prijslijst als catalogus, een lookbook om door te swipen en het team als portretreeks.",
+  "schemaType": "HairSalon",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "achtergrond",
+        "label": "Papier (achtergrond)",
+        "hulp": "Licht, gebroken wit werkt het best. Standaard bone white.",
+        "standaard": "#EFEBE3"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Inkt (tekst en donkere vlakken)",
+        "hulp": "Bijna zwart. Moet sterk contrasteren met de achtergrond.",
+        "standaard": "#0E0E0C"
+      },
+      {
+        "sleutel": "accent",
+        "label": "Signaalkleur",
+        "hulp": "Eén felle kleur voor knoppen en markeringen, bv. acid lime of signaalrood. Er staat altijd inkt op, dus kies iets lichts en fels.",
+        "standaard": "#CDF23A"
+      },
+      {
+        "sleutel": "chroom",
+        "label": "Chroom (beeldvlakken)",
+        "hulp": "Zacht metaalgrijs voor de beeldvlakken zonder foto.",
+        "standaard": "#BFC2C4"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "masthead",
+      "titel": "Kop en knop",
+      "groep": "inhoud",
+      "beschrijving": "De bovenbalk van elke pagina, zoals de kop van een magazine.",
+      "velden": [
+        {
+          "pad": "masthead.editie",
+          "type": "tekst",
+          "label": "Editieregel",
+          "max": 40,
+          "hulp": "Klein label linksboven, bv. 'Nº 14 — Herfst/Winter 2026'. Pas het per seizoen aan."
+        },
+        {
+          "pad": "masthead.knop",
+          "type": "tekst",
+          "label": "Tekst van de afspraakknop",
+          "max": 24
+        },
+        {
+          "pad": "masthead.menu",
+          "type": "tekst",
+          "label": "Tekst van de menuknop",
+          "max": 16,
+          "hulp": "Het menu opent als een inhoudstafel."
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "titel": "Omslag (startpagina)",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat bezoekers zien: de cover van je salon.",
+      "velden": [
+        {
+          "pad": "hero.titel",
+          "type": "tekst",
+          "label": "Grote titel",
+          "max": 40,
+          "hulp": "De hoofdtitel van de site. Kort en krachtig, bv. 'Snit met karakter.'"
+        },
+        {
+          "pad": "hero.cursief",
+          "type": "tekst",
+          "label": "Woord in cursief",
+          "max": 20,
+          "hulp": "Een woord of twee dat schuin onder de titel komt."
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Introzin",
+          "max": 200
+        },
+        {
+          "pad": "hero.coverregels",
+          "type": "lijst",
+          "label": "Coverregels",
+          "itemLabel": "tekst",
+          "max": 4,
+          "hulp": "Korte regels zoals op een magazinecover. Het getal staat groot.",
+          "velden": [
+            {
+              "pad": "getal",
+              "type": "tekst",
+              "label": "Getal of kort woord",
+              "max": 6,
+              "breedte": "smal"
+            },
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Regel",
+              "max": 60
+            }
+          ]
+        },
+        {
+          "pad": "hero.stickerLabel",
+          "type": "tekst",
+          "label": "Sticker: bovenste regel",
+          "max": 14,
+          "hulp": "Het ronde prijsetiket, bv. 'Snit vanaf'."
+        },
+        {
+          "pad": "hero.stickerPrijs",
+          "type": "prijs",
+          "label": "Sticker: prijs"
+        },
+        {
+          "pad": "hero.knopSecundair",
+          "type": "tekst",
+          "label": "Tweede knop (naar prijslijst)",
+          "max": 30
+        },
+        {
+          "pad": "hero.foto",
+          "type": "afbeelding",
+          "label": "Coverfoto",
+          "hulp": "Staand, minstens 1200×1500 px, WebP. Wordt schuin bijgesneden. Laat leeg voor het getekende patroon."
+        },
+        {
+          "pad": "hero.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de coverfoto",
+          "hulp": "Wat staat erop? Voor blinden en Google."
+        }
+      ]
+    },
+    {
+      "id": "ticker",
+      "titel": "Lichtkrant",
+      "groep": "inhoud",
+      "beschrijving": "De lopende band met woorden onder de omslag.",
+      "velden": [
+        {
+          "pad": "ticker",
+          "type": "lijst",
+          "label": "Woorden",
+          "itemLabel": "tekst",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Woord of korte zin",
+              "max": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "editoriaal",
+      "titel": "Editoriaal",
+      "groep": "inhoud",
+      "beschrijving": "Je verhaal, als de brief van de hoofdredacteur.",
+      "velden": [
+        {
+          "pad": "editoriaal.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "editoriaal.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 80
+        },
+        {
+          "pad": "editoriaal.tekst",
+          "type": "rijk",
+          "label": "Tekst",
+          "hulp": "Twee à drie korte alinea's. De eerste letter wordt een grote initiaal."
+        },
+        {
+          "pad": "editoriaal.citaat",
+          "type": "tekstvak",
+          "label": "Citaat in de kantlijn",
+          "max": 140
+        },
+        {
+          "pad": "editoriaal.naam",
+          "type": "tekst",
+          "label": "Ondertekend door",
+          "max": 40
+        },
+        {
+          "pad": "editoriaal.functie",
+          "type": "tekst",
+          "label": "Functie",
+          "max": 40
+        }
+      ]
+    },
+    {
+      "id": "uitgelicht",
+      "titel": "Uitgelichte diensten",
+      "groep": "inhoud",
+      "beschrijving": "Blok op de startpagina. Welke diensten erin staan, kies je in de prijslijst met 'Uitlichten op de startpagina'.",
+      "velden": [
+        {
+          "pad": "uitgelicht.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "uitgelicht.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 60
+        },
+        {
+          "pad": "uitgelicht.knop",
+          "type": "tekst",
+          "label": "Knop naar de prijslijst",
+          "max": 30
+        }
+      ]
+    },
+    {
+      "id": "prijzen",
+      "titel": "Prijslijst",
+      "groep": "inhoud",
+      "beschrijving": "De catalogus op de pagina Prijzen: per categorie de diensten met duur en prijs.",
+      "velden": [
+        {
+          "pad": "prijzen.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "prijzen.kop",
+          "type": "tekst",
+          "label": "Titel van de pagina",
+          "max": 40
+        },
+        {
+          "pad": "prijzen.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 260
+        },
+        {
+          "pad": "prijzen.kolomDienst",
+          "type": "tekst",
+          "label": "Kolomtitel dienst",
+          "breedte": "smal"
+        },
+        {
+          "pad": "prijzen.kolomDuur",
+          "type": "tekst",
+          "label": "Kolomtitel duur",
+          "breedte": "smal"
+        },
+        {
+          "pad": "prijzen.kolomPrijs",
+          "type": "tekst",
+          "label": "Kolomtitel prijs",
+          "breedte": "smal"
+        },
+        {
+          "pad": "prijzen.vanafTekst",
+          "type": "tekst",
+          "label": "Woordje voor 'vanaf'-prijzen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "prijzen.opAanvraag",
+          "type": "tekst",
+          "label": "Tekst als er geen prijs is",
+          "breedte": "smal",
+          "hulp": "Verschijnt als je de prijs leeg of op 0 laat."
+        },
+        {
+          "pad": "prijzen.categorieen",
+          "type": "lijst",
+          "label": "Categorieën",
+          "itemLabel": "categorie",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "categorie",
+              "type": "tekst",
+              "label": "Categorie",
+              "max": 24,
+              "hulp": "bv. Dames, Heren, Kinderen, Kleur, Verzorging, Nagels"
+            },
+            {
+              "pad": "code",
+              "type": "tekst",
+              "label": "Afkorting",
+              "max": 3,
+              "breedte": "smal",
+              "hulp": "Eén of twee letters voor in de kantlijn, bv. D."
+            },
+            {
+              "pad": "intro",
+              "type": "tekstvak",
+              "label": "Korte uitleg",
+              "max": 200
+            },
+            {
+              "pad": "diensten",
+              "type": "lijst",
+              "label": "Diensten",
+              "itemLabel": "naam",
+              "sorteerbaar": true,
+              "velden": [
+                {
+                  "pad": "naam",
+                  "type": "tekst",
+                  "label": "Dienst",
+                  "max": 60
+                },
+                {
+                  "pad": "omschrijving",
+                  "type": "tekst",
+                  "label": "Toelichting (optioneel)",
+                  "max": 120
+                },
+                {
+                  "pad": "duur",
+                  "type": "tekst",
+                  "label": "Duur",
+                  "breedte": "smal",
+                  "hulp": "bv. 45 min of 2 u"
+                },
+                {
+                  "pad": "prijs",
+                  "type": "prijs",
+                  "label": "Prijs",
+                  "breedte": "smal"
+                },
+                {
+                  "pad": "vanaf",
+                  "type": "schakelaar",
+                  "label": "Vanafprijs",
+                  "hulp": "Aan als de prijs afhangt van lengte of hoeveelheid."
+                },
+                {
+                  "pad": "uitgelicht",
+                  "type": "schakelaar",
+                  "label": "Uitlichten op de startpagina"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pad": "prijzen.voetnoot",
+          "type": "rijk",
+          "label": "Kleine lettertjes onder de prijslijst",
+          "hulp": "Bv. annuleringsvoorwaarden, betaalmogelijkheden."
+        }
+      ]
+    },
+    {
+      "id": "lookbook",
+      "titel": "Lookbook",
+      "groep": "inhoud",
+      "beschrijving": "Een strook met looks om horizontaal door te scrollen.",
+      "velden": [
+        {
+          "pad": "lookbook.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "lookbook.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 60
+        },
+        {
+          "pad": "lookbook.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 200
+        },
+        {
+          "pad": "lookbook.looks",
+          "type": "lijst",
+          "label": "Looks",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Naam van de look",
+              "max": 40
+            },
+            {
+              "pad": "stylist",
+              "type": "tekst",
+              "label": "Stylist",
+              "max": 40
+            },
+            {
+              "pad": "omschrijving",
+              "type": "tekst",
+              "label": "Korte beschrijving",
+              "max": 110
+            },
+            {
+              "pad": "foto",
+              "type": "afbeelding",
+              "label": "Foto",
+              "hulp": "Staand (4:5), minstens 900×1125 px, WebP. Laat leeg voor het getekende patroon."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van de foto"
+            },
+            {
+              "pad": "vorm",
+              "type": "keuze",
+              "label": "Vorm van het beeldvlak",
+              "opties": [
+                "boog",
+                "schuin",
+                "knip",
+                "capsule"
+              ]
+            },
+            {
+              "pad": "patroon",
+              "type": "keuze",
+              "label": "Patroon zonder foto",
+              "opties": [
+                "golf",
+                "krul",
+                "vlecht",
+                "coupe",
+                "fade"
+              ],
+              "hulp": "Getekend patroon dat verschijnt zolang er geen foto is."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "titel": "Team",
+      "groep": "inhoud",
+      "beschrijving": "De stylisten, op de startpagina kort en op de pagina Team als portretreeks.",
+      "velden": [
+        {
+          "pad": "team.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "team.kop",
+          "type": "tekst",
+          "label": "Titel van de pagina",
+          "max": 40
+        },
+        {
+          "pad": "team.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 260
+        },
+        {
+          "pad": "team.knop",
+          "type": "tekst",
+          "label": "Knop naar de teampagina",
+          "max": 30
+        },
+        {
+          "pad": "team.boekKnop",
+          "type": "tekst",
+          "label": "Knop bij elke stylist",
+          "max": 30,
+          "hulp": "bv. 'Boek bij'. De voornaam komt er automatisch achter."
+        },
+        {
+          "pad": "team.leden",
+          "type": "lijst",
+          "label": "Stylisten",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Volledige naam",
+              "max": 40
+            },
+            {
+              "pad": "voornaam",
+              "type": "tekst",
+              "label": "Voornaam",
+              "max": 20,
+              "breedte": "smal"
+            },
+            {
+              "pad": "rol",
+              "type": "tekst",
+              "label": "Functie",
+              "max": 40
+            },
+            {
+              "pad": "sinds",
+              "type": "tekst",
+              "label": "In het salon sinds",
+              "max": 10,
+              "breedte": "smal"
+            },
+            {
+              "pad": "specialisaties",
+              "type": "lijst",
+              "label": "Specialisaties",
+              "itemLabel": "tekst",
+              "velden": [
+                {
+                  "pad": "tekst",
+                  "type": "tekst",
+                  "label": "Specialisatie",
+                  "max": 30
+                }
+              ]
+            },
+            {
+              "pad": "bio",
+              "type": "tekstvak",
+              "label": "Korte voorstelling",
+              "max": 320
+            },
+            {
+              "pad": "citaat",
+              "type": "tekst",
+              "label": "Uitspraak",
+              "max": 100
+            },
+            {
+              "pad": "portret",
+              "type": "afbeelding",
+              "label": "Portret",
+              "hulp": "Staand (3:4), minstens 900×1200 px, WebP. Laat leeg voor een monogram."
+            },
+            {
+              "pad": "portretAlt",
+              "type": "tekst",
+              "label": "Beschrijving van het portret"
+            },
+            {
+              "pad": "instagram",
+              "type": "url",
+              "label": "Eigen Instagram (optioneel)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "merken",
+      "titel": "Merken",
+      "groep": "inhoud",
+      "beschrijving": "De producten waarmee het salon werkt.",
+      "velden": [
+        {
+          "pad": "merken.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "merken.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 60
+        },
+        {
+          "pad": "merken.lijst",
+          "type": "lijst",
+          "label": "Merken",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Merk",
+              "max": 30
+            },
+            {
+              "pad": "soort",
+              "type": "tekst",
+              "label": "Waarvoor",
+              "max": 30,
+              "hulp": "bv. Kleur, Verzorging, Styling"
+            },
+            {
+              "pad": "omschrijving",
+              "type": "tekst",
+              "label": "Waarom dit merk",
+              "max": 110
+            },
+            {
+              "pad": "logo",
+              "type": "afbeelding",
+              "label": "Logo (optioneel)",
+              "hulp": "SVG of PNG, liefst zwart op transparant. Zonder logo staat de naam in letters."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stemmen",
+      "titel": "Reviews",
+      "groep": "inhoud",
+      "beschrijving": "Wat klanten zeggen, als lezersbrieven.",
+      "velden": [
+        {
+          "pad": "stemmen.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "stemmen.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 60
+        },
+        {
+          "pad": "stemmen.lijst",
+          "type": "lijst",
+          "label": "Reviews",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "max": 6,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Review",
+              "max": 240
+            },
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 40
+            },
+            {
+              "pad": "bron",
+              "type": "tekst",
+              "label": "Bron",
+              "max": 30,
+              "hulp": "bv. Google, Treatwell"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "afspraak",
+      "titel": "Afspraak maken",
+      "groep": "inhoud",
+      "beschrijving": "Online boeken via je boekingssysteem en/of een aanvraagformulier. Aanvragen komen in Berichten.",
+      "velden": [
+        {
+          "pad": "afspraak.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "afspraak.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 40
+        },
+        {
+          "pad": "afspraak.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 220
+        },
+        {
+          "pad": "afspraak.boekingslink",
+          "type": "url",
+          "label": "Link naar online boeken",
+          "hulp": "Je boekingspagina bij Salonized, Treatwell, Planity, Fresha … Ingevuld? Dan gaan alle afspraakknoppen daarheen. Leeg? Dan gaan ze naar het formulier."
+        },
+        {
+          "pad": "afspraak.boekingsknop",
+          "type": "tekst",
+          "label": "Tekst van de boekknop",
+          "max": 30
+        },
+        {
+          "pad": "afspraak.boekingsplatform",
+          "type": "tekst",
+          "label": "Naam van het boekingssysteem",
+          "max": 30,
+          "hulp": "Kleine regel onder de knop, bv. 'via Salonized'."
+        },
+        {
+          "pad": "afspraak.formulierKop",
+          "type": "tekst",
+          "label": "Kop boven het formulier",
+          "max": 60
+        },
+        {
+          "pad": "afspraak.dienstKeuze",
+          "type": "tekst",
+          "label": "Eerste keuze bij 'dienst'",
+          "max": 40,
+          "hulp": "bv. 'Weet ik nog niet'"
+        },
+        {
+          "pad": "afspraak.stylistKeuze",
+          "type": "tekst",
+          "label": "Eerste keuze bij 'stylist'",
+          "max": 40,
+          "hulp": "bv. 'Geen voorkeur'"
+        },
+        {
+          "pad": "afspraak.verzendknop",
+          "type": "tekst",
+          "label": "Tekst van de verzendknop",
+          "max": 30
+        },
+        {
+          "pad": "afspraak.privacy",
+          "type": "tekst",
+          "label": "Regel onder het formulier",
+          "max": 140
+        },
+        {
+          "pad": "afspraak.bevestiging",
+          "type": "tekst",
+          "label": "Bevestiging na verzenden",
+          "max": 140
+        }
+      ]
+    },
+    {
+      "id": "bezoek",
+      "titel": "Bezoek",
+      "groep": "gegevens",
+      "beschrijving": "Blok met adres, uren en praktische info op de startpagina.",
+      "velden": [
+        {
+          "pad": "bezoek.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 30
+        },
+        {
+          "pad": "bezoek.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 40
+        },
+        {
+          "pad": "bezoek.praktisch",
+          "type": "lijst",
+          "label": "Praktische info",
+          "itemLabel": "titel",
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 30
+            },
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Tekst",
+              "max": 140
+            }
+          ]
+        },
+        {
+          "pad": "bezoek.kaartknop",
+          "type": "tekst",
+          "label": "Tekst van de routeknop",
+          "max": 30
+        }
+      ]
+    },
+    {
+      "id": "nietgevonden",
+      "titel": "Pagina niet gevonden",
+      "groep": "inhoud",
+      "beschrijving": "De 404-pagina.",
+      "velden": [
+        {
+          "pad": "nietgevonden.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 40
+        },
+        {
+          "pad": "nietgevonden.tekst",
+          "type": "tekstvak",
+          "label": "Tekst",
+          "max": 160
+        },
+        {
+          "pad": "nietgevonden.knop",
+          "type": "tekst",
+          "label": "Knop naar de startpagina",
+          "max": 30
+        }
+      ]
+    },
+    {
+      "id": "voet",
+      "titel": "Voettekst",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "voet.slotzin",
+          "type": "tekst",
+          "label": "Slotzin",
+          "max": 80,
+          "hulp": "Korte zin naast de grote naam onderaan."
+        },
+        {
+          "pad": "voet.menuInhoud",
+          "type": "tekst",
+          "label": "Titel menu-kolom",
+          "max": 20,
+          "breedte": "smal"
+        },
+        {
+          "pad": "voet.menuUren",
+          "type": "tekst",
+          "label": "Titel uren-kolom",
+          "max": 20,
+          "breedte": "smal"
+        },
+        {
+          "pad": "voet.menuContact",
+          "type": "tekst",
+          "label": "Titel contact-kolom",
+          "max": 20,
+          "breedte": "smal"
+        }
+      ]
+    },
+    {
+      "id": "navigatie",
+      "titel": "Menu",
+      "groep": "inhoud",
+      "beschrijving": "De pagina's in de inhoudstafel en in de voettekst.",
+      "velden": [
+        {
+          "pad": "navigatie",
+          "type": "lijst",
+          "label": "Menu-items",
+          "itemLabel": "tekst",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Tekst",
+              "max": 20
+            },
+            {
+              "pad": "link",
+              "type": "tekst",
+              "label": "Link",
+              "hulp": "bv. /, /prijzen, /team of /#afspraak"
+            },
+            {
+              "pad": "regel",
+              "type": "tekst",
+              "label": "Kleine regel in de inhoudstafel",
+              "max": 50
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

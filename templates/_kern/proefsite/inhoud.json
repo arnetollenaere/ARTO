@@ -1,0 +1,95 @@
+{
+  "site": {
+    "naam": "Bistro Proef",
+    "slogan": "Seizoenskeuken aan de Leie",
+    "logo": "/img/uploads/logo.png",
+    "favicon": "",
+    "domein": "bistroproef.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": true,
+    "tekst": "Nieuw: elke donderdag ons viergangenmenu voor € 48.",
+    "link": "/menu"
+  },
+  "contact": {
+    "adres": "Graslei 12",
+    "postcode": "9000",
+    "gemeente": "Gent",
+    "land": "BE",
+    "telefoon": "+32 9 123 45 67",
+    "email": "hallo@bistroproef.be",
+    "whatsapp": "",
+    "btw": "",
+    "kaart": "https://maps.google.com/?q=Graslei+12+Gent"
+  },
+  "openingsuren": [
+    { "dag": "Maandag", "uren": "Gesloten" },
+    { "dag": "Dinsdag", "uren": "Gesloten" },
+    { "dag": "Woensdag", "uren": "12:00–14:00, 18:00–22:00" },
+    { "dag": "Donderdag", "uren": "12:00–14:00, 18:00–22:00" },
+    { "dag": "Vrijdag", "uren": "12:00–14:00, 18:00–22:30" },
+    { "dag": "Zaterdag", "uren": "18:00–22:30" },
+    { "dag": "Zondag", "uren": "12:00–15:00" }
+  ],
+  "socials": [
+    { "netwerk": "Instagram", "url": "instagram.com/bistroproef" },
+    { "netwerk": "Facebook", "url": "https://www.facebook.com/bistroproef" }
+  ],
+  "seo": {
+    "titel": "Bistro Proef – seizoenskeuken in Gent",
+    "beschrijving": "",
+    "afbeelding": "",
+    "paginas": [
+      { "pagina": "menu.html", "titel": "Menukaart", "beschrijving": "Ontdek onze seizoenskaart met lokale groenten, vis van de dag en huisgemaakte desserts." }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "accent": "#c2562b",
+      "achtergrond": "#faf6f0",
+      "tekst": "#241a14"
+    }
+  },
+  "intro": {
+    "titel": "Koken met wat het seizoen ons geeft",
+    "tekst": "Bij **Bistro Proef** koken we elke dag met verse producten van boeren uit de buurt.\n\n- Lunch vanaf € 19\n- Viergangenmenu op donderdag\n- Terras aan het water",
+    "foto": "/img/uploads/terras.jpg",
+    "fotoAlt": "",
+    "knop": { "tekst": "Bekijk de kaart", "pagina": "menu.html" }
+  },
+  "kaart": {
+    "inleiding": "Onze kaart verandert met de seizoenen. Vraag gerust naar de suggesties van de dag.",
+    "categorieen": [
+      {
+        "naam": "Voorgerechten",
+        "gerechten": [
+          { "naam": "Grijze garnaalkroketten", "beschrijving": "Twee huisgemaakte kroketten met gefrituurde peterselie en citroen.", "prijs": "16", "soort": "Vis", "nieuw": false, "foto": "", "fotoAlt": "" },
+          { "naam": "Seizoenssalade", "beschrijving": "Jonge bladeren, geroosterde pompoen, geitenkaas en hazelnoot.", "prijs": "14,50", "soort": "Vegetarisch", "nieuw": true, "foto": "/img/uploads/salade.webp", "fotoAlt": "" }
+        ]
+      },
+      {
+        "naam": "Hoofdgerechten",
+        "gerechten": [
+          { "naam": "Pasta met boschampignons", "beschrijving": "Verse tagliatelle, boschampignons, salie en oude Brugge.", "prijs": "22", "soort": "Vegetarisch", "nieuw": false, "foto": "/img/uploads/pasta.jpg", "fotoAlt": "Bord tagliatelle met boschampignons" },
+          { "naam": "Gentse waterzooi", "beschrijving": "Klassieker met hoevekip, prei, wortel en aardappel.", "prijs": "24", "soort": "Vlees", "nieuw": false, "foto": "", "fotoAlt": "" }
+        ]
+      }
+    ]
+  },
+  "evenement": {
+    "tonen": true,
+    "titel": "Wildavond",
+    "datum": "2026-11-14",
+    "plaatsen": 40,
+    "prijs": "65",
+    "kleur": "#3d4a2f"
+  },
+  "reserveren": {
+    "titel": "Reserveer een tafel",
+    "email": "reservatie@bistroproef.be",
+    "telefoon": "+32 9 123 45 67",
+    "link": "",
+    "notitie": ""
+  }
+}

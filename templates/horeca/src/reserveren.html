@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-reserveren">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="reserveer">
+
+  <div class="reserveer__tekst">
+    <p class="label"><span class="label__nr">(01)</span> {{ reservatie.label }}</p>
+    <h1 class="paginakop__titel">{{ reservatie.kop }}</h1>
+    <p class="paginakop__intro">{{ reservatie.intro }}</p>
+
+    <h2 class="label reserveer__sub">{{ reservatie.beleidKop }}</h2>
+    <ol class="beleid">
+      {{#elk reservatie.beleid}}<li><span class="beleid__nr" aria-hidden="true">{{ @nr | twee }}</span>{{ tekst }}</li>{{/elk}}
+    </ol>
+
+    <p class="reserveer__groep">{{ reservatie.groepTekst }} <a href="/#groepen">{{ groepen.label }}</a> · <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+
+    <h2 class="label reserveer__sub">{{ uren.kop }}</h2>
+    <p class="nu nu--groot" data-nu data-status="onbekend"><span class="nu__stip" aria-hidden="true"></span><span data-nu-tekst>{{ uren.kop }}</span></p>
+    {{> uren }}
+    <p class="boeken__tel">{{ reservatie.ofBel }} <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></p>
+  </div>
+
+  <div class="reserveer__ticket">
+    {{> ticket }}
+  </div>
+
+</main>
+{{> voet }}
+</body>
+</html>

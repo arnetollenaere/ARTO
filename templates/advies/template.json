@@ -1,0 +1,1088 @@
+{
+  "naam": "Paragraaf",
+  "sector": "advies",
+  "beschrijving": "Voor advocaten, notarissen, boekhouders, fiscalisten en consultants. Hedendaagse Zwitserse strengheid: genummerde secties (§ 01, § 02), haarfijne lijnen, een scherpe serif met een neutrale grotesk, inktgroen en ossenbloed op warm gebroken wit.",
+  "schemaType": "LegalService",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "accent",
+        "label": "Hoofdkleur (inkt)",
+        "hulp": "Koppen, knoppen en lijnen. Kies een diepe, donkere kleur.",
+        "standaard": "#1E3A2F"
+      },
+      {
+        "sleutel": "tweede",
+        "label": "Tweede kleur (stempel)",
+        "hulp": "Paragraafnummers en kleine accenten. Donker genoeg voor tekst.",
+        "standaard": "#7B2433"
+      },
+      {
+        "sleutel": "achtergrond",
+        "label": "Achtergrond (papier)",
+        "standaard": "#F3EFE6"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Tekst",
+        "standaard": "#17201B"
+      },
+      {
+        "sleutel": "lijn",
+        "label": "Haarlijnen",
+        "hulp": "Lichte kleur voor de fijne scheidingslijnen en het kolomraster.",
+        "standaard": "#CBC3B2"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "navigatie",
+      "titel": "Menu",
+      "groep": "inhoud",
+      "beschrijving": "De woorden in het menu bovenaan elke pagina.",
+      "velden": [
+        {
+          "pad": "navigatie.expertise",
+          "type": "tekst",
+          "label": "Link naar expertise",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.team",
+          "type": "tekst",
+          "label": "Link naar team",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.inzichten",
+          "type": "tekst",
+          "label": "Link naar inzichten",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.contact",
+          "type": "tekst",
+          "label": "Link naar contact",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.knop",
+          "type": "tekst",
+          "label": "Knop rechtsboven",
+          "max": 24
+        },
+        {
+          "pad": "navigatie.menu",
+          "type": "tekst",
+          "label": "Menuknop op gsm",
+          "breedte": "smal",
+          "max": 12
+        }
+      ]
+    },
+    {
+      "id": "kantoor",
+      "titel": "Kantoorgegevens",
+      "groep": "gegevens",
+      "beschrijving": "Korte feiten die bovenaan de startpagina staan.",
+      "velden": [
+        {
+          "pad": "kantoor.sinds",
+          "type": "tekst",
+          "label": "Actief sinds",
+          "breedte": "smal",
+          "hulp": "Een jaartal, bv. 2004"
+        },
+        {
+          "pad": "kantoor.balie",
+          "type": "tekst",
+          "label": "Balie of beroepsorde",
+          "hulp": "bv. Balie Antwerpen, ITAA, Koninklijke Federatie van het Belgisch Notariaat"
+        },
+        {
+          "pad": "kantoor.talen",
+          "type": "tekst",
+          "label": "Talen",
+          "hulp": "Gescheiden door een middenpunt ·"
+        },
+        {
+          "pad": "kantoor.plaats",
+          "type": "tekst",
+          "label": "Plaats",
+          "hulp": "bv. Antwerpen — Zuid"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "titel": "Openingsblok",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat een bezoeker ziet op de startpagina.",
+      "velden": [
+        {
+          "pad": "hero.label",
+          "type": "tekst",
+          "label": "Klein label boven de titel",
+          "max": 40
+        },
+        {
+          "pad": "hero.titel",
+          "type": "tekst",
+          "label": "Titel (rechte letters)",
+          "max": 60
+        },
+        {
+          "pad": "hero.titelAccent",
+          "type": "tekst",
+          "label": "Titel (cursief vervolg)",
+          "max": 50,
+          "hulp": "Het tweede deel van de titel, in cursief."
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 260
+        },
+        {
+          "pad": "hero.knop",
+          "type": "tekst",
+          "label": "Hoofdknop",
+          "max": 32
+        },
+        {
+          "pad": "hero.tweedeKnop",
+          "type": "tekst",
+          "label": "Tweede link",
+          "max": 32
+        },
+        {
+          "pad": "hero.zegel",
+          "type": "tekst",
+          "label": "Tekst in de ronde stempel",
+          "max": 50,
+          "hulp": "Draait rond naast de titel, samen met de kantoornaam."
+        }
+      ]
+    },
+    {
+      "id": "expertise",
+      "titel": "Expertise",
+      "groep": "inhoud",
+      "beschrijving": "De rechts- of adviesdomeinen. Verschijnen als uitklapbare index op de startpagina en uitgebreid op de expertisepagina.",
+      "velden": [
+        {
+          "pad": "expertise.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "expertise.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "expertise.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 260
+        },
+        {
+          "pad": "expertise.meer",
+          "type": "tekst",
+          "label": "Link naar de expertisepagina",
+          "max": 40
+        },
+        {
+          "pad": "expertise.domeinen",
+          "type": "lijst",
+          "label": "Domeinen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "min": 1,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Domein",
+              "max": 40
+            },
+            {
+              "pad": "kort",
+              "type": "tekstvak",
+              "label": "Korte omschrijving",
+              "max": 140
+            },
+            {
+              "pad": "uitleg",
+              "type": "rijk",
+              "label": "Uitleg",
+              "hulp": "Verschijnt bij uitklappen. Lijstjes met '- ' aan het begin van een regel."
+            },
+            {
+              "pad": "voorbeelden",
+              "type": "tekst",
+              "label": "Trefwoorden",
+              "hulp": "Gescheiden door ·, bv. Ontslag · Concurrentiebeding"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cijfers",
+      "titel": "Kerncijfers",
+      "groep": "inhoud",
+      "beschrijving": "Cijfers die optellen wanneer ze in beeld komen.",
+      "velden": [
+        {
+          "pad": "cijfers.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "cijfers.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "cijfers.items",
+          "type": "lijst",
+          "label": "Cijfers",
+          "itemLabel": "label",
+          "sorteerbaar": true,
+          "max": 4,
+          "velden": [
+            {
+              "pad": "getal",
+              "type": "getal",
+              "label": "Getal",
+              "breedte": "smal"
+            },
+            {
+              "pad": "achter",
+              "type": "tekst",
+              "label": "Teken erachter",
+              "breedte": "smal",
+              "hulp": "bv. %, + of leeg"
+            },
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Omschrijving",
+              "max": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "werkwijze",
+      "titel": "Werkwijze",
+      "groep": "inhoud",
+      "beschrijving": "Hoe een dossier verloopt, stap voor stap.",
+      "velden": [
+        {
+          "pad": "werkwijze.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkwijze.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "werkwijze.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 200
+        },
+        {
+          "pad": "werkwijze.stappen",
+          "type": "lijst",
+          "label": "Stappen",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "max": 5,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Stap",
+              "max": 30
+            },
+            {
+              "pad": "duur",
+              "type": "tekst",
+              "label": "Duur of termijn",
+              "max": 30
+            },
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Uitleg",
+              "max": 220
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tarieven",
+      "titel": "Tarieven",
+      "groep": "inhoud",
+      "beschrijving": "Ereloon en vaste prijzen. Wees concreet: dat schept vertrouwen.",
+      "velden": [
+        {
+          "pad": "tarieven.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "tarieven.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "tarieven.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 260,
+          "hulp": "Vermeld of prijzen inclusief of exclusief btw zijn."
+        },
+        {
+          "pad": "tarieven.items",
+          "type": "lijst",
+          "label": "Tarieven",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Omschrijving",
+              "max": 40
+            },
+            {
+              "pad": "prijs",
+              "type": "prijs",
+              "label": "Prijs in euro",
+              "breedte": "smal"
+            },
+            {
+              "pad": "eenheid",
+              "type": "tekst",
+              "label": "Eenheid",
+              "breedte": "smal",
+              "hulp": "bv. per uur, vaste prijs"
+            },
+            {
+              "pad": "toelichting",
+              "type": "tekstvak",
+              "label": "Toelichting",
+              "max": 160
+            }
+          ]
+        },
+        {
+          "pad": "tarieven.noot",
+          "type": "tekstvak",
+          "label": "Noot onder de tarieven",
+          "max": 220
+        }
+      ]
+    },
+    {
+      "id": "team",
+      "titel": "Team",
+      "groep": "inhoud",
+      "beschrijving": "Advocaten, medewerkers en vennoten. De eerste vier staan op de startpagina, iedereen op de teampagina.",
+      "velden": [
+        {
+          "pad": "team.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "team.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "team.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 260
+        },
+        {
+          "pad": "team.meer",
+          "type": "tekst",
+          "label": "Link naar de teampagina",
+          "max": 40
+        },
+        {
+          "pad": "team.leden",
+          "type": "lijst",
+          "label": "Teamleden",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 50
+            },
+            {
+              "pad": "rol",
+              "type": "tekst",
+              "label": "Rol",
+              "hulp": "bv. Vennoot, Advocaat, Fiscalist, Kandidaat-notaris",
+              "breedte": "smal"
+            },
+            {
+              "pad": "talen",
+              "type": "tekst",
+              "label": "Talen",
+              "hulp": "bv. NL · FR · EN",
+              "breedte": "smal"
+            },
+            {
+              "pad": "balie",
+              "type": "tekst",
+              "label": "Balie of beroepsorde",
+              "breedte": "smal"
+            },
+            {
+              "pad": "sinds",
+              "type": "tekst",
+              "label": "Ingeschreven sinds",
+              "breedte": "smal"
+            },
+            {
+              "pad": "specialisaties",
+              "type": "tekst",
+              "label": "Specialisaties",
+              "max": 80
+            },
+            {
+              "pad": "email",
+              "type": "email",
+              "label": "E-mail"
+            },
+            {
+              "pad": "foto",
+              "type": "afbeelding",
+              "label": "Portret",
+              "hulp": "Staand, 800×1000 px, rustige achtergrond. Leeg = een monogram met de initiaal."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van de foto",
+              "hulp": "bv. Portret van Lieve Maes"
+            },
+            {
+              "pad": "bio",
+              "type": "tekstvak",
+              "label": "Korte bio",
+              "max": 400
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "inzichten",
+      "titel": "Inzichten",
+      "groep": "inhoud",
+      "beschrijving": "Artikels en nieuwsbrieven. De drie bovenste staan op de startpagina; zet het nieuwste bovenaan.",
+      "velden": [
+        {
+          "pad": "inzichten.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "inzichten.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "inzichten.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 260
+        },
+        {
+          "pad": "inzichten.meer",
+          "type": "tekst",
+          "label": "Link naar alle inzichten",
+          "max": 40
+        },
+        {
+          "pad": "inzichten.lees",
+          "type": "tekst",
+          "label": "Knop 'lees artikel'",
+          "max": 30
+        },
+        {
+          "pad": "inzichten.artikels",
+          "type": "lijst",
+          "label": "Artikels",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 100
+            },
+            {
+              "pad": "datum",
+              "type": "datum",
+              "label": "Datum",
+              "breedte": "smal"
+            },
+            {
+              "pad": "categorie",
+              "type": "keuze",
+              "label": "Categorie",
+              "opties": [
+                "Onderneming",
+                "Fiscaal",
+                "Arbeid",
+                "Vastgoed",
+                "Vermogen",
+                "Geschillen",
+                "Kantoor"
+              ],
+              "breedte": "smal"
+            },
+            {
+              "pad": "auteur",
+              "type": "tekst",
+              "label": "Auteur",
+              "breedte": "smal"
+            },
+            {
+              "pad": "samenvatting",
+              "type": "tekstvak",
+              "label": "Samenvatting",
+              "max": 200
+            },
+            {
+              "pad": "tekst",
+              "type": "rijk",
+              "label": "Volledige tekst",
+              "hulp": "Verschijnt op de pagina Inzichten. **vet**, *cursief*, [link](https://…) en lijstjes met '- '."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq",
+      "titel": "Veelgestelde vragen",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "faq.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "faq.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "faq.items",
+          "type": "lijst",
+          "label": "Vragen",
+          "itemLabel": "vraag",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "vraag",
+              "type": "tekst",
+              "label": "Vraag",
+              "max": 120
+            },
+            {
+              "pad": "antwoord",
+              "type": "tekstvak",
+              "label": "Antwoord",
+              "max": 500
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gesprek",
+      "titel": "Formulier eerste gesprek",
+      "groep": "inhoud",
+      "beschrijving": "Het aanvraagformulier onderaan de startpagina. Aanvragen komen in het beheerpaneel onder Berichten.",
+      "velden": [
+        {
+          "pad": "gesprek.label",
+          "type": "tekst",
+          "label": "Sectielabel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "gesprek.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "gesprek.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 260
+        },
+        {
+          "pad": "gesprek.onderwerpen",
+          "type": "lijst",
+          "label": "Onderwerpen om uit te kiezen",
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Keuze",
+              "max": 40
+            }
+          ],
+          "itemLabel": "naam",
+          "sorteerbaar": true
+        },
+        {
+          "pad": "gesprek.voorkeur",
+          "type": "lijst",
+          "label": "Voorkeur voor het gesprek",
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Keuze",
+              "max": 40
+            }
+          ],
+          "itemLabel": "naam",
+          "sorteerbaar": true
+        },
+        {
+          "pad": "gesprek.knop",
+          "type": "tekst",
+          "label": "Verzendknop",
+          "max": 32
+        },
+        {
+          "pad": "gesprek.bevestiging",
+          "type": "tekstvak",
+          "label": "Bevestiging na verzenden",
+          "max": 200
+        },
+        {
+          "pad": "gesprek.privacy",
+          "type": "tekstvak",
+          "label": "Privacyzin onder het formulier",
+          "max": 200
+        }
+      ]
+    },
+    {
+      "id": "paginas",
+      "titel": "Koppen van de subpagina's",
+      "groep": "inhoud",
+      "beschrijving": "Titel en introductie bovenaan Expertise, Team, Inzichten en de foutpagina.",
+      "velden": [
+        {
+          "pad": "paginas.expertise",
+          "type": "groep",
+          "label": "Expertise",
+          "velden": [
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Label",
+              "breedte": "smal"
+            },
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 70
+            },
+            {
+              "pad": "intro",
+              "type": "tekstvak",
+              "label": "Introductie",
+              "max": 260
+            }
+          ]
+        },
+        {
+          "pad": "paginas.team",
+          "type": "groep",
+          "label": "Team",
+          "velden": [
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Label",
+              "breedte": "smal"
+            },
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 70
+            },
+            {
+              "pad": "intro",
+              "type": "tekstvak",
+              "label": "Introductie",
+              "max": 260
+            }
+          ]
+        },
+        {
+          "pad": "paginas.inzichten",
+          "type": "groep",
+          "label": "Inzichten",
+          "velden": [
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Label",
+              "breedte": "smal"
+            },
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 70
+            },
+            {
+              "pad": "intro",
+              "type": "tekstvak",
+              "label": "Introductie",
+              "max": 260
+            }
+          ]
+        },
+        {
+          "pad": "paginas.nietGevonden",
+          "type": "groep",
+          "label": "Pagina niet gevonden (404)",
+          "velden": [
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Label",
+              "breedte": "smal"
+            },
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 70
+            },
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Tekst",
+              "max": 200
+            },
+            {
+              "pad": "knop",
+              "type": "tekst",
+              "label": "Knop",
+              "max": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "juridisch",
+      "titel": "Wettelijke vermeldingen",
+      "groep": "gegevens",
+      "beschrijving": "Verplichte informatie voor vrije beroepen, onderaan elke pagina. Het ondernemingsnummer komt uit Contact.",
+      "velden": [
+        {
+          "pad": "juridisch.vennootschap",
+          "type": "tekst",
+          "label": "Naam en rechtsvorm",
+          "hulp": "bv. Maes Vandersteen Advocaten BV"
+        },
+        {
+          "pad": "juridisch.rpr",
+          "type": "tekst",
+          "label": "Rechtspersonenregister (RPR)",
+          "hulp": "bv. RPR Antwerpen, afdeling Antwerpen"
+        },
+        {
+          "pad": "juridisch.balie",
+          "type": "tekstvak",
+          "label": "Balie of beroepsorde",
+          "max": 200
+        },
+        {
+          "pad": "juridisch.verzekering",
+          "type": "tekstvak",
+          "label": "Beroepsaansprakelijkheid",
+          "max": 200,
+          "hulp": "Verzekeraar en/of polis."
+        },
+        {
+          "pad": "juridisch.deontologie",
+          "type": "tekstvak",
+          "label": "Deontologie",
+          "max": 200
+        },
+        {
+          "pad": "juridisch.deontologieLink",
+          "type": "url",
+          "label": "Link naar de deontologische regels"
+        },
+        {
+          "pad": "juridisch.privacyLink",
+          "type": "url",
+          "label": "Link naar privacyverklaring (optioneel)"
+        }
+      ]
+    },
+    {
+      "id": "labels",
+      "titel": "Kleine teksten",
+      "groep": "inhoud",
+      "beschrijving": "Korte woorden op de site: kolomtitels, formulierlabels en de koppen in de voettekst. Pas ze aan voor een andere sector of taal.",
+      "velden": [
+        {
+          "pad": "labels.sinds",
+          "type": "tekst",
+          "label": "Sinds / ingeschreven sinds",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.orde",
+          "type": "tekst",
+          "label": "Orde / balie (kolomtitel)",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.talen",
+          "type": "tekst",
+          "label": "Talen",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.inhoud",
+          "type": "tekst",
+          "label": "Inhoud",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.naam",
+          "type": "tekst",
+          "label": "Naam",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.rol",
+          "type": "tekst",
+          "label": "Rol",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.domein",
+          "type": "tekst",
+          "label": "Domein",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.adres",
+          "type": "tekst",
+          "label": "Adres",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.telefoon",
+          "type": "tekst",
+          "label": "Telefoon",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.email",
+          "type": "tekst",
+          "label": "E-mail",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.kantooruren",
+          "type": "tekst",
+          "label": "Kantooruren",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.route",
+          "type": "tekst",
+          "label": "Route plannen",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.notaBene",
+          "type": "tekst",
+          "label": "Nota bene",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.ontvangen",
+          "type": "tekst",
+          "label": "Ontvangen",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.onderwerp",
+          "type": "tekst",
+          "label": "Onderwerp",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.voorkeur",
+          "type": "tekst",
+          "label": "Voorkeur voor het gesprek",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.vraag",
+          "type": "tekst",
+          "label": "Je vraag in een paar zinnen",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.optioneel",
+          "type": "tekst",
+          "label": "optioneel",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.kantoor",
+          "type": "tekst",
+          "label": "Kantoor",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.wettelijk",
+          "type": "tekst",
+          "label": "Wettelijke vermeldingen",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.vennootschap",
+          "type": "tekst",
+          "label": "Vennootschap",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.ondernemingsnummer",
+          "type": "tekst",
+          "label": "Ondernemingsnummer (kort)",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.balie",
+          "type": "tekst",
+          "label": "Balie",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.verzekering",
+          "type": "tekst",
+          "label": "Verzekering",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.deontologie",
+          "type": "tekst",
+          "label": "Deontologie",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.meerInfo",
+          "type": "tekst",
+          "label": "Meer info",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.privacy",
+          "type": "tekst",
+          "label": "Privacy",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.naarInhoud",
+          "type": "tekst",
+          "label": "Skip-link voor toetsenbord",
+          "breedte": "smal",
+          "max": 60
+        },
+        {
+          "pad": "labels.naarStart",
+          "type": "tekst",
+          "label": "Voorleestekst logo",
+          "breedte": "smal",
+          "max": 60
+        }
+      ]
+    }
+  ]
+}

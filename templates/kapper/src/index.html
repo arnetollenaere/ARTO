@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  {{> hoofd }}
+</head>
+<body class="p-start">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud-start">
+
+  <section class="omslag" aria-labelledby="omslag-titel">
+    <div class="omslag__beeld vorm-snede">
+      {{#als hero.foto}}<img src="{{ hero.foto }}" alt="{{ hero.fotoAlt }}" width="1200" height="1500" fetchpriority="high">{{#anders}}<svg class="patroon" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><use href="/img/patronen.svg#golf"/></svg>{{/als}}
+      <span class="omslag__snijlijn" aria-hidden="true"></span>
+      <p class="omslag__verticaal" aria-hidden="true">{{ masthead.editie }}</p>
+      <div class="barcode" aria-hidden="true"><span></span><small>{{ site.domein }}</small></div>
+    </div>
+
+    <h1 class="omslag__titel" id="omslag-titel">{{ hero.titel }}</h1>
+    <p class="omslag__cursief"><em>{{ hero.cursief }}</em></p>
+
+    <div class="omslag__tekst">
+      <p class="omslag__intro">{{ hero.intro }}</p>
+      <div class="omslag__knoppen">
+        <a class="knop knop--signaal knop--groot" href="{{> boek }}">{{ masthead.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+        <a class="knop knop--lijn" href="/prijzen">{{ hero.knopSecundair }}</a>
+      </div>
+    </div>
+
+    <ul class="coverregels">
+      {{#elk hero.coverregels}}<li><strong>{{ getal }}</strong><span>{{ tekst }}</span></li>
+      {{/elk}}
+    </ul>
+
+    {{#als hero.stickerPrijs}}<a class="sticker" href="/prijzen">
+      <svg viewBox="0 0 200 200" aria-hidden="true" focusable="false"><defs><path id="ring" d="M100 100m-78 0a78 78 0 1 1 156 0a78 78 0 1 1-156 0"/></defs><text><textPath href="#ring">{{ site.naam }} · {{ contact.gemeente }} · {{ site.naam }} · {{ contact.gemeente }} ·</textPath></text></svg>
+      <span class="sticker__label">{{ hero.stickerLabel }}</span>
+      <span class="sticker__prijs">€{{ hero.stickerPrijs }}</span>
+    </a>{{/als}}
+  </section>
+
+  <div class="ticker" aria-label="Specialiteiten">
+    <ul class="ticker__band">
+      {{#elk ticker}}<li>{{ tekst }}</li>{{/elk}}
+    </ul>
+    <ul class="ticker__band" aria-hidden="true">
+      {{#elk ticker}}<li>{{ tekst }}</li>{{/elk}}
+    </ul>
+  </div>
+
+  <section class="editoriaal" aria-labelledby="editoriaal-kop">
+    <div class="editoriaal__kantlijn">
+      <p class="label"><span class="label__nr">01</span>{{ editoriaal.label }}</p>
+      <blockquote class="editoriaal__citaat"><p>{{ editoriaal.citaat }}</p></blockquote>
+    </div>
+    <div class="editoriaal__hoofd">
+      <h2 class="editoriaal__kop" id="editoriaal-kop">{{ editoriaal.kop }}</h2>
+      <div class="editoriaal__tekst">{{ editoriaal.tekst | md }}</div>
+      <p class="editoriaal__handtekening"><span class="handtekening">{{ editoriaal.naam }}</span><small>{{ editoriaal.functie }}</small></p>
+    </div>
+  </section>
+
+  <section class="uitgelicht" aria-labelledby="uitgelicht-kop">
+    <div class="sectiekop">
+      <p class="label"><span class="label__nr">02</span>{{ uitgelicht.label }}</p>
+      <h2 id="uitgelicht-kop">{{ uitgelicht.kop }}</h2>
+      <a class="knop knop--lijn" href="/prijzen">{{ uitgelicht.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+    </div>
+    <ol class="uitgelicht__lijst">
+      {{#elk prijzen.categorieen}}{{#elk diensten}}{{#als uitgelicht}}<li class="uitgelicht__rij">
+        <a href="/prijzen#{{ categorie | slug }}">
+          <span class="uitgelicht__cat">{{ categorie }}</span>
+          <span class="uitgelicht__naam">{{ naam }}</span>
+          <span class="uitgelicht__duur">{{ duur }}</span>
+          <span class="uitgelicht__prijs">{{#als prijs}}{{#als vanaf}}<small>{{ prijzen.vanafTekst }}</small>{{/als}}€{{ prijs }}{{#anders}}<small>{{ prijzen.opAanvraag }}</small>{{/als}}</span>
+        </a>
+      </li>{{/als}}{{/elk}}{{/elk}}
+    </ol>
+  </section>
+
+  <section class="lookbook" aria-labelledby="lookbook-kop">
+    <div class="sectiekop sectiekop--licht">
+      <p class="label"><span class="label__nr">03</span>{{ lookbook.label }}</p>
+      <h2 id="lookbook-kop">{{ lookbook.kop }}</h2>
+      <p class="sectiekop__intro">{{ lookbook.intro }}</p>
+      <div class="lookbook__pijlen">
+        <button type="button" class="rondknop" data-lookbook="-1" aria-label="Vorige look">←</button>
+        <button type="button" class="rondknop" data-lookbook="1" aria-label="Volgende look">→</button>
+      </div>
+    </div>
+    <ol class="lookbook__strook" tabindex="0" aria-label="{{ lookbook.kop }}">
+      {{#elk lookbook.looks}}<li class="look">
+        <figure>
+          <div class="look__beeld vorm-{{ vorm }}">
+            {{#als foto}}<img src="{{ foto }}" alt="{{ fotoAlt }}" width="900" height="1125" loading="lazy">{{#anders}}<svg class="patroon" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><use href="/img/patronen.svg#{{ patroon }}"/></svg>{{/als}}
+          </div>
+          <figcaption>
+            <span class="look__nr">Look {{ @nr | twee }}</span>
+            <strong class="look__titel">{{ titel }}</strong>
+            <span class="look__tekst">{{ omschrijving }}</span>
+            <span class="look__stylist">{{ stylist }}</span>
+          </figcaption>
+        </figure>
+      </li>
+      {{/elk}}
+    </ol>
+    <div class="lookbook__voortgang" aria-hidden="true"><span></span></div>
+  </section>
+
+  <section class="teamlijst" aria-labelledby="team-kop">
+    <div class="sectiekop">
+      <p class="label"><span class="label__nr">04</span>{{ team.label }}</p>
+      <h2 id="team-kop">{{ team.kop }}</h2>
+      <p class="sectiekop__intro">{{ team.intro }}</p>
+    </div>
+    <ol class="teamlijst__namen">
+      {{#elk team.leden}}<li>
+        <a href="/team#{{ naam | slug }}">
+          <span class="teamlijst__nr">{{ @nr | twee }}</span>
+          <span class="teamlijst__naam">{{ naam }}</span>
+          <span class="teamlijst__rol">{{ rol }}</span>
+          <span class="teamlijst__spec">{{#elk specialisaties}}<span>{{ tekst }}</span>{{/elk}}</span>
+        </a>
+      </li>
+      {{/elk}}
+    </ol>
+    <a class="knop knop--lijn teamlijst__knop" href="/team">{{ team.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+  </section>
+
+  <section class="stemmen" aria-labelledby="stemmen-kop">
+    <div class="sectiekop">
+      <p class="label"><span class="label__nr">05</span>{{ stemmen.label }}</p>
+      <h2 id="stemmen-kop">{{ stemmen.kop }}</h2>
+    </div>
+    <div class="stemmen__lijst">
+      {{#elk stemmen.lijst}}<figure class="stem">
+        <blockquote><p>{{ tekst }}</p></blockquote>
+        <figcaption>{{ naam }} <span>— {{ bron }}</span></figcaption>
+      </figure>
+      {{/elk}}
+    </div>
+  </section>
+
+  <section class="merken" aria-labelledby="merken-kop">
+    <div class="merken__kop">
+      <p class="label"><span class="label__nr">06</span>{{ merken.label }}</p>
+      <h2 id="merken-kop">{{ merken.kop }}</h2>
+    </div>
+    <ul class="merken__lijst">
+      {{#elk merken.lijst}}<li>
+        <span class="merken__soort">{{ soort }}</span>
+        {{#als logo}}<img class="merken__logo" src="{{ logo }}" alt="{{ naam }}" width="160" height="48" loading="lazy">{{#anders}}<span class="merken__naam">{{ naam }}</span>{{/als}}
+        <span class="merken__tekst">{{ omschrijving }}</span>
+      </li>
+      {{/elk}}
+    </ul>
+  </section>
+
+  <section class="afspraak" id="afspraak" aria-labelledby="afspraak-kop">
+    <div class="afspraak__paneel">
+      <p class="label label--licht"><span class="label__nr">07</span>{{ afspraak.label }}</p>
+      <h2 class="afspraak__kop" id="afspraak-kop">{{ afspraak.kop }}</h2>
+      <p class="afspraak__intro">{{ afspraak.intro }}</p>
+      {{#als afspraak.boekingslink}}<p class="afspraak__extern"><a class="knop knop--signaal knop--groot" href="{{ afspraak.boekingslink }}" target="_blank" rel="noopener">{{ afspraak.boekingsknop }}<span class="pijl" aria-hidden="true">↗</span></a><small>{{ afspraak.boekingsplatform }}</small></p>{{/als}}
+      <p class="afspraak__tel"><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a>{{#als contact.whatsapp}}<a href="https://wa.me/{{ contact.whatsapp | tel }}" rel="noopener">WhatsApp</a>{{/als}}</p>
+    </div>
+
+    <form class="formulier" method="post" action="/api/bericht">
+      <h3 class="formulier__kop">{{ afspraak.formulierKop }}</h3>
+      <input type="hidden" name="_formulier" value="afspraak">
+      <input name="_honing" tabindex="-1" autocomplete="off" hidden>
+      <p class="formulier__bevestiging" role="status" data-bevestiging hidden>{{ afspraak.bevestiging }}</p>
+      <div class="veld">
+        <label for="f-naam">Naam</label>
+        <input id="f-naam" name="naam" autocomplete="name" required>
+      </div>
+      <div class="veld veld--half">
+        <label for="f-tel">Telefoon</label>
+        <input id="f-tel" name="telefoon" type="tel" autocomplete="tel" required>
+      </div>
+      <div class="veld veld--half">
+        <label for="f-mail">E-mail</label>
+        <input id="f-mail" name="email" type="email" autocomplete="email">
+      </div>
+      <div class="veld veld--half">
+        <label for="f-dienst">Dienst</label>
+        <select id="f-dienst" name="dienst">
+          <option>{{ afspraak.dienstKeuze }}</option>
+          {{#elk prijzen.categorieen}}<optgroup label="{{ categorie }}">{{#elk diensten}}<option>{{ categorie }}: {{ naam }}</option>{{/elk}}</optgroup>{{/elk}}
+        </select>
+      </div>
+      <div class="veld veld--half">
+        <label for="f-stylist">Stylist</label>
+        <select id="f-stylist" name="stylist">
+          <option>{{ afspraak.stylistKeuze }}</option>
+          {{#elk team.leden}}<option value="{{ voornaam }}">{{ naam }}</option>{{/elk}}
+        </select>
+      </div>
+      <div class="veld">
+        <label for="f-wanneer">Voorkeur voor dag en uur</label>
+        <input id="f-wanneer" name="voorkeur" placeholder="bv. donderdagavond of zaterdagvoormiddag">
+      </div>
+      <div class="veld">
+        <label for="f-bericht">Opmerking</label>
+        <textarea id="f-bericht" name="bericht" rows="3"></textarea>
+      </div>
+      <div class="formulier__voet">
+        <button class="knop knop--signaal knop--groot" type="submit">{{ afspraak.verzendknop }}<span class="pijl" aria-hidden="true">→</span></button>
+        <small>{{ afspraak.privacy }}</small>
+      </div>
+    </form>
+  </section>
+
+  <section class="bezoek" aria-labelledby="bezoek-kop">
+    <div class="bezoek__adres">
+      <p class="label"><span class="label__nr">08</span>{{ bezoek.label }}</p>
+      <h2 id="bezoek-kop">{{ bezoek.kop }}</h2>
+      <address class="bezoek__groot">{{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}</address>
+      {{#als contact.kaart}}<a class="knop knop--lijn" href="{{ contact.kaart }}" rel="noopener" target="_blank">{{ bezoek.kaartknop }}<span class="pijl" aria-hidden="true">↗</span></a>{{/als}}
+    </div>
+    <dl class="uren">
+      {{#elk openingsuren}}<div data-dag="{{ dag | klein }}"><dt>{{ dag }}</dt><dd>{{ uren }}</dd></div>
+      {{/elk}}
+    </dl>
+    <ul class="bezoek__praktisch">
+      {{#elk bezoek.praktisch}}<li><strong>{{ titel }}</strong><span>{{ tekst }}</span></li>
+      {{/elk}}
+    </ul>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

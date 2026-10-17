@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-404">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="leeg">
+  <p class="leeg__code" aria-hidden="true">404</p>
+  <div class="leeg__tekst">
+    <h1 class="paginakop__titel">{{ nietGevonden.kop }}</h1>
+    <p class="paginakop__intro">{{ nietGevonden.tekst }}</p>
+    <ul class="leeg__links">
+      <li><a href="/menu">{{ navigatie.kaart }}</a></li>
+      <li><a href="/reserveren">{{ navigatie.reserveren }}</a></li>
+      <li><a href="/#verhaal">{{ navigatie.verhaal }}</a></li>
+    </ul>
+    <p><a class="knop knop--vol" href="/">{{ nietGevonden.knop }}</a></p>
+  </div>
+</main>
+{{> voet }}
+</body>
+</html>

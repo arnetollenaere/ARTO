@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-sub p-404">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+  <section class="fout" aria-labelledby="fout-titel">
+    <svg class="fout__vorm" viewBox="0 0 600 600" aria-hidden="true" focusable="false">
+      <path class="morf morf--a vormen__salie" d="M498.0 300.0C497.4 362.2 488.2 447.7 446.9 484.2C405.5 520.6 304.9 534.7 250.1 518.6C195.3 502.5 150.5 443.5 118.2 387.6C85.9 331.6 34.8 235.1 56.5 182.7C78.2 130.4 182.6 85.4 248.3 73.5C314.0 61.6 408.9 73.5 450.6 111.2C492.2 149.0 498.6 237.8 498.0 300.0Z"/>
+      <path class="morf morf--c vormen__mint" transform="translate(60 -40)" d="M377.5 300.0C376.5 329.2 368.0 369.6 347.6 382.5C327.3 395.4 278.9 391.3 255.2 377.5C231.6 363.8 206.8 328.0 205.6 300.0C204.3 272.0 223.1 225.0 247.8 209.6C272.4 194.1 331.9 192.2 353.5 207.3C375.1 222.4 378.5 270.8 377.5 300.0Z"/>
+      <text x="300" y="345" text-anchor="middle" class="fout__getal">404</text>
+    </svg>
+    <div class="wrap fout__tekst">
+      <h1 class="kop-xl" id="fout-titel">{{ fout.titel }}</h1>
+      <p class="lead">{{ fout.tekst }}</p>
+      <div class="knoppen">
+        <a class="knop knop--groot knop--donker" href="/">{{ fout.knop }}</a>
+        <a class="knop knop--groot knop--licht" href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a>
+      </div>
+    </div>
+  </section>
+</main>
+{{> voet }}
+</body>
+</html>

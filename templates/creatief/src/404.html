@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script src="/js/zaal.js" defer></script>
+</head>
+<body class="p-fout">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="fout">
+  <p class="fout__getal" aria-hidden="true">404</p>
+  <div class="fout__beeld beeld beeld--accent" aria-hidden="true"><svg class="comp" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" focusable="false"><use href="#c-kader"/></svg></div>
+  <div class="fout__tekst">
+    <p class="zaal mono">{{ teksten.foutZaal }}</p>
+    <h1>{{ teksten.foutKop }}</h1>
+    <p>{{ teksten.foutTekst }}</p>
+    <a class="pijlknop" href="/"><span>{{ teksten.foutKnop }}</span><span class="pijlknop__pijl" aria-hidden="true">←</span></a>
+  </div>
+</main>
+{{> voet }}
+</body>
+</html>

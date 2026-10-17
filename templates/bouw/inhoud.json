@@ -1,0 +1,391 @@
+{
+  "site": {
+    "naam": "Desmet Renovatie & Schrijnwerk",
+    "slogan": "Renovatie en schrijnwerk op maat in Midden-West-Vlaanderen",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "desmet-renovatie.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "Bouwverlof van 20 juli tot en met 7 augustus. Offerteaanvragen behandelen we daarna als eerste.",
+    "link": ""
+  },
+  "contact": {
+    "adres": "Kachtemsestraat 214",
+    "postcode": "8870",
+    "gemeente": "Izegem",
+    "land": "BE",
+    "telefoon": "+32 51 30 47 82",
+    "email": "werf@desmet-renovatie.be",
+    "whatsapp": "+32 476 21 58 90",
+    "btw": "BE0712.584.931",
+    "kaart": "https://maps.google.com/?q=Kachtemsestraat+214+8870+Izegem"
+  },
+  "openingsuren": [
+    { "dag": "Maandag", "uren": "07:30–17:00" },
+    { "dag": "Dinsdag", "uren": "07:30–17:00" },
+    { "dag": "Woensdag", "uren": "07:30–17:00" },
+    { "dag": "Donderdag", "uren": "07:30–17:00" },
+    { "dag": "Vrijdag", "uren": "07:30–16:00" },
+    { "dag": "Zaterdag", "uren": "Op afspraak" },
+    { "dag": "Zondag", "uren": "Gesloten" }
+  ],
+  "socials": [
+    { "netwerk": "Instagram", "url": "https://www.instagram.com/desmetrenovatie" },
+    { "netwerk": "Facebook", "url": "https://www.facebook.com/desmetrenovatie" },
+    { "netwerk": "LinkedIn", "url": "https://www.linkedin.com/company/desmet-renovatie" }
+  ],
+  "seo": {
+    "titel": "Desmet Renovatie & Schrijnwerk | Izegem en omstreken",
+    "beschrijving": "Renovatie, ramen, trappen en keukens op maat in Izegem, Roeselare en Kortrijk. Erkend aannemer, VCA-gecertificeerd. Vraag gratis een offerte aan.",
+    "afbeelding": "",
+    "paginas": [
+      { "pagina": "projecten.html", "titel": "Projecten: renovaties en schrijnwerk", "beschrijving": "Technische fiches van onze werven: rijwoningen, hoeves, keukens, ramen en daken in West-Vlaanderen, met oppervlakte, duur en materialen." },
+      { "pagina": "offerte.html", "titel": "Offerte aanvragen in drie stappen", "beschrijving": "Vertel ons wat je wil laten doen. Binnen vijf werkdagen plannen we een plaatsbezoek in. Gratis en vrijblijvend." }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "accent": "#f5c400",
+      "signaal": "#e2531f",
+      "achtergrond": "#eeece5",
+      "tekst": "#17181a",
+      "beton": "#2a2c2e"
+    }
+  },
+  "navigatie": {
+    "start": "Start",
+    "projecten": "Projecten",
+    "werkwijze": "Werkwijze",
+    "regio": "Werkgebied",
+    "offerte": "Offerte aanvragen",
+    "belknop": "Bel ons",
+    "offerteknop": "Offerte"
+  },
+  "hero": {
+    "label": "Werfdossier · renovatie & schrijnwerk",
+    "titel": "We bouwen verder op",
+    "titelAccent": "wat er al staat.",
+    "intro": "Van een rijwoning uit 1930 tot een hoeve met een rieten verleden: wij renoveren, isoleren en maken ramen, trappen en keukens in ons eigen atelier in Izegem. Eén ploeg, één aanspreekpunt, van de eerste opmeting tot de sleuteloverdracht.",
+    "knop": "Vraag een offerte aan",
+    "knop2": "Bekijk onze werven",
+    "kenmerken": [
+      { "waarde": "1998", "eenheid": "", "label": "eigen atelier sinds" },
+      { "waarde": "640", "eenheid": "+", "label": "afgewerkte werven" },
+      { "waarde": "20", "eenheid": "km", "label": "werkstraal rond Izegem" }
+    ],
+    "cartouche": [
+      { "label": "Opdrachtgever", "waarde": "Jij" },
+      { "label": "Project", "waarde": "Je woning, maar beter" },
+      { "label": "Schaal", "waarde": "1:50" },
+      { "label": "Blad", "waarde": "A1 · Doorsnede" }
+    ]
+  },
+  "diensten": {
+    "label": "Legende · wat we doen",
+    "kop": "Zes disciplines, één ploeg.",
+    "intro": "Op een bouwplan krijgt elk materiaal zijn eigen arcering. Bij ons krijgt elke discipline een vakman die er al jaren niets anders doet.",
+    "lijst": [
+      {
+        "code": "D-01",
+        "naam": "Totaalrenovatie",
+        "arcering": "metselwerk",
+        "omschrijving": "We nemen de hele woning onder handen en coördineren alle vakmensen: van afbraak en ruwbouw tot de laatste plint.",
+        "taken": [ { "taak": "Afbraak en stabiliteit" }, { "taak": "Ruwbouw en uitbreiding" }, { "taak": "Coördinatie technieken" } ]
+      },
+      {
+        "code": "D-02",
+        "naam": "Ramen & buitenschrijnwerk",
+        "arcering": "hout",
+        "omschrijving": "Ramen en deuren in hout of aluminium, op maat getekend en luchtdicht geplaatst volgens de EPB-regels.",
+        "taken": [ { "taak": "Meranti, eik of aluminium" }, { "taak": "Driedubbel glas" }, { "taak": "Luchtdichte plaatsing" } ]
+      },
+      {
+        "code": "D-03",
+        "naam": "Binnenschrijnwerk",
+        "arcering": "hout",
+        "omschrijving": "Trappen, kasten, dressings en keukens uit ons eigen atelier. Massief hout of plaatmateriaal, altijd op de millimeter.",
+        "taken": [ { "taak": "Trappen en leuningen" }, { "taak": "Keukens en maatkasten" }, { "taak": "Binnendeuren" } ]
+      },
+      {
+        "code": "D-04",
+        "naam": "Dak & isolatie",
+        "arcering": "isolatie",
+        "omschrijving": "Hellende en platte daken, sarking- of binnenisolatie en dakvensters. Goed voor je energiefactuur én je premie.",
+        "taken": [ { "taak": "Sarking en dakisolatie" }, { "taak": "Dakvensters" }, { "taak": "Zinkwerk en goten" } ]
+      },
+      {
+        "code": "D-05",
+        "naam": "Gevelrenovatie",
+        "arcering": "beton",
+        "omschrijving": "Gevelisolatie met crepi of steenstrips, nieuwe dorpels en een gevel die er weer veertig jaar tegen kan.",
+        "taken": [ { "taak": "Buitengevelisolatie" }, { "taak": "Crepi en steenstrips" }, { "taak": "Dorpels en lateien" } ]
+      },
+      {
+        "code": "D-06",
+        "naam": "Interieur & afwerking",
+        "arcering": "tegel",
+        "omschrijving": "Gyproc, kalkpleister, vloeren en badkamers. De afwerking die je elke dag ziet, verdient dezelfde zorg als de fundering.",
+        "taken": [ { "taak": "Wanden en plafonds" }, { "taak": "Badkamers" }, { "taak": "Houten vloeren" } ]
+      }
+    ]
+  },
+  "projecten": {
+    "label": "Werfdossiers",
+    "kop": "Recente werven, als technische fiche.",
+    "intro": "Schuif over elk beeld om de bestaande toestand met het resultaat te vergelijken. Geel is wat verdween, oranje wat we bouwden, net als op een bouwaanvraag.",
+    "knop": "Alle projecten",
+    "paginaKop": "Projecten",
+    "paginaIntro": "Een selectie uit meer dan zeshonderd werven. Per project: waar, hoeveel vierkante meter, hoe lang we er stonden en met welke materialen we werkten.",
+    "filterAlles": "Alles",
+    "labelVoor": "Bestaand",
+    "labelNa": "Nieuw",
+    "lijst": [
+      {
+        "nummer": "2026-014",
+        "titel": "Rijwoning uit 1932",
+        "gemeente": "Roeselare",
+        "type": "Totaalrenovatie",
+        "oppervlakte": 164,
+        "duur": "7 maanden",
+        "jaar": "2026",
+        "materialen": "Houtvezelisolatie, kalkpleister, eiken trap, aluminium ramen",
+        "omschrijving": "Een smalle rijwoning met een donkere achterbouw. We braken de veranda af, openden de achtergevel met een stalen portaal en maakten een nieuwe trap in massief eik.",
+        "tekening": "gevel",
+        "fotoVoor": "",
+        "fotoNa": "",
+        "fotoAlt": "Achtergevel van de rijwoning in Roeselare",
+        "uitgelicht": true
+      },
+      {
+        "nummer": "2025-088",
+        "titel": "Hoeve 't Hoge",
+        "gemeente": "Ledegem",
+        "type": "Dak & isolatie",
+        "oppervlakte": 220,
+        "duur": "9 weken",
+        "jaar": "2025",
+        "materialen": "Sarking-isolatie 16 cm, Boomse pannen, zinken goten",
+        "omschrijving": "Het oude pannendak lekte en was niet geïsoleerd. We legden een sarking-dak met nieuwe pannen, zonder de authentieke eiken spanten binnen te verstoppen.",
+        "tekening": "dak",
+        "fotoVoor": "",
+        "fotoNa": "",
+        "fotoAlt": "Pannendak van een hoeve in Ledegem",
+        "uitgelicht": true
+      },
+      {
+        "nummer": "2026-031",
+        "titel": "Keuken in geolied eik",
+        "gemeente": "Izegem",
+        "type": "Binnenschrijnwerk",
+        "oppervlakte": 28,
+        "duur": "5 weken",
+        "jaar": "2026",
+        "materialen": "Massief eik, composiet werkblad, greeploze fronten",
+        "omschrijving": "Een keuken die doorloopt in een zitbank en een boekenkast. Getekend, gemaakt en geolied in ons atelier, op twee dagen geplaatst.",
+        "tekening": "keuken",
+        "fotoVoor": "",
+        "fotoNa": "",
+        "fotoAlt": "Keuken in eik in Izegem",
+        "uitgelicht": true
+      },
+      {
+        "nummer": "2025-102",
+        "titel": "Bel-etage met elf ramen",
+        "gemeente": "Kortrijk",
+        "type": "Ramen & buitenschrijnwerk",
+        "oppervlakte": 42,
+        "duur": "3 weken",
+        "jaar": "2025",
+        "materialen": "Meranti, driedubbel glas Ug 0,6, inbraakwerend beslag",
+        "omschrijving": "Alle ramen en de voordeur vervangen in één beweging, met luchtdichte aansluitingen. De bewoners bleven gewoon thuis wonen.",
+        "tekening": "ramen",
+        "fotoVoor": "",
+        "fotoNa": "",
+        "fotoAlt": "Voorgevel met nieuwe ramen in Kortrijk",
+        "uitgelicht": false
+      },
+      {
+        "nummer": "2025-067",
+        "titel": "Zolder wordt studio",
+        "gemeente": "Ingelmunster",
+        "type": "Dak & isolatie",
+        "oppervlakte": 46,
+        "duur": "6 weken",
+        "jaar": "2025",
+        "materialen": "Houten draagvloer, cellulose-isolatie, twee dakvensters",
+        "omschrijving": "Een stoffige zolder werd een lichte studio voor de oudste zoon, met een eigen badkamer en een vaste trap in plaats van een valtrap.",
+        "tekening": "dak",
+        "fotoVoor": "",
+        "fotoNa": "",
+        "fotoAlt": "Zolderstudio in Ingelmunster",
+        "uitgelicht": false
+      },
+      {
+        "nummer": "2024-119",
+        "titel": "Gevel van een fermette",
+        "gemeente": "Tielt",
+        "type": "Gevelrenovatie",
+        "oppervlakte": 190,
+        "duur": "6 weken",
+        "jaar": "2024",
+        "materialen": "Gevelisolatie EPS 14 cm, minerale crepi, blauwe hardsteen",
+        "omschrijving": "De fermette uit 1978 kreeg een warme jas en nieuwe dorpels in blauwe hardsteen. Het EPC ging van F naar B.",
+        "tekening": "gevel",
+        "fotoVoor": "",
+        "fotoNa": "",
+        "fotoAlt": "Gerenoveerde gevel van een fermette in Tielt",
+        "uitgelicht": false
+      }
+    ]
+  },
+  "werkwijze": {
+    "label": "Werfplanning",
+    "kop": "Zo verloopt een werf, week per week.",
+    "intro": "Een gemiddelde renovatie, uitgezet zoals we elke werf plannen. Elke fase heeft een vast aanspreekpunt en een duidelijke deadline.",
+    "weken": 16,
+    "weekLabel": "Week",
+    "fases": [
+      { "naam": "Kennismaking en plaatsbezoek", "duur": "1 week", "start": 1, "weken": 1, "omschrijving": "We komen langs, luisteren en kijken naar wat er staat. Je krijgt meteen een eerlijke inschatting." },
+      { "naam": "Opmeting en ontwerp", "duur": "2 weken", "start": 2, "weken": 2, "omschrijving": "Laserscan of klassieke opmeting, daarna tekenen we de nieuwe toestand en de details." },
+      { "naam": "Offerte en planning", "duur": "2 weken", "start": 3, "weken": 2, "omschrijving": "Een offerte per post, zonder kleine lettertjes, en een planning met vaste startdatum." },
+      { "naam": "Voorbereiding in het atelier", "duur": "3 weken", "start": 5, "weken": 3, "omschrijving": "Ramen, trappen en kasten worden gemaakt terwijl jij nog gewoon in je huis woont." },
+      { "naam": "Uitvoering op de werf", "duur": "8 weken", "start": 7, "weken": 8, "omschrijving": "Een vaste ploeg met een werfleider die elke vrijdag een kort werfverslag stuurt." },
+      { "naam": "Oplevering en nazorg", "duur": "2 weken", "start": 15, "weken": 2, "omschrijving": "Samen lopen we alles na. Na een jaar komen we terug voor de definitieve oplevering." }
+    ]
+  },
+  "regio": {
+    "label": "Werkgebied",
+    "kop": "We werken waar we binnen het halfuur zijn.",
+    "intro": "Korte rijtijden betekenen meer uren op je werf en snelle hulp als er iets is. Woon je net buiten deze cirkel? Bel gerust, voor grotere werven rijden we verder.",
+    "straal": 20,
+    "centrumLabel": "Atelier",
+    "gemeenten": [
+      { "naam": "Roeselare", "km": 8, "richting": "W" },
+      { "naam": "Ingelmunster", "km": 5, "richting": "NO" },
+      { "naam": "Lendelede", "km": 6, "richting": "ZO" },
+      { "naam": "Ardooie", "km": 8, "richting": "N" },
+      { "naam": "Meulebeke", "km": 10, "richting": "O" },
+      { "naam": "Ledegem", "km": 10, "richting": "ZW" },
+      { "naam": "Hooglede", "km": 13, "richting": "NW" },
+      { "naam": "Harelbeke", "km": 13, "richting": "ZO" },
+      { "naam": "Kortrijk", "km": 15, "richting": "Z" },
+      { "naam": "Tielt", "km": 15, "richting": "NO" },
+      { "naam": "Moorslede", "km": 14, "richting": "ZW" },
+      { "naam": "Wingene", "km": 18, "richting": "N" }
+    ]
+  },
+  "erkenningen": {
+    "label": "Attesten",
+    "kop": "Erkend, verzekerd en gecertificeerd.",
+    "intro": "Papierwerk is niet het leukste deel van bouwen, maar het beschermt jou. Alles wat je nodig hebt voor je premie, je verzekering of je verkoop krijg je van ons op papier.",
+    "lijst": [
+      { "naam": "VCA*", "nummer": "Cert. nr. 0745-VCA-2023", "omschrijving": "Veilig werken op de werf, voor onze ploeg en voor iedereen die er rondloopt." },
+      { "naam": "Erkend aannemer", "nummer": "Klasse 2 · categorie D", "omschrijving": "Erkenning als aannemer van algemene bouwwerken door de federale overheid." },
+      { "naam": "Tienjarige aansprakelijkheid", "nummer": "Wet Peeters-Borsus", "omschrijving": "Verplicht verzekerd voor de stabiliteit van je woning, tien jaar lang." },
+      { "naam": "PEFC-hout", "nummer": "Duurzaam beheerd bos", "omschrijving": "Het hout voor ons schrijnwerk komt uit bossen die gecontroleerd worden heraangeplant." }
+    ],
+    "premie": {
+      "titel": "Mijn VerbouwPremie",
+      "tekst": "Isolatie, nieuwe ramen en een dakrenovatie komen vaak in aanmerking voor **Mijn VerbouwPremie** van de Vlaamse overheid. Wij zetten op elke factuur de gegevens die je nodig hebt (oppervlakte, U-waarde, R-waarde) en bezorgen het attest van de plaatsing.",
+      "link": "https://www.vlaanderen.be/mijn-verbouwpremie",
+      "linktekst": "Meer over de premie op vlaanderen.be"
+    }
+  },
+  "reviews": {
+    "label": "Werfverslag · bouwheren",
+    "kop": "Wat bouwheren achteraf zeggen.",
+    "lijst": [
+      { "tekst": "Elke vrijdag een mail met foto's en wat er de week erna gebeurt. We hebben nooit moeten bellen om te vragen hoe het zat.", "naam": "Lies en Pieter", "gemeente": "Roeselare", "project": "Totaalrenovatie" },
+      { "tekst": "De trap is een meubelstuk geworden. Je ziet dat die mensen hout graag zien.", "naam": "Marc Vanhoutte", "gemeente": "Izegem", "project": "Trap en dressing" },
+      { "tekst": "Op de afgesproken dag begonnen, een week voor de planning klaar. Dat had ik van een aannemer nog niet meegemaakt.", "naam": "Annick D.", "gemeente": "Tielt", "project": "Gevelrenovatie" }
+    ]
+  },
+  "cta": {
+    "kop": "Een plan in je hoofd? Wij tekenen het uit.",
+    "tekst": "Vertel in drie korte stappen wat je wil laten doen. Binnen vijf werkdagen bellen we om een plaatsbezoek in te plannen.",
+    "knop": "Start je offerteaanvraag"
+  },
+  "offerte": {
+    "label": "Aanvraagformulier",
+    "kop": "Offerte aanvragen",
+    "intro": "Drie stappen, ongeveer twee minuten. Hoe meer je vertelt, hoe gerichter we bij het plaatsbezoek kunnen zijn. Gratis en vrijblijvend.",
+    "stap1": "Type werk",
+    "stap2": "Details",
+    "stap3": "Contact",
+    "volgende": "Volgende stap",
+    "vorige": "Terug",
+    "verzend": "Aanvraag versturen",
+    "privacy": "We gebruiken je gegevens alleen om je aanvraag te beantwoorden. Nooit voor reclame.",
+    "bevestigingKop": "Aanvraag goed ontvangen.",
+    "bevestiging": "Bedankt. We bekijken je aanvraag en bellen je binnen vijf werkdagen om een plaatsbezoek in te plannen.",
+    "types": [
+      { "naam": "Totaalrenovatie", "omschrijving": "De hele woning of een groot deel ervan", "arcering": "metselwerk" },
+      { "naam": "Ramen & deuren", "omschrijving": "Buitenschrijnwerk in hout of aluminium", "arcering": "hout" },
+      { "naam": "Trap, keuken of maatkast", "omschrijving": "Binnenschrijnwerk uit ons atelier", "arcering": "hout" },
+      { "naam": "Dak & isolatie", "omschrijving": "Nieuw dak, isolatie of dakvensters", "arcering": "isolatie" },
+      { "naam": "Gevel", "omschrijving": "Gevelisolatie, crepi, steenstrips", "arcering": "beton" },
+      { "naam": "Iets anders", "omschrijving": "Vertel het ons in de volgende stap", "arcering": "tegel" }
+    ],
+    "timing": [
+      { "optie": "Zo snel mogelijk" },
+      { "optie": "Binnen 3 tot 6 maanden" },
+      { "optie": "Binnen 6 tot 12 maanden" },
+      { "optie": "Ik ben nog aan het oriënteren" }
+    ],
+    "budget": [
+      { "optie": "Minder dan € 10.000" },
+      { "optie": "€ 10.000 – € 40.000" },
+      { "optie": "€ 40.000 – € 100.000" },
+      { "optie": "Meer dan € 100.000" },
+      { "optie": "Weet ik nog niet" }
+    ],
+    "naStappen": [
+      { "stap": "We lezen je aanvraag binnen twee werkdagen." },
+      { "stap": "Je krijgt telefoon om een plaatsbezoek af te spreken." },
+      { "stap": "Na het bezoek ontvang je binnen drie weken een offerte." }
+    ],
+    "faqKop": "Vaak gevraagd",
+    "faq": [
+      { "vraag": "Is het plaatsbezoek gratis?", "antwoord": "Ja. Het eerste bezoek en de offerte zijn gratis en vrijblijvend. Voor een uitgewerkt ontwerp met detailtekeningen rekenen we een vergoeding die we aftrekken van de factuur als je met ons bouwt." },
+      { "vraag": "Hoe lang op voorhand moet ik plannen?", "antwoord": "Voor schrijnwerk rekenen we op twee tot drie maanden, voor een totaalrenovatie vaak zes maanden. Kleine herstellingen passen we soms tussen." },
+      { "vraag": "Werken jullie met 6 % btw?", "antwoord": "Voor renovaties van woningen ouder dan tien jaar die je zelf bewoont, geldt meestal 6 % btw. We controleren dat samen met jou voor we de offerte opmaken." },
+      { "vraag": "Helpen jullie met de premieaanvraag?", "antwoord": "We vragen de premie niet in jouw naam aan, maar je krijgt van ons alle facturen en attesten die Mijn VerbouwPremie vraagt, met de juiste technische gegevens erop." }
+    ]
+  },
+  "formulier": {
+    "typeLabel": "Wat wil je laten doen?",
+    "gemeenteLabel": "Gemeente van de werf",
+    "oppervlakteLabel": "Geschatte oppervlakte (m²)",
+    "oppervlakteHulp": "Een ruwe schatting volstaat.",
+    "bouwjaarLabel": "Bouwjaar van de woning",
+    "timingLabel": "Wanneer wil je starten?",
+    "budgetLabel": "Budget (indicatief)",
+    "premieLabel": "Ik wil weten of mijn werken in aanmerking komen voor Mijn VerbouwPremie",
+    "omschrijvingLabel": "Beschrijf je project",
+    "omschrijvingHulp": "Wat staat er nu, wat wil je bereiken? Plannen of foto's kan je later mailen.",
+    "naamLabel": "Naam",
+    "telefoonLabel": "Telefoon",
+    "emailLabel": "E-mail",
+    "adresLabel": "Adres van de werf (optioneel)",
+    "contactvoorkeurLabel": "Hoe contacteren we je het liefst?",
+    "contactvoorkeur": [
+      { "optie": "Telefoon" },
+      { "optie": "E-mail" },
+      { "optie": "WhatsApp" }
+    ]
+  },
+  "voet": {
+    "kop": "Werfkeet & atelier",
+    "tekst": "Kom gerust langs in het atelier: we tonen je graag houtsoorten, glas en afwerkingen. Liefst even bellen, dan staat de koffie klaar.",
+    "urenKop": "Bereikbaar",
+    "credit": "Website door ARTO"
+  },
+  "fout": {
+    "kop": "Deze pagina staat niet op het plan.",
+    "tekst": "Misschien is ze afgebroken, of heeft iemand een maatfout gemaakt in de link. Geen nood: de fundering staat nog.",
+    "knop": "Terug naar de startpagina"
+  }
+}

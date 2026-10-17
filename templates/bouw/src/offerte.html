@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="aanvraag">
+  <div class="aanvraag__zij">
+    <p class="label"><span class="label__nr" aria-hidden="true">A4</span>{{ offerte.label }}</p>
+    <h1 class="aanvraag__titel">{{ offerte.kop }}</h1>
+    <p class="aanvraag__intro">{{ offerte.intro }}</p>
+    <ol class="stappenbalk mono" aria-hidden="true">
+      <li class="is-actief"><span>01</span>{{ offerte.stap1 }}</li>
+      <li><span>02</span>{{ offerte.stap2 }}</li>
+      <li><span>03</span>{{ offerte.stap3 }}</li>
+    </ol>
+    <div class="aanvraag__daarna">
+      <ol>{{#elk offerte.naStappen}}<li><span class="mono">{{ @nr | twee }}</span>{{ stap }}</li>{{/elk}}</ol>
+      <p class="aanvraag__bel">Liever bellen? <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></p>
+    </div>
+  </div>
+
+  <div class="blad">
+    <div class="bevestiging" id="bevestiging" tabindex="-1" hidden>
+      <p class="mono">Status · ontvangen</p>
+      <h2>{{ offerte.bevestigingKop }}</h2>
+      <p>{{ offerte.bevestiging }}</p>
+    </div>
+
+    <form class="stappen" method="post" action="/api/bericht" data-stappen novalidate>
+      <input type="hidden" name="_formulier" value="offerte">
+      <input name="_honing" tabindex="-1" autocomplete="off" hidden>
+      <p class="stappen__teller mono" aria-live="polite"><span data-teller>Stap 01 / 03</span></p>
+
+      <fieldset class="stap" data-stap="1">
+        <legend><span class="mono">01 · {{ offerte.stap1 }}</span>{{ formulier.typeLabel }}</legend>
+        <div class="tegels">
+          {{#elk offerte.types}}
+          <label class="tegel">
+            <input type="radio" name="type_werk" value="{{ naam }}" required>
+            <svg class="arc" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#p-{{ arcering }})"/></svg>
+            <span class="tegel__naam">{{ naam }}</span>
+            <span class="tegel__uitleg">{{ omschrijving }}</span>
+          </label>
+          {{/elk}}
+        </div>
+      </fieldset>
+
+      <fieldset class="stap" data-stap="2">
+        <legend><span class="mono">02</span>{{ offerte.stap2 }}</legend>
+        <div class="velden">
+          <div class="veld">
+            <label for="v-gemeente">{{ formulier.gemeenteLabel }} <abbr title="verplicht">*</abbr></label>
+            <input id="v-gemeente" name="gemeente" list="gemeenten" autocomplete="address-level2" required>
+            <datalist id="gemeenten">{{#elk regio.gemeenten}}<option value="{{ naam }}"></option>{{/elk}}</datalist>
+          </div>
+          <div class="veld veld--half">
+            <label for="v-opp">{{ formulier.oppervlakteLabel }}</label>
+            <input id="v-opp" name="oppervlakte" type="number" min="1" max="5000" inputmode="numeric" aria-describedby="v-opp-hulp">
+            <small id="v-opp-hulp">{{ formulier.oppervlakteHulp }}</small>
+          </div>
+          <div class="veld veld--half">
+            <label for="v-jaar">{{ formulier.bouwjaarLabel }}</label>
+            <input id="v-jaar" name="bouwjaar" type="number" min="1700" max="2100" inputmode="numeric">
+          </div>
+          <div class="veld veld--half">
+            <label for="v-timing">{{ formulier.timingLabel }}</label>
+            <select id="v-timing" name="timing">{{#elk offerte.timing}}<option>{{ optie }}</option>{{/elk}}</select>
+          </div>
+          <div class="veld veld--half">
+            <label for="v-budget">{{ formulier.budgetLabel }}</label>
+            <select id="v-budget" name="budget">{{#elk offerte.budget}}<option>{{ optie }}</option>{{/elk}}</select>
+          </div>
+          <div class="veld">
+            <label for="v-omschrijving">{{ formulier.omschrijvingLabel }}</label>
+            <textarea id="v-omschrijving" name="omschrijving" rows="5" aria-describedby="v-omschrijving-hulp"></textarea>
+            <small id="v-omschrijving-hulp">{{ formulier.omschrijvingHulp }}</small>
+          </div>
+          <label class="vinkje"><input type="checkbox" name="premie" value="ja"><span>{{ formulier.premieLabel }}</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="stap" data-stap="3">
+        <legend><span class="mono">03</span>{{ offerte.stap3 }}</legend>
+        <div class="velden">
+          <div class="veld">
+            <label for="v-naam">{{ formulier.naamLabel }} <abbr title="verplicht">*</abbr></label>
+            <input id="v-naam" name="naam" autocomplete="name" required>
+          </div>
+          <div class="veld veld--half">
+            <label for="v-tel">{{ formulier.telefoonLabel }} <abbr title="verplicht">*</abbr></label>
+            <input id="v-tel" name="telefoon" type="tel" autocomplete="tel" required>
+          </div>
+          <div class="veld veld--half">
+            <label for="v-email">{{ formulier.emailLabel }} <abbr title="verplicht">*</abbr></label>
+            <input id="v-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="veld">
+            <label for="v-adres">{{ formulier.adresLabel }}</label>
+            <input id="v-adres" name="adres" autocomplete="street-address">
+          </div>
+          <fieldset class="keuzes">
+            <legend>{{ formulier.contactvoorkeurLabel }}</legend>
+            {{#elk formulier.contactvoorkeur}}<label class="keuze"><input type="radio" name="contactvoorkeur" value="{{ optie }}"{{#als @eerste}} checked{{/als}}><span>{{ optie }}</span></label>{{/elk}}
+          </fieldset>
+        </div>
+        <p class="stappen__privacy">{{ offerte.privacy }}</p>
+      </fieldset>
+
+      <div class="stappen__nav">
+        <button class="knop knop--lijn" type="button" data-vorige>← {{ offerte.vorige }}</button>
+        <button class="knop knop--zwart" type="button" data-volgende>{{ offerte.volgende }}<span class="pijl" aria-hidden="true">→</span></button>
+        <button class="knop knop--geel knop--groot" type="submit" data-verzend>{{ offerte.verzend }}<span class="pijl" aria-hidden="true">→</span></button>
+      </div>
+    </form>
+  </div>
+
+  <section class="vragen" aria-labelledby="faq-titel">
+    <h2 id="faq-titel">{{ offerte.faqKop }}</h2>
+    {{#elk offerte.faq}}
+    <details>
+      <summary><span class="mono">V{{ @nr | twee }}</span>{{ vraag }}</summary>
+      <p>{{ antwoord }}</p>
+    </details>
+    {{/elk}}
+  </section>
+</main>
+{{> voet }}
+</body>
+</html>

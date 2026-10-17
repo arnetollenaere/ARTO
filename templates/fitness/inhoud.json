@@ -1,0 +1,841 @@
+{
+  "site": {
+    "naam": "VOLT Trainingsstudio",
+    "slogan": "Groepstraining met coaching op kracht, conditie en mobiliteit in Mechelen.",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "volt-mechelen.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "Herfstvakantie: aangepast rooster van 27 oktober tot 2 november.",
+    "link": "/rooster"
+  },
+  "contact": {
+    "adres": "Vaartdijk 23",
+    "postcode": "2800",
+    "gemeente": "Mechelen",
+    "land": "BE",
+    "telefoon": "+32 15 28 46 90",
+    "email": "hallo@volt-mechelen.be",
+    "whatsapp": "+32 470 18 42 77",
+    "btw": "BE0712.493.586",
+    "kaart": "https://maps.google.com/?q=Vaartdijk+23+2800+Mechelen"
+  },
+  "openingsuren": [
+    {
+      "dag": "Maandag",
+      "uren": "06:00–22:00"
+    },
+    {
+      "dag": "Dinsdag",
+      "uren": "06:00–22:00"
+    },
+    {
+      "dag": "Woensdag",
+      "uren": "06:00–22:00"
+    },
+    {
+      "dag": "Donderdag",
+      "uren": "06:00–22:00"
+    },
+    {
+      "dag": "Vrijdag",
+      "uren": "06:00–21:00"
+    },
+    {
+      "dag": "Zaterdag",
+      "uren": "08:00–14:00"
+    },
+    {
+      "dag": "Zondag",
+      "uren": "08:30–12:30"
+    }
+  ],
+  "socials": [
+    {
+      "netwerk": "Instagram",
+      "url": "https://www.instagram.com/voltmechelen"
+    },
+    {
+      "netwerk": "Facebook",
+      "url": "https://www.facebook.com/voltmechelen"
+    },
+    {
+      "netwerk": "TikTok",
+      "url": "https://www.tiktok.com/@voltmechelen"
+    }
+  ],
+  "seo": {
+    "titel": "VOLT Trainingsstudio Mechelen | Kracht, Hyrox, yoga en pilates",
+    "beschrijving": "Groepslessen in kleine groepen aan de Vaartdijk in Mechelen: kracht, Hyrox, bootcamp, yoga en reformer pilates. Boek je gratis proefles.",
+    "afbeelding": "",
+    "paginas": [
+      {
+        "pagina": "rooster.html",
+        "titel": "Weekrooster groepslessen",
+        "beschrijving": "Alle lessen van de week bij VOLT Mechelen: van 06:30 tot 21:00, met coach, niveau en zaal. Filter op Hyrox, kracht, yoga of pilates."
+      },
+      {
+        "pagina": "tarieven.html",
+        "titel": "Tarieven en lidmaatschappen",
+        "beschrijving": "Beurtenkaart, maandpas of jaarpas bij VOLT Mechelen. Duidelijke prijzen, maandelijks opzegbaar, personal training vanaf € 65."
+      }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "accent": "#DBFF2E",
+      "achtergrond": "#0B0B0A",
+      "vlak": "#171715",
+      "tekst": "#F3F3EC",
+      "gedempt": "#A3A398"
+    }
+  },
+  "navigatie": {
+    "lessen": "Lessen",
+    "rooster": "Rooster",
+    "tarieven": "Tarieven",
+    "coaches": "Coaches",
+    "knop": "Gratis proefles"
+  },
+  "hero": {
+    "label": "Trainingsstudio · Mechelen · sinds 2019",
+    "regel1": "Sneller.",
+    "regel2": "Sterker.",
+    "regel3": "Samen.",
+    "intro": "Groepstraining in groepen van maximaal twaalf, met een coach die je naam kent en je techniek ziet. Kracht, Hyrox, yoga en reformer pilates onder één dak aan de Vaartdijk.",
+    "knop": "Boek je proefles",
+    "knop2": "Bekijk het rooster",
+    "cijfers": [
+      {
+        "getal": 39,
+        "eenheid": "",
+        "label": "lessen per week"
+      },
+      {
+        "getal": 12,
+        "eenheid": "",
+        "label": "maximaal per les"
+      },
+      {
+        "getal": 640,
+        "eenheid": "m²",
+        "label": "trainingsvloer"
+      },
+      {
+        "getal": 94,
+        "eenheid": "%",
+        "label": "blijft na 3 maanden"
+      }
+    ]
+  },
+  "lestypes": {
+    "label": "01 — Lessen",
+    "kop": "Zes manieren om te zweten",
+    "intro": "Elke les heeft een vaste opbouw: opwarming, techniek, het werk zelf en een afkoeling. Je kiest het tempo, de coach bewaakt de vorm.",
+    "lijst": [
+      {
+        "naam": "Hyrox Engine",
+        "code": "HX",
+        "beschrijving": "Lopen, sleeën, roeien, wall balls. Intervaltraining op wedstrijdtempo die je voorbereidt op een Hyrox, of gewoon op een fitter leven.",
+        "duur": "60 min",
+        "intensiteit": "5",
+        "voor": "Wie een doel wil om naartoe te werken"
+      },
+      {
+        "naam": "Kracht",
+        "code": "KR",
+        "beschrijving": "Squat, deadlift, press en pull-ups met een programma van zes weken. Je houdt je gewichten bij en ziet ze stijgen.",
+        "duur": "60 min",
+        "intensiteit": "4",
+        "voor": "Starters en lifters"
+      },
+      {
+        "naam": "Bootcamp",
+        "code": "BC",
+        "beschrijving": "Kettlebells, dumbbells en je eigen lichaamsgewicht in een circuit dat elke week anders is. Snel, luid en nooit saai.",
+        "duur": "45 min",
+        "intensiteit": "4",
+        "voor": "Iedereen die snel wil beginnen"
+      },
+      {
+        "naam": "Reformer Pilates",
+        "code": "PI",
+        "beschrijving": "Op de reformer werk je aan een sterke romp, een rechte houding en gecontroleerde beweging. Acht toestellen per les.",
+        "duur": "50 min",
+        "intensiteit": "3",
+        "voor": "Lopers, kantoorwerkers, herstellers"
+      },
+      {
+        "naam": "Power Yoga",
+        "code": "YO",
+        "beschrijving": "Dynamische vinyasa-flow die kracht en ademhaling samenbrengt. Je gaat naar huis met lange spieren en een leeg hoofd.",
+        "duur": "60 min",
+        "intensiteit": "2",
+        "voor": "Wie wil vertragen zonder stil te zitten"
+      },
+      {
+        "naam": "Mobility",
+        "code": "MO",
+        "beschrijving": "Gewrichten openzetten, heupen en schouders losmaken. De perfecte aanvulling op elke andere les in het rooster.",
+        "duur": "45 min",
+        "intensiteit": "1",
+        "voor": "Iedereen, echt iedereen"
+      }
+    ]
+  },
+  "rooster": {
+    "label": "02 — Weekrooster",
+    "kop": "Weekrooster",
+    "intro": "Van de eerste les om 06:30 tot de laatste om 21:00. Kies een lestype om alleen die lessen te zien en reserveer je plek in de VOLT-app.",
+    "noot": "Reserveren kan tot twee uur voor de les in de app. Annuleren tot vier uur vooraf, anders telt de beurt. Tijdens schoolvakanties vervallen de lessen van 09:30.",
+    "filterAlles": "Alles",
+    "eenheid": "lessen",
+    "leeg": "Geen lessen van dit type op deze dag. Kies een andere dag of zet het filter op Alles.",
+    "vanUur": 6,
+    "totUur": 22,
+    "dagen": [
+      {
+        "naam": "Maandag",
+        "kort": "MA"
+      },
+      {
+        "naam": "Dinsdag",
+        "kort": "DI"
+      },
+      {
+        "naam": "Woensdag",
+        "kort": "WO"
+      },
+      {
+        "naam": "Donderdag",
+        "kort": "DO"
+      },
+      {
+        "naam": "Vrijdag",
+        "kort": "VR"
+      },
+      {
+        "naam": "Zaterdag",
+        "kort": "ZA"
+      },
+      {
+        "naam": "Zondag",
+        "kort": "ZO"
+      }
+    ],
+    "lessen": [
+      {
+        "dag": "Maandag",
+        "start": "06:30",
+        "einde": "07:15",
+        "type": "Bootcamp",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Maandag",
+        "start": "09:30",
+        "einde": "10:20",
+        "type": "Reformer Pilates",
+        "coach": "Elise",
+        "niveau": "Starter",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Maandag",
+        "start": "12:15",
+        "einde": "13:00",
+        "type": "Kracht",
+        "coach": "Jana",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Maandag",
+        "start": "17:30",
+        "einde": "18:30",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Gevorderd",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Maandag",
+        "start": "18:30",
+        "einde": "19:30",
+        "type": "Power Yoga",
+        "coach": "Lotte",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Maandag",
+        "start": "19:00",
+        "einde": "20:00",
+        "type": "Kracht",
+        "coach": "Jana",
+        "niveau": "Gevorderd",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Maandag",
+        "start": "20:15",
+        "einde": "21:00",
+        "type": "Mobility",
+        "coach": "Lotte",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Dinsdag",
+        "start": "06:30",
+        "einde": "07:30",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Dinsdag",
+        "start": "09:30",
+        "einde": "10:30",
+        "type": "Power Yoga",
+        "coach": "Lotte",
+        "niveau": "Starter",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Dinsdag",
+        "start": "12:15",
+        "einde": "13:05",
+        "type": "Reformer Pilates",
+        "coach": "Elise",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Dinsdag",
+        "start": "18:00",
+        "einde": "18:45",
+        "type": "Bootcamp",
+        "coach": "Jana",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Dinsdag",
+        "start": "18:30",
+        "einde": "19:20",
+        "type": "Reformer Pilates",
+        "coach": "Elise",
+        "niveau": "Gevorderd",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Dinsdag",
+        "start": "19:00",
+        "einde": "20:00",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Expert",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Woensdag",
+        "start": "07:00",
+        "einde": "08:00",
+        "type": "Kracht",
+        "coach": "Jana",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Woensdag",
+        "start": "10:00",
+        "einde": "10:45",
+        "type": "Mobility",
+        "coach": "Lotte",
+        "niveau": "Starter",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Woensdag",
+        "start": "12:15",
+        "einde": "13:00",
+        "type": "Bootcamp",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Woensdag",
+        "start": "17:30",
+        "einde": "18:30",
+        "type": "Kracht",
+        "coach": "Jana",
+        "niveau": "Starter",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Woensdag",
+        "start": "18:30",
+        "einde": "19:30",
+        "type": "Power Yoga",
+        "coach": "Lotte",
+        "niveau": "Gevorderd",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Woensdag",
+        "start": "19:00",
+        "einde": "20:00",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Gevorderd",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Woensdag",
+        "start": "20:15",
+        "einde": "21:05",
+        "type": "Reformer Pilates",
+        "coach": "Elise",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Donderdag",
+        "start": "06:30",
+        "einde": "07:15",
+        "type": "Bootcamp",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Donderdag",
+        "start": "09:30",
+        "einde": "10:20",
+        "type": "Reformer Pilates",
+        "coach": "Elise",
+        "niveau": "Starter",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Donderdag",
+        "start": "12:15",
+        "einde": "13:00",
+        "type": "Mobility",
+        "coach": "Lotte",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Donderdag",
+        "start": "17:30",
+        "einde": "18:30",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Donderdag",
+        "start": "18:30",
+        "einde": "19:30",
+        "type": "Kracht",
+        "coach": "Jana",
+        "niveau": "Gevorderd",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Donderdag",
+        "start": "19:00",
+        "einde": "20:00",
+        "type": "Power Yoga",
+        "coach": "Lotte",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Vrijdag",
+        "start": "06:30",
+        "einde": "07:30",
+        "type": "Kracht",
+        "coach": "Jana",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Vrijdag",
+        "start": "12:15",
+        "einde": "13:00",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Vrijdag",
+        "start": "17:30",
+        "einde": "18:20",
+        "type": "Reformer Pilates",
+        "coach": "Elise",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Vrijdag",
+        "start": "18:00",
+        "einde": "18:45",
+        "type": "Bootcamp",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Vrijdag",
+        "start": "19:00",
+        "einde": "20:00",
+        "type": "Power Yoga",
+        "coach": "Lotte",
+        "niveau": "Starter",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Zaterdag",
+        "start": "08:30",
+        "einde": "09:30",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Zaterdag",
+        "start": "09:00",
+        "einde": "09:50",
+        "type": "Reformer Pilates",
+        "coach": "Elise",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Zaterdag",
+        "start": "10:00",
+        "einde": "11:00",
+        "type": "Kracht",
+        "coach": "Jana",
+        "niveau": "Starter",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Zaterdag",
+        "start": "10:15",
+        "einde": "11:15",
+        "type": "Power Yoga",
+        "coach": "Lotte",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Zaterdag",
+        "start": "11:30",
+        "einde": "12:30",
+        "type": "Hyrox Engine",
+        "coach": "Sam",
+        "niveau": "Expert",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Zondag",
+        "start": "09:00",
+        "einde": "10:00",
+        "type": "Bootcamp",
+        "coach": "Jana",
+        "niveau": "Alle niveaus",
+        "zaal": "Vloer"
+      },
+      {
+        "dag": "Zondag",
+        "start": "10:00",
+        "einde": "11:00",
+        "type": "Power Yoga",
+        "coach": "Lotte",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      },
+      {
+        "dag": "Zondag",
+        "start": "11:00",
+        "einde": "11:45",
+        "type": "Mobility",
+        "coach": "Lotte",
+        "niveau": "Alle niveaus",
+        "zaal": "Studio"
+      }
+    ]
+  },
+  "passen": {
+    "label": "03 — Passen",
+    "kop": "Kies je pas",
+    "intro": "Geen kleine lettertjes die je pas na drie maanden ontdekt. Elke pas geeft toegang tot alle lestypes en de open gym.",
+    "lijst": [
+      {
+        "soort": "Beurtenkaart",
+        "naam": "10 beurten",
+        "prijs": "165",
+        "per": "/ 10 lessen",
+        "looptijd": "4 maanden geldig",
+        "uitgelicht": false,
+        "uitgelichtTekst": "",
+        "inbegrepen": [
+          {
+            "punt": "Alle groepslessen naar keuze"
+          },
+          {
+            "punt": "Reserveren via de app"
+          },
+          {
+            "punt": "Geen inschrijvingsgeld"
+          },
+          {
+            "punt": "Handdoek en douche inbegrepen"
+          }
+        ],
+        "knop": "Kies 10 beurten"
+      },
+      {
+        "soort": "Maand",
+        "naam": "Onbeperkt",
+        "prijs": "89",
+        "per": "/ maand",
+        "looptijd": "Maandelijks opzegbaar",
+        "uitgelicht": false,
+        "uitgelichtTekst": "",
+        "inbegrepen": [
+          {
+            "punt": "Onbeperkt groepslessen"
+          },
+          {
+            "punt": "Open gym van 06:00 tot 22:00"
+          },
+          {
+            "punt": "Intakegesprek en startmeting"
+          },
+          {
+            "punt": "Trainingsschema in de app"
+          }
+        ],
+        "knop": "Kies Onbeperkt"
+      },
+      {
+        "soort": "Jaar",
+        "naam": "Jaarpas",
+        "prijs": "74",
+        "per": "/ maand",
+        "looptijd": "12 maanden, maandelijks betaald",
+        "uitgelicht": true,
+        "uitgelichtTekst": "Meest gekozen",
+        "inbegrepen": [
+          {
+            "punt": "Alles van Onbeperkt"
+          },
+          {
+            "punt": "2 sessies personal training"
+          },
+          {
+            "punt": "Lichaamsmeting elk kwartaal"
+          },
+          {
+            "punt": "1 maand pauzeren per jaar"
+          },
+          {
+            "punt": "Elke maand een vriend gratis mee"
+          }
+        ],
+        "knop": "Kies de jaarpas"
+      }
+    ]
+  },
+  "tarieven": {
+    "label": "Tarieven 2026",
+    "kop": "Tarieven",
+    "intro": "Drie passen, een handvol losse prijzen en heldere afspraken. Twijfel je? Start met een gratis proefles en beslis daarna.",
+    "extraKop": "Losse prijzen",
+    "extra": [
+      {
+        "naam": "Losse les",
+        "toelichting": "Eén groepsles, zonder abonnement",
+        "prijs": "19"
+      },
+      {
+        "naam": "Personal training",
+        "toelichting": "60 minuten één op één met een coach",
+        "prijs": "65"
+      },
+      {
+        "naam": "Duo personal training",
+        "toelichting": "60 minuten met z'n tweeën, prijs voor beide",
+        "prijs": "85"
+      },
+      {
+        "naam": "PT-pakket 5 sessies",
+        "toelichting": "Geldig 3 maanden, vrij in te plannen",
+        "prijs": "295"
+      },
+      {
+        "naam": "Inschrijving",
+        "toelichting": "Eenmalig, vervalt bij de jaarpas",
+        "prijs": "25"
+      }
+    ],
+    "voorwaarden": "**Studenten en 65-plussers** krijgen 15 % korting op de maand- en jaarpas, op vertoon van een geldige kaart.\n\nDe jaarpas loopt twaalf maanden en betaal je per maand via domiciliëring. Bij verhuis of een medische reden stop je kosteloos, met een attest.\n\nVeel ziekenfondsen betalen een deel van je lidmaatschap terug. Vraag het attest aan de balie.",
+    "faqKop": "Vragen die we vaak krijgen",
+    "faq": [
+      {
+        "vraag": "Moet ik al fit zijn om te beginnen?",
+        "antwoord": "Nee. Elke oefening heeft een lichtere variant en de coach past die voor je aan. De helft van onze leden begon zonder sportverleden."
+      },
+      {
+        "vraag": "Hoe verloopt een gratis proefles?",
+        "antwoord": "Je komt een kwartier vroeger voor een korte kennismaking, volgt een les naar keuze en krijgt achteraf advies over welke pas bij je past. Je zit nergens aan vast."
+      },
+      {
+        "vraag": "Kan ik mijn abonnement pauzeren?",
+        "antwoord": "Met de jaarpas pauzeer je één maand per jaar zonder kosten. Bij een blessure of zwangerschap pauzeren we langer, met een attest."
+      },
+      {
+        "vraag": "Is er parking?",
+        "antwoord": "Er is gratis parking op het terrein aan de Vaartdijk en een overdekte fietsenstalling. Station Mechelen-Nekkerspoel ligt op tien minuten wandelen."
+      },
+      {
+        "vraag": "Wat neem ik mee?",
+        "antwoord": "Sportkledij, propere binnenschoenen en een drinkfles. Handdoeken, matten en lockers liggen klaar."
+      }
+    ]
+  },
+  "coaches": {
+    "label": "04 — Coaches",
+    "kop": "De mensen achter de fluit",
+    "lijst": [
+      {
+        "naam": "Jana Peeters",
+        "initialen": "JP",
+        "rol": "Hoofdcoach · oprichter",
+        "specialiteit": "Kracht, olympisch heffen, techniek",
+        "citaat": "Ik wil dat je over een jaar sterker bent dan je ooit dacht. Niet sneller moe, maar sterker.",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Sam El Idrissi",
+        "initialen": "SE",
+        "rol": "Coach conditie",
+        "specialiteit": "Hyrox, bootcamp, looptechniek",
+        "citaat": "Elke ronde die je denkt dat je niet haalt, haal je toch. Daar train je voor.",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Lotte Verbruggen",
+        "initialen": "LV",
+        "rol": "Yoga- en mobilitycoach",
+        "specialiteit": "Power yoga, ademwerk, mobiliteit",
+        "citaat": "Flexibel worden gaat niet over je tenen raken. Het gaat over vrij bewegen.",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Elise Van Damme",
+        "initialen": "EV",
+        "rol": "Pilatescoach · kinesitherapeut",
+        "specialiteit": "Reformer pilates, revalidatie, romp",
+        "citaat": "Een sterke romp lost meer rugklachten op dan je denkt. Ik zie het elke week.",
+        "foto": "",
+        "fotoAlt": ""
+      }
+    ]
+  },
+  "resultaten": {
+    "label": "05 — Resultaten",
+    "kop": "Gemeten, niet gedacht",
+    "lijst": [
+      {
+        "cijfer": "+45",
+        "eenheid": "kg",
+        "wat": "deadlift in zeven maanden",
+        "citaat": "Ik kwam binnen met rugpijn van het bureauwerk. Nu til ik meer dan mijn eigen gewicht en is de pijn weg.",
+        "naam": "Hanne Wouters",
+        "detail": "lid sinds 2024"
+      },
+      {
+        "cijfer": "−14",
+        "eenheid": "kg",
+        "wat": "in één schooljaar",
+        "citaat": "Geen dieet uit een boekje, wel drie keer per week een vaste plek in het rooster. Die afspraak met de groep hield me bezig.",
+        "naam": "Kristof Janssens",
+        "detail": "lid sinds 2023"
+      },
+      {
+        "cijfer": "1:24",
+        "eenheid": "u",
+        "wat": "eerste Hyrox in Gent",
+        "citaat": "Sam zei in januari dat ik het kon. In oktober finishte ik in de top vijftig van mijn reeks. Ik heb al ingeschreven voor de volgende.",
+        "naam": "Nora Claes",
+        "detail": "lid sinds 2025"
+      }
+    ]
+  },
+  "proefles": {
+    "label": "06 — Gratis proefles",
+    "kop": "Je eerste les is gratis",
+    "intro": "Laat weten wat je wil proberen en wanneer het jou past. We bellen of mailen binnen één werkdag met een voorstel.",
+    "stappen": [
+      {
+        "titel": "Aanvragen",
+        "tekst": "Vul het formulier in, het duurt een halve minuut."
+      },
+      {
+        "titel": "Kennismaken",
+        "tekst": "Kom een kwartier vroeger: we bespreken je doelen en eventuele blessures."
+      },
+      {
+        "titel": "Trainen",
+        "tekst": "Je volgt de les zoals elk lid. Daarna krijg je eerlijk advies over de juiste pas."
+      }
+    ],
+    "keuzeLabel": "Welke les wil je proberen?",
+    "momentLabel": "Wanneer train je het liefst?",
+    "momenten": [
+      {
+        "moment": "Vroeg, voor 9 uur"
+      },
+      {
+        "moment": "Over de middag"
+      },
+      {
+        "moment": "'s Avonds, na 17 uur"
+      },
+      {
+        "moment": "In het weekend"
+      }
+    ],
+    "knop": "Vraag je proefles aan",
+    "privacy": "We gebruiken je gegevens alleen om je proefles te plannen. Geen nieuwsbrief, tenzij je die zelf vraagt.",
+    "bedankt": "Top, je aanvraag is binnen. We nemen binnen één werkdag contact op om je proefles in te plannen."
+  },
+  "voet": {
+    "slagzin": "Train met de groep. Groei op je tempo.",
+    "urenKop": "Open gym"
+  },
+  "nietgevonden": {
+    "kop": "Nul herhalingen",
+    "tekst": "Deze pagina sloeg de training over. Ze bestaat niet of is verhuisd.",
+    "knop": "Terug naar de start"
+  }
+}

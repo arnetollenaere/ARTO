@@ -1,0 +1,27 @@
+<article class="fiche" data-type="{{ type }}">
+  <div class="vn" data-vn>
+    <div class="vn__laag vn__voor">
+      {{#als fotoVoor}}<img src="{{ fotoVoor }}" alt="{{ fotoAlt }}, vóór de werken" width="1600" height="1200" loading="lazy">{{#anders}}<div class="vn__tek">{{> tekening }}</div>{{/als}}
+      <span class="vn__label mono">{{ projecten.labelVoor }}</span>
+    </div>
+    <div class="vn__laag vn__na">
+      {{#als fotoNa}}<img src="{{ fotoNa }}" alt="{{ fotoAlt }}, na de werken" width="1600" height="1200" loading="lazy">{{#anders}}<div class="vn__tek">{{> tekening }}</div>{{/als}}
+      <span class="vn__label mono">{{ projecten.labelNa }}</span>
+    </div>
+    <span class="vn__greep" aria-hidden="true"><span>◂ ▸</span></span>
+    <input class="vn__schuif" type="range" min="0" max="100" value="50" aria-label="{{ projecten.labelVoor }} of {{ projecten.labelNa }}: {{ titel }}">
+  </div>
+  <div class="fiche__info">
+    <p class="fiche__kop mono"><span>Fiche</span><span>{{ nummer }}</span></p>
+    <h3 class="fiche__titel">{{ titel }}</h3>
+    <dl class="fiche__tabel">
+      <div><dt class="mono">Locatie</dt><dd>{{ gemeente }}</dd></div>
+      <div><dt class="mono">Oppervlakte</dt><dd><span class="fiche__getal">{{ oppervlakte }}</span> m²</dd></div>
+      <div><dt class="mono">Duur</dt><dd>{{ duur }}</dd></div>
+      <div><dt class="mono">Type werk</dt><dd>{{ type }}</dd></div>
+      <div class="fiche__breed"><dt class="mono">Materialen</dt><dd>{{ materialen }}</dd></div>
+    </dl>
+    <p class="fiche__tekst">{{ omschrijving }}</p>
+    <p class="fiche__jaar mono" aria-hidden="true">{{ jaar }}</p>
+  </div>
+</article>

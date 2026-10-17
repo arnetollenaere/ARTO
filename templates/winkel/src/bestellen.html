@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-bestellen">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="bestel">
+  <div class="bestel__uitleg">
+    <p class="bovenregel">{{ bestellen.bovenregel }}</p>
+    <h1 class="paginatitel paginatitel--bestel">{{ bestellen.titel }}</h1>
+    <p class="paginakop__intro">{{ bestellen.intro }}</p>
+    <ol class="stappen">
+      {{#elk bestellen.stappen}}<li><span class="stappen__nr" aria-hidden="true">{{ @nr }}</span><strong>{{ titel }}</strong><span>{{ tekst }}</span></li>{{/elk}}
+    </ol>
+    {{#als contact.whatsapp}}
+    <div class="wa">
+      <h2 class="wa__titel">{{ bestellen.whatsappTitel }}</h2>
+      <p>{{ bestellen.whatsappTekst }}</p>
+      <a class="knop knop--groen" href="https://wa.me/{{ contact.whatsapp | tel }}?text={{ bestellen.whatsappBericht | url }}" data-wa data-wa-bericht="{{ bestellen.whatsappBericht }}" rel="noopener">{{ bestellen.whatsappKnop }} <span aria-hidden="true">↗</span></a>
+    </div>
+    {{/als}}
+    <div class="regels">
+      <h2 class="regels__titel">{{ bestellen.regelsTitel }}</h2>
+      {{ bestellen.regels | md }}
+    </div>
+  </div>
+
+  <div class="bestel__bon">
+    <div class="bedankt" data-bedankt hidden tabindex="-1">
+      <svg class="bedankt__stempel" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 0L57.3 32.4L85.4 14.6L67.6 42.7L100 50L67.6 57.3L85.4 85.4L57.3 67.6L50 100L42.7 67.6L14.6 85.4L32.4 57.3L0 50L32.4 42.7L14.6 14.6L42.7 32.4Z"/><path class="bedankt__vink" d="M33 52l12 12 23-27"/></svg>
+      <h2 class="bedankt__titel">{{ bestellen.bedankTitel }}</h2>
+      <p>{{ bestellen.bedankTekst }}</p>
+      <a class="knop" href="/assortiment">{{ hero.knop }} <span aria-hidden="true">→</span></a>
+    </div>
+    <form class="bonform" method="post" action="/api/bericht" data-bestelform data-dicht="{{ bestellen.labels.dicht }}" data-uren="{{#elk openingsuren}}{{ dag }}={{ uren }};{{/elk}}">
+      <input type="hidden" name="_formulier" value="bestelling">
+      <input name="_honing" tabindex="-1" autocomplete="off" hidden>
+      <div class="bonform__kop">
+        <h2 class="bonform__titel">{{ bestellen.bonTitel }}</h2>
+        <span class="bonform__naam">{{ site.naam }}</span>
+      </div>
+      <div class="bonform__regel bonform__regel--product">
+        <label for="f-product">{{ bestellen.labels.product }}</label>
+        <select id="f-product" name="product" required data-productkeuze>
+          <option value="">{{ bestellen.labels.kies }}</option>
+          {{#elk categorieen}}<optgroup label="{{ naam }}">{{#elk producten}}{{#als beschikbaar != "Uitverkocht"}}<option>{{ naam }}</option>{{/als}}{{/elk}}</optgroup>{{/elk}}
+          {{#als cadeaubon.aan}}<optgroup label="{{ cadeaubon.opBon }}">{{#elk cadeaubon.bedragen}}<option>{{ cadeaubon.opBon }} € {{ bedrag }}</option>{{/elk}}</optgroup>{{/als}}
+        </select>
+      </div>
+      <div class="bonform__regel bonform__regel--aantal">
+        <label for="f-aantal">{{ bestellen.labels.aantal }}</label>
+        <input id="f-aantal" name="aantal" type="number" min="1" max="99" value="1" inputmode="numeric" required>
+      </div>
+      <p class="bonform__tussen">{{ bestellen.extraRegel }}</p>
+      <div class="bonform__regel bonform__regel--product">
+        <label for="f-product2">{{ bestellen.labels.product }} 2</label>
+        <select id="f-product2" name="product_2">
+          <option value="">{{ bestellen.labels.kies }}</option>
+          {{#elk categorieen}}<optgroup label="{{ naam }}">{{#elk producten}}{{#als beschikbaar != "Uitverkocht"}}<option>{{ naam }}</option>{{/als}}{{/elk}}</optgroup>{{/elk}}
+        </select>
+      </div>
+      <div class="bonform__regel bonform__regel--aantal">
+        <label for="f-aantal2">{{ bestellen.labels.aantal }}</label>
+        <input id="f-aantal2" name="aantal_2" type="number" min="0" max="99" value="0" inputmode="numeric">
+      </div>
+      <div class="bonform__regel bonform__regel--half">
+        <label for="f-dag">{{ bestellen.labels.dag }}</label>
+        <input id="f-dag" name="afhaaldag" type="date" required data-afhaaldag>
+      </div>
+      <div class="bonform__regel bonform__regel--half">
+        <label for="f-moment">{{ bestellen.labels.moment }}</label>
+        <select id="f-moment" name="afhaalmoment" required>
+          {{#elk bestellen.afhaaluren}}<option>{{ moment }}</option>{{/elk}}
+        </select>
+      </div>
+      <div class="bonform__regel bonform__regel--half">
+        <label for="f-naam">{{ bestellen.labels.naam }}</label>
+        <input id="f-naam" name="naam" type="text" autocomplete="name" required>
+      </div>
+      <div class="bonform__regel bonform__regel--half">
+        <label for="f-tel">{{ bestellen.labels.telefoon }}</label>
+        <input id="f-tel" name="telefoon" type="tel" autocomplete="tel" required>
+      </div>
+      <div class="bonform__regel">
+        <label for="f-mail">{{ bestellen.labels.email }}</label>
+        <input id="f-mail" name="email" type="email" autocomplete="email">
+      </div>
+      <div class="bonform__regel">
+        <label for="f-opm">{{ bestellen.labels.opmerking }}</label>
+        <textarea id="f-opm" name="opmerking" rows="3"></textarea>
+      </div>
+      <button class="knop knop--vol" type="submit">{{ bestellen.knop }} <span aria-hidden="true">→</span></button>
+      <p class="bonform__klein">{{ bestellen.privacy }}</p>
+    </form>
+  </div>
+</main>
+{{> voet }}
+</body>
+</html>

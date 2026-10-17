@@ -1,0 +1,21 @@
+<svg class="bord" viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+  <defs>
+    <radialGradient id="bord-glans" cx="38%" cy="32%" r="70%"><stop offset="0" stop-color="#fff" stop-opacity=".09"/><stop offset=".6" stop-color="#fff" stop-opacity="0"/></radialGradient>
+    <filter id="bord-ruw" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="4" result="r"/><feDisplacementMap in="SourceGraphic" in2="r" scale="7"/></filter>
+  </defs>
+  <circle class="bord__rand" cx="200" cy="200" r="196"/>
+  <circle class="bord__ring" cx="200" cy="200" r="182"/>
+  <circle class="bord__put" cx="200" cy="200" r="128"/>
+  <circle class="bord__ring bord__ring--fijn" cx="200" cy="200" r="131"/>
+  <g filter="url(#bord-ruw)">
+    <path class="bord__saus" d="M112 238c18-62 74-104 136-98 40 4 64 30 52 54-14 28-62 18-96 34-30 14-40 44-70 40-20-3-28-14-22-30z"/>
+    <path class="bord__saus bord__saus--licht" d="M176 168c22-14 58-16 80-2" stroke-width="10" fill="none"/>
+  </g>
+  <g class="bord__stip">
+    <circle cx="238" cy="224" r="9"/><circle cx="262" cy="206" r="6"/><circle cx="214" cy="244" r="5"/>
+  </g>
+  <g class="bord__zout">
+    <circle cx="160" cy="214" r="2.2"/><circle cx="182" cy="198" r="1.6"/><circle cx="248" cy="174" r="2"/><circle cx="276" cy="232" r="1.4"/><circle cx="198" cy="262" r="1.8"/><circle cx="142" cy="246" r="1.5"/>
+  </g>
+  <circle cx="200" cy="200" r="196" fill="url(#bord-glans)"/>
+</svg>

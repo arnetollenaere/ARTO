@@ -1,0 +1,17 @@
+<footer class="voet">
+  <div>
+    <strong>{{ site.naam }}</strong>
+    <p>{{ contact.adres }}, {{ contact.postcode }} {{ contact.gemeente }}</p>
+    <p><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a> · <a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+    {{#als contact.btw}}<p>Btw {{ contact.btw }}</p>{{/als}}
+  </div>
+  <div>
+    <strong>Open</strong>
+    <dl class="uren">{{#elk openingsuren}}<dt>{{ dag }}</dt><dd>{{ uren }}</dd>{{/elk}}</dl>
+  </div>
+  <div>
+    <strong>Volg ons</strong>
+    <ul class="socials">{{#elk socials}}<li><a href="{{ url }}">{{ netwerk }}</a></li>{{/elk}}</ul>
+  </div>
+  <p class="klein">© {{ jaar }} {{ site.naam }}</p>
+</footer>

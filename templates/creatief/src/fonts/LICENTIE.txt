@@ -1,0 +1,8 @@
+Lettertypes in deze map (via Google Fonts, latin-subset):
+
+- Unbounded (variabel, 200–700) — NORD ID / The Unbounded Project Authors
+- Instrument Sans (variabel, 400–600) — The Instrument Sans Project Authors
+- JetBrains Mono (400) — The JetBrains Mono Project Authors
+
+Alle drie vallen onder de SIL Open Font License, versie 1.1.
+https://openfontlicense.org

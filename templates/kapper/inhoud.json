@@ -1,0 +1,681 @@
+{
+  "site": {
+    "naam": "Salon Marlo",
+    "slogan": "Kapsalon en barbier in hartje Leuven",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "salonmarlo.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "Van 24 december tot en met 2 januari is het salon gesloten.",
+    "link": ""
+  },
+  "contact": {
+    "adres": "Tiensestraat 41",
+    "postcode": "3000",
+    "gemeente": "Leuven",
+    "land": "BE",
+    "telefoon": "+32 16 89 21 40",
+    "email": "hallo@salonmarlo.be",
+    "whatsapp": "+32 470 18 42 66",
+    "btw": "BE0712.448.906",
+    "kaart": "https://maps.google.com/?q=Tiensestraat+41+3000+Leuven"
+  },
+  "openingsuren": [
+    {
+      "dag": "Maandag",
+      "uren": "Gesloten"
+    },
+    {
+      "dag": "Dinsdag",
+      "uren": "09:00–18:30"
+    },
+    {
+      "dag": "Woensdag",
+      "uren": "09:00–18:30"
+    },
+    {
+      "dag": "Donderdag",
+      "uren": "09:00–20:30"
+    },
+    {
+      "dag": "Vrijdag",
+      "uren": "09:00–18:30"
+    },
+    {
+      "dag": "Zaterdag",
+      "uren": "08:30–16:00"
+    },
+    {
+      "dag": "Zondag",
+      "uren": "Gesloten"
+    }
+  ],
+  "socials": [
+    {
+      "netwerk": "Instagram",
+      "url": "https://www.instagram.com/salonmarlo"
+    },
+    {
+      "netwerk": "TikTok",
+      "url": "https://www.tiktok.com/@salonmarlo"
+    },
+    {
+      "netwerk": "Facebook",
+      "url": "https://www.facebook.com/salonmarlo"
+    }
+  ],
+  "seo": {
+    "titel": "Salon Marlo — kapper en barbier in Leuven",
+    "beschrijving": "Kapsalon en barbier in de Tiensestraat in Leuven. Precisiesnit, balayage, fades en verzorging. Bekijk de prijslijst en maak online een afspraak.",
+    "afbeelding": "",
+    "paginas": [
+      {
+        "pagina": "prijzen.html",
+        "titel": "Prijslijst kapper Leuven",
+        "beschrijving": "Alle prijzen van Salon Marlo: dames, heren, kinderen, kleur en verzorging, met duur per behandeling. Transparant en zonder verrassingen."
+      },
+      {
+        "pagina": "team.html",
+        "titel": "Ons team van stylisten",
+        "beschrijving": "Maak kennis met de stylisten van Salon Marlo in Leuven: specialisten in precisiesnit, kleur en balayage, fades en natuurlijke krullen."
+      }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "achtergrond": "#EFEBE3",
+      "tekst": "#0E0E0C",
+      "accent": "#CDF23A",
+      "chroom": "#BFC2C4"
+    }
+  },
+  "navigatie": [
+    {
+      "tekst": "Salon",
+      "link": "/",
+      "regel": "Omslag, editoriaal en lookbook"
+    },
+    {
+      "tekst": "Prijzen",
+      "link": "/prijzen",
+      "regel": "De catalogus: dienst, duur, prijs"
+    },
+    {
+      "tekst": "Team",
+      "link": "/team",
+      "regel": "Vier stylisten, vier specialismen"
+    },
+    {
+      "tekst": "Afspraak",
+      "link": "/#afspraak",
+      "regel": "Boek je stoel"
+    }
+  ],
+  "masthead": {
+    "editie": "Nº 14 — Herfst/Winter 2026",
+    "knop": "Afspraak maken",
+    "menu": "Inhoud"
+  },
+  "hero": {
+    "titel": "Snit met karakter.",
+    "cursief": "sinds 2014",
+    "intro": "Kapsalon en barbier in de Tiensestraat. We knippen scherp, kleuren met geduld en nemen de tijd om eerst te luisteren.",
+    "coverregels": [
+      {
+        "getal": "12",
+        "tekst": "looks voor het nieuwe seizoen"
+      },
+      {
+        "getal": "4",
+        "tekst": "stylisten, elk met een eigen specialisme"
+      },
+      {
+        "getal": "Do",
+        "tekst": "late opening tot 20:30"
+      }
+    ],
+    "stickerLabel": "Snit vanaf",
+    "stickerPrijs": 32,
+    "knopSecundair": "Bekijk de prijslijst",
+    "foto": "",
+    "fotoAlt": ""
+  },
+  "ticker": [
+    {
+      "tekst": "Precisiesnit"
+    },
+    {
+      "tekst": "Balayage"
+    },
+    {
+      "tekst": "Skin fade"
+    },
+    {
+      "tekst": "Natuurlijke krul"
+    },
+    {
+      "tekst": "Kleurcorrectie"
+    },
+    {
+      "tekst": "Hete handdoek"
+    },
+    {
+      "tekst": "Hoofdhuidritueel"
+    }
+  ],
+  "editoriaal": {
+    "label": "Editoriaal",
+    "kop": "Een goed kapsel valt niet op. Het valt goed.",
+    "tekst": "In 2014 begon Salon Marlo met twee stoelen en één overtuiging: knippen is een ambacht, geen lopende band. Vandaag werken we met vier in een lichte ruimte aan de Tiensestraat, maar elke afspraak begint nog altijd op dezelfde manier: met een gesprek, zonder schaar.\n\nWe kijken naar je haar, je gezicht en hoe je 's ochtends écht tijd hebt. Daarna knippen we iets dat ook na zes weken nog klopt. Kleur doen we met plantaardige formules, en voor heren is er een eigen barbierhoek met hete handdoek.\n\nGeen opgedrongen producten, geen haast. Wel een koffie van de buren en een kapsel waar je mee weggaat alsof je het zelf zo bedacht had.",
+    "citaat": "Eerst luisteren, dan pas knippen. Dat is de hele methode.",
+    "naam": "Marlies Verhaegen",
+    "functie": "Oprichter en creatief directeur"
+  },
+  "uitgelicht": {
+    "label": "Uit de catalogus",
+    "kop": "Waar je voor terugkomt",
+    "knop": "Volledige prijslijst"
+  },
+  "prijzen": {
+    "label": "Catalogus",
+    "kop": "Prijslijst",
+    "intro": "Alle prijzen zijn inclusief wassen, verzorging en styling. Bij een vanafprijs hangt het bedrag af van lengte en dikte; we spreken het altijd vooraf met je af.",
+    "kolomDienst": "Dienst",
+    "kolomDuur": "Duur",
+    "kolomPrijs": "Prijs",
+    "vanafTekst": "vanaf",
+    "opAanvraag": "na consult",
+    "categorieen": [
+      {
+        "categorie": "Dames",
+        "code": "D",
+        "intro": "Van een strakke bob tot lange lagen: elke snit begint met een kort gesprek.",
+        "diensten": [
+          {
+            "naam": "Knippen en brushen",
+            "omschrijving": "Wassen, snit op maat, föhnen en styling",
+            "duur": "60 min",
+            "prijs": 58,
+            "vanaf": false,
+            "uitgelicht": true
+          },
+          {
+            "naam": "Knippen kort haar",
+            "omschrijving": "Pixie, crop en korte coupes",
+            "duur": "45 min",
+            "prijs": 48,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Precisiebob",
+            "omschrijving": "Droog nagesneden voor een scherpe lijn",
+            "duur": "75 min",
+            "prijs": 68,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Wassen en brushen",
+            "omschrijving": "",
+            "duur": "30 min",
+            "prijs": 32,
+            "vanaf": true,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Opsteken voor een gelegenheid",
+            "omschrijving": "Huwelijk, gala of fotoshoot, proefsessie mogelijk",
+            "duur": "60 min",
+            "prijs": 75,
+            "vanaf": true,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Pony bijknippen",
+            "omschrijving": "Tussen twee afspraken door",
+            "duur": "10 min",
+            "prijs": 10,
+            "vanaf": false,
+            "uitgelicht": false
+          }
+        ]
+      },
+      {
+        "categorie": "Heren",
+        "code": "H",
+        "intro": "In de barbierhoek: klassiek of kort gefadet, altijd afgewerkt met een scheermes.",
+        "diensten": [
+          {
+            "naam": "Herensnit",
+            "omschrijving": "Wassen, knippen en styling",
+            "duur": "30 min",
+            "prijs": 32,
+            "vanaf": false,
+            "uitgelicht": true
+          },
+          {
+            "naam": "Skin fade",
+            "omschrijving": "Tot op de huid, met scheermescontour",
+            "duur": "45 min",
+            "prijs": 36,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Baard trimmen en contouren",
+            "omschrijving": "",
+            "duur": "20 min",
+            "prijs": 20,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Snit en baard",
+            "omschrijving": "De combinatie, met hete handdoek",
+            "duur": "50 min",
+            "prijs": 48,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Klassieke scheerbeurt",
+            "omschrijving": "Hete handdoek, scheerzeep en mes",
+            "duur": "30 min",
+            "prijs": 35,
+            "vanaf": false,
+            "uitgelicht": false
+          }
+        ]
+      },
+      {
+        "categorie": "Kinderen",
+        "code": "K",
+        "intro": "Rustig, met geduld en zonder tranen. Woensdagnamiddag is kindernamiddag.",
+        "diensten": [
+          {
+            "naam": "Tot 6 jaar",
+            "omschrijving": "",
+            "duur": "20 min",
+            "prijs": 18,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "6 tot 12 jaar",
+            "omschrijving": "",
+            "duur": "30 min",
+            "prijs": 24,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Tieners tot 16 jaar",
+            "omschrijving": "Ook fades en eerste kleur",
+            "duur": "40 min",
+            "prijs": 32,
+            "vanaf": false,
+            "uitgelicht": false
+          }
+        ]
+      },
+      {
+        "categorie": "Kleur",
+        "code": "Kl",
+        "intro": "We kleuren met plantaardige, ammoniakvrije formules. Eerste keer kleur? Dan doen we een huidtest.",
+        "diensten": [
+          {
+            "naam": "Uitgroei kleuren",
+            "omschrijving": "Tot 3 cm, inclusief brushing",
+            "duur": "75 min",
+            "prijs": 62,
+            "vanaf": true,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Volledige kleuring",
+            "omschrijving": "",
+            "duur": "90 min",
+            "prijs": 74,
+            "vanaf": true,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Balayage",
+            "omschrijving": "Handgeschilderd, met toner en snit",
+            "duur": "3 u",
+            "prijs": 165,
+            "vanaf": true,
+            "uitgelicht": true
+          },
+          {
+            "naam": "Highlights met folie",
+            "omschrijving": "Half hoofd",
+            "duur": "2 u",
+            "prijs": 95,
+            "vanaf": true,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Toner of gloss",
+            "omschrijving": "Opfrissen van kleur en glans",
+            "duur": "30 min",
+            "prijs": 28,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Kleurcorrectie",
+            "omschrijving": "Altijd eerst een gratis consult",
+            "duur": "consult 20 min",
+            "prijs": 0,
+            "vanaf": false,
+            "uitgelicht": false
+          }
+        ]
+      },
+      {
+        "categorie": "Verzorging",
+        "code": "V",
+        "intro": "Voor haar dat moe, droog of beschadigd is, en voor een hoofdhuid die even rust nodig heeft.",
+        "diensten": [
+          {
+            "naam": "Hoofdhuidritueel",
+            "omschrijving": "Peeling, massage en serum",
+            "duur": "30 min",
+            "prijs": 35,
+            "vanaf": false,
+            "uitgelicht": true
+          },
+          {
+            "naam": "Bondbuilder-kuur",
+            "omschrijving": "Als extra bij kleur of los",
+            "duur": "20 min",
+            "prijs": 28,
+            "vanaf": false,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Keratine glansbehandeling",
+            "omschrijving": "Minder pluis, tot drie maanden",
+            "duur": "2 u",
+            "prijs": 180,
+            "vanaf": true,
+            "uitgelicht": false
+          },
+          {
+            "naam": "Hoofdmassage",
+            "omschrijving": "Bij elke dienst bij te boeken",
+            "duur": "15 min",
+            "prijs": 15,
+            "vanaf": false,
+            "uitgelicht": false
+          }
+        ]
+      }
+    ],
+    "voetnoot": "Kan je niet komen? Laat het ons **24 uur vooraf** weten, dan rekenen we niets aan. Bij later annuleren vragen we de helft van de prijs.\n\nBetalen kan met Bancontact, Payconiq en contant. Cadeaubonnen zijn te koop in het salon."
+  },
+  "lookbook": {
+    "label": "Lookbook",
+    "kop": "Seizoen in beeld",
+    "intro": "Een greep uit wat er deze maanden van onze stoelen kwam. Swipe of scroll opzij.",
+    "looks": [
+      {
+        "titel": "Herfstbob, scherp",
+        "stylist": "Marlies",
+        "omschrijving": "Kinlengte, droog nagesneden, met een vleugje toner.",
+        "foto": "",
+        "fotoAlt": "",
+        "vorm": "boog",
+        "patroon": "coupe"
+      },
+      {
+        "titel": "Koperen balayage",
+        "stylist": "Elif",
+        "omschrijving": "Warm koper dat in de punten oplicht.",
+        "foto": "",
+        "fotoAlt": "",
+        "vorm": "schuin",
+        "patroon": "golf"
+      },
+      {
+        "titel": "Low taper fade",
+        "stylist": "Jonas",
+        "omschrijving": "Laag uitlopend, met een zachte textuur bovenop.",
+        "foto": "",
+        "fotoAlt": "",
+        "vorm": "knip",
+        "patroon": "fade"
+      },
+      {
+        "titel": "Krul zonder pluis",
+        "stylist": "Noor",
+        "omschrijving": "Krul per krul geknipt, droog en op vorm.",
+        "foto": "",
+        "fotoAlt": "",
+        "vorm": "capsule",
+        "patroon": "krul"
+      },
+      {
+        "titel": "Lage vlecht, los",
+        "stylist": "Noor",
+        "omschrijving": "Voor een huwelijk in september, met losse lokken.",
+        "foto": "",
+        "fotoAlt": "",
+        "vorm": "boog",
+        "patroon": "vlecht"
+      },
+      {
+        "titel": "Glossy lob",
+        "stylist": "Marlies",
+        "omschrijving": "Schouderlengte, stomp geknipt, spiegelglans.",
+        "foto": "",
+        "fotoAlt": "",
+        "vorm": "schuin",
+        "patroon": "golf"
+      }
+    ]
+  },
+  "team": {
+    "label": "Masthead",
+    "kop": "Het team",
+    "intro": "Vier stylisten, elk met een eigen specialisme. Boek bij wie je wil, of laat ons kiezen wie het best bij je vraag past.",
+    "knop": "Alle stylisten",
+    "boekKnop": "Boek bij",
+    "leden": [
+      {
+        "naam": "Marlies Verhaegen",
+        "voornaam": "Marlies",
+        "rol": "Oprichter, creatief directeur",
+        "sinds": "2014",
+        "specialisaties": [
+          {
+            "tekst": "Precisiesnit"
+          },
+          {
+            "tekst": "Bob en lob"
+          },
+          {
+            "tekst": "Editoriale styling"
+          }
+        ],
+        "bio": "Leerde het vak in Antwerpen en Londen en werkte jaren backstage bij modeshows. Knipt het liefst droog, zodat ze ziet hoe je haar echt valt.",
+        "citaat": "Een goede snit groeit mooi uit.",
+        "portret": "",
+        "portretAlt": "",
+        "instagram": ""
+      },
+      {
+        "naam": "Jonas De Ridder",
+        "voornaam": "Jonas",
+        "rol": "Barbier",
+        "sinds": "2017",
+        "specialisaties": [
+          {
+            "tekst": "Skin fade"
+          },
+          {
+            "tekst": "Baardverzorging"
+          },
+          {
+            "tekst": "Klassiek scheren"
+          }
+        ],
+        "bio": "Heeft de barbierhoek opgebouwd. Werkt met tondeuse, schaar en mes, en heeft een zwak voor klassieke herenkapsels uit de jaren vijftig.",
+        "citaat": "De contour maakt het verschil.",
+        "portret": "",
+        "portretAlt": "",
+        "instagram": ""
+      },
+      {
+        "naam": "Elif Demir",
+        "voornaam": "Elif",
+        "rol": "Kleurspecialist",
+        "sinds": "2019",
+        "specialisaties": [
+          {
+            "tekst": "Balayage"
+          },
+          {
+            "tekst": "Blond"
+          },
+          {
+            "tekst": "Kleurcorrectie"
+          }
+        ],
+        "bio": "Volgde een opleiding als coloriste in Milaan. Mengt elke kleur op maat en weet als geen ander hoe je van donker naar blond gaat zonder je haar te verliezen.",
+        "citaat": "Kleur is licht. Ik schilder met licht.",
+        "portret": "",
+        "portretAlt": "",
+        "instagram": ""
+      },
+      {
+        "naam": "Noor Vanhove",
+        "voornaam": "Noor",
+        "rol": "Stylist",
+        "sinds": "2022",
+        "specialisaties": [
+          {
+            "tekst": "Natuurlijke krul"
+          },
+          {
+            "tekst": "Opsteken"
+          },
+          {
+            "tekst": "Kinderen"
+          }
+        ],
+        "bio": "Gespecialiseerd in krullend en kroeshaar volgens de curly-methode. Doet ook de bruidskapsels en heeft het geduld voor de allerkleinsten.",
+        "citaat": "Elke krul heeft een eigen wil.",
+        "portret": "",
+        "portretAlt": "",
+        "instagram": ""
+      }
+    ]
+  },
+  "merken": {
+    "label": "Credits",
+    "kop": "Waarmee we werken",
+    "lijst": [
+      {
+        "naam": "Davines",
+        "soort": "Verzorging",
+        "omschrijving": "Italiaans, B Corp en zuinig met water. Onze shampoos en maskers.",
+        "logo": ""
+      },
+      {
+        "naam": "Oway",
+        "soort": "Kleur",
+        "omschrijving": "Plantaardige, ammoniakvrije kleuring uit biodynamische teelt.",
+        "logo": ""
+      },
+      {
+        "naam": "Olaplex",
+        "soort": "Herstel",
+        "omschrijving": "Bondbuilder bij elke blondering, zodat je haar sterk blijft.",
+        "logo": ""
+      },
+      {
+        "naam": "Kevin.Murphy",
+        "soort": "Styling",
+        "omschrijving": "Wax, spray en glans voor de afwerking.",
+        "logo": ""
+      },
+      {
+        "naam": "Reuzel",
+        "soort": "Barbier",
+        "omschrijving": "Pomade en baardolie in de barbierhoek.",
+        "logo": ""
+      }
+    ]
+  },
+  "stemmen": {
+    "label": "Lezersbrieven",
+    "kop": "Wat klanten schrijven",
+    "lijst": [
+      {
+        "tekst": "Eindelijk iemand die mijn krullen begrijpt. Noor nam echt de tijd en ik ging buiten met haar dat ik zelf kan bijhouden.",
+        "naam": "Sofie V.",
+        "bron": "Google"
+      },
+      {
+        "tekst": "Beste fade van Leuven, en Jonas onthoudt na twee keer al precies hoe je het wil. Hete handdoek is een aanrader.",
+        "naam": "Thomas M.",
+        "bron": "Google"
+      },
+      {
+        "tekst": "Van zwart naar karamel in twee afspraken, zonder dat mijn haar kapot ging. Elif is een tovenaar met kleur.",
+        "naam": "Hanne D.",
+        "bron": "Treatwell"
+      }
+    ]
+  },
+  "afspraak": {
+    "label": "Reserveren",
+    "kop": "Afspraak maken",
+    "intro": "Vraag je afspraak aan en we bellen of mailen je binnen één werkdag terug met een voorstel. Liever meteen? Bel ons tijdens de openingsuren.",
+    "boekingslink": "",
+    "boekingsknop": "Boek online",
+    "boekingsplatform": "via Salonized",
+    "formulierKop": "Vraag je afspraak aan",
+    "dienstKeuze": "Weet ik nog niet",
+    "stylistKeuze": "Geen voorkeur",
+    "verzendknop": "Verstuur aanvraag",
+    "privacy": "We gebruiken je gegevens alleen om je afspraak te regelen.",
+    "bevestiging": "Dank je! Je aanvraag is goed aangekomen. We nemen binnen één werkdag contact op."
+  },
+  "bezoek": {
+    "label": "Adres",
+    "kop": "Kom langs",
+    "praktisch": [
+      {
+        "titel": "Te voet",
+        "tekst": "Vijf minuten van het Ladeuzeplein, naast de koffiebar."
+      },
+      {
+        "titel": "Met de auto",
+        "tekst": "Parking Ladeuze ligt op 300 meter. Fietsen kan je kwijt voor de deur."
+      },
+      {
+        "titel": "Toegankelijk",
+        "tekst": "Gelijkvloers, zonder drempel. Ook met een rolstoel welkom."
+      }
+    ],
+    "kaartknop": "Route plannen"
+  },
+  "nietgevonden": {
+    "kop": "Uit de mode.",
+    "tekst": "Deze pagina bestaat niet (meer). Misschien is ze verhuisd, of zat er een typfout in de link.",
+    "knop": "Terug naar de omslag"
+  },
+  "voet": {
+    "slotzin": "Kapsalon en barbier. Knippen is een ambacht.",
+    "menuInhoud": "Inhoud",
+    "menuUren": "Uren",
+    "menuContact": "Contact"
+  }
+}

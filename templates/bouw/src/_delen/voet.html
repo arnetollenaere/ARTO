@@ -1,0 +1,42 @@
+<footer class="voet">
+  <div class="voet__band" aria-hidden="true"></div>
+  <div class="voet__blok">
+    <div class="voet__cel voet__cel--groot">
+      <p class="mono voet__klein">{{ voet.kop }}</p>
+      <p class="voet__naam">{{ site.naam }}</p>
+      <p class="voet__tekst">{{ voet.tekst }}</p>
+    </div>
+    <div class="voet__cel">
+      <p class="mono voet__klein">Adres</p>
+      <address>{{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}</address>
+      {{#als contact.kaart}}<a class="voet__link" href="{{ contact.kaart }}" rel="noopener">Route ↗</a>{{/als}}
+    </div>
+    <div class="voet__cel">
+      <p class="mono voet__klein">Contact</p>
+      <p><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br><a href="mailto:{{ contact.email }}">{{ contact.email }}</a>{{#als contact.whatsapp}}<br><a href="https://wa.me/{{ contact.whatsapp | tel }}" rel="noopener">WhatsApp</a>{{/als}}</p>
+    </div>
+    <div class="voet__cel">
+      <p class="mono voet__klein">{{ voet.urenKop }}</p>
+      <dl class="voet__uren">{{#elk openingsuren}}<div><dt>{{ dag }}</dt><dd>{{ uren }}</dd></div>{{/elk}}</dl>
+    </div>
+    <div class="voet__cel">
+      <p class="mono voet__klein">Blad</p>
+      <ul class="voet__nav">
+        <li><a href="/">{{ navigatie.start }}</a></li>
+        <li><a href="/projecten">{{ navigatie.projecten }}</a></li>
+        <li><a href="/offerte">{{ navigatie.offerte }}</a></li>
+      </ul>
+      <ul class="voet__socials">{{#elk socials}}{{#als url}}<li><a href="{{ url }}" rel="noopener">{{ netwerk }}</a></li>{{/als}}{{/elk}}</ul>
+    </div>
+    <div class="voet__cel voet__cel--rij mono">
+      <span>© {{ jaar }} {{ site.naam }}</span>
+      <span>Btw {{ contact.btw }}</span>
+      <span>Schaal 1:1</span>
+      <a href="https://arto.be" rel="noopener">{{ voet.credit }}</a>
+    </div>
+  </div>
+</footer>
+<div class="belbalk">
+  <a class="belbalk__bel" href="tel:{{ contact.telefoon | tel }}"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 005 5L15 12l5 2v4a2 2 0 01-2 2A16 16 0 013 5a2 2 0 012-2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>{{ navigatie.belknop }}</a>
+  <a class="belbalk__offerte" href="/offerte">{{ navigatie.offerteknop }} →</a>
+</div>

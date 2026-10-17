@@ -1,0 +1,505 @@
+{
+  "site": {
+    "naam": "Maes Vandersteen Advocaten",
+    "slogan": "Ondernemings-, fiscaal en vermogensrecht vanuit Antwerpen.",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "maesvandersteen.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "Ons kantoor is gesloten van 24 december tot en met 2 januari. Dringende dossiers: bel +32 3 248 17 60.",
+    "link": ""
+  },
+  "contact": {
+    "adres": "Amerikalei 122",
+    "postcode": "2000",
+    "gemeente": "Antwerpen",
+    "land": "BE",
+    "telefoon": "+32 3 248 17 60",
+    "email": "kantoor@maesvandersteen.be",
+    "whatsapp": "",
+    "btw": "BE0745.612.389",
+    "kaart": "https://maps.google.com/?q=Amerikalei+122+2000+Antwerpen"
+  },
+  "openingsuren": [
+    {
+      "dag": "Maandag",
+      "uren": "08:30–18:00"
+    },
+    {
+      "dag": "Dinsdag",
+      "uren": "08:30–18:00"
+    },
+    {
+      "dag": "Woensdag",
+      "uren": "08:30–18:00"
+    },
+    {
+      "dag": "Donderdag",
+      "uren": "08:30–19:30"
+    },
+    {
+      "dag": "Vrijdag",
+      "uren": "08:30–16:30"
+    },
+    {
+      "dag": "Zaterdag",
+      "uren": "Op afspraak"
+    },
+    {
+      "dag": "Zondag",
+      "uren": "Gesloten"
+    }
+  ],
+  "socials": [
+    {
+      "netwerk": "LinkedIn",
+      "url": "https://www.linkedin.com/company/maes-vandersteen-advocaten"
+    }
+  ],
+  "seo": {
+    "titel": "Maes Vandersteen Advocaten | Advocaten in Antwerpen",
+    "beschrijving": "Advocatenkantoor in Antwerpen voor ondernemings-, fiscaal, arbeids- en vermogensrecht. Heldere adviezen, transparante kosten, eerste gesprek binnen de week.",
+    "afbeelding": "",
+    "paginas": [
+      {
+        "pagina": "expertise.html",
+        "titel": "Expertise",
+        "beschrijving": "Ondernemingsrecht, fiscaal recht, arbeidsrecht, vastgoed, vermogensplanning en geschillen: wat we doen en hoe we werken."
+      },
+      {
+        "pagina": "team.html",
+        "titel": "Team",
+        "beschrijving": "Maak kennis met de advocaten van Maes Vandersteen: hun specialisaties, talen en balie."
+      },
+      {
+        "pagina": "inzichten.html",
+        "titel": "Inzichten",
+        "beschrijving": "Korte, heldere artikels over nieuwe wetgeving en rechtspraak voor ondernemers en families."
+      }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "accent": "#1E3A2F",
+      "tweede": "#7B2433",
+      "achtergrond": "#F3EFE6",
+      "tekst": "#17201B",
+      "lijn": "#CBC3B2"
+    }
+  },
+  "navigatie": {
+    "expertise": "Expertise",
+    "team": "Team",
+    "inzichten": "Inzichten",
+    "contact": "Contact",
+    "knop": "Eerste gesprek",
+    "menu": "Index"
+  },
+  "kantoor": {
+    "sinds": "2004",
+    "balie": "Balie Antwerpen",
+    "talen": "Nederlands · Français · English",
+    "plaats": "Antwerpen — Zuid"
+  },
+  "hero": {
+    "label": "Advocatenkantoor",
+    "titel": "Juridisch advies dat je",
+    "titelAccent": "leest in één keer.",
+    "intro": "Wij adviseren ondernemers, bestuurders en families in Antwerpen en daarbuiten. Zorgvuldig voorbereid, helder op papier, en met een kostprijs die je vooraf kent.",
+    "knop": "Eerste gesprek aanvragen",
+    "tweedeKnop": "Bekijk onze expertise",
+    "zegel": "Zorgvuldig · Onafhankelijk · Helder"
+  },
+  "expertise": {
+    "label": "Expertise",
+    "titel": "Zes domeinen, één manier van werken.",
+    "intro": "We kiezen bewust voor een beperkt aantal rechtsdomeinen. Zo kennen we de rechtspraak, de administratie en de rechters waar het telt.",
+    "meer": "Alle domeinen in detail",
+    "domeinen": [
+      {
+        "naam": "Ondernemingsrecht",
+        "kort": "Oprichting, aandeelhoudersovereenkomsten, overnames en bestuurdersaansprakelijkheid.",
+        "uitleg": "Van de oprichting van een BV tot de verkoop van je familiebedrijf. We schrijven statuten en aandeelhoudersovereenkomsten die werken als het spannend wordt, begeleiden overnames van A tot Z en staan bestuurders bij wanneer hun aansprakelijkheid in het geding komt.\n\n- Statuten en aandeelhoudersovereenkomsten\n- Due diligence en overnamecontracten\n- Bestuurdersaansprakelijkheid en conflicten tussen vennoten",
+        "voorbeelden": "BV · NV · CommV · Overname · WVV"
+      },
+      {
+        "naam": "Fiscaal recht",
+        "kort": "Vennootschapsbelasting, btw, fiscale controles en geschillen met de administratie.",
+        "uitleg": "We bereiden fiscale structuren voor die standhouden bij een controle, en verdedigen je wanneer de administratie toch aanklopt. Van een voorafgaande beslissing bij de Rulingdienst tot een procedure voor de rechtbank van eerste aanleg.\n\n- Fiscale controles en bezwaarschriften\n- Rulingaanvragen en fiscale structurering\n- Btw-vraagstukken bij grensoverschrijdende handel",
+        "voorbeelden": "Vennootschapsbelasting · Btw · Ruling · Bezwaar"
+      },
+      {
+        "naam": "Arbeidsrecht",
+        "kort": "Arbeidsovereenkomsten, ontslag, reglementen en sociale inspectie.",
+        "uitleg": "Voor werkgevers én kaderleden. We stellen arbeidsovereenkomsten en arbeidsreglementen op, begeleiden ontslag om dringende reden en onderhandelen over vertrekregelingen die voor beide partijen eerlijk zijn.\n\n- Arbeidsovereenkomsten en concurrentiebedingen\n- Ontslag en vertrekonderhandelingen\n- Sociale inspectie en procedures voor de arbeidsrechtbank",
+        "voorbeelden": "Ontslag · Concurrentiebeding · Arbeidsreglement"
+      },
+      {
+        "naam": "Vastgoed- en bouwrecht",
+        "kort": "Aankoop, huur, bouwgeschillen en omgevingsvergunningen.",
+        "uitleg": "Vastgoed is zelden alleen een contract. We kijken naar de huurovereenkomst, de verkoopsovereenkomst, de omgevingsvergunning en de fiscale gevolgen in één beweging, en treden op in bouwgeschillen met aannemers en architecten.\n\n- Handelshuur en woninghuur\n- Bouwgeschillen en deskundigenonderzoek\n- Omgevingsvergunningen en bezwaren",
+        "voorbeelden": "Handelshuur · Bouwgeschil · Omgevingsvergunning"
+      },
+      {
+        "naam": "Familiaal vermogensrecht",
+        "kort": "Successieplanning, schenkingen, huwelijkscontracten en bedrijfsoverdracht in de familie.",
+        "uitleg": "Een vermogen overdragen vraagt meer dan een schenking. Samen met je notaris en boekhouder tekenen we een plan uit dat rekening houdt met erfrecht, fiscaliteit en de verhoudingen binnen de familie.\n\n- Successieplanning en schenkingen\n- Familiale overdracht van ondernemingen\n- Huwelijksvermogensrecht en samenwoning",
+        "voorbeelden": "Schenking · Erfrecht · Familiebedrijf"
+      },
+      {
+        "naam": "Geschillen en bemiddeling",
+        "kort": "Onderhandeling, erkende bemiddeling en procedures voor alle rechtbanken.",
+        "uitleg": "Niet elk conflict hoort voor de rechter. Twee van onze advocaten zijn erkend bemiddelaar in burgerlijke en handelszaken. Lukt een akkoord niet, dan pleiten we voor de ondernemingsrechtbank, het hof van beroep of een scheidsgerecht.\n\n- Erkende bemiddeling in burgerlijke en handelszaken\n- Procedures voor de ondernemingsrechtbank en het hof van beroep\n- Invordering van onbetaalde facturen",
+        "voorbeelden": "Bemiddeling · Kort geding · Invordering"
+      }
+    ]
+  },
+  "cijfers": {
+    "label": "Kerncijfers",
+    "titel": "Wat twintig jaar praktijk oplevert.",
+    "items": [
+      {
+        "getal": 22,
+        "achter": "",
+        "label": "jaar actief aan de Antwerpse balie"
+      },
+      {
+        "getal": 9,
+        "achter": "",
+        "label": "advocaten en juristen"
+      },
+      {
+        "getal": 1400,
+        "achter": "+",
+        "label": "afgeronde dossiers sinds 2004"
+      },
+      {
+        "getal": 72,
+        "achter": "%",
+        "label": "geschillen opgelost zonder rechter"
+      }
+    ]
+  },
+  "werkwijze": {
+    "label": "Werkwijze",
+    "titel": "Van eerste gesprek tot afgerond dossier.",
+    "intro": "Je weet op elk moment wie je dossier behandelt, wat de volgende stap is en wat die kost.",
+    "stappen": [
+      {
+        "titel": "Eerste gesprek",
+        "duur": "45 minuten",
+        "tekst": "Je legt je vraag voor aan een advocaat met ervaring in dat domein. We zeggen eerlijk of we je kunnen helpen en wat de opties zijn."
+      },
+      {
+        "titel": "Schriftelijk voorstel",
+        "duur": "binnen 3 werkdagen",
+        "tekst": "Je ontvangt een voorstel met de aanpak, de verwachte tijd en een raming of vaste prijs. Pas na jouw akkoord beginnen we."
+      },
+      {
+        "titel": "Uitvoering",
+        "duur": "volgens planning",
+        "tekst": "Eén vaste advocaat volgt je dossier op. Je krijgt een maandelijks overzicht van de gepresteerde uren en kosten."
+      },
+      {
+        "titel": "Afronding",
+        "duur": "met eindverslag",
+        "tekst": "We sluiten af met een kort verslag: wat er beslist is, welke documenten je bewaart en waar je later op moet letten."
+      }
+    ]
+  },
+  "tarieven": {
+    "label": "Tarieven",
+    "titel": "Transparante kosten, vooraf afgesproken.",
+    "intro": "Alle bedragen zijn exclusief 21% btw en kantoorkosten. Een rechtsbijstandsverzekering kan een deel van de kosten dragen; we kijken dat met je na.",
+    "items": [
+      {
+        "naam": "Eerste gesprek",
+        "prijs": "95",
+        "eenheid": "eenmalig",
+        "toelichting": "45 minuten, op kantoor of via video. Wordt verrekend als je ons het dossier toevertrouwt."
+      },
+      {
+        "naam": "Uurtarief advocaat",
+        "prijs": "165",
+        "eenheid": "per uur",
+        "toelichting": "Afgerekend per begonnen kwartier. Stagiairs aan € 110 per uur."
+      },
+      {
+        "naam": "Uurtarief vennoot",
+        "prijs": "220",
+        "eenheid": "per uur",
+        "toelichting": "Voor complexe structureringen en pleidooien in hoger beroep."
+      },
+      {
+        "naam": "Forfait oprichting BV",
+        "prijs": "1.450",
+        "eenheid": "vaste prijs",
+        "toelichting": "Statuten, financieel plan nalezen en begeleiding bij de notaris. Notariskosten niet inbegrepen."
+      }
+    ],
+    "noot": "We sturen elke maand een gedetailleerde staat van ereloon en kosten. Een verrassing op de eindafrekening hoort er niet bij."
+  },
+  "team": {
+    "label": "Team",
+    "titel": "Advocaten met een vast gezicht.",
+    "intro": "Je dossier komt niet in een anonieme stapel terecht. Je werkt met een vaste advocaat, bijgestaan door een collega die je dossier evengoed kent.",
+    "meer": "Het volledige team",
+    "leden": [
+      {
+        "naam": "Lieve Maes",
+        "rol": "Vennoot",
+        "talen": "NL · FR · EN",
+        "balie": "Balie Antwerpen",
+        "sinds": "1998",
+        "specialisaties": "Ondernemingsrecht, overnames",
+        "email": "lieve.maes@maesvandersteen.be",
+        "foto": "",
+        "fotoAlt": "",
+        "bio": "Lieve richtte het kantoor op in 2004 na zes jaar bij een internationaal kantoor in Brussel. Ze begeleidt overnames van familiebedrijven en is erkend bemiddelaar in handelszaken."
+      },
+      {
+        "naam": "Pieter Vandersteen",
+        "rol": "Vennoot",
+        "talen": "NL · FR · DE",
+        "balie": "Balie Antwerpen",
+        "sinds": "2003",
+        "specialisaties": "Fiscaal recht, fiscale geschillen",
+        "email": "pieter.vandersteen@maesvandersteen.be",
+        "foto": "",
+        "fotoAlt": "",
+        "bio": "Pieter is licentiaat in de rechten en master in het fiscaal recht. Hij doceert vennootschapsbelasting aan een Antwerpse hogeschool en pleit regelmatig in fiscale zaken voor het hof van beroep."
+      },
+      {
+        "naam": "Sarah El Amrani",
+        "rol": "Advocaat",
+        "talen": "NL · FR · EN · AR",
+        "balie": "Balie Antwerpen",
+        "sinds": "2014",
+        "specialisaties": "Arbeidsrecht, sociale zekerheid",
+        "email": "sarah.elamrani@maesvandersteen.be",
+        "foto": "",
+        "fotoAlt": "",
+        "bio": "Sarah adviseert werkgevers in de haven en de logistiek over ontslag, arbeidsreglementen en controles van de sociale inspectie."
+      },
+      {
+        "naam": "Thomas Wouters",
+        "rol": "Advocaat",
+        "talen": "NL · EN",
+        "balie": "Balie Antwerpen",
+        "sinds": "2017",
+        "specialisaties": "Vastgoed- en bouwrecht",
+        "email": "thomas.wouters@maesvandersteen.be",
+        "foto": "",
+        "fotoAlt": "",
+        "bio": "Thomas werkte als jurist bij een projectontwikkelaar voor hij advocaat werd. Hij kent bouwwerven van binnenuit en treedt op in bouwgeschillen en huurzaken."
+      },
+      {
+        "naam": "Hanne De Ridder",
+        "rol": "Advocaat",
+        "talen": "NL · FR",
+        "balie": "Balie Antwerpen",
+        "sinds": "2019",
+        "specialisaties": "Familiaal vermogensrecht",
+        "email": "hanne.deridder@maesvandersteen.be",
+        "foto": "",
+        "fotoAlt": "",
+        "bio": "Hanne werkt nauw samen met notarissen aan successieplanning en familiale bedrijfsoverdrachten. Ze is erkend familiaal bemiddelaar."
+      },
+      {
+        "naam": "Jonas Peeters",
+        "rol": "Advocaat-stagiair",
+        "talen": "NL · FR · EN",
+        "balie": "Balie Antwerpen",
+        "sinds": "2024",
+        "specialisaties": "Ondernemingsrecht, invordering",
+        "email": "jonas.peeters@maesvandersteen.be",
+        "foto": "",
+        "fotoAlt": "",
+        "bio": "Jonas loopt zijn stage bij Lieve Maes en ondersteunt het team in vennootschapsdossiers en invorderingsprocedures."
+      }
+    ]
+  },
+  "inzichten": {
+    "label": "Inzichten",
+    "titel": "Korte stukken over wat verandert.",
+    "intro": "Nieuwe wetgeving en rechtspraak, uitgelegd voor ondernemers en families. Zonder jargon, met wat het voor jou betekent.",
+    "meer": "Alle inzichten",
+    "lees": "Lees artikel",
+    "artikels": [
+      {
+        "titel": "De nieuwe regels voor de meerwaardebelasting op aandelen",
+        "datum": "2026-09-24",
+        "categorie": "Fiscaal",
+        "auteur": "Pieter Vandersteen",
+        "samenvatting": "Wat verandert er voor wie aandelen verkoopt, en welke vrijstellingen blijven bestaan?",
+        "tekst": "Sinds 1 januari 2026 geldt een algemene belasting op meerwaarden op financiële activa. Voor ondernemers met een aanmerkelijk belang in hun eigen vennootschap gelden **aparte regels**.\n\nWie minder dan 20% van de aandelen bezit, valt onder het algemene stelsel met een jaarlijkse vrijstelling. Daarboven gelden schijven, met een lager tarief voor kleinere meerwaarden.\n\n- Laat de waarde van je aandelen op de referentiedatum vastleggen.\n- Bekijk of een gespreide verkoop gunstiger is.\n- Bespreek de timing van een overname met je adviseurs, niet achteraf.\n\nVragen over jouw situatie? [Plan een eerste gesprek](/#gesprek)."
+      },
+      {
+        "titel": "Concurrentiebeding in de arbeidsovereenkomst: wanneer is het geldig?",
+        "datum": "2026-08-30",
+        "categorie": "Arbeid",
+        "auteur": "Sarah El Amrani",
+        "samenvatting": "Een concurrentiebeding beschermt je klanten, maar alleen als het aan strikte voorwaarden voldoet.",
+        "tekst": "Een concurrentiebeding is enkel geldig als het loon een bepaald drempelbedrag overschrijdt, het beperkt is in tijd en ruimte, en de werkgever een **compensatievergoeding** betaalt.\n\nVeel bedingen die we nalezen, missen een van die elementen. Het gevolg: het beding is nietig en de werknemer kan meteen bij een concurrent beginnen.\n\nWe raden aan om bestaande contracten om de twee jaar na te lezen, zeker na een loonsverhoging of een functiewijziging."
+      },
+      {
+        "titel": "Handelshuur: wat als je huurder vroeger wil vertrekken?",
+        "datum": "2026-07-11",
+        "categorie": "Vastgoed",
+        "auteur": "Thomas Wouters",
+        "samenvatting": "De wet laat weinig ruimte, maar een goed opgestelde overeenkomst biedt uitwegen voor beide partijen.",
+        "tekst": "Een handelshuur loopt minstens negen jaar. De huurder kan om de drie jaar opzeggen, met een opzegtermijn van zes maanden. Daartussen vertrekken kan alleen met het akkoord van de verhuurder.\n\nIn de praktijk onderhandelen partijen vaak een **verbrekingsvergoeding**. Leg die afspraken altijd schriftelijk vast en laat ze, indien nodig, registreren."
+      },
+      {
+        "titel": "Schenken aan de volgende generatie zonder het familiebedrijf te verliezen",
+        "datum": "2026-05-19",
+        "categorie": "Vermogen",
+        "auteur": "Hanne De Ridder",
+        "samenvatting": "Met certificering en een goede aandeelhoudersovereenkomst blijft de zeggenschap waar ze hoort.",
+        "tekst": "Veel ondernemers willen hun aandelen al tijdens hun leven schenken, maar niet meteen de controle afgeven. Een **stichting-administratiekantoor** of certificering van aandelen biedt hier een oplossing.\n\nDe kinderen worden economisch eigenaar, terwijl de ouders als bestuurder van de stichting het stemrecht behouden. Combineer dit met een schenking aan het verlaagde tarief voor familiale ondernemingen."
+      },
+      {
+        "titel": "Bestuurdersaansprakelijkheid onder het WVV: vijf jaar later",
+        "datum": "2026-03-02",
+        "categorie": "Onderneming",
+        "auteur": "Lieve Maes",
+        "samenvatting": "De plafonds werken, maar niet voor elke fout. Een overzicht van de rechtspraak tot nu toe.",
+        "tekst": "Het Wetboek van vennootschappen en verenigingen beperkt de aansprakelijkheid van bestuurders tot een bedrag dat afhangt van de omvang van de vennootschap.\n\nDie plafonds gelden **niet** bij lichte fouten die gewoonlijk voorkomen, bij opzet of bij fiscale en sociale schulden. Een goede D&O-verzekering blijft dus nodig."
+      }
+    ]
+  },
+  "faq": {
+    "label": "Vragen",
+    "titel": "Wat we vaak gevraagd worden.",
+    "items": [
+      {
+        "vraag": "Hoe snel kan ik terecht voor een eerste gesprek?",
+        "antwoord": "Meestal binnen vijf werkdagen. Bij dringende zaken, zoals een dagvaarding of een ontslag om dringende reden, bellen we je dezelfde dag terug."
+      },
+      {
+        "vraag": "Betaalt mijn rechtsbijstandsverzekering de kosten?",
+        "antwoord": "Dat hangt af van je polis. Je hebt het recht om zelf je advocaat te kiezen. Bezorg ons de polisvoorwaarden en we nemen contact op met je verzekeraar."
+      },
+      {
+        "vraag": "Werken jullie ook in het Frans of Engels?",
+        "antwoord": "Ja. Alle advocaten werken in het Nederlands en het Frans, de meesten ook in het Engels. We pleiten voor rechtbanken in heel België."
+      },
+      {
+        "vraag": "Wat als we het niet eens zijn over de afrekening?",
+        "antwoord": "Laat het ons eerst weten; we bekijken de staat samen. Kom je er niet uit, dan kan je de Raad van de Orde van de balie Antwerpen vragen om het ereloon te begroten."
+      },
+      {
+        "vraag": "Is wat ik vertel vertrouwelijk?",
+        "antwoord": "Altijd. Advocaten zijn gebonden aan het beroepsgeheim. Dat geldt ook voor het eerste gesprek, zelfs als je ons het dossier daarna niet toevertrouwt."
+      }
+    ]
+  },
+  "gesprek": {
+    "label": "Eerste gesprek",
+    "titel": "Leg je vraag rustig aan ons voor.",
+    "intro": "Vul in wat je kwijt wilt. Een advocaat leest je vraag persoonlijk en belt of mailt je binnen twee werkdagen om een moment af te spreken.",
+    "onderwerpen": [
+      {
+        "naam": "Ondernemingsrecht"
+      },
+      {
+        "naam": "Fiscaal recht"
+      },
+      {
+        "naam": "Arbeidsrecht"
+      },
+      {
+        "naam": "Vastgoed- en bouwrecht"
+      },
+      {
+        "naam": "Familiaal vermogensrecht"
+      },
+      {
+        "naam": "Geschil of bemiddeling"
+      },
+      {
+        "naam": "Iets anders"
+      }
+    ],
+    "voorkeur": [
+      {
+        "naam": "Op kantoor in Antwerpen"
+      },
+      {
+        "naam": "Via video"
+      },
+      {
+        "naam": "Telefonisch"
+      }
+    ],
+    "knop": "Aanvraag versturen",
+    "bevestiging": "Dank je. We hebben je aanvraag goed ontvangen en nemen binnen twee werkdagen contact op.",
+    "privacy": "We gebruiken je gegevens alleen om je vraag te beantwoorden. Alles wat je ons meedeelt valt onder het beroepsgeheim."
+  },
+  "paginas": {
+    "expertise": {
+      "label": "Expertise",
+      "titel": "Wat we doen, en hoe diep we gaan.",
+      "intro": "Per domein: waarmee we je helpen, welke dossiers we vaak behandelen en wie je aanspreekpunt is."
+    },
+    "team": {
+      "label": "Team",
+      "titel": "De mensen achter je dossier.",
+      "intro": "Negen advocaten en juristen, allemaal ingeschreven aan de balie van Antwerpen. Iedereen werkt in minstens twee landstalen."
+    },
+    "inzichten": {
+      "label": "Inzichten",
+      "titel": "Inzichten en analyses.",
+      "intro": "Wat nieuwe wetten en uitspraken betekenen voor jouw onderneming of je familie."
+    },
+    "nietGevonden": {
+      "label": "Fout 404",
+      "titel": "Deze pagina staat niet in ons dossier.",
+      "tekst": "De link is verouderd of het adres bevat een tikfout. Start opnieuw vanaf de startpagina of neem rechtstreeks contact op.",
+      "knop": "Naar de startpagina"
+    }
+  },
+  "juridisch": {
+    "vennootschap": "Maes Vandersteen Advocaten BV",
+    "rpr": "RPR Antwerpen, afdeling Antwerpen",
+    "balie": "Alle advocaten zijn ingeschreven aan de balie van Antwerpen (Orde van Vlaamse balies).",
+    "verzekering": "Beroepsaansprakelijkheid verzekerd via de collectieve polis van de Orde van Vlaamse balies.",
+    "deontologie": "Onderworpen aan de Codex Deontologie voor Advocaten van de Orde van Vlaamse balies.",
+    "deontologieLink": "https://www.ordevanvlaamsebalies.be",
+    "privacyLink": ""
+  },
+  "labels": {
+    "sinds": "Sinds",
+    "orde": "Orde",
+    "talen": "Talen",
+    "inhoud": "Inhoud",
+    "naam": "Naam",
+    "rol": "Rol",
+    "domein": "Domein",
+    "adres": "Adres",
+    "telefoon": "Telefoon",
+    "email": "E-mail",
+    "kantooruren": "Kantooruren",
+    "route": "Route plannen",
+    "notaBene": "Nota bene",
+    "ontvangen": "Ontvangen",
+    "onderwerp": "Onderwerp",
+    "voorkeur": "Voorkeur voor het gesprek",
+    "vraag": "Je vraag in een paar zinnen",
+    "optioneel": "optioneel",
+    "kantoor": "Kantoor",
+    "wettelijk": "Wettelijke vermeldingen",
+    "vennootschap": "Vennootschap",
+    "ondernemingsnummer": "Ondernemingsnr.",
+    "balie": "Balie",
+    "verzekering": "Verzekering",
+    "deontologie": "Deontologie",
+    "meerInfo": "Meer info",
+    "privacy": "Privacy",
+    "naarInhoud": "Naar de inhoud",
+    "naarStart": "naar de startpagina"
+  }
+}

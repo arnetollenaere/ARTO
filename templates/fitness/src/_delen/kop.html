@@ -1,0 +1,16 @@
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+<header class="kop">
+  <a class="kop__merk" href="/" aria-label="{{ site.naam }}, naar de startpagina">{{#als site.logo}}<img src="{{ site.logo }}" alt="{{ site.naam }}" width="140" height="40">{{#anders}}<span class="merk"><span class="merk__bout" aria-hidden="true"></span>{{ site.naam }}</span>{{/als}}</a>
+  <button class="kop__menuknop" type="button" popovertarget="menu" aria-controls="menu"><span class="kop__menulijn" aria-hidden="true"></span><span class="vh">Menu</span></button>
+  <nav class="menu" id="menu" popover aria-label="Hoofdmenu">
+    <button class="menu__sluit" type="button" popovertarget="menu" popovertargetaction="hide">Sluit</button>
+    <ol class="menu__lijst">
+      <li><a href="/#lessen"><span class="menu__nr">01</span>{{ navigatie.lessen }}</a></li>
+      <li><a href="/rooster"{{#als pagina.is.rooster}} aria-current="page"{{/als}}><span class="menu__nr">02</span>{{ navigatie.rooster }}</a></li>
+      <li><a href="/tarieven"{{#als pagina.is.tarieven}} aria-current="page"{{/als}}><span class="menu__nr">03</span>{{ navigatie.tarieven }}</a></li>
+      <li><a href="/#coaches"><span class="menu__nr">04</span>{{ navigatie.coaches }}</a></li>
+    </ol>
+    <p class="menu__extra"><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br>{{ contact.adres }}, {{ contact.gemeente }}</p>
+  </nav>
+  <a class="knop knop--kop" href="/#proefles">{{ navigatie.knop }}</a>
+</header>

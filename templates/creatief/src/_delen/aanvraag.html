@@ -1,0 +1,39 @@
+<section class="aanvraag" id="project" aria-labelledby="aanvraag-kop">
+  <div class="aanvraag__kop">
+    <p class="zaal mono">{{ aanvraag.zaal }}</p>
+    <h2 class="aanvraag__titel" id="aanvraag-kop">{{ aanvraag.kop }}</h2>
+    <p class="aanvraag__intro">{{ aanvraag.intro }}</p>
+  </div>
+  <div class="aanvraag__bevestiging" role="status" data-bevestiging hidden>
+    <span class="aanvraag__vink" aria-hidden="true"></span>
+    <p>{{ aanvraag.bevestiging }}</p>
+  </div>
+  <form class="formulier" method="post" action="/api/bericht">
+    <input type="hidden" name="_formulier" value="Start een project">
+    <input name="_honing" tabindex="-1" autocomplete="off" hidden>
+    <fieldset class="keuzes">
+      <legend class="mono">{{ aanvraag.soortLabel }}</legend>
+      <div class="keuzes__rij">{{#elk aanvraag.soorten}}<label class="chip"><input type="radio" name="soort" value="{{ naam }}" {{#als @eerste}}required{{/als}}><span>{{ naam }}</span></label>{{/elk}}</div>
+    </fieldset>
+    <fieldset class="keuzes">
+      <legend class="mono">{{ aanvraag.budgetLabel }}</legend>
+      <div class="keuzes__rij">{{#elk aanvraag.budgetten}}<label class="chip"><input type="radio" name="budget" value="{{ naam }}"><span>{{ naam }}</span></label>{{/elk}}</div>
+    </fieldset>
+    <div class="velden">
+      <p class="veld"><label for="f-naam" class="mono">{{ aanvraag.lNaam }}</label><input id="f-naam" name="naam" autocomplete="name" required></p>
+      <p class="veld"><label for="f-email" class="mono">{{ aanvraag.lEmail }}</label><input id="f-email" name="email" type="email" autocomplete="email" required></p>
+      <p class="veld"><label for="f-tel" class="mono">{{ aanvraag.lTelefoon }}</label><input id="f-tel" name="telefoon" type="tel" autocomplete="tel"></p>
+      <p class="veld"><label for="f-plaats" class="mono">{{ aanvraag.lPlaats }}</label><input id="f-plaats" name="locatie" autocomplete="address-level2"></p>
+      <p class="veld veld--vol"><label for="f-bericht" class="mono">{{ aanvraag.lBericht }}</label><textarea id="f-bericht" name="bericht" rows="4" required></textarea></p>
+    </div>
+    <div class="formulier__voet">
+      <button class="verstuur" type="submit"><span>{{ aanvraag.knop }}</span><span class="verstuur__pijl" aria-hidden="true">→</span></button>
+      <p class="formulier__privacy">{{ aanvraag.privacy }}</p>
+    </div>
+  </form>
+  <aside class="aanvraag__direct" aria-label="{{ aanvraag.direct }}">
+    <p class="mono">{{ aanvraag.direct }}</p>
+    <a class="aanvraag__mail" href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+    <a class="mono" href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a>
+  </aside>
+</section>

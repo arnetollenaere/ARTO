@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  {{> hoofd }}
+</head>
+<body class="p-404">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="niet">
+  <p class="niet__cijfer" aria-hidden="true">404</p>
+  <div class="niet__tekst">
+    <p class="mono">Fout 404 · 0 / 12 reps</p>
+    <h1 class="niet__kop">{{ nietgevonden.kop }}</h1>
+    <p>{{ nietgevonden.tekst }}</p>
+    <a class="knop" href="/">{{ nietgevonden.knop }} <span aria-hidden="true">→</span></a>
+  </div>
+</main>
+{{> voet }}
+</body>
+</html>

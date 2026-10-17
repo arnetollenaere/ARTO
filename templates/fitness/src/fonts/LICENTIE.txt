@@ -1,0 +1,7 @@
+Lettertypes in deze map (latin-subset, woff2), elk onder de SIL Open Font License 1.1 (https://openfontlicense.org):
+
+- Big Shoulders Display (variabel, 600–900) — Patric King
+- Archivo (variabel, breedte 62–125%, gewicht 400–700) — Omnibus-Type
+- JetBrains Mono (500) — JetBrains
+
+Bron: Google Fonts.

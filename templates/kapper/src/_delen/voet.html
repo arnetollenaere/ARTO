@@ -1,0 +1,33 @@
+<a class="mob-boek" href="{{> boek }}"><span>{{ masthead.knop }}</span><span aria-hidden="true">→</span></a>
+<footer class="voet">
+  <div class="voet__raster">
+    <div class="voet__kolom voet__kolom--slot">
+      <p class="voet__slotzin">{{ voet.slotzin }}</p>
+      <a class="knop knop--signaal" href="{{> boek }}">{{ masthead.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+    </div>
+    <div class="voet__kolom">
+      <h2 class="voet__titel">{{ voet.menuInhoud }}</h2>
+      <ul>{{#elk navigatie}}<li><a href="{{ link }}">{{ tekst }}</a></li>{{/elk}}</ul>
+    </div>
+    <div class="voet__kolom">
+      <h2 class="voet__titel">{{ voet.menuUren }}</h2>
+      <dl class="uren uren--klein">{{#elk openingsuren}}<div data-dag="{{ dag | klein }}"><dt>{{ dag }}</dt><dd>{{ uren }}</dd></div>{{/elk}}</dl>
+    </div>
+    <div class="voet__kolom">
+      <h2 class="voet__titel">{{ voet.menuContact }}</h2>
+      <address>
+        {{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}<br>
+        <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br>
+        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+      </address>
+      <ul class="voet__socials">{{#elk socials}}{{#als url}}<li><a href="{{ url }}" rel="noopener">{{ netwerk }}</a></li>{{/als}}{{/elk}}</ul>
+    </div>
+  </div>
+  <p class="voet__merk" aria-hidden="true">{{ site.naam }}</p>
+  <div class="voet__regel">
+    <span>© {{ jaar }} {{ site.naam }}</span>
+    <span>{{ contact.adres }}, {{ contact.postcode }} {{ contact.gemeente }}</span>
+    <span>Btw {{ contact.btw }}</span>
+    <a href="https://arto.be" rel="noopener">Website door ARTO</a>
+  </div>
+</footer>

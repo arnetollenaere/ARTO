@@ -1,0 +1,881 @@
+{
+  "naam": "Splittijd",
+  "sector": "fitness",
+  "beschrijving": "Voor gyms, crossfit-boxen, yoga- en pilatesstudio's en personal trainers. Zwart met één elektrische kleur, gigantische cijfers in condensed caps, diagonale snedes, een echt weekrooster met filter per lestype en lidmaatschappen als passen.",
+  "schemaType": "ExerciseGym",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "accent",
+        "label": "Elektrische kleur",
+        "hulp": "Eén felle kleur die alles draagt: knoppen, cijfers, snedes. Fluogeel of elektrisch oranje werken het best op zwart.",
+        "standaard": "#DBFF2E"
+      },
+      {
+        "sleutel": "achtergrond",
+        "label": "Achtergrond",
+        "hulp": "Bijna zwart. Houd ze donker, anders verliest de accentkleur haar kracht.",
+        "standaard": "#0B0B0A"
+      },
+      {
+        "sleutel": "vlak",
+        "label": "Vlakken",
+        "hulp": "Iets lichter dan de achtergrond: rooster, passen, formulier.",
+        "standaard": "#171715"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Tekst",
+        "standaard": "#F3F3EC"
+      },
+      {
+        "sleutel": "gedempt",
+        "label": "Gedempte tekst",
+        "hulp": "Voor labels en kleine uitleg. Moet nog goed leesbaar zijn op de achtergrond.",
+        "standaard": "#A3A398"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "navigatie",
+      "titel": "Menu en knoppen",
+      "groep": "inhoud",
+      "beschrijving": "De woorden in het menu bovenaan en de knop die altijd zichtbaar is.",
+      "velden": [
+        {
+          "pad": "navigatie.lessen",
+          "type": "tekst",
+          "label": "Menu: lessen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.rooster",
+          "type": "tekst",
+          "label": "Menu: rooster",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.tarieven",
+          "type": "tekst",
+          "label": "Menu: tarieven",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.coaches",
+          "type": "tekst",
+          "label": "Menu: coaches",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.knop",
+          "type": "tekst",
+          "label": "Knop rechtsboven",
+          "max": 22,
+          "hulp": "Bv. Gratis proefles"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "titel": "Startpagina: opening",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat een bezoeker ziet: drie regels in gigantische letters en een rij cijfers.",
+      "velden": [
+        {
+          "pad": "hero.label",
+          "type": "tekst",
+          "label": "Klein label boven de titel",
+          "max": 50,
+          "hulp": "Bv. Trainingsstudio · Mechelen"
+        },
+        {
+          "pad": "hero.regel1",
+          "type": "tekst",
+          "label": "Titel, regel 1",
+          "max": 14,
+          "hulp": "Kort houden: één woord per regel werkt het best."
+        },
+        {
+          "pad": "hero.regel2",
+          "type": "tekst",
+          "label": "Titel, regel 2 (in de accentkleur)",
+          "max": 14
+        },
+        {
+          "pad": "hero.regel3",
+          "type": "tekst",
+          "label": "Titel, regel 3",
+          "max": 14
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Introtekst",
+          "max": 220
+        },
+        {
+          "pad": "hero.knop",
+          "type": "tekst",
+          "label": "Hoofdknop",
+          "max": 24
+        },
+        {
+          "pad": "hero.knop2",
+          "type": "tekst",
+          "label": "Tweede knop (naar het rooster)",
+          "max": 24
+        },
+        {
+          "pad": "hero.cijfers",
+          "type": "lijst",
+          "label": "Cijfers",
+          "itemLabel": "label",
+          "sorteerbaar": true,
+          "max": 4,
+          "hulp": "Drie of vier kerncijfers. Ze tellen op bij het scrollen.",
+          "velden": [
+            {
+              "pad": "getal",
+              "type": "getal",
+              "label": "Getal",
+              "breedte": "smal"
+            },
+            {
+              "pad": "eenheid",
+              "type": "tekst",
+              "label": "Eenheid (optioneel)",
+              "breedte": "smal",
+              "hulp": "Bv. m², +, %"
+            },
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Uitleg",
+              "max": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lestypes",
+      "titel": "Lessen",
+      "groep": "inhoud",
+      "beschrijving": "De soorten lessen. Deze namen gebruik je ook in het rooster en in het filter.",
+      "velden": [
+        {
+          "pad": "lestypes.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "lestypes.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 60
+        },
+        {
+          "pad": "lestypes.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 260
+        },
+        {
+          "pad": "lestypes.lijst",
+          "type": "lijst",
+          "label": "Lestypes",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 22,
+              "hulp": "Schrijf het in het rooster exact hetzelfde, dan werkt het filter."
+            },
+            {
+              "pad": "code",
+              "type": "tekst",
+              "label": "Code (2–3 letters)",
+              "max": 3,
+              "breedte": "smal",
+              "hulp": "Verschijnt in het rooster, bv. HX of KR."
+            },
+            {
+              "pad": "beschrijving",
+              "type": "tekstvak",
+              "label": "Beschrijving",
+              "max": 220
+            },
+            {
+              "pad": "duur",
+              "type": "tekst",
+              "label": "Duur",
+              "breedte": "smal",
+              "hulp": "Bv. 45 min"
+            },
+            {
+              "pad": "intensiteit",
+              "type": "keuze",
+              "label": "Intensiteit",
+              "opties": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5"
+              ],
+              "breedte": "smal"
+            },
+            {
+              "pad": "voor",
+              "type": "tekst",
+              "label": "Voor wie",
+              "max": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rooster",
+      "titel": "Weekrooster",
+      "groep": "inhoud",
+      "beschrijving": "Alle groepslessen van een gewone week. Op de pagina Rooster verschijnen ze als tijdtabel, met een filter per lestype.",
+      "velden": [
+        {
+          "pad": "rooster.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "rooster.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 40
+        },
+        {
+          "pad": "rooster.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 260
+        },
+        {
+          "pad": "rooster.noot",
+          "type": "tekstvak",
+          "label": "Kleine lettertjes onder het rooster",
+          "max": 300,
+          "hulp": "Bv. reserveren via de app, schoolvakanties, annuleren."
+        },
+        {
+          "pad": "rooster.filterAlles",
+          "type": "tekst",
+          "label": "Filterknop voor alle lessen",
+          "max": 20,
+          "breedte": "smal"
+        },
+        {
+          "pad": "rooster.eenheid",
+          "type": "tekst",
+          "label": "Woord naast de teller",
+          "max": 20,
+          "breedte": "smal",
+          "hulp": "Bv. lessen"
+        },
+        {
+          "pad": "rooster.leeg",
+          "type": "tekst",
+          "label": "Tekst als een dag geen lessen van het gekozen type heeft",
+          "max": 140
+        },
+        {
+          "pad": "rooster.vanUur",
+          "type": "getal",
+          "label": "Rooster begint om (uur)",
+          "breedte": "smal",
+          "hulp": "Bv. 6"
+        },
+        {
+          "pad": "rooster.totUur",
+          "type": "getal",
+          "label": "Rooster eindigt om (uur)",
+          "breedte": "smal",
+          "hulp": "Bv. 22"
+        },
+        {
+          "pad": "rooster.dagen",
+          "type": "lijst",
+          "label": "Dagen in het rooster",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "hulp": "Haal een dag weg als je dan geen lessen geeft.",
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "keuze",
+              "label": "Dag",
+              "opties": [
+                "Maandag",
+                "Dinsdag",
+                "Woensdag",
+                "Donderdag",
+                "Vrijdag",
+                "Zaterdag",
+                "Zondag"
+              ]
+            },
+            {
+              "pad": "kort",
+              "type": "tekst",
+              "label": "Afkorting",
+              "max": 3,
+              "breedte": "smal",
+              "hulp": "Bv. MA"
+            }
+          ]
+        },
+        {
+          "pad": "rooster.lessen",
+          "type": "lijst",
+          "label": "Lessen",
+          "itemLabel": "type",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "dag",
+              "type": "keuze",
+              "label": "Dag",
+              "opties": [
+                "Maandag",
+                "Dinsdag",
+                "Woensdag",
+                "Donderdag",
+                "Vrijdag",
+                "Zaterdag",
+                "Zondag"
+              ],
+              "breedte": "smal"
+            },
+            {
+              "pad": "start",
+              "type": "tekst",
+              "label": "Begin",
+              "breedte": "smal",
+              "hulp": "Bv. 07:00"
+            },
+            {
+              "pad": "einde",
+              "type": "tekst",
+              "label": "Einde",
+              "breedte": "smal",
+              "hulp": "Bv. 07:45"
+            },
+            {
+              "pad": "type",
+              "type": "tekst",
+              "label": "Lestype",
+              "hulp": "Exact zoals bij Lessen, bv. Hyrox Engine"
+            },
+            {
+              "pad": "coach",
+              "type": "tekst",
+              "label": "Coach",
+              "breedte": "smal"
+            },
+            {
+              "pad": "niveau",
+              "type": "keuze",
+              "label": "Niveau",
+              "opties": [
+                "Alle niveaus",
+                "Starter",
+                "Gevorderd",
+                "Expert"
+              ],
+              "breedte": "smal"
+            },
+            {
+              "pad": "zaal",
+              "type": "tekst",
+              "label": "Zaal",
+              "breedte": "smal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "passen",
+      "titel": "Lidmaatschappen",
+      "groep": "inhoud",
+      "beschrijving": "Je formules, getoond als toegangspassen. Ze staan op de startpagina en op de pagina Tarieven.",
+      "velden": [
+        {
+          "pad": "passen.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "passen.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 50
+        },
+        {
+          "pad": "passen.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 260
+        },
+        {
+          "pad": "passen.lijst",
+          "type": "lijst",
+          "label": "Passen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "max": 4,
+          "velden": [
+            {
+              "pad": "soort",
+              "type": "tekst",
+              "label": "Soort",
+              "max": 20,
+              "breedte": "smal",
+              "hulp": "Bv. Beurtenkaart, Maand, Jaar"
+            },
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 24
+            },
+            {
+              "pad": "prijs",
+              "type": "prijs",
+              "label": "Prijs (€)",
+              "breedte": "smal"
+            },
+            {
+              "pad": "per",
+              "type": "tekst",
+              "label": "Per",
+              "max": 24,
+              "breedte": "smal",
+              "hulp": "Bv. / maand of / 10 beurten"
+            },
+            {
+              "pad": "looptijd",
+              "type": "tekst",
+              "label": "Looptijd of geldigheid",
+              "max": 40
+            },
+            {
+              "pad": "uitgelicht",
+              "type": "schakelaar",
+              "label": "Uitlichten",
+              "hulp": "Deze pas krijgt de accentkleur. Kies er hoogstens één."
+            },
+            {
+              "pad": "uitgelichtTekst",
+              "type": "tekst",
+              "label": "Label bij uitgelicht",
+              "max": 20,
+              "breedte": "smal",
+              "hulp": "Bv. Meest gekozen"
+            },
+            {
+              "pad": "inbegrepen",
+              "type": "lijst",
+              "label": "Wat is inbegrepen",
+              "itemLabel": "punt",
+              "sorteerbaar": true,
+              "velden": [
+                {
+                  "pad": "punt",
+                  "type": "tekst",
+                  "label": "Punt",
+                  "max": 60
+                }
+              ]
+            },
+            {
+              "pad": "knop",
+              "type": "tekst",
+              "label": "Knoptekst",
+              "max": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tarieven",
+      "titel": "Pagina Tarieven",
+      "groep": "inhoud",
+      "beschrijving": "Wat er naast de passen op de pagina Tarieven staat: losse prijzen, voorwaarden en veelgestelde vragen.",
+      "velden": [
+        {
+          "pad": "tarieven.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "tarieven.kop",
+          "type": "tekst",
+          "label": "Paginatitel",
+          "max": 30
+        },
+        {
+          "pad": "tarieven.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 280
+        },
+        {
+          "pad": "tarieven.extraKop",
+          "type": "tekst",
+          "label": "Kop losse prijzen",
+          "max": 50
+        },
+        {
+          "pad": "tarieven.extra",
+          "type": "lijst",
+          "label": "Losse prijzen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Omschrijving",
+              "max": 50
+            },
+            {
+              "pad": "toelichting",
+              "type": "tekst",
+              "label": "Toelichting",
+              "max": 90
+            },
+            {
+              "pad": "prijs",
+              "type": "prijs",
+              "label": "Prijs (€)",
+              "breedte": "smal"
+            }
+          ]
+        },
+        {
+          "pad": "tarieven.voorwaarden",
+          "type": "rijk",
+          "label": "Voorwaarden en kortingen"
+        },
+        {
+          "pad": "tarieven.faqKop",
+          "type": "tekst",
+          "label": "Kop veelgestelde vragen",
+          "max": 50
+        },
+        {
+          "pad": "tarieven.faq",
+          "type": "lijst",
+          "label": "Veelgestelde vragen",
+          "itemLabel": "vraag",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "vraag",
+              "type": "tekst",
+              "label": "Vraag",
+              "max": 100
+            },
+            {
+              "pad": "antwoord",
+              "type": "rijk",
+              "label": "Antwoord"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coaches",
+      "titel": "Coaches",
+      "groep": "inhoud",
+      "beschrijving": "Wie er voor de groep staat. Zonder foto krijgt elke coach een grafisch portret met initialen.",
+      "velden": [
+        {
+          "pad": "coaches.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "coaches.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 50
+        },
+        {
+          "pad": "coaches.lijst",
+          "type": "lijst",
+          "label": "Coaches",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 30
+            },
+            {
+              "pad": "initialen",
+              "type": "tekst",
+              "label": "Initialen",
+              "max": 3,
+              "breedte": "smal",
+              "hulp": "Voor het portret zonder foto."
+            },
+            {
+              "pad": "rol",
+              "type": "tekst",
+              "label": "Rol",
+              "max": 40
+            },
+            {
+              "pad": "specialiteit",
+              "type": "tekst",
+              "label": "Specialiteiten",
+              "max": 80
+            },
+            {
+              "pad": "citaat",
+              "type": "tekstvak",
+              "label": "Citaat",
+              "max": 160
+            },
+            {
+              "pad": "foto",
+              "type": "afbeelding",
+              "label": "Foto",
+              "hulp": "Staand, minstens 800×1000 px. Zwart-wit of donker belicht past het best."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van de foto",
+              "hulp": "Voor schermlezers en Google."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resultaten",
+      "titel": "Resultaten",
+      "groep": "inhoud",
+      "beschrijving": "Wat leden bereikten, in één groot cijfer en hun eigen woorden. Vraag altijd toestemming.",
+      "velden": [
+        {
+          "pad": "resultaten.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "resultaten.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 50
+        },
+        {
+          "pad": "resultaten.lijst",
+          "type": "lijst",
+          "label": "Getuigenissen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "cijfer",
+              "type": "tekst",
+              "label": "Groot cijfer",
+              "max": 8,
+              "breedte": "smal",
+              "hulp": "Bv. −12 of +40"
+            },
+            {
+              "pad": "eenheid",
+              "type": "tekst",
+              "label": "Eenheid",
+              "max": 8,
+              "breedte": "smal",
+              "hulp": "Bv. kg, km, min"
+            },
+            {
+              "pad": "wat",
+              "type": "tekst",
+              "label": "Waarover",
+              "max": 50,
+              "hulp": "Bv. deadlift in 6 maanden"
+            },
+            {
+              "pad": "citaat",
+              "type": "tekstvak",
+              "label": "Getuigenis",
+              "max": 280
+            },
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 40
+            },
+            {
+              "pad": "detail",
+              "type": "tekst",
+              "label": "Detail",
+              "max": 40,
+              "hulp": "Bv. lid sinds 2023"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proefles",
+      "titel": "Gratis proefles",
+      "groep": "inhoud",
+      "beschrijving": "Het formulier onderaan de startpagina. Aanvragen komen in het beheerpaneel onder Berichten.",
+      "velden": [
+        {
+          "pad": "proefles.label",
+          "type": "tekst",
+          "label": "Klein label",
+          "max": 40
+        },
+        {
+          "pad": "proefles.kop",
+          "type": "tekst",
+          "label": "Kop",
+          "max": 40
+        },
+        {
+          "pad": "proefles.intro",
+          "type": "tekstvak",
+          "label": "Intro",
+          "max": 260
+        },
+        {
+          "pad": "proefles.stappen",
+          "type": "lijst",
+          "label": "Zo verloopt het",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "max": 4,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Stap",
+              "max": 40
+            },
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Uitleg",
+              "max": 100
+            }
+          ]
+        },
+        {
+          "pad": "proefles.keuzeLabel",
+          "type": "tekst",
+          "label": "Label bij keuze van de les",
+          "max": 40
+        },
+        {
+          "pad": "proefles.momentLabel",
+          "type": "tekst",
+          "label": "Label bij voorkeursmoment",
+          "max": 40
+        },
+        {
+          "pad": "proefles.momenten",
+          "type": "lijst",
+          "label": "Keuzes voor het moment",
+          "itemLabel": "moment",
+          "velden": [
+            {
+              "pad": "moment",
+              "type": "tekst",
+              "label": "Moment",
+              "max": 40
+            }
+          ]
+        },
+        {
+          "pad": "proefles.knop",
+          "type": "tekst",
+          "label": "Verzendknop",
+          "max": 30
+        },
+        {
+          "pad": "proefles.privacy",
+          "type": "tekst",
+          "label": "Zin over privacy onder het formulier",
+          "max": 160
+        },
+        {
+          "pad": "proefles.bedankt",
+          "type": "tekst",
+          "label": "Bevestiging na verzenden",
+          "max": 160
+        }
+      ]
+    },
+    {
+      "id": "voet",
+      "titel": "Onderaan en 404",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "voet.slagzin",
+          "type": "tekst",
+          "label": "Slagzin in de footer",
+          "max": 40
+        },
+        {
+          "pad": "voet.urenKop",
+          "type": "tekst",
+          "label": "Kop openingsuren",
+          "max": 30,
+          "breedte": "smal"
+        },
+        {
+          "pad": "nietgevonden.kop",
+          "type": "tekst",
+          "label": "404: titel",
+          "max": 40
+        },
+        {
+          "pad": "nietgevonden.tekst",
+          "type": "tekst",
+          "label": "404: uitleg",
+          "max": 140
+        },
+        {
+          "pad": "nietgevonden.knop",
+          "type": "tekst",
+          "label": "404: knop",
+          "max": 30
+        }
+      ]
+    }
+  ]
+}

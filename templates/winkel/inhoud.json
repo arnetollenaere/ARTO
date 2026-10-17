@@ -1,0 +1,518 @@
+{
+  "site": {
+    "naam": "Vonk",
+    "slogan": "Bakkerij & delicatessen in Kortrijk",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "vonk-kortrijk.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "Van 23 december tot 1 januari elke dag open, ook op maandag.",
+    "link": "/bestellen"
+  },
+  "contact": {
+    "adres": "Overleiestraat 24",
+    "postcode": "8500",
+    "gemeente": "Kortrijk",
+    "land": "BE",
+    "telefoon": "+32 56 21 47 90",
+    "email": "hallo@vonk-kortrijk.be",
+    "whatsapp": "+32 470 58 21 36",
+    "btw": "BE0712.345.678",
+    "kaart": "https://maps.google.com/?q=Overleiestraat+24+8500+Kortrijk"
+  },
+  "openingsuren": [
+    {
+      "dag": "Maandag",
+      "uren": "Gesloten"
+    },
+    {
+      "dag": "Dinsdag",
+      "uren": "07:00–18:30"
+    },
+    {
+      "dag": "Woensdag",
+      "uren": "07:00–18:30"
+    },
+    {
+      "dag": "Donderdag",
+      "uren": "07:00–18:30"
+    },
+    {
+      "dag": "Vrijdag",
+      "uren": "07:00–18:30"
+    },
+    {
+      "dag": "Zaterdag",
+      "uren": "07:00–17:00"
+    },
+    {
+      "dag": "Zondag",
+      "uren": "07:30–12:30"
+    }
+  ],
+  "socials": [
+    {
+      "netwerk": "Instagram",
+      "url": "https://www.instagram.com/vonk.kortrijk"
+    },
+    {
+      "netwerk": "Facebook",
+      "url": "https://www.facebook.com/vonkkortrijk"
+    }
+  ],
+  "seo": {
+    "titel": "Vonk – bakkerij en delicatessen in Kortrijk",
+    "beschrijving": "Desembrood, viennoiserie, taarten en fijne delicatessen aan de Overleiestraat in Kortrijk. Bestel vóór 15 uur en haal de volgende ochtend af.",
+    "afbeelding": "",
+    "paginas": [
+      {
+        "pagina": "assortiment.html",
+        "titel": "Assortiment: brood, taart en delicatessen",
+        "beschrijving": "Alles wat vandaag in de toonbank van Vonk ligt, met prijs en beschikbaarheid: desembrood, croissants, seizoenstaarten, kaas en fijne kruidenierswaren."
+      },
+      {
+        "pagina": "bestellen.html",
+        "titel": "Bestellen en reserveren",
+        "beschrijving": "Reserveer je brood, taart of geschenkpakket bij Vonk in Kortrijk. Bestel vóór 15 uur via de bestelbon of WhatsApp en haal af in de winkel."
+      }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "accent": "#B4471F",
+      "geel": "#F2C14E",
+      "groen": "#1E4A37",
+      "achtergrond": "#F6EEDF",
+      "tekst": "#2A1D15"
+    }
+  },
+  "navigatie": {
+    "assortiment": "Assortiment",
+    "bestellen": "Bestellen",
+    "verhaal": "Ons verhaal",
+    "winkel": "Vind ons",
+    "knop": "Bestel voor morgen",
+    "voetZin": "Elke nacht gebakken in de Overleie. Elke ochtend vers in de toonbank."
+  },
+  "hero": {
+    "bovenregel": "Bakkerij & delicatessen · Overleie, Kortrijk",
+    "titel": "Brood met",
+    "titelAccent": "karakter.",
+    "intro": "Desem die 48 uur rijpt, boter van de hoeve, fruit van de Leiestreek. Elke ochtend een toonbank vol, en een schap met fijne dingen om mee naar huis te nemen.",
+    "knop": "Wat ligt er vandaag?",
+    "knop2": "Bestel voor morgen",
+    "illustratie": "brood",
+    "foto": "",
+    "fotoAlt": "",
+    "etiketNaam": "Desembrood van de dag",
+    "etiketPrijs": "4,80",
+    "sticker": "Uit de oven om 6u30",
+    "sticker2": "Sinds 2014"
+  },
+  "seizoen": {
+    "aan": true,
+    "label": "Nu in de winkel",
+    "titel": "Appeltaart met goudrenetten uit Heule",
+    "tekst": "Zodra de goudrenetten van de familie Verhaeghe binnen zijn, bakken we weer onze appeltaart: zandtaartdeeg met hoeveboter, een laagje frangipane en appel in dunne schijfjes, afgewerkt met abrikozengelei.",
+    "prijs": "24,50",
+    "eenheid": "per taart, 8 personen",
+    "tot": "tot eind november",
+    "knop": "Reserveer een taart",
+    "product": "Appeltaart goudrenet",
+    "illustratie": "taart",
+    "foto": "",
+    "fotoAlt": "",
+    "lint": [
+      {
+        "tekst": "Appeltaart goudrenet"
+      },
+      {
+        "tekst": "Pompoenbrood met pitten"
+      },
+      {
+        "tekst": "Speculaas van het huis"
+      },
+      {
+        "tekst": "Kaneelknopen"
+      },
+      {
+        "tekst": "Warme chocolade om mee te nemen"
+      }
+    ]
+  },
+  "schap": {
+    "bovenregel": "Uit de toonbank",
+    "titel": "Vandaag in het schap",
+    "intro": "Een greep uit wat er deze week ligt. Schuif door het schap, of bekijk alles per categorie.",
+    "knop": "Het hele assortiment",
+    "categorieTitel": "Per categorie"
+  },
+  "assortiment": {
+    "bovenregel": "Prijzen en beschikbaarheid",
+    "titel": "Het assortiment",
+    "intro": "Alles wat bij Vonk in de toonbank en op de schappen ligt. Wat 'op bestelling' staat, bakken we alleen als je het een dag vooraf reserveert.",
+    "reserveer": "Reserveer",
+    "noot": "Al onze producten kunnen sporen bevatten van gluten, noten, sesam, ei en melk. Vraag gerust naar de **allergenenfiche** aan de toonbank.\n\nPrijzen inclusief btw. Het aanbod wisselt met de seizoenen."
+  },
+  "categorieen": [
+    {
+      "naam": "Brood",
+      "anker": "brood",
+      "kleur": "Terracotta",
+      "intro": "Op desem, met tijd en met bloem van de molen in Zwevegem. Elke dag gebakken, op zondag tot het op is.",
+      "producten": [
+        {
+          "naam": "Desembrood van de dag",
+          "prijs": "4,80",
+          "eenheid": "750 g",
+          "beschrijving": "Ons huisbrood: tarwe en een beetje rogge, 48 uur gerijpt, krokante korst.",
+          "label": "Favoriet",
+          "beschikbaar": "Elke dag",
+          "illustratie": "brood",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Volkoren spelt",
+          "prijs": "5,20",
+          "eenheid": "800 g",
+          "beschrijving": "Volle spelt met lijnzaad en zonnebloempitten. Blijft dagen vers.",
+          "label": "Bio",
+          "beschikbaar": "Elke dag",
+          "illustratie": "brood",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        },
+        {
+          "naam": "Baguette tradition",
+          "prijs": "2,40",
+          "eenheid": "per stuk",
+          "beschrijving": "Lang gerezen, open kruim, gebakken op de steen.",
+          "label": "Geen",
+          "beschikbaar": "Elke dag",
+          "illustratie": "baguette",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Pompoenbrood met pitten",
+          "prijs": "5,60",
+          "eenheid": "700 g",
+          "beschrijving": "Met geroosterde pompoen uit Marke en geroosterde pompoenpitten.",
+          "label": "Seizoen",
+          "beschikbaar": "Vrijdag en zaterdag",
+          "illustratie": "brood",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        },
+        {
+          "naam": "Rozijnenbrood met boter",
+          "prijs": "5,90",
+          "eenheid": "600 g",
+          "beschrijving": "Zacht, rijk en met Malaga-rozijnen die een nacht weken in thee.",
+          "label": "Geen",
+          "beschikbaar": "Alleen in het weekend",
+          "illustratie": "brood",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        }
+      ]
+    },
+    {
+      "naam": "Koeken",
+      "anker": "koeken",
+      "kleur": "Boter",
+      "intro": "Viennoiserie met echte hoeveboter, elke ochtend vers gelamineerd. Vroeg zijn loont.",
+      "producten": [
+        {
+          "naam": "Croissant met hoeveboter",
+          "prijs": "1,60",
+          "eenheid": "per stuk",
+          "beschrijving": "Drie dagen werk: deeg, boter, vouwen, rusten. Bladerig tot op de laatste kruimel.",
+          "label": "Favoriet",
+          "beschikbaar": "Elke dag",
+          "illustratie": "croissant",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Kaneelknoop",
+          "prijs": "2,20",
+          "eenheid": "per stuk",
+          "beschrijving": "Geknoopt croissantdeeg met kaneel, kardemom en bruine suiker.",
+          "label": "Nieuw",
+          "beschikbaar": "Elke dag",
+          "illustratie": "croissant",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Speculaas van het huis",
+          "prijs": "6,50",
+          "eenheid": "250 g",
+          "beschrijving": "Met kandijsuiker en ons eigen kruidenmengsel, gedrukt in oude houten vormen.",
+          "label": "Seizoen",
+          "beschikbaar": "Beperkte voorraad",
+          "illustratie": "koek",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Pain au chocolat",
+          "prijs": "1,80",
+          "eenheid": "per stuk",
+          "beschrijving": "Met twee staafjes pure chocolade van Callebaut.",
+          "label": "Geen",
+          "beschikbaar": "Elke dag",
+          "illustratie": "chocolade",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        }
+      ]
+    },
+    {
+      "naam": "Taart",
+      "anker": "taart",
+      "kleur": "Fles",
+      "intro": "Grote taarten bakken we op bestelling. In de toonbank liggen elke dag taartjes per stuk.",
+      "producten": [
+        {
+          "naam": "Appeltaart goudrenet",
+          "prijs": "24,50",
+          "eenheid": "8 personen",
+          "beschrijving": "Zandtaartdeeg, frangipane en goudrenetten uit Heule.",
+          "label": "Seizoen",
+          "beschikbaar": "Op bestelling",
+          "illustratie": "taart",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Rijsttaart",
+          "prijs": "19,00",
+          "eenheid": "6 personen",
+          "beschrijving": "Zoals het hoort: romig, met een vleugje vanille en een gekarameliseerde top.",
+          "label": "Favoriet",
+          "beschikbaar": "Vrijdag en zaterdag",
+          "illustratie": "taart",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        },
+        {
+          "naam": "Frangipanetaartje",
+          "prijs": "3,40",
+          "eenheid": "per stuk",
+          "beschrijving": "Amandelroom met een laagje frambozenconfituur.",
+          "label": "Uitverkocht",
+          "beschikbaar": "Uitverkocht",
+          "illustratie": "taart",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        }
+      ]
+    },
+    {
+      "naam": "Delicatessen",
+      "anker": "delicatessen",
+      "kleur": "Crème",
+      "intro": "Het schap achter de toonbank: dingen die we zelf graag eten, van makers die we persoonlijk kennen.",
+      "producten": [
+        {
+          "naam": "Oude hoevekaas, 18 maanden",
+          "prijs": "4,20",
+          "eenheid": "per 100 g",
+          "beschrijving": "Rauwmelkse kaas van een hoeve in Moorslede. Pittig, met kristallen.",
+          "label": "Geen",
+          "beschikbaar": "Elke dag",
+          "illustratie": "kaas",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Confituur rabarber-gember",
+          "prijs": "6,80",
+          "eenheid": "300 g",
+          "beschrijving": "Huisgemaakt in kleine potjes, met rabarber uit eigen tuin.",
+          "label": "Nieuw",
+          "beschikbaar": "Beperkte voorraad",
+          "illustratie": "pot",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        },
+        {
+          "naam": "Olijfolie extra vierge",
+          "prijs": "16,50",
+          "eenheid": "500 ml",
+          "beschrijving": "Koudgeperst, van één familieboomgaard op Kreta. Gras en artisjok.",
+          "label": "Bio",
+          "beschikbaar": "Elke dag",
+          "illustratie": "fles",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        },
+        {
+          "naam": "Koffie huisblend",
+          "prijs": "11,00",
+          "eenheid": "250 g, bonen",
+          "beschrijving": "Gebrand in Gent voor Vonk: chocolade, hazelnoot, een tikje fruit.",
+          "label": "Geen",
+          "beschikbaar": "Elke dag",
+          "illustratie": "zak",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": true
+        },
+        {
+          "naam": "Geschenkpakket Kortrijks ontbijt",
+          "prijs": "35,00",
+          "eenheid": "voor 2 personen",
+          "beschrijving": "Desembrood, croissants, confituur, kaas en koffie in een doos met lint.",
+          "label": "Geen",
+          "beschikbaar": "Op bestelling",
+          "illustratie": "cadeau",
+          "foto": "",
+          "fotoAlt": "",
+          "uitgelicht": false
+        }
+      ]
+    }
+  ],
+  "verhaal": {
+    "bovenregel": "Ons verhaal",
+    "titel": "Begonnen met één oven en een emmer desem.",
+    "tekst": "Lies en Bram Vandewalle openden Vonk in 2014 in een oud kruidenierswinkeltje in de Overleie. De desem kwam mee uit de keuken van Bram zijn grootmoeder in Wevelgem, en leeft nog altijd.\n\nWe werken met een kleine ploeg van zes bakkers, met bloem van een molen in Zwevegem en boter van een hoeve in Anzegem. Wat we niet zelf maken, zetten we op het schap omdat we de maker kennen.\n\nGeen fabrieksdeeg, geen bakmixen. Wel tijd, en handen.",
+    "citaat": "Een goed brood maak je niet sneller. Je maakt het met geduld, en met een desem die ouder is dan je winkel.",
+    "citaatBron": "Bram Vandewalle, bakker",
+    "stempel": "Ambachtelijk gebakken · Overleie Kortrijk · ",
+    "sinds": "2014",
+    "foto": "",
+    "fotoAlt": "",
+    "feiten": [
+      {
+        "getal": "48 u",
+        "tekst": "rijpt ons desembrood"
+      },
+      {
+        "getal": "6",
+        "tekst": "bakkers, elke nacht vanaf 2 uur"
+      },
+      {
+        "getal": "15 km",
+        "tekst": "tot de verste boer die ons levert"
+      }
+    ]
+  },
+  "cadeaubon": {
+    "aan": true,
+    "bovenregel": "Cadeaubonnen",
+    "titel": "Geef iemand een week vers brood.",
+    "tekst": "Onze cadeaubonnen zijn een jaar geldig voor alles in de winkel: brood, taart, een geschenkpakket of een fles olijfolie. Haal ze aan de toonbank, of bestel ze hier en we leggen ze klaar in een mooie omslag.",
+    "opBon": "Cadeaubon",
+    "geldig": "Een jaar geldig · in te ruilen in de winkel",
+    "knop": "Bestel een cadeaubon",
+    "bedragen": [
+      {
+        "bedrag": "15"
+      },
+      {
+        "bedrag": "25"
+      },
+      {
+        "bedrag": "50"
+      }
+    ]
+  },
+  "bestellen": {
+    "bovenregel": "Bestelbon",
+    "titel": "Bestellen & reserveren",
+    "intro": "Geen webshop, wel een bakker die je bestelling klaarlegt. Vul de bestelbon in of stuur ons een WhatsApp. Je betaalt bij het afhalen.",
+    "band": "Bestel vóór 15 uur, haal morgen af.",
+    "stappen": [
+      {
+        "titel": "Kies",
+        "tekst": "Kies je producten en hoeveel je er wilt."
+      },
+      {
+        "titel": "Afhaalmoment",
+        "tekst": "Kies een dag en een moment. Vóór 15 uur besteld = morgen klaar."
+      },
+      {
+        "titel": "Klaar",
+        "tekst": "We bevestigen per sms of mail en leggen alles met je naam klaar."
+      }
+    ],
+    "bonTitel": "Bestelbon",
+    "extraRegel": "Nog iets?",
+    "afhaaluren": [
+      {
+        "moment": "07:00–09:00"
+      },
+      {
+        "moment": "09:00–12:00"
+      },
+      {
+        "moment": "12:00–15:00"
+      },
+      {
+        "moment": "15:00–18:30"
+      }
+    ],
+    "knop": "Bestelling doorsturen",
+    "privacy": "We gebruiken je gegevens alleen om je bestelling te bevestigen.",
+    "whatsappTitel": "Liever WhatsApp?",
+    "whatsappTekst": "Stuur ons wat je wilt en wanneer je het komt halen. We antwoorden tijdens de openingsuren, meestal binnen het uur.",
+    "whatsappKnop": "Stuur een WhatsApp",
+    "whatsappBericht": "Dag Vonk! Ik wil graag bestellen:",
+    "regelsTitel": "Goed om te weten",
+    "regels": "- Bestel vóór **15 uur** voor afhaling de volgende dag.\n- Grote taarten en geschenkpakketten: liefst **2 dagen** op voorhand.\n- Je betaalt bij het afhalen, cash of met de kaart.\n- Toch niet nodig? Laat het ons weten tot de avond voor het afhalen.",
+    "bedankTitel": "Genoteerd!",
+    "bedankTekst": "Bedankt voor je bestelling. We bevestigen ze zo snel mogelijk per sms of mail. Tot aan de toonbank!",
+    "labels": {
+      "product": "Product",
+      "kies": "Kies een product",
+      "aantal": "Aantal",
+      "dag": "Afhaaldag",
+      "moment": "Afhaalmoment",
+      "naam": "Naam",
+      "telefoon": "Telefoon",
+      "email": "E-mail (optioneel)",
+      "opmerking": "Opmerking (snijden, kaartje, allergie …)",
+      "dicht": "Op die dag zijn we gesloten. Kies een andere dag."
+    }
+  },
+  "winkel": {
+    "bovenregel": "Waar je ons vindt",
+    "titel": "In de Overleie, vlak bij de Broeltorens.",
+    "tekst": "Vijf minuten wandelen van de Grote Markt. Parkeren kan in de Broelparking of kort voor de deur in de blauwe zone. Fietsenrek aan de overkant.",
+    "routeKnop": "Route op de kaart",
+    "vandaag": "Vandaag",
+    "openTot": "Vandaag open tot",
+    "openOm": "Vandaag open vanaf",
+    "gesloten": "Nu gesloten",
+    "volgende": "open op",
+    "morgen": "morgen open om"
+  },
+  "nietgevonden": {
+    "titel": "Dit schap is leeg.",
+    "tekst": "De pagina die je zoekt, ligt niet (meer) in de winkel. Misschien is ze uitverkocht, of verhuisd naar een ander schap.",
+    "knop": "Terug naar de toonbank"
+  }
+}

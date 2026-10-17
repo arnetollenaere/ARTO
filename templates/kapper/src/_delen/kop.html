@@ -1,0 +1,25 @@
+<a class="skip" href="#inhoud-start">Naar de inhoud</a>
+<header class="mast">
+  <p class="mast__editie">{{ masthead.editie }}</p>
+  <a class="mast__logo" href="/" aria-label="{{ site.naam }}, naar de startpagina">
+    {{#als site.logo}}<img src="{{ site.logo }}" alt="{{ site.naam }}" width="160" height="40">{{#anders}}<span>{{ site.naam }}</span>{{/als}}
+  </a>
+  <div class="mast__acties">
+    <button class="mast__menu" type="button" popovertarget="inhoudstafel" aria-controls="inhoudstafel"><span class="mast__streepjes" aria-hidden="true"></span>{{ masthead.menu }}</button>
+    <a class="knop knop--signaal mast__boek" href="{{> boek }}">{{ masthead.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+  </div>
+</header>
+<nav class="toc" id="inhoudstafel" popover aria-label="Hoofdmenu">
+  <div class="toc__kop">
+    <p class="toc__label">{{ masthead.menu }} — {{ masthead.editie }}</p>
+    <button class="toc__sluit" type="button" popovertarget="inhoudstafel" popovertargetaction="hide">Sluiten <span aria-hidden="true">×</span></button>
+  </div>
+  <ol class="toc__lijst">
+    {{#elk navigatie}}<li><a href="{{ link }}"><span class="toc__nr">{{ @nr | twee }}</span><span class="toc__tekst">{{ tekst }}</span><span class="toc__regel">{{ regel }}</span></a></li>
+    {{/elk}}
+  </ol>
+  <div class="toc__voet">
+    <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a>
+    <span>{{ contact.adres }}, {{ contact.postcode }} {{ contact.gemeente }}</span>
+  </div>
+</nav>

@@ -1,0 +1,23 @@
+<a class="skip" href="#inhoud">{{ labels.naarInhoud }}</a>
+<div class="raster" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<header class="kop" data-kop>
+  <div class="kop-binnen">
+    <a class="merk" href="/" aria-label="{{ site.naam }}, {{ labels.naarStart }}">
+      {{#als site.logo}}<img src="{{ site.logo }}" alt="{{ site.naam }}" height="36">{{#anders}}<span class="merk-par" aria-hidden="true">§</span><span class="merk-naam">{{ site.naam }}</span>{{/als}}
+    </a>
+    <nav class="nav" id="nav" aria-label="Hoofdmenu">
+      <ol>
+        <li><a href="/expertise"{{#als pagina.is.expertise}} aria-current="page"{{/als}}><span class="nav-nr">01</span>{{ navigatie.expertise }}</a></li>
+        <li><a href="/team"{{#als pagina.is.team}} aria-current="page"{{/als}}><span class="nav-nr">02</span>{{ navigatie.team }}</a></li>
+        <li><a href="/inzichten"{{#als pagina.is.inzichten}} aria-current="page"{{/als}}><span class="nav-nr">03</span>{{ navigatie.inzichten }}</a></li>
+        <li><a href="/#contact"><span class="nav-nr">04</span>{{ navigatie.contact }}</a></li>
+      </ol>
+      <div class="nav-extra">
+        <a class="nav-tel" href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a>
+        <p class="nav-adres">{{ contact.adres }}, {{ contact.postcode }} {{ contact.gemeente }}</p>
+      </div>
+    </nav>
+    <a class="knop knop-klein kop-knop" href="/#gesprek">{{ navigatie.knop }}</a>
+    <button class="menu-knop" type="button" aria-expanded="false" aria-controls="nav" data-menu><span class="menu-tekst">{{ navigatie.menu }}</span><span class="menu-streep" aria-hidden="true"></span></button>
+  </div>
+</header>

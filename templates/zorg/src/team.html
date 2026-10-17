@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-sub">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+  <section class="subheld" aria-labelledby="sub-titel">
+    <svg class="subheld__vorm" viewBox="0 0 600 600" aria-hidden="true" focusable="false"><path class="morf morf--a" d="M498.0 300.0C497.4 362.2 488.2 447.7 446.9 484.2C405.5 520.6 304.9 534.7 250.1 518.6C195.3 502.5 150.5 443.5 118.2 387.6C85.9 331.6 34.8 235.1 56.5 182.7C78.2 130.4 182.6 85.4 248.3 73.5C314.0 61.6 408.9 73.5 450.6 111.2C492.2 149.0 498.6 237.8 498.0 300.0Z"/><path class="morf morf--a subheld__ring" transform="translate(300 300) scale(1.14) translate(-300 -300)" d="M498.0 300.0C497.4 362.2 488.2 447.7 446.9 484.2C405.5 520.6 304.9 534.7 250.1 518.6C195.3 502.5 150.5 443.5 118.2 387.6C85.9 331.6 34.8 235.1 56.5 182.7C78.2 130.4 182.6 85.4 248.3 73.5C314.0 61.6 408.9 73.5 450.6 111.2C492.2 149.0 498.6 237.8 498.0 300.0Z"/><path class="morf morf--c subheld__mint" transform="translate(-120 140)" d="M377.5 300.0C376.5 329.2 368.0 369.6 347.6 382.5C327.3 395.4 278.9 391.3 255.2 377.5C231.6 363.8 206.8 328.0 205.6 300.0C204.3 272.0 223.1 225.0 247.8 209.6C272.4 194.1 331.9 192.2 353.5 207.3C375.1 222.4 378.5 270.8 377.5 300.0Z"/></svg>
+    <div class="wrap">
+      <p class="label"><span class="label__stip" aria-hidden="true"></span>{{ teamIntro.label }}</p>
+      <h1 class="kop-xxl" id="sub-titel">{{ paginaTeam.titel }} <span class="accent">{{ paginaTeam.titelAccent }}</span></h1>
+      <p class="lead subheld__intro">{{ paginaTeam.intro }}</p>
+    </div>
+  </section>
+
+  <section class="sectie sectie--krap" aria-label="{{ teamIntro.label }}">
+    <div class="wrap">
+      <ul class="profielen">
+        {{#elk team}}<li class="profiel verschijn" id="{{ naam | slug }}">
+          <div class="profiel__beeld mens__beeld">{{#als foto}}<img src="{{ foto }}" alt="{{ fotoAlt }}" width="600" height="600" loading="lazy">{{#anders}}<span class="mens__init" aria-hidden="true">{{ initialen }}</span>{{/als}}</div>
+          <div class="profiel__tekst">
+            <p class="mens__functie">{{ functie }}</p>
+            <h2 class="profiel__naam">{{ naam }}</h2>
+            <p class="profiel__spec">{{ specialisaties }}</p>
+            <div class="profiel__bio">{{ bio | md }}</div>
+          </div>
+          <dl class="profiel__fiche">
+            <div><dt>{{ teamIntro.labelTalen }}</dt><dd>{{ talen }}</dd></div>
+            <div><dt>{{ teamIntro.labelDagen }}</dt><dd>{{ dagen }}</dd></div>
+            <div><dt>{{ teamIntro.labelRiziv }}</dt><dd class="mono">{{ riziv }}</dd></div>
+            <div><dt class="vh">{{ teamIntro.labelConventie }}</dt><dd>{{#als geconventioneerd}}<span class="badge" data-terug="riziv-terugbetaald">{{ teamIntro.labelConventie }}</span>{{#anders}}<span class="badge badge--rand">{{ teamIntro.labelNietConventie }}</span>{{/als}}</dd></div>
+          </dl>
+        </li>{{/elk}}
+      </ul>
+    </div>
+  </section>
+
+  {{> afspraak }}
+</main>
+{{> voet }}
+</body>
+</html>

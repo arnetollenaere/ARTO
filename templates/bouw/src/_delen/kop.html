@@ -1,0 +1,18 @@
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+{{> patronen }}
+<header class="kop" id="kop">
+  <a class="kop__merk" href="/" aria-label="{{ site.naam }}, startpagina">
+    {{#als site.logo}}<img src="{{ site.logo }}" alt="{{ site.naam }}" height="40">{{#anders}}<span class="kop__teken" aria-hidden="true"></span><span class="kop__naam">{{ site.naam }}</span>{{/als}}
+  </a>
+  <button class="kop__menuknop" type="button" aria-expanded="false" aria-controls="hoofdmenu"><span class="mono">Menu</span><span class="kop__streep" aria-hidden="true"></span></button>
+  <nav class="kop__nav" id="hoofdmenu" aria-label="Hoofdmenu">
+    <ol>
+      <li><a href="/"{{#als pagina.is.index}} aria-current="page"{{/als}}><span class="mono">A0</span>{{ navigatie.start }}</a></li>
+      <li><a href="/projecten"{{#als pagina.is.projecten}} aria-current="page"{{/als}}><span class="mono">A1</span>{{ navigatie.projecten }}</a></li>
+      <li><a href="/#werkwijze"><span class="mono">A2</span>{{ navigatie.werkwijze }}</a></li>
+      <li><a href="/#werkgebied"><span class="mono">A3</span>{{ navigatie.regio }}</a></li>
+    </ol>
+    <a class="kop__tel mono" href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a>
+    <a class="knop knop--geel kop__offerte" href="/offerte"{{#als pagina.is.offerte}} aria-current="page"{{/als}}>{{ navigatie.offerte }}<span class="pijl" aria-hidden="true">→</span></a>
+  </nav>
+</header>

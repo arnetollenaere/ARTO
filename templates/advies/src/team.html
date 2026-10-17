@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> kop }}
+</head>
+<body class="p-sub">
+{{> mededeling }}
+{{> header }}
+<main id="inhoud">
+  <header class="pagina-kop">
+    <p class="par"><span>§</span> {{ paginas.team.label }}</p>
+    <h1>{{ paginas.team.titel }}</h1>
+    <p class="sectie-intro">{{ paginas.team.intro }}</p>
+  </header>
+  <ol class="fiches">
+    {{#elk team.leden}}
+    <li class="fiche" id="{{ naam | slug }}">
+      <div class="portret">
+        {{#als foto}}<img src="{{ foto }}" alt="{{ fotoAlt }}" width="800" height="1000" loading="lazy">{{#anders}}<span class="monogram" aria-hidden="true">{{ naam | eerste }}</span><span class="portret-nr" aria-hidden="true">{{ @nr | twee }}</span>{{/als}}
+      </div>
+      <div class="fiche-tekst">
+        <p class="par"><span>§ 05.{{ @nr }}</span> {{ rol }}</p>
+        <h2>{{ naam }}</h2>
+        <dl class="fiche-feiten">
+          <div><dt>{{ labels.domein }}</dt><dd>{{ specialisaties }}</dd></div>
+          <div><dt>{{ labels.talen }}</dt><dd>{{ talen }}</dd></div>
+          <div><dt>{{ labels.orde }}</dt><dd>{{ balie }}</dd></div>
+          {{#als sinds}}<div><dt>{{ labels.sinds }}</dt><dd>{{ sinds }}</dd></div>{{/als}}
+        </dl>
+        <p class="fiche-bio">{{ bio }}</p>
+        {{#als email}}<p><a class="link" href="mailto:{{ email }}">{{ email }}</a></p>{{/als}}
+      </div>
+    </li>
+    {{/elk}}
+  </ol>
+  <aside class="cta cta-breed">
+    <p class="cta-titel">{{ gesprek.titel }}</p>
+    <a class="knop" href="/#gesprek">{{ hero.knop }} <span class="pijl" aria-hidden="true">→</span></a>
+  </aside>
+</main>
+{{> voet }}
+</body>
+</html>

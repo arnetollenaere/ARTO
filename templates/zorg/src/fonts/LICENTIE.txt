@@ -1,0 +1,7 @@
+Lettertypes in deze map (via Google Fonts, latin-subset, zelf gehost):
+
+- Parkinsans (variabel, 300–800) — Copyright The Parkinsans Project Authors
+- Figtree (variabel, 400–700) — Copyright The Figtree Project Authors
+- Martian Mono (400) — Copyright The Martian Mono Project Authors
+
+Alle drie vallen onder de SIL Open Font License, versie 1.1: https://openfontlicense.org

@@ -1,0 +1,15 @@
+<a class="skip" href="#inhoud">{{ teksten.skip }}</a>
+{{> composities }}
+<header class="kop" id="top">
+  <a class="kop__merk" href="/" aria-label="{{ site.naam }}, naar de startpagina">{{#als site.logo}}<img src="{{ site.logo }}" alt="{{ site.naam }}" width="140" height="32">{{#anders}}<span class="merk"><span class="merk__blok" aria-hidden="true"></span>{{ site.naam }}</span>{{/als}}</a>
+  <p class="kop__plaats mono">{{ teksten.lokatie }} <span class="kop__klok" data-klok aria-hidden="true"></span></p>
+  <button class="kop__menu mono" type="button" aria-expanded="false" aria-controls="hoofdmenu" data-menu-knop data-open="{{ teksten.menuKnop }}" data-dicht="{{ teksten.sluitKnop }}">{{ teksten.menuKnop }}</button>
+  <nav class="nav" id="hoofdmenu" aria-label="Hoofdmenu">
+    <ul class="nav__lijst">
+      <li><a href="/werk" {{#als pagina.is.werk}}aria-current="page"{{/als}}><span class="nav__nr mono" aria-hidden="true">01</span><span class="nav__tekst">{{ teksten.navWerk }}</span><sup class="mono">{{ projecten | aantal | twee }}</sup></a></li>
+      <li><a href="/studio" {{#als pagina.is.studio}}aria-current="page"{{/als}}><span class="nav__nr mono" aria-hidden="true">02</span><span class="nav__tekst">{{ teksten.navStudio }}</span></a></li>
+      <li><a class="nav__cta" href="{{#niet pagina.is.index}}{{#niet pagina.is.studio}}/{{/niet}}{{/niet}}#project"><span class="nav__nr mono" aria-hidden="true">03</span><span class="nav__tekst">{{ teksten.navContact }}</span></a></li>
+    </ul>
+    <p class="nav__voet mono"><a href="mailto:{{ contact.email }}">{{ contact.email }}</a><br><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></p>
+  </nav>
+</header>

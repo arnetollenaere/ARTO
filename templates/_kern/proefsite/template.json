@@ -1,0 +1,249 @@
+{
+  "naam": "Proefsite",
+  "sector": "test",
+  "beschrijving": "Testsite voor het beheerpaneel: bevat elk veldtype.",
+  "schemaType": "Restaurant",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "accent",
+        "label": "Accentkleur",
+        "standaard": "#c2562b"
+      },
+      {
+        "sleutel": "achtergrond",
+        "label": "Achtergrond",
+        "standaard": "#faf6f0"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Tekst",
+        "standaard": "#241a14"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "intro",
+      "titel": "Startpagina",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat bezoekers zien.",
+      "velden": [
+        {
+          "pad": "intro.titel",
+          "type": "tekst",
+          "label": "Grote titel",
+          "verplicht": true,
+          "max": 70,
+          "aanbevolen": [
+            15,
+            50
+          ]
+        },
+        {
+          "pad": "intro.tekst",
+          "type": "rijk",
+          "label": "Introductie",
+          "hulp": "Een paar zinnen over je zaak. Gebruik vet of een lijstje als je wil."
+        },
+        {
+          "pad": "intro.foto",
+          "type": "afbeelding",
+          "label": "Grote foto"
+        },
+        {
+          "pad": "intro.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto",
+          "hulp": "Voor slechtziende bezoekers en Google."
+        },
+        {
+          "pad": "intro.knop",
+          "type": "groep",
+          "label": "Knop",
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Tekst op de knop",
+              "max": 30,
+              "breedte": "smal"
+            },
+            {
+              "pad": "pagina",
+              "type": "pagina",
+              "label": "Gaat naar",
+              "breedte": "smal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "kaart",
+      "titel": "Menukaart",
+      "groep": "inhoud",
+      "beschrijving": "Je gerechten, per categorie.",
+      "velden": [
+        {
+          "pad": "kaart.inleiding",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 240
+        },
+        {
+          "pad": "kaart.categorieen",
+          "type": "lijst",
+          "label": "Categorieën",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "min": 1,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Categorie",
+              "verplicht": true
+            },
+            {
+              "pad": "gerechten",
+              "type": "lijst",
+              "label": "Gerechten",
+              "itemLabel": "naam",
+              "sorteerbaar": true,
+              "velden": [
+                {
+                  "pad": "naam",
+                  "type": "tekst",
+                  "label": "Gerecht",
+                  "verplicht": true,
+                  "max": 50
+                },
+                {
+                  "pad": "beschrijving",
+                  "type": "tekstvak",
+                  "label": "Beschrijving",
+                  "max": 160
+                },
+                {
+                  "pad": "prijs",
+                  "type": "prijs",
+                  "label": "Prijs",
+                  "breedte": "smal"
+                },
+                {
+                  "pad": "soort",
+                  "type": "keuze",
+                  "label": "Soort",
+                  "opties": [
+                    "Vlees",
+                    "Vis",
+                    "Vegetarisch",
+                    "Vegan"
+                  ],
+                  "breedte": "smal"
+                },
+                {
+                  "pad": "nieuw",
+                  "type": "schakelaar",
+                  "label": "Nieuw op de kaart"
+                },
+                {
+                  "pad": "foto",
+                  "type": "afbeelding",
+                  "label": "Foto"
+                },
+                {
+                  "pad": "fotoAlt",
+                  "type": "tekst",
+                  "label": "Beschrijving van de foto"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "evenement",
+      "titel": "Evenement",
+      "groep": "inhoud",
+      "beschrijving": "Een speciale avond of actie in de kijker.",
+      "velden": [
+        {
+          "pad": "evenement.tonen",
+          "type": "schakelaar",
+          "label": "Evenement tonen"
+        },
+        {
+          "pad": "evenement.titel",
+          "type": "tekst",
+          "label": "Naam",
+          "max": 60
+        },
+        {
+          "pad": "evenement.datum",
+          "type": "datum",
+          "label": "Datum",
+          "breedte": "smal"
+        },
+        {
+          "pad": "evenement.plaatsen",
+          "type": "getal",
+          "label": "Aantal plaatsen",
+          "breedte": "smal",
+          "hulp": "Laat leeg als het niet uitmaakt."
+        },
+        {
+          "pad": "evenement.prijs",
+          "type": "prijs",
+          "label": "Prijs per persoon",
+          "breedte": "smal"
+        },
+        {
+          "pad": "evenement.kleur",
+          "type": "kleur",
+          "label": "Kleur van de kaart",
+          "breedte": "smal"
+        }
+      ]
+    },
+    {
+      "id": "reserveren",
+      "titel": "Reserveren",
+      "groep": "inhoud",
+      "beschrijving": "Hoe bezoekers een tafel boeken.",
+      "velden": [
+        {
+          "pad": "reserveren.titel",
+          "type": "tekst",
+          "label": "Titel"
+        },
+        {
+          "pad": "reserveren.email",
+          "type": "email",
+          "label": "E-mail voor reservaties",
+          "verplicht": true
+        },
+        {
+          "pad": "reserveren.telefoon",
+          "type": "telefoon",
+          "label": "Telefoon voor reservaties"
+        },
+        {
+          "pad": "reserveren.link",
+          "type": "url",
+          "label": "Link naar online boeken",
+          "hulp": "Bv. je pagina op een reservatieplatform."
+        },
+        {
+          "pad": "reserveren.notitie",
+          "type": "tekstvak",
+          "label": "Interne notitie",
+          "rol": "arto",
+          "hulp": "Alleen zichtbaar voor ARTO."
+        }
+      ]
+    }
+  ]
+}

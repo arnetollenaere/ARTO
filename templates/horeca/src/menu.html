@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-menu">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <header class="paginakop">
+    <p class="label"><span class="label__nr">(01)</span> {{ menu.label }}</p>
+    <h1 class="paginakop__titel">{{ menu.kop }}</h1>
+    <p class="paginakop__intro">{{ menu.intro }}</p>
+    <p class="paginakop__legende label">{{ menu.legende }}</p>
+    <svg class="stempel stempel--kaart" viewBox="0 0 300 300" aria-hidden="true" focusable="false">
+      <defs><path id="kaart-cirkel" d="M150 150m-118 0a118 118 0 1 1 236 0a118 118 0 1 1-236 0"/></defs>
+      <circle cx="150" cy="150" r="146" class="stempel__rand"/>
+      <circle cx="150" cy="150" r="92" class="stempel__binnen"/>
+      <g class="stempel__draai"><text class="stempel__tekst"><textPath href="#kaart-cirkel" textLength="735">{{ menu.stempelTekst | tekst }} · {{ site.naam | tekst }} · </textPath></text></g>
+      <text x="150" y="112" class="stempel__klein" text-anchor="middle">{{ menu.weekLabel | tekst }}</text>
+      <text x="150" y="200" class="stempel__week" text-anchor="middle" data-week>·</text>
+    </svg>
+  </header>
+
+  <nav class="gangnav" aria-label="Gangen">
+    <ul>
+      {{#elk menu.gangen}}<li><a href="#gang-{{ naam | slug }}"><span aria-hidden="true">{{ @nr | twee }}</span> {{ naam }}</a></li>{{/elk}}
+      <li><a href="#dranken"><svg viewBox="0 0 10 10" width="9" height="9" aria-hidden="true"><path d="M5 0 10 5 5 10 0 5z" fill="currentColor"/></svg> {{ dranken.label }}</a></li>
+    </ul>
+  </nav>
+
+  <div class="kaart">
+    {{#elk menu.gangen}}
+    <section class="gang" id="gang-{{ naam | slug }}" aria-labelledby="gang-{{ naam | slug }}-kop">
+      <div class="gang__kop">
+        <span class="gang__nr" aria-hidden="true">{{ @nr | twee }}</span>
+        <h2 class="gang__naam" id="gang-{{ naam | slug }}-kop">{{ naam }}</h2>
+        <p class="gang__onder">{{ ondertitel }}</p>
+      </div>
+      <ul class="gerechten">
+        {{#elk gerechten}}
+        <li class="gerecht{{#als chef}} gerecht--chef{{/als}}">
+          <div class="gerecht__regel">
+            <h3 class="gerecht__naam">{{ naam }}</h3>
+            <span class="gerecht__lijn" aria-hidden="true"></span>
+            <span class="gerecht__prijs">€&#8239;{{ prijs }}</span>
+          </div>
+          <p class="gerecht__besch">{{ beschrijving }}</p>
+          <p class="gerecht__meta">
+            {{#als chef}}<span class="tag tag--amber">{{ menu.labelChef }}</span>{{/als}}
+            {{#als vegan}}<span class="tag">{{ menu.labelVegan }}</span>{{#anders}}{{#als vegetarisch}}<span class="tag">{{ menu.labelVegetarisch }}</span>{{/als}}{{/als}}
+            {{#als glutenvrij}}<span class="tag">{{ menu.labelGlutenvrij }}</span>{{/als}}
+            {{#als allergenen}}<span class="gerecht__allergenen">{{ menu.allergenenLabel }}: {{ allergenen }}</span>{{/als}}
+          </p>
+        </li>
+        {{/elk}}
+      </ul>
+    </section>
+    {{/elk}}
+
+    {{#als menu.formules}}
+    <section class="formules" aria-labelledby="formules-kop">
+      <h2 class="formules__kop" id="formules-kop">{{ menu.formulesKop }}</h2>
+      <ul>
+        {{#elk menu.formules}}
+        <li class="formule">
+          <h3 class="formule__naam">{{ naam }}</h3>
+          <p class="formule__besch">{{ beschrijving }}</p>
+          <p class="formule__prijs">€&#8239;{{ prijs }}</p>
+        </li>
+        {{/elk}}
+      </ul>
+    </section>
+    {{/als}}
+
+    <p class="kaart__allergenen">{{ menu.allergenenTekst }}</p>
+  </div>
+
+  <section class="dranken" id="dranken" aria-labelledby="dranken-kop">
+    <div class="dranken__kop">
+      <p class="label"><span class="label__nr">(02)</span> {{ dranken.label }}</p>
+      <h2 class="kop2" id="dranken-kop">{{ dranken.kop }}</h2>
+      <p>{{ dranken.intro }}</p>
+    </div>
+    <div class="dranken__groepen">
+      {{#elk dranken.groepen}}
+      <table class="drank">
+        <caption>{{ naam }}</caption>
+        <thead><tr><th scope="col"><span class="sr">{{ naam }}</span></th><th scope="col">{{ dranken.kolomGlas }}</th><th scope="col">{{ dranken.kolomFles }}</th></tr></thead>
+        <tbody>
+          {{#elk items}}
+          <tr>
+            <th scope="row"><span class="drank__naam">{{ naam }}</span><span class="drank__herkomst">{{ herkomst }}</span></th>
+            <td>{{#als prijs}}€&#8239;{{ prijs }}{{#anders}}<span aria-label="niet beschikbaar">—</span>{{/als}}</td>
+            <td>{{#als prijsFles}}€&#8239;{{ prijsFles }}{{#anders}}<span aria-label="niet beschikbaar">—</span>{{/als}}</td>
+          </tr>
+          {{/elk}}
+        </tbody>
+      </table>
+      {{/elk}}
+    </div>
+  </section>
+
+  <section class="slot" aria-labelledby="slot-kop">
+    <h2 class="slot__kop" id="slot-kop">{{ reservatie.kop }}</h2>
+    <p><a class="knop knop--vol" href="/reserveren">{{ hero.knopReserveren }}</a> <a class="slot__tel" href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></p>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

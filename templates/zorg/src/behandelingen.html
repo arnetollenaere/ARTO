@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-sub">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+  <section class="subheld" aria-labelledby="sub-titel">
+    <svg class="subheld__vorm" viewBox="0 0 600 600" aria-hidden="true" focusable="false"><path class="morf morf--b" d="M436.0 300.0C439.2 346.6 428.8 429.2 390.4 456.5C352.0 483.8 246.6 489.7 205.5 463.6C164.5 437.5 143.4 353.4 144.1 300.0C144.7 246.6 171.6 163.7 209.4 143.1C247.3 122.6 333.5 150.5 371.2 176.6C409.0 202.8 432.8 253.4 436.0 300.0Z"/><path class="morf morf--b subheld__ring" transform="translate(300 300) scale(1.14) translate(-300 -300)" d="M436.0 300.0C439.2 346.6 428.8 429.2 390.4 456.5C352.0 483.8 246.6 489.7 205.5 463.6C164.5 437.5 143.4 353.4 144.1 300.0C144.7 246.6 171.6 163.7 209.4 143.1C247.3 122.6 333.5 150.5 371.2 176.6C409.0 202.8 432.8 253.4 436.0 300.0Z"/><path class="morf morf--c subheld__mint" transform="translate(-120 140)" d="M377.5 300.0C376.5 329.2 368.0 369.6 347.6 382.5C327.3 395.4 278.9 391.3 255.2 377.5C231.6 363.8 206.8 328.0 205.6 300.0C204.3 272.0 223.1 225.0 247.8 209.6C272.4 194.1 331.9 192.2 353.5 207.3C375.1 222.4 378.5 270.8 377.5 300.0Z"/></svg>
+    <div class="wrap">
+      <p class="label"><span class="label__stip" aria-hidden="true"></span>{{ behandelingenIntro.label }}</p>
+      <h1 class="kop-xxl" id="sub-titel">{{ paginaBehandelingen.titel }} <span class="accent">{{ paginaBehandelingen.titelAccent }}</span></h1>
+      <p class="lead subheld__intro">{{ paginaBehandelingen.intro }}</p>
+    </div>
+  </section>
+
+  <section class="sectie sectie--krap" aria-label="{{ behandelingenIntro.label }}">
+    <div class="wrap beh__grid">
+      <ol class="behlijst">
+        {{#elk behandelingen}}<li class="beh verschijn" id="{{ naam | slug }}">
+          <div class="beh__kop">
+            <span class="tarief__cat">{{ categorie }}</span>
+            <h2>{{ naam }}</h2>
+          </div>
+          <div class="beh__tekst">
+            <p class="beh__kort">{{ kort }}</p>
+            {{ beschrijving | md }}
+          </div>
+          <div class="beh__fiche">
+            <dl class="tarief__cijfers">
+              <div><dt>{{ behandelingenIntro.kolomDuur }}</dt><dd>{{ duur }}</dd></div>
+              <div><dt>{{ behandelingenIntro.kolomTarief }}</dt><dd>{{ tarief }}</dd></div>
+            </dl>
+            <p class="beh__terug"><span class="badge" data-terug="{{ terugbetaling | slug }}">{{ terugbetaling }}</span>{{#als voorschrift}} <span class="badge badge--rand">{{ terugbetalingInfo.voorschriftLabel }}</span>{{/als}}</p>
+            <p class="beh__detail">{{ terugbetalingDetail }}</p>
+            <a class="pijllink pijllink--klein" href="/?behandeling={{ naam | url }}#afspraak">{{ navigatie.afspraak }}<span class="vh">: {{ naam }}</span><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </li>{{/elk}}
+      </ol>
+      <aside class="terugkader" aria-labelledby="terug-titel">
+        <div class="terugkader__binnen">
+          <h2 class="kop-m" id="terug-titel">{{ terugbetalingInfo.titel }}</h2>
+          {{ terugbetalingInfo.tekst | md }}
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  {{> afspraak }}
+</main>
+{{> voet }}
+</body>
+</html>

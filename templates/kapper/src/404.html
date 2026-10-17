@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  {{> hoofd }}
+</head>
+<body class="p-404">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud-start" class="nietgevonden">
+  <p class="nietgevonden__cijfer" aria-hidden="true">4<em>0</em>4</p>
+  <div class="nietgevonden__beeld vorm-boog" aria-hidden="true"><svg class="patroon" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" focusable="false"><use href="/img/patronen.svg#krul"/></svg></div>
+  <div class="nietgevonden__tekst">
+    <h1>{{ nietgevonden.kop }}</h1>
+    <p>{{ nietgevonden.tekst }}</p>
+    <a class="knop knop--signaal knop--groot" href="/">{{ nietgevonden.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+  </div>
+</main>
+{{> voet }}
+</body>
+</html>

@@ -1,0 +1,990 @@
+{
+  "naam": "Nachtkeuken",
+  "sector": "horeca",
+  "beschrijving": "Late-night editorial voor restaurants, bistro's, wijnbars en foodtrucks: bijna zwart, tomatenrood en crème, een grote display-serif en de menukaart als typografische lijst met stippellijnen naar de prijs. Met 'nu open'-indicator, bewegende band 'vanavond op de kaart' en reserveren als een bonnetje.",
+  "schemaType": "Restaurant",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "achtergrond",
+        "label": "Achtergrond (nacht)",
+        "hulp": "Houd dit heel donker; de tekst staat erop.",
+        "standaard": "#110e0c"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Tekst (crème)",
+        "standaard": "#f1e6d2"
+      },
+      {
+        "sleutel": "accent",
+        "label": "Accent (tomatenrood)",
+        "hulp": "Knoppen, prijzen en de grote cirkel. Moet goed leesbaar zijn op de achtergrond.",
+        "standaard": "#ef5a3c"
+      },
+      {
+        "sleutel": "tweede",
+        "label": "Tweede accent (amber)",
+        "hulp": "Labels zoals chef's pick en de 'nu open'-stip.",
+        "standaard": "#e9a63f"
+      },
+      {
+        "sleutel": "papier",
+        "label": "Papier van het reservatiebonnetje",
+        "hulp": "Een lichte kleur; de tekst op het bonnetje is donker.",
+        "standaard": "#f1e6d2"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "navigatie",
+      "titel": "Navigatie",
+      "groep": "inhoud",
+      "beschrijving": "De woorden in het menu bovenaan.",
+      "velden": [
+        {
+          "pad": "navigatie.home",
+          "type": "tekst",
+          "label": "Naam links bovenaan",
+          "hulp": "Meestal de naam van de zaak, eventueel korter."
+        },
+        {
+          "pad": "navigatie.kaart",
+          "type": "tekst",
+          "label": "Link naar de kaart",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.verhaal",
+          "type": "tekst",
+          "label": "Link naar het verhaal",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.groepen",
+          "type": "tekst",
+          "label": "Link naar groepen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.reserveren",
+          "type": "tekst",
+          "label": "Reserveerknop",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.skiplink",
+          "type": "tekst",
+          "label": "Skip-link (voor schermlezers)",
+          "rol": "arto"
+        }
+      ]
+    },
+    {
+      "id": "uren",
+      "titel": "Nu open / gesloten",
+      "groep": "gegevens",
+      "beschrijving": "De indicator rekent zelf uit of je open bent op basis van de openingsuren. Hier pas je de woorden aan.",
+      "velden": [
+        {
+          "pad": "uren.open",
+          "type": "tekst",
+          "label": "Tekst als je open bent",
+          "breedte": "smal"
+        },
+        {
+          "pad": "uren.gesloten",
+          "type": "tekst",
+          "label": "Tekst als je gesloten bent",
+          "breedte": "smal"
+        },
+        {
+          "pad": "uren.tot",
+          "type": "tekst",
+          "label": "Woord vóór het sluitingsuur",
+          "hulp": "bv. 'tot' → Nu open tot 23:00",
+          "breedte": "smal"
+        },
+        {
+          "pad": "uren.opent",
+          "type": "tekst",
+          "label": "Woord vóór het openingsuur",
+          "hulp": "bv. 'opent' → opent woensdag 18:00",
+          "breedte": "smal"
+        },
+        {
+          "pad": "uren.vandaag",
+          "type": "tekst",
+          "label": "Woord voor 'vandaag'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "uren.kop",
+          "type": "tekst",
+          "label": "Kop boven de openingsuren"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "titel": "Startpagina: bovenaan",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat bezoekers zien.",
+      "velden": [
+        {
+          "pad": "hero.bovenregel",
+          "type": "tekst",
+          "label": "Kleine regel boven de titel",
+          "max": 60
+        },
+        {
+          "pad": "hero.titelRegel1",
+          "type": "tekst",
+          "label": "Grote titel, regel 1",
+          "max": 24,
+          "hulp": "Kort en krachtig. Dit is de hoofdtitel van de pagina."
+        },
+        {
+          "pad": "hero.titelRegel2",
+          "type": "tekst",
+          "label": "Grote titel, regel 2 (cursief)",
+          "max": 24
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Introductie",
+          "max": 260
+        },
+        {
+          "pad": "hero.knopReserveren",
+          "type": "tekst",
+          "label": "Knop reserveren",
+          "breedte": "smal"
+        },
+        {
+          "pad": "hero.knopMenu",
+          "type": "tekst",
+          "label": "Knop kaart",
+          "breedte": "smal"
+        },
+        {
+          "pad": "hero.notitie",
+          "type": "tekst",
+          "label": "Kleine notitie onderaan",
+          "hulp": "bv. 'Keuken open tot 23:30 op vrijdag'"
+        },
+        {
+          "pad": "hero.foto",
+          "type": "afbeelding",
+          "label": "Sfeerfoto (optioneel)",
+          "hulp": "Staand, minstens 900×1200 px, WebP. Zonder foto toont de site een getekend bord."
+        },
+        {
+          "pad": "hero.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto",
+          "hulp": "Wat staat erop? Voor blinden en Google."
+        }
+      ]
+    },
+    {
+      "id": "vanavond",
+      "titel": "Vanavond op de kaart",
+      "groep": "inhoud",
+      "beschrijving": "De bewegende band onder de titel. Ideaal om dagelijks een paar gerechten of wijnen in de verf te zetten.",
+      "velden": [
+        {
+          "pad": "vanavond.aan",
+          "type": "schakelaar",
+          "label": "Band tonen"
+        },
+        {
+          "pad": "vanavond.label",
+          "type": "tekst",
+          "label": "Label"
+        },
+        {
+          "pad": "vanavond.items",
+          "type": "lijst",
+          "label": "Wat staat er vanavond op",
+          "itemLabel": "tekst",
+          "sorteerbaar": true,
+          "min": 1,
+          "max": 10,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Gerecht of drank",
+              "max": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manifest",
+      "titel": "Startpagina: het idee",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "manifest.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "manifest.tekst",
+          "type": "rijk",
+          "label": "Tekst",
+          "hulp": "Zet met **dubbele sterretjes** een stuk in het rood."
+        },
+        {
+          "pad": "manifest.feiten",
+          "type": "lijst",
+          "label": "Cijfers",
+          "itemLabel": "getal",
+          "max": 4,
+          "velden": [
+            {
+              "pad": "getal",
+              "type": "tekst",
+              "label": "Getal of uur",
+              "breedte": "smal"
+            },
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Uitleg"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "signatuur",
+      "titel": "Signatuurgerechten",
+      "groep": "inhoud",
+      "beschrijving": "Twee tot vier gerechten die je zaak typeren, groot op de startpagina.",
+      "velden": [
+        {
+          "pad": "signatuur.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "signatuur.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "signatuur.intro",
+          "type": "tekstvak",
+          "label": "Introductie"
+        },
+        {
+          "pad": "signatuur.knop",
+          "type": "tekst",
+          "label": "Knop naar de kaart",
+          "breedte": "smal"
+        },
+        {
+          "pad": "signatuur.gerechten",
+          "type": "lijst",
+          "label": "Gerechten",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "min": 1,
+          "max": 4,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Gerecht"
+            },
+            {
+              "pad": "beschrijving",
+              "type": "tekstvak",
+              "label": "Beschrijving",
+              "max": 160
+            },
+            {
+              "pad": "prijs",
+              "type": "prijs",
+              "label": "Prijs",
+              "breedte": "smal"
+            },
+            {
+              "pad": "notitie",
+              "type": "tekst",
+              "label": "Klein label",
+              "hulp": "bv. 'Sinds dag één' of 'Chef's pick'",
+              "breedte": "smal"
+            },
+            {
+              "pad": "foto",
+              "type": "afbeelding",
+              "label": "Foto (optioneel)",
+              "hulp": "Vierkant, van bovenaf, minstens 800×800 px. Zonder foto toont de site een getekend bord."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van de foto"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "titel": "Menukaart",
+      "groep": "inhoud",
+      "beschrijving": "De volledige kaart op de pagina 'De kaart', per gang.",
+      "velden": [
+        {
+          "pad": "menu.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "menu.kop",
+          "type": "tekst",
+          "label": "Kop van de kaart"
+        },
+        {
+          "pad": "menu.intro",
+          "type": "tekstvak",
+          "label": "Introductie"
+        },
+        {
+          "pad": "menu.stempelTekst",
+          "type": "tekst",
+          "label": "Tekst rond de draaiende stempel",
+          "hulp": "bv. Seizoenskaart · herfst. Het weeknummer in het midden rekent de site zelf uit.",
+          "max": 40
+        },
+        {
+          "pad": "menu.weekLabel",
+          "type": "tekst",
+          "label": "Woord boven het weeknummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "menu.legende",
+          "type": "tekst",
+          "label": "Uitleg bij de labels",
+          "hulp": "Verklaart VG, V, GV en ★."
+        },
+        {
+          "pad": "menu.allergenenLabel",
+          "type": "tekst",
+          "label": "Woord vóór de allergenen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "menu.allergenenTekst",
+          "type": "tekstvak",
+          "label": "Tekst over allergenen en prijzen"
+        },
+        {
+          "pad": "menu.labelVegan",
+          "type": "tekst",
+          "label": "Label vegan",
+          "breedte": "smal"
+        },
+        {
+          "pad": "menu.labelVegetarisch",
+          "type": "tekst",
+          "label": "Label vegetarisch",
+          "breedte": "smal"
+        },
+        {
+          "pad": "menu.labelGlutenvrij",
+          "type": "tekst",
+          "label": "Label glutenvrij",
+          "breedte": "smal"
+        },
+        {
+          "pad": "menu.labelChef",
+          "type": "tekst",
+          "label": "Label chef's pick",
+          "breedte": "smal"
+        },
+        {
+          "pad": "menu.gangen",
+          "type": "lijst",
+          "label": "Gangen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam van de gang",
+              "hulp": "bv. Voorgerechten"
+            },
+            {
+              "pad": "ondertitel",
+              "type": "tekst",
+              "label": "Ondertitel"
+            },
+            {
+              "pad": "gerechten",
+              "type": "lijst",
+              "label": "Gerechten",
+              "itemLabel": "naam",
+              "sorteerbaar": true,
+              "velden": [
+                {
+                  "pad": "naam",
+                  "type": "tekst",
+                  "label": "Gerecht"
+                },
+                {
+                  "pad": "beschrijving",
+                  "type": "tekst",
+                  "label": "Beschrijving",
+                  "max": 120
+                },
+                {
+                  "pad": "prijs",
+                  "type": "prijs",
+                  "label": "Prijs",
+                  "breedte": "smal"
+                },
+                {
+                  "pad": "vegan",
+                  "type": "schakelaar",
+                  "label": "Vegan (VG)"
+                },
+                {
+                  "pad": "vegetarisch",
+                  "type": "schakelaar",
+                  "label": "Vegetarisch (V)",
+                  "hulp": "Niet nodig als het gerecht al vegan is."
+                },
+                {
+                  "pad": "glutenvrij",
+                  "type": "schakelaar",
+                  "label": "Glutenvrij (GV)"
+                },
+                {
+                  "pad": "chef",
+                  "type": "schakelaar",
+                  "label": "Chef's pick (★)"
+                },
+                {
+                  "pad": "allergenen",
+                  "type": "tekst",
+                  "label": "Allergenen",
+                  "hulp": "Gescheiden door komma's, bv. gluten, lactose, noten. Leeg = geen."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "pad": "menu.formulesKop",
+          "type": "tekst",
+          "label": "Kop boven de formules"
+        },
+        {
+          "pad": "menu.formules",
+          "type": "lijst",
+          "label": "Formules en arrangementen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "beschrijving",
+              "type": "tekst",
+              "label": "Beschrijving"
+            },
+            {
+              "pad": "prijs",
+              "type": "prijs",
+              "label": "Prijs per persoon",
+              "breedte": "smal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dranken",
+      "titel": "Dranken",
+      "groep": "inhoud",
+      "beschrijving": "Onder de kaart op de pagina 'De kaart'.",
+      "velden": [
+        {
+          "pad": "dranken.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "dranken.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "dranken.intro",
+          "type": "tekstvak",
+          "label": "Introductie"
+        },
+        {
+          "pad": "dranken.kolomGlas",
+          "type": "tekst",
+          "label": "Naam kolom 1",
+          "hulp": "bv. Glas",
+          "breedte": "smal"
+        },
+        {
+          "pad": "dranken.kolomFles",
+          "type": "tekst",
+          "label": "Naam kolom 2",
+          "hulp": "bv. Fles",
+          "breedte": "smal"
+        },
+        {
+          "pad": "dranken.groepen",
+          "type": "lijst",
+          "label": "Groepen",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam van de groep",
+              "hulp": "bv. Wijn, Bier, Cocktails"
+            },
+            {
+              "pad": "items",
+              "type": "lijst",
+              "label": "Dranken",
+              "itemLabel": "naam",
+              "sorteerbaar": true,
+              "velden": [
+                {
+                  "pad": "naam",
+                  "type": "tekst",
+                  "label": "Drank"
+                },
+                {
+                  "pad": "herkomst",
+                  "type": "tekst",
+                  "label": "Herkomst of uitleg"
+                },
+                {
+                  "pad": "prijs",
+                  "type": "prijs",
+                  "label": "Prijs per glas",
+                  "hulp": "Leeg laten als je dit niet per glas schenkt.",
+                  "breedte": "smal"
+                },
+                {
+                  "pad": "prijsFles",
+                  "type": "prijs",
+                  "label": "Prijs per fles",
+                  "hulp": "Leeg laten als het niet per fles kan.",
+                  "breedte": "smal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verhaal",
+      "titel": "Verhaal & chef",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "verhaal.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "verhaal.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "verhaal.tekst",
+          "type": "rijk",
+          "label": "Verhaal"
+        },
+        {
+          "pad": "verhaal.citaat",
+          "type": "tekstvak",
+          "label": "Citaat van de chef",
+          "max": 140
+        },
+        {
+          "pad": "verhaal.chefNaam",
+          "type": "tekst",
+          "label": "Naam chef",
+          "breedte": "smal"
+        },
+        {
+          "pad": "verhaal.chefRol",
+          "type": "tekst",
+          "label": "Rol chef",
+          "breedte": "smal"
+        },
+        {
+          "pad": "verhaal.tweedeNaam",
+          "type": "tekst",
+          "label": "Naam tweede persoon (optioneel)",
+          "breedte": "smal"
+        },
+        {
+          "pad": "verhaal.tweedeRol",
+          "type": "tekst",
+          "label": "Rol tweede persoon",
+          "breedte": "smal"
+        },
+        {
+          "pad": "verhaal.foto",
+          "type": "afbeelding",
+          "label": "Portret (optioneel)",
+          "hulp": "Staand, minstens 900×1200 px. Wordt in zwart-wit en warm getint getoond."
+        },
+        {
+          "pad": "verhaal.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto"
+        }
+      ]
+    },
+    {
+      "id": "groepen",
+      "titel": "Groepen & events",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "groepen.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "groepen.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "groepen.tekst",
+          "type": "tekstvak",
+          "label": "Tekst"
+        },
+        {
+          "pad": "groepen.opties",
+          "type": "lijst",
+          "label": "Mogelijkheden",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "max": 4,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel"
+            },
+            {
+              "pad": "detail",
+              "type": "tekst",
+              "label": "Aantal personen",
+              "breedte": "smal"
+            },
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Uitleg"
+            }
+          ]
+        },
+        {
+          "pad": "groepen.knop",
+          "type": "tekst",
+          "label": "Knop (opent een e-mail)"
+        }
+      ]
+    },
+    {
+      "id": "pers",
+      "titel": "Reviews & pers",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "pers.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "pers.citaten",
+          "type": "lijst",
+          "label": "Citaten",
+          "itemLabel": "bron",
+          "sorteerbaar": true,
+          "max": 6,
+          "velden": [
+            {
+              "pad": "citaat",
+              "type": "tekstvak",
+              "label": "Citaat",
+              "max": 180
+            },
+            {
+              "pad": "bron",
+              "type": "tekst",
+              "label": "Bron",
+              "hulp": "Naam van het medium of de reviewer."
+            },
+            {
+              "pad": "detail",
+              "type": "tekst",
+              "label": "Detail",
+              "hulp": "bv. 'Google-review' of 'Herfstgids 2025'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "reservatie",
+      "titel": "Reserveren",
+      "groep": "inhoud",
+      "beschrijving": "Het reservatiebonnetje. Aanvragen komen binnen onder Berichten.",
+      "velden": [
+        {
+          "pad": "reservatie.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "reservatie.intro",
+          "type": "tekstvak",
+          "label": "Introductie"
+        },
+        {
+          "pad": "reservatie.ofBel",
+          "type": "tekst",
+          "label": "Tekst vóór het telefoonnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.extern",
+          "type": "url",
+          "label": "Link naar extern boekingssysteem (optioneel)",
+          "hulp": "bv. je pagina op Zenchef, Resengo of TheFork. Leeg = alleen het formulier."
+        },
+        {
+          "pad": "reservatie.externLabel",
+          "type": "tekst",
+          "label": "Tekst van die link"
+        },
+        {
+          "pad": "reservatie.maxPersonen",
+          "type": "getal",
+          "label": "Maximum aantal personen online",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.groepTekst",
+          "type": "tekst",
+          "label": "Tekst voor grotere groepen"
+        },
+        {
+          "pad": "reservatie.tijdsloten",
+          "type": "lijst",
+          "label": "Uren waarop je kan reserveren",
+          "itemLabel": "uur",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "uur",
+              "type": "tekst",
+              "label": "Uur",
+              "hulp": "bv. 19:30",
+              "breedte": "smal"
+            }
+          ]
+        },
+        {
+          "pad": "reservatie.ticketTitel",
+          "type": "tekst",
+          "label": "Titel op het bonnetje",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.ticketNummerLabel",
+          "type": "tekst",
+          "label": "Woord vóór het bonnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.labelDatum",
+          "type": "tekst",
+          "label": "Label datum",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.labelUur",
+          "type": "tekst",
+          "label": "Label uur",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.labelPersonen",
+          "type": "tekst",
+          "label": "Label personen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.labelNaam",
+          "type": "tekst",
+          "label": "Label naam",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.labelEmail",
+          "type": "tekst",
+          "label": "Label e-mail",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.labelTelefoon",
+          "type": "tekst",
+          "label": "Label telefoon",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.labelOpmerking",
+          "type": "tekst",
+          "label": "Label opmerking"
+        },
+        {
+          "pad": "reservatie.knop",
+          "type": "tekst",
+          "label": "Verzendknop",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.bevestigingKop",
+          "type": "tekst",
+          "label": "Kop na verzenden",
+          "breedte": "smal"
+        },
+        {
+          "pad": "reservatie.bevestiging",
+          "type": "tekstvak",
+          "label": "Tekst na verzenden"
+        },
+        {
+          "pad": "reservatie.beleidKop",
+          "type": "tekst",
+          "label": "Kop boven de afspraken"
+        },
+        {
+          "pad": "reservatie.beleid",
+          "type": "lijst",
+          "label": "Afspraken",
+          "itemLabel": "tekst",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Afspraak"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "locatie",
+      "titel": "Ligging",
+      "groep": "gegevens",
+      "beschrijving": "Het blok met adres en openingsuren onderaan de startpagina.",
+      "velden": [
+        {
+          "pad": "locatie.label",
+          "type": "tekst",
+          "label": "Label",
+          "breedte": "smal"
+        },
+        {
+          "pad": "locatie.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "locatie.tekst",
+          "type": "tekstvak",
+          "label": "Hoe geraak je er"
+        },
+        {
+          "pad": "locatie.knopKaart",
+          "type": "tekst",
+          "label": "Knop naar de kaart",
+          "breedte": "smal"
+        }
+      ]
+    },
+    {
+      "id": "voet",
+      "titel": "Voettekst & 404",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "voet.slogan",
+          "type": "tekst",
+          "label": "Grote regel in de voettekst"
+        },
+        {
+          "pad": "voet.credits",
+          "type": "tekst",
+          "label": "Vermelding maker",
+          "rol": "arto"
+        },
+        {
+          "pad": "nietGevonden.kop",
+          "type": "tekst",
+          "label": "404: kop"
+        },
+        {
+          "pad": "nietGevonden.tekst",
+          "type": "tekstvak",
+          "label": "404: tekst"
+        },
+        {
+          "pad": "nietGevonden.knop",
+          "type": "tekst",
+          "label": "404: knop",
+          "breedte": "smal"
+        }
+      ]
+    }
+  ]
+}

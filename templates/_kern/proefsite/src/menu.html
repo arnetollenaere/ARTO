@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="stylesheet" href="/css/stijl.css">
+</head>
+<body>
+  {{> mededeling }}
+  {{> kop }}
+  <main class="kaart">
+    <h1>Menukaart</h1>
+    <p class="inleiding">{{ kaart.inleiding }}</p>
+    {{#elk kaart.categorieen}}
+    <section class="categorie">
+      <h2>{{ naam }}</h2>
+      <ul class="gerechten">
+        {{#elk gerechten}}
+        <li class="gerecht">
+          {{#als foto}}<img src="{{ foto }}" alt="{{ fotoAlt }}" width="120" height="120" loading="lazy">{{/als}}
+          <div>
+            <h3>{{ naam }}{{#als nieuw}} <span class="label">Nieuw</span>{{/als}}</h3>
+            <p>{{ beschrijving }}</p>
+            <p class="soort">{{ soort }}</p>
+          </div>
+          <span class="prijs">€ {{ prijs }}</span>
+        </li>
+        {{/elk}}
+      </ul>
+    </section>
+    {{#anders}}<p>De kaart volgt binnenkort.</p>
+    {{/elk}}
+  </main>
+  {{> voet }}
+  <script src="/js/site.js" defer></script>
+</body>
+</html>

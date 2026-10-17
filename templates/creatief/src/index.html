@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="preload" href="/fonts/unbounded-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script src="/js/zaal.js" defer></script>
+</head>
+<body class="p-start">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <section class="opening" aria-labelledby="opening-titel">
+    <p class="zaal mono opening__zaal">{{ hero.zaal }}</p>
+    <p class="opening__zij mono" aria-hidden="true">{{ site.naam }} — {{ site.slogan }}</p>
+    <h1 class="opening__titel" id="opening-titel">{{ hero.titel | nl2br }}</h1>
+    <ol class="opening__lijst mono" aria-label="{{ werkpagina.kop }}">
+      {{#elk projecten}}<li><a href="/werk#{{ titel | slug }}"><span>W—{{ @nr | twee }}</span><span>{{ titel }}</span><span>{{ jaar }}</span></a></li>{{/elk}}
+    </ol>
+    <figure class="opening__werk">
+      <div class="beeld beeld--{{ hero.vlak }} beeld--groot">{{#als hero.foto}}<img src="{{ hero.foto }}" alt="{{ hero.fotoAlt }}" width="1200" height="1500" fetchpriority="high">{{#anders}}<svg class="comp" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><use href="#c-{{ hero.compositie }}"/></svg>{{/als}}</div>
+      <figcaption class="mono">{{ hero.bijschrift }}</figcaption>
+    </figure>
+    <div class="opening__onder">
+      <p class="opening__intro">{{ hero.intro }}</p>
+      <a class="pijlknop" href="/{{ hero.knopLink }}"><span>{{ hero.knop }}</span><span class="pijlknop__pijl" aria-hidden="true">↘</span></a>
+    </div>
+  </section>
+
+  <section class="galerij" aria-labelledby="galerij-kop" data-galerij>
+    <div class="galerij__plak">
+      <header class="galerij__kop">
+        <p class="zaal mono">{{ galerij.zaal }}</p>
+        <h2 id="galerij-kop">{{ galerij.kop }}</h2>
+        <p class="mono galerij__hint" aria-hidden="true">{{ galerij.hint }}</p>
+      </header>
+      <div class="galerij__venster" data-galerij-venster>
+        <ol class="galerij__spoor" data-galerij-spoor>
+          {{#elk projecten}}{{#als uitgelicht}}
+          <li class="werkstuk{{#als @even}} werkstuk--laag{{/als}}">
+            <a href="/werk#{{ titel | slug }}" class="werkstuk__link">
+              <span class="werkstuk__nr" aria-hidden="true">{{ @nr | twee }}</span>
+              {{> beeld }}
+              <span class="werkstuk__label">
+                <span class="mono werkstuk__meta">W—{{ @nr | twee }} · {{ jaar }}</span>
+                <span class="werkstuk__titel">{{ titel }}</span>
+                <span class="mono werkstuk__meta">{{ discipline }} · {{ locatie }}</span>
+              </span>
+            </a>
+          </li>
+          {{/als}}{{/elk}}
+          <li class="werkstuk werkstuk--slot">
+            <a href="/werk" class="slottegel"><span class="slottegel__tekst">{{ galerij.slot }}</span><span class="slottegel__aantal mono">({{ projecten | aantal | twee }})</span><span class="slottegel__pijl" aria-hidden="true">→</span></a>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="disciplines" aria-labelledby="disc-kop">
+    <header class="sectiekop">
+      <p class="zaal mono">{{ diensten.zaal }}</p>
+      <h2 id="disc-kop">{{ diensten.kop }}</h2>
+      <p class="sectiekop__intro">{{ diensten.intro }}</p>
+    </header>
+    <ol class="disc">
+      {{#elk diensten.lijst}}
+      <li class="disc__rij">
+        <span class="disc__nr mono">{{ @nr | twee }}</span>
+        <h3 class="disc__naam">{{ naam }}</h3>
+        <p class="disc__tekst">{{ tekst }}</p>
+        <p class="disc__prijs mono"><span>{{ prijs }}</span><span class="disc__duur">{{ duur }}</span></p>
+      </li>
+      {{/elk}}
+    </ol>
+    <p class="voetnoot mono">{{ diensten.voetnoot }}</p>
+  </section>
+
+  <section class="statement" aria-labelledby="stat-kop">
+    <p class="zaal mono">{{ studio.zaal }}</p>
+    <h2 class="visually-hidden" id="stat-kop">{{ teksten.navStudio }}</h2>
+    <p class="statement__tekst"><span class="statement__blok" aria-hidden="true"></span>{{ studio.statement }}</p>
+    <dl class="cijfers">{{#elk studio.cijfers}}<div><dt class="mono">{{ label }}</dt><dd>{{ getal }}</dd></div>{{/elk}}</dl>
+    <a class="pijlknop" href="/studio"><span>{{ studio.knop }}</span><span class="pijlknop__pijl" aria-hidden="true">→</span></a>
+  </section>
+
+  <section class="band" aria-labelledby="band-kop">
+    <div class="band__kop">
+      <p class="zaal mono">{{ klanten.zaal }}</p>
+      <h2 id="band-kop" class="mono band__titel">{{ klanten.kop }}</h2>
+    </div>
+    <div class="band__loop">
+      <ul class="band__rij">{{#elk klanten.lijst}}<li>{{ naam }}<span class="mono">{{ soort }}</span></li>{{/elk}}</ul>
+      <ul class="band__rij band__rij--kopie" aria-hidden="true">{{#elk klanten.lijst}}<li>{{ naam }}<span class="mono">{{ soort }}</span></li>{{/elk}}</ul>
+    </div>
+  </section>
+
+  {{> aanvraag }}
+</main>
+{{> voet }}
+</body>
+</html>

@@ -1,0 +1,637 @@
+{
+  "site": {
+    "naam": "Hanekam",
+    "slogan": "Keuken & wijnbar in het Patershol, open tot laat",
+    "logo": "",
+    "favicon": "/img/favicon.svg",
+    "domein": "hanekam-gent.be",
+    "taal": "nl-BE"
+  },
+  "mededeling": {
+    "aan": false,
+    "tekst": "Van 23 december tot 2 januari zijn we met vakantie. Vanaf 3 januari staan de potten weer op het vuur.",
+    "link": ""
+  },
+  "contact": {
+    "adres": "Kraanlei 41",
+    "postcode": "9000",
+    "gemeente": "Gent",
+    "land": "BE",
+    "telefoon": "+32 9 233 18 42",
+    "email": "tafel@hanekam-gent.be",
+    "whatsapp": "",
+    "btw": "BE0743.218.556",
+    "kaart": "https://maps.google.com/?q=Kraanlei+41+9000+Gent"
+  },
+  "openingsuren": [
+    {
+      "dag": "Maandag",
+      "uren": "Gesloten"
+    },
+    {
+      "dag": "Dinsdag",
+      "uren": "Gesloten"
+    },
+    {
+      "dag": "Woensdag",
+      "uren": "18:00–23:00"
+    },
+    {
+      "dag": "Donderdag",
+      "uren": "18:00–23:00"
+    },
+    {
+      "dag": "Vrijdag",
+      "uren": "18:00–00:30"
+    },
+    {
+      "dag": "Zaterdag",
+      "uren": "17:30–00:30"
+    },
+    {
+      "dag": "Zondag",
+      "uren": "12:00–15:00, 18:00–22:00"
+    }
+  ],
+  "socials": [
+    {
+      "netwerk": "Instagram",
+      "url": "https://www.instagram.com/hanekam.gent"
+    },
+    {
+      "netwerk": "Facebook",
+      "url": "https://www.facebook.com/hanekamgent"
+    },
+    {
+      "netwerk": "Google",
+      "url": "https://g.page/hanekam-gent"
+    }
+  ],
+  "seo": {
+    "titel": "Hanekam — keuken & wijnbar in het Patershol, Gent",
+    "beschrijving": "Seizoenskeuken, natuurwijn en Gentse klassiekers tot laat op de avond. Reserveer je tafel in het Patershol, Kraanlei 41 in Gent.",
+    "afbeelding": "",
+    "paginas": [
+      {
+        "pagina": "menu.html",
+        "titel": "De kaart: gerechten en dranken",
+        "beschrijving": "Onze volledige kaart: hapjes, voorgerechten, hoofdgerechten, kaas en dessert, met allergenen. Plus wijn per glas, bier en cocktails."
+      },
+      {
+        "pagina": "reserveren.html",
+        "titel": "Reserveer een tafel",
+        "beschrijving": "Reserveer je tafel bij Hanekam in het Patershol. Tot 8 personen online, grotere groepen en events op aanvraag."
+      }
+    ]
+  },
+  "thema": {
+    "kleuren": {
+      "achtergrond": "#110e0c",
+      "tekst": "#f1e6d2",
+      "accent": "#ef5a3c",
+      "tweede": "#e9a63f",
+      "papier": "#f1e6d2"
+    }
+  },
+  "navigatie": {
+    "home": "Hanekam",
+    "kaart": "De kaart",
+    "verhaal": "Verhaal",
+    "groepen": "Groepen",
+    "reserveren": "Reserveer",
+    "skiplink": "Naar de inhoud"
+  },
+  "uren": {
+    "open": "Nu open",
+    "gesloten": "Nu gesloten",
+    "tot": "tot",
+    "opent": "opent",
+    "kop": "Wanneer we koken",
+    "vandaag": "vandaag"
+  },
+  "hero": {
+    "bovenregel": "Keuken & wijnbar — Patershol, Gent",
+    "titelRegel1": "Laat eten,",
+    "titelRegel2": "lang tafelen.",
+    "intro": "Een kleine kaart die met het seizoen meedraait, wijnen van boeren die we bij naam kennen en een keuken die openblijft als de rest van de stad al slaapt.",
+    "knopReserveren": "Reserveer een tafel",
+    "knopMenu": "Bekijk de kaart",
+    "notitie": "Keuken open tot 23:30 op vrijdag en zaterdag",
+    "foto": "",
+    "fotoAlt": ""
+  },
+  "vanavond": {
+    "aan": true,
+    "label": "Vanavond op de kaart",
+    "items": [
+      {
+        "tekst": "Grijze garnalen op toast met bruine boter"
+      },
+      {
+        "tekst": "Kalfswang in Gentse tripel"
+      },
+      {
+        "tekst": "Pompoen uit de kolenoven"
+      },
+      {
+        "tekst": "Pet-nat van de Auvergne per glas"
+      },
+      {
+        "tekst": "Peer in rode wijn, mokkencrumble"
+      }
+    ]
+  },
+  "manifest": {
+    "label": "Het idee",
+    "tekst": "Hanekam is geen restaurant waar je stil wordt. Het is een **lange toog, twaalf tafels en een open keuken** waar je tot na middernacht nog een bord kalfswang en een fles gamay kan bestellen. We koken met wat de boeren rond Gent ons vandaag brengen, en dat zie je aan de kaart: die verandert elke week een beetje.",
+    "feiten": [
+      {
+        "getal": "12",
+        "label": "tafels en een toog voor 9"
+      },
+      {
+        "getal": "00:30",
+        "label": "laatste glas op vrijdag en zaterdag"
+      },
+      {
+        "getal": "38",
+        "label": "kleine wijnboeren op de kaart"
+      }
+    ]
+  },
+  "signatuur": {
+    "label": "Signatuur",
+    "kop": "Wat je zeker moet proeven",
+    "intro": "Drie borden die nooit van de kaart verdwijnen. Vaste gasten zouden het ons niet vergeven.",
+    "knop": "Volledige kaart",
+    "gerechten": [
+      {
+        "naam": "Gentse waterzooi",
+        "beschrijving": "Hoevekip uit Lovendegem, prei, wortel, dragon en een bouillon die twee dagen trekt.",
+        "prijs": "28",
+        "notitie": "Sinds dag één",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Tartaar van Wit-Blauw",
+        "beschrijving": "Met de hand gesneden, gekonfijte eidooier, gefrituurde kappertjes en zuurdesem.",
+        "prijs": "18",
+        "notitie": "Chef's pick",
+        "foto": "",
+        "fotoAlt": ""
+      },
+      {
+        "naam": "Peer in rode wijn",
+        "beschrijving": "Gestoofde Conference-peer, mokkencrumble en vanille-ijs van hoeve De Kerselaere.",
+        "prijs": "12",
+        "notitie": "Gentse mokken",
+        "foto": "",
+        "fotoAlt": ""
+      }
+    ]
+  },
+  "menu": {
+    "label": "De kaart",
+    "kop": "Wat er vandaag op het vuur staat",
+    "intro": "Kies een paar borden om te delen of ga voor de klassieke drie gangen. Onze kaart volgt het seizoen, dus wat hier staat kan een dag later al anders zijn.",
+    "stempelTekst": "Seizoenskaart · herfst",
+    "weekLabel": "week",
+    "legende": "VG = vegan · V = vegetarisch · GV = glutenvrij · Chef’s pick = waar Lotte zelf voor kiest",
+    "allergenenTekst": "Allergieën of intoleranties? Zeg het ons bij het reserveren of aan tafel. We passen graag aan. Alle prijzen in euro, inclusief btw en bediening.",
+    "allergenenLabel": "Bevat",
+    "labelVegan": "VG",
+    "labelVegetarisch": "V",
+    "labelGlutenvrij": "GV",
+    "labelChef": "Chef's pick",
+    "gangen": [
+      {
+        "naam": "Om te beginnen",
+        "ondertitel": "Kleine borden, om te delen",
+        "gerechten": [
+          {
+            "naam": "Zuurdesem & gezouten boter",
+            "beschrijving": "Brood van bakkerij De Graanzolder, boter van hoeve Hulsbos.",
+            "prijs": "5",
+            "vegan": false,
+            "vegetarisch": true,
+            "glutenvrij": false,
+            "chef": false,
+            "allergenen": "gluten, lactose"
+          },
+          {
+            "naam": "Gefrituurde oesterzwam",
+            "beschrijving": "Zwarte look-mayonaise op basis van aquafaba, limoen.",
+            "prijs": "9",
+            "vegan": true,
+            "vegetarisch": true,
+            "glutenvrij": false,
+            "chef": false,
+            "allergenen": "gluten, mosterd"
+          },
+          {
+            "naam": "Grijze garnalen op toast",
+            "beschrijving": "Noordzeegarnalen, bruine boter, citroen en bieslook.",
+            "prijs": "14",
+            "vegan": false,
+            "vegetarisch": false,
+            "glutenvrij": false,
+            "chef": true,
+            "allergenen": "schaaldieren, gluten, lactose"
+          },
+          {
+            "naam": "Gerookte paling",
+            "beschrijving": "Uit de Schelde-polders, gepekelde biet, mierikswortel.",
+            "prijs": "13",
+            "vegan": false,
+            "vegetarisch": false,
+            "glutenvrij": true,
+            "chef": false,
+            "allergenen": "vis, lactose"
+          }
+        ]
+      },
+      {
+        "naam": "Voorgerechten",
+        "ondertitel": "Om de avond te openen",
+        "gerechten": [
+          {
+            "naam": "Tartaar van Wit-Blauw",
+            "beschrijving": "Gekonfijte eidooier, gefrituurde kappertjes, zuurdesem.",
+            "prijs": "18",
+            "vegan": false,
+            "vegetarisch": false,
+            "glutenvrij": false,
+            "chef": true,
+            "allergenen": "ei, mosterd, gluten"
+          },
+          {
+            "naam": "Geroosterde knolselder",
+            "beschrijving": "Hazelnoot, witte miso, brandnetelolie.",
+            "prijs": "16",
+            "vegan": true,
+            "vegetarisch": true,
+            "glutenvrij": true,
+            "chef": false,
+            "allergenen": "noten, soja, selder"
+          },
+          {
+            "naam": "Sint-Jakobsvruchten",
+            "beschrijving": "Bloemkool, beurre noisette, milde kerrie.",
+            "prijs": "22",
+            "vegan": false,
+            "vegetarisch": false,
+            "glutenvrij": true,
+            "chef": false,
+            "allergenen": "weekdieren, lactose"
+          }
+        ]
+      },
+      {
+        "naam": "Hoofdgerechten",
+        "ondertitel": "Met frietjes of zuurdesem op tafel",
+        "gerechten": [
+          {
+            "naam": "Gentse waterzooi",
+            "beschrijving": "Hoevekip uit Lovendegem, prei, wortel, dragon.",
+            "prijs": "28",
+            "vegan": false,
+            "vegetarisch": false,
+            "glutenvrij": false,
+            "chef": true,
+            "allergenen": "selder, lactose, ei, gluten"
+          },
+          {
+            "naam": "Kalfswang in Gentse tripel",
+            "beschrijving": "Zes uur gestoofd, glacé van wortel, gepofte sjalot.",
+            "prijs": "31",
+            "vegan": false,
+            "vegetarisch": false,
+            "glutenvrij": false,
+            "chef": false,
+            "allergenen": "gluten, selder, sulfiet"
+          },
+          {
+            "naam": "Zeebaars van de lijn",
+            "beschrijving": "Zeeuwse mosselen, zeekraal, venkelboter.",
+            "prijs": "33",
+            "vegan": false,
+            "vegetarisch": false,
+            "glutenvrij": true,
+            "chef": false,
+            "allergenen": "vis, weekdieren, lactose"
+          },
+          {
+            "naam": "Pompoen uit de kolenoven",
+            "beschrijving": "Beluga-linzen, salsa verde, verse ricotta.",
+            "prijs": "24",
+            "vegan": false,
+            "vegetarisch": true,
+            "glutenvrij": true,
+            "chef": false,
+            "allergenen": "lactose"
+          }
+        ]
+      },
+      {
+        "naam": "Kaas & dessert",
+        "ondertitel": "Voor wie nog niet naar huis wil",
+        "gerechten": [
+          {
+            "naam": "Peer in rode wijn",
+            "beschrijving": "Mokkencrumble, vanille-ijs van hoeve De Kerselaere.",
+            "prijs": "12",
+            "vegan": false,
+            "vegetarisch": true,
+            "glutenvrij": false,
+            "chef": false,
+            "allergenen": "gluten, lactose, ei, sulfiet"
+          },
+          {
+            "naam": "Chocolade 70 %",
+            "beschrijving": "Gezouten karamel, gebrande rogge, crème fraîche.",
+            "prijs": "13",
+            "vegan": false,
+            "vegetarisch": true,
+            "glutenvrij": false,
+            "chef": true,
+            "allergenen": "gluten, lactose, ei, soja"
+          },
+          {
+            "naam": "Sorbet van duindoorn",
+            "beschrijving": "Gekonfijte citrus, verse munt.",
+            "prijs": "10",
+            "vegan": true,
+            "vegetarisch": true,
+            "glutenvrij": true,
+            "chef": false,
+            "allergenen": ""
+          },
+          {
+            "naam": "Drie Belgische kazen",
+            "beschrijving": "Van kaasmakerij Van Tricht, notenbrood, appelstroop.",
+            "prijs": "16",
+            "vegan": false,
+            "vegetarisch": true,
+            "glutenvrij": false,
+            "chef": false,
+            "allergenen": "lactose, gluten, noten"
+          }
+        ]
+      }
+    ],
+    "formulesKop": "Laat de keuken kiezen",
+    "formules": [
+      {
+        "naam": "Kaart van de chef",
+        "beschrijving": "Vijf gangen, voor de hele tafel. Lotte kookt wat vandaag het beste is.",
+        "prijs": "64"
+      },
+      {
+        "naam": "Wijnarrangement",
+        "beschrijving": "Vijf glazen, gekozen door Wout bij elke gang.",
+        "prijs": "42"
+      },
+      {
+        "naam": "Zonder alcohol",
+        "beschrijving": "Huisgemaakte kombucha, kefir en sappen bij elke gang.",
+        "prijs": "28"
+      }
+    ]
+  },
+  "dranken": {
+    "label": "Dranken",
+    "kop": "In het glas",
+    "intro": "Vooral natuurwijn van kleine boeren, een paar Belgische bieren die we zelf graag drinken en cocktails die met de seizoenen meedraaien.",
+    "kolomGlas": "Glas",
+    "kolomFles": "Fles",
+    "groepen": [
+      {
+        "naam": "Wijn",
+        "items": [
+          {
+            "naam": "Pet-nat ‘Hors Piste’",
+            "herkomst": "Auvergne, Frankrijk",
+            "prijs": "8",
+            "prijsFles": "44"
+          },
+          {
+            "naam": "Riesling trocken",
+            "herkomst": "Nahe, Duitsland",
+            "prijs": "9",
+            "prijsFles": "48"
+          },
+          {
+            "naam": "Chardonnay van de Maasvallei",
+            "herkomst": "Limburg, België",
+            "prijs": "11",
+            "prijsFles": "58"
+          },
+          {
+            "naam": "Gamay ‘Le Pré’",
+            "herkomst": "Beaujolais, Frankrijk",
+            "prijs": "9",
+            "prijsFles": "46"
+          },
+          {
+            "naam": "Garnacha viñas viejas",
+            "herkomst": "Calatayud, Spanje",
+            "prijs": "10",
+            "prijsFles": "52"
+          }
+        ]
+      },
+      {
+        "naam": "Bier",
+        "items": [
+          {
+            "naam": "Hanekam blond",
+            "herkomst": "Ons huisbier, gebrouwen in Melle",
+            "prijs": "5,5",
+            "prijsFles": ""
+          },
+          {
+            "naam": "Tripel van het vat",
+            "herkomst": "Oost-Vlaanderen",
+            "prijs": "6",
+            "prijsFles": ""
+          },
+          {
+            "naam": "Oud bruin, op eik gerijpt",
+            "herkomst": "Vlaamse Ardennen",
+            "prijs": "6,5",
+            "prijsFles": ""
+          }
+        ]
+      },
+      {
+        "naam": "Cocktails & zonder",
+        "items": [
+          {
+            "naam": "Negroni van de week",
+            "herkomst": "Vraag wat er vandaag in zit",
+            "prijs": "13",
+            "prijsFles": ""
+          },
+          {
+            "naam": "Jenever-tonic",
+            "herkomst": "Oude graanjenever, rozemarijn",
+            "prijs": "11",
+            "prijsFles": ""
+          },
+          {
+            "naam": "Kombucha van het huis",
+            "herkomst": "Hop en citroen, zonder alcohol",
+            "prijs": "6",
+            "prijsFles": ""
+          },
+          {
+            "naam": "Plat of bruis",
+            "herkomst": "Gefilterd, 75 cl",
+            "prijs": "",
+            "prijsFles": "5"
+          }
+        ]
+      }
+    ]
+  },
+  "verhaal": {
+    "label": "Verhaal",
+    "kop": "Een oude drukkerij, een open vuur",
+    "tekst": "In 2019 trokken Lotte Verhaeghe en Wout De Clercq in een leegstaande drukkerij aan de Kraanlei. De zetkasten werden een toog, de drukpers bleef staan en in het midden kwam een kolenoven.\n\nLotte kookte tien jaar in Brussel en Kopenhagen, Wout schonk wijn in Lyon. Samen wilden ze een plek waar je om half elf nog welkom bent, waar de kaart klein is en het eten groot van smaak.",
+    "citaat": "Ik kook liefst voor mensen die nog geen zin hebben om naar huis te gaan.",
+    "chefNaam": "Lotte Verhaeghe",
+    "chefRol": "Chef en mede-eigenaar",
+    "tweedeNaam": "Wout De Clercq",
+    "tweedeRol": "Sommelier en gastheer",
+    "foto": "",
+    "fotoAlt": ""
+  },
+  "groepen": {
+    "label": "Groepen & events",
+    "kop": "Met z'n twintigen? Neem de hele zaak.",
+    "tekst": "Voor verjaardagen, teamavonden of een trouwfeest op kleine schaal maken we een menu op maat. Je krijgt één aanspreekpunt en een vaste prijs per persoon.",
+    "opties": [
+      {
+        "titel": "Chef's table",
+        "detail": "tot 9 personen",
+        "tekst": "Aan de toog, met zicht op de keuken. Lotte serveert zelf elke gang."
+      },
+      {
+        "titel": "De achterzaal",
+        "detail": "10 tot 24 personen",
+        "tekst": "Onder de oude drukpers, met eigen bediening en een gedeeld menu."
+      },
+      {
+        "titel": "De hele zaak",
+        "detail": "tot 48 personen",
+        "tekst": "Op maandag en dinsdag is Hanekam helemaal van jou. Walking dinner of aan tafel."
+      }
+    ],
+    "knop": "Vraag een groepsvoorstel"
+  },
+  "pers": {
+    "label": "Ze zeiden",
+    "citaten": [
+      {
+        "citaat": "De beste kalfswang van de stad, en je krijgt hem nog om elf uur 's avonds.",
+        "bron": "Smaakpunt Magazine",
+        "detail": "Herfstgids 2025"
+      },
+      {
+        "citaat": "Een avond bij Hanekam voelt als een geheim dat je meteen wil doorvertellen.",
+        "bron": "Nachtvlinders",
+        "detail": "Podcast over Gent bij nacht"
+      },
+      {
+        "citaat": "Wout gaf ons een wijn die we nooit zelf hadden gekozen. Nu bestellen we hem thuis.",
+        "bron": "Sarah V.",
+        "detail": "Google-review, ★★★★★"
+      }
+    ]
+  },
+  "reservatie": {
+    "label": "Reserveren",
+    "kop": "Hou een tafel voor ons vrij",
+    "intro": "We bevestigen elke reservatie persoonlijk, meestal binnen het uur. Na 22 uur is er vaak nog plek aan de toog, ook zonder reservatie.",
+    "ticketTitel": "Tafel voor",
+    "ticketNummerLabel": "Bon",
+    "labelDatum": "Datum",
+    "labelUur": "Uur",
+    "labelPersonen": "Personen",
+    "labelNaam": "Naam",
+    "labelEmail": "E-mail",
+    "labelTelefoon": "Telefoon",
+    "labelOpmerking": "Allergieën, gelegenheid of een wens",
+    "knop": "Verstuur aanvraag",
+    "maxPersonen": 8,
+    "groepTekst": "Meer dan 8 personen? Bekijk onze groepsformules of mail ons.",
+    "tijdsloten": [
+      {
+        "uur": "17:30"
+      },
+      {
+        "uur": "18:00"
+      },
+      {
+        "uur": "18:30"
+      },
+      {
+        "uur": "19:00"
+      },
+      {
+        "uur": "19:30"
+      },
+      {
+        "uur": "20:00"
+      },
+      {
+        "uur": "20:30"
+      },
+      {
+        "uur": "21:00"
+      },
+      {
+        "uur": "21:30"
+      },
+      {
+        "uur": "22:00"
+      }
+    ],
+    "extern": "",
+    "externLabel": "Of boek meteen via ons online reservatiesysteem",
+    "bevestigingKop": "Bon ontvangen",
+    "bevestiging": "Bedankt! We kijken of je tafel vrij is en bevestigen per e-mail of telefoon, meestal binnen het uur.",
+    "beleidKop": "Goed om te weten",
+    "beleid": [
+      {
+        "tekst": "We houden je tafel een kwartier vast."
+      },
+      {
+        "tekst": "Kosteloos annuleren kan tot 24 uur vooraf."
+      },
+      {
+        "tekst": "Na 22 uur kan je zonder reservatie aan de toog terecht."
+      },
+      {
+        "tekst": "Honden zijn welkom, kinderen ook."
+      }
+    ],
+    "ofBel": "Liever bellen?"
+  },
+  "locatie": {
+    "label": "Vind ons",
+    "kop": "Aan het water, in het Patershol",
+    "tekst": "Op twee minuten wandelen van het Gravensteen. Tram 1 stopt aan de Korenmarkt, fietsen kan je kwijt aan de overkant van de Leie.",
+    "knopKaart": "Open in Google Maps"
+  },
+  "voet": {
+    "slogan": "Laat eten, lang tafelen.",
+    "credits": "Website door ARTO"
+  },
+  "nietGevonden": {
+    "kop": "Dit bord is op",
+    "tekst": "De pagina die je zoekt staat niet (meer) op de kaart. Misschien vind je hieronder wat je zocht.",
+    "knop": "Terug naar de startpagina"
+  }
+}

@@ -1,0 +1,49 @@
+<footer class="voet">
+  <section class="nood" aria-labelledby="nood-titel">
+    <div class="wrap nood__grid">
+      <div class="nood__kop">
+        <h2 id="nood-titel" class="kop-m">{{ noodnummers.titel }}</h2>
+        <p>{{ noodnummers.uitleg }}</p>
+      </div>
+      <ul class="nood__lijst">
+        {{#elk noodnummers.nummers}}<li>
+          <a href="tel:{{ nummer | tel }}"><span class="nood__nr">{{ nummer }}</span><span class="nood__naam">{{ naam }}</span><span class="nood__wanneer">{{ wanneer }}</span></a>
+        </li>{{/elk}}
+      </ul>
+    </div>
+  </section>
+  <div class="wrap voet__grid">
+    <div class="voet__merk">
+      <p class="voet__naam">{{ site.naam }}</p>
+      <p class="voet__zin">{{ voet.zin }}</p>
+    </div>
+    <div>
+      <h2 class="voet__titel">{{ voet.contactTitel }}</h2>
+      <address>
+        {{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}<br>
+        <a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br>
+        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
+      </address>
+    </div>
+    <div>
+      <h2 class="voet__titel">{{ voet.urenTitel }}</h2>
+      <dl class="uren uren--klein">
+        {{#elk openingsuren}}<div><dt>{{ dag }}</dt><dd>{{ uren }}</dd></div>{{/elk}}
+      </dl>
+    </div>
+    <div>
+      {{#als socials}}<h2 class="voet__titel">{{ voet.volgTitel }}</h2>
+      <ul class="voet__socials">
+        {{#elk socials}}{{#als url}}<li><a href="{{ url }}" rel="noopener">{{ netwerk }}</a></li>{{/als}}{{/elk}}
+      </ul>{{/als}}
+    </div>
+  </div>
+  <div class="wrap voet__onder">
+    <p>© {{ jaar }} {{ site.naam }} · {{ voet.btwLabel }} {{ contact.btw }}</p>
+    <p><a href="https://arto.be" rel="noopener">Website door ARTO</a></p>
+  </div>
+</footer>
+<div class="zweef" data-zweef>
+  <a class="knop knop--donker zweef__knop" href="#afspraak"><span class="puls" aria-hidden="true"></span>{{ navigatie.afspraak }}</a>
+  <a class="zweef__tel" href="tel:{{ contact.telefoon | tel }}" aria-label="Bel {{ contact.telefoon }}"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M6.6 3.5h2.8l1.4 4.2-2 1.4a12 12 0 0 0 6.1 6.1l1.4-2 4.2 1.4v2.8a2 2 0 0 1-2.2 2A17 17 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></a>
+</div>

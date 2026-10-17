@@ -1,0 +1,6 @@
+Lettertypes in deze map
+
+- Bricolage Grotesque (variabel: gewicht 200–800, breedte 75–100, optische maat 12–96), ontworpen door Mathieu Triay — SIL Open Font License 1.1
+- Young Serif, ontworpen door Bastien Sozeau — SIL Open Font License 1.1
+
+Bron: Google Fonts, latin-subset als woff2. Volledige licentietekst: https://openfontlicense.org

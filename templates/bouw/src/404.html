@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="fout">
+  <div class="fout__code" aria-hidden="true">
+    <svg viewBox="0 0 600 260" focusable="false">
+      <text x="300" y="214">404</text>
+      <path class="fout__scheur" d="M218 10L262 92L238 132L284 196L266 250"/>
+      <path class="fout__maat" d="M40 246H560" marker-start="url(#m-tik)" marker-end="url(#m-tik)"/>
+    </svg>
+  </div>
+  <p class="label"><span class="label__nr" aria-hidden="true">X</span>Raster 404 · niet gevonden</p>
+  <h1 class="fout__titel">{{ fout.kop }}</h1>
+  <p class="fout__tekst">{{ fout.tekst }}</p>
+  <p><a class="knop knop--geel knop--groot" href="/">{{ fout.knop }}<span class="pijl" aria-hidden="true">→</span></a></p>
+</main>
+{{> voet }}
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  {{> hoofd }}
+</head>
+<body class="p-team">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud-start">
+
+  <header class="paginakop paginakop--team">
+    <p class="label"><span class="label__nr">T.</span>{{ team.label }}</p>
+    <h1 class="paginakop__titel">{{ team.kop }}</h1>
+    <p class="paginakop__intro">{{ team.intro }}</p>
+    <ol class="paginakop__namen">{{#elk team.leden}}<li><a href="#{{ naam | slug }}">{{ voornaam }}</a></li>{{/elk}}</ol>
+  </header>
+
+  <div class="portretten">
+    {{#elk team.leden}}<article class="portret{{#als @even}} portret--spiegel{{/als}}" id="{{ naam | slug }}" aria-labelledby="naam-{{ naam | slug }}">
+      <div class="portret__beeld">
+        {{#als portret}}<img src="{{ portret }}" alt="{{ portretAlt }}" width="900" height="1200" loading="lazy">{{#anders}}<div class="monogram" aria-hidden="true"><svg class="patroon" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" focusable="false"><use href="/img/patronen.svg#kam"/></svg><span>{{ voornaam | eerste }}</span></div>{{/als}}
+        <span class="portret__nr" aria-hidden="true">{{ @nr | twee }}</span>
+      </div>
+      <div class="portret__tekst">
+        <p class="portret__rol">{{ rol }}{{#als sinds}} <span>· sinds {{ sinds }}</span>{{/als}}</p>
+        <h2 class="portret__naam" id="naam-{{ naam | slug }}">{{ naam }}</h2>
+        <blockquote class="portret__citaat"><p>{{ citaat }}</p></blockquote>
+        <p class="portret__bio">{{ bio }}</p>
+        <ol class="portret__spec">{{#elk specialisaties}}<li><span>{{ @nr | twee }}</span>{{ tekst }}</li>{{/elk}}</ol>
+        <p class="portret__acties">
+          <a class="knop knop--signaal" href="{{#als afspraak.boekingslink}}{{ afspraak.boekingslink }}" target="_blank" rel="noopener{{#anders}}/?stylist={{ voornaam | url }}#afspraak{{/als}}">{{ team.boekKnop }} {{ voornaam }}<span class="pijl" aria-hidden="true">→</span></a>
+          {{#als instagram}}<a class="knop knop--lijn" href="{{ instagram }}" rel="noopener">Instagram</a>{{/als}}
+        </p>
+      </div>
+    </article>
+    {{/elk}}
+  </div>
+
+  <section class="merken merken--team" aria-labelledby="merken-kop">
+    <div class="merken__kop">
+      <p class="label">{{ merken.label }}</p>
+      <h2 id="merken-kop">{{ merken.kop }}</h2>
+    </div>
+    <ul class="merken__lijst">
+      {{#elk merken.lijst}}<li>
+        <span class="merken__soort">{{ soort }}</span>
+        {{#als logo}}<img class="merken__logo" src="{{ logo }}" alt="{{ naam }}" width="160" height="48" loading="lazy">{{#anders}}<span class="merken__naam">{{ naam }}</span>{{/als}}
+        <span class="merken__tekst">{{ omschrijving }}</span>
+      </li>
+      {{/elk}}
+    </ul>
+  </section>
+
+  <section class="bandcta" aria-labelledby="cta-kop">
+    <h2 id="cta-kop">{{ afspraak.kop }}</h2>
+    <a class="knop knop--signaal knop--groot" href="{{> boek }}">{{ masthead.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

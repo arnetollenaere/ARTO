@@ -1,0 +1,8 @@
+<header class="kop">
+  <a class="kop-merk" href="/">{{#als site.logo}}<img src="{{ site.logo }}" alt="" width="40" height="40">{{/als}}<span>{{ site.naam }}</span></a>
+  <nav aria-label="Hoofdmenu">
+    <a href="/"{{#als pagina.is.index}} aria-current="page"{{/als}}>Start</a>
+    <a href="/menu"{{#als pagina.is.menu}} aria-current="page"{{/als}}>Menukaart</a>
+    <a href="/contact"{{#als pagina.is.contact}} aria-current="page"{{/als}}>Contact</a>
+  </nav>
+</header>

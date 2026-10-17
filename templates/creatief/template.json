@@ -1,0 +1,904 @@
+{
+  "naam": "Witte Zaal",
+  "sector": "creatief",
+  "beschrijving": "Voor architecten, interieurstudio's, fotografen, grafisch ontwerpers en videomakers. Het portfolio als tentoonstelling: monochroom met één elektrische accentkleur, werken als genummerde stukken met jaartal, een indexlijst met meebewegende preview, een horizontale galerij en case studies met grote typografie.",
+  "schemaType": "ProfessionalService",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "accent",
+        "label": "Accentkleur",
+        "hulp": "Eén elektrische kleur, gebruikt als vlak (bv. Klein-blauw #1A2FD6 of signaalrood #C42A14). Moet goed leesbaar zijn met witte tekst erop.",
+        "standaard": "#1A2FD6"
+      },
+      {
+        "sleutel": "achtergrond",
+        "label": "Achtergrond (licht)",
+        "hulp": "De 'witte muur' van de zaal. Gebroken wit werkt het best.",
+        "standaard": "#EFEDE7"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Tekst",
+        "hulp": "Bijna zwart.",
+        "standaard": "#111110"
+      },
+      {
+        "sleutel": "donker",
+        "label": "Donkere vlakken",
+        "hulp": "Voor de footer en donkere composities.",
+        "standaard": "#0D0D0C"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "teksten",
+      "titel": "Navigatie en vaste teksten",
+      "groep": "inhoud",
+      "beschrijving": "Knoppen en korte teksten die op elke pagina terugkomen.",
+      "velden": [
+        {
+          "pad": "teksten.lokatie",
+          "type": "tekst",
+          "label": "Plaatsregel in de kop",
+          "hulp": "Kleine monotekst bovenaan, bv. 'Gent — 51.05° N, 3.72° O'.",
+          "max": 40
+        },
+        {
+          "pad": "teksten.navWerk",
+          "type": "tekst",
+          "label": "Menu: werk",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.navStudio",
+          "type": "tekst",
+          "label": "Menu: studio",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.navContact",
+          "type": "tekst",
+          "label": "Menu: contact",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.menuKnop",
+          "type": "tekst",
+          "label": "Menuknop (gsm)",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.sluitKnop",
+          "type": "tekst",
+          "label": "Menu sluiten (gsm)",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.skip",
+          "type": "tekst",
+          "label": "Link 'naar de inhoud' (voor toetsenbord)",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.voetZin",
+          "type": "tekstvak",
+          "label": "Zin in de footer",
+          "max": 160
+        },
+        {
+          "pad": "teksten.urenKop",
+          "type": "tekst",
+          "label": "Kop boven de openingsuren",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.volgKop",
+          "type": "tekst",
+          "label": "Kop boven de socials",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.terug",
+          "type": "tekst",
+          "label": "Knop 'naar boven'",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.foutZaal",
+          "type": "tekst",
+          "label": "404: zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "teksten.foutKop",
+          "type": "tekst",
+          "label": "404: kop",
+          "hulp": "Pagina die verschijnt als een link niet bestaat."
+        },
+        {
+          "pad": "teksten.foutTekst",
+          "type": "tekstvak",
+          "label": "404: tekst"
+        },
+        {
+          "pad": "teksten.foutKnop",
+          "type": "tekst",
+          "label": "404: knop",
+          "breedte": "smal"
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "titel": "Startpagina: opening",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat de bezoeker ziet: één grote zin als zaaltekst, met een compositie of foto ernaast.",
+      "velden": [
+        {
+          "pad": "hero.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "hulp": "Kleine monotekst, bv. 'Zaal 01 — Studio'.",
+          "breedte": "smal"
+        },
+        {
+          "pad": "hero.titel",
+          "type": "tekstvak",
+          "label": "Grote titel",
+          "hulp": "Kort houden: 3 tot 6 woorden. Elke nieuwe regel wordt een nieuwe regel op de site.",
+          "max": 70
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "hero.knop",
+          "type": "tekst",
+          "label": "Knoptekst",
+          "breedte": "smal"
+        },
+        {
+          "pad": "hero.knopLink",
+          "type": "pagina",
+          "label": "Knop gaat naar"
+        },
+        {
+          "pad": "hero.bijschrift",
+          "type": "tekst",
+          "label": "Bijschrift bij het beeld",
+          "hulp": "Zoals een museumlabel, bv. 'Doorsnede, Huis Ter Lucht, 2024'."
+        },
+        {
+          "pad": "hero.compositie",
+          "type": "keuze",
+          "label": "Compositie (als er geen foto is)",
+          "opties": [
+            "boog",
+            "trap",
+            "kolom",
+            "vouw",
+            "plan",
+            "horizon",
+            "doorsnede",
+            "kader"
+          ]
+        },
+        {
+          "pad": "hero.vlak",
+          "type": "keuze",
+          "label": "Kleur van het vlak",
+          "opties": [
+            "licht",
+            "donker",
+            "accent"
+          ]
+        },
+        {
+          "pad": "hero.foto",
+          "type": "afbeelding",
+          "label": "Foto (optioneel)",
+          "hulp": "Staand, minstens 1200×1500 px. Leeg laten toont de compositie."
+        },
+        {
+          "pad": "hero.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto"
+        }
+      ]
+    },
+    {
+      "id": "galerij",
+      "titel": "Startpagina: galerij",
+      "groep": "inhoud",
+      "beschrijving": "De horizontale galerij met uitgelichte projecten. Welke projecten erin komen, kies je bij Projecten ('Uitlichten').",
+      "velden": [
+        {
+          "pad": "galerij.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "galerij.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "galerij.hint",
+          "type": "tekst",
+          "label": "Hint om te scrollen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "galerij.slot",
+          "type": "tekst",
+          "label": "Tekst op de laatste tegel",
+          "hulp": "Link naar alle werk, bv. 'Bekijk alle werk'."
+        }
+      ]
+    },
+    {
+      "id": "projecten",
+      "titel": "Projecten",
+      "groep": "inhoud",
+      "beschrijving": "Elk project is een werk in de tentoonstelling, met een nummer, jaartal en een eigen case study op de werkpagina.",
+      "velden": [
+        {
+          "pad": "projecten",
+          "type": "lijst",
+          "label": "Projecten",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Titel",
+              "max": 40
+            },
+            {
+              "pad": "uitgelicht",
+              "type": "schakelaar",
+              "label": "Uitlichten op de startpagina"
+            },
+            {
+              "pad": "klant",
+              "type": "tekst",
+              "label": "Klant / opdrachtgever"
+            },
+            {
+              "pad": "jaar",
+              "type": "tekst",
+              "label": "Jaar",
+              "breedte": "smal"
+            },
+            {
+              "pad": "discipline",
+              "type": "keuze",
+              "label": "Discipline",
+              "opties": [
+                "Architectuur",
+                "Interieur",
+                "Renovatie",
+                "Scenografie",
+                "Meubel",
+                "Fotografie",
+                "Grafisch ontwerp",
+                "Video"
+              ]
+            },
+            {
+              "pad": "locatie",
+              "type": "tekst",
+              "label": "Locatie",
+              "breedte": "smal"
+            },
+            {
+              "pad": "oppervlakte",
+              "type": "tekst",
+              "label": "Oppervlakte of omvang",
+              "hulp": "bv. '240 m²' of '12 beelden'.",
+              "breedte": "smal"
+            },
+            {
+              "pad": "status",
+              "type": "tekst",
+              "label": "Status",
+              "hulp": "bv. 'Opgeleverd', 'In uitvoering'.",
+              "breedte": "smal"
+            },
+            {
+              "pad": "kort",
+              "type": "tekstvak",
+              "label": "Korte omschrijving",
+              "max": 160,
+              "hulp": "Verschijnt in de galerij en in de index."
+            },
+            {
+              "pad": "tekst",
+              "type": "rijk",
+              "label": "Case study",
+              "hulp": "Het verhaal van het project. Twee tot vier korte alinea's."
+            },
+            {
+              "pad": "citaat",
+              "type": "tekstvak",
+              "label": "Citaat (optioneel)",
+              "max": 200
+            },
+            {
+              "pad": "citaatVan",
+              "type": "tekst",
+              "label": "Citaat van"
+            },
+            {
+              "pad": "compositie",
+              "type": "keuze",
+              "label": "Compositie (als er geen foto is)",
+              "opties": [
+                "boog",
+                "trap",
+                "kolom",
+                "vouw",
+                "plan",
+                "horizon",
+                "doorsnede",
+                "kader"
+              ]
+            },
+            {
+              "pad": "vlak",
+              "type": "keuze",
+              "label": "Kleur van het vlak",
+              "opties": [
+                "licht",
+                "donker",
+                "accent"
+              ]
+            },
+            {
+              "pad": "foto",
+              "type": "afbeelding",
+              "label": "Hoofdbeeld (optioneel)",
+              "hulp": "Staand 4:5, minstens 1600×2000 px, WebP. Leeg laten toont de compositie."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van het hoofdbeeld"
+            },
+            {
+              "pad": "feiten",
+              "type": "lijst",
+              "label": "Extra gegevens",
+              "itemLabel": "label",
+              "hulp": "Bijkomende regels in de fiche, bv. Team, Fotografie, Aannemer.",
+              "velden": [
+                {
+                  "pad": "label",
+                  "type": "tekst",
+                  "label": "Label",
+                  "breedte": "smal"
+                },
+                {
+                  "pad": "waarde",
+                  "type": "tekst",
+                  "label": "Waarde"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "werkpagina",
+      "titel": "Werkpagina",
+      "groep": "inhoud",
+      "beschrijving": "De pagina met de index van alle projecten en de case studies.",
+      "velden": [
+        {
+          "pad": "werkpagina.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.kop",
+          "type": "tekst",
+          "label": "Grote titel"
+        },
+        {
+          "pad": "werkpagina.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "werkpagina.filterAlles",
+          "type": "tekst",
+          "label": "Filter: alles",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.casesKop",
+          "type": "tekst",
+          "label": "Kop boven de case studies"
+        },
+        {
+          "pad": "werkpagina.lNr",
+          "type": "tekst",
+          "label": "Kolom: nummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.lTitel",
+          "type": "tekst",
+          "label": "Kolom: titel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.lKlant",
+          "type": "tekst",
+          "label": "Label: klant",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.lJaar",
+          "type": "tekst",
+          "label": "Label: jaar",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.lDiscipline",
+          "type": "tekst",
+          "label": "Label: discipline",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.lLocatie",
+          "type": "tekst",
+          "label": "Label: locatie",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.lOppervlakte",
+          "type": "tekst",
+          "label": "Label: omvang",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.lStatus",
+          "type": "tekst",
+          "label": "Label: status",
+          "breedte": "smal"
+        },
+        {
+          "pad": "werkpagina.naarIndex",
+          "type": "tekst",
+          "label": "Link terug naar de index",
+          "breedte": "smal"
+        }
+      ]
+    },
+    {
+      "id": "diensten",
+      "titel": "Disciplines en tarieven",
+      "groep": "inhoud",
+      "beschrijving": "Wat de studio doet, met een prijsindicatie.",
+      "velden": [
+        {
+          "pad": "diensten.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "diensten.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "diensten.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "diensten.voetnoot",
+          "type": "tekstvak",
+          "label": "Voetnoot bij de tarieven",
+          "hulp": "bv. 'Alle bedragen excl. btw.'"
+        },
+        {
+          "pad": "diensten.lijst",
+          "type": "lijst",
+          "label": "Disciplines",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "max": 24
+            },
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Omschrijving",
+              "max": 240
+            },
+            {
+              "pad": "prijs",
+              "type": "tekst",
+              "label": "Prijsindicatie",
+              "hulp": "bv. 'vanaf € 2.400' of '7–9 % van de bouwsom'."
+            },
+            {
+              "pad": "duur",
+              "type": "tekst",
+              "label": "Doorlooptijd",
+              "hulp": "bv. '6–10 weken'."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "studio",
+      "titel": "Studio",
+      "groep": "inhoud",
+      "beschrijving": "Over de studio: op de startpagina (kort) en op de studiopagina (volledig).",
+      "velden": [
+        {
+          "pad": "studio.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "studio.statement",
+          "type": "tekstvak",
+          "label": "Statement op de startpagina",
+          "hulp": "Eén of twee zinnen in groot lettertype.",
+          "max": 220
+        },
+        {
+          "pad": "studio.knop",
+          "type": "tekst",
+          "label": "Knop naar de studiopagina",
+          "breedte": "smal"
+        },
+        {
+          "pad": "studio.kop",
+          "type": "tekstvak",
+          "label": "Grote titel op de studiopagina",
+          "max": 80
+        },
+        {
+          "pad": "studio.intro",
+          "type": "tekstvak",
+          "label": "Inleiding op de studiopagina",
+          "max": 300
+        },
+        {
+          "pad": "studio.tekst",
+          "type": "rijk",
+          "label": "Verhaal van de studio"
+        },
+        {
+          "pad": "studio.beeldBijschrift",
+          "type": "tekst",
+          "label": "Bijschrift bij het studiobeeld"
+        },
+        {
+          "pad": "studio.foto",
+          "type": "afbeelding",
+          "label": "Foto van de studio (optioneel)",
+          "hulp": "Liggend 3:2, minstens 2000 px breed."
+        },
+        {
+          "pad": "studio.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto"
+        },
+        {
+          "pad": "studio.cijfers",
+          "type": "lijst",
+          "label": "Kerncijfers",
+          "itemLabel": "label",
+          "max": 4,
+          "velden": [
+            {
+              "pad": "getal",
+              "type": "tekst",
+              "label": "Getal",
+              "breedte": "smal"
+            },
+            {
+              "pad": "label",
+              "type": "tekst",
+              "label": "Betekenis"
+            }
+          ]
+        },
+        {
+          "pad": "studio.werkwijzeKop",
+          "type": "tekst",
+          "label": "Kop werkwijze"
+        },
+        {
+          "pad": "studio.werkwijze",
+          "type": "lijst",
+          "label": "Stappen in de werkwijze",
+          "itemLabel": "stap",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "stap",
+              "type": "tekst",
+              "label": "Stap"
+            },
+            {
+              "pad": "tekst",
+              "type": "tekstvak",
+              "label": "Uitleg",
+              "max": 240
+            }
+          ]
+        },
+        {
+          "pad": "studio.teamKop",
+          "type": "tekst",
+          "label": "Kop team"
+        },
+        {
+          "pad": "studio.team",
+          "type": "lijst",
+          "label": "Team",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "rol",
+              "type": "tekst",
+              "label": "Rol"
+            },
+            {
+              "pad": "bio",
+              "type": "tekstvak",
+              "label": "Korte bio",
+              "max": 200
+            },
+            {
+              "pad": "foto",
+              "type": "afbeelding",
+              "label": "Portret (optioneel)",
+              "hulp": "Staand 4:5, zwart-wit werkt het best. Leeg laten toont een monogram."
+            },
+            {
+              "pad": "fotoAlt",
+              "type": "tekst",
+              "label": "Beschrijving van het portret"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "klanten",
+      "titel": "Opdrachtgevers",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "klanten.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "klanten.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "klanten.lijst",
+          "type": "lijst",
+          "label": "Opdrachtgevers",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam"
+            },
+            {
+              "pad": "soort",
+              "type": "tekst",
+              "label": "Soort",
+              "hulp": "bv. 'Particulier', 'Horeca', 'Cultuur'.",
+              "breedte": "smal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "erkenningen",
+      "titel": "Prijzen en erkenningen",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "erkenningen.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "erkenningen.kop",
+          "type": "tekst",
+          "label": "Kop"
+        },
+        {
+          "pad": "erkenningen.lijst",
+          "type": "lijst",
+          "label": "Erkenningen",
+          "itemLabel": "titel",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "jaar",
+              "type": "tekst",
+              "label": "Jaar",
+              "breedte": "smal"
+            },
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Prijs of vermelding"
+            },
+            {
+              "pad": "project",
+              "type": "tekst",
+              "label": "Project"
+            },
+            {
+              "pad": "instantie",
+              "type": "tekst",
+              "label": "Uitgereikt door"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aanvraag",
+      "titel": "Start een project (formulier)",
+      "groep": "inhoud",
+      "beschrijving": "Het aanvraagformulier onderaan de startpagina en de studiopagina. Aanvragen komen binnen onder Berichten.",
+      "velden": [
+        {
+          "pad": "aanvraag.zaal",
+          "type": "tekst",
+          "label": "Zaalnummer",
+          "breedte": "smal"
+        },
+        {
+          "pad": "aanvraag.kop",
+          "type": "tekst",
+          "label": "Grote titel",
+          "max": 30
+        },
+        {
+          "pad": "aanvraag.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "aanvraag.soortLabel",
+          "type": "tekst",
+          "label": "Vraag: soort project"
+        },
+        {
+          "pad": "aanvraag.soorten",
+          "type": "lijst",
+          "label": "Keuzes: soort project",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Keuze"
+            }
+          ]
+        },
+        {
+          "pad": "aanvraag.budgetLabel",
+          "type": "tekst",
+          "label": "Vraag: budget"
+        },
+        {
+          "pad": "aanvraag.budgetten",
+          "type": "lijst",
+          "label": "Keuzes: budget",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Keuze"
+            }
+          ]
+        },
+        {
+          "pad": "aanvraag.lNaam",
+          "type": "tekst",
+          "label": "Label: naam",
+          "breedte": "smal"
+        },
+        {
+          "pad": "aanvraag.lEmail",
+          "type": "tekst",
+          "label": "Label: e-mail",
+          "breedte": "smal"
+        },
+        {
+          "pad": "aanvraag.lTelefoon",
+          "type": "tekst",
+          "label": "Label: telefoon",
+          "breedte": "smal"
+        },
+        {
+          "pad": "aanvraag.lPlaats",
+          "type": "tekst",
+          "label": "Label: locatie van het project",
+          "breedte": "smal"
+        },
+        {
+          "pad": "aanvraag.lBericht",
+          "type": "tekst",
+          "label": "Label: bericht"
+        },
+        {
+          "pad": "aanvraag.knop",
+          "type": "tekst",
+          "label": "Verzendknop",
+          "breedte": "smal"
+        },
+        {
+          "pad": "aanvraag.privacy",
+          "type": "tekstvak",
+          "label": "Privacyzin onder het formulier",
+          "max": 200
+        },
+        {
+          "pad": "aanvraag.bevestiging",
+          "type": "tekstvak",
+          "label": "Bevestiging na verzenden",
+          "max": 200
+        },
+        {
+          "pad": "aanvraag.direct",
+          "type": "tekst",
+          "label": "Kop 'liever rechtstreeks'",
+          "breedte": "smal"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+Lettertypes in deze map, zelf gehost (latin-subset, woff2), via Google Fonts:
+
+- Instrument Serif (normaal en cursief) — Rodrigo Fuenzalida, Jordan Egstad
+- Schibsted Grotesk (variabel, 400–700) — Schibsted, Bakken & Bæck
+- JetBrains Mono (variabel, 400–500) — JetBrains
+
+Alle drie vallen onder de SIL Open Font License, versie 1.1 (https://openfontlicense.org).

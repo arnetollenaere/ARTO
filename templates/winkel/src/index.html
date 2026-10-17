@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-start">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <section class="held" aria-labelledby="held-titel">
+    <div class="held__tekst">
+      <p class="bovenregel">{{ hero.bovenregel }}</p>
+      <h1 class="held__titel" id="held-titel"><span class="held__regel">{{ hero.titel }}</span> <span class="held__accent">{{ hero.titelAccent }}</span></h1>
+      <p class="held__intro">{{ hero.intro }}</p>
+      <div class="knoppen">
+        <a class="knop" href="/assortiment">{{ hero.knop }} <span aria-hidden="true">→</span></a>
+        <a class="knop knop--lijn" href="/bestellen">{{ hero.knop2 }}</a>
+      </div>
+    </div>
+    <div class="held__object">
+      <div class="held__zon" aria-hidden="true"></div>
+      <div class="held__boog" aria-hidden="true"></div>
+      {{#als hero.foto}}<img class="held__beeld held__beeld--foto" src="{{ hero.foto }}" alt="{{ hero.fotoAlt }}" width="1000" height="1000" fetchpriority="high">{{#anders}}<img class="held__beeld" src="/img/producten/{{ hero.illustratie }}.svg" alt="" width="240" height="240" fetchpriority="high">{{/als}}
+      {{#als hero.sticker}}<span class="sticker sticker--held">{{ hero.sticker }}</span>{{/als}}
+      {{#als hero.sticker2}}<span class="rondje">{{ hero.sticker2 }}</span>{{/als}}
+      <p class="prijskaart"><span class="prijskaart__naam">{{ hero.etiketNaam }}</span><span class="prijskaart__prijs"><small>€</small>{{ hero.etiketPrijs }}</span></p>
+    </div>
+  </section>
+
+  {{#als seizoen.aan}}
+  <section class="seizoen" aria-labelledby="seizoen-titel">
+    <div class="lint" aria-hidden="true">
+      <div class="lint__band">
+        <span class="lint__kop">{{ seizoen.label }}</span>{{#elk seizoen.lint}}<span>{{ tekst }}</span>{{/elk}}<span class="lint__kop">{{ seizoen.label }}</span>{{#elk seizoen.lint}}<span>{{ tekst }}</span>{{/elk}}
+      </div>
+    </div>
+    <div class="seizoen__binnen">
+      <div class="seizoen__object">
+        <div class="seizoen__boog" aria-hidden="true"></div>
+        {{#als seizoen.foto}}<img class="seizoen__beeld" src="{{ seizoen.foto }}" alt="{{ seizoen.fotoAlt }}" width="1000" height="1000" loading="lazy">{{#anders}}<img class="seizoen__beeld" src="/img/producten/{{ seizoen.illustratie }}.svg" alt="" width="240" height="240" loading="lazy">{{/als}}
+        {{#als seizoen.tot}}<span class="sticker sticker--seizoen sticker--los">{{ seizoen.tot }}</span>{{/als}}
+      </div>
+      <div class="seizoen__tekst">
+        <p class="bovenregel bovenregel--licht">{{ seizoen.label }}</p>
+        <h2 class="seizoen__titel" id="seizoen-titel">{{ seizoen.titel }}</h2>
+        <p class="seizoen__uitleg">{{ seizoen.tekst }}</p>
+        <p class="seizoen__prijs"><small>€</small>{{ seizoen.prijs }} <span>{{ seizoen.eenheid }}</span></p>
+        <a class="knop knop--geel" href="/bestellen?product={{ seizoen.product | url }}">{{ seizoen.knop }} <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+  {{/als}}
+
+  <section class="schapsectie" aria-labelledby="schap-titel">
+    <div class="sectiekop">
+      <p class="bovenregel">{{ schap.bovenregel }}</p>
+      <h2 class="sectietitel" id="schap-titel">{{ schap.titel }}</h2>
+      <p class="sectiekop__intro">{{ schap.intro }}</p>
+      <div class="schapbediening">
+        <button class="pijl" type="button" data-schap-naar="-1" aria-controls="schap-start" aria-label="Schuif terug">←</button>
+        <button class="pijl" type="button" data-schap-naar="1" aria-controls="schap-start" aria-label="Schuif verder">→</button>
+        <a class="knop knop--lijn knop--klein" href="/assortiment">{{ schap.knop }}</a>
+      </div>
+    </div>
+    <ul class="schap" id="schap-start" tabindex="0" aria-label="{{ schap.titel }}">
+      {{#elk categorieen}}{{#elk producten}}{{#als uitgelicht}}{{> product }}{{/als}}{{/elk}}{{/elk}}
+    </ul>
+  </section>
+
+  <section class="categorieen" aria-labelledby="cat-titel">
+    <h2 class="sectietitel sectietitel--klein" id="cat-titel">{{ schap.categorieTitel }}</h2>
+    <ol class="catlijst">
+      {{#elk categorieen}}
+      <li class="cat kleur--{{ kleur | slug }}">
+        <a class="cat__link" href="/assortiment#{{ anker }}">
+          <span class="cat__nr">{{ @nr | twee }}</span>
+          <span class="cat__naam">{{ naam }}</span>
+          <span class="cat__intro">{{ intro }}</span>
+          <span class="cat__aantal" aria-hidden="true">{{ producten | aantal }}</span>
+          <span class="cat__object" aria-hidden="true">{{#elk producten}}{{#als @eerste}}{{#als foto}}<img src="{{ foto }}" alt="" width="240" height="240" loading="lazy">{{#anders}}<img src="/img/producten/{{ illustratie }}.svg" alt="" width="240" height="240" loading="lazy">{{/als}}{{/als}}{{/elk}}</span>
+        </a>
+      </li>
+      {{/elk}}
+    </ol>
+  </section>
+
+  <section class="verhaal" id="verhaal" aria-labelledby="verhaal-titel">
+    <div class="verhaal__beeld">
+      {{#als verhaal.foto}}<img class="verhaal__foto" src="{{ verhaal.foto }}" alt="{{ verhaal.fotoAlt }}" width="1200" height="1500" loading="lazy">{{#anders}}
+      <div class="oven" aria-hidden="true">
+        <div class="oven__mond">
+          <div class="oven__gloed"></div>
+          <img class="oven__brood oven__brood--1" src="/img/producten/brood.svg" alt="" width="240" height="240" loading="lazy">
+          <img class="oven__brood oven__brood--2" src="/img/producten/baguette.svg" alt="" width="240" height="240" loading="lazy">
+          <img class="oven__brood oven__brood--3" src="/img/producten/brood.svg" alt="" width="240" height="240" loading="lazy">
+        </div>
+        <div class="oven__schep"></div>
+      </div>{{/als}}
+      <div class="stempel" aria-hidden="true">
+        <svg viewBox="0 0 200 200" focusable="false"><defs><path id="stempelcirkel" d="M100 100m-76 0a76 76 0 1 1 152 0a76 76 0 1 1-152 0"/></defs><text><textPath href="#stempelcirkel" textLength="472" lengthAdjust="spacing">{{ verhaal.stempel | tekst }}</textPath></text></svg>
+        <span class="stempel__jaar">{{ verhaal.sinds }}</span>
+      </div>
+    </div>
+    <div class="verhaal__tekst">
+      <p class="bovenregel">{{ verhaal.bovenregel }}</p>
+      <h2 class="sectietitel" id="verhaal-titel">{{ verhaal.titel }}</h2>
+      <div class="verhaal__lopend">{{ verhaal.tekst | md }}</div>
+      {{#als verhaal.citaat}}<figure class="citaat"><blockquote><p>{{ verhaal.citaat }}</p></blockquote><figcaption>{{ verhaal.citaatBron }}</figcaption></figure>{{/als}}
+      <ul class="feiten">
+        {{#elk verhaal.feiten}}<li><strong>{{ getal }}</strong><span>{{ tekst }}</span></li>{{/elk}}
+      </ul>
+    </div>
+  </section>
+
+  {{#als cadeaubon.aan}}
+  <section class="cadeau" id="cadeaubon" aria-labelledby="cadeau-titel">
+    <div class="cadeau__tekst">
+      <p class="bovenregel">{{ cadeaubon.bovenregel }}</p>
+      <h2 class="sectietitel" id="cadeau-titel">{{ cadeaubon.titel }}</h2>
+      <p>{{ cadeaubon.tekst }}</p>
+      <a class="knop" href="/bestellen?product={{ cadeaubon.opBon | url }}">{{ cadeaubon.knop }} <span aria-hidden="true">→</span></a>
+    </div>
+    <div class="bonstapel"><div class="bon">
+      <div class="bon__hoofd">
+        <span class="bon__woord">{{ cadeaubon.opBon }}</span>
+        <span class="bon__naam">{{ site.naam }}</span>
+        <span class="bon__klein">{{ cadeaubon.geldig }}</span>
+      </div>
+      <ul class="bon__strook">
+        {{#elk cadeaubon.bedragen}}<li><small>€</small>{{ bedrag }}</li>{{/elk}}
+      </ul>
+    </div></div>
+  </section>
+  {{/als}}
+
+  <section class="band" aria-label="{{ bestellen.titel }}">
+    <img class="band__object" src="/img/producten/{{ hero.illustratie }}.svg" alt="" width="240" height="240" loading="lazy">
+    <p class="band__zin">{{ bestellen.band }}</p>
+    <div class="knoppen">
+      <a class="knop knop--wit" href="/bestellen">{{ navigatie.knop }} <span aria-hidden="true">→</span></a>
+      {{#als contact.whatsapp}}<a class="knop knop--lijn-wit" href="https://wa.me/{{ contact.whatsapp | tel }}?text={{ bestellen.whatsappBericht | url }}" data-wa rel="noopener">{{ bestellen.whatsappKnop }}</a>{{/als}}
+    </div>
+  </section>
+
+  <section class="winkel" id="winkel" aria-labelledby="winkel-titel">
+    <div class="winkel__kop">
+      <p class="bovenregel">{{ winkel.bovenregel }}</p>
+      <h2 class="sectietitel" id="winkel-titel">{{ winkel.titel }}</h2>
+      <p class="nu" data-open-groot aria-live="polite"></p>
+    </div>
+    <ol class="uren">
+      {{#elk openingsuren}}<li class="uren__rij{{#als uren == "Gesloten"}} uren__rij--dicht{{/als}}" data-dag="{{ dag | klein }}"><span class="uren__dag">{{ dag }}</span><span class="uren__tijd">{{ uren }}</span><span class="uren__vandaag">{{ winkel.vandaag }}</span></li>{{/elk}}
+    </ol>
+    <div class="winkel__adres">
+      <p class="adres-groot">{{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}</p>
+      <p class="winkel__uitleg">{{ winkel.tekst }}</p>
+      <p class="winkel__contact"><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+      {{#als contact.kaart}}<a class="knop" href="{{ contact.kaart }}" rel="noopener">{{ winkel.routeKnop }} <span aria-hidden="true">↗</span></a>{{/als}}
+    </div>
+    <div class="kaart" aria-hidden="true">
+      <svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect class="kaart__grond" width="400" height="320"/>
+        <g class="kaart__blok"><path d="M14 20h96v70H14zM126 14h120v58H126zM262 20h124v86H262zM20 214h110v92H20zM150 236h96v70h-96zM272 206h116v100H272zM150 160h60v52h-60z"/></g>
+        <path class="kaart__rivier" d="M-20 150C60 120 110 190 190 168s140-90 240-60"/>
+        <g class="kaart__straat"><path d="M118 0v320M0 104h400M254 0l-30 320M0 200h400M300 120l70 200"/></g>
+        <path class="kaart__brug" d="M120 128v52M226 118v48"/>
+        <g class="kaart__pin" transform="translate(220 172)"><circle r="30"/><path transform="translate(-20 -20) scale(.4)" d="M50 0L57.3 32.4L85.4 14.6L67.6 42.7L100 50L67.6 57.3L85.4 85.4L57.3 67.6L50 100L42.7 67.6L14.6 85.4L32.4 57.3L0 50L32.4 42.7L14.6 14.6L42.7 32.4Z"/></g>
+        <g class="kaart__label" transform="translate(252 150) rotate(-6)"><rect x="0" y="-14" width="74" height="26" rx="13"/><text x="37" y="4" text-anchor="middle">{{ site.naam | tekst }}</text></g>
+      </svg>
+    </div>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

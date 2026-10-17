@@ -1,0 +1,4 @@
+<ul class="uren" data-uren-lijst data-open="{{ uren.open }}" data-gesloten="{{ uren.gesloten }}" data-tot="{{ uren.tot }}" data-opent="{{ uren.opent }}" data-vandaag="{{ uren.vandaag }}">
+  {{#elk openingsuren}}<li class="uren__rij" data-dag="{{ dag }}" data-uren="{{ uren }}"><span class="uren__dag">{{ dag }}</span><span class="uren__lijn" aria-hidden="true"></span><span class="uren__tijd">{{ uren }}</span></li>
+  {{/elk}}
+</ul>

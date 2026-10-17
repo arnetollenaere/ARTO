@@ -1,0 +1,28 @@
+<footer class="voet">
+  <div class="voet-binnen">
+    <p class="voet-naam" aria-hidden="true"><span class="merk-par">§</span> {{ site.naam }}</p>
+    <div class="voet-kol">
+      <h2 class="mini">{{ labels.kantoor }}</h2>
+      <address>{{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}<br>{{#als contact.kaart}}<a href="{{ contact.kaart }}" rel="noopener">{{ labels.route }}</a>{{/als}}</address>
+    </div>
+    <div class="voet-kol">
+      <h2 class="mini">{{ navigatie.contact }}</h2>
+      <p><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a><br><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+      {{#als socials}}<ul class="voet-socials">{{#elk socials}}{{#als url}}<li><a href="{{ url }}" rel="noopener me">{{ netwerk }}</a></li>{{/als}}{{/elk}}</ul>{{/als}}
+    </div>
+    <div class="voet-kol voet-juridisch">
+      <h2 class="mini">{{ labels.wettelijk }}</h2>
+      <dl>
+        <div><dt>{{ labels.vennootschap }}</dt><dd>{{ juridisch.vennootschap }}</dd></div>
+        <div><dt>{{ labels.ondernemingsnummer }}</dt><dd>{{ contact.btw }}{{#als juridisch.rpr}} · {{ juridisch.rpr }}{{/als}}</dd></div>
+        {{#als juridisch.balie}}<div><dt>{{ labels.balie }}</dt><dd>{{ juridisch.balie }}</dd></div>{{/als}}
+        {{#als juridisch.verzekering}}<div><dt>{{ labels.verzekering }}</dt><dd>{{ juridisch.verzekering }}</dd></div>{{/als}}
+        {{#als juridisch.deontologie}}<div><dt>{{ labels.deontologie }}</dt><dd>{{ juridisch.deontologie }}{{#als juridisch.deontologieLink}} <a href="{{ juridisch.deontologieLink }}" rel="noopener">{{ labels.meerInfo }}</a>{{/als}}</dd></div>{{/als}}
+      </dl>
+    </div>
+    <div class="voet-onder">
+      <p>© {{ jaar }} {{ site.naam }}{{#als juridisch.privacyLink}} · <a href="{{ juridisch.privacyLink }}">{{ labels.privacy }}</a>{{/als}}</p>
+      <p><a href="https://arto.be" rel="noopener">Website door ARTO</a></p>
+    </div>
+  </div>
+</footer>
