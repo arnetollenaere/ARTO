@@ -1,0 +1,955 @@
+{
+  "naam": "Toonbank",
+  "sector": "winkel",
+  "beschrijving": "Voor lokale winkels: bakker, delicatessenzaak, conceptstore, boetiek, bloemist, fietsenwinkel. Producten staan als objecten op kleurvlakken in horizontale schappen, met etiketten, prijzen en beschikbaarheid. Geen webshop: klanten bestellen of reserveren via een bestelbon of WhatsApp en halen af in de winkel.",
+  "schemaType": "Store",
+  "thema": {
+    "kleuren": [
+      {
+        "sleutel": "accent",
+        "label": "Hoofdkleur (terracotta)",
+        "hulp": "Knoppen, stickers en accenten. Houd ze donker genoeg voor witte tekst."
+      },
+      {
+        "sleutel": "geel",
+        "label": "Tweede kleur (botergeel)",
+        "hulp": "Kleurvlakken achter producten en de cadeaubon."
+      },
+      {
+        "sleutel": "groen",
+        "label": "Derde kleur (flessengroen)",
+        "hulp": "Seizoensbanner en donkere vlakken. Houd ze donker genoeg voor lichte tekst."
+      },
+      {
+        "sleutel": "achtergrond",
+        "label": "Achtergrond"
+      },
+      {
+        "sleutel": "tekst",
+        "label": "Tekst"
+      }
+    ]
+  },
+  "secties": [
+    {
+      "id": "navigatie",
+      "titel": "Menu en vaste teksten",
+      "groep": "inhoud",
+      "beschrijving": "De woorden in het menu bovenaan, de knop rechts en de teksten in de voettekst.",
+      "velden": [
+        {
+          "pad": "navigatie.assortiment",
+          "type": "tekst",
+          "label": "Menu: assortiment",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.bestellen",
+          "type": "tekst",
+          "label": "Menu: bestellen",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.verhaal",
+          "type": "tekst",
+          "label": "Menu: verhaal",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.winkel",
+          "type": "tekst",
+          "label": "Menu: waar we zijn",
+          "breedte": "smal"
+        },
+        {
+          "pad": "navigatie.knop",
+          "type": "tekst",
+          "label": "Knop rechtsboven",
+          "max": 24
+        },
+        {
+          "pad": "navigatie.voetZin",
+          "type": "tekst",
+          "label": "Zin in de voettekst",
+          "max": 120
+        }
+      ]
+    },
+    {
+      "id": "hero",
+      "titel": "Startpagina: bovenaan",
+      "groep": "inhoud",
+      "beschrijving": "Het eerste wat bezoekers zien: een grote titel en één product als blikvanger.",
+      "velden": [
+        {
+          "pad": "hero.bovenregel",
+          "type": "tekst",
+          "label": "Regel boven de titel",
+          "max": 60
+        },
+        {
+          "pad": "hero.titel",
+          "type": "tekst",
+          "label": "Titel, eerste deel",
+          "max": 30,
+          "hulp": "Kort en krachtig. Wordt heel groot getoond."
+        },
+        {
+          "pad": "hero.titelAccent",
+          "type": "tekst",
+          "label": "Titel, tweede deel (in accentletter)",
+          "max": 20
+        },
+        {
+          "pad": "hero.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 260
+        },
+        {
+          "pad": "hero.knop",
+          "type": "tekst",
+          "label": "Knop naar assortiment",
+          "max": 32
+        },
+        {
+          "pad": "hero.knop2",
+          "type": "tekst",
+          "label": "Knop naar bestellen",
+          "max": 32
+        },
+        {
+          "pad": "hero.illustratie",
+          "type": "keuze",
+          "label": "Getekend product",
+          "opties": [
+            "brood",
+            "baguette",
+            "croissant",
+            "taart",
+            "koek",
+            "kaas",
+            "pot",
+            "fles",
+            "zak",
+            "chocolade",
+            "cadeau",
+            "bloemen",
+            "tas",
+            "kop",
+            "fiets"
+          ],
+          "hulp": "Wordt getoond als je geen foto kiest."
+        },
+        {
+          "pad": "hero.foto",
+          "type": "afbeelding",
+          "label": "Productfoto (optioneel)",
+          "hulp": "Vrijstaand product op transparante achtergrond (PNG of WebP), vierkant, minstens 1000×1000 px."
+        },
+        {
+          "pad": "hero.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto"
+        },
+        {
+          "pad": "hero.etiketNaam",
+          "type": "tekst",
+          "label": "Prijskaartje: product",
+          "max": 34
+        },
+        {
+          "pad": "hero.etiketPrijs",
+          "type": "prijs",
+          "label": "Prijskaartje: prijs"
+        },
+        {
+          "pad": "hero.sticker",
+          "type": "tekst",
+          "label": "Sticker op het product",
+          "max": 28
+        },
+        {
+          "pad": "hero.sticker2",
+          "type": "tekst",
+          "label": "Tweede sticker",
+          "max": 18
+        }
+      ]
+    },
+    {
+      "id": "seizoen",
+      "titel": "Nu in de winkel",
+      "groep": "inhoud",
+      "beschrijving": "De seizoensbanner op de startpagina met één uitgelicht seizoensproduct en een lopende band.",
+      "velden": [
+        {
+          "pad": "seizoen.aan",
+          "type": "schakelaar",
+          "label": "Seizoensbanner tonen"
+        },
+        {
+          "pad": "seizoen.label",
+          "type": "tekst",
+          "label": "Label",
+          "max": 24,
+          "hulp": "bv. Nu in de winkel"
+        },
+        {
+          "pad": "seizoen.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "seizoen.tekst",
+          "type": "tekstvak",
+          "label": "Tekst",
+          "max": 320
+        },
+        {
+          "pad": "seizoen.prijs",
+          "type": "prijs",
+          "label": "Prijs",
+          "breedte": "smal"
+        },
+        {
+          "pad": "seizoen.eenheid",
+          "type": "tekst",
+          "label": "Per …",
+          "breedte": "smal",
+          "hulp": "bv. per taart (8 personen)"
+        },
+        {
+          "pad": "seizoen.tot",
+          "type": "tekst",
+          "label": "Hoe lang nog",
+          "max": 30,
+          "hulp": "bv. tot eind november"
+        },
+        {
+          "pad": "seizoen.knop",
+          "type": "tekst",
+          "label": "Knop",
+          "max": 30
+        },
+        {
+          "pad": "seizoen.product",
+          "type": "tekst",
+          "label": "Product dat voorgeselecteerd wordt op de bestelbon",
+          "hulp": "Exact dezelfde naam als in het assortiment."
+        },
+        {
+          "pad": "seizoen.illustratie",
+          "type": "keuze",
+          "label": "Getekend product",
+          "opties": [
+            "brood",
+            "baguette",
+            "croissant",
+            "taart",
+            "koek",
+            "kaas",
+            "pot",
+            "fles",
+            "zak",
+            "chocolade",
+            "cadeau",
+            "bloemen",
+            "tas",
+            "kop",
+            "fiets"
+          ]
+        },
+        {
+          "pad": "seizoen.foto",
+          "type": "afbeelding",
+          "label": "Productfoto (optioneel)",
+          "hulp": "Vrijstaand product, vierkant, minstens 1000×1000 px."
+        },
+        {
+          "pad": "seizoen.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto"
+        },
+        {
+          "pad": "seizoen.lint",
+          "type": "lijst",
+          "label": "Lopende band",
+          "itemLabel": "tekst",
+          "sorteerbaar": true,
+          "max": 8,
+          "velden": [
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Tekst",
+              "max": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "schap",
+      "titel": "Startpagina: uitgelichte producten",
+      "groep": "inhoud",
+      "beschrijving": "Het schap op de startpagina. Welke producten erin staan, kies je in het assortiment met 'Uitlichten op de startpagina'.",
+      "velden": [
+        {
+          "pad": "schap.bovenregel",
+          "type": "tekst",
+          "label": "Regel boven de titel",
+          "max": 40
+        },
+        {
+          "pad": "schap.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 40
+        },
+        {
+          "pad": "schap.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 200
+        },
+        {
+          "pad": "schap.knop",
+          "type": "tekst",
+          "label": "Link naar het assortiment",
+          "max": 32
+        },
+        {
+          "pad": "schap.categorieTitel",
+          "type": "tekst",
+          "label": "Titel boven de categorieën",
+          "max": 40
+        }
+      ]
+    },
+    {
+      "id": "assortiment",
+      "titel": "Assortiment",
+      "groep": "inhoud",
+      "beschrijving": "Alle producten, per categorie. Elke categorie wordt een schap met eigen kleur.",
+      "velden": [
+        {
+          "pad": "assortiment.bovenregel",
+          "type": "tekst",
+          "label": "Regel boven de titel",
+          "max": 40
+        },
+        {
+          "pad": "assortiment.titel",
+          "type": "tekst",
+          "label": "Titel van de pagina",
+          "max": 40
+        },
+        {
+          "pad": "assortiment.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 300
+        },
+        {
+          "pad": "assortiment.reserveer",
+          "type": "tekst",
+          "label": "Link bij elk product",
+          "max": 24,
+          "hulp": "bv. Reserveer"
+        },
+        {
+          "pad": "assortiment.noot",
+          "type": "rijk",
+          "label": "Noot onderaan",
+          "hulp": "bv. allergenen, prijswijzigingen."
+        },
+        {
+          "pad": "categorieen",
+          "type": "lijst",
+          "label": "Categorieën",
+          "itemLabel": "naam",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam van de categorie",
+              "max": 30
+            },
+            {
+              "pad": "anker",
+              "type": "tekst",
+              "label": "Kort webadres-woord",
+              "hulp": "Kleine letters, zonder spaties, bv. brood. Wordt assortiment#brood.",
+              "rol": "arto"
+            },
+            {
+              "pad": "intro",
+              "type": "tekstvak",
+              "label": "Korte uitleg",
+              "max": 200
+            },
+            {
+              "pad": "kleur",
+              "type": "keuze",
+              "label": "Kleur van het schap",
+              "opties": [
+                "Terracotta",
+                "Boter",
+                "Fles",
+                "Crème"
+              ]
+            },
+            {
+              "pad": "producten",
+              "type": "lijst",
+              "label": "Producten",
+              "itemLabel": "naam",
+              "sorteerbaar": true,
+              "velden": [
+                {
+                  "pad": "naam",
+                  "type": "tekst",
+                  "label": "Product",
+                  "max": 40
+                },
+                {
+                  "pad": "prijs",
+                  "type": "prijs",
+                  "label": "Prijs",
+                  "breedte": "smal"
+                },
+                {
+                  "pad": "eenheid",
+                  "type": "tekst",
+                  "label": "Per …",
+                  "breedte": "smal",
+                  "hulp": "bv. 750 g, per stuk, 8 personen"
+                },
+                {
+                  "pad": "beschrijving",
+                  "type": "tekstvak",
+                  "label": "Beschrijving",
+                  "max": 160
+                },
+                {
+                  "pad": "label",
+                  "type": "keuze",
+                  "label": "Sticker",
+                  "opties": [
+                    "Geen",
+                    "Nieuw",
+                    "Seizoen",
+                    "Favoriet",
+                    "Bio",
+                    "Uitverkocht"
+                  ]
+                },
+                {
+                  "pad": "beschikbaar",
+                  "type": "keuze",
+                  "label": "Beschikbaarheid",
+                  "opties": [
+                    "Elke dag",
+                    "Vrijdag en zaterdag",
+                    "Alleen in het weekend",
+                    "Op bestelling",
+                    "Beperkte voorraad",
+                    "Uitverkocht"
+                  ]
+                },
+                {
+                  "pad": "illustratie",
+                  "type": "keuze",
+                  "label": "Getekend product",
+                  "opties": [
+                    "brood",
+                    "baguette",
+                    "croissant",
+                    "taart",
+                    "koek",
+                    "kaas",
+                    "pot",
+                    "fles",
+                    "zak",
+                    "chocolade",
+                    "cadeau",
+                    "bloemen",
+                    "tas",
+                    "kop",
+                    "fiets"
+                  ],
+                  "hulp": "Wordt getoond als er geen foto is."
+                },
+                {
+                  "pad": "foto",
+                  "type": "afbeelding",
+                  "label": "Productfoto (optioneel)",
+                  "hulp": "Vrijstaand product op transparante achtergrond, vierkant, 800×800 px, WebP of PNG."
+                },
+                {
+                  "pad": "fotoAlt",
+                  "type": "tekst",
+                  "label": "Beschrijving van de foto"
+                },
+                {
+                  "pad": "uitgelicht",
+                  "type": "schakelaar",
+                  "label": "Uitlichten op de startpagina"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "verhaal",
+      "titel": "Ons verhaal",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "verhaal.bovenregel",
+          "type": "tekst",
+          "label": "Regel boven de titel",
+          "max": 40
+        },
+        {
+          "pad": "verhaal.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 70
+        },
+        {
+          "pad": "verhaal.tekst",
+          "type": "rijk",
+          "label": "Verhaal"
+        },
+        {
+          "pad": "verhaal.citaat",
+          "type": "tekstvak",
+          "label": "Citaat",
+          "max": 180
+        },
+        {
+          "pad": "verhaal.citaatBron",
+          "type": "tekst",
+          "label": "Wie zegt het",
+          "max": 60
+        },
+        {
+          "pad": "verhaal.stempel",
+          "type": "tekst",
+          "label": "Tekst rond de stempel",
+          "max": 44,
+          "hulp": "Loopt in een cirkel, bv. Ambachtelijk gebakken · Kortrijk ·"
+        },
+        {
+          "pad": "verhaal.sinds",
+          "type": "tekst",
+          "label": "Jaartal in de stempel",
+          "breedte": "smal"
+        },
+        {
+          "pad": "verhaal.foto",
+          "type": "afbeelding",
+          "label": "Foto van de zaak of het team (optioneel)",
+          "hulp": "Staand, 1200×1500 px. Zonder foto tonen we een getekende oven."
+        },
+        {
+          "pad": "verhaal.fotoAlt",
+          "type": "tekst",
+          "label": "Beschrijving van de foto"
+        },
+        {
+          "pad": "verhaal.feiten",
+          "type": "lijst",
+          "label": "Feiten in cijfers",
+          "itemLabel": "getal",
+          "max": 4,
+          "velden": [
+            {
+              "pad": "getal",
+              "type": "tekst",
+              "label": "Getal",
+              "breedte": "smal"
+            },
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Uitleg",
+              "max": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cadeaubon",
+      "titel": "Cadeaubonnen",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "cadeaubon.aan",
+          "type": "schakelaar",
+          "label": "Cadeaubonnen tonen"
+        },
+        {
+          "pad": "cadeaubon.bovenregel",
+          "type": "tekst",
+          "label": "Regel boven de titel",
+          "max": 40
+        },
+        {
+          "pad": "cadeaubon.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 60
+        },
+        {
+          "pad": "cadeaubon.tekst",
+          "type": "tekstvak",
+          "label": "Tekst",
+          "max": 300
+        },
+        {
+          "pad": "cadeaubon.opBon",
+          "type": "tekst",
+          "label": "Woord op de bon",
+          "max": 16,
+          "hulp": "bv. Cadeaubon"
+        },
+        {
+          "pad": "cadeaubon.geldig",
+          "type": "tekst",
+          "label": "Kleine lettertjes op de bon",
+          "max": 60
+        },
+        {
+          "pad": "cadeaubon.knop",
+          "type": "tekst",
+          "label": "Knop",
+          "max": 30
+        },
+        {
+          "pad": "cadeaubon.bedragen",
+          "type": "lijst",
+          "label": "Bedragen",
+          "itemLabel": "bedrag",
+          "sorteerbaar": true,
+          "max": 6,
+          "velden": [
+            {
+              "pad": "bedrag",
+              "type": "prijs",
+              "label": "Bedrag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bestellen",
+      "titel": "Bestellen en reserveren",
+      "groep": "inhoud",
+      "beschrijving": "De bestelpagina en de bestelband op de startpagina. Bestellingen komen binnen onder Berichten.",
+      "velden": [
+        {
+          "pad": "bestellen.bovenregel",
+          "type": "tekst",
+          "label": "Regel boven de titel",
+          "max": 40
+        },
+        {
+          "pad": "bestellen.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 50
+        },
+        {
+          "pad": "bestellen.intro",
+          "type": "tekstvak",
+          "label": "Inleiding",
+          "max": 300
+        },
+        {
+          "pad": "bestellen.band",
+          "type": "tekst",
+          "label": "Grote zin in de bestelband (startpagina)",
+          "max": 60
+        },
+        {
+          "pad": "bestellen.stappen",
+          "type": "lijst",
+          "label": "Zo werkt het",
+          "itemLabel": "titel",
+          "max": 4,
+          "velden": [
+            {
+              "pad": "titel",
+              "type": "tekst",
+              "label": "Stap",
+              "max": 30
+            },
+            {
+              "pad": "tekst",
+              "type": "tekst",
+              "label": "Uitleg",
+              "max": 100
+            }
+          ]
+        },
+        {
+          "pad": "bestellen.bonTitel",
+          "type": "tekst",
+          "label": "Titel van de bestelbon",
+          "max": 30
+        },
+        {
+          "pad": "bestellen.extraRegel",
+          "type": "tekst",
+          "label": "Tekst bij extra producten",
+          "max": 40
+        },
+        {
+          "pad": "bestellen.afhaaluren",
+          "type": "lijst",
+          "label": "Afhaalmomenten",
+          "itemLabel": "moment",
+          "sorteerbaar": true,
+          "velden": [
+            {
+              "pad": "moment",
+              "type": "tekst",
+              "label": "Moment",
+              "hulp": "bv. 07:00–09:00"
+            }
+          ]
+        },
+        {
+          "pad": "bestellen.knop",
+          "type": "tekst",
+          "label": "Verzendknop",
+          "max": 30
+        },
+        {
+          "pad": "bestellen.privacy",
+          "type": "tekst",
+          "label": "Zin onder de knop",
+          "max": 140
+        },
+        {
+          "pad": "bestellen.whatsappTitel",
+          "type": "tekst",
+          "label": "WhatsApp: titel",
+          "max": 50
+        },
+        {
+          "pad": "bestellen.whatsappTekst",
+          "type": "tekstvak",
+          "label": "WhatsApp: uitleg",
+          "max": 200
+        },
+        {
+          "pad": "bestellen.whatsappKnop",
+          "type": "tekst",
+          "label": "WhatsApp: knop",
+          "max": 30
+        },
+        {
+          "pad": "bestellen.whatsappBericht",
+          "type": "tekst",
+          "label": "WhatsApp: begin van het bericht",
+          "max": 80
+        },
+        {
+          "pad": "bestellen.regelsTitel",
+          "type": "tekst",
+          "label": "Titel boven 'goed om te weten'",
+          "max": 40
+        },
+        {
+          "pad": "bestellen.regels",
+          "type": "rijk",
+          "label": "Goed om te weten",
+          "hulp": "Bestel-termijnen, betalen, annuleren."
+        },
+        {
+          "pad": "bestellen.bedankTitel",
+          "type": "tekst",
+          "label": "Bevestiging: titel",
+          "max": 40
+        },
+        {
+          "pad": "bestellen.bedankTekst",
+          "type": "tekstvak",
+          "label": "Bevestiging: tekst",
+          "max": 240
+        },
+        {
+          "pad": "bestellen.labels",
+          "type": "groep",
+          "label": "Woorden op de bestelbon",
+          "velden": [
+            {
+              "pad": "product",
+              "type": "tekst",
+              "label": "Product",
+              "breedte": "smal"
+            },
+            {
+              "pad": "kies",
+              "type": "tekst",
+              "label": "Eerste keuze in de lijst",
+              "breedte": "smal",
+              "hulp": "bv. Kies een product"
+            },
+            {
+              "pad": "aantal",
+              "type": "tekst",
+              "label": "Aantal",
+              "breedte": "smal"
+            },
+            {
+              "pad": "dag",
+              "type": "tekst",
+              "label": "Afhaaldag",
+              "breedte": "smal"
+            },
+            {
+              "pad": "moment",
+              "type": "tekst",
+              "label": "Afhaalmoment",
+              "breedte": "smal"
+            },
+            {
+              "pad": "naam",
+              "type": "tekst",
+              "label": "Naam",
+              "breedte": "smal"
+            },
+            {
+              "pad": "telefoon",
+              "type": "tekst",
+              "label": "Telefoon",
+              "breedte": "smal"
+            },
+            {
+              "pad": "email",
+              "type": "tekst",
+              "label": "E-mail",
+              "breedte": "smal"
+            },
+            {
+              "pad": "opmerking",
+              "type": "tekst",
+              "label": "Opmerking",
+              "breedte": "smal"
+            },
+            {
+              "pad": "dicht",
+              "type": "tekst",
+              "label": "Melding als de winkel die dag dicht is",
+              "hulp": "bv. Op die dag zijn we gesloten. Kies een andere dag."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "winkel",
+      "titel": "Waar je ons vindt",
+      "groep": "gegevens",
+      "beschrijving": "Het blok met openingsuren, adres en route. De uren zelf pas je aan onder Openingsuren.",
+      "velden": [
+        {
+          "pad": "winkel.bovenregel",
+          "type": "tekst",
+          "label": "Regel boven de titel",
+          "max": 40
+        },
+        {
+          "pad": "winkel.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 50
+        },
+        {
+          "pad": "winkel.tekst",
+          "type": "tekstvak",
+          "label": "Uitleg (parkeren, bereikbaarheid)",
+          "max": 280
+        },
+        {
+          "pad": "winkel.routeKnop",
+          "type": "tekst",
+          "label": "Knop naar de kaart",
+          "max": 30
+        },
+        {
+          "pad": "winkel.vandaag",
+          "type": "tekst",
+          "label": "Woord bij de dag van vandaag",
+          "max": 14
+        },
+        {
+          "pad": "winkel.openTot",
+          "type": "tekst",
+          "label": "Indicator: open tot",
+          "hulp": "bv. Vandaag open tot"
+        },
+        {
+          "pad": "winkel.openOm",
+          "type": "tekst",
+          "label": "Indicator: opent straks",
+          "hulp": "bv. Vandaag open vanaf"
+        },
+        {
+          "pad": "winkel.gesloten",
+          "type": "tekst",
+          "label": "Indicator: gesloten",
+          "hulp": "bv. Nu gesloten"
+        },
+        {
+          "pad": "winkel.volgende",
+          "type": "tekst",
+          "label": "Indicator: volgende opening",
+          "hulp": "bv. open op"
+        },
+        {
+          "pad": "winkel.morgen",
+          "type": "tekst",
+          "label": "Indicator: morgen weer open",
+          "hulp": "bv. morgen open om"
+        }
+      ]
+    },
+    {
+      "id": "nietgevonden",
+      "titel": "Pagina niet gevonden",
+      "groep": "inhoud",
+      "velden": [
+        {
+          "pad": "nietgevonden.titel",
+          "type": "tekst",
+          "label": "Titel",
+          "max": 40
+        },
+        {
+          "pad": "nietgevonden.tekst",
+          "type": "tekstvak",
+          "label": "Tekst",
+          "max": 200
+        },
+        {
+          "pad": "nietgevonden.knop",
+          "type": "tekst",
+          "label": "Knop",
+          "max": 30
+        }
+      ]
+    }
+  ]
+}

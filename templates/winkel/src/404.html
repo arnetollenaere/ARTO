@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-404">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud" class="leeg">
+  <div class="leeg__schap" aria-hidden="true">
+    <span class="leeg__kruimel"></span><span class="leeg__kruimel leeg__kruimel--2"></span><span class="leeg__kruimel leeg__kruimel--3"></span>
+    <span class="sticker sticker--uitverkocht leeg__sticker">404</span>
+  </div>
+  <h1 class="paginatitel">{{ nietgevonden.titel }}</h1>
+  <p class="paginakop__intro">{{ nietgevonden.tekst }}</p>
+  <div class="knoppen">
+    <a class="knop" href="/">{{ nietgevonden.knop }} <span aria-hidden="true">→</span></a>
+    <a class="knop knop--lijn" href="/assortiment">{{ navigatie.assortiment }}</a>
+  </div>
+</main>
+{{> voet }}
+</body>
+</html>

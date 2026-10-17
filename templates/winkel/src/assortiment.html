@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> hoofd }}
+</head>
+<body class="p-assortiment">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+  <header class="paginakop">
+    <p class="bovenregel">{{ assortiment.bovenregel }}</p>
+    <h1 class="paginatitel">{{ assortiment.titel }}</h1>
+    <p class="paginakop__intro">{{ assortiment.intro }}</p>
+    <nav class="chips" aria-label="{{ schap.categorieTitel }}">
+      {{#elk categorieen}}<a class="chip kleur--{{ kleur | slug }}" href="#{{ anker }}">{{ naam }}<span class="chip__aantal">{{ producten | aantal }}</span></a>{{/elk}}
+    </nav>
+  </header>
+
+  {{#elk categorieen}}
+  <section class="catschap kleur--{{ kleur | slug }}" id="{{ anker }}" aria-labelledby="cat-{{ anker }}">
+    <div class="catschap__kop">
+      <span class="catschap__nr" aria-hidden="true">{{ @nr | twee }}</span>
+      <h2 class="catschap__titel" id="cat-{{ anker }}">{{ naam }}</h2>
+      <p class="catschap__intro">{{ intro }}</p>
+      <div class="schapbediening">
+        <button class="pijl" type="button" data-schap-naar="-1" aria-controls="schap-{{ anker }}" aria-label="Schuif terug in {{ naam }}">←</button>
+        <button class="pijl" type="button" data-schap-naar="1" aria-controls="schap-{{ anker }}" aria-label="Schuif verder in {{ naam }}">→</button>
+      </div>
+    </div>
+    <ul class="schap" id="schap-{{ anker }}" tabindex="0" aria-label="{{ naam }}">
+      {{#elk producten}}{{> product }}{{/elk}}
+    </ul>
+  </section>
+  {{/elk}}
+
+  <section class="noot" aria-label="{{ bestellen.regelsTitel }}">
+    <div class="noot__tekst">{{ assortiment.noot | md }}</div>
+  </section>
+
+  <section class="band" aria-label="{{ bestellen.titel }}">
+    <img class="band__object" src="/img/producten/{{ hero.illustratie }}.svg" alt="" width="240" height="240" loading="lazy">
+    <p class="band__zin">{{ bestellen.band }}</p>
+    <div class="knoppen">
+      <a class="knop knop--wit" href="/bestellen">{{ navigatie.knop }} <span aria-hidden="true">→</span></a>
+      {{#als contact.whatsapp}}<a class="knop knop--lijn-wit" href="https://wa.me/{{ contact.whatsapp | tel }}?text={{ bestellen.whatsappBericht | url }}" data-wa rel="noopener">{{ bestellen.whatsappKnop }}</a>{{/als}}
+    </div>
+  </section>
+</main>
+{{> voet }}
+</body>
+</html>

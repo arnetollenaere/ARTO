@@ -1,0 +1,18 @@
+<a class="skip" href="#inhoud">Naar de inhoud</a>
+<header class="kop" data-kop>
+  <a class="merk" href="/" aria-label="{{ site.naam }}, naar de startpagina">
+    {{#als site.logo}}<img class="merk__logo" src="{{ site.logo }}" alt="{{ site.naam }}" height="44">{{#anders}}<svg class="merk__vonk" viewBox="0 0 100 100" aria-hidden="true" focusable="false"><path d="M50 0L57.3 32.4L85.4 14.6L67.6 42.7L100 50L67.6 57.3L85.4 85.4L57.3 67.6L50 100L42.7 67.6L14.6 85.4L32.4 57.3L0 50L32.4 42.7L14.6 14.6L42.7 32.4Z"/></svg><span class="merk__naam">{{ site.naam }}</span>{{/als}}
+  </a>
+  <nav class="nav" id="hoofdmenu" aria-label="Hoofdmenu">
+    <ul class="nav__lijst">
+      <li><a href="/assortiment"{{#als pagina.is.assortiment}} aria-current="page"{{/als}}>{{ navigatie.assortiment }}</a></li>
+      <li><a href="/#verhaal">{{ navigatie.verhaal }}</a></li>
+      <li><a href="/#winkel">{{ navigatie.winkel }}</a></li>
+      <li><a href="/bestellen"{{#als pagina.is.bestellen}} aria-current="page"{{/als}}>{{ navigatie.bestellen }}</a></li>
+    </ul>
+    <p class="nav__adres">{{ contact.adres }}, {{ contact.postcode }} {{ contact.gemeente }}<br><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></p>
+  </nav>
+  <a class="open-pil" href="/#winkel" data-open data-uren="{{#elk openingsuren}}{{ dag }}={{ uren }};{{/elk}}" data-tot="{{ winkel.openTot }}" data-om="{{ winkel.openOm }}" data-dicht="{{ winkel.gesloten }}" data-volgende="{{ winkel.volgende }}" data-morgen="{{ winkel.morgen }}"><span class="open-pil__stip" aria-hidden="true"></span><span data-open-tekst>{{ contact.gemeente }}</span></a>
+  <a class="knop knop--kop" href="/bestellen">{{ navigatie.knop }}</a>
+  <button class="menuknop" type="button" aria-expanded="false" aria-controls="hoofdmenu"><span class="menuknop__streep" aria-hidden="true"></span><span class="vh">Menu</span></button>
+</header>

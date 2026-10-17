@@ -1,0 +1,12 @@
+<li class="product kleur--{{ kleur | slug }}{{#als beschikbaar == "Uitverkocht"}} product--op{{/als}}">
+  <div class="product__tegel">
+    {{#als foto}}<img class="product__beeld product__beeld--foto" src="{{ foto }}" alt="{{ fotoAlt }}" width="800" height="800" loading="lazy" decoding="async">{{#anders}}<img class="product__beeld" src="/img/producten/{{ illustratie }}.svg" alt="" width="240" height="240" loading="lazy" decoding="async">{{/als}}
+    {{#als label}}{{#als label != "Geen"}}<span class="sticker sticker--{{ label | slug }}">{{ label }}</span>{{/als}}{{/als}}
+  </div>
+  <div class="etiket">
+    <h3 class="etiket__naam">{{ naam }}</h3>
+    <p class="etiket__prijs"><span class="etiket__euro">€</span>{{ prijs }}<span class="etiket__eenheid">{{ eenheid }}</span></p>
+    {{#als beschrijving}}<p class="etiket__tekst">{{ beschrijving }}</p>{{/als}}
+    <p class="etiket__voet"><span class="beschikbaar beschikbaar--{{ beschikbaar | slug }}">{{ beschikbaar }}</span>{{#als beschikbaar != "Uitverkocht"}}<a class="etiket__link" href="/bestellen?product={{ naam | url }}">{{ assortiment.reserveer }}<span class="vh">: {{ naam }}</span> →</a>{{/als}}</p>
+  </div>
+</li>
