@@ -1,0 +1,8 @@
+Lettertypes in deze map (zelf gehost, latin-subset, woff2):
+
+- Bodoni Moda (normaal en cursief, variabel: opsz 6–96, wght 400–900) — Owen Earl (indestructible type*)
+- Archivo (variabel: wdth 62–125, wght 100–900) — Omnibus-Type
+- IBM Plex Mono (400) — IBM
+
+Alle drie vallen onder de SIL Open Font License, versie 1.1.
+https://openfontlicense.org

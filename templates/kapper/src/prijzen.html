@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  {{> hoofd }}
+</head>
+<body class="p-prijzen">
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud-start">
+
+  <header class="paginakop">
+    <p class="label"><span class="label__nr">P.</span>{{ prijzen.label }}</p>
+    <h1 class="paginakop__titel">{{ prijzen.kop }}</h1>
+    <p class="paginakop__intro">{{ prijzen.intro }}</p>
+    <svg class="paginakop__patroon" viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><use href="/img/patronen.svg#coupe"/></svg>
+  </header>
+
+  <div class="catalogus">
+    <nav class="catalogus__index" aria-label="Categorieën">
+      <ol>
+        {{#elk prijzen.categorieen}}<li><a href="#{{ categorie | slug }}"><span class="code">{{ code }}</span>{{ categorie }}<span class="aantal">{{ diensten | aantal }}</span></a></li>
+        {{/elk}}
+      </ol>
+    </nav>
+
+    <div class="catalogus__inhoud">
+      {{#elk prijzen.categorieen}}<section class="categorie" id="{{ categorie | slug }}" aria-labelledby="cat-{{ categorie | slug }}">
+        <div class="categorie__kop">
+          <span class="categorie__code" aria-hidden="true">{{ code }}</span>
+          <h2 id="cat-{{ categorie | slug }}">{{ categorie }}</h2>
+          <p>{{ intro }}</p>
+        </div>
+        <table class="prijstabel">
+          <caption class="vh">{{ categorie }}</caption>
+          <thead><tr><th scope="col" class="kol-nr">Nº</th><th scope="col">{{ prijzen.kolomDienst }}</th><th scope="col" class="kol-duur">{{ prijzen.kolomDuur }}</th><th scope="col" class="kol-prijs">{{ prijzen.kolomPrijs }}</th></tr></thead>
+          <tbody>
+            {{#elk diensten}}<tr>
+              <td class="kol-nr">{{ code }}{{ @nr | twee }}</td>
+              <th scope="row" class="kol-dienst">{{ naam }}{{#als omschrijving}}<small>{{ omschrijving }}</small>{{/als}}</th>
+              <td class="kol-duur">{{ duur }}</td>
+              <td class="kol-prijs">{{#als prijs}}{{#als vanaf}}<small>{{ prijzen.vanafTekst }}</small>{{/als}}€{{ prijs }}{{#anders}}<small>{{ prijzen.opAanvraag }}</small>{{/als}}</td>
+            </tr>
+            {{/elk}}
+          </tbody>
+        </table>
+      </section>
+      {{/elk}}
+      <div class="catalogus__voetnoot">{{ prijzen.voetnoot | md }}</div>
+    </div>
+  </div>
+
+  <section class="bandcta" aria-labelledby="cta-kop">
+    <h2 id="cta-kop">{{ afspraak.kop }}</h2>
+    <a class="knop knop--signaal knop--groot" href="{{> boek }}">{{ masthead.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>
