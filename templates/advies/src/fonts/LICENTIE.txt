@@ -1,0 +1,4 @@
+Lettertypes in deze map
+- Newsreader (Production Type) — SIL Open Font License 1.1
+- Hanken Grotesk (Alfredo Marco Pradil) — SIL Open Font License 1.1
+Bron: Google Fonts (latin-subset, woff2). Volledige licentie: https://openfontlicense.org

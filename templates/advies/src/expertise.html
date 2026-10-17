@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> kop }}
+</head>
+<body class="p-sub">
+{{> mededeling }}
+{{> header }}
+<main id="inhoud">
+  <header class="pagina-kop">
+    <p class="par"><span>§</span> {{ paginas.expertise.label }}</p>
+    <h1>{{ paginas.expertise.titel }}</h1>
+    <p class="sectie-intro">{{ paginas.expertise.intro }}</p>
+  </header>
+  <div class="dossier">
+    <nav class="dossier-index" aria-label="{{ paginas.expertise.label }}">
+      <ol>{{#elk expertise.domeinen}}<li><a href="#{{ naam | slug }}"><span>{{ @nr | twee }}</span>{{ naam }}</a></li>{{/elk}}</ol>
+    </nav>
+    <div class="dossier-inhoud">
+      {{#elk expertise.domeinen}}
+      <article class="domein" id="{{ naam | slug }}" aria-labelledby="d-{{ @nr }}">
+        <hr class="teken">
+        <p class="par"><span>§ 01.{{ @nr }}</span></p>
+        <h2 id="d-{{ @nr }}">{{ naam }}</h2>
+        <p class="domein-kort">{{ kort }}</p>
+        <div class="rijk domein-tekst">{{ uitleg | md }}</div>
+        {{#als voorbeelden}}<p class="trefwoorden">{{ voorbeelden }}</p>{{/als}}
+      </article>
+      {{/elk}}
+      <aside class="cta">
+        <p class="cta-titel">{{ gesprek.titel }}</p>
+        <a class="knop" href="/#gesprek">{{ hero.knop }} <span class="pijl" aria-hidden="true">→</span></a>
+      </aside>
+    </div>
+  </div>
+</main>
+{{> voet }}
+</body>
+</html>

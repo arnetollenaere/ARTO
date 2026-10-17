@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> kop }}
+</head>
+<body class="p-start">
+{{> mededeling }}
+{{> header }}
+<main id="inhoud">
+
+  <section class="hero" aria-labelledby="titel">
+    <ul class="hero-meta">
+      <li><span class="mini">{{ hero.label }}</span></li>
+      <li><span class="mini">{{ labels.sinds }}</span> {{ kantoor.sinds }}</li>
+      <li><span class="mini">{{ labels.orde }}</span> {{ kantoor.balie }}</li>
+      <li><span class="mini">{{ labels.talen }}</span> {{ kantoor.talen }}</li>
+    </ul>
+    <h1 id="titel" class="hero-titel"><span class="hero-regel">{{ hero.titel }}</span> <em class="hero-accent">{{ hero.titelAccent }}</em></h1>
+    <div class="hero-onder">
+      <figure class="zegel" aria-hidden="true">
+        <svg viewBox="0 0 200 200" width="200" height="200">
+          <defs><path id="zegel-pad" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs>
+          <circle cx="100" cy="100" r="97" class="z-lijn"/>
+          <circle cx="100" cy="100" r="68" class="z-lijn"/>
+          <circle cx="100" cy="100" r="64" class="z-lijn z-fijn"/>
+          <g class="z-draai"><text class="z-tekst"><textPath href="#zegel-pad" textLength="510" lengthAdjust="spacing">{{ site.naam | tekst }} · {{ hero.zegel | tekst }} · </textPath></text></g>
+          <text x="100" y="128" text-anchor="middle" class="z-par">§</text>
+        </svg>
+        <figcaption class="mini">{{ kantoor.plaats }}</figcaption>
+      </figure>
+      <div class="hero-tekst">
+        <p class="hero-intro">{{ hero.intro }}</p>
+        <p class="hero-knoppen">
+          <a class="knop" href="#gesprek">{{ hero.knop }} <span class="pijl" aria-hidden="true">→</span></a>
+          <a class="link" href="/expertise">{{ hero.tweedeKnop }}</a>
+        </p>
+      </div>
+      <nav class="hero-index" aria-label="Op deze pagina">
+        <p class="mini">{{ labels.inhoud }}</p>
+        <ol>
+          <li><a href="#expertise"><span>§ 01</span>{{ expertise.label }}</a></li>
+          <li><a href="#cijfers"><span>§ 02</span>{{ cijfers.label }}</a></li>
+          <li><a href="#werkwijze"><span>§ 03</span>{{ werkwijze.label }}</a></li>
+          <li><a href="#tarieven"><span>§ 04</span>{{ tarieven.label }}</a></li>
+          <li><a href="#team"><span>§ 05</span>{{ team.label }}</a></li>
+          <li><a href="#inzichten"><span>§ 06</span>{{ inzichten.label }}</a></li>
+          <li><a href="#vragen"><span>§ 07</span>{{ faq.label }}</a></li>
+          <li><a href="#gesprek"><span>§ 08</span>{{ gesprek.label }}</a></li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <section class="sectie" id="expertise" aria-labelledby="t-expertise">
+    <hr class="teken">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 01</span> {{ expertise.label }}</p>
+      <h2 id="t-expertise">{{ expertise.titel }}</h2>
+      <p class="sectie-intro">{{ expertise.intro }}</p>
+    </header>
+    <ol class="index">
+      {{#elk expertise.domeinen}}
+      <li>
+        <details class="index-item">
+          <summary>
+            <span class="index-nr">{{ @nr | twee }}</span>
+            <span class="index-naam">{{ naam }}</span>
+            <span class="index-kort">{{ kort }}</span>
+            <span class="plus" aria-hidden="true"></span>
+          </summary>
+          <div class="index-uitleg">
+            <div class="rijk">{{ uitleg | md }}</div>
+            {{#als voorbeelden}}<p class="trefwoorden">{{ voorbeelden }}</p>{{/als}}
+          </div>
+        </details>
+      </li>
+      {{/elk}}
+    </ol>
+    <p class="sectie-verder"><a class="link" href="/expertise">{{ expertise.meer }}</a></p>
+  </section>
+
+  <section class="sectie sectie-inkt" id="cijfers" aria-labelledby="t-cijfers">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 02</span> {{ cijfers.label }}</p>
+      <h2 id="t-cijfers">{{ cijfers.titel }}</h2>
+    </header>
+    <ul class="cijfers">
+      {{#elk cijfers.items}}
+      <li><span class="cijfer"><span data-tel="{{ getal }}">{{ getal }}</span>{{ achter }}</span><span class="cijfer-label">{{ label }}</span></li>
+      {{/elk}}
+    </ul>
+  </section>
+
+  <section class="sectie" id="werkwijze" aria-labelledby="t-werkwijze">
+    <hr class="teken">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 03</span> {{ werkwijze.label }}</p>
+      <h2 id="t-werkwijze">{{ werkwijze.titel }}</h2>
+      <p class="sectie-intro">{{ werkwijze.intro }}</p>
+    </header>
+    <ol class="stappen">
+      {{#elk werkwijze.stappen}}
+      <li class="stap">
+        <span class="stap-nr">{{ @nr | twee }}</span>
+        <h3>{{ titel }}</h3>
+        <p class="stap-duur">{{ duur }}</p>
+        <p>{{ tekst }}</p>
+      </li>
+      {{/elk}}
+    </ol>
+  </section>
+
+  <section class="sectie" id="tarieven" aria-labelledby="t-tarieven">
+    <hr class="teken">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 04</span> {{ tarieven.label }}</p>
+      <h2 id="t-tarieven">{{ tarieven.titel }}</h2>
+      <p class="sectie-intro">{{ tarieven.intro }}</p>
+    </header>
+    <ul class="tarieven">
+      {{#elk tarieven.items}}
+      <li class="tarief">
+        <h3>{{ naam }}</h3>
+        <p class="tarief-uitleg">{{ toelichting }}</p>
+        <p class="tarief-prijs"><span class="euro">€</span>{{ prijs }}<span class="tarief-eenheid">{{ eenheid }}</span></p>
+      </li>
+      {{/elk}}
+    </ul>
+    {{#als tarieven.noot}}<p class="nota"><span class="mini">{{ labels.notaBene }}</span>{{ tarieven.noot }}</p>{{/als}}
+  </section>
+
+  <section class="sectie" id="team" aria-labelledby="t-team">
+    <hr class="teken">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 05</span> {{ team.label }}</p>
+      <h2 id="t-team">{{ team.titel }}</h2>
+      <p class="sectie-intro">{{ team.intro }}</p>
+    </header>
+    <div class="register" role="table" aria-label="{{ team.label }}">
+      <div class="register-rij register-kop" role="row">
+        <span role="columnheader">{{ labels.naam }}</span><span role="columnheader">{{ labels.rol }}</span><span role="columnheader">{{ labels.domein }}</span><span role="columnheader">{{ labels.talen }}</span><span role="columnheader">{{ labels.orde }}</span>
+      </div>
+      {{#elk team.leden}}
+      <a class="register-rij" role="row" href="/team#{{ naam | slug }}">
+        <span role="cell" class="register-naam">{{ naam }}</span>
+        <span role="cell">{{ rol }}</span>
+        <span role="cell" class="register-dom">{{ specialisaties }}</span>
+        <span role="cell" class="register-talen">{{ talen }}</span>
+        <span role="cell" class="register-balie">{{ balie }}{{#als sinds}} · {{ sinds }}{{/als}}</span>
+      </a>
+      {{/elk}}
+    </div>
+    <p class="sectie-verder"><a class="link" href="/team">{{ team.meer }}</a></p>
+  </section>
+
+  <section class="sectie" id="inzichten" aria-labelledby="t-inzichten">
+    <hr class="teken">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 06</span> {{ inzichten.label }}</p>
+      <h2 id="t-inzichten">{{ inzichten.titel }}</h2>
+      <p class="sectie-intro">{{ inzichten.intro }}</p>
+    </header>
+    <ol class="artikels artikels-kort">
+      {{#elk inzichten.artikels}}
+      <li>
+        <a class="artikel-rij" href="/inzichten#{{ titel | slug }}">
+          <time datetime="{{ datum }}" data-datum>{{ datum }}</time>
+          <span class="artikel-cat">{{ categorie }}</span>
+          <span class="artikel-titel">{{ titel }}</span>
+          <span class="artikel-sam">{{ samenvatting }}</span>
+          <span class="pijl" aria-hidden="true">→</span>
+        </a>
+      </li>
+      {{/elk}}
+    </ol>
+    <p class="sectie-verder"><a class="link" href="/inzichten">{{ inzichten.meer }}</a></p>
+  </section>
+
+  <section class="sectie" id="vragen" aria-labelledby="t-vragen">
+    <hr class="teken">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 07</span> {{ faq.label }}</p>
+      <h2 id="t-vragen">{{ faq.titel }}</h2>
+    </header>
+    <div class="faq">
+      {{#elk faq.items}}
+      <details>
+        <summary><span class="faq-nr">{{ @nr | twee }}</span><span class="faq-vraag">{{ vraag }}</span><span class="plus" aria-hidden="true"></span></summary>
+        <p>{{ antwoord }}</p>
+      </details>
+      {{/elk}}
+    </div>
+  </section>
+
+  <section class="sectie sectie-gesprek" id="gesprek" aria-labelledby="t-gesprek">
+    <hr class="teken">
+    <header class="sectie-kop">
+      <p class="par"><span>§ 08</span> {{ gesprek.label }}</p>
+      <h2 id="t-gesprek">{{ gesprek.titel }}</h2>
+      <p class="sectie-intro">{{ gesprek.intro }}</p>
+    </header>
+    <div class="gesprek">
+      <aside class="gegevens" id="contact" aria-label="{{ navigatie.contact }}">
+        <dl>
+          <div><dt class="mini">{{ labels.adres }}</dt><dd>{{ contact.adres }}<br>{{ contact.postcode }} {{ contact.gemeente }}{{#als contact.kaart}}<br><a class="link" href="{{ contact.kaart }}" rel="noopener">{{ labels.route }}</a>{{/als}}</dd></div>
+          <div><dt class="mini">{{ labels.telefoon }}</dt><dd><a href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></dd></div>
+          <div><dt class="mini">{{ labels.email }}</dt><dd><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></dd></div>
+        </dl>
+        <table class="uren">
+          <caption class="mini">{{ labels.kantooruren }}</caption>
+          <tbody>
+          {{#elk openingsuren}}<tr><th scope="row">{{ dag }}</th><td>{{ uren }}</td></tr>{{/elk}}
+          </tbody>
+        </table>
+      </aside>
+      <form class="formulier" method="post" action="/api/bericht" data-formulier>
+        <input type="hidden" name="_formulier" value="eerste-gesprek">
+        <input name="_honing" tabindex="-1" autocomplete="off" hidden aria-hidden="true">
+        <div class="bevestiging" role="status" hidden data-bevestiging><span class="mini">{{ labels.ontvangen }}</span><p>{{ gesprek.bevestiging }}</p></div>
+        <div class="veld"><label for="f-naam">{{ labels.naam }}</label><input id="f-naam" name="naam" autocomplete="name" required></div>
+        <div class="veld veld-half"><label for="f-email">{{ labels.email }}</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="veld veld-half"><label for="f-tel">{{ labels.telefoon }} <span class="optioneel">{{ labels.optioneel }}</span></label><input id="f-tel" name="telefoon" type="tel" autocomplete="tel"></div>
+        <div class="veld"><label for="f-onderwerp">{{ labels.onderwerp }}</label>
+          <select id="f-onderwerp" name="onderwerp">{{#elk gesprek.onderwerpen}}<option>{{ naam }}</option>{{/elk}}</select>
+        </div>
+        <fieldset class="veld keuzes">
+          <legend>{{ labels.voorkeur }}</legend>
+          {{#elk gesprek.voorkeur}}<label class="keuze"><input type="radio" name="voorkeur" value="{{ naam }}"{{#als @eerste}} checked{{/als}}><span>{{ naam }}</span></label>{{/elk}}
+        </fieldset>
+        <div class="veld"><label for="f-vraag">{{ labels.vraag }}</label><textarea id="f-vraag" name="bericht" rows="5" required></textarea></div>
+        <div class="formulier-onder">
+          <p class="privacy">{{ gesprek.privacy }}</p>
+          <button class="knop" type="submit">{{ gesprek.knop }} <span class="pijl" aria-hidden="true">→</span></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

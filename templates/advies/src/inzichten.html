@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> kop }}
+</head>
+<body class="p-sub">
+{{> mededeling }}
+{{> header }}
+<main id="inhoud">
+  <header class="pagina-kop">
+    <p class="par"><span>§</span> {{ paginas.inzichten.label }}</p>
+    <h1>{{ paginas.inzichten.titel }}</h1>
+    <p class="sectie-intro">{{ paginas.inzichten.intro }}</p>
+  </header>
+  <ol class="artikels artikels-lang">
+    {{#elk inzichten.artikels}}
+    <li>
+      <article class="artikel" id="{{ titel | slug }}" aria-labelledby="a-{{ @nr }}">
+        <hr class="teken">
+        <div class="artikel-meta">
+          <p class="par"><span>§ 06.{{ @nr }}</span></p>
+          <p><time datetime="{{ datum }}" data-datum>{{ datum }}</time></p>
+          <p class="artikel-cat">{{ categorie }}</p>
+          {{#als auteur}}<p class="artikel-auteur">{{ auteur }}</p>{{/als}}
+        </div>
+        <div class="artikel-body">
+          <h2 id="a-{{ @nr }}">{{ titel }}</h2>
+          <p class="artikel-lead">{{ samenvatting }}</p>
+          <div class="rijk">{{ tekst | md }}</div>
+        </div>
+      </article>
+    </li>
+    {{/elk}}
+  </ol>
+</main>
+{{> voet }}
+</body>
+</html>

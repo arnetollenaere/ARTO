@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  {{> kop }}
+</head>
+<body class="p-sub p-404">
+{{> mededeling }}
+{{> header }}
+<main id="inhoud">
+  <header class="pagina-kop pagina-404">
+    <p class="par"><span>§ 404</span> {{ paginas.nietGevonden.label }}</p>
+    <h1>{{ paginas.nietGevonden.titel }}</h1>
+    <p class="sectie-intro">{{ paginas.nietGevonden.tekst }}</p>
+    <p class="hero-knoppen"><a class="knop" href="/">{{ paginas.nietGevonden.knop }} <span class="pijl" aria-hidden="true">→</span></a> <a class="link" href="tel:{{ contact.telefoon | tel }}">{{ contact.telefoon }}</a></p>
+    <p class="groot-404" aria-hidden="true">§&#8239;404</p>
+  </header>
+</main>
+{{> voet }}
+</body>
+</html>
