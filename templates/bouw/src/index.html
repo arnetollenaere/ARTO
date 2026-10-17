@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+
+  <section class="held" aria-labelledby="held-titel" data-kruis>
+    <div class="liniaal liniaal--x" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span></div>
+    <div class="liniaal liniaal--y" aria-hidden="true"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+    <div class="held__tekst">
+      <p class="label"><span class="label__blok" aria-hidden="true"></span>{{ hero.label }}</p>
+      <div class="maat maat--x" aria-hidden="true"><span class="maat__getal" data-meet="#held-titel">—</span></div>
+      <h1 class="held__titel" id="held-titel">{{ hero.titel }} <mark>{{ hero.titelAccent }}</mark></h1>
+      <p class="held__intro">{{ hero.intro }}</p>
+      <div class="held__knoppen">
+        <a class="knop knop--geel knop--groot" href="/offerte">{{ hero.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+        <a class="knop knop--lijn" href="/projecten">{{ hero.knop2 }}</a>
+      </div>
+    </div>
+    <figure class="held__tekening">
+      {{> tek-doorsnede }}
+      <table class="cartouche">
+        <caption class="mono">{{ site.naam }}</caption>
+        <tbody>{{#elk hero.cartouche}}<tr><th class="mono" scope="row">{{ label }}</th><td>{{ waarde }}</td></tr>{{/elk}}<tr><th class="mono" scope="row">Datum</th><td>{{ jaar }}</td></tr></tbody>
+      </table>
+    </figure>
+    <ul class="held__cijfers">
+      {{#elk hero.kenmerken}}<li><span class="held__cijfer">{{ waarde }}<small>{{ eenheid }}</small></span><span class="mono">{{ label }}</span></li>{{/elk}}
+    </ul>
+    <p class="kruis mono" aria-hidden="true">X <span data-x>0000</span> · Y <span data-y>0000</span></p>
+  </section>
+
+  <section class="sectie legende" id="diensten" aria-labelledby="diensten-titel">
+    <header class="sectie__kop">
+      <p class="label"><span class="label__nr" aria-hidden="true">02</span>{{ diensten.label }}</p>
+      <h2 id="diensten-titel">{{ diensten.kop }}</h2>
+      <p class="sectie__intro">{{ diensten.intro }}</p>
+    </header>
+    <ol class="legende__lijst">
+      {{#elk diensten.lijst}}
+      <li class="legende__rij">
+        <svg class="arc" aria-hidden="true" focusable="false"><rect width="100%" height="100%" fill="url(#p-{{ arcering }})"/></svg>
+        <span class="legende__code mono">{{ code }}</span>
+        <h3 class="legende__naam">{{ naam }}</h3>
+        <p class="legende__tekst">{{ omschrijving }}</p>
+        <ul class="legende__taken mono">{{#elk taken}}<li>{{ taak }}</li>{{/elk}}</ul>
+      </li>
+      {{/elk}}
+    </ol>
+  </section>
+
+  <section class="sectie werven" id="projecten" aria-labelledby="projecten-titel">
+    <header class="sectie__kop sectie__kop--breed">
+      <p class="label"><span class="label__nr" aria-hidden="true">03</span>{{ projecten.label }}</p>
+      <h2 id="projecten-titel">{{ projecten.kop }}</h2>
+      <p class="sectie__intro">{{ projecten.intro }}</p>
+    </header>
+    <div class="werven__lijst">
+      {{#elk projecten.lijst}}{{#als uitgelicht}}{{> fiche }}{{/als}}{{/elk}}
+    </div>
+    <p class="werven__meer"><a class="knop knop--lijn" href="/projecten">{{ projecten.knop }}<span class="pijl" aria-hidden="true">→</span></a></p>
+  </section>
+
+  <section class="sectie planning" id="werkwijze" aria-labelledby="werkwijze-titel">
+    <header class="sectie__kop sectie__kop--breed">
+      <p class="label"><span class="label__nr" aria-hidden="true">04</span>{{ werkwijze.label }}</p>
+      <h2 id="werkwijze-titel">{{ werkwijze.kop }}</h2>
+      <p class="sectie__intro">{{ werkwijze.intro }}</p>
+    </header>
+    <div class="gantt" style="--weken: {{ werkwijze.weken }}" data-weken="{{ werkwijze.weken }}" data-woord="{{ werkwijze.weekLabel }}">
+      <div class="gantt__schaal mono" aria-hidden="true"></div>
+      <ol class="gantt__lijst">
+        {{#elk werkwijze.fases}}
+        <li class="gantt__rij">
+          <div class="gantt__info">
+            <span class="gantt__nr mono">{{ @nr | twee }}</span>
+            <h3 class="gantt__naam">{{ naam }}</h3>
+            <p class="gantt__tekst">{{ omschrijving }}</p>
+          </div>
+          <div class="gantt__baan"><span class="gantt__balk" style="grid-column: {{ start }} / span {{ weken }}"><span class="mono">{{ duur }}</span></span></div>
+        </li>
+        {{/elk}}
+      </ol>
+    </div>
+  </section>
+
+  <section class="sectie gebied" id="werkgebied" aria-labelledby="regio-titel">
+    <div class="gebied__tekst">
+      <p class="label"><span class="label__nr" aria-hidden="true">05</span>{{ regio.label }}</p>
+      <h2 id="regio-titel">{{ regio.kop }}</h2>
+      <p class="sectie__intro">{{ regio.intro }}</p>
+      <ol class="gebied__lijst mono">
+        {{#elk regio.gemeenten}}<li data-g="{{ @index }}"><span>{{ naam }}</span><span>{{ km }} km {{ richting }}</span></li>{{/elk}}
+      </ol>
+    </div>
+    <div class="kaart" style="--straal: {{ regio.straal }}" aria-hidden="true">
+      <svg class="kaart__raster" viewBox="0 0 400 400" focusable="false">
+        <circle cx="200" cy="200" r="184"/><circle cx="200" cy="200" r="138"/><circle cx="200" cy="200" r="92"/><circle cx="200" cy="200" r="46"/>
+        <path d="M200 0V400M0 200H400M70 70L330 330M330 70L70 330"/>
+        <path class="kaart__noord" d="M200 2l8 22h-16z"/>
+      </svg>
+      <span class="kaart__straal mono">r = {{ regio.straal }} km</span>
+      <span class="kaart__n mono">N</span>
+      <span class="kaart__centrum"><span class="mono">{{ regio.centrumLabel }}</span><strong>{{ contact.gemeente }}</strong></span>
+      {{#elk regio.gemeenten}}<span class="kaart__punt" data-g="{{ @index }}" data-richting="{{ richting }}" style="--km: {{ km }}"><i></i><span>{{ naam }}</span></span>{{/elk}}
+    </div>
+  </section>
+
+  <section class="sectie attesten" aria-labelledby="attesten-titel">
+    <header class="sectie__kop">
+      <p class="label"><span class="label__nr" aria-hidden="true">06</span>{{ erkenningen.label }}</p>
+      <h2 id="attesten-titel">{{ erkenningen.kop }}</h2>
+      <p class="sectie__intro">{{ erkenningen.intro }}</p>
+    </header>
+    <ul class="stempels">
+      {{#elk erkenningen.lijst}}
+      <li class="stempel">
+        <span class="stempel__kader"><span class="stempel__naam">{{ naam }}</span><span class="stempel__nr mono">{{ nummer }}</span></span>
+        <p>{{ omschrijving }}</p>
+      </li>
+      {{/elk}}
+    </ul>
+    <aside class="premie" aria-labelledby="premie-titel">
+      <p class="mono premie__label">Premie</p>
+      <h3 id="premie-titel">{{ erkenningen.premie.titel }}</h3>
+      <div class="premie__tekst">{{ erkenningen.premie.tekst | md }}</div>
+      {{#als erkenningen.premie.link}}<a class="premie__link" href="{{ erkenningen.premie.link }}" rel="noopener">{{ erkenningen.premie.linktekst }} ↗</a>{{/als}}
+    </aside>
+  </section>
+
+  <section class="sectie verslag" aria-labelledby="verslag-titel">
+    <header class="sectie__kop sectie__kop--breed">
+      <p class="label"><span class="label__nr" aria-hidden="true">07</span>{{ reviews.label }}</p>
+      <h2 id="verslag-titel">{{ reviews.kop }}</h2>
+    </header>
+    <ol class="verslag__lijst">
+      {{#elk reviews.lijst}}
+      <li>
+        <figure>
+          <span class="verslag__nr mono" aria-hidden="true">Opm. {{ @nr | twee }}</span>
+          <blockquote><p>{{ tekst }}</p></blockquote>
+          <figcaption><strong>{{ naam }}</strong> <span class="mono">{{ gemeente }} · {{ project }}</span></figcaption>
+        </figure>
+      </li>
+      {{/elk}}
+    </ol>
+  </section>
+
+  <section class="oproep" aria-labelledby="oproep-titel">
+    <div class="oproep__lint" aria-hidden="true"></div>
+    <div class="oproep__binnen">
+      <h2 id="oproep-titel">{{ cta.kop }}</h2>
+      <p>{{ cta.tekst }}</p>
+      <a class="knop knop--zwart knop--groot" href="/offerte">{{ cta.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+</main>
+{{> voet }}
+</body>
+</html>

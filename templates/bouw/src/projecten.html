@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site.taal }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{{ arto.kop }}}
+  <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/stijl.css">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/js/site.js" defer></script>
+</head>
+<body>
+{{> mededeling }}
+{{> kop }}
+<main id="inhoud">
+  <section class="paginakop" aria-labelledby="pk-titel">
+    <div class="liniaal liniaal--x" aria-hidden="true"><span>A</span><span>B</span><span>C</span><span>D</span><span>E</span><span>F</span><span>G</span><span>H</span><span>I</span><span>J</span><span>K</span><span>L</span></div>
+    <p class="label"><span class="label__nr" aria-hidden="true">A1</span>{{ projecten.label }}</p>
+    <h1 id="pk-titel" class="paginakop__titel">{{ projecten.paginaKop }}<sup class="mono">({{ projecten.lijst | aantal }})</sup></h1>
+    <p class="paginakop__intro">{{ projecten.paginaIntro }}</p>
+    <div class="filter" data-filter data-alles="{{ projecten.filterAlles }}" aria-label="Filter op type werk" role="group" hidden></div>
+  </section>
+  <section class="sectie werven werven--alle" aria-label="{{ projecten.paginaKop }}">
+    <div class="werven__lijst" data-werven>
+      {{#elk projecten.lijst}}{{> fiche }}{{/elk}}
+    </div>
+  </section>
+  <section class="oproep" aria-labelledby="oproep-titel">
+    <div class="oproep__lint" aria-hidden="true"></div>
+    <div class="oproep__binnen">
+      <h2 id="oproep-titel">{{ cta.kop }}</h2>
+      <p>{{ cta.tekst }}</p>
+      <a class="knop knop--zwart knop--groot" href="/offerte">{{ cta.knop }}<span class="pijl" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</main>
+{{> voet }}
+</body>
+</html>

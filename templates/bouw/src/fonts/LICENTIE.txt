@@ -1,0 +1,7 @@
+Lettertypes in deze map
+
+- Archivo (variabel: breedte 62–125 %, gewicht 400–900) — Omnibus-Type
+- IBM Plex Mono (400, 500) — IBM
+
+Beide vallen onder de SIL Open Font License, versie 1.1 (https://openfontlicense.org).
+Bron: Google Fonts, latin-subset.
