@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | ARTO-logo in het blok onder het afrekenen 1,45 keer groter (zelfde verhoudingen). | preview |
 | 2026-10-29 | ARTO-vermelding verplaatst naar direct onder het bestelformulier, als omkaderd blok in Raakpunt-stijl; logo ongewijzigd. | preview |
 | 2026-10-29 | ARTO-logo onderaan exact gelijk gemaakt aan orthopedie-depaepe.be en amc.be (zelfde arto-mark.svg, maten, lettertype en hover-draaiing van 70°). | preview |
 | 2026-10-29 | Live gezet: interactieve ARTO-vermelding onderaan. | productie |

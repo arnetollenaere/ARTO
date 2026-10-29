@@ -431,3 +431,6 @@ details a { color: var(--oranje); }
 .arto-blok .arto:hover, .arto-blok .arto:focus-visible { border-color: #fff; background: rgba(255, 255, 255, .08); color: #fff; }
 .arto-blok .arto:hover::after, .arto-blok .arto:focus-visible::after { transform: scale(1.4); }
 @media (max-width: 600px) { .arto-blok .arto { flex-direction: column; gap: .7rem; padding: 1rem 1.2rem; } }
+/* ARTO-logo in het blok: zelfde verhoudingen, 1,45 keer groter. */
+.arto-blok .arto__brand img { width: 36px; height: 36px; margin-right: -7px; }
+.arto-blok .arto__brand strong { font-size: 1.45rem; }
