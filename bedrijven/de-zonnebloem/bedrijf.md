@@ -25,7 +25,7 @@
 
 | Veld | Waarde |
 |---|---|
-| Domein | zonnebloemwijn.be (gekocht 2026-10-29, nog te koppelen); tijdelijk https://de-zonnebloem.pages.dev |
+| Domein | zonnebloemwijn.be (Cloudflare-zone aangemaakt, wacht op nameservers bij Hostinger); tijdelijk https://de-zonnebloem.pages.dev |
 | Repo | nog aan te maken (`arnetollenaere/de-zonnebloem`, private) |
 | Site staat in | `bedrijven/de-zonnebloem/site/` (tijdelijk, tot de eigen repo bestaat) |
 | Template gebruikt | site-basis, uitgebreid tot webshop (Pages Functions + D1) |
@@ -42,7 +42,8 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Cloudflare-account van | Arne (eigen account, op zijn vraag; afwijkend van de ARTO-afspraak) |
 | Cloudflare-account e-mail | |
 | Arne uitgenodigd als Administrator | n.v.t. (eigen account) |
-| Cloudflare Pages-project | de-zonnebloem |
+| Cloudflare Pages-project | de-zonnebloem (eigen domeinen: zonnebloemwijn.be en www.zonnebloemwijn.be) |
+| Cloudflare-zone | zonnebloemwijn.be, nameservers charles.ns.cloudflare.com en robin.ns.cloudflare.com; www stuurt door naar het hoofddomein (Single Redirect) |
 | D1-database | zonnebloem-bestellingen-eu (EU-jurisdictie). Een lege, ongebruikte `zonnebloem-bestellingen` (Noord-Amerika) mag weg. |
 | Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `raakpunt` + `BEHEER_WACHTWOORD`, beide Pages-secrets sinds 2026-10-29; `IBAN_SHA256`; eventueel `RESEND_API_KEY`) |
 
