@@ -436,3 +436,9 @@ details a { color: var(--oranje); }
 .arto-blok .arto__brand strong { font-size: 1.45rem; }
 .verhaal__tekst { margin-top: -1.4rem; }
 @media (max-width: 900px) { .verhaal__tekst { margin-top: -.8rem; } }
+/* Canvas houdt altijd de verhouding van de tekening (600 x 720); de hoogte volgt het scherm. */
+.vc { aspect-ratio: 600 / 720; max-height: none; }
+@media (min-width: 901px) { .vc { width: auto; height: min(calc(100svh - 230px), 660px); max-width: 100%; } }
+@media (max-width: 900px) { .vc { width: min(100%, 420px, calc(54svh * 600 / 720)); height: auto; } }
+@media (min-width: 901px) { .verhaal__tekst { margin-top: -2rem; } }
+@media (max-width: 900px) { .verhaal__tekst { margin-top: -1.2rem; } }

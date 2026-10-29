@@ -161,7 +161,8 @@
   var mx = -9999, my = -9999, kx = 0, ky = 0, kantel = 0, kantelY = 0;
   function wijzer(e) {
     var r = cv.getBoundingClientRect();
-    mx = ((e.clientX - r.left) / r.width * W - 300) / MARGE + 300; my = ((e.clientY - r.top) / r.height * H - 360) / MARGE + 360;
+    // Zelfde omrekening als bij het tekenen, zodat de punten precies rond de muis uitwijken.
+    mx = ((e.clientX - r.left) / r.width * cv.width - offX) / vul; my = ((e.clientY - r.top) / r.height * cv.height - offY) / vul;
     kx = (e.clientX - r.left) / r.width * 2 - 1; ky = (e.clientY - r.top) / r.height * 2 - 1;
   }
   cv.addEventListener("pointermove", wijzer);
@@ -212,12 +213,15 @@
   }
 
   // ---------- Tekenen ----------
-  var schaal = 1, dpr = 1;
+  // De tekening past altijd volledig in het canvas en staat er gecentreerd in,
+  // ook als het canvas een andere verhouding heeft dan de tekenruimte.
+  var dpr = 1, vul = 1, offX = 0, offY = 0;
   function maatCanvas() {
     var r = cv.getBoundingClientRect();
     dpr = Math.min(window.devicePixelRatio || 1, 2);
     cv.width = Math.max(1, Math.round(r.width * dpr)); cv.height = Math.max(1, Math.round(r.height * dpr));
-    schaal = cv.width / W;
+    vul = Math.min(cv.width / W, cv.height / H) * MARGE;
+    offX = cv.width / 2 - 300 * vul; offY = cv.height / 2 - 360 * vul;
   }
   if ("ResizeObserver" in window) new ResizeObserver(maatCanvas).observe(cv); else addEventListener("resize", maatCanvas);
 
@@ -237,8 +241,7 @@
     var d = doelen[vorm];
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, cv.width, cv.height);
-    var sm = schaal * MARGE;
-    ctx.setTransform(sm, 0, 0, sm, schaal * 300 * (1 - MARGE), schaal * 360 * (1 - MARGE));
+    ctx.setTransform(vul, 0, 0, vul, offX, offY);
 
     tekenSfeer(t);
 

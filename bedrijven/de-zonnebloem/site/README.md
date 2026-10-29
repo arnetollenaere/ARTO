@@ -22,7 +22,8 @@ Live op https://zonnebloemwijn.be (nog in te vullen).
 src/                    # statische site
 ├── index.html          # homepage met wijnen, mandje en bestelformulier
 ├── bestelling/         # bevestigingspagina met betaalgegevens en QR-code
-├── beheer/             # beheerscherm (afgeschermd met wachtwoord)
+├── beheer/             # beheerscherm (alleen na inloggen)
+├── inloggen/           # inlogpagina voor het beheer
 ├── wijnen.json         # DE WIJNEN: naam, prijs (eurocent), voorraad, kleuren
 ├── instellingen.json   # IBAN, begunstigde, afhaalmomenten, leveringskost, deadline, doel
 ├── css/ js/ fonts/
@@ -34,7 +35,8 @@ functions/              # Cloudflare Pages Functions (de API)
 ├── api/bestelling/[id].js      # GET: bestelling bekijken (met geheime token)
 ├── api/stand.js                # GET: teller op de homepage
 ├── api/beheer/...              # lijst, status wijzigen, export (wachtwoord)
-└── beheer/_middleware.js       # wachtwoord voor /beheer
+├── api/inloggen.js, uitloggen.js # sessie starten en stoppen
+└── beheer/_middleware.js       # stuurt naar /inloggen/ zonder sessie
 lib/                    # gedeelde code voor de Functions
 schema.sql              # databasetabel
 wrangler.toml           # Cloudflare-configuratie (D1-database)
@@ -58,18 +60,19 @@ npx wrangler d1 create zonnebloem-bestellingen
 npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file schema.sql
 # 2. Eerste deploy (maakt het Pages-project aan)
 ./build.sh && ./deploy.sh preview
-# 3. Wachtwoord voor het beheer (bewaar het in de wachtwoordmanager)
+# 3. Gebruikersnaam en wachtwoord voor het beheer (bewaar ze in de wachtwoordmanager)
+npx wrangler pages secret put BEHEER_GEBRUIKER --project-name=de-zonnebloem
 npx wrangler pages secret put BEHEER_WACHTWOORD --project-name=de-zonnebloem
 # 4. Optioneel: e-mails. Vul MAIL_VAN en MAIL_BEHEER in wrangler.toml in, dan:
 npx wrangler pages secret put RESEND_API_KEY --project-name=de-zonnebloem
 ```
 
-Inloggen op `/beheer/`: de gebruikersnaam mag om het even wat zijn, het wachtwoord is `BEHEER_WACHTWOORD`.
+Inloggen gebeurt op de inlogpagina `/inloggen/` met `BEHEER_GEBRUIKER` en `BEHEER_WACHTWOORD`. Wie `/beheer/` opent zonder sessie, komt daar automatisch terecht. Na inloggen blijft de sessie 8 uur geldig (ondertekend cookie, HttpOnly, SameSite=Strict); de knop "Uitloggen" sluit ze af. Na 10 foute pogingen in 15 minuten wordt dat toestel een kwartier geblokkeerd. Wie het wachtwoord wijzigt, logt alle open sessies uit.
 
 ## Lokaal testen
 
 ```bash
-echo "BEHEER_WACHTWOORD=test" > .dev.vars
+printf "BEHEER_GEBRUIKER=zonnebloem\nBEHEER_WACHTWOORD=test\n" > .dev.vars
 npx wrangler d1 execute zonnebloem-bestellingen-eu --local --file schema.sql
 ./build.sh && npx wrangler pages dev
 ```

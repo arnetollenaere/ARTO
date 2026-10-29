@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inloggen | Beheer De Zonnebloem</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#2832b9">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css?v=33">
+  <link rel="stylesheet" href="/css/inloggen.css?v=1">
+</head>
+<body class="inlog">
+  <main class="inlog__vlak">
+    <div class="inlog__merk">
+      <img src="/img/raakpunt-wit.webp" alt="vzw Raakpunt" width="600" height="500">
+      <p>De Zonnebloem<br><span>Wijnactie · beheer</span></p>
+    </div>
+
+    <form class="inlog__kaart" id="inlogformulier" novalidate>
+      <h1>Inloggen</h1>
+      <p class="inlog__uitleg">Log in om de bestellingen te beheren.</p>
+      <div class="inlog__veld">
+        <label for="gebruiker">Gebruikersnaam</label>
+        <input id="gebruiker" name="gebruiker" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+      </div>
+      <div class="inlog__veld">
+        <label for="wachtwoord">Wachtwoord</label>
+        <div class="inlog__ww">
+          <input id="wachtwoord" name="wachtwoord" type="password" autocomplete="current-password" required>
+          <button type="button" class="inlog__toon" id="toon" aria-pressed="false" aria-controls="wachtwoord">Toon</button>
+        </div>
+      </div>
+      <p class="inlog__fout" id="fout" role="alert" hidden></p>
+      <button class="inlog__knop" type="submit" id="knop">Inloggen</button>
+    </form>
+
+    <a class="inlog__terug" href="/">← Terug naar de wijnactie</a>
+  </main>
+  <script src="/js/inloggen.js?v=1" defer></script>
+</body>
+</html>

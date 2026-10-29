@@ -26,3 +26,7 @@
 /beheer/*
   X-Robots-Tag: noindex, nofollow
   Cache-Control: no-store
+
+/inloggen/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: no-store

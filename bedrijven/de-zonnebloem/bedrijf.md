@@ -45,7 +45,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Cloudflare Pages-project | de-zonnebloem (eigen domeinen: zonnebloemwijn.be en www.zonnebloemwijn.be) |
 | Cloudflare-zone | zonnebloemwijn.be, nameservers charles.ns.cloudflare.com en robin.ns.cloudflare.com; www stuurt door naar het hoofddomein (Single Redirect) |
 | D1-database | zonnebloem-bestellingen-eu (EU-jurisdictie). Een lege, ongebruikte `zonnebloem-bestellingen` (Noord-Amerika) mag weg. |
-| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `zonnebloem` + `BEHEER_WACHTWOORD`, beide Pages-secrets; slot na 10 foute pogingen; `IBAN_SHA256`; eventueel `RESEND_API_KEY`) |
+| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `zonnebloem` + `BEHEER_WACHTWOORD`, beide Pages-secrets op productie en preview; slot na 10 foute pogingen; `IBAN_SHA256`; eventueel `RESEND_API_KEY`) |
 
 ## Webshop
 
@@ -56,7 +56,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Afhaalpunt en -momenten | in te vullen in `site/src/instellingen.json` |
 | Levering aan huis | nee, enkel afhalen (`levering.actief: false` in instellingen.json) |
 | Wijnen en prijzen | voorbeeldselectie in `site/src/wijnen.json`, te vervangen door de echte |
-| Beheer | `/beheer/` met wachtwoord: bestellingen, betalingen afpunten, picklijst, Excel-export, status van het IBAN |
+| Beheer | inloggen op `/inloggen/` (sessie 8 uur, knop Uitloggen), daarna `/beheer/`: bestellingen, betalingen afpunten, picklijst, Excel-export, status van het IBAN |
 | IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29 (zie `site/README.md`). |
 | E-mails | optioneel via Resend (nog niet ingesteld) |
 

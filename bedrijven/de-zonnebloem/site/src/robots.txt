@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /beheer/
 Disallow: /bestelling/
+Disallow: /inloggen/
 
 Sitemap: https://zonnebloemwijn.be/sitemap.xml

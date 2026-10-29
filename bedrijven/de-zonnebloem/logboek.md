@@ -4,6 +4,8 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Animatie: canvas houdt altijd de verhouding van de tekening, tekening volledig in beeld en gecentreerd naast de titel; punten wijken nu precies rond de muis uit (stonden ~90 px te laag op laptopschermen). Zin dichter onder de animatie. | preview |
+| 2026-10-29 | Beheer: echte inlogpagina `/inloggen/` in Raakpunt-stijl i.p.v. het browservenster. Sessie 8 uur via ondertekend cookie, knop "Uitloggen", slot na 10 foute pogingen blijft. Beheergegevens ook als secrets op de preview-omgeving gezet. | preview |
 | 2026-10-29 | Beheer: nieuwe inloggegevens op vraag van Arne (gebruiker `zonnebloem`, wachtwoord gekozen door Arne, als Pages-secrets) en slot na 10 foute pogingen per 15 minuten. Live getest: inloggen, bestellingenlijst en IBAN-status werken. | productie |
 | 2026-10-29 | Live gezet: groter ARTO-logo onder het afrekenen, animatie niet meer afgekapt, zonnebloemwijn.be als officieel adres (canonical, sitemap). Domein zelf nog niet actief: nameservers staan nog op Hostinger (dns-parking.com). | productie |
 | 2026-10-29 | Cloudflare-zone zonnebloemwijn.be aangemaakt in Arnes account; zonnebloemwijn.be en www gekoppeld aan Pages-project de-zonnebloem (DNS CNAME naar de-zonnebloem.pages.dev); doorverwijzing www naar hoofddomein (301). Wacht op nameservers bij Hostinger (charles/robin.ns.cloudflare.com). | nee |

@@ -35,7 +35,7 @@
 
   function laad() {
     return fetch("/api/beheer/bestellingen", { cache: "no-store" })
-      .then(function (r) { if (!r.ok) throw new Error("Kon de bestellingen niet laden (" + r.status + ")."); return r.json(); })
+      .then(function (r) { if (r.status === 401) { location.replace("/inloggen/"); throw new Error("Niet ingelogd."); } if (!r.ok) throw new Error("Kon de bestellingen niet laden (" + r.status + ")."); return r.json(); })
       .then(function (d) { bestellingen = d; toonAlles(); })
       .catch(function (e) { melding(e.message); });
   }
@@ -280,6 +280,11 @@
       vak.hidden = false;
     }).catch(function () {});
   }
+
+  // Uitloggen
+  $("uitloggen").addEventListener("click", function () {
+    fetch("/api/uitloggen", { method: "POST" }).finally(function () { location.replace("/inloggen/"); });
+  });
 
   controleIban();
   laad();
