@@ -1,6 +1,6 @@
 # Instructies voor Claude: site van De Zonnebloem (wijnactie)
 
-Webshop voor de wijnverkoop van De Zonnebloem ({{DOMEIN}}), gebouwd en beheerd door ARTO. Schrijf in het Nederlands.
+Webshop voor de wijnverkoop van De Zonnebloem (zonnebloemwijn.be), gebouwd en beheerd door ARTO. Schrijf in het Nederlands.
 
 - Statische site in `src/` (plain HTML, CSS en JS, geen framework) plus Cloudflare Pages Functions in `functions/` met een D1-database. Gedeelde servercode staat in `lib/`. Voeg geen framework of build-tool toe zonder dat Arne erom vraagt.
 - Wijnen en prijzen staan in `src/wijnen.json`, alle actie-instellingen (IBAN, afhaalmomenten, leveringskost, deadline) in `src/instellingen.json`. De server rekent prijzen altijd uit die bestanden.

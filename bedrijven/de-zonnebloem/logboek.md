@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Domein zonnebloemwijn.be gekocht door Arne bij Hostinger. Site verwijst ernaar (canonical, Open Graph, sitemap, robots); nog niet gepubliceerd. Koppeling aan Cloudflare nog te doen. | nee |
 | 2026-10-29 | Animatie: onderkant niet meer afgekapt (tekening op 86% binnen het tekenvlak, ook bij kanteling minstens 9% marge). | preview |
 | 2026-10-29 | ARTO-logo in het blok onder het afrekenen 1,45 keer groter (zelfde verhoudingen). | preview |
 | 2026-10-29 | ARTO-vermelding verplaatst naar direct onder het bestelformulier, als omkaderd blok in Raakpunt-stijl; logo ongewijzigd. | preview |

@@ -2,7 +2,7 @@
 
 Webshop voor de wijnverkoop ten voordele van De Zonnebloem, gemaakt door ARTO. Klanten kiezen wijnen, bestellen, en betalen via overschrijving met een gestructureerde mededeling of QR-code. De organisatie volgt de bestellingen op in een beheerscherm.
 
-Live op https://{{DOMEIN}} (nog in te vullen).
+Live op https://zonnebloemwijn.be (nog in te vullen).
 
 ## Hoe het werkt
 

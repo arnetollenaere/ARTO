@@ -25,7 +25,7 @@
 
 | Veld | Waarde |
 |---|---|
-| Domein | nog geen eigen domein, live op https://de-zonnebloem.pages.dev |
+| Domein | zonnebloemwijn.be (gekocht 2026-10-29, nog te koppelen); tijdelijk https://de-zonnebloem.pages.dev |
 | Repo | nog aan te maken (`arnetollenaere/de-zonnebloem`, private) |
 | Site staat in | `bedrijven/de-zonnebloem/site/` (tijdelijk, tot de eigen repo bestaat) |
 | Template gebruikt | site-basis, uitgebreid tot webshop (Pages Functions + D1) |
@@ -37,8 +37,8 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 
 | Veld | Waarde |
 |---|---|
-| Domein geregistreerd bij | |
-| Domein op naam van | klant |
+| Domein geregistreerd bij | Hostinger |
+| Domein op naam van | nog na te vragen (best vzw Raakpunt) |
 | Cloudflare-account van | Arne (eigen account, op zijn vraag; afwijkend van de ARTO-afspraak) |
 | Cloudflare-account e-mail | |
 | Arne uitgenodigd als Administrator | n.v.t. (eigen account) |
