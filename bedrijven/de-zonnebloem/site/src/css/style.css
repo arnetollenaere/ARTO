@@ -434,3 +434,5 @@ details a { color: var(--oranje); }
 /* ARTO-logo in het blok: zelfde verhoudingen, 1,45 keer groter. */
 .arto-blok .arto__brand img { width: 36px; height: 36px; margin-right: -7px; }
 .arto-blok .arto__brand strong { font-size: 1.45rem; }
+.verhaal__tekst { margin-top: -1.4rem; }
+@media (max-width: 900px) { .verhaal__tekst { margin-top: -.8rem; } }

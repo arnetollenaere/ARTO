@@ -12,6 +12,7 @@
   var knop = document.getElementById("verhaal-pauze");
 
   var W = 600, H = 720;                       // logische tekenruimte
+  var MARGE = .86;                            // tekening iets kleiner, zodat niets tegen de rand valt
   var DUUR = [3400, 3200, 3400, 4400];        // duur per stap in ms
   var OVERGANG = 1050;                        // duur van een vormwissel in ms
   var rustig = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -160,7 +161,7 @@
   var mx = -9999, my = -9999, kx = 0, ky = 0, kantel = 0, kantelY = 0;
   function wijzer(e) {
     var r = cv.getBoundingClientRect();
-    mx = (e.clientX - r.left) / r.width * W; my = (e.clientY - r.top) / r.height * H;
+    mx = ((e.clientX - r.left) / r.width * W - 300) / MARGE + 300; my = ((e.clientY - r.top) / r.height * H - 360) / MARGE + 360;
     kx = (e.clientX - r.left) / r.width * 2 - 1; ky = (e.clientY - r.top) / r.height * 2 - 1;
   }
   cv.addEventListener("pointermove", wijzer);
@@ -236,7 +237,8 @@
     var d = doelen[vorm];
     ctx.setTransform(1, 0, 0, 1, 0, 0);
     ctx.clearRect(0, 0, cv.width, cv.height);
-    ctx.setTransform(schaal, 0, 0, schaal, 0, 0);
+    var sm = schaal * MARGE;
+    ctx.setTransform(sm, 0, 0, sm, schaal * 300 * (1 - MARGE), schaal * 360 * (1 - MARGE));
 
     tekenSfeer(t);
 
