@@ -5,9 +5,9 @@ compatibility_date = "2026-10-01"
 
 [[d1_databases]]
 binding = "DB"
-database_name = "zonnebloem-bestellingen"
-# Vul in na: npx wrangler d1 create zonnebloem-bestellingen (zie README.md)
-database_id = "00000000-0000-0000-0000-000000000000"
+database_name = "zonnebloem-bestellingen-eu"
+# EU-database (jurisdiction eu), aangemaakt 2026-10-29
+database_id = "777635f4-80ab-46f3-9c73-d952bfbf5055"
 
 [vars]
 # Afzender en ontvanger van e-mails (optioneel, zie lib/mail.js). Leeg = geen e-mails.

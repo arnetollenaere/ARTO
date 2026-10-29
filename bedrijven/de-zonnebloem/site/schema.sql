@@ -1,6 +1,6 @@
 -- Database voor de bestellingen (Cloudflare D1).
--- Lokaal:   npx wrangler d1 execute zonnebloem-bestellingen --local --file schema.sql
--- Online:   npx wrangler d1 execute zonnebloem-bestellingen --remote --file schema.sql
+-- Lokaal:   npx wrangler d1 execute zonnebloem-bestellingen-eu --local --file schema.sql
+-- Online:   npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file schema.sql
 CREATE TABLE IF NOT EXISTS bestellingen (
   id             INTEGER PRIMARY KEY AUTOINCREMENT,
   nummer         TEXT UNIQUE,

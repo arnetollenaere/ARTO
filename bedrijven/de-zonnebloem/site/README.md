@@ -55,7 +55,7 @@ In het Cloudflare-account van de klant (zie `ARTO/setup/hosting-cloudflare.md`):
 npx wrangler login
 # 1. Database aanmaken en het database_id in wrangler.toml zetten
 npx wrangler d1 create zonnebloem-bestellingen
-npx wrangler d1 execute zonnebloem-bestellingen --remote --file schema.sql
+npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file schema.sql
 # 2. Eerste deploy (maakt het Pages-project aan)
 ./build.sh && ./deploy.sh preview
 # 3. Wachtwoord voor het beheer (bewaar het in de wachtwoordmanager)
@@ -70,7 +70,7 @@ Inloggen op `/beheer/`: de gebruikersnaam mag om het even wat zijn, het wachtwoo
 
 ```bash
 echo "BEHEER_WACHTWOORD=test" > .dev.vars
-npx wrangler d1 execute zonnebloem-bestellingen --local --file schema.sql
+npx wrangler d1 execute zonnebloem-bestellingen-eu --local --file schema.sql
 ./build.sh && npx wrangler pages dev
 ```
 
@@ -86,7 +86,7 @@ Open http://localhost:8788 en http://localhost:8788/beheer/.
 ## Back-up van de bestellingen
 
 ```bash
-npx wrangler d1 export zonnebloem-bestellingen --remote --output bestellingen-backup.sql
+npx wrangler d1 export zonnebloem-bestellingen-eu --remote --output bestellingen-backup.sql
 ```
 
 Of gewoon "Exporteer naar Excel" in het beheer.

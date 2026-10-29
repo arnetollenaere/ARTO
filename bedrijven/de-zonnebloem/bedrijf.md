@@ -6,7 +6,7 @@
 |---|---|
 | Naam | De Zonnebloem (officiële naam en rechtsvorm in te vullen) |
 | Slug | de-zonnebloem |
-| Status | in opbouw |
+| Status | online |
 | Klant sinds | 2026-10-29 |
 | Sector | Goed doel, organisatie die zich inzet voor mensen met een beperking. Website: wijnverkoop ten voordele van de werking. |
 | Pakket / prijs | |
@@ -25,11 +25,11 @@
 
 | Veld | Waarde |
 |---|---|
-| Domein | |
+| Domein | nog geen eigen domein, live op https://de-zonnebloem.pages.dev |
 | Repo | nog aan te maken (`arnetollenaere/de-zonnebloem`, private) |
 | Site staat in | `bedrijven/de-zonnebloem/site/` (tijdelijk, tot de eigen repo bestaat) |
 | Template gebruikt | site-basis, uitgebreid tot webshop (Pages Functions + D1) |
-| Live sinds | |
+| Live sinds | 2026-10-29 (pages.dev) |
 
 ## Hosting en toegang
 
@@ -39,12 +39,12 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 |---|---|
 | Domein geregistreerd bij | |
 | Domein op naam van | klant |
-| Cloudflare-account van | klant |
+| Cloudflare-account van | Arne (eigen account, op zijn vraag; afwijkend van de ARTO-afspraak) |
 | Cloudflare-account e-mail | |
-| Arne uitgenodigd als Administrator | nee |
+| Arne uitgenodigd als Administrator | n.v.t. (eigen account) |
 | Cloudflare Pages-project | de-zonnebloem |
-| D1-database | zonnebloem-bestellingen (database_id in `wrangler.toml` na aanmaken) |
-| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (o.a. `BEHEER_WACHTWOORD`, eventueel `RESEND_API_KEY`) |
+| D1-database | zonnebloem-bestellingen-eu (EU-jurisdictie). Een lege, ongebruikte `zonnebloem-bestellingen` (Noord-Amerika) mag weg. |
+| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (o.a. `BEHEER_WACHTWOORD` voor /beheer/, ingesteld als Pages-secret; eventueel `RESEND_API_KEY`) |
 
 ## Webshop
 
