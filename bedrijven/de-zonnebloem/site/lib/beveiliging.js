@@ -1,17 +1,27 @@
-// Toegang tot /beheer en /api/beheer met een wachtwoord (HTTP Basic Auth).
-// Wachtwoord instellen: npx wrangler pages secret put BEHEER_WACHTWOORD --project-name=de-zonnebloem
-// Lokaal: zet BEHEER_WACHTWOORD=... in .dev.vars (staat in .gitignore).
+// Toegang tot /beheer en /api/beheer met gebruikersnaam en wachtwoord (HTTP Basic Auth).
+// Instellen (beide als geheim, nooit in de code):
+//   npx wrangler pages secret put BEHEER_GEBRUIKER --project-name=de-zonnebloem
+//   npx wrangler pages secret put BEHEER_WACHTWOORD --project-name=de-zonnebloem
+// Lokaal: zet BEHEER_GEBRUIKER=... en BEHEER_WACHTWOORD=... in .dev.vars (staat in .gitignore).
 export async function vereisWachtwoord({ request, env, next }) {
-  const wachtwoord = env.BEHEER_WACHTWOORD;
-  if (!wachtwoord) return new Response("Beheer is nog niet ingesteld (BEHEER_WACHTWOORD ontbreekt).", { status: 503 });
+  const gebruiker = env.BEHEER_GEBRUIKER, wachtwoord = env.BEHEER_WACHTWOORD;
+  if (!gebruiker || !wachtwoord) return new Response("Beheer is nog niet ingesteld (BEHEER_GEBRUIKER of BEHEER_WACHTWOORD ontbreekt).", { status: 503 });
 
   const kop = request.headers.get("authorization") || "";
-  let gegeven = "";
+  let naam = "", gegeven = "";
   if (kop.startsWith("Basic ")) {
-    try { gegeven = atob(kop.slice(6)).split(":").slice(1).join(":"); } catch { gegeven = ""; }
+    try {
+      const delen = atob(kop.slice(6)).split(":");
+      naam = delen.shift();
+      gegeven = delen.join(":");
+    } catch { naam = gegeven = ""; }
   }
-  if (!(await gelijk(gegeven, wachtwoord))) {
-    return new Response("Wachtwoord vereist.", {
+  // Beide controles altijd uitvoeren, zodat de tijd niet verraadt welk deel fout is.
+  const naamOk = await gelijk(naam, gebruiker);
+  const wwOk = await gelijk(gegeven, wachtwoord);
+  if (!(naamOk && wwOk)) {
+    if (kop) await new Promise((r) => setTimeout(r, 800)); // vertraagt raden
+    return new Response("Inloggen vereist.", {
       status: 401,
       headers: { "www-authenticate": 'Basic realm="De Zonnebloem beheer", charset="UTF-8"', "cache-control": "no-store" },
     });

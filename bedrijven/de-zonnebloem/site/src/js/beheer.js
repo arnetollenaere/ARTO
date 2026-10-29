@@ -97,7 +97,7 @@
         '<td class="mono">' + esc(b.ogm) + "</td>" +
         '<td><span class="lbl lbl--' + b.status + '">' + STATUS[b.status] + "</span></td>" +
         '<td><div class="acties">' +
-          (v ? '<button type="button" class="bh-knop bh-knop--goud bh-knop--klein" data-zet="' + v[0] + '" data-id="' + b.id + '">' + v[1] + "</button>" : "") +
+          (v ? '<button type="button" class="bh-knop bh-knop--oranje bh-knop--klein" data-zet="' + v[0] + '" data-id="' + b.id + '">' + v[1] + "</button>" : "") +
           '<select data-kies="' + b.id + '" aria-label="Status van ' + esc(b.nummer) + '">' +
             Object.keys(STATUS).map(function (k) { return '<option value="' + k + '"' + (k === b.status ? " selected" : "") + ">" + STATUS[k] + "</option>"; }).join("") +
           "</select>" +
@@ -212,7 +212,7 @@
           '<td class="r">' + euro(r.b.totaal) + (afwijking ? '<br><span class="verschil">bank: ' + euro(r.bedrag) + "?</span>" : "") + "</td>" +
           '<td><span class="lbl lbl--' + r.b.status + '">' + STATUS[r.b.status] + "</span></td></tr>";
       }).join("") + "</tbody></table>" +
-      (teZetten.length ? '<div class="bh-rij"><button type="button" class="bh-knop bh-knop--goud" id="afpunt-ok">Aangevinkte bestellingen op betaald zetten</button></div><p class="hint">Controleer bij een afwijkend bedrag eerst de verrichting. Het bedrag wordt geschat uit de tekst rond de mededeling.</p>' : "<p>Alle gevonden bestellingen zijn al verwerkt.</p>");
+      (teZetten.length ? '<div class="bh-rij"><button type="button" class="bh-knop bh-knop--oranje" id="afpunt-ok">Aangevinkte bestellingen op betaald zetten</button></div><p class="hint">Controleer bij een afwijkend bedrag eerst de verrichting. Het bedrag wordt geschat uit de tekst rond de mededeling.</p>' : "<p>Alle gevonden bestellingen zijn al verwerkt.</p>");
     var ok = $("afpunt-ok");
     if (ok) ok.addEventListener("click", function () {
       var ids = [].slice.call(document.querySelectorAll("[data-afpunt]:checked")).map(function (x) { return Number(x.dataset.afpunt); });
