@@ -4,6 +4,8 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Op vraag van Arne alle bestellingen gewist (6 testbestellingen, alle al geannuleerd) en nummering teruggezet: de eerste echte bestelling wordt ZB-2026-0001. Teller op de site staat op 0. Reservekopie alleen tijdelijk in de sessie, niet in de repo. | productie |
+| 2026-10-29 | Live gezet: inlogpagina beheer (`/inloggen/`, uitlogknop) en animatiecorrectie (tekening volledig in beeld, muis precies). Live getest: doorsturen naar inlogpagina, inloggen, beheer, IBAN-status groen. | productie |
 | 2026-10-29 | Hercontrole domein 19:57 UTC: DNS in orde (nameservers Cloudflare, geen DNSSEC-rest bij Hostinger), www actief. Zone en hoofddomein nog pending bij Cloudflare; activatiecontrole opnieuw aangevraagd. Kan tot 24 uur duren. | n.v.t. |
 | 2026-10-29 | Domeincontrole 18:56 UTC: nameservers bij Hostinger zijn gewisseld (publieke DNS toont charles/robin.ns.cloudflare.com). www.zonnebloemwijn.be actief met certificaat en toont de site. Zone en zonnebloemwijn.be zelf nog pending (geen certificaat, https faalt); activatiecontrole aangevraagd bij Cloudflare. | n.v.t. |
 | 2026-10-29 | Animatie: canvas houdt altijd de verhouding van de tekening, tekening volledig in beeld en gecentreerd naast de titel; punten wijken nu precies rond de muis uit (stonden ~90 px te laag op laptopschermen). Zin dichter onder de animatie. | preview |
