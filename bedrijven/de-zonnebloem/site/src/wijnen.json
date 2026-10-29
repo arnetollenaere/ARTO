@@ -1,5 +1,5 @@
 {
-  "_uitleg": "VOORBEELDWIJNEN. Vervang door de echte selectie van De Zonnebloem. prijs in eurocent. voorraad: aantal flessen, of null voor onbeperkt. fles: bordeaux, bourgogne of mousserend. glas en label zijn kleuren voor de flestekening.",
+  "_uitleg": "VOORBEELDWIJNEN. Vervang door de echte selectie van De Zonnebloem. prijs in eurocent. voorraad: aantal flessen, of null voor onbeperkt. foto: naam van de foto in src/img/foto/ (<foto>-640.webp en <foto>-1000.webp, verhouding 4:5).",
   "wijnen": [
     {
       "id": "zonnewit",
@@ -13,9 +13,7 @@
       "pastBij": "Aperitief, salades, vis",
       "prijs": 950,
       "voorraad": null,
-      "fles": "bordeaux",
-      "glas": "#d9e3b0",
-      "label": "#f4b740"
+      "foto": "wit"
     },
     {
       "id": "chardonnay",
@@ -29,9 +27,7 @@
       "pastBij": "Gevogelte, kreeft, romige pasta",
       "prijs": 1250,
       "voorraad": null,
-      "fles": "bourgogne",
-      "glas": "#c9d39a",
-      "label": "#efe3c8"
+      "foto": "chardonnay"
     },
     {
       "id": "rose",
@@ -45,9 +41,7 @@
       "pastBij": "Terras, tapas, gegrilde vis",
       "prijs": 1150,
       "voorraad": null,
-      "fles": "bourgogne",
-      "glas": "#f3b6a4",
-      "label": "#fbf4ea"
+      "foto": "rose"
     },
     {
       "id": "merlot",
@@ -61,9 +55,7 @@
       "pastBij": "Rood vlees, kazen, stoofpotjes",
       "prijs": 1350,
       "voorraad": null,
-      "fles": "bordeaux",
-      "glas": "#2b3a22",
-      "label": "#7a1630"
+      "foto": "merlot"
     },
     {
       "id": "rioja",
@@ -77,9 +69,7 @@
       "pastBij": "Lam, wild, barbecue",
       "prijs": 1450,
       "voorraad": null,
-      "fles": "bordeaux",
-      "glas": "#1f2b1a",
-      "label": "#f4b740"
+      "foto": "rioja"
     },
     {
       "id": "cava",
@@ -93,9 +83,7 @@
       "pastBij": "Feestjes, oesters, brunch",
       "prijs": 1500,
       "voorraad": null,
-      "fles": "mousserend",
-      "glas": "#3d4a2a",
-      "label": "#efe3c8"
+      "foto": "cava"
     }
   ]
 }

@@ -25,7 +25,8 @@ src/                    # statische site
 ├── beheer/             # beheerscherm (afgeschermd met wachtwoord)
 ├── wijnen.json         # DE WIJNEN: naam, prijs (eurocent), voorraad, kleuren
 ├── instellingen.json   # IBAN, begunstigde, afhaalmomenten, leveringskost, deadline, doel
-├── css/ js/ fonts/ img/
+├── css/ js/ fonts/
+├── img/foto/           # foto's in WebP (zie FOTOS.md)
 ├── _headers            # beveiligings- en cache-headers (strikte CSP)
 └── _routes.json        # alleen /api/* en /beheer/* draaien als Function
 functions/              # Cloudflare Pages Functions (de API)
@@ -41,7 +42,8 @@ wrangler.toml           # Cloudflare-configuratie (D1-database)
 
 ## Wijnen en instellingen aanpassen
 
-- **Wijnen**: `src/wijnen.json`. Prijs in eurocent (`1350` = € 13,50). `voorraad`: aantal flessen of `null` voor onbeperkt. De fles wordt getekend met `fles` (`bordeaux`, `bourgogne`, `mousserend`), `glas` en `label` (kleuren).
+- **Wijnen**: `src/wijnen.json`. Prijs in eurocent (`1350` = € 13,50). `voorraad`: aantal flessen of `null` voor onbeperkt. `foto`: naam van de foto in `src/img/foto/` (zie `FOTOS.md`).
+- **Foto's**: sfeerbeelden van Unsplash, bronnen en uitleg om ze te vervangen in `FOTOS.md`.
 - **Instellingen**: `src/instellingen.json`. Zet `bestellingenOpen` op `false` om de actie af te sluiten.
 - Daarna `./build.sh && ./deploy.sh`.
 

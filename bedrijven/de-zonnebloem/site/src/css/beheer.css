@@ -1,5 +1,11 @@
+:root { --wijn: var(--zwart); --creme: var(--ivoor); --nacht: var(--zwart); --goud-diep: var(--goud-donker); --lijn: #e3dacb; }
 /* Beheerscherm: rustig en functioneel, in de stijl van de site. */
-.beheer { background: #f4efe6; font-size: .92rem; }
+.beheer { background: #f4efe6; color: var(--inkt); font-size: .92rem; }
+.beheer .logo { display: flex; align-items: center; gap: .7rem; margin: 0; font: 400 1.4rem/1 var(--serif); }
+.beheer .logo em { color: var(--goud); }
+.beheer input:not([type=checkbox]), .beheer select, .beheer textarea { width: 100%; padding: .7rem .9rem; border: 1px solid #d8ccb8; background: #fff; color: var(--inkt); font: inherit; border-radius: 8px; }
+.beheer .vinkje { color: var(--inkt); }
+.beheer .hint { color: var(--inkt-zacht); }
 .bh-kader { width: min(1400px, 100% - 32px); margin-inline: auto; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .bh-kop { background: var(--wijn); color: var(--creme); padding: 14px 0; position: sticky; top: 0; z-index: 10; }
@@ -58,7 +64,7 @@
 .lbl--geannuleerd { background: #f6dede; color: #8c1d2a; }
 
 .bh-paneel { background: #fff; border-radius: 14px; padding: 1.6rem; box-shadow: 0 1px 2px rgba(36, 19, 25, .06); }
-.bh-paneel h2 { font-size: 2rem; }
+.bh-paneel h2 { font-size: 2.2rem; margin-bottom: .6rem; }
 .bh-paneel h3 { font-size: 1.4rem; margin-top: 1.6rem; }
 .bh-rij { display: flex; gap: .6rem; align-items: center; margin: 1rem 0; flex-wrap: wrap; }
 .bh-rij--tussen { justify-content: space-between; margin-top: 0; }
