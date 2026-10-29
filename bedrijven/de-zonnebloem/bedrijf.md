@@ -44,7 +44,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Arne uitgenodigd als Administrator | n.v.t. (eigen account) |
 | Cloudflare Pages-project | de-zonnebloem |
 | D1-database | zonnebloem-bestellingen-eu (EU-jurisdictie). Een lege, ongebruikte `zonnebloem-bestellingen` (Noord-Amerika) mag weg. |
-| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (o.a. `BEHEER_WACHTWOORD` voor /beheer/, ingesteld als Pages-secret; eventueel `RESEND_API_KEY`) |
+| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `raakpunt` + `BEHEER_WACHTWOORD`, beide Pages-secrets sinds 2026-10-29; `IBAN_SHA256`; eventueel `RESEND_API_KEY`) |
 
 ## Webshop
 
