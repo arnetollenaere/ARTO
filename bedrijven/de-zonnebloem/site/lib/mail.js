@@ -40,6 +40,6 @@ Gebruik zeker de gestructureerde mededeling, zo vinden we je betaling meteen ter
 Je bestelling en een QR-code om te betalen vind je hier: ${link}
 
 Hartelijk dank!
-De Zonnebloem
+vzw Raakpunt · De Zonnebloem
 `;
 }

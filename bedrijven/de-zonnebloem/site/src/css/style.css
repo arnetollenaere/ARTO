@@ -509,3 +509,8 @@ body { font-size: 1rem; }
     radial-gradient(70% 32% at 55% 26%, color-mix(in srgb, var(--sfeer) 36%, transparent), transparent 72%),
     radial-gradient(60% 30% at 10% 90%, color-mix(in srgb, var(--sfeer) 12%, transparent), transparent 70%); }
 }
+
+.motto { margin: 1.6rem 0; padding-left: 1rem; border-left: 2px solid var(--goud); color: var(--ivoor); font-size: 1.15rem; font-style: italic; }
+.werking { list-style: none; margin: 1.6rem 0 2rem; padding: 0; }
+.werking li { padding: .9rem 0; border-top: 1px solid var(--lijn); font-size: .95rem; }
+.werking strong { display: block; color: var(--ivoor); font-weight: 600; }

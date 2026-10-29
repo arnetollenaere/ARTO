@@ -1,14 +1,14 @@
-# De Zonnebloem
+# De Zonnebloem (vzw Raakpunt)
 
 ## Basis
 
 | Veld | Waarde |
 |---|---|
-| Naam | De Zonnebloem (officiële naam en rechtsvorm in te vullen) |
+| Naam | vzw Raakpunt, wijnverkoop ten voordele van De Zonnebloem |
 | Slug | de-zonnebloem |
 | Status | online |
 | Klant sinds | 2026-10-29 |
-| Sector | Goed doel, organisatie die zich inzet voor mensen met een beperking. Website: wijnverkoop ten voordele van de werking. |
+| Sector | Vzw uit Gent: vrijetijdsactiviteiten voor kansengroepen (kinderen, jongeren en volwassenen met of zonder beperking, uit kansarmoede of moeilijke opvoedingssituaties). De Zonnebloem = hun jaarlijks weekend en kamp voor kinderen en jongeren met of zonder beperking. Andere werkingen: 't Stoofken, Raakpunt In De Wijk, Jaarfeest. |
 | Pakket / prijs | |
 
 ## Contact
@@ -16,10 +16,10 @@
 | Veld | Waarde |
 |---|---|
 | Contactpersoon | |
-| E-mail | |
+| E-mail | vzwraakpunt@gmail.com |
 | Telefoon | |
-| Adres | |
-| Btw-nummer | |
+| Adres | Gent (straat en nummer niet op hun website) |
+| Btw-nummer | BE 0452.918.932 (ondernemingsnummer) |
 
 ## Website
 
@@ -66,6 +66,9 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 - Facturatie: 
 
 ## Notities
+
+- Eigen website: https://www.vzwraakpunt.be/ (motto: "zonder een hoek af is de cirkel nooit rond"). Weekend De Zonnebloem 2026: 27/2 tot 1/3 in Jeugdpark Hoogland, Lokeren. Sponsors o.a. VOG en Rotary Gent.
+- Geen kinderen in beeld naast wijn (Belgische alcoholreclameregels); in tekst mag vermeld worden dat de opbrengst naar het kamp voor kinderen en jongeren gaat.
 
 - Footer vermeldt "Website door ARTO" met link naar artowebdesign.com.
 - Verkoop alleen aan 18+ (vinkje in het bestelformulier).

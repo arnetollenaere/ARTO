@@ -21,7 +21,7 @@ export async function onRequestPatch({ params, request, env, waitUntil }) {
       waitUntil(stuurMail(env, {
         aan: rij.email,
         onderwerp: `Betaling ontvangen voor ${rij.nummer}`,
-        tekst: `Dag ${rij.naam},\n\nWe hebben je betaling van ${euro(rij.totaal)} goed ontvangen. Dank je wel!\n\n${b.levering === "afhalen" ? `Je kan je wijn afhalen: ${b.afhaalmoment}, ${b.afhaalplaats}.` : `We leveren je wijn aan huis: ${b.adres}, ${b.postcode} ${b.gemeente}.`}\n\nDe Zonnebloem\n`,
+        tekst: `Dag ${rij.naam},\n\nWe hebben je betaling van ${euro(rij.totaal)} goed ontvangen. Dank je wel!\n\n${b.levering === "afhalen" ? `Je kan je wijn afhalen: ${b.afhaalmoment}, ${b.afhaalplaats}.` : `We leveren je wijn aan huis: ${b.adres}, ${b.postcode} ${b.gemeente}.`}\n\nvzw Raakpunt · De Zonnebloem\n`,
       }));
     }
   }

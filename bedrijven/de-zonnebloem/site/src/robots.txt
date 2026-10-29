@@ -3,4 +3,4 @@ Allow: /
 Disallow: /beheer/
 Disallow: /bestelling/
 
-Sitemap: https://{{DOMEIN}}/sitemap.xml
+Sitemap: https://de-zonnebloem.pages.dev/sitemap.xml

@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Echte inhoud over vzw Raakpunt en De Zonnebloem toegevoegd (werking, motto, activiteiten, e-mail, ondernemingsnummer), begunstigde vzw Raakpunt, domein tijdelijk ingevuld als de-zonnebloem.pages.dev. | preview |
 | 2026-10-29 | Animatie sneller (~14 s per ronde). Openingsbeeld afgestemd: gloed over het hele beeld in de kleur van elke stap, goudstof over het hele beeld, knop en balken kleuren mee. | preview (769f70ef.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Live gezet: deeltjesanimatie + beveiliging betaalgegevens (IBAN-controle, optionele vingerafdruk IBAN_SHA256, statusmelding in beheer, IBAN-check in deploy.sh, HSTS/COOP/strengere CSP, max. 5 bestellingen per bezoeker per uur). Databasemigratie 0002_ip_hash toegepast. Testbestelling geplaatst en geannuleerd. IBAN is nog een voorbeeld; vingerafdruk nog niet ingesteld. | productie |
 | 2026-10-29 | Openingsanimatie vervangen door een deeltjesanimatie op canvas (glas wijn, muntstuk, zonnebloem, twee vrienden) met 3D-diepte, golvende wijn en interactie met muis of vinger. | preview (20feddda.de-zonnebloem.pages.dev) |
