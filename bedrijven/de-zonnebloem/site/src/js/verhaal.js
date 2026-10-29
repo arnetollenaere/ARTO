@@ -12,8 +12,8 @@
   var knop = document.getElementById("verhaal-pauze");
 
   var W = 600, H = 720;                       // logische tekenruimte
-  var DUUR = [5600, 5400, 5800, 6600];        // duur per stap in ms
-  var OVERGANG = 1700;                        // duur van een vormwissel in ms
+  var DUUR = [3400, 3200, 3400, 4400];        // duur per stap in ms
+  var OVERGANG = 1050;                        // duur van een vormwissel in ms
   var rustig = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var klein = Math.min(innerWidth, screen.width || innerWidth) < 700 || (navigator.hardwareConcurrency || 8) <= 4;
   var N = klein ? 4200 : 9000;
@@ -151,7 +151,7 @@
     var d = doelen[v];
     for (var i = 0; i < N; i++) {
       fx[i] = px[i]; fy[i] = py[i]; fr[i] = cr[i]; fg[i] = cg[i]; fb[i] = cb[i];
-      wacht[i] = (d[i * 5] / W) * 420 + Math.random() * 260;       // golf van links naar rechts
+      wacht[i] = (d[i * 5] / W) * 260 + Math.random() * 160;       // golf van links naar rechts
     }
     vorm = v; wisselStart = nu;
   }
@@ -166,6 +166,49 @@
   cv.addEventListener("pointermove", wijzer);
   cv.addEventListener("pointerdown", wijzer);
   cv.addEventListener("pointerleave", function () { mx = my = -9999; kx = ky = 0; });
+
+  // ---------- Sfeerlaag over het hele openingsbeeld ----------
+  // Gloed en goudstof achter tekst én animatie; de kleur volgt de huidige stap.
+  var held = fig.closest(".held") || fig;
+  var sv = document.getElementById("held-sfeer");
+  var sctx = sv && sv.getContext ? sv.getContext("2d") : null;
+  var KLEUREN = [[163, 40, 59], [214, 168, 82], [233, 185, 73], [226, 200, 143]];
+  var kleurNu = [123, 30, 44], hx = 0, hy = 0, sdpr = 1;
+  var hstof = [];
+  for (var h = 0; h < (klein ? 60 : 150); h++) hstof.push({ x: Math.random(), y: Math.random(), z: Math.random(), v: .006 + Math.random() * .018, f: Math.random() * 6.283 });
+  held.addEventListener("pointermove", function (e) {
+    var r = held.getBoundingClientRect();
+    hx = (e.clientX - r.left) / r.width * 2 - 1; hy = (e.clientY - r.top) / r.height * 2 - 1;
+  });
+  function maatSfeer() {
+    if (!sv) return;
+    var r = held.getBoundingClientRect();
+    sdpr = .5;
+    sv.width = Math.max(1, Math.round(r.width * sdpr)); sv.height = Math.max(1, Math.round(r.height * sdpr));
+  }
+  if (sv) { if ("ResizeObserver" in window) new ResizeObserver(maatSfeer).observe(held); else addEventListener("resize", maatSfeer); }
+
+  function tekenSfeer(t) {
+    if (!sctx) return;
+    var doel = KLEUREN[Math.max(0, vorm)];
+    for (var k = 0; k < 3; k++) kleurNu[k] += (doel[k] - kleurNu[k]) * .025;
+    var r0 = kleurNu[0] | 0, g0 = kleurNu[1] | 0, b0 = kleurNu[2] | 0;
+    var w = sv.width, hh = sv.height;
+    sctx.clearRect(0, 0, w, hh);
+    // Goudstof dat over het hele beeld drijft en met de muis meebeweegt.
+    sctx.globalCompositeOperation = "lighter";
+    for (var i = 0; i < hstof.length; i++) {
+      var q = hstof[i];
+      q.y -= q.v * .016 * (rustig ? 0 : 1); if (q.y < -.03) { q.y = 1.03; q.x = Math.random(); }
+      var a = .06 + .16 * (.5 + .5 * Math.sin(t * 1.3 + q.f));
+      var mr = (226 + r0) >> 1, mg = (200 + g0) >> 1, mb = (143 + b0) >> 1;
+      sctx.fillStyle = "rgba(" + mr + "," + mg + "," + mb + "," + a.toFixed(2) + ")";
+      sctx.beginPath();
+      sctx.arc((q.x * w) + Math.sin(t * .4 + q.f) * 14 * sdpr + hx * 26 * q.z * sdpr, (q.y * hh) + hy * 14 * q.z * sdpr, (1 + q.z * 3.2) * sdpr, 0, 6.283);
+      sctx.fill();
+    }
+    sctx.globalCompositeOperation = "source-over";
+  }
 
   // ---------- Tekenen ----------
   var schaal = 1, dpr = 1;
@@ -195,15 +238,7 @@
     ctx.clearRect(0, 0, cv.width, cv.height);
     ctx.setTransform(schaal, 0, 0, schaal, 0, 0);
 
-    // Zwevend goudstof op de achtergrond.
-    ctx.globalCompositeOperation = "lighter";
-    for (var s = 0; s < stof.length; s++) {
-      var q = stof[s];
-      q.y -= q.v * .016; if (q.y < -10) { q.y = H + 10; q.x = Math.random() * W; }
-      var a = .05 + .12 * (.5 + .5 * Math.sin(t * 1.3 + q.f));
-      ctx.fillStyle = kleur(226, 200, 143, a.toFixed(2));
-      ctx.beginPath(); ctx.arc(q.x + Math.sin(t * .4 + q.f) * 12 + kx * 18 * q.z, q.y, 1.2 + q.z * 3.5, 0, 6.283); ctx.fill();
-    }
+    tekenSfeer(t);
 
     ctx.globalCompositeOperation = "source-over";
     var straal2 = 75 * 75;
@@ -265,6 +300,8 @@
     void b.offsetWidth;
     b.classList.add("bezig");
     naarVorm(n - 1, performance.now());
+    var kl = KLEUREN[n - 1];
+    held.style.setProperty("--sfeer", "rgb(" + kl[0] + "," + kl[1] + "," + kl[2] + ")");
   }
   function volgende() { zetStap(stap % 4 + 1); plan(DUUR[stap - 1]); }
   function plan(ms) {
@@ -303,7 +340,7 @@
   // ---------- Start ----------
   var lettertypes = document.fonts && document.fonts.load ? document.fonts.load('700 40px "Libre Franklin"').catch(function () {}) : Promise.resolve();
   lettertypes.then(function () {
-    maatCanvas();
+    maatCanvas(); maatSfeer();
     for (var v = 0; v < VORMEN.length; v++) doelen.push(bemonster(VORMEN[v]));
     if (rustig) {
       // Geen beweging: eindbeeld tonen en alle zinnen naast elkaar.
@@ -316,6 +353,6 @@
     }
     vorm = 0; wisselStart = performance.now() + 1e9;   // eerst als zwevende wolk tonen
     start();
-    setTimeout(function () { zetStap(1); plan(DUUR[0]); }, 700);
+    setTimeout(function () { zetStap(1); plan(DUUR[0]); }, 300);
   });
 })();

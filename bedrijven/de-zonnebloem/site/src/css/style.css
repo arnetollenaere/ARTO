@@ -444,7 +444,7 @@ body { font-size: 1rem; }
 @media (max-width: 960px) { .kop__binnen { margin-inline: 16px; } }
 
 /* ---------- Geanimeerd verhaal in het openingsbeeld ---------- */
-.verhaal-anim { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 110px 4vw 40px; background: radial-gradient(60% 50% at 60% 45%, rgba(123, 30, 44, .28), transparent 70%); }
+.verhaal-anim { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 110px 4vw 40px; background: none; }
 .verhaal-anim::after { display: none; }
 
 .vc { display: block; width: min(100%, 600px); aspect-ratio: 600 / 720; max-height: 68vh; height: auto; touch-action: pan-y; cursor: crosshair; }
@@ -471,7 +471,7 @@ body { font-size: 1rem; }
 .verhaal-anim.rustig .verhaal__balk, .verhaal-anim.rustig .verhaal__pauze { display: none; }
 
 @media (max-width: 900px) {
-  .held__beeld.verhaal-anim { position: relative; inset: auto; padding: 84px 16px 0; background: radial-gradient(70% 55% at 55% 45%, rgba(123, 30, 44, .3), transparent 70%); }
+  .held__beeld.verhaal-anim { position: relative; inset: auto; padding: 84px 16px 0; background: none; }
   .held { display: flex; flex-direction: column; }
   .held__tekst { order: 2; justify-content: flex-start; padding: 28px 16px 56px; }
 }
@@ -486,3 +486,26 @@ body { font-size: 1rem; }
 @media (max-width: 900px) { .held__beeld.verhaal-anim .verhaal__tekst { display: grid; } }
 .verhaal-anim.rustig .verhaal__tekst .verhaal__balk, .verhaal-anim.rustig .verhaal__tekst .verhaal__pauze { display: none; }
 @media (max-width: 900px) { .held__beeld .verhaal__tekst .verhaal__zinnen { min-height: 2.8em; } }
+
+/* Openingsbeeld afgestemd op de animatie: één sfeerlaag, accentkleur volgt de stap. */
+.held { --sfeer: rgb(163, 40, 59); }
+.held__sfeer { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+.held__beeld, .held__tekst { position: relative; z-index: 1; }
+.held .knop { border-color: var(--sfeer); transition: color .5s var(--ease), border-color 1s ease; }
+.held .stand__lijn span { background: var(--sfeer); box-shadow: 0 0 14px var(--sfeer); transition: width 2.2s var(--ease), background-color 1s ease, box-shadow 1s ease; }
+.held .verhaal__balk i::after { background: var(--sfeer); transition: background-color 1s ease; }
+.held .stand__doel strong { transition: color 1s ease; }
+@media (max-width: 900px) { .held__beeld.verhaal-anim { position: relative; } }
+
+/* Gloed in CSS: vloeiend verloop zonder ringen, kleur glijdt mee met de stap. */
+@property --sfeer { syntax: "<color>"; inherits: true; initial-value: rgb(163, 40, 59); }
+.held { transition: --sfeer 1.4s ease; isolation: isolate; }
+.held::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(42% 55% at 73% 46%, color-mix(in srgb, var(--sfeer) 34%, transparent), transparent 72%),
+    radial-gradient(45% 45% at 8% 95%, color-mix(in srgb, var(--sfeer) 12%, transparent), transparent 70%); }
+@media (max-width: 900px) {
+  .held::before { background:
+    radial-gradient(70% 32% at 55% 26%, color-mix(in srgb, var(--sfeer) 36%, transparent), transparent 72%),
+    radial-gradient(60% 30% at 10% 90%, color-mix(in srgb, var(--sfeer) 12%, transparent), transparent 70%); }
+}
