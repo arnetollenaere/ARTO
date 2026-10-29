@@ -6,7 +6,7 @@
   <title>Wijnverkoop De Zonnebloem | Bestel wijn voor het goede doel</title>
   <meta name="description" content="Bestel wijn en steun De Zonnebloem, het weekend en kamp van vzw Raakpunt (Gent) voor kinderen en jongeren met of zonder beperking.">
   <link rel="canonical" href="https://de-zonnebloem.pages.dev/">
-  <meta name="theme-color" content="#0d0a09">
+  <meta name="theme-color" content="#2832b9">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Wijnverkoop De Zonnebloem">
@@ -15,8 +15,9 @@
   <meta property="og:image" content="https://de-zonnebloem.pages.dev/img/og.jpg">
 
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="/fonts/libre-franklin-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=10">
+  <link rel="preload" href="/fonts/antonio-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/cantarell-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/style.css?v=20">
 
   <script type="application/ld+json">
   {
@@ -37,34 +38,46 @@
 
   <header class="kop" id="kop">
     <div class="kop__binnen">
-      <a class="merk" href="/" aria-label="De Zonnebloem, naar de startpagina">
-        <span class="merk__naam">De Zonnebloem</span>
-        <span class="merk__sub" id="actienaam">Wijnactie 2026</span>
+      <a class="merk" href="/" aria-label="vzw Raakpunt, De Zonnebloem: naar de startpagina">
+        <img class="merk__logo merk__logo--wit" src="/img/raakpunt-wit.webp" width="600" height="500" alt="">
+        <img class="merk__logo merk__logo--blauw" src="/img/raakpunt-blauw.webp" width="600" height="500" alt="">
+        <span class="merk__tekst"><span class="merk__naam">De Zonnebloem</span><span class="merk__sub" id="actienaam">Wijnactie 2026</span></span>
       </a>
-      <nav class="menu" aria-label="Hoofdmenu">
-        <a href="#wijnen">Wijnen</a>
-        <a href="#verhaal">Over De Zonnebloem</a>
-        <a href="#werkwijze">Hoe bestellen</a>
-        <a href="#vragen">Vragen</a>
-      </nav>
-      <a class="mandknop" href="#bestellen">Mandje (<span id="kop-aantal">0</span>)</a>
+      <div class="kop__rechts">
+        <a class="mandknop" href="#bestellen">Mandje (<span id="kop-aantal">0</span>)</a>
+        <button type="button" class="menuknop" id="menuknop" aria-expanded="false" aria-controls="menu"><span class="sr">Menu</span><i></i><i></i><i></i></button>
+      </div>
     </div>
   </header>
 
-  <main>
+  <nav class="menu" id="menu" aria-label="Hoofdmenu" hidden>
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#wijnen">Wijnen</a></li>
+      <li><a href="#verhaal">Over De Zonnebloem</a></li>
+      <li><a href="#werkwijze">Hoe bestellen</a></li>
+      <li><a href="#bestellen">Bestellen</a></li>
+      <li><a href="#vragen">Vragen</a></li>
+      <li><a href="https://www.vzwraakpunt.be/" rel="noopener">vzwraakpunt.be</a></li>
+    </ul>
+  </nav>
+
+  <main id="top">
     <!-- Openingsbeeld -->
     <section class="held" aria-labelledby="held-titel">
       <canvas class="held__sfeer" id="held-sfeer" aria-hidden="true"></canvas>
       <div class="held__tekst">
+        <img class="held__logo" src="/img/raakpunt-wit.webp" width="600" height="500" alt="vzw Raakpunt">
         <h1 id="held-titel" class="held__titel">
           <span class="regel"><span>Wijnverkoop</span></span>
           <span class="regel"><span>ten voordele van</span></span>
           <span class="regel"><span>De Zonnebloem</span></span>
         </h1>
-        <p class="held__intro">Bestel hier je wijn. De opbrengst gaat naar De Zonnebloem, het jaarlijkse weekend en kamp van vzw Raakpunt voor kinderen en jongeren met of zonder beperking. Je betaalt via overschrijving en haalt je wijn op of laat hem aan huis leveren.</p>
+        <p class="held__motto">Want zonder hoek af is de cirkel nooit rond</p>
+        <p class="held__intro">Bestel hier je wijn. De opbrengst gaat naar De Zonnebloem, het jaarlijkse weekend en kamp van vzw Raakpunt voor kinderen en jongeren met of zonder beperking.</p>
         <div class="held__acties">
-          <a class="knop" href="#wijnen"><span>Bekijk de wijnen</span></a>
-          <a class="tekstlink" href="#verhaal">Over De Zonnebloem</a>
+          <a class="knop knop--wit" href="#wijnen"><span>Bekijk de wijnen</span></a>
+          <a class="tekstlink" href="#verhaal">Lees meer</a>
         </div>
         <div class="stand" id="stand" hidden>
           <div class="stand__cijfers">
@@ -89,49 +102,16 @@
       </figure>
     </section>
 
-    <!-- Verhaal -->
-    <section id="verhaal" class="verhaal" aria-labelledby="verhaal-titel">
+    <!-- Wijnen -->
+    <section id="wijnen" class="sectie" aria-labelledby="wijnen-titel">
+      <h2 id="wijnen-titel" class="sectietitel">Onze wijnen</h2>
       <div class="kader">
-        <h2 id="verhaal-titel" class="klein-titel">Over De Zonnebloem</h2>
-        <p class="manifest" id="manifest">De Zonnebloem is het jaarlijkse weekend en kamp van vzw Raakpunt voor kinderen en jongeren met of zonder beperking. Met de opbrengst van deze wijnverkoop maken we het mogelijk.</p>
-
-        <div class="collage">
-          <figure class="collage__a" data-parallax="-0.06">
-            <img src="/img/foto/zonnebloemen-1000.webp" srcset="/img/foto/zonnebloemen-640.webp 640w, /img/foto/zonnebloemen-1000.webp 1000w" sizes="(max-width: 900px) 70vw, 34vw" width="1000" height="1250" loading="lazy" alt="Een veld vol zonnebloemen bij zonsondergang">
-          </figure>
-          <figure class="collage__b" data-parallax="0.08">
-            <img src="/img/foto/samen-1000.webp" srcset="/img/foto/samen-640.webp 640w, /img/foto/samen-1000.webp 1000w" sizes="(max-width: 900px) 60vw, 26vw" width="1000" height="1250" loading="lazy" alt="Vrienden klinken samen buiten, een van hen zit in een rolstoel">
-          </figure>
-          <div class="collage__tekst">
-            <p>vzw Raakpunt organiseert vrijetijdsactiviteiten voor kinderen, jongeren en volwassenen uit Gent en omgeving: met of zonder fysieke of mentale beperking, opgegroeid in (kans)armoede of in een moeilijke opvoedingssituatie.</p>
-            <p>Alles draait om inclusie. Een team vrijwilligers organiseert creatieve, laagdrempelige en vooral prettig gestoorde activiteiten die deelnemers, jong en oud, lid en begeleider dichter bij elkaar brengen.</p>
-            <blockquote class="motto">“Want zonder een hoek af is de cirkel nooit rond.”</blockquote>
-            <ul class="werking">
-              <li><strong>De Zonnebloem</strong> Weekend en kamp voor kinderen en jongeren met of zonder beperking.</li>
-              <li><strong>’t Stoofken</strong> Oudejaarsfeest voor Gentse kansarme gezinnen.</li>
-              <li><strong>Raakpunt In De Wijk</strong> Spel en ontmoeting met de jeugd in een Gentse volkswijk.</li>
-              <li><strong>Jaarfeest</strong> Een bedankfeest voor vrijwilligers, oud-vrijwilligers en sponsors.</li>
-            </ul>
-            <a class="tekstlink" href="https://www.vzwraakpunt.be/" rel="noopener">Meer over vzw Raakpunt</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Collectie -->
-    <section id="wijnen" class="collectie" aria-labelledby="collectie-titel">
-      <div class="kader">
-        <div class="sectiekop">
-          <div>
-            <h2 id="collectie-titel" class="titel">Onze wijnen</h2>
-          </div>
-          <div class="filters" role="group" aria-label="Filter op soort">
-            <button type="button" class="filter" data-filter="alles" aria-pressed="true">Alles</button>
-            <button type="button" class="filter" data-filter="wit" aria-pressed="false">Wit</button>
-            <button type="button" class="filter" data-filter="rosé" aria-pressed="false">Rosé</button>
-            <button type="button" class="filter" data-filter="rood" aria-pressed="false">Rood</button>
-            <button type="button" class="filter" data-filter="bubbels" aria-pressed="false">Bubbels</button>
-          </div>
+        <div class="filters" role="group" aria-label="Filter op soort">
+          <button type="button" class="filter" data-filter="alles" aria-pressed="true">Alles</button>
+          <button type="button" class="filter" data-filter="wit" aria-pressed="false">Wit</button>
+          <button type="button" class="filter" data-filter="rosé" aria-pressed="false">Rosé</button>
+          <button type="button" class="filter" data-filter="rood" aria-pressed="false">Rood</button>
+          <button type="button" class="filter" data-filter="bubbels" aria-pressed="false">Bubbels</button>
         </div>
         <ul class="wijnen" id="wijnlijst">
           <li class="laden">De wijnen worden geladen…</li>
@@ -140,43 +120,47 @@
       </div>
     </section>
 
-    <!-- Beeldband -->
-    <section class="panorama" aria-label="Sfeerbeeld">
-      <img src="/img/foto/wijngaard-2000.webp" srcset="/img/foto/wijngaard-1000.webp 1000w, /img/foto/wijngaard-2000.webp 2000w" sizes="100vw" width="2000" height="1125" loading="lazy" alt="" data-parallax="0.12">
-      <div class="panorama__tekst">
-        <p class="panorama__groot">Afhalen of aan huis geleverd</p>
-        <p>Kies bij het bestellen wat je het best past.</p>
+    <!-- Over -->
+    <section id="verhaal" class="sectie sectie--over" aria-labelledby="verhaal-titel">
+      <h2 id="verhaal-titel" class="sectietitel">Over De Zonnebloem</h2>
+      <div class="kader kader--smal over">
+        <p class="manifest" id="manifest">De Zonnebloem is het jaarlijkse weekend en kamp van vzw Raakpunt voor kinderen en jongeren met of zonder beperking. Met de opbrengst van deze wijnverkoop maken we het mogelijk.</p>
+        <p>vzw Raakpunt organiseert vrijetijdsbesteding voor kansengroepen uit Gent en omgeving: kinderen, jongeren en volwassenen uit maatschappelijk kwetsbare groepen, met of zonder fysieke en/of mentale beperking, opgegroeid in (kans)armoede of in een problematische opvoedingssituatie.</p>
+        <p>Raakpunt staat helemaal in het teken van inclusie. De activiteiten brengen deelnemers onderling, oud en jong, lid en begeleider dichter bij elkaar. Een team vrijwilligers organiseert creatieve, rake, laagdrempelige en vooral prettig gestoorde vrijetijdsactiviteiten. Want zonder een hoek af is de cirkel nooit rond.</p>
+      </div>
+      <div class="kader">
+        <ul class="werking">
+          <li class="onthul"><h3>De Zonnebloem</h3><p>Een weekend en kamp voor kinderen en jongeren met of zonder beperking.</p></li>
+          <li class="onthul"><h3>’t Stoofken</h3><p>Het oudejaarsfeest voor Gentse kansarme gezinnen.</p></li>
+          <li class="onthul"><h3>Raakpunt In De Wijk</h3><p>Spel en ontmoeting met de lokale, diverse jeugd in een Gentse volkswijk.</p></li>
+          <li class="onthul"><h3>Jaarfeest</h3><p>Vrijwilligers, oud-vrijwilligers en sponsors in de bloemetjes gezet.</p></li>
+        </ul>
+        <p class="midden"><a class="knop" href="https://www.vzwraakpunt.be/" rel="noopener"><span>Meer over vzw Raakpunt</span></a></p>
       </div>
     </section>
 
-    <!-- Werkwijze -->
-    <section id="werkwijze" class="werkwijze" aria-labelledby="werkwijze-titel">
+    <!-- Band -->
+    <section class="band" aria-label="Afhalen of leveren">
+      <p class="band__groot">Afhalen of aan huis geleverd</p>
+      <p>Kies bij het bestellen wat je het best past.</p>
+    </section>
+
+    <!-- Hoe bestellen -->
+    <section id="werkwijze" class="sectie" aria-labelledby="werkwijze-titel">
+      <h2 id="werkwijze-titel" class="sectietitel">Hoe bestellen</h2>
       <div class="kader">
-        <h2 id="werkwijze-titel" class="titel">Hoe bestellen?</h2>
         <ol class="stappen">
-          <li class="onthul">
-            <span class="stappen__nr">1</span>
-            <h3>Kies je wijnen</h3>
-            <p>Wit, rosé, rood of bubbels. Per fles of meteen per doos van zes.</p>
-          </li>
-          <li class="onthul">
-            <span class="stappen__nr">2</span>
-            <h3>Bestel en betaal</h3>
-            <p>Na je bestelling zie je het rekeningnummer, het bedrag en de mededeling. Je kan ook betalen met de QR-code in je bank-app.</p>
-          </li>
-          <li class="onthul">
-            <span class="stappen__nr">3</span>
-            <h3>Haal op of laat leveren</h3>
-            <p>Als je betaling binnen is, zetten we je wijn klaar of brengen we hem aan huis.</p>
-          </li>
+          <li class="onthul"><span class="stappen__nr">1</span><h3>Kies je wijnen</h3><p>Wit, rosé, rood of bubbels. Per fles of meteen per doos van zes.</p></li>
+          <li class="onthul"><span class="stappen__nr">2</span><h3>Bestel en betaal</h3><p>Na je bestelling zie je het rekeningnummer, het bedrag en de mededeling. Je kan ook betalen met de QR-code in je bank-app.</p></li>
+          <li class="onthul"><span class="stappen__nr">3</span><h3>Haal op of laat leveren</h3><p>Als je betaling binnen is, zetten we je wijn klaar of brengen we hem aan huis.</p></li>
         </ol>
       </div>
     </section>
 
     <!-- Bestellen -->
-    <section id="bestellen" class="bestellen" aria-labelledby="bestellen-titel">
+    <section id="bestellen" class="sectie sectie--blauw" aria-labelledby="bestellen-titel">
+      <h2 id="bestellen-titel" class="sectietitel">Je bestelling</h2>
       <div class="kader">
-        <h2 id="bestellen-titel" class="titel">Je bestelling</h2>
         <p class="melding melding--fout" id="gesloten" hidden>De bestellingen voor deze actie zijn afgesloten. Bedankt aan iedereen die meedeed!</p>
         <div class="bestellen__raster">
           <aside class="mandje" aria-labelledby="mandje-titel">
@@ -272,12 +256,9 @@
     </section>
 
     <!-- Vragen -->
-    <section id="vragen" class="vragen" aria-labelledby="vragen-titel">
-      <div class="kader vragen__raster">
-        <div>
-          <h2 id="vragen-titel" class="titel">Vragen</h2>
-        </div>
-        <div>
+    <section id="vragen" class="sectie" aria-labelledby="vragen-titel">
+      <h2 id="vragen-titel" class="sectietitel">Vragen</h2>
+      <div class="kader kader--smal">
           <details>
             <summary>Hoe betaal ik?</summary>
             <p>Via overschrijving. Na je bestelling krijg je het rekeningnummer, het bedrag en een gestructureerde mededeling. Met de QR-code betaal je in de meeste bank-apps in een paar tikken. Gebruik zeker de mededeling, zo vinden we je betaling terug.</p>
@@ -294,7 +275,6 @@
             <summary>Kan ik mijn bestelling nog wijzigen?</summary>
             <p>Mail naar <a href="mailto:vzwraakpunt@gmail.com">vzwraakpunt@gmail.com</a> en vermeld je bestelnummer. Betaalde je nog niet? Dan kan je ook gewoon een nieuwe bestelling plaatsen.</p>
           </details>
-        </div>
       </div>
     </section>
   </main>
@@ -307,24 +287,16 @@
   </a>
 
   <footer class="voet">
-    <div class="kader">
-      <p class="voet__naam">vzw Raakpunt · De Zonnebloem</p>
-      <div class="voet__raster">
-        <p>Wijnverkoop van vzw Raakpunt (Gent) ten voordele van De Zonnebloem, het weekend en kamp voor kinderen en jongeren met of zonder beperking.</p>
-        <address>
-          <a href="mailto:vzwraakpunt@gmail.com">vzwraakpunt@gmail.com</a><br>
-          <a href="https://www.vzwraakpunt.be/" rel="noopener">www.vzwraakpunt.be</a><br>
-          Ondernemingsnummer BE 0452.918.932
-        </address>
-        <div>
-          <p>Geniet, drink met mate. Geen verkoop van alcohol aan min-18-jarigen.</p>
-          <p>&copy; <span id="jaar">2026</span> vzw Raakpunt · Website door <a href="https://artowebdesign.com">ARTO</a></p>
-        </div>
-      </div>
+    <div class="voet__binnen">
+      <img class="voet__logo" src="/img/raakpunt-wit.webp" width="600" height="500" alt="vzw Raakpunt" loading="lazy">
+      <p>Ond.nr: BE 0452.918.932</p>
+      <p><a href="mailto:vzwraakpunt@gmail.com">vzwraakpunt@gmail.com</a></p>
+      <p><a href="https://www.vzwraakpunt.be/" rel="noopener">www.vzwraakpunt.be</a></p>
     </div>
+    <p class="voet__klein">Geniet, drink met mate. Geen verkoop van alcohol aan min-18-jarigen. &copy; <span id="jaar">2026</span> vzw Raakpunt · Website door <a href="https://artowebdesign.com">ARTO</a></p>
   </footer>
 
-  <script src="/js/winkel.js?v=5" defer></script>
-  <script src="/js/verhaal.js?v=3" defer></script>
+  <script src="/js/winkel.js?v=20" defer></script>
+  <script src="/js/verhaal.js?v=20" defer></script>
 </body>
 </html>

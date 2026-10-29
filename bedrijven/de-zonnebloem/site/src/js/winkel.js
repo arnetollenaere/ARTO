@@ -311,6 +311,21 @@
     }, { rootMargin: "0px 0px -30% 0px" }).observe($("#bestellen"));
   }
 
+  // ---------- Menu (volledig scherm, zoals op vzwraakpunt.be) ----------
+  var menuknop = $("#menuknop"), menu = $("#menu");
+  if (menuknop && menu) {
+    var zetMenu = function (open) {
+      menu.hidden = !open;
+      menuknop.setAttribute("aria-expanded", String(open));
+      document.body.classList.toggle("menu-open", open);
+      document.body.style.overflow = open ? "hidden" : "";
+      if (open) { var eerste = menu.querySelector("a"); if (eerste) eerste.focus(); } else menuknop.focus();
+    };
+    menuknop.addEventListener("click", function () { zetMenu(menu.hidden); });
+    menu.addEventListener("click", function (e) { if (e.target.closest("a")) zetMenu(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !menu.hidden) zetMenu(false); });
+  }
+
   // ---------- Start ----------
   $("#jaar").textContent = new Date().getFullYear();
   onthul(".onthul");

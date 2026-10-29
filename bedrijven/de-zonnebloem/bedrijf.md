@@ -67,6 +67,8 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 
 ## Notities
 
+- Huisstijl Raakpunt: blauw #2832b9, oranje #ff4619, wit; lettertypes Antonio (titels, hoofdletters) en Cantarell. Logo van hun site (Logo_Raakpunt_wit.png). Op hun site staat Rek.nr. BE82 9799 7559 3568 (nog niet bevestigd voor de wijnverkoop).
+
 - Eigen website: https://www.vzwraakpunt.be/ (motto: "zonder een hoek af is de cirkel nooit rond"). Weekend De Zonnebloem 2026: 27/2 tot 1/3 in Jeugdpark Hoogland, Lokeren. Sponsors o.a. VOG en Rotary Gent.
 - Geen kinderen in beeld naast wijn (Belgische alcoholreclameregels); in tekst mag vermeld worden dat de opbrengst naar het kamp voor kinderen en jongeren gaat.
 

@@ -35,13 +35,13 @@
       var kelk = new Path2D("M120,280 C116,390 140,476 190,488 C240,476 264,390 260,280 Z");
       c.save(); c.clip(kelk);
       var g = c.createLinearGradient(0, 300, 0, 490);
-      g.addColorStop(0, "#d2394b"); g.addColorStop(1, "#6d1626");
+      g.addColorStop(0, "#ff5a6a"); g.addColorStop(1, "#d42343");
       c.fillStyle = g;
       c.beginPath(); c.moveTo(100, 318);
       for (var x = 100; x <= 280; x += 10) c.lineTo(x, 318 + Math.sin(x / 14) * 4);
       c.lineTo(280, 500); c.lineTo(100, 500); c.fill();
       c.restore();
-      c.strokeStyle = "#ecd39a"; c.lineCap = "round"; c.lineJoin = "round"; c.lineWidth = 5;
+      c.strokeStyle = "#ffffff"; c.lineCap = "round"; c.lineJoin = "round"; c.lineWidth = 5;
       c.stroke(new Path2D("M120,280 C116,390 140,476 190,488 C240,476 264,390 260,280"));
       c.beginPath(); c.ellipse(190, 280, 70, 9, 0, 0, Math.PI * 2); c.stroke();
       c.lineWidth = 6; c.beginPath(); c.moveTo(190, 488); c.lineTo(190, 630); c.stroke();
@@ -50,8 +50,8 @@
       c.stroke(new Path2D("M138,300 C135,360 146,420 166,458"));
     },
     function munt(c) {
-      c.strokeStyle = "#f0c868"; c.lineWidth = 20; c.beginPath(); c.arc(300, 380, 160, 0, Math.PI * 2); c.stroke();
-      c.strokeStyle = "#b88a34"; c.lineWidth = 5; c.beginPath(); c.arc(300, 380, 128, 0, Math.PI * 2); c.stroke();
+      c.strokeStyle = "#ff8a3d"; c.lineWidth = 20; c.beginPath(); c.arc(300, 380, 160, 0, Math.PI * 2); c.stroke();
+      c.strokeStyle = "#ffc24a"; c.lineWidth = 5; c.beginPath(); c.arc(300, 380, 128, 0, Math.PI * 2); c.stroke();
       c.fillStyle = "#fff8ea"; c.font = '800 230px "Libre Franklin", Arial, sans-serif';
       c.textAlign = "center"; c.textBaseline = "middle"; c.fillText("€", 296, 392);
     },
@@ -64,13 +64,13 @@
       var i, a;
       for (i = 0; i < 20; i++) {
         a = (i / 20) * Math.PI * 2 + Math.PI / 20;
-        c.save(); c.translate(300, 290); c.rotate(a); c.fillStyle = "#d9771a";
+        c.save(); c.translate(300, 290); c.rotate(a); c.fillStyle = "#ff8a1f";
         c.beginPath(); c.moveTo(0, -40); c.bezierCurveTo(18, -70, 16, -118, 0, -150); c.bezierCurveTo(-16, -118, -18, -70, 0, -40); c.fill(); c.restore();
       }
       for (i = 0; i < 20; i++) {
         a = (i / 20) * Math.PI * 2;
         c.save(); c.translate(300, 290); c.rotate(a);
-        var g = c.createLinearGradient(0, 0, 0, -140); g.addColorStop(0, "#e0a21f"); g.addColorStop(1, "#ffd76a");
+        var g = c.createLinearGradient(0, 0, 0, -140); g.addColorStop(0, "#ffc12e"); g.addColorStop(1, "#ffe58a");
         c.fillStyle = g;
         c.beginPath(); c.moveTo(0, -46); c.bezierCurveTo(17, -72, 15, -112, 0, -140); c.bezierCurveTo(-15, -112, -17, -72, 0, -46); c.fill(); c.restore();
       }
@@ -96,8 +96,8 @@
       lijn("M320,447 L320,545 L306,636 M320,545 L334,636");
       lijn("M320,470 C300,478 276,488 256,500");
       lijn("M320,470 C338,456 348,438 354,408");
-      c.fillStyle = "#e9b949"; hart(c, 262, 330, 34);
-      c.fillStyle = "#c8a15a"; hart(c, 208, 372, 14); hart(c, 314, 360, 11);
+      c.fillStyle = "#ff4619"; hart(c, 262, 330, 34);
+      c.fillStyle = "#ff8a5c"; hart(c, 208, 372, 14); hart(c, 314, 360, 11);
     }
   ];
 
@@ -138,7 +138,7 @@
     var hoek = Math.random() * Math.PI * 2, straal = 80 + Math.random() * 320;
     px[i] = 300 + Math.cos(hoek) * straal; py[i] = 360 + Math.sin(hoek) * straal * .9;
     fx[i] = px[i]; fy[i] = py[i];
-    cr[i] = fr[i] = 200; cg[i] = fg[i] = 161; cb[i] = fb[i] = 90;
+    cr[i] = fr[i] = 255; cg[i] = fg[i] = 255; cb[i] = fb[i] = 255;
     z[i] = Math.random() * 2 - 1; fase[i] = Math.random() * 6.283;
     maat[i] = 1 + Math.random() * 1.1;
     zwier[i] = (Math.random() < .5 ? -1 : 1) * (30 + Math.random() * 150);
@@ -172,7 +172,7 @@
   var held = fig.closest(".held") || fig;
   var sv = document.getElementById("held-sfeer");
   var sctx = sv && sv.getContext ? sv.getContext("2d") : null;
-  var KLEUREN = [[163, 40, 59], [214, 168, 82], [233, 185, 73], [226, 200, 143]];
+  var KLEUREN = [[200, 40, 70], [255, 120, 50], [255, 196, 60], [255, 255, 255]];
   var kleurNu = [123, 30, 44], hx = 0, hy = 0, sdpr = 1;
   var hstof = [];
   for (var h = 0; h < (klein ? 60 : 150); h++) hstof.push({ x: Math.random(), y: Math.random(), z: Math.random(), v: .006 + Math.random() * .018, f: Math.random() * 6.283 });
@@ -201,7 +201,7 @@
       var q = hstof[i];
       q.y -= q.v * .016 * (rustig ? 0 : 1); if (q.y < -.03) { q.y = 1.03; q.x = Math.random(); }
       var a = .06 + .16 * (.5 + .5 * Math.sin(t * 1.3 + q.f));
-      var mr = (226 + r0) >> 1, mg = (200 + g0) >> 1, mb = (143 + b0) >> 1;
+      var mr = (255 + r0) >> 1, mg = (255 + g0) >> 1, mb = (255 + b0) >> 1;
       sctx.fillStyle = "rgba(" + mr + "," + mg + "," + mb + "," + a.toFixed(2) + ")";
       sctx.beginPath();
       sctx.arc((q.x * w) + Math.sin(t * .4 + q.f) * 14 * sdpr + hx * 26 * q.z * sdpr, (q.y * hh) + hy * 14 * q.z * sdpr, (1 + q.z * 3.2) * sdpr, 0, 6.283);
@@ -259,7 +259,7 @@
       // Rusteloos glinsteren, en golvende wijn in het glas.
       bx += Math.sin(t * .9 + fase[i]) * .45;
       by += Math.cos(t * 1.1 + fase[i] * 1.3) * .45;
-      if (vorm === 0 && cr[i] > 150 && cg[i] < 110) by += Math.sin(bx * .045 + t * 2.4) * 3.2 * Math.max(0, 1 - (by - 150) / 380);
+      if (vorm === 0 && cr[i] > 150 && cg[i] < 130) by += Math.sin(bx * .045 + t * 2.4) * 3.2 * Math.max(0, 1 - (by - 150) / 380);
       px[i] = bx; py[i] = by;
 
       // Uitwijken voor muis of vinger, met terugvering.

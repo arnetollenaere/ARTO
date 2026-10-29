@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Volledig omgezet naar de huisstijl van vzwraakpunt.be (blauw #2832b9, oranje #ff4619, Antonio + Cantarell, Raakpunt-logo, hamburgermenu, oranje voettekst). Animatie behouden. Donkere versie bewaard: branch `versie-donker` in de site-repo, `claude/de-zonnebloem-versie-donker` in ARTO, online op versie-donker.de-zonnebloem.pages.dev. | preview (e7244091.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Live gezet: snellere animatie met afgestemd openingsbeeld en de inhoud over vzw Raakpunt. IBAN is nog een voorbeeld. | productie |
 | 2026-10-29 | Echte inhoud over vzw Raakpunt en De Zonnebloem toegevoegd (werking, motto, activiteiten, e-mail, ondernemingsnummer), begunstigde vzw Raakpunt, domein tijdelijk ingevuld als de-zonnebloem.pages.dev. | preview |
 | 2026-10-29 | Animatie sneller (~14 s per ronde). Openingsbeeld afgestemd: gloed over het hele beeld in de kleur van elke stap, goudstof over het hele beeld, knop en balken kleuren mee. | preview (769f70ef.de-zonnebloem.pages.dev) |
