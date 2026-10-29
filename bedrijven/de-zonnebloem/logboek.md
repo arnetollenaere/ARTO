@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Live gezet: interactieve ARTO-vermelding onderaan. | productie |
 | 2026-10-29 | ARTO-vermelding "Website gemaakt en geschonken door arto" onderaan op donkerblauwe strook, met ARTO-teken dat bij hover draait en meekantelt (zoals op orthopedie-depaepe.be en amc.be, maar groter). | preview |
 | 2026-10-29 | Live gezet: beheerscherm in Raakpunt-stijl, nieuwe inloggegevens (gebruiker `raakpunt`, nieuw wachtwoord) als Pages-secrets. Getest: enkel juiste combinatie geeft toegang; IBAN-status groen (vingerafdruk klopt). | productie |
 | 2026-10-29 | Beheerscherm in Raakpunt-stijl; inloggen vraagt voortaan gebruikersnaam (BEHEER_GEBRUIKER) én wachtwoord (BEHEER_WACHTWOORD), met vertraging na een foute poging. Nieuwe inloggegevens nog in te stellen bij het live zetten. | nee |
