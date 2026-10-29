@@ -56,7 +56,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Levering aan huis | nee, enkel afhalen (`levering.actief: false` in instellingen.json) |
 | Wijnen en prijzen | voorbeeldselectie in `site/src/wijnen.json`, te vervangen door de echte |
 | Beheer | `/beheer/` met wachtwoord: bestellingen, betalingen afpunten, picklijst, Excel-export, status van het IBAN |
-| IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` als Pages-secret: nog in te stellen zodra het echte IBAN gekend is (zie `site/README.md`). |
+| IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29 (zie `site/README.md`). |
 | E-mails | optioneel via Resend (nog niet ingesteld) |
 
 ## Afspraken

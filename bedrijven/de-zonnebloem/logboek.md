@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Live gezet met echt IBAN BE82 9799 7559 3568 en gsm-volgorde (tekst boven animatie). Vingerafdruk IBAN_SHA256 ingesteld als Pages-secret. Testbestelling ZB-2026-0005 geplaatst (juist IBAN getoond) en geannuleerd. | productie |
 | 2026-10-29 | Echt rekeningnummer BE82 9799 7559 3568 (vzw Raakpunt, bevestigd door Arne) ingevuld. Op gsm staat de tekst nu boven de animatie. Vingerafdruk IBAN_SHA256 nog in te stellen bij het live zetten. | preview (cf3468d0.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Live gezet: huisstijl vzw Raakpunt, enkel afhalen, zonder groot logo, animatie gecentreerd zonder voortgangsbalk, zin overlapt de animatie niet meer, kop op smalle gsm's hersteld. IBAN is nog een voorbeeld. | productie |
 | 2026-10-29 | Kop op smalle gsm's: naam en mandje overlappen niet meer (getest van 320 tot 430 px). | preview |
