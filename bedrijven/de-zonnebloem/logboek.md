@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Live gezet: donkere fotostijl met Libre Franklin en bewegende elementen, zonder scroll-lijntje. | productie |
 | 2026-10-29 | Scroll-lijntje onder de teller verwijderd, kop uitgelijnd met de openingstekst op brede schermen. | preview (a58adb1f.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Lettertype Libre Franklin, door Arne gekozen uit vier voorbeelden (Libre Caslon, EB Garamond, Alegreya, Libre Franklin). | preview (cd5c494e.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Donkere fotostijl teruggezet op vraag van Arne, met Source Sans 3, gewone teksten en bewegende elementen (onthullingen, parallax, teller, oplichtende tekst, melding bij toevoegen aan mandje). Zonder goudlijntjes, Romeinse cijfers, citaat en lopende band. | preview (352deb0c.de-zonnebloem.pages.dev) |
