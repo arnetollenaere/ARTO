@@ -7,8 +7,6 @@ Alle foto's komen van Unsplash (https://unsplash.com/license): gratis voor comme
 | held | https://unsplash.com/photos/c9k1Y4iXpeY |
 | zonnebloemen | https://unsplash.com/photos/field-of-sunflowers-at-sunset-with-trees-in-background-s0lvwKX-p0I |
 | samen | https://unsplash.com/photos/handicapped-and-couple-toss-each-other-of-glass-of-beer-PjODX5hruGQ |
-| wijngaard | https://unsplash.com/photos/a-vineyard-with-a-sunset-7Bk2QKqwQRY |
-| kelder | https://unsplash.com/photos/low-light-photography-of-pile-of-barrels-61sZcZl3Mlk |
 | wit | https://unsplash.com/photos/sScNrKruEPs |
 | chardonnay | https://unsplash.com/photos/SnErXaCiGa4 |
 | rose | https://unsplash.com/photos/yDrI1Zw32fc |

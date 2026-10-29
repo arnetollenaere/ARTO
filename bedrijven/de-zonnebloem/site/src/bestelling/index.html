@@ -8,22 +8,21 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0d0a09">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css?v=3">
+  <link rel="stylesheet" href="/css/style.css?v=4">
 </head>
 <body class="pagina">
-  <header class="kop kop--vast">
-    <div class="kop__binnen">
-      <a class="merk" href="/"><span class="merk__naam">De Zonnebloem</span><span class="merk__sub">Wijnactie</span></a>
-      <a class="mandknop" href="/">Terug naar de collectie</a>
+  <header class="kop">
+    <div class="kader kop__binnen">
+      <a class="merk" href="/">De Zonnebloem <span>Wijnactie</span></a>
+      <a class="mandknop" href="/">Terug naar de wijnen</a>
     </div>
   </header>
 
   <main class="bevestiging">
-    <div class="bevestiging__achter" aria-hidden="true"><img src="/img/foto/kelder-2000.webp" width="2000" height="1125" alt=""></div>
     <div class="kader">
       <div id="laden" class="bevestiging__kop"><p>Je bestelling wordt geladen…</p></div>
       <div id="niet-gevonden" class="bevestiging__kop" hidden>
-        <h1>Bestelling <em>niet gevonden</em></h1>
+        <h1>Bestelling niet gevonden</h1>
         <p>Controleer de link in je e-mail, of <a href="/">ga naar de startpagina</a>.</p>
       </div>
 
@@ -36,8 +35,7 @@
 
         <section class="betaalkaart" id="betaalkaart" aria-labelledby="betaal-titel">
           <div>
-            <p class="label" id="betaal-label"><span class="lijntje"></span>Betalen via overschrijving</p>
-            <h2 id="betaal-titel" class="sr">Betaalgegevens</h2>
+            <h2 id="betaal-titel">Betalen via overschrijving</h2>
             <dl>
               <div><dt>Bedrag</dt><dd class="bedrag" id="b-bedrag"></dd></div>
               <div><dt>Rekeningnummer</dt><dd><span id="b-iban"></span><button type="button" class="kopieer" data-kopieer="b-iban">Kopieer</button></dd></div>
@@ -64,14 +62,14 @@
         </section>
 
         <div class="knoppenrij">
-          <button type="button" class="knop" id="afdrukken"><span>Afdrukken</span></button>
-          <a class="knop" href="/"><span>Terug naar de collectie</span></a>
+          <button type="button" class="knop knop--rand" id="afdrukken">Afdrukken</button>
+          <a class="knop" href="/">Terug naar de wijnen</a>
         </div>
       </div>
     </div>
   </main>
 
   <script src="/js/vendor/qrcode.js?v=1" defer></script>
-  <script src="/js/bestelling.js?v=2" defer></script>
+  <script src="/js/bestelling.js?v=4" defer></script>
 </body>
 </html>

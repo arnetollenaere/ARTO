@@ -29,29 +29,30 @@
       var aantal = mandje[w.id] || 0;
       return '<li class="wijn" data-soort="' + esc(w.soort) + '">' +
         '<div class="wijn__beeld">' +
-          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="">' +
+          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 620px) 100vw, (max-width: 1000px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="">' +
           '<span class="wijn__soort">' + esc(w.soort) + "</span>" +
-          '<span class="wijn__nr">N° ' + String(i + 1).padStart(2, "0") + "</span>" +
-          '<div class="wijn__snel"><p class="wijn__prijs">' + euro(w.prijs) + "<small>per fles</small></p></div>" +
         "</div>" +
         '<div class="wijn__tekst">' +
-          '<p class="wijn__streek">' + esc(w.streek) + " · " + esc(w.land) + (w.jaar ? " · " + w.jaar : "") + "</p>" +
           "<h3>" + esc(w.naam) + "</h3>" +
+          '<p class="wijn__streek">' + esc(w.streek) + ", " + esc(w.land) + (w.jaar ? ", " + w.jaar : "") + "</p>" +
           '<p class="wijn__druif">' + esc(w.druif) + "</p>" +
           '<p class="wijn__smaak">' + esc(w.smaak) + "</p>" +
-          '<p class="wijn__past"><span>Past bij</span>' + esc(w.pastBij) + "</p>" +
+          '<p class="wijn__past"><span>Past bij:</span>' + esc(w.pastBij) + "</p>" +
         "</div>" +
-        '<div class="wijn__acties">' +
-          '<div class="stapper" role="group" aria-label="Aantal flessen ' + esc(w.naam) + '">' +
-            '<button type="button" data-min="' + w.id + '" aria-label="Eén fles minder">−</button>' +
-            '<output aria-live="polite" data-aantal="' + w.id + '">' + aantal + "</output>" +
-            '<button type="button" data-plus="' + w.id + '" aria-label="Eén fles meer">+</button>' +
+        '<div class="wijn__voet">' +
+          '<p class="wijn__prijs">' + euro(w.prijs) + "<small>per fles</small></p>" +
+          '<div class="wijn__acties">' +
+            '<div class="stapper" role="group" aria-label="Aantal flessen ' + esc(w.naam) + '">' +
+              '<button type="button" data-min="' + w.id + '" aria-label="Eén fles minder">−</button>' +
+              '<output aria-live="polite" data-aantal="' + w.id + '">' + aantal + "</output>" +
+              '<button type="button" data-plus="' + w.id + '" aria-label="Eén fles meer">+</button>' +
+            "</div>" +
+            '<button type="button" class="knop knop--rand knop--klein" data-doos="' + w.id + '">+ 6 flessen</button>' +
           "</div>" +
-          '<button type="button" class="knop" data-doos="' + w.id + '"><span>+ Doos van 6</span></button>' +
         "</div>" +
       "</li>";
     }).join("");
-    $$(".wijn").forEach(function (k, i) { k.style.setProperty("--vertraging", (i % 3) * 120 + "ms"); });
+    $$(".wijn").forEach(function (k, i) { k.style.setProperty("--vertraging", (i % 3) * 80 + "ms"); });
     onthul(".wijn");
   }
 
@@ -216,7 +217,7 @@
       .catch(function (err) {
         toonFout(err.message === "Failed to fetch" ? "Geen verbinding. Probeer het opnieuw." : err.message);
         knop.disabled = false;
-        label.textContent = "Bestellen en betaalgegevens tonen";
+        label.textContent = "Bestellen";
       });
   });
 
@@ -229,7 +230,7 @@
       $("#stand-doel").textContent = s.doel.toLocaleString("nl-BE");
       var lijn = $("#stand-lijn");
       lijn.setAttribute("aria-valuenow", pct);
-      setTimeout(function () { lijn.firstElementChild.style.width = Math.max(pct, 1.5) + "%"; }, 1400);
+      setTimeout(function () { lijn.firstElementChild.style.width = Math.max(pct, 1.5) + "%"; }, 200);
       telOp($("#stand-flessen"), s.flessen);
     }).catch(function () {});
   }
@@ -242,7 +243,7 @@
         e.textContent = Math.round(doel * (1 - Math.pow(1 - t, 4))).toLocaleString("nl-BE");
         if (t < 1) requestAnimationFrame(stap);
       })(start);
-    }, 1300);
+    }, 200);
   }
 
   // ---------- Animaties ----------

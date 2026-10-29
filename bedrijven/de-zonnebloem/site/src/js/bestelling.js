@@ -42,8 +42,7 @@
       var s = STATUS[b.status] || STATUS.nieuw;
       $("status").textContent = s[0];
       $("status").className = "status status--" + b.status;
-      $("titel").innerHTML = b.status === "nieuw" ? "Dank je wel, <em></em>" : "Bestelling <em></em>";
-      $("titel").querySelector("em").textContent = b.status === "nieuw" ? b.naam.split(" ")[0] : b.nummer;
+      $("titel").textContent = b.status === "nieuw" ? "Bedankt voor je bestelling, " + b.naam.split(" ")[0] : "Bestelling " + b.nummer;
       $("intro").textContent = s[1];
       $("nummer").textContent = b.nummer;
 
