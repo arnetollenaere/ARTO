@@ -20,6 +20,12 @@ export async function vereisWachtwoord({ request, env, next }) {
   const kopie = new Response(antwoord.body, antwoord);
   kopie.headers.set("cache-control", "no-store");
   kopie.headers.set("x-robots-tag", "noindex");
+  // Zelfde strenge headers als de rest van de site, ook voor pagina's achter het wachtwoord.
+  kopie.headers.set("content-security-policy", "default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; font-src 'self'; connect-src 'self'; object-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'");
+  kopie.headers.set("x-frame-options", "DENY");
+  kopie.headers.set("x-content-type-options", "nosniff");
+  kopie.headers.set("referrer-policy", "no-referrer");
+  kopie.headers.set("strict-transport-security", "max-age=31536000; includeSubDomains");
   return kopie;
 }
 

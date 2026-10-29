@@ -29,6 +29,6 @@ export async function onRequestPatch({ params, request, env, waitUntil }) {
     await env.DB.prepare("UPDATE bestellingen SET notitie_beheer = ?, bijgewerkt = ? WHERE id = ?").bind(invoer.notitie.slice(0, 1000), nu, id).run();
   }
   const nieuw = await env.DB.prepare("SELECT * FROM bestellingen WHERE id = ?").bind(id).first();
-  const { token, ...rest } = nieuw;
+  const { token, ip_hash, ...rest } = nieuw;
   return json({ ...rest, regels: JSON.parse(rest.regels) });
 }

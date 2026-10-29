@@ -25,6 +25,8 @@ CREATE TABLE IF NOT EXISTS bestellingen (
   totaal         INTEGER NOT NULL,
   betaald_op     TEXT,
   afgeleverd_op  TEXT,
-  notitie_beheer TEXT
+  notitie_beheer TEXT,
+  ip_hash        TEXT                            -- hash van IP + dag, voor spambeperking
 );
 CREATE INDEX IF NOT EXISTS bestellingen_status ON bestellingen(status);
+CREATE INDEX IF NOT EXISTS bestellingen_ip ON bestellingen(ip_hash, aangemaakt);

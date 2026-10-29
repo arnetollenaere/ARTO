@@ -85,3 +85,9 @@
   .bh-paneel { box-shadow: none; padding: 0; }
   .pick-groep { break-inside: avoid; }
 }
+
+.bh-iban { display: flex; flex-direction: column; gap: .2rem; margin-top: 1.4rem; padding: 1rem 1.2rem; border-radius: 10px; border-left: 4px solid; }
+.bh-iban span { color: var(--inkt-zacht); }
+.bh-iban--goed { background: #e6f3e8; border-color: #2f6b3a; }
+.bh-iban--let { background: #fff5dc; border-color: #b8860b; }
+.bh-iban--fout { background: #fbe6e8; border-color: #a3242f; }

@@ -258,5 +258,29 @@
   $("pick-ook-open").addEventListener("change", picklijst);
   $("druk-pick").addEventListener("click", function () { print(); });
 
+  // ---------- Controle van de betaalgegevens ----------
+  function controleIban() {
+    fetch("/api/beheer/controle", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (c) {
+      var vak = $("iban-status"), soort, titel, uitleg;
+      if (c.pinKlopt === false) {
+        soort = "fout"; titel = "Opgelet: het rekeningnummer klopt niet met de vingerafdruk";
+        uitleg = "Bestellingen worden geweigerd en klanten zien geen betaalgegevens. Neem meteen contact op met ARTO.";
+      } else if (!c.geldig) {
+        soort = "fout"; titel = "Het rekeningnummer is ongeldig of nog niet ingevuld";
+        uitleg = "Klanten krijgen nu " + c.iban + " te zien. Bezorg ARTO het juiste rekeningnummer.";
+      } else if (!c.pinIngesteld) {
+        soort = "let"; titel = "Rekeningnummer " + c.iban + " (" + c.begunstigde + ")";
+        uitleg = "Geldig, maar de extra vingerafdruk (IBAN_SHA256) is nog niet ingesteld.";
+      } else {
+        soort = "goed"; titel = "Rekeningnummer " + c.iban + " (" + c.begunstigde + ") is beveiligd";
+        uitleg = "Geldig en gecontroleerd tegen de vingerafdruk. Klanten zien alleen dit rekeningnummer.";
+      }
+      vak.className = "bh-iban bh-iban--" + soort;
+      vak.innerHTML = "<strong>" + esc(titel) + "</strong><span>" + esc(uitleg) + "</span>";
+      vak.hidden = false;
+    }).catch(function () {});
+  }
+
+  controleIban();
   laad();
 })();

@@ -90,3 +90,28 @@ npx wrangler d1 export zonnebloem-bestellingen-eu --remote --output bestellingen
 ```
 
 Of gewoon "Exporteer naar Excel" in het beheer.
+
+## Beveiliging van het rekeningnummer
+
+- Het IBAN staat alleen in `src/instellingen.json` en wordt bij het publiceren in de code ingebakken. Er is **geen** formulier, API of databaseveld waarmee iemand het kan wijzigen. Bestellingen in de database bevatten het IBAN niet; het wordt telkens uit de gepubliceerde code gehaald.
+- **Vingerafdruk (aanbevolen zodra het echte IBAN gekend is):** zet de SHA-256 van het IBAN (zonder spaties, in hoofdletters) als Pages-secret. Komt het IBAN in de code daar niet mee overeen, dan weigert de site bestellingen en toont ze geen betaalgegevens.
+
+  ```bash
+  printf '%s' "BE68539007547034" | sha256sum      # eigen IBAN invullen, zonder spaties
+  npx wrangler pages secret put IBAN_SHA256 --project-name=de-zonnebloem
+  ./build.sh && ./deploy.sh                       # secrets gelden pas na een nieuwe publicatie
+  ```
+
+  Wijzigt het IBAN ooit bewust, pas dan eerst `src/instellingen.json` aan en zet daarna een nieuwe `IBAN_SHA256`.
+- Het beheerscherm toont bovenaan of het IBAN geldig is en of de vingerafdruk klopt.
+- `deploy.sh` toont vóór elke publicatie het IBAN en waarschuwt als het controlecijfer niet klopt.
+- Strikte beveiligingsheaders (CSP zonder externe scripts, HSTS, geen inbedding in andere sites), ook op het beheerscherm.
+- Maximaal 5 bestellingen per bezoeker per uur (enkel een hash van IP + dag wordt bewaard).
+
+**Wat buiten de site moet gebeuren:** tweestapsverificatie aan op Cloudflare en GitHub, en het API-token beperken tot Pages en D1 van dit account. Wie toegang heeft tot die accounts, kan de site publiceren.
+
+### Databasemigraties
+
+```bash
+npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file migrations/0002_ip_hash.sql
+```

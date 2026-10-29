@@ -112,3 +112,34 @@ export async function besteldPerWijn(db) {
   for (const r of results) for (const regel of JSON.parse(r.regels)) telling[regel.id] = (telling[regel.id] || 0) + regel.aantal;
   return telling;
 }
+
+// ---------- Bescherming van de betaalgegevens ----------
+// Het IBAN staat alleen in src/instellingen.json en wordt bij het publiceren in de code ingebakken.
+// Er is geen API om het te wijzigen. Extra slot: de Pages-secret IBAN_SHA256 bevat de SHA-256 van het
+// echte IBAN (zonder spaties, hoofdletters). Klopt het IBAN in de code daar niet mee, dan weigert de site
+// bestellingen en toont ze het rekeningnummer niet.
+
+export function ibanGeldig(iban) {
+  const s = String(iban || "").replace(/\s+/g, "").toUpperCase();
+  if (!/^[A-Z]{2}\d{2}[A-Z0-9]{10,30}$/.test(s)) return false;
+  if (s.startsWith("BE") && s.length !== 16) return false;
+  const omgezet = (s.slice(4) + s.slice(0, 4)).replace(/[A-Z]/g, (c) => String(c.charCodeAt(0) - 55));
+  let rest = 0;
+  for (const cijfer of omgezet) rest = (rest * 10 + Number(cijfer)) % 97;
+  return rest === 1;
+}
+
+async function sha256(tekst) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(tekst));
+  return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+// Geeft { geldig, pinIngesteld, pinKlopt, veilig } terug.
+export async function controleerBetaalgegevens(env) {
+  const iban = String(instellingen.betaling.iban || "").replace(/\s+/g, "").toUpperCase();
+  const geldig = ibanGeldig(iban);
+  const pin = String(env.IBAN_SHA256 || "").trim().toLowerCase();
+  const pinIngesteld = pin.length === 64;
+  const pinKlopt = pinIngesteld ? (await sha256(iban)) === pin : null;
+  return { geldig, pinIngesteld, pinKlopt, veilig: pinKlopt !== false };
+}
