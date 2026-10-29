@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Je bestelling | Wijnactie De Zonnebloem</title>
+  <meta name="description" content="Overzicht van je wijnbestelling en de gegevens om te betalen via overschrijving.">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#1c0b14">
+  <link rel="icon" href="/img/zonnebloem.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css?v=1">
+</head>
+<body class="pagina-donker">
+  <header class="kop">
+    <div class="kader kop__binnen">
+      <a class="logo" href="/"><img src="/img/zonnebloem.svg" alt="" width="36" height="36"><span>De Zonnebloem <em>wijnactie</em></span></a>
+    </div>
+  </header>
+
+  <main class="bevestiging">
+    <div class="kader kader--smal">
+      <div id="laden" class="bevestiging__kop"><p>Je bestelling wordt geladen…</p></div>
+      <div id="niet-gevonden" class="bevestiging__kop" hidden>
+        <h1>Bestelling niet gevonden</h1>
+        <p>Controleer de link in je e-mail, of <a href="/">ga naar de startpagina</a>.</p>
+      </div>
+
+      <div id="inhoud" hidden>
+        <div class="bevestiging__kop">
+          <img src="/img/zonnebloem.svg" alt="" width="84" height="84">
+          <p class="status" id="status"></p>
+          <h1 id="titel">Dank je wel!</h1>
+          <p id="intro"></p>
+        </div>
+
+        <section class="betaalkaart" id="betaalkaart" aria-labelledby="betaal-titel">
+          <div>
+            <h2 id="betaal-titel">Betalen via overschrijving</h2>
+            <dl>
+              <div><dt>Bedrag</dt><dd><span id="b-bedrag"></span></dd></div>
+              <div><dt>Rekeningnummer</dt><dd><span id="b-iban"></span><button type="button" class="kopieer" data-kopieer="b-iban">Kopieer</button></dd></div>
+              <div id="b-bic-rij"><dt>BIC</dt><dd id="b-bic"></dd></div>
+              <div><dt>Begunstigde</dt><dd id="b-begunstigde"></dd></div>
+              <div><dt>Gestructureerde mededeling</dt><dd><span class="ogm" id="b-ogm"></span><button type="button" class="kopieer" data-kopieer="b-ogm">Kopieer</button></dd></div>
+            </dl>
+            <p class="hint" id="b-termijn"></p>
+          </div>
+          <div class="qr">
+            <div class="qr__vak" id="qr" role="img" aria-label="QR-code om te betalen met je bank-app"></div>
+            <p>Scan met je bank-app om meteen te betalen. Bedrag en mededeling staan al ingevuld.</p>
+          </div>
+        </section>
+
+        <section class="overzicht" aria-labelledby="overzicht-titel">
+          <h2 id="overzicht-titel">Bestelling <span id="nummer"></span></h2>
+          <table>
+            <tbody id="regels"></tbody>
+            <tfoot><tr><td>Totaal</td><td id="totaal"></td></tr></tfoot>
+          </table>
+          <p id="levering"></p>
+          <p>Vragen? Mail naar <a href="mailto:{{EMAIL}}">{{EMAIL}}</a> en vermeld je bestelnummer.</p>
+        </section>
+
+        <div class="knoppenrij">
+          <button type="button" class="knop knop--licht" id="afdrukken">Afdrukken</button>
+          <a class="knop" href="/">Terug naar de wijnen</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/js/vendor/qrcode.js?v=1" defer></script>
+  <script src="/js/bestelling.js?v=1" defer></script>
+</body>
+</html>

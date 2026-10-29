@@ -1,0 +1,15 @@
+# Configuratie voor Cloudflare Pages (statische site + Functions + D1-database).
+name = "de-zonnebloem"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "zonnebloem-bestellingen"
+# Vul in na: npx wrangler d1 create zonnebloem-bestellingen (zie README.md)
+database_id = "00000000-0000-0000-0000-000000000000"
+
+[vars]
+# Afzender en ontvanger van e-mails (optioneel, zie lib/mail.js). Leeg = geen e-mails.
+MAIL_VAN = ""
+MAIL_BEHEER = ""

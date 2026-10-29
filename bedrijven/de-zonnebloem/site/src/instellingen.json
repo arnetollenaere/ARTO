@@ -1,0 +1,28 @@
+{
+  "_uitleg": "Instellingen van de wijnverkoop. Bedragen in eurocent. Velden met IN TE VULLEN moeten De Zonnebloem nog bezorgen.",
+  "actie": "Wijnactie 2026",
+  "bestellingenOpen": true,
+  "deadline": "2026-12-01",
+  "doelFlessen": 1500,
+  "betaling": {
+    "begunstigde": "De Zonnebloem vzw",
+    "iban": "BE00 0000 0000 0000",
+    "bic": "",
+    "termijnDagen": 7
+  },
+  "afhalen": {
+    "plaats": "IN TE VULLEN: adres afhaalpunt",
+    "momenten": [
+      "Zaterdag 6 december 2026, 10–14 uur",
+      "Zondag 7 december 2026, 10–12 uur"
+    ]
+  },
+  "levering": {
+    "actief": true,
+    "kost": 500,
+    "gratisVanaf": 12,
+    "postcodes": "IN TE VULLEN: regio, bv. 9000–9099",
+    "uitleg": "Vrijwilligers brengen je wijn in de week van 8 december aan huis."
+  },
+  "maxFlessenPerBestelling": 120
+}

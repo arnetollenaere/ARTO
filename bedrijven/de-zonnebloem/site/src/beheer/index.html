@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beheer | Wijnactie De Zonnebloem</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/img/zonnebloem.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/style.css?v=1">
+  <link rel="stylesheet" href="/css/beheer.css?v=1">
+</head>
+<body class="beheer">
+  <header class="bh-kop">
+    <div class="bh-kader bh-kop__binnen">
+      <p class="logo"><img src="/img/zonnebloem.svg" alt="" width="32" height="32"><span>Beheer <em>wijnactie</em></span></p>
+      <div class="bh-acties">
+        <button type="button" class="bh-knop" id="vernieuw">Vernieuwen</button>
+        <a class="bh-knop" href="/api/beheer/export">Exporteer naar Excel</a>
+        <a class="bh-knop bh-knop--goud" href="/" target="_blank" rel="noopener">Bekijk de site</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="bh-kader">
+    <section class="bh-cijfers" aria-label="Kerncijfers">
+      <div><p>Bestellingen</p><strong id="k-bestellingen">–</strong></div>
+      <div><p>Flessen</p><strong id="k-flessen">–</strong></div>
+      <div><p>Nog te ontvangen</p><strong id="k-open">–</strong><small id="k-open-n"></small></div>
+      <div class="bh-cijfers__goed"><p>Ontvangen</p><strong id="k-ontvangen">–</strong></div>
+    </section>
+
+    <nav class="bh-tabs" aria-label="Weergave">
+      <button type="button" data-tab="bestellingen" aria-pressed="true">Bestellingen</button>
+      <button type="button" data-tab="afpunten" aria-pressed="false">Betalingen afpunten</button>
+      <button type="button" data-tab="picklijst" aria-pressed="false">Picklijst</button>
+    </nav>
+
+    <section id="tab-bestellingen" aria-label="Bestellingen">
+      <div class="bh-filterbalk">
+        <div class="bh-statusfilter" role="group" aria-label="Filter op status" id="statusfilter"></div>
+        <label class="bh-zoek"><span class="sr">Zoeken</span><input type="search" id="zoek" placeholder="Zoek op naam, nummer, mededeling…"></label>
+      </div>
+      <div class="bh-tabel-wrap">
+        <table class="bh-tabel">
+          <thead><tr><th>Nr.</th><th>Datum</th><th>Klant</th><th>Wijnen</th><th>Levering</th><th class="r">Totaal</th><th>Mededeling</th><th>Status</th><th><span class="sr">Acties</span></th></tr></thead>
+          <tbody id="lijst"></tbody>
+        </table>
+        <p class="bh-leeg" id="leeg" hidden>Geen bestellingen gevonden.</p>
+      </div>
+    </section>
+
+    <section id="tab-afpunten" hidden aria-labelledby="afpunten-titel">
+      <div class="bh-paneel">
+        <h2 id="afpunten-titel">Betalingen afpunten</h2>
+        <p>Kopieer de verrichtingen uit je bank-app of internetbankieren (of een CSV-export) en plak ze hieronder. We zoeken de gestructureerde mededelingen en tonen welke bestellingen betaald zijn.</p>
+        <textarea id="bankplak" rows="8" placeholder="Plak hier je rekeninguittreksel…"></textarea>
+        <div class="bh-rij"><button type="button" class="bh-knop bh-knop--goud" id="zoekbetalingen">Zoek betalingen</button></div>
+        <div id="afpunt-resultaat"></div>
+      </div>
+    </section>
+
+    <section id="tab-picklijst" hidden aria-labelledby="pick-titel">
+      <div class="bh-paneel">
+        <div class="bh-rij bh-rij--tussen">
+          <h2 id="pick-titel">Picklijst</h2>
+          <button type="button" class="bh-knop" id="druk-pick">Afdrukken</button>
+        </div>
+        <p>Betaalde bestellingen die nog niet afgeleverd zijn, per afhaalmoment of levering. Bovenaan het totaal per wijn, handig om de wijn bij de leverancier te bestellen.</p>
+        <label class="vinkje"><input type="checkbox" id="pick-ook-open"> <span>Ook onbetaalde bestellingen meetellen</span></label>
+        <div id="picklijst"></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="bh-melding" id="melding" role="status" hidden></div>
+  <script src="/js/beheer.js?v=1" defer></script>
+</body>
+</html>

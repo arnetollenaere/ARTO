@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /beheer/
+Disallow: /bestelling/
+
+Sitemap: https://{{DOMEIN}}/sitemap.xml

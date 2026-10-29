@@ -1,0 +1,81 @@
+/* Beheerscherm: rustig en functioneel, in de stijl van de site. */
+.beheer { background: #f4efe6; font-size: .92rem; }
+.bh-kader { width: min(1400px, 100% - 32px); margin-inline: auto; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+.bh-kop { background: var(--wijn); color: var(--creme); padding: 14px 0; position: sticky; top: 0; z-index: 10; }
+.bh-kop__binnen { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.bh-acties { display: flex; gap: .5rem; flex-wrap: wrap; }
+.bh-knop { display: inline-flex; align-items: center; gap: .4rem; border: 0; padding: .6rem 1rem; border-radius: 10px; background: rgba(127, 127, 127, .14); color: inherit; font: 600 .82rem/1 var(--sans); text-decoration: none; cursor: pointer; white-space: nowrap; }
+.bh-knop:hover { background: rgba(127, 127, 127, .26); }
+.bh-knop--goud { background: var(--goud); color: var(--nacht); }
+.bh-knop--goud:hover { background: #ffc85a; }
+.bh-knop--klein { padding: .45rem .7rem; font-size: .76rem; }
+.bh-knop--rand { background: #fff; box-shadow: inset 0 0 0 1px var(--lijn); }
+
+.bh-cijfers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin: 1.6rem 0; }
+.bh-cijfers div { background: #fff; border-radius: 14px; padding: 1.1rem 1.3rem; box-shadow: 0 1px 2px rgba(36, 19, 25, .06); }
+.bh-cijfers p { margin: 0 0 .3rem; color: var(--inkt-zacht); font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+.bh-cijfers strong { font: 600 2.1rem/1 var(--serif); font-variant-numeric: tabular-nums; }
+.bh-cijfers small { display: block; color: var(--inkt-zacht); margin-top: .3rem; }
+.bh-cijfers__goed strong { color: #2f6b3a; }
+@media (max-width: 760px) { .bh-cijfers { grid-template-columns: 1fr 1fr; } }
+
+.bh-tabs { display: flex; gap: .3rem; border-bottom: 1px solid var(--lijn); margin-bottom: 1.2rem; overflow-x: auto; }
+.bh-tabs button { border: 0; background: none; padding: .8rem 1rem; font: 600 .9rem/1 var(--sans); color: var(--inkt-zacht); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.bh-tabs button[aria-pressed="true"] { color: var(--inkt); border-color: var(--goud-diep); }
+
+.bh-filterbalk { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.bh-statusfilter { display: flex; flex-wrap: wrap; gap: .4rem; }
+.bh-statusfilter button { border: 0; background: #fff; box-shadow: inset 0 0 0 1px var(--lijn); padding: .5rem .85rem; border-radius: 99px; font: 500 .8rem/1 var(--sans); cursor: pointer; color: var(--inkt); }
+.bh-statusfilter button[aria-pressed="true"] { background: var(--wijn); color: var(--creme); box-shadow: none; }
+.bh-statusfilter b { font-weight: 600; margin-left: .3rem; opacity: .7; }
+.bh-zoek input { min-width: 280px; padding: .6rem .9rem !important; }
+
+.bh-tabel-wrap { background: #fff; border-radius: 14px; overflow-x: auto; box-shadow: 0 1px 2px rgba(36, 19, 25, .06); }
+.bh-tabel { width: 100%; border-collapse: collapse; min-width: 980px; }
+.bh-tabel th { text-align: left; font: 600 .72rem/1 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--inkt-zacht); padding: .9rem .8rem; border-bottom: 1px solid var(--lijn); background: #fcf8f1; }
+.bh-tabel td { padding: .8rem; border-bottom: 1px solid #f0e8da; vertical-align: top; }
+.bh-tabel tr.rij { cursor: pointer; }
+.bh-tabel tr.rij:hover td { background: #fffaf0; }
+.bh-tabel .r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bh-tabel td:first-child { white-space: nowrap; }
+.bh-tabel small { display: block; color: var(--inkt-zacht); }
+.bh-tabel .mono { font-family: ui-monospace, Menlo, monospace; font-size: .8rem; white-space: nowrap; }
+.bh-tabel .acties { display: flex; gap: .3rem; justify-content: flex-end; align-items: center; }
+.bh-tabel select { width: auto !important; padding: .4rem .5rem !important; font-size: .78rem !important; border-radius: 8px !important; }
+.detail td { background: #fffaf0; padding: 1rem 1.2rem 1.4rem; }
+.detail__raster { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.detail h4 { margin: 0 0 .4rem; font: 600 .72rem/1 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--inkt-zacht); }
+.detail p { margin: 0 0 .3rem; }
+.detail textarea { min-height: 70px; }
+.bh-leeg { padding: 2rem; text-align: center; color: var(--inkt-zacht); margin: 0; }
+
+.lbl { display: inline-block; padding: .3rem .6rem; border-radius: 99px; font: 600 .7rem/1 var(--sans); text-transform: uppercase; letter-spacing: .06em; white-space: nowrap; }
+.lbl--nieuw { background: #fff1cc; color: #7a5300; }
+.lbl--betaald { background: #dff1e3; color: #2f6b3a; }
+.lbl--klaar { background: #dce9f7; color: #1f4f80; }
+.lbl--afgeleverd { background: #ece6f3; color: #4f3a73; }
+.lbl--geannuleerd { background: #f6dede; color: #8c1d2a; }
+
+.bh-paneel { background: #fff; border-radius: 14px; padding: 1.6rem; box-shadow: 0 1px 2px rgba(36, 19, 25, .06); }
+.bh-paneel h2 { font-size: 2rem; }
+.bh-paneel h3 { font-size: 1.4rem; margin-top: 1.6rem; }
+.bh-rij { display: flex; gap: .6rem; align-items: center; margin: 1rem 0; flex-wrap: wrap; }
+.bh-rij--tussen { justify-content: space-between; margin-top: 0; }
+.bh-paneel table { width: 100%; border-collapse: collapse; margin-top: .6rem; }
+.bh-paneel td, .bh-paneel th { text-align: left; padding: .55rem .4rem; border-bottom: 1px solid #f0e8da; }
+.bh-paneel th { font: 600 .72rem/1 var(--sans); text-transform: uppercase; letter-spacing: .1em; color: var(--inkt-zacht); }
+.bh-paneel .r { text-align: right; font-variant-numeric: tabular-nums; }
+.verschil { color: var(--fout); font-weight: 600; }
+.pick-totaal { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .8rem; margin: 1rem 0; }
+.pick-totaal div { background: #fcf8f1; border-radius: 12px; padding: .9rem 1rem; }
+.pick-totaal strong { display: block; font: 600 2rem/1 var(--serif); }
+
+.bh-melding { position: fixed; bottom: 20px; left: 50%; translate: -50% 0; background: var(--wijn); color: var(--creme); padding: .8rem 1.2rem; border-radius: 12px; box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .4); z-index: 20; }
+
+@media print {
+  .bh-kop, .bh-cijfers, .bh-tabs, .bh-rij, .vinkje, #tab-bestellingen, #tab-afpunten { display: none !important; }
+  .beheer { background: #fff; }
+  .bh-paneel { box-shadow: none; padding: 0; }
+  .pick-groep { break-inside: avoid; }
+}
