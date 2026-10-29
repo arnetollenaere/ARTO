@@ -314,6 +314,23 @@
     }, { rootMargin: "0px 0px -30% 0px" }).observe($("#bestellen"));
   }
 
+  // ---------- ARTO-logo: kantelt mee met de muis, draait kort bij aantikken ----------
+  var arto = $("#arto");
+  if (arto && !rustig) {
+    var teken = arto.querySelector(".arto__teken");
+    arto.addEventListener("pointermove", function (e) {
+      var r = teken.getBoundingClientRect();
+      var dx = (e.clientX - (r.left + r.width / 2)) / 120, dy = (e.clientY - (r.top + r.height / 2)) / 120;
+      arto.style.setProperty("--ry", Math.max(-1, Math.min(1, dx)) * 35 + "deg");
+      arto.style.setProperty("--rx", Math.max(-1, Math.min(1, -dy)) * 35 + "deg");
+    });
+    arto.addEventListener("pointerleave", function () { arto.style.setProperty("--rx", "0deg"); arto.style.setProperty("--ry", "0deg"); });
+    arto.addEventListener("touchstart", function () {
+      arto.classList.remove("tik"); void arto.offsetWidth; arto.classList.add("tik");
+      setTimeout(function () { arto.classList.remove("tik"); }, 2200);
+    }, { passive: true });
+  }
+
   // ---------- Menu (volledig scherm, zoals op vzwraakpunt.be) ----------
   var menuknop = $("#menuknop"), menu = $("#menu");
   if (menuknop && menu) {
