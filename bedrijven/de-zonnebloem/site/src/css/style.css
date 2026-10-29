@@ -1,6 +1,6 @@
 /* De Zonnebloem wijnactie. Donker en editoriaal: diep zwart, ivoor en gedempt goud. */
 
-@font-face { font-family: "Source Sans 3"; font-weight: 200 900; font-style: normal; font-display: swap; src: url(/fonts/source-sans-3-latin-wght-normal.woff2) format("woff2-variations"), url(/fonts/source-sans-3-latin-wght-normal.woff2) format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 100 900; font-style: normal; font-display: swap; src: url(/fonts/libre-franklin-latin-wght-normal.woff2) format("woff2-variations"), url(/fonts/libre-franklin-latin-wght-normal.woff2) format("woff2"); }
 
 :root {
   --zwart: #0d0a09;
@@ -18,8 +18,8 @@
   --lijn: rgba(243, 237, 227, .14);
   --lijn-licht: rgba(26, 21, 18, .14);
   --fout: #a3242f;
-  --serif: "Source Sans 3", system-ui, sans-serif;
-  --sans: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --serif: "Libre Franklin", system-ui, sans-serif;
+  --sans: "Libre Franklin", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --ease: cubic-bezier(.16, 1, .3, 1);
   --kader: 1320px;
 }
@@ -430,3 +430,16 @@ summary { font-weight: 600; font-size: 1.25rem; }
 .mandknop span, .mandknop.vol span { display: inline; min-width: 0; height: auto; border: 0; border-radius: 0; background: none; color: inherit; font-size: inherit; }
 .wijn__prijs small { text-transform: none; letter-spacing: 0; font-size: .9rem; }
 .mandknop { display: inline; gap: 0; }
+
+/* Libre Franklin is breder dan Source Sans: iets kleiner en strakker. */
+body { font-size: 1rem; }
+.held__titel { font-size: clamp(2.4rem, min(5vw, 9.5vh), 4.8rem); font-weight: 600; letter-spacing: -.035em; line-height: 1.05; }
+.titel { font-size: clamp(2rem, 4vw, 3.4rem); letter-spacing: -.03em; }
+.manifest { font-size: clamp(1.5rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -.025em; line-height: 1.3; }
+.held__intro { font-size: 1.08rem; }
+.wijn h3 { font-size: 1.4rem; letter-spacing: -.02em; }
+.wijn__prijs { font-size: 1.6rem; letter-spacing: -.02em; }
+.panorama__groot { font-size: clamp(1.8rem, 4vw, 3.4rem); letter-spacing: -.03em; }
+.stappen h3 { font-size: 1.3rem; }
+.menu a, .mandknop, .knop, .tekstlink, .filter { font-size: .95rem; }
+.keuze strong { font-weight: 600; font-size: 1.1rem; letter-spacing: -.01em; }

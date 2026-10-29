@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Lettertype Libre Franklin, door Arne gekozen uit vier voorbeelden (Libre Caslon, EB Garamond, Alegreya, Libre Franklin). | preview (cd5c494e.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Donkere fotostijl teruggezet op vraag van Arne, met Source Sans 3, gewone teksten en bewegende elementen (onthullingen, parallax, teller, oplichtende tekst, melding bij toevoegen aan mandje). Zonder goudlijntjes, Romeinse cijfers, citaat en lopende band. | preview (352deb0c.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Sobere versie live gezet op https://de-zonnebloem.pages.dev. | productie |
 | 2026-10-29 | Sober ontwerp op vraag van Arne: enkel Source Sans 3, sierelementen en animaties weg, gewone titel ("Wijnverkoop ten voordele van De Zonnebloem") en uitleg. | preview (e05bac8e.de-zonnebloem.pages.dev) |
