@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Live gezet: huisstijl vzw Raakpunt, enkel afhalen, zonder groot logo, animatie gecentreerd zonder voortgangsbalk, zin overlapt de animatie niet meer, kop op smalle gsm's hersteld. IBAN is nog een voorbeeld. | productie |
 | 2026-10-29 | Kop op smalle gsm's: naam en mandje overlappen niet meer (getest van 320 tot 430 px). | preview |
 | 2026-10-29 | Animatie: voortgangsbalk weg, tekst gecentreerd eronder, kleine pauzeknop, verticaal in het midden van het scherm. | preview |
 | 2026-10-29 | Groot Raakpunt-logo in het openingsbeeld verwijderd (enkel nog het logo in de kop), titel groter. | preview |

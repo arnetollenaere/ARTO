@@ -399,3 +399,10 @@ details a { color: var(--oranje); }
   .kop__rechts { gap: .9rem; }
 }
 @media (max-width: 400px) { .merk__naam { font-size: 1.05rem; } .mandknop { font-size: 1rem; } .kop__rechts { gap: .7rem; } .menuknop { width: 40px; } }
+/* Zin altijd onder de animatie: alle zinnen in één rastercel, hoogte = langste zin. */
+.verhaal__tekst { margin-top: .4rem; align-items: flex-start; }
+.verhaal__zinnen { display: grid; min-height: 0; }
+.zin { position: static; inset: auto; grid-area: 1 / 1; display: block; text-align: center; }
+.verhaal__pauze { margin-top: .1rem; }
+.verhaal-anim.rustig .verhaal__zinnen { display: block; }
+@media (max-width: 900px) { .verhaal__tekst { margin-top: .3rem; } }
