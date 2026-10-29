@@ -8,17 +8,18 @@
   <meta name="robots" content="noindex">
   <meta name="theme-color" content="#0d0a09">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/css/style.css?v=4">
+  <link rel="stylesheet" href="/css/style.css?v=5">
 </head>
 <body class="pagina">
-  <header class="kop">
-    <div class="kader kop__binnen">
-      <a class="merk" href="/">De Zonnebloem <span>Wijnactie</span></a>
+  <header class="kop kop--vast">
+    <div class="kop__binnen">
+      <a class="merk" href="/"><span class="merk__naam">De Zonnebloem</span><span class="merk__sub">Wijnactie</span></a>
       <a class="mandknop" href="/">Terug naar de wijnen</a>
     </div>
   </header>
 
   <main class="bevestiging">
+    <div class="bevestiging__achter" aria-hidden="true"><img src="/img/foto/kelder-2000.webp" width="2000" height="1125" alt=""></div>
     <div class="kader">
       <div id="laden" class="bevestiging__kop"><p>Je bestelling wordt geladen…</p></div>
       <div id="niet-gevonden" class="bevestiging__kop" hidden>
@@ -62,14 +63,14 @@
         </section>
 
         <div class="knoppenrij">
-          <button type="button" class="knop knop--rand" id="afdrukken">Afdrukken</button>
-          <a class="knop" href="/">Terug naar de wijnen</a>
+          <button type="button" class="knop" id="afdrukken"><span>Afdrukken</span></button>
+          <a class="knop" href="/"><span>Terug naar de wijnen</span></a>
         </div>
       </div>
     </div>
   </main>
 
   <script src="/js/vendor/qrcode.js?v=1" defer></script>
-  <script src="/js/bestelling.js?v=4" defer></script>
+  <script src="/js/bestelling.js?v=5" defer></script>
 </body>
 </html>

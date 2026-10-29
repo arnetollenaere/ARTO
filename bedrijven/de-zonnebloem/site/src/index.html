@@ -6,7 +6,7 @@
   <title>Wijnverkoop De Zonnebloem | Bestel wijn voor het goede doel</title>
   <meta name="description" content="Bestel wijn bij De Zonnebloem. De opbrengst gaat naar mensen met een beperking. Betalen via overschrijving, afhalen of laten leveren.">
   <link rel="canonical" href="https://{{DOMEIN}}/">
-  <meta name="theme-color" content="#121010">
+  <meta name="theme-color" content="#0d0a09">
 
   <meta property="og:type" content="website">
   <meta property="og:title" content="Wijnverkoop De Zonnebloem">
@@ -16,7 +16,8 @@
 
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/source-sans-3-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=4">
+  <link rel="preload" href="/img/foto/held-1500.webp" as="image" imagesrcset="/img/foto/held-900.webp 900w, /img/foto/held-1500.webp 1500w" imagesizes="(max-width: 900px) 100vw, 46vw">
+  <link rel="stylesheet" href="/css/style.css?v=5">
 
   <script type="application/ld+json">
   {
@@ -34,12 +35,15 @@
   <a class="skip" href="#wijnen">Naar de wijnen</a>
 
   <header class="kop" id="kop">
-    <div class="kader kop__binnen">
-      <a class="merk" href="/">De Zonnebloem <span id="actienaam">Wijnactie 2026</span></a>
+    <div class="kop__binnen">
+      <a class="merk" href="/" aria-label="De Zonnebloem, naar de startpagina">
+        <span class="merk__naam">De Zonnebloem</span>
+        <span class="merk__sub" id="actienaam">Wijnactie 2026</span>
+      </a>
       <nav class="menu" aria-label="Hoofdmenu">
         <a href="#wijnen">Wijnen</a>
-        <a href="#over">Over De Zonnebloem</a>
-        <a href="#hoe">Hoe bestellen</a>
+        <a href="#verhaal">Over De Zonnebloem</a>
+        <a href="#werkwijze">Hoe bestellen</a>
         <a href="#vragen">Vragen</a>
       </nav>
       <a class="mandknop" href="#bestellen">Mandje (<span id="kop-aantal">0</span>)</a>
@@ -47,25 +51,62 @@
   </header>
 
   <main>
+    <!-- Openingsbeeld -->
     <section class="held" aria-labelledby="held-titel">
-      <img class="held__foto" src="/img/foto/held-1500.webp" srcset="/img/foto/held-900.webp 900w, /img/foto/held-1500.webp 1500w" sizes="(max-width: 900px) 100vw, 50vw" width="1500" height="2249" alt="Een glas rode wijn" fetchpriority="high">
-      <div class="kader held__binnen">
-        <div class="held__tekst">
-          <h1 id="held-titel">Wijnverkoop ten voordele van De Zonnebloem</h1>
-          <p class="held__intro">Bestel hier je wijn. De opbrengst gaat naar De Zonnebloem, die zich inzet voor mensen met een beperking. Je betaalt via overschrijving en haalt je wijn op of laat hem aan huis leveren.</p>
-          <a class="knop" href="#wijnen">Bekijk de wijnen</a>
-          <div class="stand" id="stand" hidden>
-            <p><strong id="stand-flessen">0</strong> van de <span id="stand-doel">0</span> flessen besteld</p>
-            <div class="stand__balk" id="stand-lijn" role="progressbar" aria-label="Aantal bestelde flessen tegenover ons doel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+      <div class="held__tekst">
+        <h1 id="held-titel" class="held__titel">
+          <span class="regel"><span>Wijnverkoop</span></span>
+          <span class="regel"><span>ten voordele van</span></span>
+          <span class="regel"><span>De Zonnebloem</span></span>
+        </h1>
+        <p class="held__intro">Bestel hier je wijn. De opbrengst gaat naar De Zonnebloem, die zich inzet voor mensen met een beperking. Je betaalt via overschrijving en haalt je wijn op of laat hem aan huis leveren.</p>
+        <div class="held__acties">
+          <a class="knop" href="#wijnen"><span>Bekijk de wijnen</span></a>
+          <a class="tekstlink" href="#verhaal">Over De Zonnebloem</a>
+        </div>
+        <div class="stand" id="stand" hidden>
+          <div class="stand__cijfers">
+            <p><strong id="stand-flessen">0</strong><span>flessen besteld</span></p>
+            <p class="stand__doel"><span>Ons doel</span><strong id="stand-doel">0</strong></p>
+          </div>
+          <div class="stand__lijn" id="stand-lijn" role="progressbar" aria-label="Voortgang naar ons doel" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span></span></div>
+        </div>
+      </div>
+      <figure class="held__beeld">
+        <img src="/img/foto/held-1500.webp" srcset="/img/foto/held-900.webp 900w, /img/foto/held-1500.webp 1500w" sizes="(max-width: 900px) 100vw, 46vw" width="1500" height="2249" alt="Een glas rode wijn in warm tegenlicht" fetchpriority="high">
+      </figure>
+      <a class="scrollhint" href="#verhaal" aria-label="Scroll naar beneden"><span></span></a>
+    </section>
+
+    <!-- Verhaal -->
+    <section id="verhaal" class="verhaal" aria-labelledby="verhaal-titel">
+      <div class="kader">
+        <h2 id="verhaal-titel" class="klein-titel">Over De Zonnebloem</h2>
+        <p class="manifest" id="manifest">De Zonnebloem zet zich in voor mensen met een beperking. Met de opbrengst van deze wijnverkoop organiseren we uitstappen, ontmoetingen en activiteiten.</p>
+
+        <div class="collage">
+          <figure class="collage__a" data-parallax="-0.06">
+            <img src="/img/foto/zonnebloemen-1000.webp" srcset="/img/foto/zonnebloemen-640.webp 640w, /img/foto/zonnebloemen-1000.webp 1000w" sizes="(max-width: 900px) 70vw, 34vw" width="1000" height="1250" loading="lazy" alt="Een veld vol zonnebloemen bij zonsondergang">
+          </figure>
+          <figure class="collage__b" data-parallax="0.08">
+            <img src="/img/foto/samen-1000.webp" srcset="/img/foto/samen-640.webp 640w, /img/foto/samen-1000.webp 1000w" sizes="(max-width: 900px) 60vw, 26vw" width="1000" height="1250" loading="lazy" alt="Vrienden klinken samen buiten, een van hen zit in een rolstoel">
+          </figure>
+          <div class="collage__tekst">
+            <p>Je betaalt een gewone prijs voor een goede fles. De opbrengst gaat naar de werking van De Zonnebloem.</p>
+            <p>Je kan je wijn afhalen of laten leveren. Betalen gebeurt via overschrijving.</p>
+            <a class="tekstlink" href="#wijnen">Bekijk de wijnen</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="wijnen" class="sectie" aria-labelledby="wijnen-titel">
+    <!-- Collectie -->
+    <section id="wijnen" class="collectie" aria-labelledby="collectie-titel">
       <div class="kader">
         <div class="sectiekop">
-          <h2 id="wijnen-titel">Onze wijnen</h2>
+          <div>
+            <h2 id="collectie-titel" class="titel">Onze wijnen</h2>
+          </div>
           <div class="filters" role="group" aria-label="Filter op soort">
             <button type="button" class="filter" data-filter="alles" aria-pressed="true">Alles</button>
             <button type="button" class="filter" data-filter="wit" aria-pressed="false">Wit</button>
@@ -81,45 +122,45 @@
       </div>
     </section>
 
-    <section id="over" class="sectie sectie--licht" aria-labelledby="over-titel">
-      <div class="kader over">
-        <div class="over__tekst">
-          <h2 id="over-titel">Over De Zonnebloem</h2>
-          <p>De Zonnebloem zet zich in voor mensen met een beperking. Met de opbrengst van deze wijnverkoop organiseren we uitstappen, ontmoetingen en activiteiten.</p>
-          <p>Je betaalt een gewone prijs voor een goede fles. De opbrengst gaat naar de werking van De Zonnebloem.</p>
-        </div>
-        <div class="over__fotos">
-          <img src="/img/foto/samen-1000.webp" srcset="/img/foto/samen-640.webp 640w, /img/foto/samen-1000.webp 1000w" sizes="(max-width: 900px) 50vw, 25vw" width="1000" height="1250" loading="lazy" alt="Vrienden klinken samen, een van hen zit in een rolstoel">
-          <img src="/img/foto/zonnebloemen-1000.webp" srcset="/img/foto/zonnebloemen-640.webp 640w, /img/foto/zonnebloemen-1000.webp 1000w" sizes="(max-width: 900px) 50vw, 25vw" width="1000" height="1250" loading="lazy" alt="Een veld met zonnebloemen">
-        </div>
+    <!-- Beeldband -->
+    <section class="panorama" aria-label="Sfeerbeeld">
+      <img src="/img/foto/wijngaard-2000.webp" srcset="/img/foto/wijngaard-1000.webp 1000w, /img/foto/wijngaard-2000.webp 2000w" sizes="100vw" width="2000" height="1125" loading="lazy" alt="" data-parallax="0.12">
+      <div class="panorama__tekst">
+        <p class="panorama__groot">Afhalen of aan huis geleverd</p>
+        <p>Kies bij het bestellen wat je het best past.</p>
       </div>
     </section>
 
-    <section id="hoe" class="sectie" aria-labelledby="hoe-titel">
+    <!-- Werkwijze -->
+    <section id="werkwijze" class="werkwijze" aria-labelledby="werkwijze-titel">
       <div class="kader">
-        <h2 id="hoe-titel">Hoe bestellen?</h2>
+        <h2 id="werkwijze-titel" class="titel">Hoe bestellen?</h2>
         <ol class="stappen">
-          <li>
-            <h3>1. Kies je wijnen</h3>
-            <p>Leg flessen in je mandje, per stuk of per doos van zes.</p>
+          <li class="onthul">
+            <span class="stappen__nr">1</span>
+            <h3>Kies je wijnen</h3>
+            <p>Wit, rosé, rood of bubbels. Per fles of meteen per doos van zes.</p>
           </li>
-          <li>
-            <h3>2. Bestel en betaal</h3>
+          <li class="onthul">
+            <span class="stappen__nr">2</span>
+            <h3>Bestel en betaal</h3>
             <p>Na je bestelling zie je het rekeningnummer, het bedrag en de mededeling. Je kan ook betalen met de QR-code in je bank-app.</p>
           </li>
-          <li>
-            <h3>3. Haal op of laat leveren</h3>
+          <li class="onthul">
+            <span class="stappen__nr">3</span>
+            <h3>Haal op of laat leveren</h3>
             <p>Als je betaling binnen is, zetten we je wijn klaar of brengen we hem aan huis.</p>
           </li>
         </ol>
       </div>
     </section>
 
-    <section id="bestellen" class="sectie sectie--licht" aria-labelledby="bestellen-titel">
+    <!-- Bestellen -->
+    <section id="bestellen" class="bestellen" aria-labelledby="bestellen-titel">
       <div class="kader">
-        <h2 id="bestellen-titel">Je bestelling</h2>
+        <h2 id="bestellen-titel" class="titel">Je bestelling</h2>
         <p class="melding melding--fout" id="gesloten" hidden>De bestellingen voor deze actie zijn afgesloten. Bedankt aan iedereen die meedeed!</p>
-        <div class="bestellen">
+        <div class="bestellen__raster">
           <aside class="mandje" aria-labelledby="mandje-titel">
             <h3 id="mandje-titel">Mandje</h3>
             <ul id="mandje-regels" class="mandje__regels"></ul>
@@ -135,17 +176,17 @@
             <fieldset>
               <legend>Jouw gegevens</legend>
               <div class="veld">
+                <input id="naam" name="naam" autocomplete="name" placeholder=" " required>
                 <label for="naam">Naam</label>
-                <input id="naam" name="naam" autocomplete="name" required>
               </div>
               <div class="velden-2">
                 <div class="veld">
+                  <input id="email" name="email" type="email" autocomplete="email" placeholder=" " required>
                   <label for="email">E-mail</label>
-                  <input id="email" name="email" type="email" autocomplete="email" required>
                 </div>
                 <div class="veld">
+                  <input id="telefoon" name="telefoon" type="tel" autocomplete="tel" placeholder=" " required>
                   <label for="telefoon">Telefoon</label>
-                  <input id="telefoon" name="telefoon" type="tel" autocomplete="tel" required>
                 </div>
               </div>
             </fieldset>
@@ -163,25 +204,25 @@
                 </label>
               </div>
               <div id="blok-afhalen">
-                <div class="veld">
-                  <label for="afhaalmoment">Afhaalmoment</label>
+                <div class="veld veld--select">
                   <select id="afhaalmoment" name="afhaalmoment"></select>
+                  <label for="afhaalmoment">Afhaalmoment</label>
                 </div>
                 <p class="hint" id="afhaal-plaats"></p>
               </div>
               <div id="blok-levering" hidden>
                 <div class="veld">
+                  <input id="adres" name="adres" autocomplete="street-address" placeholder=" ">
                   <label for="adres">Straat en huisnummer</label>
-                  <input id="adres" name="adres" autocomplete="street-address">
                 </div>
                 <div class="velden-2 velden-2--smal">
                   <div class="veld">
+                    <input id="postcode" name="postcode" inputmode="numeric" maxlength="4" autocomplete="postal-code" placeholder=" ">
                     <label for="postcode">Postcode</label>
-                    <input id="postcode" name="postcode" inputmode="numeric" maxlength="4" autocomplete="postal-code">
                   </div>
                   <div class="veld">
+                    <input id="gemeente" name="gemeente" autocomplete="address-level2" placeholder=" ">
                     <label for="gemeente">Gemeente</label>
-                    <input id="gemeente" name="gemeente" autocomplete="address-level2">
                   </div>
                 </div>
                 <p class="hint" id="levering-regio"></p>
@@ -191,8 +232,8 @@
             <fieldset>
               <legend>Opmerking</legend>
               <div class="veld">
-                <label for="opmerking">Opmerking <span class="optioneel">(niet verplicht)</span></label>
-                <textarea id="opmerking" name="opmerking" rows="3"></textarea>
+                <textarea id="opmerking" name="opmerking" rows="2" placeholder=" "></textarea>
+                <label for="opmerking">Opmerking (niet verplicht)</label>
               </div>
               <div class="honing" aria-hidden="true">
                 <label for="website">Laat dit veld leeg</label>
@@ -205,59 +246,66 @@
             </fieldset>
 
             <p class="melding melding--fout" id="formulier-fout" role="alert" hidden></p>
-            <button class="knop knop--breed" type="submit" id="bestelknop"><span>Bestellen</span></button>
-            <p class="hint">Na het bestellen zie je meteen het rekeningnummer, het bedrag en de mededeling om te betalen.</p>
+            <button class="knop knop--vol" type="submit" id="bestelknop"><span>Bestellen</span></button>
+            <p class="hint">Je betaalt via overschrijving. Na het bestellen zie je meteen het rekeningnummer, de mededeling en een QR-code.</p>
           </form>
         </div>
       </div>
     </section>
 
-    <section id="vragen" class="sectie" aria-labelledby="vragen-titel">
-      <div class="kader kader--smal">
-        <h2 id="vragen-titel">Vragen</h2>
-        <details>
-          <summary>Hoe betaal ik?</summary>
-          <p>Via overschrijving. Na je bestelling krijg je het rekeningnummer, het bedrag en een gestructureerde mededeling. Met de QR-code kan je in de meeste bank-apps meteen betalen. Gebruik zeker de mededeling, zo vinden we je betaling terug.</p>
-        </details>
-        <details>
-          <summary>Wanneer is mijn bestelling klaar?</summary>
-          <p>Als je betaling op onze rekening staat, zetten we je wijn klaar. Je haalt hem op op het gekozen moment, of we brengen hem aan huis.</p>
-        </details>
-        <details>
-          <summary>Tot wanneer kan ik bestellen?</summary>
-          <p id="faq-deadline">Zolang de actie loopt.</p>
-        </details>
-        <details>
-          <summary>Kan ik mijn bestelling nog wijzigen?</summary>
-          <p>Mail naar <a href="mailto:{{EMAIL}}">{{EMAIL}}</a> en vermeld je bestelnummer. Betaalde je nog niet? Dan kan je ook een nieuwe bestelling plaatsen.</p>
-        </details>
+    <!-- Vragen -->
+    <section id="vragen" class="vragen" aria-labelledby="vragen-titel">
+      <div class="kader vragen__raster">
+        <div>
+          <h2 id="vragen-titel" class="titel">Vragen</h2>
+        </div>
+        <div>
+          <details>
+            <summary>Hoe betaal ik?</summary>
+            <p>Via overschrijving. Na je bestelling krijg je het rekeningnummer, het bedrag en een gestructureerde mededeling. Met de QR-code betaal je in de meeste bank-apps in een paar tikken. Gebruik zeker de mededeling, zo vinden we je betaling terug.</p>
+          </details>
+          <details>
+            <summary>Wanneer is mijn bestelling klaar?</summary>
+            <p>Zodra je betaling op onze rekening staat, zetten we je wijn klaar. Je haalt hem op het gekozen afhaalmoment op, of onze vrijwilligers brengen hem aan huis.</p>
+          </details>
+          <details>
+            <summary>Tot wanneer kan ik bestellen?</summary>
+            <p id="faq-deadline">Zolang de actie loopt.</p>
+          </details>
+          <details>
+            <summary>Kan ik mijn bestelling nog wijzigen?</summary>
+            <p>Mail naar <a href="mailto:{{EMAIL}}">{{EMAIL}}</a> en vermeld je bestelnummer. Betaalde je nog niet? Dan kan je ook gewoon een nieuwe bestelling plaatsen.</p>
+          </details>
+        </div>
       </div>
     </section>
   </main>
 
   <a class="zwevend" id="zwevend" href="#bestellen" hidden>
-    <span><span id="zwevend-aantal">0</span> <span id="zwevend-tekst">flessen</span> · <strong id="zwevend-totaal">€ 0,00</strong></span>
-    <span class="zwevend__knop">Naar bestellen</span>
+    <span class="zwevend__aantal" id="zwevend-aantal">0</span>
+    <span id="zwevend-tekst">flessen</span>
+    <strong id="zwevend-totaal">€ 0,00</strong>
+    <span class="zwevend__pijl" aria-hidden="true">→</span>
   </a>
 
   <footer class="voet">
-    <div class="kader voet__raster">
-      <div>
-        <p class="voet__naam">De Zonnebloem</p>
+    <div class="kader">
+      <p class="voet__naam">De Zonnebloem</p>
+      <div class="voet__raster">
         <p>Wijnverkoop ten voordele van mensen met een beperking.</p>
-      </div>
-      <address>
-        {{ADRES}}<br>
-        <a href="tel:{{TELEFOON}}">{{TELEFOON}}</a><br>
-        <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
-      </address>
-      <div>
-        <p>Geniet, drink met mate. Geen verkoop van alcohol aan min-18-jarigen.</p>
-        <p>&copy; <span id="jaar">2026</span> De Zonnebloem · Website door <a href="https://artowebdesign.com">ARTO</a></p>
+        <address>
+          {{ADRES}}<br>
+          <a href="tel:{{TELEFOON}}">{{TELEFOON}}</a><br>
+          <a href="mailto:{{EMAIL}}">{{EMAIL}}</a>
+        </address>
+        <div>
+          <p>Geniet, drink met mate. Geen verkoop van alcohol aan min-18-jarigen.</p>
+          <p>&copy; <span id="jaar">2026</span> De Zonnebloem · Website door <a href="https://artowebdesign.com">ARTO</a></p>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="/js/winkel.js?v=4" defer></script>
+  <script src="/js/winkel.js?v=5" defer></script>
 </body>
 </html>

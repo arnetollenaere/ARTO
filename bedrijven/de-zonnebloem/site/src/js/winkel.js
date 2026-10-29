@@ -29,30 +29,28 @@
       var aantal = mandje[w.id] || 0;
       return '<li class="wijn" data-soort="' + esc(w.soort) + '">' +
         '<div class="wijn__beeld">' +
-          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 620px) 100vw, (max-width: 1000px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="">' +
+          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="">' +
           '<span class="wijn__soort">' + esc(w.soort) + "</span>" +
+          '<div class="wijn__snel"><p class="wijn__prijs">' + euro(w.prijs) + "<small>per fles</small></p></div>" +
         "</div>" +
         '<div class="wijn__tekst">' +
+          '<p class="wijn__streek">' + esc(w.streek) + " · " + esc(w.land) + (w.jaar ? " · " + w.jaar : "") + "</p>" +
           "<h3>" + esc(w.naam) + "</h3>" +
-          '<p class="wijn__streek">' + esc(w.streek) + ", " + esc(w.land) + (w.jaar ? ", " + w.jaar : "") + "</p>" +
           '<p class="wijn__druif">' + esc(w.druif) + "</p>" +
           '<p class="wijn__smaak">' + esc(w.smaak) + "</p>" +
-          '<p class="wijn__past"><span>Past bij:</span>' + esc(w.pastBij) + "</p>" +
+          '<p class="wijn__past"><span>Past bij</span>' + esc(w.pastBij) + "</p>" +
         "</div>" +
-        '<div class="wijn__voet">' +
-          '<p class="wijn__prijs">' + euro(w.prijs) + "<small>per fles</small></p>" +
-          '<div class="wijn__acties">' +
-            '<div class="stapper" role="group" aria-label="Aantal flessen ' + esc(w.naam) + '">' +
-              '<button type="button" data-min="' + w.id + '" aria-label="Eén fles minder">−</button>' +
-              '<output aria-live="polite" data-aantal="' + w.id + '">' + aantal + "</output>" +
-              '<button type="button" data-plus="' + w.id + '" aria-label="Eén fles meer">+</button>' +
-            "</div>" +
-            '<button type="button" class="knop knop--rand knop--klein" data-doos="' + w.id + '">+ 6 flessen</button>' +
+        '<div class="wijn__acties">' +
+          '<div class="stapper" role="group" aria-label="Aantal flessen ' + esc(w.naam) + '">' +
+            '<button type="button" data-min="' + w.id + '" aria-label="Eén fles minder">−</button>' +
+            '<output aria-live="polite" data-aantal="' + w.id + '">' + aantal + "</output>" +
+            '<button type="button" data-plus="' + w.id + '" aria-label="Eén fles meer">+</button>' +
           "</div>" +
+          '<button type="button" class="knop" data-doos="' + w.id + '"><span>+ 6 flessen</span></button>' +
         "</div>" +
       "</li>";
     }).join("");
-    $$(".wijn").forEach(function (k, i) { k.style.setProperty("--vertraging", (i % 3) * 80 + "ms"); });
+    $$(".wijn").forEach(function (k, i) { k.style.setProperty("--vertraging", (i % 3) * 120 + "ms"); });
     onthul(".wijn");
   }
 
@@ -68,9 +66,9 @@
   document.addEventListener("click", function (e) {
     var t = e.target.closest("button");
     if (!t) return;
-    if (t.dataset.plus) { zetAantal(t.dataset.plus, (mandje[t.dataset.plus] || 0) + 1); pof(t); }
+    if (t.dataset.plus) { zetAantal(t.dataset.plus, (mandje[t.dataset.plus] || 0) + 1); pof(t); if (!t.closest(".mandje")) toegevoegd(t.dataset.plus, 1); }
     else if (t.dataset.min) zetAantal(t.dataset.min, (mandje[t.dataset.min] || 0) - 1);
-    else if (t.dataset.doos) { zetAantal(t.dataset.doos, (mandje[t.dataset.doos] || 0) + 6); pof(t); }
+    else if (t.dataset.doos) { zetAantal(t.dataset.doos, (mandje[t.dataset.doos] || 0) + 6); pof(t); toegevoegd(t.dataset.doos, 6); }
     else if (t.dataset.filter) filter(t);
   });
 
@@ -82,6 +80,23 @@
     });
     knop.classList.add("geklikt");
     setTimeout(function () { knop.classList.remove("geklikt"); }, 350);
+  }
+
+  // Korte melding met foto wanneer je iets in je mandje legt.
+  var toast = document.createElement("div");
+  toast.className = "toast";
+  toast.setAttribute("role", "status");
+  document.body.appendChild(toast);
+  var toastTimer;
+  function toegevoegd(id, n) {
+    var w = wijnen.find(function (x) { return x.id === id; });
+    if (!w) return;
+    toast.innerHTML = '<img src="' + foto(w, 640) + '" width="44" height="55" alt=""><span><strong>' + esc(w.naam) + "</strong>" + n + (n === 1 ? " fles" : " flessen") + ' in je mandje</span><a href="#bestellen">Bekijk</a>';
+    toast.classList.remove("toast--aan");
+    void toast.offsetWidth;
+    toast.classList.add("toast--aan");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toast.classList.remove("toast--aan"); }, 2600);
   }
 
   function filter(knop) {
@@ -227,10 +242,10 @@
       if (!s || !s.doel) return;
       $("#stand").hidden = false;
       var pct = Math.min(100, Math.round((s.flessen / s.doel) * 100));
-      $("#stand-doel").textContent = s.doel.toLocaleString("nl-BE");
+      $("#stand-doel").textContent = s.doel.toLocaleString("nl-BE") + " flessen";
       var lijn = $("#stand-lijn");
       lijn.setAttribute("aria-valuenow", pct);
-      setTimeout(function () { lijn.firstElementChild.style.width = Math.max(pct, 1.5) + "%"; }, 200);
+      setTimeout(function () { lijn.firstElementChild.style.width = Math.max(pct, 1.5) + "%"; }, 1400);
       telOp($("#stand-flessen"), s.flessen);
     }).catch(function () {});
   }
@@ -243,7 +258,7 @@
         e.textContent = Math.round(doel * (1 - Math.pow(1 - t, 4))).toLocaleString("nl-BE");
         if (t < 1) requestAnimationFrame(stap);
       })(start);
-    }, 200);
+    }, 1300);
   }
 
   // ---------- Animaties ----------
