@@ -94,13 +94,10 @@ figure { margin: 0; }
 .held__beeld::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, var(--zwart) 0%, rgba(13, 10, 9, 0) 28%), linear-gradient(0deg, rgba(13, 10, 9, .6), transparent 35%); }
 .held__beeld figcaption { position: absolute; z-index: 2; right: 32px; bottom: 32px; font: 500 .64rem/1 var(--sans); letter-spacing: .16em; text-transform: uppercase; color: var(--zacht); }
 .held__beeld figcaption span { color: var(--goud); margin-right: .8rem; }
-.scrollhint { position: absolute; left: clamp(24px, 6vw, 110px); bottom: 34px; z-index: 3; width: 1px; height: 60px; background: var(--lijn); overflow: hidden; }
-.scrollhint span { position: absolute; inset: 0; background: var(--goud); animation: scrollen 2.4s var(--ease) infinite; }
 @keyframes opschuiven { to { transform: none; } }
 @keyframes vervaag { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
 @keyframes onthulBeeld { to { clip-path: inset(0 0 0 0); } }
 @keyframes inzoomen { to { transform: scale(1.04); } }
-@keyframes scrollen { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
 
 .stand { margin-top: 3.4rem; max-width: 420px; opacity: 0; animation: vervaag 1.2s 1.3s var(--ease) forwards; }
 .stand__cijfers { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1rem; }
@@ -115,7 +112,7 @@ figure { margin: 0; }
   .held { grid-template-columns: 1fr; min-height: 100svh; }
   .held__beeld { position: absolute; inset: 0; }
   .held__beeld::after { background: linear-gradient(0deg, var(--zwart) 8%, rgba(13, 10, 9, .55) 55%, rgba(13, 10, 9, .35) 100%); }
-  .held__beeld figcaption, .scrollhint { display: none; }
+  .held__beeld figcaption { display: none; }
   .held__tekst { justify-content: flex-end; padding: 140px 16px 56px; }
   .stand { margin-top: 3rem; }
   .label { letter-spacing: .12em; gap: 10px; }
@@ -443,3 +440,5 @@ body { font-size: 1rem; }
 .stappen h3 { font-size: 1.3rem; }
 .menu a, .mandknop, .knop, .tekstlink, .filter { font-size: .95rem; }
 .keuze strong { font-weight: 600; font-size: 1.1rem; letter-spacing: -.01em; }
+.kop__binnen { width: auto; margin-inline: clamp(24px, 6vw, 110px); }
+@media (max-width: 960px) { .kop__binnen { margin-inline: 16px; } }
