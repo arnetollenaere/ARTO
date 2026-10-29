@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Live gezet: groter ARTO-logo onder het afrekenen, animatie niet meer afgekapt, zonnebloemwijn.be als officieel adres (canonical, sitemap). Domein zelf nog niet actief: nameservers staan nog op Hostinger (dns-parking.com). | productie |
 | 2026-10-29 | Cloudflare-zone zonnebloemwijn.be aangemaakt in Arnes account; zonnebloemwijn.be en www gekoppeld aan Pages-project de-zonnebloem (DNS CNAME naar de-zonnebloem.pages.dev); doorverwijzing www naar hoofddomein (301). Wacht op nameservers bij Hostinger (charles/robin.ns.cloudflare.com). | nee |
 | 2026-10-29 | Domein zonnebloemwijn.be gekocht door Arne bij Hostinger. Site verwijst ernaar (canonical, Open Graph, sitemap, robots); nog niet gepubliceerd. Koppeling aan Cloudflare nog te doen. | nee |
 | 2026-10-29 | Animatie: onderkant niet meer afgekapt (tekening op 86% binnen het tekenvlak, ook bij kanteling minstens 9% marge). | preview |
