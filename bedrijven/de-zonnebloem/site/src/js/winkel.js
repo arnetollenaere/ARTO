@@ -158,7 +158,10 @@
     sel.innerHTML = inst.afhalen.momenten.map(function (m) { return '<option value="' + esc(m) + '">' + esc(m) + "</option>"; }).join("");
     $("#afhaal-plaats").textContent = "Afhaalpunt: " + inst.afhalen.plaats;
     if (!inst.levering.actief) {
+      // Enkel afhalen: keuzevakjes verbergen, enkel het afhaalmoment tonen.
       $("#keuze-levering").hidden = true;
+      $("#keuze-levering").parentNode.hidden = true;
+      $("#legend-levering").textContent = "Afhalen";
     } else {
       $("#levering-prijs").textContent = euro(inst.levering.kost) + (inst.levering.gratisVanaf ? ", gratis vanaf " + inst.levering.gratisVanaf + " flessen" : "");
       $("#levering-regio").textContent = inst.levering.uitleg + " Regio: " + inst.levering.postcodes + ".";

@@ -53,7 +53,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Betaling | overschrijving met gestructureerde mededeling en EPC-QR-code |
 | IBAN / begunstigde | in te vullen in `site/src/instellingen.json` |
 | Afhaalpunt en -momenten | in te vullen in `site/src/instellingen.json` |
-| Levering aan huis | € 5, gratis vanaf 12 flessen (voorbeeld, te bevestigen), regio in te vullen |
+| Levering aan huis | nee, enkel afhalen (`levering.actief: false` in instellingen.json) |
 | Wijnen en prijzen | voorbeeldselectie in `site/src/wijnen.json`, te vervangen door de echte |
 | Beheer | `/beheer/` met wachtwoord: bestellingen, betalingen afpunten, picklijst, Excel-export, status van het IBAN |
 | IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` als Pages-secret: nog in te stellen zodra het echte IBAN gekend is (zie `site/README.md`). |
