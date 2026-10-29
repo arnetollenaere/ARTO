@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Domeincontrole 18:56 UTC: nameservers bij Hostinger zijn gewisseld (publieke DNS toont charles/robin.ns.cloudflare.com). www.zonnebloemwijn.be actief met certificaat en toont de site. Zone en zonnebloemwijn.be zelf nog pending (geen certificaat, https faalt); activatiecontrole aangevraagd bij Cloudflare. | n.v.t. |
 | 2026-10-29 | Animatie: canvas houdt altijd de verhouding van de tekening, tekening volledig in beeld en gecentreerd naast de titel; punten wijken nu precies rond de muis uit (stonden ~90 px te laag op laptopschermen). Zin dichter onder de animatie. | preview |
 | 2026-10-29 | Beheer: echte inlogpagina `/inloggen/` in Raakpunt-stijl i.p.v. het browservenster. Sessie 8 uur via ondertekend cookie, knop "Uitloggen", slot na 10 foute pogingen blijft. Beheergegevens ook als secrets op de preview-omgeving gezet. | preview |
 | 2026-10-29 | Beheer: nieuwe inloggegevens op vraag van Arne (gebruiker `zonnebloem`, wachtwoord gekozen door Arne, als Pages-secrets) en slot na 10 foute pogingen per 15 minuten. Live getest: inloggen, bestellingenlijst en IBAN-status werken. | productie |

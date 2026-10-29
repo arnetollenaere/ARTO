@@ -25,7 +25,7 @@
 
 | Veld | Waarde |
 |---|---|
-| Domein | zonnebloemwijn.be (Cloudflare-zone aangemaakt, wacht op nameservers bij Hostinger); tijdelijk https://de-zonnebloem.pages.dev |
+| Domein | zonnebloemwijn.be (nameservers bij Hostinger gewisseld op 29/10; www actief, hoofddomein wacht op activatie van de zone); tijdelijk https://de-zonnebloem.pages.dev |
 | Repo | nog aan te maken (`arnetollenaere/de-zonnebloem`, private) |
 | Site staat in | `bedrijven/de-zonnebloem/site/` (tijdelijk, tot de eigen repo bestaat) |
 | Template gebruikt | site-basis, uitgebreid tot webshop (Pages Functions + D1) |
