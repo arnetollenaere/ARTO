@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Beheer: nieuwe inloggegevens op vraag van Arne (gebruiker `zonnebloem`, wachtwoord gekozen door Arne, als Pages-secrets) en slot na 10 foute pogingen per 15 minuten. Live getest: inloggen, bestellingenlijst en IBAN-status werken. | productie |
 | 2026-10-29 | Live gezet: groter ARTO-logo onder het afrekenen, animatie niet meer afgekapt, zonnebloemwijn.be als officieel adres (canonical, sitemap). Domein zelf nog niet actief: nameservers staan nog op Hostinger (dns-parking.com). | productie |
 | 2026-10-29 | Cloudflare-zone zonnebloemwijn.be aangemaakt in Arnes account; zonnebloemwijn.be en www gekoppeld aan Pages-project de-zonnebloem (DNS CNAME naar de-zonnebloem.pages.dev); doorverwijzing www naar hoofddomein (301). Wacht op nameservers bij Hostinger (charles/robin.ns.cloudflare.com). | nee |
 | 2026-10-29 | Domein zonnebloemwijn.be gekocht door Arne bij Hostinger. Site verwijst ernaar (canonical, Open Graph, sitemap, robots); nog niet gepubliceerd. Koppeling aan Cloudflare nog te doen. | nee |

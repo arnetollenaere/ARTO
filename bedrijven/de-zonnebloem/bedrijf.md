@@ -45,7 +45,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Cloudflare Pages-project | de-zonnebloem (eigen domeinen: zonnebloemwijn.be en www.zonnebloemwijn.be) |
 | Cloudflare-zone | zonnebloemwijn.be, nameservers charles.ns.cloudflare.com en robin.ns.cloudflare.com; www stuurt door naar het hoofddomein (Single Redirect) |
 | D1-database | zonnebloem-bestellingen-eu (EU-jurisdictie). Een lege, ongebruikte `zonnebloem-bestellingen` (Noord-Amerika) mag weg. |
-| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `raakpunt` + `BEHEER_WACHTWOORD`, beide Pages-secrets sinds 2026-10-29; `IBAN_SHA256`; eventueel `RESEND_API_KEY`) |
+| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `zonnebloem` + `BEHEER_WACHTWOORD`, beide Pages-secrets; slot na 10 foute pogingen; `IBAN_SHA256`; eventueel `RESEND_API_KEY`) |
 
 ## Webshop
 
