@@ -368,3 +368,24 @@ details a { color: var(--oranje); }
 }
 .held__titel { font-size: clamp(2.6rem, 5.4vw, 5rem); }
 @media (max-width: 600px) { .held__titel { font-size: clamp(2.4rem, 12vw, 3.2rem); } }
+
+/* Animatie en tekst als één geheel, verticaal gecentreerd, zonder voortgangsbalk. */
+.held__beeld { align-self: stretch; justify-content: center; padding: 90px clamp(16px, 4vw, 56px) 40px; }
+.vc { max-height: 62vh; }
+.verhaal__tekst { display: flex; align-items: center; justify-content: center; gap: .9rem; margin-top: -1.2rem; text-align: center; }
+.verhaal__zinnen { flex: 1; max-width: 26rem; min-height: 2.6em; }
+.zin { display: flex; align-items: center; justify-content: center; }
+.verhaal__pauze { flex: none; width: 34px; height: 34px; padding: 0; display: grid; place-items: center; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .14); opacity: .7; transition: opacity .2s, background .2s; }
+.verhaal__pauze:hover, .verhaal__pauze:focus-visible { opacity: 1; background: rgba(255, 255, 255, .26); color: var(--wit); }
+.pauze-icoon { width: 10px; height: 12px; border-left: 3px solid currentColor; border-right: 3px solid currentColor; }
+.verhaal__pauze[aria-pressed="true"] .pauze-icoon { width: 0; height: 0; border: 0; border-left: 11px solid currentColor; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+.verhaal-anim.rustig .verhaal__zinnen { min-height: 0; }
+@media (max-width: 900px) {
+  .held__beeld { padding: 80px 16px 0; }
+  .vc { max-height: 48vh; }
+  .verhaal__tekst { margin-top: -.6rem; }
+}
+@media (min-width: 901px) {
+  .held__beeld { padding-top: 72px; padding-bottom: 72px; }
+  .held__tekst { padding-top: 72px; padding-bottom: 72px; }
+}

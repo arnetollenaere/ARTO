@@ -296,9 +296,11 @@
     tekst.setAttribute("data-stap", n);
     balken.forEach(function (b, i) { b.classList.toggle("klaar", i < n - 1); b.classList.remove("bezig"); });
     var b = balken[n - 1];
-    b.style.setProperty("--duur", DUUR[n - 1] + "ms");
-    void b.offsetWidth;
-    b.classList.add("bezig");
+    if (b) {
+      b.style.setProperty("--duur", DUUR[n - 1] + "ms");
+      void b.offsetWidth;
+      b.classList.add("bezig");
+    }
     naarVorm(n - 1, performance.now());
     var kl = KLEUREN[n - 1];
     held.style.setProperty("--sfeer", "rgb(" + kl[0] + "," + kl[1] + "," + kl[2] + ")");
@@ -323,7 +325,7 @@
   knop.addEventListener("click", function () {
     gepauzeerd = !gepauzeerd;
     knop.setAttribute("aria-pressed", String(gepauzeerd));
-    knop.textContent = gepauzeerd ? "Speel af" : "Pauzeer";
+    knop.setAttribute("aria-label", gepauzeerd ? "Animatie afspelen" : "Animatie pauzeren");
     if (gepauzeerd) pauzeer(); else hervat();
   });
   if ("IntersectionObserver" in window) {
