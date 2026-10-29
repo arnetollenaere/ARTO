@@ -366,3 +366,5 @@ details a { color: var(--oranje); }
   .kop__rechts { gap: .6rem; }
   .held__titel { font-size: clamp(2.2rem, 11vw, 3rem); }
 }
+.held__titel { font-size: clamp(2.6rem, 5.4vw, 5rem); }
+@media (max-width: 600px) { .held__titel { font-size: clamp(2.4rem, 12vw, 3.2rem); } }

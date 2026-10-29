@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Groot Raakpunt-logo in het openingsbeeld verwijderd (enkel nog het logo in de kop), titel groter. | preview |
 | 2026-10-29 | Enkel afhalen: levering aan huis uitgezet (site en server), teksten aangepast. | preview |
 | 2026-10-29 | Volledig omgezet naar de huisstijl van vzwraakpunt.be (blauw #2832b9, oranje #ff4619, Antonio + Cantarell, Raakpunt-logo, hamburgermenu, oranje voettekst). Animatie behouden. Donkere versie bewaard: branch `versie-donker` in de site-repo, `claude/de-zonnebloem-versie-donker` in ARTO, online op versie-donker.de-zonnebloem.pages.dev. | preview (e7244091.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Live gezet: snellere animatie met afgestemd openingsbeeld en de inhoud over vzw Raakpunt. IBAN is nog een voorbeeld. | productie |
