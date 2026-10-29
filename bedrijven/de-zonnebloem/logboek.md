@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-29 | Wijnglasfoto in het openingsbeeld vervangen door een geanimeerd verhaal (glas vult zich, druppels worden muntjes, zonnebloem groeit, twee vrienden van wie één in een rolstoel). Volwassen figuren, geen kinderen naast wijn (Belgische alcoholreclameregels). | preview (8b4b989c.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Live gezet: donkere fotostijl met Libre Franklin en bewegende elementen, zonder scroll-lijntje. | productie |
 | 2026-10-29 | Scroll-lijntje onder de teller verwijderd, kop uitgelijnd met de openingstekst op brede schermen. | preview (a58adb1f.de-zonnebloem.pages.dev) |
 | 2026-10-29 | Lettertype Libre Franklin, door Arne gekozen uit vier voorbeelden (Libre Caslon, EB Garamond, Alegreya, Libre Franklin). | preview (cd5c494e.de-zonnebloem.pages.dev) |
