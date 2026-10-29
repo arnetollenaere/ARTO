@@ -406,3 +406,9 @@ details a { color: var(--oranje); }
 .verhaal__pauze { margin-top: .1rem; }
 .verhaal-anim.rustig .verhaal__zinnen { display: block; }
 @media (max-width: 900px) { .verhaal__tekst { margin-top: .3rem; } }
+/* Gsm: eerst de tekst, daaronder de animatie. */
+@media (max-width: 900px) {
+  .held__tekst { order: 1; padding: 104px 16px 8px; }
+  .held__beeld { order: 2; padding: 8px 16px 48px; }
+  .held::before { background: radial-gradient(80% 32% at 50% 74%, color-mix(in srgb, var(--sfeer) 32%, transparent), transparent 72%); }
+}
