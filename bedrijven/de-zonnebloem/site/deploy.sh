@@ -7,10 +7,8 @@ cd "$(dirname "$0")"
 
 PROJECT="de-zonnebloem"
 
-if [ ! -d dist ]; then
-  echo "dist/ bestaat niet. Voer eerst ./build.sh uit." >&2
-  exit 1
-fi
+# Altijd vers bouwen, zodat wijnen, FAQ en gestructureerde gegevens kloppen met de JSON-bestanden.
+./build.sh
 
 # Account-ID van de klant (geen geheim). Zie ARTO/setup/hosting-cloudflare.md.
 if [ -s .cloudflare-account ]; then

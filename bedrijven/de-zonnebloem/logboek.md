@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-30 | Optimalisatie SEO en GEO (branch optimalisatie-2026-10-30): Lighthouse gsm prestaties 84→91, toegankelijkheid 97→97, best practices 100→100, SEO 100→100 (desktop 100/97/100/100). Wijnen en FAQ vooraf in de HTML (leesbaar zonder JavaScript), JSON-LD met NGO, website, FAQ en wijnen met prijs, llms.txt, sitemap met lastmod en afbeeldingen, AI-crawlers expliciet toegelaten in robots.txt, extra meta (og, twitter, geo, nl-BE), 4 nieuwe FAQ-vragen, alt-teksten wijnen, animatie start na het laden, CSS/JS een jaar gecachet. Contrast wit op oranje (huisstijl Raakpunt) bewust niet aangepast. | preview |
 | 2026-10-30 | Derde domeincontrole 00:00 UTC: DNS wereldwijd correct (NS en SOA van Cloudflare), www actief. Zone en hoofddomein nog pending bij Cloudflare; activatiecontrole opnieuw aangevraagd. Arne gevraagd "Check nameservers now" te klikken in het dashboard. Geen verdere automatische controles. | n.v.t. |
 | 2026-10-29 | Op vraag van Arne alle bestellingen gewist (6 testbestellingen, alle al geannuleerd) en nummering teruggezet: de eerste echte bestelling wordt ZB-2026-0001. Teller op de site staat op 0. Reservekopie alleen tijdelijk in de sessie, niet in de repo. | productie |
 | 2026-10-29 | Live gezet: inlogpagina beheer (`/inloggen/`, uitlogknop) en animatiecorrectie (tekening volledig in beeld, muis precies). Live getest: doorsturen naar inlogpagina, inloggen, beheer, IBAN-status groen. | productie |

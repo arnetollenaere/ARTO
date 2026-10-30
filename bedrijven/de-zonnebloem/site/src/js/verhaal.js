@@ -346,7 +346,13 @@
 
   // ---------- Start ----------
   var lettertypes = document.fonts && document.fonts.load ? document.fonts.load('700 40px "Libre Franklin"').catch(function () {}) : Promise.resolve();
-  lettertypes.then(function () {
+  // Pas starten als de pagina geladen is en de browser even rust heeft: zo blijft de rest snel.
+  var paginaKlaar = new Promise(function (klaar) {
+    if (document.readyState === "complete") klaar(); else addEventListener("load", function () { klaar(); }, { once: true });
+  }).then(function () {
+    return new Promise(function (klaar) { (window.requestIdleCallback || function (f) { setTimeout(f, 1); })(klaar, { timeout: 700 }); });
+  });
+  Promise.all([lettertypes, paginaKlaar]).then(function () {
     maatCanvas(); maatSfeer();
     for (var v = 0; v < VORMEN.length; v++) doelen.push(bemonster(VORMEN[v]));
     if (rustig) {

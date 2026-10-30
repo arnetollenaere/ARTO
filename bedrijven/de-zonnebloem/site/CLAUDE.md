@@ -6,7 +6,7 @@ Webshop voor de wijnverkoop van De Zonnebloem (zonnebloemwijn.be), gebouwd en be
 - Wijnen en prijzen staan in `src/wijnen.json`, alle actie-instellingen (IBAN, afhaalmomenten, leveringskost, deadline) in `src/instellingen.json`. De server rekent prijzen altijd uit die bestanden.
 - De CSP in `src/_headers` verbiedt inline scripts en inline `style`-attributen. Zet scripts in `src/js/` en zet stijl via CSS of `element.style` vanuit JS.
 - Alles wat klanten invullen, toon je in het beheer altijd via `esc()`.
-- Bouwen: `./build.sh`. Lokaal testen: zie README.md. Publiceren: `./deploy.sh` (productie) of `./deploy.sh preview`.
+- Bouwen: `./build.sh` (kopieert `src/` naar `dist/` en draait `scripts/bouw.mjs`: wijnkaarten en FAQ-antwoorden vooraf in de HTML, JSON-LD (organisatie, FAQ, wijnen met prijs), `llms.txt` en `sitemap.xml` uit `wijnen.json` en `instellingen.json`). Pas de opmaak van een wijnkaart altijd in `js/winkel.js` én `scripts/bouw.mjs` aan. CSS en JS worden een jaar gecachet: verhoog `?v=` bij elke wijziging. Lokaal testen: zie README.md. Publiceren: `./deploy.sh` (productie) of `./deploy.sh preview`.
 - Publiceer naar productie alleen als Arne dat vraagt. Toon eerst een preview.
 - Klantgegevens staan in de ARTO-repo onder `bedrijven/de-zonnebloem/bedrijf.md`. Na elke wijziging: noteer ze in `bedrijven/de-zonnebloem/logboek.md`.
 - Houd je aan `ARTO/setup/optimalisatie.md`.

@@ -1,7 +1,24 @@
+# Zoekmachines en AI-assistenten zijn welkom: de wijnactie mag gevonden en geciteerd worden.
 User-agent: *
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot
+User-agent: Applebot-Extended
+User-agent: Meta-ExternalAgent
+User-agent: DuckAssistBot
 Allow: /
 Disallow: /beheer/
 Disallow: /bestelling/
 Disallow: /inloggen/
+Disallow: /api/
 
 Sitemap: https://zonnebloemwijn.be/sitemap.xml

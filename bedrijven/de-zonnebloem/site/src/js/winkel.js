@@ -9,6 +9,7 @@
   };
   var rustig = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var SLEUTEL = "zonnebloem-mandje";
+  var SOORT = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn" };
 
   var wijnen = [];
   var inst = null;
@@ -29,7 +30,7 @@
       var aantal = mandje[w.id] || 0;
       return '<li class="wijn" data-soort="' + esc(w.soort) + '">' +
         '<div class="wijn__beeld">' +
-          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="">' +
+          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="' + esc((SOORT[w.soort] || "Wijn") + ": " + w.naam) + '">' +
           '<span class="wijn__soort">' + esc(w.soort) + "</span>" +
           '<div class="wijn__snel"><p class="wijn__prijs">' + euro(w.prijs) + "<small>per fles</small></p></div>" +
         "</div>" +

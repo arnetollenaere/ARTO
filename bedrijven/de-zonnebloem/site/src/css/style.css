@@ -179,7 +179,7 @@ p { margin: 0 0 1em; }
 .wijn:hover .wijn__beeld img { transform: scale(1.05); }
 .wijn__soort { position: absolute; top: 0; left: 0; background: var(--blauw); color: var(--wit); font: 700 .95rem/1 var(--titel); text-transform: uppercase; letter-spacing: .05em; padding: .5rem .75rem; }
 .wijn__snel { position: absolute; left: 0; bottom: 0; }
-.wijn__prijs { margin: 0; background: var(--oranje); color: var(--wit); padding: .45rem .8rem .5rem; font: 700 1.5rem/1 var(--titel); text-align: center; }
+.wijn__prijs { margin: 0; background: var(--oranje-donker); color: var(--wit); padding: .45rem .8rem .5rem; font: 700 1.5rem/1 var(--titel); text-align: center; }
 .wijn__prijs small { display: block; font: 400 .72rem/1.2 var(--tekst); text-transform: none; letter-spacing: 0; }
 .wijn__tekst { padding: 1.2rem 1.3rem 0; flex: 1; text-align: center; }
 .wijn h3 { font-size: 1.65rem; margin: .1rem 0 .3rem; }
@@ -240,7 +240,7 @@ p { margin: 0 0 1em; }
 .mandje__naam small { display: block; font: 400 .8rem/1.5 var(--tekst); text-transform: none; }
 .mandje__bedrag { grid-area: bedrag; font: 700 1.15rem/1 var(--titel); }
 .mandje .stapper { grid-area: stapper; justify-self: start; }
-.mandje__leeg a { color: var(--oranje); }
+.mandje__leeg a { color: var(--oranje-donker); }
 .mandje__totaal { margin: 1rem 0 0; }
 .mandje__totaal div { display: flex; justify-content: space-between; padding: .3rem 0; }
 .mandje__totaal dd { margin: 0; font-variant-numeric: tabular-nums; }

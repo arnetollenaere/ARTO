@@ -118,3 +118,14 @@ Of gewoon "Exporteer naar Excel" in het beheer.
 ```bash
 npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file migrations/0002_ip_hash.sql
 ```
+
+## SEO en AI-zoekmachines (GEO)
+
+`./build.sh` (ook automatisch bij `./deploy.sh`) vult de pagina aan met inhoud uit `src/wijnen.json` en `src/instellingen.json` via `scripts/bouw.mjs`:
+
+- wijnkaarten en FAQ-antwoorden staan meteen in de HTML, zodat ook crawlers zonder JavaScript (de meeste AI-bots) alles lezen;
+- gestructureerde gegevens (JSON-LD): vzw Raakpunt als NGO, de website, de FAQ en elke wijn als product met prijs, beschikbaarheid en afhalen;
+- `/llms.txt`: een feitelijke samenvatting voor AI-assistenten;
+- `/sitemap.xml` met datum en afbeeldingen.
+
+`robots.txt` laat zoekmachines en AI-crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, ...) expliciet toe, behalve op beheer, bestelling, inloggen en API.
