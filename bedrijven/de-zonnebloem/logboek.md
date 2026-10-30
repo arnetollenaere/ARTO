@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-10-30 | Derde domeincontrole 00:00 UTC: DNS wereldwijd correct (NS en SOA van Cloudflare), www actief. Zone en hoofddomein nog pending bij Cloudflare; activatiecontrole opnieuw aangevraagd. Arne gevraagd "Check nameservers now" te klikken in het dashboard. Geen verdere automatische controles. | n.v.t. |
 | 2026-10-29 | Op vraag van Arne alle bestellingen gewist (6 testbestellingen, alle al geannuleerd) en nummering teruggezet: de eerste echte bestelling wordt ZB-2026-0001. Teller op de site staat op 0. Reservekopie alleen tijdelijk in de sessie, niet in de repo. | productie |
 | 2026-10-29 | Live gezet: inlogpagina beheer (`/inloggen/`, uitlogknop) en animatiecorrectie (tekening volledig in beeld, muis precies). Live getest: doorsturen naar inlogpagina, inloggen, beheer, IBAN-status groen. | productie |
 | 2026-10-29 | Hercontrole domein 19:57 UTC: DNS in orde (nameservers Cloudflare, geen DNSSEC-rest bij Hostinger), www actief. Zone en hoofddomein nog pending bij Cloudflare; activatiecontrole opnieuw aangevraagd. Kan tot 24 uur duren. | n.v.t. |
