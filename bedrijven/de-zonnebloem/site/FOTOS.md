@@ -27,6 +27,6 @@ Van https://www.wijnveld.be/ (logo.svg), verkleind met svgo.
 
 ## De Zonnebloem in beeld (`src/img/beeld/`)
 
-Foto's voor de carrousel onder het openingsbeeld, van https://www.vzwraakpunt.be/ (In beeld). Per foto twee hoogtes: `<naam>-480.webp` en `<naam>-720.webp`. Nieuwe foto toevoegen: een `<figure class="carrousel__dia">` in `src/index.html` (sectie `#inbeeld`).
+Foto's voor de carrousel onder het openingsbeeld: `groep` en `lachen` van https://www.vzwraakpunt.be/ (In beeld), de andere vijf aangeleverd door Arne. Per foto twee groottes (langste zijde): `<naam>-700.webp` en `<naam>-1200.webp`; staande foto's krijgen de klasse `carrousel__dia--staand`. Nieuwe foto toevoegen: een `<figure class="carrousel__dia">` in `src/index.html` (sectie `#inbeeld`).
 
 Let op: dit is een site die alcohol verkoopt. Het Belgische convenant over alcoholreclame verbiedt minderjarigen in reclame voor alcohol. Laat vzw Raakpunt bevestigen dat de foto's hier mogen staan (toestemming van de personen in beeld) en dat ze akkoord gaan met dat risico.

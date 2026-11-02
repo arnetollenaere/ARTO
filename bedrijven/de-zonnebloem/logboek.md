@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Carrousel herbouwd na feedback van Arne (pijlen schoven op brede schermen nauwelijks op en hij stopte na een klik): nu één foto in het midden met puntjes, doorlopend, vast kader met vage achtergrond voor staande foto's; 5 extra foto's van Arne toegevoegd (7 in totaal). Foto Terre di Gioia nog iets verfijnd. | preview |
 | 2026-11-02 | Fotocarrousel "De Zonnebloem in beeld" onder het openingsbeeld, voorlopig met 2 foto's van vzwraakpunt.be (lachende deelneemster, groepsfoto); 3 andere foto's van Arne nog als bestand nodig. Aandachtspunt gemeld: minderjarigen op een site die alcohol verkoopt (convenant alcoholreclame) en toestemming van de personen in beeld. | preview |
 | 2026-11-02 | Foto Terre di Gioia verbeterd: linksboven geen gekopieerde blokken meer (watermerk en oude fles weggewerkt met inpainting, fles iets groter zodat ze de oude volledig bedekt). | preview |
 | 2026-11-02 | Foto Château des Tourtes Blanc Prestige (2020, aangeleverd door Arne) op de site. Alle 15 wijnen hebben nu een flesfoto. | preview |
