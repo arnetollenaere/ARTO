@@ -144,7 +144,7 @@ De site mailt klanten vanaf `vzwzonnebloem@gmail.com` (variabele `MAIL_GEBRUIKER
 2. **Betaling ontvangen** zodra de bestelling in het beheer van "wacht op betaling" naar betaald gaat (één keer): wijnen, afhaalpunt en -uur.
 3. **Herinnering** met de knop "Herinnering" per onbetaalde bestelling in het beheer (niet twee keer binnen 10 minuten).
 
-Het beheer toont per bestelling welke mails vertrokken zijn en de laatste fout, en bovenaan of e-mail aan staat (met "Stuur testmail").
+Het beheer toont per bestelling welke mails vertrokken zijn en de laatste fout, en bovenaan of e-mail aan staat.
 
 Database: voer eenmalig `migrations/0003_mails.sql` uit (`npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file migrations/0003_mails.sql`).
 

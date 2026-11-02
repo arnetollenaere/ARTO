@@ -136,9 +136,20 @@
   document.addEventListener("click", function (e) {
     var t = e.target;
     var knop = t.closest("button");
+    if (knop && knop.dataset.bevestigStatus) return;   // apart afgehandeld hieronder
     if (knop && knop.dataset.status) { filter = knop.dataset.status; statusfilter(); lijst(); return; }
     if (knop && knop.dataset.tab) { toonTab(knop.dataset.tab); return; }
     if (knop && knop.dataset.zet) {
+      // Eerste klik: vragen om bevestiging. Tweede klik binnen 4 seconden: uitvoeren.
+      if (!knop.classList.contains("bevestig")) {
+        document.querySelectorAll("[data-zet].bevestig").forEach(herstelKnop);
+        knop.dataset.label = knop.textContent;
+        knop.textContent = "Zeker? Klik opnieuw";
+        knop.classList.add("bevestig");
+        knop.dataset.tijd = setTimeout(function () { herstelKnop(knop); }, 4000);
+        return;
+      }
+      clearTimeout(Number(knop.dataset.tijd));
       knop.disabled = true;
       wijzig(Number(knop.dataset.id), { status: knop.dataset.zet })
         .then(function (b) { melding(b.nummer + ": " + STATUS[b.status]); toonAlles(); })
@@ -157,15 +168,6 @@
         .catch(function (err) { melding(err.message); knop.disabled = false; knop.textContent = "Herinnering"; laad(); });
       return;
     }
-    if (knop && knop.id === "testmail") {
-      knop.disabled = true; knop.textContent = "Versturen…";
-      fetch("/api/beheer/testmail", { method: "POST" })
-        .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.fout || "Versturen mislukt."); return d; }); })
-        .then(function (d) { melding("Testmail verstuurd naar " + d.aan); })
-        .catch(function (err) { alert("Testmail mislukt:\n\n" + err.message); })
-        .finally(function () { knop.disabled = false; knop.textContent = "Stuur testmail"; });
-      return;
-    }
     if (knop && knop.dataset.notitie) {
       var id = Number(knop.dataset.notitie);
       wijzig(id, { notitie: $("notitie-" + id).value }).then(function () { melding("Notitie bewaard"); }).catch(function (err) { melding(err.message); });
@@ -176,12 +178,28 @@
     if (rij) { var rid = Number(rij.dataset.id); open = open === rid ? null : rid; lijst(); }
   });
 
+  // Keuzemenu: eerst kiezen, dan "Bevestig" klikken.
+  function herstelKnop(k) { clearTimeout(Number(k.dataset.tijd)); k.classList.remove("bevestig"); if (k.dataset.label) k.textContent = k.dataset.label; }
   document.addEventListener("change", function (e) {
     var s = e.target.closest("select[data-kies]");
     if (!s) return;
     var b = bestellingen.find(function (x) { return x.id === Number(s.dataset.kies); });
-    if (s.value === "geannuleerd" && !confirm("Bestelling " + b.nummer + " annuleren?")) { s.value = b.status; return; }
-    wijzig(b.id, { status: s.value }).then(function (n) { melding(n.nummer + ": " + STATUS[n.status]); toonAlles(); }).catch(function (err) { melding(err.message); s.value = b.status; });
+    var oud = s.parentNode.querySelector("[data-bevestig-status]");
+    if (oud) oud.remove();
+    if (s.value === b.status) return;
+    var k = document.createElement("button");
+    k.type = "button"; k.className = "bh-knop bh-knop--oranje bh-knop--klein bevestig";
+    k.dataset.bevestigStatus = b.id;
+    k.textContent = "Bevestig: " + STATUS[s.value];
+    s.after(k);
+  });
+  document.addEventListener("click", function (e) {
+    var k = e.target.closest("[data-bevestig-status]");
+    if (!k) return;
+    var s = k.parentNode.querySelector("select[data-kies]");
+    var b = bestellingen.find(function (x) { return x.id === Number(k.dataset.bevestigStatus); });
+    k.disabled = true;
+    wijzig(b.id, { status: s.value }).then(function (n) { melding(n.nummer + ": " + STATUS[n.status]); toonAlles(); }).catch(function (err) { melding(err.message); s.value = b.status; k.remove(); });
   });
 
   $("zoek").addEventListener("input", lijst);
@@ -327,8 +345,7 @@
     var vak = $("mail-status");
     vak.className = "bh-iban bh-mailstatus bh-iban--" + (m.ingesteld ? "goed" : "let");
     vak.innerHTML = m.ingesteld
-      ? "<div><strong>E-mails staan aan</strong><span>Klanten krijgen mails van " + esc(m.van) + ": na hun bestelling, wanneer ze betaald zijn, en een herinnering als jij daarom vraagt.</span></div>" +
-        '<button type="button" class="bh-knop bh-knop--klein" id="testmail">Stuur testmail</button>'
+      ? "<div><strong>E-mails staan aan</strong><span>Klanten krijgen mails van " + esc(m.van) + ": na hun bestelling, wanneer ze betaald zijn, en een herinnering als jij daarom vraagt.</span></div>"
       : "<div><strong>E-mails staan nog uit</strong><span>Het Gmail-app-wachtwoord voor " + esc(m.van || "het afzendadres") + " is nog niet ingesteld (geheim GMAIL_APP_WACHTWOORD in Cloudflare). Bestellen werkt wel gewoon.</span></div>";
     vak.hidden = false;
   }

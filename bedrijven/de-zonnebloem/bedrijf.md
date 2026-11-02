@@ -53,7 +53,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 |---|---|
 | Betaling | overschrijving met gestructureerde mededeling en EPC-QR-code |
 | IBAN / begunstigde | BE82 9799 7559 3568, vzw Raakpunt (bevestigd door Arne; op 2026-11-02 kort BE38 7360 4162 3572 op de preview, daarna teruggezet) |
-| Afhaalpunt en -momenten | Nekkerputstraat 261, 9000 Gent; zaterdag 12 december 2026, 9–18 uur |
+| Afhaalpunt en -momenten | Nekkerputstraat 261, 9000 Gent; zaterdag 12 en zondag 13 december 2026, telkens 9–15 uur |
 | Levering aan huis | nee, enkel afhalen (`levering.actief: false` in instellingen.json) |
 | Wijnen en prijzen | echte wijnlijst (15 wijnen van 't Wijnveld) in `site/src/wijnen.json`; verkoopprijzen per fles uit de beginlijst 2026 (Excel van Arne, kolom VKP Zonnebloem) |
 | Wijnhandel / sponsor | 't Wijnveld, https://www.wijnveld.be/ ("Met dank aan" onder de wijnen); flesfoto's van hun webwinkel |

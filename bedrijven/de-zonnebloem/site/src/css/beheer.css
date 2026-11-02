@@ -148,3 +148,5 @@ main .bh-knop:hover { background: var(--blauw); color: #fff; }
 .bh-mailstatus .bh-knop:hover { background: var(--blauw); color: #fff; }
 .mailinfo { display: inline-block; margin-top: .35rem; margin-right: .25rem; font-size: .78rem; color: var(--inkt-zacht); white-space: nowrap; }
 .mailinfo--fout { color: #c4151c; font-weight: 700; }
+.bh-knop.bevestig, main .bh-knop.bevestig { background: #c4151c; border-color: #c4151c; color: #fff; }
+.bh-tabel .acties { flex-wrap: wrap; }
