@@ -1,7 +1,7 @@
 {
   "_uitleg": "Instellingen van de wijnverkoop. Bedragen in eurocent. Velden met IN TE VULLEN moeten De Zonnebloem nog bezorgen. bestellen: binnenkort (wijnen zichtbaar, nog niet bestellen), open of afgesloten.",
   "actie": "Wijnactie 2026",
-  "bestellen": "binnenkort",
+  "bestellen": "open",
   "deadline": "2026-12-01",
   "doelFlessen": 1000,
   "betaling": {
