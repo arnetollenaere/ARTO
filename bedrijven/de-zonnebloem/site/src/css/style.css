@@ -464,30 +464,21 @@ details a { color: var(--oranje); }
 @media (max-width: 600px) { .dank { flex-direction: column; gap: .8rem; padding: 1.2rem 1.6rem; } .dank__logo img { width: 170px; } }
 .wijn__meer summary { padding: .9rem 2.4rem .9rem 0; }
 .wijn__meer summary::after { width: 26px; height: 26px; font-size: 1.15rem; }
-/* De Zonnebloem in beeld: fotocarrousel onder het openingsbeeld.
-   Eén foto in het midden (vast kader 3:2, op gsm 4:5), de buren half zichtbaar.
-   Staande foto's passen volledig in het kader, met een vage versie van zichzelf als achtergrond. */
-.inbeeld { overflow: hidden; }
-.carrousel { --breed: min(820px, 78vw); position: relative; }
-.carrousel__spoor { display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px calc((100% - var(--breed)) / 2) 20px; outline-offset: -4px; }
-.carrousel__spoor::-webkit-scrollbar { display: none; }
-.carrousel__dia { position: relative; flex: none; width: var(--breed); aspect-ratio: 3 / 2; margin: 0; overflow: hidden; scroll-snap-align: center; border: 2px solid var(--blauw); background: var(--blauw); opacity: .45; transform: scale(.94); transition: opacity .5s ease, transform .5s var(--ease); }
-.carrousel__dia.is-actief { opacity: 1; transform: none; }
-.carrousel__dia::after { content: ""; position: absolute; right: 0; bottom: 0; width: 18px; height: 18px; background: var(--oranje); z-index: 2; }
-.carrousel__waas { position: absolute; top: -12%; left: -12%; width: 124%; max-width: none; height: 124%; object-fit: cover; filter: blur(26px) brightness(.85) saturate(1.15); }
-.carrousel__foto { position: relative; z-index: 1; display: block; width: 100%; height: 100%; object-fit: cover; }
-.carrousel__dia--staand .carrousel__foto { object-fit: contain; }
-.carrousel__bediening { display: flex; justify-content: center; align-items: center; gap: 16px; margin-top: .6rem; }
-.carrousel__knop { flex: none; width: 48px; height: 48px; display: grid; place-items: center; border: 2px solid var(--blauw); background: var(--wit); color: var(--blauw); font: 700 1.4rem/1 var(--titel); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
-.carrousel__knop:hover, .carrousel__knop:focus-visible { background: var(--oranje); border-color: var(--oranje); color: var(--wit); }
-.carrousel__punten { display: flex; gap: 8px; }
-.carrousel__punt { width: 12px; height: 12px; padding: 0; border: 2px solid var(--blauw); background: transparent; cursor: pointer; transition: background .2s, width .3s var(--ease); }
-.carrousel__punt[aria-current="true"] { width: 28px; background: var(--oranje); border-color: var(--oranje); }
-@media (max-width: 600px) {
-  .carrousel { --breed: 84vw; }
-  .carrousel__spoor { gap: 12px; }
-  .carrousel__dia { aspect-ratio: 1 / 1; }
-  .carrousel__dia .carrousel__foto { object-fit: contain; }
-  .carrousel__punten { gap: 6px; }
-}
-@media (prefers-reduced-motion: reduce) { .carrousel__dia { transition: none; } }
+/* De Zonnebloem in beeld: fotoband die traag ronddraait, onder het openingsbeeld. */
+.inbeeld { overflow: hidden; padding-bottom: clamp(48px, 6vw, 80px); }
+.fotoband { position: relative; }
+.fotoband__venster { overflow: hidden; }
+.fotoband__spoor { display: flex; width: max-content; }
+.fotoband__dia { flex: none; margin: 0 16px 0 0; position: relative; border: 2px solid var(--blauw); background: var(--blauw-licht); }
+.fotoband__dia::after { content: ""; position: absolute; right: -2px; bottom: -2px; width: 12px; height: 12px; background: var(--oranje); }
+.fotoband__dia img { display: block; height: clamp(200px, 24vw, 300px); width: auto; }
+.fotoband--loopt .fotoband__spoor { animation: fotoband var(--duur, 60s) linear infinite; }
+.fotoband--loopt:hover .fotoband__spoor, .fotoband--loopt:focus-within .fotoband__spoor,
+.fotoband--gepauzeerd .fotoband__spoor, .fotoband--buiten .fotoband__spoor { animation-play-state: paused; }
+@keyframes fotoband { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.fotoband__pauze { position: absolute; right: clamp(16px, 3vw, 32px); bottom: -48px; width: 34px; height: 34px; padding: 0; display: grid; place-items: center; border: 2px solid var(--blauw); border-radius: 50%; background: var(--wit); color: var(--blauw); cursor: pointer; transition: background .2s, color .2s; }
+.fotoband__pauze:hover, .fotoband__pauze:focus-visible { background: var(--blauw); color: var(--wit); }
+.fotoband__pauze[aria-pressed="true"] .pauze-icoon { width: 0; height: 0; border: 0; border-left: 11px solid currentColor; border-top: 7px solid transparent; border-bottom: 7px solid transparent; margin-left: 3px; }
+.fotoband--stil .fotoband__venster { overflow-x: auto; padding: 0 clamp(16px, 3vw, 32px); }
+.fotoband--stil .fotoband__pauze { display: none; }
+@media (max-width: 600px) { .fotoband__dia { margin-right: 10px; } .fotoband__dia img { height: 200px; } }
