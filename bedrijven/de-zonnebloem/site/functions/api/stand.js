@@ -1,7 +1,8 @@
-// GET /api/stand: teller op de homepage (flessen besteld, doel).
+// GET /api/stand: teller op de homepage. Telt alleen betaalde bestellingen
+// (status betaald, klaar of afgeleverd), niet wat nog op betaling wacht of geannuleerd is.
 import { json, instellingen } from "../../lib/winkel.js";
 
 export async function onRequestGet({ env }) {
-  const r = await env.DB.prepare("SELECT COALESCE(SUM(flessen),0) AS flessen, COUNT(*) AS bestellingen FROM bestellingen WHERE status != 'geannuleerd'").first();
+  const r = await env.DB.prepare("SELECT COALESCE(SUM(flessen),0) AS flessen, COUNT(*) AS bestellingen FROM bestellingen WHERE status IN ('betaald', 'klaar', 'afgeleverd')").first();
   return json({ flessen: r.flessen, bestellingen: r.bestellingen, doel: instellingen.doelFlessen }, 200, { "cache-control": "public, max-age=60" });
 }
