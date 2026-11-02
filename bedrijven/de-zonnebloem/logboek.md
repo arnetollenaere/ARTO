@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Live gezet op zonnebloemwijn.be op vraag van Arne: echte wijnlijst (15 wijnen, foto's, prijzen), "Met dank aan 't Wijnveld", filter Alcoholvrij, fotoband "De Zonnebloem in beeld", bestellen in stand "binnenkort" (server weigert bestellingen), teller telt enkel betaalde bestellingen. Live getest: pagina, fotoband (40 px/s), bestelweigering, beheer-login, IBAN-status groen. Arne werd vooraf gewezen op minderjarigen in beeld op een wijnsite. Cloudflare Web Analytics-script wordt door de CSP geblokkeerd (onschuldig). | productie |
 | 2026-11-02 | Fotoband iets sneller op vraag van Arne (28 naar 40 px/s). | preview |
 | 2026-11-02 | Filter "Alcoholvrij" toegevoegd; Divin Sparkling 0% staat nu bij Bubbels én Alcoholvrij, met label "0% alcohol" op de foto (ook in llms.txt en JSON-LD). | preview |
 | 2026-11-02 | Carrousel vervangen door een kleinere fotoband die traag en ononderbroken ronddraait (ca. 28 px/s), met pauzeknop; stopt bij muis erover en buiten beeld. | preview |

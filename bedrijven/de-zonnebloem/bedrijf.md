@@ -74,7 +74,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 
 - Eigen website: https://www.vzwraakpunt.be/ (motto: "zonder een hoek af is de cirkel nooit rond"). Weekend De Zonnebloem 2026: 27/2 tot 1/3 in Jeugdpark Hoogland, Lokeren. Sponsors o.a. VOG en Rotary Gent.
 - Geen kinderen in beeld naast wijn (Belgische alcoholreclameregels); in tekst mag vermeld worden dat de opbrengst naar het kamp voor kinderen en jongeren gaat.
-- 2026-11-02: Arne vroeg een fotocarrousel met foto's van het kamp (ook minderjarigen) onder het openingsbeeld. Gebouwd als apart blok, los van de wijnen; risico (convenant alcoholreclame) en toestemming van de personen in beeld aan Arne gemeld. Beslissing om live te zetten ligt bij Arne en vzw Raakpunt.
+- 2026-11-02: Arne vroeg een fotocarrousel met foto's van het kamp (ook minderjarigen) onder het openingsbeeld. Gebouwd als apart blok, los van de wijnen; risico (convenant alcoholreclame) en toestemming van de personen in beeld aan Arne gemeld. Arne gaf op 2026-11-02 "zet live" na deze melding.
 
 - Onderaan: "Website gemaakt en geschonken door arto" met interactief ARTO-teken, link naar artowebdesign.com.
 - Verkoop alleen aan 18+ (vinkje in het bestelformulier).
