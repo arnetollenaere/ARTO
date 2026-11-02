@@ -6,7 +6,8 @@ De flesfoto's komen uit de webwinkel van 't Wijnveld (https://www.wijnveld.be/),
 
 - Formaat: staand 2:3, WebP, in twee breedtes: `<naam>-640.webp` (640×960) en `<naam>-1000.webp` (1000×1500).
 - Zet daarna `"foto": "naam"` bij de wijn in `src/wijnen.json`.
-- Nog geen juiste foto? Zet `"foto": null`; de site toont dan `fles-volgt` ("Foto volgt"). Nu het geval voor Terre di Gioia Pinot Grigio en Château des Tourtes Blanc Prestige (op wijnveld.be staat bij die laatste per vergissing de rode fles).
+- Nog geen juiste foto? Zet `"foto": null`; de site toont dan `fles-volgt` ("Foto volgt"). Nu het geval voor Château des Tourtes Blanc Prestige (op wijnveld.be staat daar per vergissing de rode fles).
+- `terre-di-gioia`: studiofoto van de fles (aangeleverd door Arne), door ARTO uitgeknipt en op de kurkenachtergrond van de KHS-foto van 't Wijnveld gezet (oude fles en watermerk weggewerkt), zodat ze in dezelfde stijl is.
 
 Omzetten met Python (Pillow):
 
