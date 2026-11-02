@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Verkoopprijzen per fles ingevuld uit de beginlijst 2026 van Arne (kolom VKP Zonnebloem), van € 7,45 tot € 17,95. Aankoopprijzen en marges niet op de site of in de repo. Prijsberekening lokaal getest. | preview |
 | 2026-11-02 | Echte wijnlijst van Arne verwerkt: 15 wijnen (5 wit, 3 bubbels, 1 rosé, 5 rood, 1 porto) met volledige beschrijving en flesfoto's van wijnveld.be; filter Porto toegevoegd. Prijzen nog niet gekend: site toont "Prijs volgt", die wijnen zijn niet bestelbaar. Foto volgt voor Terre di Gioia en Château des Tourtes Blanc Prestige. Blok "Met dank aan 't Wijnveld" met logo en link onder de wijnen. | preview |
 | 2026-11-02 | Bestellen tijdelijk dicht op vraag van Arne: nieuwe instelling `bestellen` (binnenkort/open/afgesloten), nu "binnenkort". Wijnen blijven zichtbaar zonder bestelknoppen, melding "De wijnverkoop start binnenkort", server weigert bestellingen, FAQ, llms.txt en JSON-LD aangepast. | preview |
 | 2026-11-02 | Teller op de homepage telt alleen nog betaalde bestellingen (betaald, klaargezet, afgeleverd); label "flessen besteld" werd "flessen verkocht". Lokaal getest met statuswissels. | preview |
