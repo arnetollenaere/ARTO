@@ -1,5 +1,5 @@
 // POST /api/bestellingen: nieuwe bestelling plaatsen.
-import { json, fout, euro, controleerBetaalgegevens, controleerBestelling, besteldPerWijn, maakOgm, bestelnummer, willekeurigToken, publiekeBestelling } from "../../lib/winkel.js";
+import { json, fout, euro, bestelStand, controleerBetaalgegevens, controleerBestelling, besteldPerWijn, maakOgm, bestelnummer, willekeurigToken, publiekeBestelling } from "../../lib/winkel.js";
 import { stuurMail, bevestigingsmail } from "../../lib/mail.js";
 import { noteerMail } from "../../lib/mailboek.js";
 
@@ -9,6 +9,7 @@ export async function onRequestPost({ request, env, waitUntil }) {
   if (invoer && invoer.website) return fout("Ongeldige bestelling."); // honeypot tegen spam
 
   // Weiger bestellingen als het IBAN in de code niet overeenkomt met de vingerafdruk.
+  if ((await bestelStand(env)).stand === "afgesloten") return fout("De bestellingen voor deze actie zijn afgesloten. Bedankt aan iedereen die meedeed!", 403);
   const betaal = await controleerBetaalgegevens(env);
   if (!betaal.veilig) {
     console.error("IBAN komt niet overeen met IBAN_SHA256: bestellingen geweigerd");

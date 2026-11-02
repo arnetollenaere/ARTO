@@ -145,3 +145,21 @@ export async function controleerBetaalgegevens(env) {
   const pinKlopt = pinIngesteld ? (await sha256(iban)) === pin : null;
   return { geldig, pinIngesteld, pinKlopt, veilig: pinKlopt !== false };
 }
+
+// ---------- Bestellingen stopzetten (knop in het beheer) ----------
+// "bestellen" in instellingen.json is de basis (binnenkort/open/afgesloten). Staat die op "open",
+// dan kan het beheer de bestellingen stopzetten; dat wordt in de database bewaard en werkt meteen.
+export async function bestelStand(env) {
+  const basis = instellingen.bestellen || "open";
+  if (basis !== "open") return { stand: basis, gestoptOp: null, schakelbaar: false };
+  try {
+    const r = await env.DB.prepare("SELECT waarde FROM instelling WHERE sleutel = 'bestellen_gestopt'").first();
+    if (r && r.waarde) return { stand: "afgesloten", gestoptOp: r.waarde, schakelbaar: true };
+  } catch { /* tabel bestaat nog niet: nooit gestopt */ }
+  return { stand: "open", gestoptOp: null, schakelbaar: true };
+}
+export async function zetBestellenGestopt(env, gestopt) {
+  await env.DB.prepare("CREATE TABLE IF NOT EXISTS instelling (sleutel TEXT PRIMARY KEY, waarde TEXT)").run();
+  if (gestopt) await env.DB.prepare("INSERT OR REPLACE INTO instelling (sleutel, waarde) VALUES ('bestellen_gestopt', ?)").bind(new Date().toISOString()).run();
+  else await env.DB.prepare("DELETE FROM instelling WHERE sleutel = 'bestellen_gestopt'").run();
+}

@@ -322,6 +322,7 @@
         uitleg = "Geldig en gecontroleerd tegen de vingerafdruk. Klanten zien alleen dit rekeningnummer.";
       }
       toonMailStatus(c.mail);
+      toonBestelStatus(c.bestellen);
       vak.className = "bh-iban bh-iban--" + soort;
       vak.innerHTML = "<strong>" + esc(titel) + "</strong><span>" + esc(uitleg) + "</span>";
       vak.hidden = false;
@@ -349,6 +350,41 @@
       : "<div><strong>E-mails staan nog uit</strong><span>Het Gmail-app-wachtwoord voor " + esc(m.van || "het afzendadres") + " is nog niet ingesteld (geheim GMAIL_APP_WACHTWOORD in Cloudflare). Bestellen werkt wel gewoon.</span></div>";
     vak.hidden = false;
   }
+
+  // ---------- Bestellingen stopzetten / weer openen ----------
+  function toonBestelStatus(b) {
+    if (!b) return;
+    var vak = $("bestel-status");
+    var open = b.stand === "open";
+    var tekst = open
+      ? "<div><strong>Bestellingen staan open</strong><span>Klanten kunnen bestellen op de site. Is de actie gedaan? Zet de bestellingen dan stop.</span></div>"
+      : b.stand === "afgesloten"
+        ? "<div><strong>Bestellingen zijn stopgezet</strong><span>" + (b.gestoptOp ? "Sinds " + tijd(b.gestoptOp) + ". " : "") + "Klanten zien de wijnen nog, maar kunnen niet meer bestellen. Bestaande bestellingen opvolgen kan gewoon.</span></div>"
+        : "<div><strong>Bestellen start binnenkort</strong><span>De site toont \"De wijnverkoop start binnenkort\". Openen gebeurt via ARTO.</span></div>";
+    var knop = !b.schakelbaar ? "" : open
+      ? '<button type="button" class="bh-knop bh-knop--klein" data-bestellen="stop" data-label="Bestellingen stopzetten">Bestellingen stopzetten</button>'
+      : '<button type="button" class="bh-knop bh-knop--klein" data-bestellen="open" data-label="Bestellingen weer openen">Bestellingen weer openen</button>';
+    vak.className = "bh-iban bh-mailstatus bh-iban--" + (open ? "goed" : "let");
+    vak.innerHTML = tekst + knop;
+    vak.hidden = false;
+  }
+  document.addEventListener("click", function (e) {
+    var k = e.target.closest("[data-bestellen]");
+    if (!k) return;
+    // Twee klikken: eerst bevestigen, dan uitvoeren.
+    if (!k.classList.contains("bevestig")) {
+      k.classList.add("bevestig");
+      k.textContent = k.dataset.bestellen === "stop" ? "Zeker? Klik opnieuw om te stoppen" : "Zeker? Klik opnieuw om te openen";
+      k.dataset.tijd = setTimeout(function () { k.classList.remove("bevestig"); k.textContent = k.dataset.label; }, 4000);
+      return;
+    }
+    clearTimeout(Number(k.dataset.tijd));
+    k.disabled = true;
+    fetch("/api/beheer/bestellen", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ open: k.dataset.bestellen === "open" }) })
+      .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.fout || "Mislukt."); return d; }); })
+      .then(function (b) { toonBestelStatus(b); melding(b.stand === "open" ? "Bestellingen staan weer open" : "Bestellingen stopgezet"); })
+      .catch(function (err) { melding(err.message); k.disabled = false; });
+  });
 
   // Uitloggen
   $("uitloggen").addEventListener("click", function () {

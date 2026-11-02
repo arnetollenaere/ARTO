@@ -175,14 +175,22 @@
       var d = new Date(inst.deadline + "T12:00:00");
       $("#faq-deadline").textContent = "Je kan bestellen tot en met " + d.toLocaleDateString("nl-BE", { weekday: "long", day: "numeric", month: "long", year: "numeric" }) + ".";
     }
-    // binnenkort: wijnen bekijken, nog niet bestellen. afgesloten: bedankt-melding.
-    var stand = inst.bestellen || "open";
+    toonBestelStand(inst.bestellen || "open");
+  }
+
+  // binnenkort: wijnen bekijken, nog niet bestellen. afgesloten: bedankt-melding (ook via de stopknop in het beheer).
+  function toonBestelStand(stand) {
     document.body.classList.toggle("bestellen-dicht", stand !== "open");
-    $("#binnenkort").hidden = $("#binnenkort-wijnen").hidden = stand !== "binnenkort";
+    $("#binnenkort").hidden = stand !== "binnenkort";
+    $("#binnenkort-wijnen").hidden = stand === "open";
     $("#gesloten").hidden = stand !== "afgesloten";
+    if (stand === "afgesloten") {
+      $("#binnenkort-wijnen").innerHTML = "<strong>De bestellingen zijn afgesloten.</strong> Bedankt aan iedereen die meedeed!";
+      $("#faq-deadline").textContent = "De bestellingen voor deze actie zijn afgesloten.";
+    }
     if (stand !== "open") {
       $("#bestelformulier").hidden = true;
-      mandje = {};
+      mandje = {}; bewaar(); toonMandje();
       if (stand === "binnenkort") $("#faq-deadline").textContent = "De wijnverkoop start binnenkort." + (inst.deadline ? " Daarna kan je bestellen tot en met " + new Date(inst.deadline + "T12:00:00").toLocaleDateString("nl-BE", { day: "numeric", month: "long", year: "numeric" }) + "." : "");
     }
   }
@@ -253,7 +261,9 @@
   // ---------- Teller ----------
   function laadStand() {
     fetch("/api/stand").then(function (r) { return r.ok ? r.json() : null; }).then(function (s) {
-      if (!s || !s.doel) return;
+      if (!s) return;
+      if (s.bestellen && s.bestellen !== (inst.bestellen || "open")) toonBestelStand(s.bestellen);
+      if (!s.doel) return;
       $("#stand").hidden = false;
       var pct = Math.min(100, Math.round((s.flessen / s.doel) * 100));
       $("#stand-doel").textContent = s.doel.toLocaleString("nl-BE") + " flessen";
