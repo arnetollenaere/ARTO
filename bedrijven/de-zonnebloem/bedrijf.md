@@ -52,14 +52,14 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Veld | Waarde |
 |---|---|
 | Betaling | overschrijving met gestructureerde mededeling en EPC-QR-code |
-| IBAN / begunstigde | BE38 7360 4162 3572 (KBC), vzw Raakpunt (gewijzigd op vraag van Arne op 2026-11-02; vorige: BE82 9799 7559 3568) |
-| Afhaalpunt en -momenten | zaterdag 12 december 2026, 9–18 uur; adres afhaalpunt nog in te vullen |
+| IBAN / begunstigde | BE82 9799 7559 3568, vzw Raakpunt (bevestigd door Arne; op 2026-11-02 kort BE38 7360 4162 3572 op de preview, daarna teruggezet) |
+| Afhaalpunt en -momenten | Nekkerputstraat 261, 9000 Gent; zaterdag 12 december 2026, 9–18 uur |
 | Levering aan huis | nee, enkel afhalen (`levering.actief: false` in instellingen.json) |
 | Wijnen en prijzen | echte wijnlijst (15 wijnen van 't Wijnveld) in `site/src/wijnen.json`; verkoopprijzen per fles uit de beginlijst 2026 (Excel van Arne, kolom VKP Zonnebloem) |
 | Wijnhandel / sponsor | 't Wijnveld, https://www.wijnveld.be/ ("Met dank aan" onder de wijnen); flesfoto's van hun webwinkel |
 | Bestellen | `bestellen` in instellingen.json: nu `binnenkort` (wijnen zichtbaar, niet bestelbaar) |
 | Beheer | inloggen op `/inloggen/` (sessie 8 uur, knop Uitloggen), daarna `/beheer/`: bestellingen, betalingen afpunten, picklijst, bezoekersstatistiek, Excel-export, status van het IBAN |
-| IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29, voor het nieuwe IBAN op de preview gezet op 2026-11-02 (productie: samen met de publicatie) (zie `site/README.md`). |
+| IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29 (productie en preview, voor BE82 9799 7559 3568) (zie `site/README.md`). |
 | E-mails | optioneel via Resend (nog niet ingesteld) |
 
 ## Afspraken
@@ -70,7 +70,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 
 ## Notities
 
-- Huisstijl Raakpunt: blauw #2832b9, oranje #ff4619, wit; lettertypes Antonio (titels, hoofdletters) en Cantarell. Logo van hun site (Logo_Raakpunt_wit.png). Rek.nr. voor de wijnverkoop: BE38 7360 4162 3572 (sinds 2026-11-02).
+- Huisstijl Raakpunt: blauw #2832b9, oranje #ff4619, wit; lettertypes Antonio (titels, hoofdletters) en Cantarell. Logo van hun site (Logo_Raakpunt_wit.png). Rek.nr. voor de wijnverkoop: BE82 9799 7559 3568.
 
 - Eigen website: https://www.vzwraakpunt.be/ (motto: "zonder een hoek af is de cirkel nooit rond"). Weekend De Zonnebloem 2026: 27/2 tot 1/3 in Jeugdpark Hoogland, Lokeren. Sponsors o.a. VOG en Rotary Gent.
 - Geen kinderen in beeld naast wijn (Belgische alcoholreclameregels); in tekst mag vermeld worden dat de opbrengst naar het kamp voor kinderen en jongeren gaat.

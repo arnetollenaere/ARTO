@@ -6,12 +6,12 @@
   "doelFlessen": 1000,
   "betaling": {
     "begunstigde": "vzw Raakpunt",
-    "iban": "BE38 7360 4162 3572",
+    "iban": "BE82 9799 7559 3568",
     "bic": "",
     "termijnDagen": 7
   },
   "afhalen": {
-    "plaats": "IN TE VULLEN: adres afhaalpunt",
+    "plaats": "Nekkerputstraat 261, 9000 Gent",
     "momenten": [
       "Zaterdag 12 december 2026, 9–18 uur"
     ]

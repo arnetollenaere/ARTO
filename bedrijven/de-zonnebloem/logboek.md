@@ -4,6 +4,8 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Boodschap "Alcoholmisbruik schaadt de gezondheid" onder de wijnen en in de footer (vervangt "Geniet, drink met mate"), conform het Belgische alcoholconvenant. | preview |
+| 2026-11-02 | Live gezet: afhaalpunt Nekkerputstraat 261, 9000 Gent (ook in nieuwe FAQ-vraag en llms.txt), testfles verwijderd, rekeningnummer terug naar BE82 9799 7559 3568 (IBAN_SHA256 preview teruggezet, productie stond nog goed), doel 1000 flessen, bezoekersstatistiek. Alle bestellingen gewist (3, waarvan 2 geannuleerd; reservekopie alleen tijdelijk in de sessie) en nummering gereset. Live getest: IBAN-status groen, 0 bestellingen, bestellen nog "binnenkort". | productie |
 | 2026-11-02 | Bestellen open gezet op de preview (alleen daar; main en productie blijven "binnenkort"). Volledige testbestelling op preview met Testfles: bevestiging toont € 1,00, IBAN BE38 7360 4162 3572, mededeling en QR-code; testbestelling ZB-2026-0003 daarna gewist. Let op: preview en productie delen dezelfde database. | preview |
 | 2026-11-02 | Testfles van € 1 toegevoegd op vraag van Arne (voor iedereen zichtbaar, om bestellen en betalen te testen; niet in Google-gegevens, llms.txt of prijsvork). Lokaal getest: totaal € 1,00. Na de test weer weghalen. | preview |
 | 2026-11-02 | Rekeningnummer gewijzigd naar BE38 7360 4162 3572 (KBC, mod-97 geldig) op vraag van Arne; IBAN_SHA256 bijgewerkt op de preview, productie volgt bij publicatie. Afhaalmoment: zaterdag 12 december 2026, 9–18 uur. | preview |

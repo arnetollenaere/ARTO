@@ -240,23 +240,6 @@
       "voorraad": null,
       "foto": "noval-tawny",
       "alcoholvrij": false
-    },
-    {
-      "id": "testfles",
-      "naam": "Testfles",
-      "soort": "test",
-      "druif": "Om te testen",
-      "streek": "Enkel om het bestellen en betalen te testen",
-      "land": "",
-      "jaar": null,
-      "smaak": "Bestel deze fles alleen om het bestellen en betalen uit te proberen. Ze wordt na de test weer weggehaald.",
-      "beschrijving": "",
-      "pastBij": "Een testbestelling",
-      "prijs": 100,
-      "voorraad": null,
-      "foto": null,
-      "alcoholvrij": false,
-      "test": true
     }
   ]
 }

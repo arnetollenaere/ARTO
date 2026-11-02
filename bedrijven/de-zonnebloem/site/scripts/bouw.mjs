@@ -74,6 +74,9 @@ zet("faq-prijs", prijsTekst
   : "De prijzen volgen binnenkort. Je kiest per fles of per doos van zes, en je kan alle wijnen combineren. Afhalen is gratis.");
 if (stand === "binnenkort") zet("faq-deadline", `De wijnverkoop start binnenkort.${inst.deadline ? ` Daarna kan je bestellen tot en met ${datum(inst.deadline)}.` : ""}`);
 else if (inst.deadline) zet("faq-deadline", `Je kan bestellen tot en met ${datum(inst.deadline, true)}.`);
+const afhaalAdres = inst.afhalen && !/IN TE VULLEN/.test(inst.afhalen.plaats) ? inst.afhalen.plaats : "";
+const momenten = (inst.afhalen && inst.afhalen.momenten || []).join(" of ");
+zet("faq-afhalen", `${afhaalAdres ? "Afhaalpunt: " + afhaalAdres + ". " : ""}${momenten ? "Afhaalmoment: " + momenten + "." : "Op het afhaalmoment dat je kiest bij het bestellen."} Afhalen is gratis.`);
 zet("faq-levering", inst.levering && inst.levering.actief
   ? `Ja. ${inst.levering.uitleg} Levering kost ${euro(inst.levering.kost)}${inst.levering.gratisVanaf ? `, gratis vanaf ${inst.levering.gratisVanaf} flessen` : ""}. Afhalen kan ook, gratis.`
   : "Nee, je haalt je wijn zelf op. Bij het bestellen kies je een afhaalmoment. Afhalen is gratis.");
@@ -179,7 +182,7 @@ const llms = `# Wijnverkoop De Zonnebloem
 - Bestellen: online via ${SITE}/#bestellen. Per fles of per doos van zes; soorten mogen gecombineerd worden.
 - Prijs: ${prijsTekst ? prijsTekst.replace("tussen ", "").replace(" en ", " tot ") + " per fles." : "de prijzen volgen binnenkort."}
 - Betalen: via overschrijving met een gestructureerde mededeling, of met de QR-code in een bank-app. Het rekeningnummer verschijnt na het bestellen.
-- ${inst.levering && inst.levering.actief ? `Levering of afhalen: ${inst.levering.uitleg}` : "Afhalen: enkel afhalen, gratis, op een afhaalmoment dat je kiest bij het bestellen. Geen levering."}
+- ${inst.levering && inst.levering.actief ? `Levering of afhalen: ${inst.levering.uitleg}` : `Afhalen: enkel afhalen, gratis.${afhaalAdres ? " Afhaalpunt: " + afhaalAdres + "." : ""}${momenten ? " Afhaalmoment: " + momenten + "." : " Je kiest een afhaalmoment bij het bestellen."} Geen levering.`}
 - Leeftijd: alleen voor personen van 18 jaar of ouder.
 - Contact: vzwraakpunt@gmail.com
 
