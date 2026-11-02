@@ -1,0 +1,11 @@
+# Cloudflare Pages-project voor het ARTO-controlepaneel.
+# Geen geheimen in dit bestand: de AUD-tag en het teamdomein zijn geen geheimen.
+name = "arto-paneel"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+[vars]
+TOEGESTANE_EMAIL = "arne.tollenaere@gmail.com"
+# Vul in na het aanmaken van de Access-applicatie (zie README.md):
+ACCESS_TEAM_DOMAIN = ""
+ACCESS_AUD = ""
