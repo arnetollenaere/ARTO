@@ -442,3 +442,7 @@ details a { color: var(--oranje); }
 @media (max-width: 900px) { .vc { width: min(100%, 420px, calc(54svh * 600 / 720)); height: auto; } }
 @media (min-width: 901px) { .verhaal__tekst { margin-top: -2rem; } }
 @media (max-width: 900px) { .verhaal__tekst { margin-top: -1.2rem; } }
+/* Bestellen nog niet open (of afgesloten): wijnen tonen zonder knoppen, geen mandje. */
+.melding--binnenkort { background: var(--wit); color: var(--blauw); border-left: 4px solid var(--oranje); margin-bottom: 1.6rem; }
+.sectie--blauw .melding--binnenkort { margin-bottom: 0; }
+.bestellen-dicht .wijn__acties, .bestellen-dicht .bestellen__raster, .bestellen-dicht .mandknop, .bestellen-dicht .zwevend { display: none !important; }

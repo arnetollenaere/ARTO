@@ -20,7 +20,8 @@ const euro = (c) => "€ " + (c / 100).toFixed(2).replace(".", ",");
 const foto = (w, b) => `/img/foto/${w.foto}-${b}.webp`;
 const soortNaam = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn" };
 const datum = (iso, metDag) => new Date(iso + "T12:00:00").toLocaleDateString("nl-BE", { ...(metDag ? { weekday: "long" } : {}), day: "numeric", month: "long", year: "numeric" });
-const open = inst.bestellingenOpen !== false && (!inst.deadline || inst.deadline >= vandaag);
+const stand = inst.bestellen || "open";                 // binnenkort, open of afgesloten
+const open = stand === "open" && (!inst.deadline || inst.deadline >= vandaag);
 
 // ---------- Wijnkaarten (zelfde opmaak als toonWijnen() in js/winkel.js) ----------
 const kaart = (w) =>
@@ -52,13 +53,20 @@ const vervang = (zoek, door) => {
   html = html.replace(zoek, door);
 };
 vervang(/<li class="laden">[^<]*<\/li>/, wijnen.map(kaart).join(""));
+// Bestellen nog niet open of afgesloten: meteen goed tonen, ook zonder JavaScript.
+if (stand !== "open") {
+  vervang(/<body>/, '<body class="bestellen-dicht">');
+  if (stand === "binnenkort") { vervang(/(id="binnenkort") hidden/, "$1"); vervang(/(id="binnenkort-wijnen") hidden/, "$1"); }
+  else vervang(/(id="gesloten") hidden/, "$1");
+}
 
 // ---------- FAQ-antwoorden uit de instellingen ----------
 const prijzen = wijnen.map((w) => w.prijs);
 const min = Math.min(...prijzen), max = Math.max(...prijzen);
 const zet = (id, tekst) => vervang(new RegExp(`(<p id="${id}">)[\\s\\S]*?(</p>)`), `$1${esc(tekst)}$2`);
 zet("faq-prijs", `Een fles kost ${min === max ? euro(min) : "tussen " + euro(min) + " en " + euro(max)}. Je kiest per fles of per doos van zes, en je kan wit, rosé, rood en bubbels combineren. Afhalen is gratis.`);
-if (inst.deadline) zet("faq-deadline", `Je kan bestellen tot en met ${datum(inst.deadline, true)}.`);
+if (stand === "binnenkort") zet("faq-deadline", `De wijnverkoop start binnenkort.${inst.deadline ? ` Daarna kan je bestellen tot en met ${datum(inst.deadline)}.` : ""}`);
+else if (inst.deadline) zet("faq-deadline", `Je kan bestellen tot en met ${datum(inst.deadline, true)}.`);
 zet("faq-levering", inst.levering && inst.levering.actief
   ? `Ja. ${inst.levering.uitleg} Levering kost ${euro(inst.levering.kost)}${inst.levering.gratisVanaf ? `, gratis vanaf ${inst.levering.gratisVanaf} flessen` : ""}. Afhalen kan ook, gratis.`
   : "Nee, je haalt je wijn zelf op. Bij het bestellen kies je een afhaalmoment. Afhalen is gratis.");
@@ -134,7 +142,7 @@ const graph = [
           url: SITE + "/#wijnen",
           price: (w.prijs / 100).toFixed(2),
           priceCurrency: "EUR",
-          availability: open && w.voorraad !== 0 ? "https://schema.org/InStock" : "https://schema.org/SoldOut",
+          ...(stand === "binnenkort" ? {} : { availability: open && w.voorraad !== 0 ? "https://schema.org/InStock" : "https://schema.org/SoldOut" }),
           ...(inst.deadline ? { priceValidUntil: inst.deadline } : {}),
           seller: { "@id": ORG },
           eligibleCustomerType: "https://schema.org/Enduser",
@@ -159,7 +167,7 @@ const llms = `# Wijnverkoop De Zonnebloem
 
 - Organisator: vzw Raakpunt, Gent (ondernemingsnummer BE 0452.918.932), een vzw die vrijetijdsbesteding organiseert voor kansengroepen, met inclusie als uitgangspunt.
 - Goed doel: de opbrengst gaat naar De Zonnebloem, het jaarlijkse weekend en kamp van vzw Raakpunt.
-- Actie: ${inst.actie}. ${open ? (inst.deadline ? `Bestellen kan tot en met ${datum(inst.deadline)}.` : "Bestellen kan zolang de actie loopt.") : "De bestellingen zijn afgesloten."}
+- Actie: ${inst.actie}. ${stand === "binnenkort" ? "De wijnverkoop start binnenkort; bestellen is nog niet mogelijk." : open ? (inst.deadline ? `Bestellen kan tot en met ${datum(inst.deadline)}.` : "Bestellen kan zolang de actie loopt.") : "De bestellingen zijn afgesloten."}
 - Bestellen: online via ${SITE}/#bestellen. Per fles of per doos van zes; soorten mogen gecombineerd worden.
 - Prijs: ${min === max ? euro(min) : `${euro(min)} tot ${euro(max)}`} per fles.
 - Betalen: via overschrijving met een gestructureerde mededeling, of met de QR-code in een bank-app. Het rekeningnummer verschijnt na het bestellen.

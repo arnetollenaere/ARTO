@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Bestellen tijdelijk dicht op vraag van Arne: nieuwe instelling `bestellen` (binnenkort/open/afgesloten), nu "binnenkort". Wijnen blijven zichtbaar zonder bestelknoppen, melding "De wijnverkoop start binnenkort", server weigert bestellingen, FAQ, llms.txt en JSON-LD aangepast. | preview |
 | 2026-11-02 | Teller op de homepage telt alleen nog betaalde bestellingen (betaald, klaargezet, afgeleverd); label "flessen besteld" werd "flessen verkocht". Lokaal getest met statuswissels. | preview |
 | 2026-10-30 | SEO- en GEO-optimalisatie live gezet op zonnebloemwijn.be (branch samengevoegd in main). Live getest: nieuwe titel, JSON-LD met FAQ, llms.txt, robots.txt, sitemap, inloggen beheer, IBAN-status groen, animatie. | productie |
 | 2026-10-30 | Domein actief: zone zonnebloemwijn.be actief sinds 05:23 UTC, beide Pages-domeinen actief met certificaat. https://zonnebloemwijn.be toont de site, http en www sturen door (301) naar https://zonnebloemwijn.be/. Arne zag nog een fout door de DNS-cache van zijn computer. | productie |

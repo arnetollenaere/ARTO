@@ -28,7 +28,7 @@
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/antonio-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cantarell-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=34">
+  <link rel="stylesheet" href="/css/style.css?v=35">
 
   <script type="application/ld+json">
   {
@@ -122,6 +122,7 @@
           <button type="button" class="filter" data-filter="rood" aria-pressed="false">Rood</button>
           <button type="button" class="filter" data-filter="bubbels" aria-pressed="false">Bubbels</button>
         </div>
+        <p class="melding melding--binnenkort" id="binnenkort-wijnen" hidden><strong>Bestellen kan binnenkort.</strong> De wijnverkoop is nog niet gestart.</p>
         <ul class="wijnen" id="wijnlijst">
           <li class="laden">De wijnen worden geladen…</li>
         </ul>
@@ -171,6 +172,7 @@
       <h2 id="bestellen-titel" class="sectietitel">Je bestelling</h2>
       <div class="kader">
         <p class="melding melding--fout" id="gesloten" hidden>De bestellingen voor deze actie zijn afgesloten. Bedankt aan iedereen die meedeed!</p>
+        <p class="melding melding--binnenkort" id="binnenkort" hidden><strong>De wijnverkoop start binnenkort.</strong> Je kan de wijnen al bekijken. Bestellen kan zodra de actie van start gaat.</p>
         <div class="bestellen__raster">
           <aside class="mandje" aria-labelledby="mandje-titel">
             <h3 id="mandje-titel">Mandje</h3>
@@ -330,7 +332,7 @@
     </div>
     <p class="voet__klein">Geniet, drink met mate. Geen verkoop van alcohol aan min-18-jarigen. &copy; <span id="jaar">2026</span> vzw Raakpunt</p>
   </footer>
-  <script src="/js/winkel.js?v=29" defer></script>
+  <script src="/js/winkel.js?v=30" defer></script>
   <script src="/js/verhaal.js?v=32" defer></script>
 </body>
 </html>

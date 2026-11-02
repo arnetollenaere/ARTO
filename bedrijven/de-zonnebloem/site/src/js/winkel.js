@@ -171,9 +171,15 @@
       var d = new Date(inst.deadline + "T12:00:00");
       $("#faq-deadline").textContent = "Je kan bestellen tot en met " + d.toLocaleDateString("nl-BE", { weekday: "long", day: "numeric", month: "long", year: "numeric" }) + ".";
     }
-    if (!inst.bestellingenOpen) {
-      $("#gesloten").hidden = false;
+    // binnenkort: wijnen bekijken, nog niet bestellen. afgesloten: bedankt-melding.
+    var stand = inst.bestellen || "open";
+    document.body.classList.toggle("bestellen-dicht", stand !== "open");
+    $("#binnenkort").hidden = $("#binnenkort-wijnen").hidden = stand !== "binnenkort";
+    $("#gesloten").hidden = stand !== "afgesloten";
+    if (stand !== "open") {
       $("#bestelformulier").hidden = true;
+      mandje = {};
+      if (stand === "binnenkort") $("#faq-deadline").textContent = "De wijnverkoop start binnenkort." + (inst.deadline ? " Daarna kan je bestellen tot en met " + new Date(inst.deadline + "T12:00:00").toLocaleDateString("nl-BE", { day: "numeric", month: "long", year: "numeric" }) + "." : "");
     }
   }
 

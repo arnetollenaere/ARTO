@@ -38,7 +38,8 @@ const tekst = (v, max) => (typeof v === "string" ? v.trim().slice(0, max) : "");
 
 // Controleert de bestelling en rekent het totaal uit. Geeft { fout } of { bestelling }.
 export function controleerBestelling(invoer, besteldPerWijn = {}) {
-  if (!instellingen.bestellingenOpen) return { fout: "De bestellingen zijn afgesloten." };
+  if (instellingen.bestellen === "binnenkort") return { fout: "De wijnverkoop is nog niet gestart. Bestellen kan binnenkort." };
+  if (instellingen.bestellen !== "open") return { fout: "De bestellingen zijn afgesloten." };
   if (!invoer || typeof invoer !== "object") return { fout: "Ongeldige bestelling." };
 
   const naam = tekst(invoer.naam, 120);

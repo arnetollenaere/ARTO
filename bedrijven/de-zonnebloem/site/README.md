@@ -46,7 +46,7 @@ wrangler.toml           # Cloudflare-configuratie (D1-database)
 
 - **Wijnen**: `src/wijnen.json`. Prijs in eurocent (`1350` = € 13,50). `voorraad`: aantal flessen of `null` voor onbeperkt. `foto`: naam van de foto in `src/img/foto/` (zie `FOTOS.md`).
 - **Foto's**: sfeerbeelden van Unsplash, bronnen en uitleg om ze te vervangen in `FOTOS.md`.
-- **Instellingen**: `src/instellingen.json`. Zet `bestellingenOpen` op `false` om de actie af te sluiten.
+- **Instellingen**: `src/instellingen.json`. Zet `bestellen` op `"binnenkort"` (wijnen zichtbaar, nog niet bestellen), `"open"` of `"afgesloten"`.
 - Daarna `./build.sh && ./deploy.sh`.
 
 ## Eerste keer online zetten
