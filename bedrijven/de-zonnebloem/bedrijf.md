@@ -57,7 +57,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Levering aan huis | nee, enkel afhalen (`levering.actief: false` in instellingen.json) |
 | Wijnen en prijzen | echte wijnlijst (15 wijnen van 't Wijnveld) in `site/src/wijnen.json`; verkoopprijzen per fles uit de beginlijst 2026 (Excel van Arne, kolom VKP Zonnebloem) |
 | Wijnhandel / sponsor | 't Wijnveld, https://www.wijnveld.be/ ("Met dank aan" onder de wijnen); flesfoto's van hun webwinkel |
-| Bestellen | `bestellen` in instellingen.json: `open` sinds 2026-11-02 (deadline 1 december 2026) |
+| Bestellen | open sinds 2026-11-02 (deadline 1 december 2026); stopzetten kan Arne zelf met de knop bovenaan het beheer |
 | Beheer | inloggen op `/inloggen/` (sessie 8 uur, knop Uitloggen), daarna `/beheer/`: bestellingen, betalingen afpunten, picklijst, bezoekersstatistiek, Excel-export, status van het IBAN |
 | IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29 (productie en preview, voor BE82 9799 7559 3568) (zie `site/README.md`). |
 | E-mails | nodemailer via Gmail vanaf vzwzonnebloem@gmail.com; app-wachtwoord als Cloudflare-geheim `GMAIL_APP_WACHTWOORD` (in te stellen door Arne, staat in zijn wachtwoordmanager) |
