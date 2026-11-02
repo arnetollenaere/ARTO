@@ -11,15 +11,16 @@ const dist = new URL("../dist/", import.meta.url);
 const lees = (f) => readFileSync(new URL(f, dist), "utf8");
 const schrijf = (f, s) => writeFileSync(new URL(f, dist), s);
 
-const { wijnen } = JSON.parse(lees("wijnen.json"));
+const { wijnen: alleWijnen } = JSON.parse(lees("wijnen.json"));
+const wijnen = alleWijnen.filter((w) => !w.test);   // testproducten niet in Google-gegevens, llms.txt of prijsvork
 const inst = JSON.parse(lees("instellingen.json"));
 const vandaag = new Date().toISOString().slice(0, 10);
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const euro = (c) => "€ " + (c / 100).toFixed(2).replace(".", ",");
 const foto = (w, b) => `/img/wijn/${w.foto || "fles-volgt"}-${b}.webp`;
-const herkomst = (w) => `${esc(w.streek)}${w.streek.includes(w.land) ? "" : " · " + esc(w.land)}${w.jaar ? " · " + w.jaar : ""}`;
-const soortNaam = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn", porto: "Porto" };
+const herkomst = (w) => `${esc(w.streek)}${!w.land || w.streek.includes(w.land) ? "" : " · " + esc(w.land)}${w.jaar ? " · " + w.jaar : ""}`;
+const soortNaam = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn", porto: "Porto", test: "Testfles" };
 const datum = (iso, metDag) => new Date(iso + "T12:00:00").toLocaleDateString("nl-BE", { ...(metDag ? { weekday: "long" } : {}), day: "numeric", month: "long", year: "numeric" });
 const stand = inst.bestellen || "open";                 // binnenkort, open of afgesloten
 const open = stand === "open" && (!inst.deadline || inst.deadline >= vandaag);
@@ -55,7 +56,7 @@ const vervang = (zoek, door) => {
   if (!zoek.test(html)) throw new Error("Niet gevonden in index.html: " + zoek);
   html = html.replace(zoek, door);
 };
-vervang(/<li class="laden">[^<]*<\/li>/, wijnen.map(kaart).join(""));
+vervang(/<li class="laden">[^<]*<\/li>/, alleWijnen.map(kaart).join(""));
 // Bestellen nog niet open of afgesloten: meteen goed tonen, ook zonder JavaScript.
 if (stand !== "open") {
   vervang(/<body>/, '<body class="bestellen-dicht">');

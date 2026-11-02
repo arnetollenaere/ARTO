@@ -9,9 +9,9 @@
   };
   var rustig = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var SLEUTEL = "zonnebloem-mandje";
-  var SOORT = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn", porto: "Porto" };
+  var SOORT = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn", porto: "Porto", test: "Testfles" };
   var prijsLabel = function (w) { return w.prijs == null ? "Prijs volgt" : euro(w.prijs) + "<small>per fles</small>"; };
-  var herkomst = function (w) { return esc(w.streek) + (w.streek.indexOf(w.land) > -1 ? "" : " · " + esc(w.land)) + (w.jaar ? " · " + w.jaar : ""); };
+  var herkomst = function (w) { return esc(w.streek) + (!w.land || w.streek.indexOf(w.land) > -1 ? "" : " · " + esc(w.land)) + (w.jaar ? " · " + w.jaar : ""); };
 
   var wijnen = [];
   var inst = null;

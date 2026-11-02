@@ -1,5 +1,5 @@
 {
-  "_uitleg": "Wijnlijst VZW De Zonnebloem (wijnen van 't Wijnveld), verkoopprijzen uit 2026_VZW_Zonnebloem_Beginlijst.xlsx (kolom VKP Zonnebloem). prijs in eurocent, of null zolang de prijs nog niet gekend is (dan toont de site 'Prijs volgt' en kan die wijn niet besteld worden). voorraad: aantal flessen, of null voor onbeperkt. foto: naam in src/img/wijn/ (<foto>-640.webp en <foto>-1000.webp, staand 2:3), of null voor 'Foto volgt'. smaak: korte samenvatting op de kaart; beschrijving: volledige tekst onder 'Meer over deze wijn'. alcoholvrij: true toont de wijn ook onder de filter 'Alcoholvrij'.",
+  "_uitleg": "Wijnlijst VZW De Zonnebloem (wijnen van 't Wijnveld), verkoopprijzen uit 2026_VZW_Zonnebloem_Beginlijst.xlsx (kolom VKP Zonnebloem). prijs in eurocent, of null zolang de prijs nog niet gekend is (dan toont de site 'Prijs volgt' en kan die wijn niet besteld worden). voorraad: aantal flessen, of null voor onbeperkt. foto: naam in src/img/wijn/ (<foto>-640.webp en <foto>-1000.webp, staand 2:3), of null voor 'Foto volgt'. smaak: korte samenvatting op de kaart; beschrijving: volledige tekst onder 'Meer over deze wijn'. alcoholvrij: true toont de wijn ook onder de filter 'Alcoholvrij'. test: true = testproduct, zichtbaar en bestelbaar maar niet in Google-gegevens, llms.txt of de prijsvork.",
   "wijnen": [
     {
       "id": "terre-di-gioia",
@@ -240,6 +240,23 @@
       "voorraad": null,
       "foto": "noval-tawny",
       "alcoholvrij": false
+    },
+    {
+      "id": "testfles",
+      "naam": "Testfles",
+      "soort": "test",
+      "druif": "Om te testen",
+      "streek": "Enkel om het bestellen en betalen te testen",
+      "land": "",
+      "jaar": null,
+      "smaak": "Bestel deze fles alleen om het bestellen en betalen uit te proberen. Ze wordt na de test weer weggehaald.",
+      "beschrijving": "",
+      "pastBij": "Een testbestelling",
+      "prijs": 100,
+      "voorraad": null,
+      "foto": null,
+      "alcoholvrij": false,
+      "test": true
     }
   ]
 }

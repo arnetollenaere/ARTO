@@ -6,15 +6,14 @@
   "doelFlessen": 1000,
   "betaling": {
     "begunstigde": "vzw Raakpunt",
-    "iban": "BE82 9799 7559 3568",
+    "iban": "BE38 7360 4162 3572",
     "bic": "",
     "termijnDagen": 7
   },
   "afhalen": {
     "plaats": "IN TE VULLEN: adres afhaalpunt",
     "momenten": [
-      "Zaterdag 6 december 2026, 10–14 uur",
-      "Zondag 7 december 2026, 10–12 uur"
+      "Zaterdag 12 december 2026, 9–18 uur"
     ]
   },
   "levering": {
