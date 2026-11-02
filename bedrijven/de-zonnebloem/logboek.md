@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Beheer: groene balken "Rekeningnummer is beveiligd" en "E-mails staan aan" verborgen op vraag van Arne; ze verschijnen alleen nog bij een probleem (IBAN ongeldig/gewijzigd, e-mail niet ingesteld). | preview |
 | 2026-11-02 | Knop "Bestellingen stopzetten" / "Bestellingen weer openen" bovenaan het beheer (twee klikken), werkt meteen via de database (tabel `instelling`): server weigert bestellingen, site toont "De bestellingen zijn afgesloten". Lokaal getest. Niet op preview testen: preview deelt de database met de live site. | preview |
 | 2026-11-02 | Live gezet: twee klikken voor statuswijziging, testmailknop weg, afhaalmomenten 12 en 13 december 9–15 uur. Op vraag van Arne alle bestellingen gewist (3 testbestellingen van Arne; kopie alleen tijdelijk in de sessie) en nummering gereset. Live gecontroleerd: teller 0, IBAN-status groen, e-mail aan. | productie |
 | 2026-11-02 | Testmailknop uit het beheer gehaald; statuswijziging vraagt nu twee klikken (knop: "Zeker? Klik opnieuw", keuzemenu: "Bevestig"). Afhaalmomenten: zaterdag 12 en zondag 13 december 2026, telkens 9–15 uur. | preview |

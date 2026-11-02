@@ -323,9 +323,10 @@
       }
       toonMailStatus(c.mail);
       toonBestelStatus(c.bestellen);
+      // Alleen tonen als er iets mis is; als alles in orde is, blijft de balk weg.
       vak.className = "bh-iban bh-iban--" + soort;
       vak.innerHTML = "<strong>" + esc(titel) + "</strong><span>" + esc(uitleg) + "</span>";
-      vak.hidden = false;
+      vak.hidden = soort === "goed";
     }).catch(function () {});
   }
 
@@ -348,7 +349,7 @@
     vak.innerHTML = m.ingesteld
       ? "<div><strong>E-mails staan aan</strong><span>Klanten krijgen mails van " + esc(m.van) + ": na hun bestelling, wanneer ze betaald zijn, en een herinnering als jij daarom vraagt.</span></div>"
       : "<div><strong>E-mails staan nog uit</strong><span>Het Gmail-app-wachtwoord voor " + esc(m.van || "het afzendadres") + " is nog niet ingesteld (geheim GMAIL_APP_WACHTWOORD in Cloudflare). Bestellen werkt wel gewoon.</span></div>";
-    vak.hidden = false;
+    vak.hidden = !!m.ingesteld;   // alleen tonen als de e-mails niet werken
   }
 
   // ---------- Bestellingen stopzetten / weer openen ----------
