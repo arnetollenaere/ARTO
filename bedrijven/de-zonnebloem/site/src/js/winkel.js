@@ -9,7 +9,9 @@
   };
   var rustig = matchMedia("(prefers-reduced-motion: reduce)").matches;
   var SLEUTEL = "zonnebloem-mandje";
-  var SOORT = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn" };
+  var SOORT = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn", porto: "Porto" };
+  var prijsLabel = function (w) { return w.prijs == null ? "Prijs volgt" : euro(w.prijs) + "<small>per fles</small>"; };
+  var herkomst = function (w) { return esc(w.streek) + (w.streek.indexOf(w.land) > -1 ? "" : " · " + esc(w.land)) + (w.jaar ? " · " + w.jaar : ""); };
 
   var wijnen = [];
   var inst = null;
@@ -20,7 +22,7 @@
   }
 
   function foto(w, breedte) {
-    return "/img/foto/" + w.foto + "-" + breedte + ".webp";
+    return "/img/wijn/" + (w.foto || "fles-volgt") + "-" + breedte + ".webp";
   }
 
   // ---------- Wijnen ----------
@@ -30,16 +32,17 @@
       var aantal = mandje[w.id] || 0;
       return '<li class="wijn" data-soort="' + esc(w.soort) + '">' +
         '<div class="wijn__beeld">' +
-          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="' + esc((SOORT[w.soort] || "Wijn") + ": " + w.naam) + '">' +
+          '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1500" loading="lazy" alt="' + esc((SOORT[w.soort] || "Wijn") + ": " + w.naam) + '">' +
           '<span class="wijn__soort">' + esc(w.soort) + "</span>" +
-          '<div class="wijn__snel"><p class="wijn__prijs">' + euro(w.prijs) + "<small>per fles</small></p></div>" +
+          '<div class="wijn__snel"><p class="wijn__prijs' + (w.prijs == null ? " wijn__prijs--volgt" : "") + '">' + prijsLabel(w) + "</p></div>" +
         "</div>" +
         '<div class="wijn__tekst">' +
-          '<p class="wijn__streek">' + esc(w.streek) + " · " + esc(w.land) + (w.jaar ? " · " + w.jaar : "") + "</p>" +
+          '<p class="wijn__streek">' + herkomst(w) + "</p>" +
           "<h3>" + esc(w.naam) + "</h3>" +
           '<p class="wijn__druif">' + esc(w.druif) + "</p>" +
           '<p class="wijn__smaak">' + esc(w.smaak) + "</p>" +
           '<p class="wijn__past"><span>Past bij</span>' + esc(w.pastBij) + "</p>" +
+          (w.beschrijving ? '<details class="wijn__meer"><summary>Meer over deze wijn</summary><p>' + esc(w.beschrijving) + "</p></details>" : "") +
         "</div>" +
         '<div class="wijn__acties">' +
           '<div class="stapper" role="group" aria-label="Aantal flessen ' + esc(w.naam) + '">' +
@@ -56,7 +59,7 @@
   }
 
   function zetAantal(id, n) {
-    if (!wijnen.some(function (x) { return x.id === id; })) return;
+    if (!wijnen.some(function (x) { return x.id === id && x.prijs != null; })) return;
     n = Math.max(0, Math.min(n, inst ? inst.maxFlessenPerBestelling : 120));
     if (n) mandje[id] = n; else delete mandje[id];
     bewaar();
@@ -92,7 +95,7 @@
   function toegevoegd(id, n) {
     var w = wijnen.find(function (x) { return x.id === id; });
     if (!w) return;
-    toast.innerHTML = '<img src="' + foto(w, 640) + '" width="44" height="55" alt=""><span><strong>' + esc(w.naam) + "</strong>" + n + (n === 1 ? " fles" : " flessen") + ' in je mandje</span><a href="#bestellen">Bekijk</a>';
+    toast.innerHTML = '<img src="' + foto(w, 640) + '" width="44" height="66" alt=""><span><strong>' + esc(w.naam) + "</strong>" + n + (n === 1 ? " fles" : " flessen") + ' in je mandje</span><a href="#bestellen">Bekijk</a>';
     toast.classList.remove("toast--aan");
     void toast.offsetWidth;
     toast.classList.add("toast--aan");
@@ -128,7 +131,7 @@
       var n = mandje[w.id];
       som += n * w.prijs;
       return "<li>" +
-        '<img class="mandje__foto" src="' + foto(w, 640) + '" width="56" height="70" alt="" loading="lazy">' +
+        '<img class="mandje__foto" src="' + foto(w, 640) + '" width="56" height="84" alt="" loading="lazy">' +
         '<span class="mandje__naam">' + esc(w.naam) + "<small>" + euro(w.prijs) + " per fles</small></span>" +
         '<span class="mandje__bedrag">' + euro(n * w.prijs) + "</span>" +
         '<span class="stapper stapper--klein">' +
@@ -347,7 +350,7 @@
   ]).then(function (d) {
     wijnen = d[0].wijnen;
     inst = d[1];
-    Object.keys(mandje).forEach(function (id) { if (!wijnen.some(function (w) { return w.id === id; })) delete mandje[id]; });
+    Object.keys(mandje).forEach(function (id) { if (!wijnen.some(function (w) { return w.id === id && w.prijs != null; })) delete mandje[id]; });
     pasInstellingenToe();
     toonWijnen();
     toonMandje();

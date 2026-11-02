@@ -17,8 +17,9 @@ const vandaag = new Date().toISOString().slice(0, 10);
 
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const euro = (c) => "€ " + (c / 100).toFixed(2).replace(".", ",");
-const foto = (w, b) => `/img/foto/${w.foto}-${b}.webp`;
-const soortNaam = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn" };
+const foto = (w, b) => `/img/wijn/${w.foto || "fles-volgt"}-${b}.webp`;
+const herkomst = (w) => `${esc(w.streek)}${w.streek.includes(w.land) ? "" : " · " + esc(w.land)}${w.jaar ? " · " + w.jaar : ""}`;
+const soortNaam = { wit: "Witte wijn", "rosé": "Rosé", rood: "Rode wijn", bubbels: "Mousserende wijn", porto: "Porto" };
 const datum = (iso, metDag) => new Date(iso + "T12:00:00").toLocaleDateString("nl-BE", { ...(metDag ? { weekday: "long" } : {}), day: "numeric", month: "long", year: "numeric" });
 const stand = inst.bestellen || "open";                 // binnenkort, open of afgesloten
 const open = stand === "open" && (!inst.deadline || inst.deadline >= vandaag);
@@ -27,16 +28,17 @@ const open = stand === "open" && (!inst.deadline || inst.deadline >= vandaag);
 const kaart = (w) =>
   `<li class="wijn" data-soort="${esc(w.soort)}">` +
   `<div class="wijn__beeld">` +
-  `<img src="${foto(w, 1000)}" srcset="${foto(w, 640)} 640w, ${foto(w, 1000)} 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1250" loading="lazy" alt="${esc(soortNaam[w.soort] || "Wijn")}: ${esc(w.naam)}">` +
+  `<img src="${foto(w, 1000)}" srcset="${foto(w, 640)} 640w, ${foto(w, 1000)} 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1500" loading="lazy" alt="${esc(soortNaam[w.soort] || "Wijn")}: ${esc(w.naam)}">` +
   `<span class="wijn__soort">${esc(w.soort)}</span>` +
-  `<div class="wijn__snel"><p class="wijn__prijs">${euro(w.prijs)}<small>per fles</small></p></div>` +
+  `<div class="wijn__snel"><p class="wijn__prijs${w.prijs == null ? " wijn__prijs--volgt" : ""}">${w.prijs == null ? "Prijs volgt" : euro(w.prijs) + "<small>per fles</small>"}</p></div>` +
   `</div>` +
   `<div class="wijn__tekst">` +
-  `<p class="wijn__streek">${esc(w.streek)} · ${esc(w.land)}${w.jaar ? " · " + w.jaar : ""}</p>` +
+  `<p class="wijn__streek">${herkomst(w)}</p>` +
   `<h3>${esc(w.naam)}</h3>` +
   `<p class="wijn__druif">${esc(w.druif)}</p>` +
   `<p class="wijn__smaak">${esc(w.smaak)}</p>` +
   `<p class="wijn__past"><span>Past bij</span>${esc(w.pastBij)}</p>` +
+  (w.beschrijving ? `<details class="wijn__meer"><summary>Meer over deze wijn</summary><p>${esc(w.beschrijving)}</p></details>` : "") +
   `</div>` +
   `<div class="wijn__acties">` +
   `<div class="stapper" role="group" aria-label="Aantal flessen ${esc(w.naam)}">` +
@@ -61,10 +63,13 @@ if (stand !== "open") {
 }
 
 // ---------- FAQ-antwoorden uit de instellingen ----------
-const prijzen = wijnen.map((w) => w.prijs);
+const prijzen = wijnen.map((w) => w.prijs).filter((p) => p != null);
 const min = Math.min(...prijzen), max = Math.max(...prijzen);
+const prijsTekst = !prijzen.length ? null : min === max ? euro(min) : `tussen ${euro(min)} en ${euro(max)}`;
 const zet = (id, tekst) => vervang(new RegExp(`(<p id="${id}">)[\\s\\S]*?(</p>)`), `$1${esc(tekst)}$2`);
-zet("faq-prijs", `Een fles kost ${min === max ? euro(min) : "tussen " + euro(min) + " en " + euro(max)}. Je kiest per fles of per doos van zes, en je kan wit, rosé, rood en bubbels combineren. Afhalen is gratis.`);
+zet("faq-prijs", prijsTekst
+  ? `Een fles kost ${prijsTekst}. Je kiest per fles of per doos van zes, en je kan alle wijnen combineren. Afhalen is gratis.`
+  : "De prijzen volgen binnenkort. Je kiest per fles of per doos van zes, en je kan alle wijnen combineren. Afhalen is gratis.");
 if (stand === "binnenkort") zet("faq-deadline", `De wijnverkoop start binnenkort.${inst.deadline ? ` Daarna kan je bestellen tot en met ${datum(inst.deadline)}.` : ""}`);
 else if (inst.deadline) zet("faq-deadline", `Je kan bestellen tot en met ${datum(inst.deadline, true)}.`);
 zet("faq-levering", inst.levering && inst.levering.actief
@@ -92,6 +97,7 @@ const graph = [
     address: { "@type": "PostalAddress", addressLocality: "Gent", addressRegion: "Oost-Vlaanderen", addressCountry: "BE" },
     areaServed: { "@type": "City", name: "Gent" },
     sameAs: ["https://www.vzwraakpunt.be/"],
+    sponsor: { "@type": "Organization", name: "'t Wijnveld", url: "https://www.wijnveld.be/" },
     knowsAbout: ["inclusie", "vrijetijdsbesteding voor mensen met een beperking", "kansengroepen", "jeugdkampen"],
   },
   {
@@ -129,7 +135,7 @@ const graph = [
         "@id": `${SITE}/#wijn-${w.id}`,
         name: w.naam,
         category: soortNaam[w.soort] || "Wijn",
-        description: `${w.smaak} Druif: ${w.druif}. Past bij: ${w.pastBij}.`,
+        description: w.beschrijving || `${w.smaak} Druif: ${w.druif}. Past bij: ${w.pastBij}.`,
         image: SITE + foto(w, 1000),
         countryOfOrigin: { "@type": "Country", name: w.land },
         additionalProperty: [
@@ -137,7 +143,7 @@ const graph = [
           { "@type": "PropertyValue", name: "Streek", value: w.streek },
           ...(w.jaar ? [{ "@type": "PropertyValue", name: "Oogstjaar", value: w.jaar }] : []),
         ],
-        offers: {
+        ...(w.prijs == null ? {} : { offers: {
           "@type": "Offer",
           url: SITE + "/#wijnen",
           price: (w.prijs / 100).toFixed(2),
@@ -148,7 +154,7 @@ const graph = [
           eligibleCustomerType: "https://schema.org/Enduser",
           availableDeliveryMethod: "https://schema.org/OnSitePickup",
           acceptedPaymentMethod: "https://schema.org/ByBankTransferInAdvance",
-        },
+        } }),
       },
     })),
   },
@@ -169,7 +175,7 @@ const llms = `# Wijnverkoop De Zonnebloem
 - Goed doel: de opbrengst gaat naar De Zonnebloem, het jaarlijkse weekend en kamp van vzw Raakpunt.
 - Actie: ${inst.actie}. ${stand === "binnenkort" ? "De wijnverkoop start binnenkort; bestellen is nog niet mogelijk." : open ? (inst.deadline ? `Bestellen kan tot en met ${datum(inst.deadline)}.` : "Bestellen kan zolang de actie loopt.") : "De bestellingen zijn afgesloten."}
 - Bestellen: online via ${SITE}/#bestellen. Per fles of per doos van zes; soorten mogen gecombineerd worden.
-- Prijs: ${min === max ? euro(min) : `${euro(min)} tot ${euro(max)}`} per fles.
+- Prijs: ${prijsTekst ? prijsTekst.replace("tussen ", "").replace(" en ", " tot ") + " per fles." : "de prijzen volgen binnenkort."}
 - Betalen: via overschrijving met een gestructureerde mededeling, of met de QR-code in een bank-app. Het rekeningnummer verschijnt na het bestellen.
 - ${inst.levering && inst.levering.actief ? `Levering of afhalen: ${inst.levering.uitleg}` : "Afhalen: enkel afhalen, gratis, op een afhaalmoment dat je kiest bij het bestellen. Geen levering."}
 - Leeftijd: alleen voor personen van 18 jaar of ouder.
@@ -177,13 +183,15 @@ const llms = `# Wijnverkoop De Zonnebloem
 
 ## Wijnen
 
-${wijnen.map((w) => `- ${w.naam} (${(soortNaam[w.soort] || "wijn").toLowerCase()}, ${w.druif}, ${w.streek}, ${w.land}${w.jaar ? ", " + w.jaar : ""}): ${euro(w.prijs)} per fles. ${w.smaak} Past bij: ${w.pastBij.toLowerCase()}.`).join("\n")}
+${wijnen.map((w) => `- ${w.naam} (${(soortNaam[w.soort] || "wijn").toLowerCase()}, ${w.druif}, ${w.streek}${w.streek.includes(w.land) ? "" : ", " + w.land}${w.jaar ? ", " + w.jaar : ""}): ${w.prijs == null ? "prijs volgt" : euro(w.prijs) + " per fles"}. ${w.beschrijving || w.smaak}`).join("\n")}
 
 ## Meer informatie
 
 - [Bestellen](${SITE}/#bestellen): wijnen kiezen en bestellen
 - [Veelgestelde vragen](${SITE}/#vragen)
 - [vzw Raakpunt](https://www.vzwraakpunt.be/): de organisatie achter De Zonnebloem
+
+Met dank aan 't Wijnveld (https://www.wijnveld.be/).
 
 Laatst bijgewerkt: ${vandaag}. Website gemaakt en geschonken door ARTO (https://artowebdesign.com/).
 `;

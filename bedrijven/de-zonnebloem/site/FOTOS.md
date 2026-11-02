@@ -1,26 +1,24 @@
 # Foto's
 
-Alle foto's komen van Unsplash (https://unsplash.com/license): gratis voor commercieel gebruik, naamsvermelding niet verplicht. Het zijn sfeerbeelden; vervang ze door eigen foto's van De Zonnebloem en de echte wijnen zodra die er zijn.
+## Wijnen (`src/img/wijn/`)
 
-| Bestand in `src/img/foto/` | Bron |
-|---|---|
-| held | https://unsplash.com/photos/c9k1Y4iXpeY |
-| zonnebloemen | https://unsplash.com/photos/field-of-sunflowers-at-sunset-with-trees-in-background-s0lvwKX-p0I |
-| samen | https://unsplash.com/photos/handicapped-and-couple-toss-each-other-of-glass-of-beer-PjODX5hruGQ |
-| wit | https://unsplash.com/photos/sScNrKruEPs |
-| chardonnay | https://unsplash.com/photos/SnErXaCiGa4 |
-| rose | https://unsplash.com/photos/yDrI1Zw32fc |
-| merlot | https://unsplash.com/photos/hK9hIPgF3QU |
-| rioja | https://unsplash.com/photos/hvtZ0nP3ZEU |
-| cava | https://unsplash.com/photos/0iiXnSq0u8g |
+De flesfoto's komen uit de webwinkel van 't Wijnveld (https://www.wijnveld.be/), de wijnhandel achter deze actie. Vraag 't Wijnveld om toestemming of nieuwe foto's als de selectie verandert.
 
-## Een foto vervangen
+- Formaat: staand 2:3, WebP, in twee breedtes: `<naam>-640.webp` (640×960) en `<naam>-1000.webp` (1000×1500).
+- Zet daarna `"foto": "naam"` bij de wijn in `src/wijnen.json`.
+- Nog geen juiste foto? Zet `"foto": null`; de site toont dan `fles-volgt` ("Foto volgt"). Nu het geval voor Terre di Gioia Pinot Grigio en Château des Tourtes Blanc Prestige (op wijnveld.be staat bij die laatste per vergissing de rode fles).
 
-Wijnfoto's zijn 4:5 (staand), in twee breedtes: `<naam>-640.webp` en `<naam>-1000.webp`. Met ImageMagick:
+Omzetten met Python (Pillow):
 
-```bash
-convert origineel.jpg -gravity center -crop 4:5 +repage -resize 1000x -quality 72 src/img/foto/naam-1000.webp
-convert origineel.jpg -gravity center -crop 4:5 +repage -resize 640x  -quality 72 src/img/foto/naam-640.webp
+```python
+from PIL import Image
+im = Image.open("origineel.jpg").convert("RGB")
+w, h = im.size; nw = int(h * 2 / 3)          # bijsnijden naar 2:3
+if w > nw: im = im.crop(((w - nw) // 2, 0, (w - nw) // 2 + nw, h))
+for b, q in ((640, 58), (1000, 52)):
+    im.resize((b, b * 3 // 2), Image.LANCZOS).save(f"src/img/wijn/naam-{b}.webp", "WEBP", quality=q, method=6)
 ```
 
-Zet daarna `"foto": "naam"` bij de wijn in `src/wijnen.json`.
+## Logo 't Wijnveld (`src/img/sponsor/wijnveld.svg`)
+
+Van https://www.wijnveld.be/ (logo.svg), verkleind met svgo.

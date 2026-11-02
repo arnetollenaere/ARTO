@@ -59,6 +59,7 @@ export function controleerBestelling(invoer, besteldPerWijn = {}) {
     if (!wijn) return { fout: "Een van de wijnen bestaat niet meer. Vernieuw de pagina." };
     if (!Number.isInteger(aantal) || aantal < 0) return { fout: "Ongeldig aantal." };
     if (aantal === 0) continue;
+    if (wijn.prijs == null) return { fout: `De prijs van ${wijn.naam} is nog niet gekend.` };
     if (wijn.voorraad != null && (besteldPerWijn[id] || 0) + aantal > wijn.voorraad) {
       const over = Math.max(0, wijn.voorraad - (besteldPerWijn[id] || 0));
       return { fout: `Van ${wijn.naam} zijn nog maar ${over} flessen beschikbaar.` };

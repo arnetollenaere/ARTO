@@ -55,7 +55,9 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | IBAN / begunstigde | BE82 9799 7559 3568, vzw Raakpunt (bevestigd door Arne op 2026-10-29) |
 | Afhaalpunt en -momenten | in te vullen in `site/src/instellingen.json` |
 | Levering aan huis | nee, enkel afhalen (`levering.actief: false` in instellingen.json) |
-| Wijnen en prijzen | voorbeeldselectie in `site/src/wijnen.json`, te vervangen door de echte |
+| Wijnen en prijzen | echte wijnlijst (15 wijnen van 't Wijnveld) in `site/src/wijnen.json`; prijzen nog te bezorgen door Arne |
+| Wijnhandel / sponsor | 't Wijnveld, https://www.wijnveld.be/ ("Met dank aan" onder de wijnen); flesfoto's van hun webwinkel |
+| Bestellen | `bestellen` in instellingen.json: nu `binnenkort` (wijnen zichtbaar, niet bestelbaar) |
 | Beheer | inloggen op `/inloggen/` (sessie 8 uur, knop Uitloggen), daarna `/beheer/`: bestellingen, betalingen afpunten, picklijst, Excel-export, status van het IBAN |
 | IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29 (zie `site/README.md`). |
 | E-mails | optioneel via Resend (nog niet ingesteld) |
