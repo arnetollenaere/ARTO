@@ -30,10 +30,11 @@
     var lijst = $("#wijnlijst");
     lijst.innerHTML = wijnen.map(function (w, i) {
       var aantal = mandje[w.id] || 0;
-      return '<li class="wijn" data-soort="' + esc(w.soort) + '">' +
+      return '<li class="wijn" data-soort="' + esc(w.soort) + '"' + (w.alcoholvrij ? ' data-alcoholvrij="ja"' : "") + '>' +
         '<div class="wijn__beeld">' +
           '<img src="' + foto(w, 1000) + '" srcset="' + foto(w, 640) + " 640w, " + foto(w, 1000) + ' 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1500" loading="lazy" alt="' + esc((SOORT[w.soort] || "Wijn") + ": " + w.naam) + '">' +
           '<span class="wijn__soort">' + esc(w.soort) + "</span>" +
+          (w.alcoholvrij ? '<span class="wijn__nul">0% alcohol</span>' : "") +
           '<div class="wijn__snel"><p class="wijn__prijs' + (w.prijs == null ? " wijn__prijs--volgt" : "") + '">' + prijsLabel(w) + "</p></div>" +
         "</div>" +
         '<div class="wijn__tekst">' +
@@ -107,7 +108,7 @@
     var soort = knop.dataset.filter;
     $$(".filter").forEach(function (b) { b.setAttribute("aria-pressed", String(b === knop)); });
     $("#wijnlijst").classList.toggle("gefilterd", soort !== "alles");
-    $$(".wijn").forEach(function (k) { k.hidden = soort !== "alles" && k.dataset.soort !== soort; });
+    $$(".wijn").forEach(function (k) { k.hidden = soort !== "alles" && k.dataset.soort !== soort && !(soort === "alcoholvrij" && k.dataset.alcoholvrij); });
   }
 
   // ---------- Mandje ----------

@@ -482,3 +482,4 @@ details a { color: var(--oranje); }
 .fotoband--stil .fotoband__venster { overflow-x: auto; padding: 0 clamp(16px, 3vw, 32px); }
 .fotoband--stil .fotoband__pauze { display: none; }
 @media (max-width: 600px) { .fotoband__dia { margin-right: 10px; } .fotoband__dia img { height: 200px; } }
+.wijn__nul { position: absolute; top: 0; right: 0; background: var(--oranje-donker); color: var(--wit); font: 700 .95rem/1 var(--titel); text-transform: uppercase; letter-spacing: .05em; padding: .5rem .75rem; }

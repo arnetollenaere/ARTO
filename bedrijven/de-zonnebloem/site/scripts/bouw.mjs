@@ -26,10 +26,11 @@ const open = stand === "open" && (!inst.deadline || inst.deadline >= vandaag);
 
 // ---------- Wijnkaarten (zelfde opmaak als toonWijnen() in js/winkel.js) ----------
 const kaart = (w) =>
-  `<li class="wijn" data-soort="${esc(w.soort)}">` +
+  `<li class="wijn" data-soort="${esc(w.soort)}"${w.alcoholvrij ? ' data-alcoholvrij="ja"' : ""}>` +
   `<div class="wijn__beeld">` +
   `<img src="${foto(w, 1000)}" srcset="${foto(w, 640)} 640w, ${foto(w, 1000)} 1000w" sizes="(max-width: 640px) 100vw, (max-width: 1080px) 50vw, 33vw" width="1000" height="1500" loading="lazy" alt="${esc(soortNaam[w.soort] || "Wijn")}: ${esc(w.naam)}">` +
   `<span class="wijn__soort">${esc(w.soort)}</span>` +
+  (w.alcoholvrij ? `<span class="wijn__nul">0% alcohol</span>` : "") +
   `<div class="wijn__snel"><p class="wijn__prijs${w.prijs == null ? " wijn__prijs--volgt" : ""}">${w.prijs == null ? "Prijs volgt" : euro(w.prijs) + "<small>per fles</small>"}</p></div>` +
   `</div>` +
   `<div class="wijn__tekst">` +
@@ -134,7 +135,7 @@ const graph = [
         "@type": "Product",
         "@id": `${SITE}/#wijn-${w.id}`,
         name: w.naam,
-        category: soortNaam[w.soort] || "Wijn",
+        category: (soortNaam[w.soort] || "Wijn") + (w.alcoholvrij ? " (alcoholvrij)" : ""),
         description: w.beschrijving || `${w.smaak} Druif: ${w.druif}. Past bij: ${w.pastBij}.`,
         image: SITE + foto(w, 1000),
         countryOfOrigin: { "@type": "Country", name: w.land },
@@ -183,7 +184,7 @@ const llms = `# Wijnverkoop De Zonnebloem
 
 ## Wijnen
 
-${wijnen.map((w) => `- ${w.naam} (${(soortNaam[w.soort] || "wijn").toLowerCase()}, ${w.druif}, ${w.streek}${w.streek.includes(w.land) ? "" : ", " + w.land}${w.jaar ? ", " + w.jaar : ""}): ${w.prijs == null ? "prijs volgt" : euro(w.prijs) + " per fles"}. ${w.beschrijving || w.smaak}`).join("\n")}
+${wijnen.map((w) => `- ${w.naam} (${(soortNaam[w.soort] || "wijn").toLowerCase()}${w.alcoholvrij ? ", alcoholvrij (0%)" : ""}, ${w.druif}, ${w.streek}${w.streek.includes(w.land) ? "" : ", " + w.land}${w.jaar ? ", " + w.jaar : ""}): ${w.prijs == null ? "prijs volgt" : euro(w.prijs) + " per fles"}. ${w.beschrijving || w.smaak}`).join("\n")}
 
 ## Meer informatie
 
