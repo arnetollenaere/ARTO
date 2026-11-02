@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Bestellen open gezet op de preview (alleen daar; main en productie blijven "binnenkort"). Volledige testbestelling op preview met Testfles: bevestiging toont € 1,00, IBAN BE38 7360 4162 3572, mededeling en QR-code; testbestelling ZB-2026-0003 daarna gewist. Let op: preview en productie delen dezelfde database. | preview |
 | 2026-11-02 | Testfles van € 1 toegevoegd op vraag van Arne (voor iedereen zichtbaar, om bestellen en betalen te testen; niet in Google-gegevens, llms.txt of prijsvork). Lokaal getest: totaal € 1,00. Na de test weer weghalen. | preview |
 | 2026-11-02 | Rekeningnummer gewijzigd naar BE38 7360 4162 3572 (KBC, mod-97 geldig) op vraag van Arne; IBAN_SHA256 bijgewerkt op de preview, productie volgt bij publicatie. Afhaalmoment: zaterdag 12 december 2026, 9–18 uur. | preview |
 | 2026-11-02 | Anonieme bezoekersstatistiek (eigen teller, geen cookies, geen IP bewaard; bots en ingelogde beheerders tellen niet) met tabblad "Bezoekers" in het beheer: nu op de site, vandaag, bezoeken, bestellingen + conversie, grafiek per dag (7/30/90 dagen), herkomst en toestel. Vermelding in de footer. Getest lokaal en op preview (testbezoek daarna gewist). Cloudflare Web Analytics blijft geblokkeerd door de CSP; kan uitgezet worden. | preview |
