@@ -140,3 +140,11 @@ main .bh-knop:hover { background: var(--blauw); color: #fff; }
 .bh-balken__spoor { height: 10px; background: var(--blauw-licht); }
 .bh-balken__spoor i { display: block; height: 100%; width: 0; background: #3c47cc; border-radius: 0 4px 4px 0; }
 .bh-balken__getal { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* E-mail */
+.bh-mailstatus { flex-direction: row; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: .8rem; }
+.bh-mailstatus > div { display: flex; flex-direction: column; gap: .2rem; flex: 1 1 24rem; }
+.bh-mailstatus .bh-knop { color: var(--blauw); }
+.bh-mailstatus .bh-knop:hover { background: var(--blauw); color: #fff; }
+.mailinfo { display: inline-block; margin-top: .35rem; margin-right: .25rem; font-size: .78rem; color: var(--inkt-zacht); white-space: nowrap; }
+.mailinfo--fout { color: #c4151c; font-weight: 700; }

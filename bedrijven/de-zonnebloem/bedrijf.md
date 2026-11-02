@@ -45,7 +45,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Cloudflare Pages-project | de-zonnebloem (eigen domeinen: zonnebloemwijn.be en www.zonnebloemwijn.be) |
 | Cloudflare-zone | zonnebloemwijn.be, nameservers charles.ns.cloudflare.com en robin.ns.cloudflare.com; www stuurt door naar het hoofddomein (Single Redirect) |
 | D1-database | zonnebloem-bestellingen-eu (EU-jurisdictie). Een lege, ongebruikte `zonnebloem-bestellingen` (Noord-Amerika) mag weg. |
-| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `zonnebloem` + `BEHEER_WACHTWOORD`, beide Pages-secrets op productie en preview; slot na 10 foute pogingen; `IBAN_SHA256`; eventueel `RESEND_API_KEY`) |
+| Wachtwoorden en tokens in | wachtwoordmanager, map "ARTO / De Zonnebloem" (beheer: gebruiker `zonnebloem` + `BEHEER_WACHTWOORD`, beide Pages-secrets op productie en preview; slot na 10 foute pogingen; `IBAN_SHA256`; `GMAIL_APP_WACHTWOORD`) |
 
 ## Webshop
 
@@ -60,7 +60,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Bestellen | `bestellen` in instellingen.json: `open` sinds 2026-11-02 (deadline 1 december 2026) |
 | Beheer | inloggen op `/inloggen/` (sessie 8 uur, knop Uitloggen), daarna `/beheer/`: bestellingen, betalingen afpunten, picklijst, bezoekersstatistiek, Excel-export, status van het IBAN |
 | IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29 (productie en preview, voor BE82 9799 7559 3568) (zie `site/README.md`). |
-| E-mails | optioneel via Resend (nog niet ingesteld) |
+| E-mails | nodemailer via Gmail vanaf vzwzonnebloem@gmail.com; app-wachtwoord als Cloudflare-geheim `GMAIL_APP_WACHTWOORD` (in te stellen door Arne, staat in zijn wachtwoordmanager) |
 
 ## Afspraken
 

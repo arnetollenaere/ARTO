@@ -2,6 +2,8 @@
 name = "de-zonnebloem"
 pages_build_output_dir = "dist"
 compatibility_date = "2026-10-01"
+# nodemailer (e-mails via Gmail) heeft de Node.js-modules net, tls en dns nodig.
+compatibility_flags = ["nodejs_compat"]
 
 [[d1_databases]]
 binding = "DB"
@@ -10,6 +12,10 @@ database_name = "zonnebloem-bestellingen-eu"
 database_id = "777635f4-80ab-46f3-9c73-d952bfbf5055"
 
 [vars]
-# Afzender en ontvanger van e-mails (optioneel, zie lib/mail.js). Leeg = geen e-mails.
-MAIL_VAN = ""
+# E-mails via Gmail met nodemailer (zie lib/mail.js). Het app-wachtwoord is een geheim:
+#   npx wrangler pages secret put GMAIL_APP_WACHTWOORD --project-name=de-zonnebloem
+# of in het Cloudflare-dashboard (Pages > de-zonnebloem > Instellingen > Variabelen en geheimen, type "Geheim").
+MAIL_GEBRUIKER = "vzwzonnebloem@gmail.com"
+MAIL_NAAM = "De Zonnebloem · vzw Raakpunt"
+# Optioneel: kopie van elke nieuwe bestelling naar dit adres. Leeg = geen kopie.
 MAIL_BEHEER = ""

@@ -7,6 +7,9 @@ cd "$(dirname "$0")"
 
 PROJECT="de-zonnebloem"
 
+# Pakketten voor de Functions (nodemailer) installeren als ze ontbreken.
+[ -d node_modules/nodemailer ] || npm ci --no-audit --no-fund
+
 # Altijd vers bouwen, zodat wijnen, FAQ en gestructureerde gegevens kloppen met de JSON-bestanden.
 ./build.sh
 

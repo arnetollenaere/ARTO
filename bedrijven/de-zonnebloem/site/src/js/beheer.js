@@ -95,9 +95,10 @@
         "<td>" + (b.levering === "afhalen" ? "Afhalen<small>" + esc(b.afhaalmoment) + "</small>" : "Levering<small>" + esc(b.postcode + " " + b.gemeente) + "</small>") + "</td>" +
         '<td class="r"><strong>' + euro(b.totaal) + "</strong><small>" + b.flessen + " fl.</small></td>" +
         '<td class="mono">' + esc(b.ogm) + "</td>" +
-        '<td><span class="lbl lbl--' + b.status + '">' + STATUS[b.status] + "</span></td>" +
+        '<td><span class="lbl lbl--' + b.status + '">' + STATUS[b.status] + "</span>" + mailInfo(b) + "</td>" +
         '<td><div class="acties">' +
           (v ? '<button type="button" class="bh-knop bh-knop--oranje bh-knop--klein" data-zet="' + v[0] + '" data-id="' + b.id + '">' + v[1] + "</button>" : "") +
+          (b.status === "nieuw" ? '<button type="button" class="bh-knop bh-knop--rand bh-knop--klein" data-herinner="' + b.id + '" title="Stuur een betaalherinnering per e-mail">Herinnering</button>' : "") +
           '<select data-kies="' + b.id + '" aria-label="Status van ' + esc(b.nummer) + '">' +
             Object.keys(STATUS).map(function (k) { return '<option value="' + k + '"' + (k === b.status ? " selected" : "") + ">" + STATUS[k] + "</option>"; }).join("") +
           "</select>" +
@@ -113,6 +114,11 @@
       "<div><h4>" + (b.levering === "afhalen" ? "Afhalen" : "Leveradres") + "</h4>" +
         (b.levering === "afhalen" ? "<p>" + esc(b.afhaalmoment) + "</p>" : "<p>" + esc(b.adres) + "</p><p>" + esc(b.postcode + " " + b.gemeente) + "</p>") +
         "<h4>Tijdlijn</h4><p>Besteld " + datum(b.aangemaakt) + "</p>" + (b.betaald_op ? "<p>Betaald " + datum(b.betaald_op) + "</p>" : "") + (b.afgeleverd_op ? "<p>Afgeleverd " + datum(b.afgeleverd_op) + "</p>" : "") +
+        "<h4>E-mails</h4>" +
+          "<p>Bevestiging: " + (b.mail_bevestiging ? tijd(b.mail_bevestiging) : "<em>niet verstuurd</em>") + "</p>" +
+          (b.betaald_op ? "<p>Betaling ontvangen: " + (b.mail_betaald ? tijd(b.mail_betaald) : "<em>niet verstuurd</em>") + "</p>" : "") +
+          (b.herinneringen ? "<p>Herinneringen: " + b.herinneringen + " (laatste " + tijd(b.herinnerd_op) + ")</p>" : "") +
+          (b.mail_fout ? '<p class="verschil">Laatste fout: ' + esc(b.mail_fout) + "</p>" : "") +
       "</div>" +
       "<div><h4>Opmerking klant</h4><p>" + (esc(b.opmerking) || "<em>geen</em>") + "</p>" +
         '<h4><label for="notitie-' + b.id + '">Interne notitie</label></h4><textarea id="notitie-' + b.id + '">' + esc(b.notitie_beheer) + "</textarea>" +
@@ -137,6 +143,27 @@
       wijzig(Number(knop.dataset.id), { status: knop.dataset.zet })
         .then(function (b) { melding(b.nummer + ": " + STATUS[b.status]); toonAlles(); })
         .catch(function (err) { melding(err.message); knop.disabled = false; });
+      return;
+    }
+    if (knop && knop.dataset.herinner) {
+      var hb = bestellingen.find(function (x) { return x.id === Number(knop.dataset.herinner); });
+      var vraag = "Betaalherinnering sturen naar " + hb.naam + " (" + hb.email + ") voor " + hb.nummer + " (" + euro(hb.totaal) + ")?" +
+        (hb.herinneringen ? "\n\nEr " + (hb.herinneringen === 1 ? "werd al 1 herinnering" : "werden al " + hb.herinneringen + " herinneringen") + " verstuurd, de laatste op " + tijd(hb.herinnerd_op) + "." : "");
+      if (!confirm(vraag)) return;
+      knop.disabled = true; knop.textContent = "Versturen…";
+      fetch("/api/beheer/bestelling/" + hb.id + "/herinnering", { method: "POST" })
+        .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.fout || "Versturen mislukt."); return d; }); })
+        .then(function (n) { bestellingen = bestellingen.map(function (x) { return x.id === n.id ? n : x; }); melding("Herinnering verstuurd naar " + n.email); toonAlles(); })
+        .catch(function (err) { melding(err.message); knop.disabled = false; knop.textContent = "Herinnering"; laad(); });
+      return;
+    }
+    if (knop && knop.id === "testmail") {
+      knop.disabled = true; knop.textContent = "Versturen…";
+      fetch("/api/beheer/testmail", { method: "POST" })
+        .then(function (r) { return r.json().then(function (d) { if (!r.ok) throw new Error(d.fout || "Versturen mislukt."); return d; }); })
+        .then(function (d) { melding("Testmail verstuurd naar " + d.aan); })
+        .catch(function (err) { alert("Testmail mislukt:\n\n" + err.message); })
+        .finally(function () { knop.disabled = false; knop.textContent = "Stuur testmail"; });
       return;
     }
     if (knop && knop.dataset.notitie) {
@@ -276,10 +303,34 @@
         soort = "goed"; titel = "Rekeningnummer " + c.iban + " (" + c.begunstigde + ") is beveiligd";
         uitleg = "Geldig en gecontroleerd tegen de vingerafdruk. Klanten zien alleen dit rekeningnummer.";
       }
+      toonMailStatus(c.mail);
       vak.className = "bh-iban bh-iban--" + soort;
       vak.innerHTML = "<strong>" + esc(titel) + "</strong><span>" + esc(uitleg) + "</span>";
       vak.hidden = false;
     }).catch(function () {});
+  }
+
+  // ---------- E-mail ----------
+  var tijd = function (iso) {
+    return iso ? new Date(iso).toLocaleString("nl-BE", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }) : "";
+  };
+  function mailInfo(b) {
+    var delen = [];
+    if (b.mail_fout) delen.push('<span class="mailinfo mailinfo--fout" title="' + esc(b.mail_fout) + '">✉ fout</span>');
+    else if (b.mail_bevestiging) delen.push('<span class="mailinfo">✉ bevestigd</span>');
+    if (b.mail_betaald) delen.push('<span class="mailinfo">✉ betaald</span>');
+    if (b.herinneringen) delen.push('<span class="mailinfo">✉ herinnerd ' + b.herinneringen + "×</span>");
+    return delen.length ? "<small>" + delen.join(" ") + "</small>" : "";
+  }
+  function toonMailStatus(m) {
+    if (!m) return;
+    var vak = $("mail-status");
+    vak.className = "bh-iban bh-mailstatus bh-iban--" + (m.ingesteld ? "goed" : "let");
+    vak.innerHTML = m.ingesteld
+      ? "<div><strong>E-mails staan aan</strong><span>Klanten krijgen mails van " + esc(m.van) + ": na hun bestelling, wanneer ze betaald zijn, en een herinnering als jij daarom vraagt.</span></div>" +
+        '<button type="button" class="bh-knop bh-knop--klein" id="testmail">Stuur testmail</button>'
+      : "<div><strong>E-mails staan nog uit</strong><span>Het Gmail-app-wachtwoord voor " + esc(m.van || "het afzendadres") + " is nog niet ingesteld (geheim GMAIL_APP_WACHTWOORD in Cloudflare). Bestellen werkt wel gewoon.</span></div>";
+    vak.hidden = false;
   }
 
   // Uitloggen

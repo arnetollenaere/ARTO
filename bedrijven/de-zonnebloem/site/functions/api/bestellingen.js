@@ -1,6 +1,7 @@
 // POST /api/bestellingen: nieuwe bestelling plaatsen.
 import { json, fout, euro, controleerBetaalgegevens, controleerBestelling, besteldPerWijn, maakOgm, bestelnummer, willekeurigToken, publiekeBestelling } from "../../lib/winkel.js";
 import { stuurMail, bevestigingsmail } from "../../lib/mail.js";
+import { noteerMail } from "../../lib/mailboek.js";
 
 export async function onRequestPost({ request, env, waitUntil }) {
   let invoer;
@@ -39,10 +40,12 @@ export async function onRequestPost({ request, env, waitUntil }) {
   const publiek = publiekeBestelling(rij);
 
   const link = `${new URL(request.url).origin}/bestelling/?id=${id}&t=${token}`;
-  waitUntil(Promise.all([
-    stuurMail(env, { aan: b.email, onderwerp: `Je wijnbestelling ${publiek.nummer} bij De Zonnebloem`, tekst: bevestigingsmail(publiek, link) }),
-    stuurMail(env, { aan: env.MAIL_BEHEER, onderwerp: `Nieuwe bestelling ${publiek.nummer}: ${b.flessen} flessen, ${euro(b.totaal)}`, tekst: `${b.naam} (${b.email}, ${b.telefoon})\n\n${b.regels.map((r) => `${r.aantal} × ${r.naam}`).join("\n")}\n\nTotaal ${euro(b.totaal)}, mededeling ${publiek.ogm}` }),
-  ]));
+  // Bevestigingsmail na het antwoord versturen, zodat de klant niet moet wachten.
+  waitUntil((async () => {
+    const r = await stuurMail(env, { aan: b.email, ...bevestigingsmail(publiek, link) });
+    await noteerMail(env, id, "mail_bevestiging", r);
+    if (env.MAIL_BEHEER) await stuurMail(env, { aan: env.MAIL_BEHEER, onderwerp: `Nieuwe bestelling ${publiek.nummer}: ${b.flessen} flessen, ${euro(b.totaal)}`, tekst: `${b.naam} (${b.email}, ${b.telefoon})\n\n${b.regels.map((r) => `${r.aantal} × ${r.naam}`).join("\n")}\n\nTotaal ${euro(b.totaal)}, mededeling ${publiek.ogm}` });
+  })());
 
   return json({ id, token, bestelling: publiek }, 201);
 }

@@ -63,7 +63,7 @@ npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file schema.sql
 # 3. Gebruikersnaam en wachtwoord voor het beheer (bewaar ze in de wachtwoordmanager)
 npx wrangler pages secret put BEHEER_GEBRUIKER --project-name=de-zonnebloem
 npx wrangler pages secret put BEHEER_WACHTWOORD --project-name=de-zonnebloem
-# 4. Optioneel: e-mails. Vul MAIL_VAN en MAIL_BEHEER in wrangler.toml in, dan:
+# 4. E-mails via Gmail (nodemailer): app-wachtwoord van vzwzonnebloem@gmail.com als geheim, zie 'E-mails' hieronder.
 npx wrangler pages secret put RESEND_API_KEY --project-name=de-zonnebloem
 ```
 
@@ -135,3 +135,21 @@ npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file migrations/00
 Eigen, anonieme teller (geen cookies, geen IP-adressen bewaard): `src/js/teller.js` stuurt per paginaweergave een seintje naar `/api/bezoek`, dat in de D1-tabel `bezoeken` komt (wordt vanzelf aangemaakt). Een bezoeker is een hash van zout + dag + IP + browser, die elke dag verandert. Bots, "Do Not Track" en wie ingelogd is in het beheer tellen niet mee. Gegevens ouder dan 400 dagen worden opgeruimd.
 
 In het beheer, tabblad **Bezoekers**: nu op de site, vandaag, bezoeken en bestellingen (met conversie) over 7, 30 of 90 dagen, een grafiek per dag (ook als tabel), herkomst (Google, Facebook, WhatsApp, AI-assistent, ...) en toestel. Tip: deel links met `?utm_source=naam` (bv. `?utm_source=nieuwsbrief`) om te zien hoeveel bezoekers die bron oplevert.
+
+## E-mails (nodemailer + Gmail)
+
+De site mailt klanten vanaf `vzwzonnebloem@gmail.com` (variabele `MAIL_GEBRUIKER` in `wrangler.toml`) via smtp.gmail.com met nodemailer (`lib/mail.js`, Cloudflare-vlag `nodejs_compat`):
+
+1. **Bevestiging** meteen na de bestelling: wijnen, totaal, betaalgegevens met mededeling, afhaalpunt en -moment, link naar de bestelpagina met QR-code.
+2. **Betaling ontvangen** zodra de bestelling in het beheer van "wacht op betaling" naar betaald gaat (één keer): wijnen, afhaalpunt en -uur.
+3. **Herinnering** met de knop "Herinnering" per onbetaalde bestelling in het beheer (niet twee keer binnen 10 minuten).
+
+Het beheer toont per bestelling welke mails vertrokken zijn en de laatste fout, en bovenaan of e-mail aan staat (met "Stuur testmail").
+
+Database: voer eenmalig `migrations/0003_mails.sql` uit (`npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file migrations/0003_mails.sql`).
+
+Instellen (Arne, eenmalig): maak in het Google-account van vzwzonnebloem@gmail.com een **app-wachtwoord** (vereist tweestapsverificatie) en zet het als geheim `GMAIL_APP_WACHTWOORD`, nooit in de code:
+- Cloudflare-dashboard: Workers & Pages → de-zonnebloem → Instellingen → Variabelen en geheimen → Toevoegen, type **Geheim**, voor Productie (en eventueel Preview); of
+- `npx wrangler pages secret put GMAIL_APP_WACHTWOORD --project-name=de-zonnebloem`.
+
+Gmail laat met een gewoon account ongeveer 500 mails per dag toe.

@@ -1,0 +1,8 @@
+{
+  "name": "de-zonnebloem",
+  "private": true,
+  "description": "Wijnverkoop De Zonnebloem: statische site + Cloudflare Pages Functions",
+  "dependencies": {
+    "nodemailer": "10.0.16"
+  }
+}

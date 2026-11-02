@@ -1,6 +1,7 @@
 // PATCH /api/beheer/bestelling/:id  { status?, notitie? }
-import { json, fout, STATUSSEN, publiekeBestelling, euro } from "../../../../lib/winkel.js";
-import { stuurMail } from "../../../../lib/mail.js";
+import { json, fout, STATUSSEN, publiekeBestelling } from "../../../../lib/winkel.js";
+import { stuurMail, betaaldmail } from "../../../../lib/mail.js";
+import { noteerMail, bestellingVoorBeheer } from "../../../../lib/mailboek.js";
 
 export async function onRequestPatch({ params, request, env, waitUntil }) {
   const id = Number(params.id) || 0;
@@ -16,19 +17,17 @@ export async function onRequestPatch({ params, request, env, waitUntil }) {
     const afgeleverdOp = invoer.status === "afgeleverd" ? rij.afgeleverd_op || nu : null;
     await env.DB.prepare("UPDATE bestellingen SET status = ?, betaald_op = ?, afgeleverd_op = ?, bijgewerkt = ? WHERE id = ?")
       .bind(invoer.status, betaaldOp, afgeleverdOp, nu, id).run();
-    if (invoer.status === "betaald" && rij.status === "nieuw") {
-      const b = publiekeBestelling(rij);
-      waitUntil(stuurMail(env, {
-        aan: rij.email,
-        onderwerp: `Betaling ontvangen voor ${rij.nummer}`,
-        tekst: `Dag ${rij.naam},\n\nWe hebben je betaling van ${euro(rij.totaal)} goed ontvangen. Dank je wel!\n\n${b.levering === "afhalen" ? `Je kan je wijn afhalen: ${b.afhaalmoment}, ${b.afhaalplaats}.` : `We leveren je wijn aan huis: ${b.adres}, ${b.postcode} ${b.gemeente}.`}\n\nvzw Raakpunt · De Zonnebloem\n`,
-      }));
+    // Van "wacht op betaling" naar betaald (of verder): één keer de betaald-mail met afhaalpunt en -uur.
+    if (rij.status === "nieuw" && ["betaald", "klaar", "afgeleverd"].includes(invoer.status) && !rij.mail_betaald) {
+      waitUntil((async () => {
+        const r = await stuurMail(env, { aan: rij.email, ...betaaldmail(publiekeBestelling(rij)) });
+        await noteerMail(env, id, "mail_betaald", r);
+      })());
     }
   }
   if (typeof invoer.notitie === "string") {
     await env.DB.prepare("UPDATE bestellingen SET notitie_beheer = ?, bijgewerkt = ? WHERE id = ?").bind(invoer.notitie.slice(0, 1000), nu, id).run();
   }
   const nieuw = await env.DB.prepare("SELECT * FROM bestellingen WHERE id = ?").bind(id).first();
-  const { token, ip_hash, ...rest } = nieuw;
-  return json({ ...rest, regels: JSON.parse(rest.regels) });
+  return json(bestellingVoorBeheer(nieuw));
 }
