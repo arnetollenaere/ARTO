@@ -17,8 +17,8 @@
     spoor.appendChild(k);
   });
 
-  // Snelheid: ongeveer 28 pixels per seconde, ongeacht hoeveel foto's er zijn.
-  function snelheid() { spoor.style.setProperty("--duur", Math.max(20, spoor.scrollWidth / 2 / 28) + "s"); }
+  // Snelheid: ongeveer 40 pixels per seconde, ongeacht hoeveel foto's er zijn.
+  function snelheid() { spoor.style.setProperty("--duur", Math.max(20, spoor.scrollWidth / 2 / 40) + "s"); }
   snelheid();
   addEventListener("resize", snelheid);
   [].slice.call(spoor.querySelectorAll("img")).forEach(function (i) { i.addEventListener("load", snelheid); });
