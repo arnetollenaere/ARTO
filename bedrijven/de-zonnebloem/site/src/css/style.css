@@ -464,3 +464,18 @@ details a { color: var(--oranje); }
 @media (max-width: 600px) { .dank { flex-direction: column; gap: .8rem; padding: 1.2rem 1.6rem; } .dank__logo img { width: 170px; } }
 .wijn__meer summary { padding: .9rem 2.4rem .9rem 0; }
 .wijn__meer summary::after { width: 26px; height: 26px; font-size: 1.15rem; }
+/* De Zonnebloem in beeld: fotocarrousel onder het openingsbeeld. */
+.inbeeld { overflow: hidden; }
+.carrousel { position: relative; }
+.carrousel__spoor { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px max(16px, calc(50vw - 360px)) 18px; outline-offset: -4px; }
+.carrousel__spoor::-webkit-scrollbar { display: none; }
+.carrousel__dia { position: relative; flex: none; margin: 0; scroll-snap-align: center; border: 2px solid var(--blauw); background: var(--blauw-licht); }
+.carrousel__dia::after { content: ""; position: absolute; right: -2px; bottom: -2px; width: 16px; height: 16px; background: var(--oranje); }
+.carrousel__dia img { display: block; height: clamp(240px, 52vh, 470px); width: auto; max-width: 88vw; object-fit: cover; }
+.carrousel__bediening { display: flex; justify-content: center; gap: 12px; margin-top: 1rem; }
+.carrousel__knop { width: 48px; height: 48px; display: grid; place-items: center; border: 2px solid var(--blauw); background: var(--wit); color: var(--blauw); font: 700 1.4rem/1 var(--titel); cursor: pointer; transition: background .2s, color .2s, border-color .2s; }
+.carrousel__knop:hover, .carrousel__knop:focus-visible { background: var(--oranje); border-color: var(--oranje); color: var(--wit); }
+.carrousel--enkel .carrousel__bediening { display: none; }
+.carrousel__spoor { --rand: clamp(16px, 3vw, 32px); padding: 4px var(--rand) 18px; scroll-padding-inline: var(--rand); }
+.carrousel__dia { scroll-snap-align: start; }
+@media (max-width: 600px) { .carrousel__dia img { width: calc(100vw - 48px); max-width: none; height: auto; max-height: 70vh; } }

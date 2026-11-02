@@ -4,6 +4,8 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Fotocarrousel "De Zonnebloem in beeld" onder het openingsbeeld, voorlopig met 2 foto's van vzwraakpunt.be (lachende deelneemster, groepsfoto); 3 andere foto's van Arne nog als bestand nodig. Aandachtspunt gemeld: minderjarigen op een site die alcohol verkoopt (convenant alcoholreclame) en toestemming van de personen in beeld. | preview |
+| 2026-11-02 | Foto Terre di Gioia verbeterd: linksboven geen gekopieerde blokken meer (watermerk en oude fles weggewerkt met inpainting, fles iets groter zodat ze de oude volledig bedekt). | preview |
 | 2026-11-02 | Foto Château des Tourtes Blanc Prestige (2020, aangeleverd door Arne) op de site. Alle 15 wijnen hebben nu een flesfoto. | preview |
 | 2026-11-02 | Foto Terre di Gioia Pinot Grigio (studiofoto van Arne) uitgeknipt en op een kurkenachtergrond gezet in de stijl van de andere flesfoto's. Château des Tourtes Blanc Prestige: wacht op de foto als bestand. | preview |
 | 2026-11-02 | Verkoopprijzen per fles ingevuld uit de beginlijst 2026 van Arne (kolom VKP Zonnebloem), van € 7,45 tot € 17,95. Aankoopprijzen en marges niet op de site of in de repo. Prijsberekening lokaal getest. | preview |

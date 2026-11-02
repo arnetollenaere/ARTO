@@ -8,7 +8,7 @@ De flesfoto's komen uit de webwinkel van 't Wijnveld (https://www.wijnveld.be/),
 - Zet daarna `"foto": "naam"` bij de wijn in `src/wijnen.json`.
 - Nog geen juiste foto? Zet `"foto": null`; de site toont dan `fles-volgt` ("Foto volgt"). Nu voor geen enkele wijn meer nodig.
 - `tourtes-blanc-prestige`: foto van 't Wijnveld, aangeleverd door Arne (op wijnveld.be staat bij deze wijn per vergissing de rode fles).
-- `terre-di-gioia`: studiofoto van de fles (aangeleverd door Arne), door ARTO uitgeknipt en op de kurkenachtergrond van de KHS-foto van 't Wijnveld gezet (oude fles en watermerk weggewerkt), zodat ze in dezelfde stijl is.
+- `terre-di-gioia`: studiofoto van de fles (aangeleverd door Arne), door ARTO uitgeknipt en op de kurkenachtergrond van de KHS-foto van 't Wijnveld gezet (oude fles en watermerk weggewerkt met inpainting), zodat ze in dezelfde stijl is.
 
 Omzetten met Python (Pillow):
 
@@ -24,3 +24,9 @@ for b, q in ((640, 58), (1000, 52)):
 ## Logo 't Wijnveld (`src/img/sponsor/wijnveld.svg`)
 
 Van https://www.wijnveld.be/ (logo.svg), verkleind met svgo.
+
+## De Zonnebloem in beeld (`src/img/beeld/`)
+
+Foto's voor de carrousel onder het openingsbeeld, van https://www.vzwraakpunt.be/ (In beeld). Per foto twee hoogtes: `<naam>-480.webp` en `<naam>-720.webp`. Nieuwe foto toevoegen: een `<figure class="carrousel__dia">` in `src/index.html` (sectie `#inbeeld`).
+
+Let op: dit is een site die alcohol verkoopt. Het Belgische convenant over alcoholreclame verbiedt minderjarigen in reclame voor alcohol. Laat vzw Raakpunt bevestigen dat de foto's hier mogen staan (toestemming van de personen in beeld) en dat ze akkoord gaan met dat risico.

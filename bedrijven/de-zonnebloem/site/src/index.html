@@ -28,7 +28,7 @@
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/antonio-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/fonts/cantarell-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/css/style.css?v=36">
+  <link rel="stylesheet" href="/css/style.css?v=38">
 
   <script type="application/ld+json">
   {
@@ -109,6 +109,21 @@
           <button type="button" class="verhaal__pauze" id="verhaal-pauze" aria-pressed="false" aria-label="Animatie pauzeren"><span class="pauze-icoon" aria-hidden="true"></span></button>
         </figcaption>
       </figure>
+    </section>
+
+    <!-- In beeld: foto's van De Zonnebloem (weekend en kamp) -->
+    <section id="inbeeld" class="sectie inbeeld" aria-labelledby="inbeeld-titel">
+      <h2 id="inbeeld-titel" class="sectietitel">De Zonnebloem in beeld</h2>
+      <div class="carrousel" data-carrousel>
+        <div class="carrousel__spoor" tabindex="0" role="region" aria-label="Foto's van De Zonnebloem. Gebruik de pijltjes om te bladeren.">
+          <figure class="carrousel__dia"><img src="/img/beeld/lachen-720.webp" srcset="/img/beeld/lachen-480.webp 717w, /img/beeld/lachen-720.webp 1076w" sizes="(max-width: 600px) 88vw, 700px" width="1076" height="720" loading="lazy" alt="Een deelneemster lacht uitbundig tijdens een activiteit van vzw Raakpunt"></figure>
+          <figure class="carrousel__dia"><img src="/img/beeld/groep-720.webp" srcset="/img/beeld/groep-480.webp 719w, /img/beeld/groep-720.webp 1079w" sizes="(max-width: 600px) 88vw, 700px" width="1079" height="720" loading="lazy" alt="Groepsfoto van deelnemers en begeleiders van vzw Raakpunt die vrolijk zwaaien, met en zonder rolstoel"></figure>
+        </div>
+        <div class="carrousel__bediening">
+          <button type="button" class="carrousel__knop" data-vorige aria-label="Vorige foto"><span aria-hidden="true">←</span></button>
+          <button type="button" class="carrousel__knop" data-volgende aria-label="Volgende foto"><span aria-hidden="true">→</span></button>
+        </div>
+      </div>
     </section>
 
     <!-- Wijnen -->
@@ -339,5 +354,6 @@
   </footer>
   <script src="/js/winkel.js?v=31" defer></script>
   <script src="/js/verhaal.js?v=32" defer></script>
+  <script src="/js/carrousel.js?v=2" defer></script>
 </body>
 </html>
