@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-02 | Teller op de homepage telt alleen nog betaalde bestellingen (betaald, klaargezet, afgeleverd); label "flessen besteld" werd "flessen verkocht". Lokaal getest met statuswissels. | preview |
 | 2026-10-30 | SEO- en GEO-optimalisatie live gezet op zonnebloemwijn.be (branch samengevoegd in main). Live getest: nieuwe titel, JSON-LD met FAQ, llms.txt, robots.txt, sitemap, inloggen beheer, IBAN-status groen, animatie. | productie |
 | 2026-10-30 | Domein actief: zone zonnebloemwijn.be actief sinds 05:23 UTC, beide Pages-domeinen actief met certificaat. https://zonnebloemwijn.be toont de site, http en www sturen door (301) naar https://zonnebloemwijn.be/. Arne zag nog een fout door de DNS-cache van zijn computer. | productie |
 | 2026-10-30 | Optimalisatie SEO en GEO (branch optimalisatie-2026-10-30): Lighthouse gsm prestaties 84→91, toegankelijkheid 97→97, best practices 100→100, SEO 100→100 (desktop 100/97/100/100). Wijnen en FAQ vooraf in de HTML (leesbaar zonder JavaScript), JSON-LD met NGO, website, FAQ en wijnen met prijs, llms.txt, sitemap met lastmod en afbeeldingen, AI-crawlers expliciet toegelaten in robots.txt, extra meta (og, twitter, geo, nl-BE), 4 nieuwe FAQ-vragen, alt-teksten wijnen, animatie start na het laden, CSS/JS een jaar gecachet. Contrast wit op oranje (huisstijl Raakpunt) bewust niet aangepast. | preview |
