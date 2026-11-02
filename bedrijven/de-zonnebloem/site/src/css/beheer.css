@@ -117,3 +117,26 @@ main .bh-knop:hover { background: var(--blauw); color: #fff; }
   .pick-groep { break-inside: avoid; }
 }
 @media (max-width: 760px) { .bh-cijfers strong { font-size: 1.9rem; white-space: nowrap; } .bh-kop .bh-knop { font-size: .85rem; padding: .45rem .7rem; } }
+
+/* Bezoekers */
+.bh-cijfers--bezoek { margin: 1.2rem 0 1.6rem; }
+.bh-grafiek { position: relative; margin: .4rem 0 .8rem; }
+.bh-grafiek svg { display: block; overflow: visible; }
+.bh-grafiek .staaf { fill: #3c47cc; }
+.bh-grafiek .raak { fill: transparent; cursor: default; }
+.bh-grafiek .raak.actief { fill: rgba(40, 50, 185, .07); }
+.bh-grafiek .as-lijn { stroke: #e3e5f5; stroke-width: 1; }
+.bh-grafiek .as-basis { stroke: var(--blauw); stroke-width: 1; }
+.bh-grafiek .as-tekst { fill: var(--inkt-zacht); font: 12px var(--tekst); }
+.bh-tip { position: absolute; top: 0; transform: translateX(-50%); background: var(--blauw); color: #fff; padding: .5rem .7rem; font-size: .85rem; line-height: 1.35; pointer-events: none; max-width: min(280px, 90%); box-shadow: 4px 4px 0 var(--oranje); }
+.bh-tip strong { display: block; font: 700 .95rem/1.2 var(--titel); text-transform: uppercase; letter-spacing: .03em; }
+.bh-tabelweergave { margin-bottom: 1.6rem; }
+.bh-tabelweergave summary { padding: .6rem 2.4rem .6rem 0; font-size: 1rem; }
+.bh-twee { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+@media (max-width: 760px) { .bh-twee { grid-template-columns: 1fr; } }
+.bh-balken { list-style: none; margin: .6rem 0 0; padding: 0; }
+.bh-balken li { display: grid; grid-template-columns: minmax(7rem, 11rem) 1fr 3rem; gap: .8rem; align-items: center; padding: .4rem 0; border-bottom: 2px solid var(--blauw-licht); }
+.bh-balken__naam { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bh-balken__spoor { height: 10px; background: var(--blauw-licht); }
+.bh-balken__spoor i { display: block; height: 100%; width: 0; background: #3c47cc; border-radius: 0 4px 4px 0; }
+.bh-balken__getal { text-align: right; font-variant-numeric: tabular-nums; }

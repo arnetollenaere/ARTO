@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/css/style.css?v=34">
-  <link rel="stylesheet" href="/css/beheer.css?v=4">
+  <link rel="stylesheet" href="/css/beheer.css?v=6">
 </head>
 <body class="beheer">
   <header class="bh-kop">
@@ -35,6 +35,7 @@
       <button type="button" data-tab="bestellingen" aria-pressed="true">Bestellingen</button>
       <button type="button" data-tab="afpunten" aria-pressed="false">Betalingen afpunten</button>
       <button type="button" data-tab="picklijst" aria-pressed="false">Picklijst</button>
+      <button type="button" data-tab="bezoekers" aria-pressed="false">Bezoekers</button>
     </nav>
 
     <section id="tab-bestellingen" aria-label="Bestellingen">
@@ -72,9 +73,30 @@
         <div id="picklijst"></div>
       </div>
     </section>
+    <section id="tab-bezoekers" hidden aria-labelledby="bezoek-titel">
+      <div class="bh-paneel">
+        <div class="bh-rij bh-rij--tussen">
+          <h2 id="bezoek-titel">Bezoekers</h2>
+          <div class="bh-statusfilter" role="group" aria-label="Periode">
+            <button type="button" data-periode="7" aria-pressed="false">7 dagen</button>
+            <button type="button" data-periode="30" aria-pressed="true">30 dagen</button>
+            <button type="button" data-periode="90" aria-pressed="false">90 dagen</button>
+          </div>
+        </div>
+        <p class="hint">Anoniem geteld, zonder cookies. Bots en jijzelf (ingelogd in het beheer) tellen niet mee. Een bezoek is één persoon op één dag.</p>
+        <div class="bh-cijfers bh-cijfers--bezoek" id="bezoek-cijfers"></div>
+        <h3>Bezoeken per dag</h3>
+        <div class="bh-grafiek" id="bezoek-grafiek"></div>
+        <details class="bh-tabelweergave"><summary>Toon als tabel</summary><div id="bezoek-tabel"></div></details>
+        <div class="bh-twee">
+          <div><h3>Waar komen bezoekers vandaan?</h3><div id="bezoek-bronnen"></div></div>
+          <div><h3>Toestel</h3><div id="bezoek-toestellen"></div></div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div class="bh-melding" id="melding" role="status" hidden></div>
-  <script src="/js/beheer.js?v=3" defer></script>
+  <script src="/js/beheer.js?v=5" defer></script>
 </body>
 </html>

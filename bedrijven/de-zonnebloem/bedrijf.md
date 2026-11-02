@@ -58,7 +58,7 @@ Noteer hier nooit wachtwoorden of tokens, alleen waar ze staan.
 | Wijnen en prijzen | echte wijnlijst (15 wijnen van 't Wijnveld) in `site/src/wijnen.json`; verkoopprijzen per fles uit de beginlijst 2026 (Excel van Arne, kolom VKP Zonnebloem) |
 | Wijnhandel / sponsor | 't Wijnveld, https://www.wijnveld.be/ ("Met dank aan" onder de wijnen); flesfoto's van hun webwinkel |
 | Bestellen | `bestellen` in instellingen.json: nu `binnenkort` (wijnen zichtbaar, niet bestelbaar) |
-| Beheer | inloggen op `/inloggen/` (sessie 8 uur, knop Uitloggen), daarna `/beheer/`: bestellingen, betalingen afpunten, picklijst, Excel-export, status van het IBAN |
+| Beheer | inloggen op `/inloggen/` (sessie 8 uur, knop Uitloggen), daarna `/beheer/`: bestellingen, betalingen afpunten, picklijst, bezoekersstatistiek, Excel-export, status van het IBAN |
 | IBAN-beveiliging | IBAN enkel in de code (geen API om te wijzigen). Vingerafdruk `IBAN_SHA256` ingesteld als Pages-secret op 2026-10-29 (zie `site/README.md`). |
 | E-mails | optioneel via Resend (nog niet ingesteld) |
 

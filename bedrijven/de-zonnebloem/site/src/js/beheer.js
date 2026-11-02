@@ -162,7 +162,8 @@
 
   function toonTab(naam) {
     document.querySelectorAll("[data-tab]").forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.tab === naam)); });
-    ["bestellingen", "afpunten", "picklijst"].forEach(function (n) { $("tab-" + n).hidden = n !== naam; });
+    ["bestellingen", "afpunten", "picklijst", "bezoekers"].forEach(function (n) { $("tab-" + n).hidden = n !== naam; });
+    if (naam === "bezoekers") laadBezoek();
   }
 
   // ---------- Betalingen afpunten ----------
@@ -288,4 +289,86 @@
 
   controleIban();
   laad();
+
+  // ---------- Bezoekers ----------
+  var periode = 30;
+  var getal = function (n) { return Number(n).toLocaleString("nl-BE"); };
+  document.querySelectorAll("[data-periode]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      periode = Number(b.dataset.periode);
+      document.querySelectorAll("[data-periode]").forEach(function (x) { x.setAttribute("aria-pressed", String(x === b)); });
+      laadBezoek();
+    });
+  });
+  function laadBezoek() {
+    fetch("/api/beheer/statistiek?dagen=" + periode, { cache: "no-store" })
+      .then(function (r) { if (r.status === 401) { location.replace("/inloggen/"); throw new Error("Niet ingelogd."); } if (!r.ok) throw new Error("Kon de statistiek niet laden."); return r.json(); })
+      .then(toonBezoek)
+      .catch(function (e) { $("bezoek-grafiek").innerHTML = "<p>" + esc(e.message) + "</p>"; });
+  }
+  function toonBezoek(s) {
+    var conversie = s.bezoeken ? (s.bestellingen / s.bezoeken * 100) : 0;
+    $("bezoek-cijfers").innerHTML =
+      tegel("Nu op de site", getal(s.nu), "laatste 30 minuten") +
+      tegel("Vandaag", getal(s.vandaag), "bezoekers") +
+      tegel("Bezoeken", getal(s.bezoeken), "laatste " + s.dagen + " dagen") +
+      tegel("Bestellingen", getal(s.bestellingen), conversie ? conversie.toFixed(1).replace(".", ",") + "% van de bezoeken" : "in dezelfde periode");
+    grafiek(s.perDag);
+    $("bezoek-tabel").innerHTML = '<table><thead><tr><th>Dag</th><th class="r">Bezoeken</th><th class="r">Weergaven</th><th class="r">Bestellingen</th></tr></thead><tbody>' +
+      s.perDag.slice().reverse().map(function (r) { return "<tr><td>" + esc(dagLabel(r.dag, true)) + '</td><td class="r">' + r.bezoekers + '</td><td class="r">' + r.weergaven + '</td><td class="r">' + r.bestellingen + "</td></tr>"; }).join("") + "</tbody></table>";
+    $("bezoek-bronnen").innerHTML = lijstMetBalk(s.bronnen, "bron");
+    $("bezoek-toestellen").innerHTML = lijstMetBalk(s.toestellen, "toestel");
+    // balkbreedtes via JavaScript (CSP: geen inline style-attributen)
+    document.querySelectorAll(".bh-balken i[data-breedte]").forEach(function (i) { i.style.width = i.dataset.breedte + "%"; });
+  }
+  function tegel(titel, waarde, uitleg) { return "<div><p>" + esc(titel) + "</p><strong>" + esc(waarde) + "</strong><small>" + esc(uitleg) + "</small></div>"; }
+  function dagLabel(dag, lang) {
+    var d = new Date(dag + "T12:00:00");
+    return d.toLocaleDateString("nl-BE", lang ? { weekday: "short", day: "numeric", month: "short" } : { day: "numeric", month: "short" });
+  }
+  function lijstMetBalk(rijen, sleutel) {
+    if (!rijen.length) return '<p class="hint">Nog geen bezoeken in deze periode.</p>';
+    var max = Math.max.apply(null, rijen.map(function (r) { return r.bezoeken; }));
+    return '<ul class="bh-balken">' + rijen.map(function (r) {
+      return '<li><span class="bh-balken__naam">' + esc(r[sleutel]) + '</span><span class="bh-balken__spoor"><i data-breedte="' + Math.max(2, Math.round(r.bezoeken / max * 100)) + '"></i></span><span class="bh-balken__getal">' + getal(r.bezoeken) + "</span></li>";
+    }).join("") + "</ul>";
+  }
+  // Staafgrafiek (SVG): één reeks, dus geen legende; hover toont dag en aantallen.
+  function grafiek(rijen) {
+    var vak = $("bezoek-grafiek"), B = Math.max(320, vak.clientWidth || 800), H = 240;
+    var m = { l: 40, r: 8, t: 12, b: 28 }, w = B - m.l - m.r, h = H - m.t - m.b;
+    var max = Math.max(1, Math.max.apply(null, rijen.map(function (r) { return r.bezoekers; })));
+    var stap = Math.pow(10, Math.floor(Math.log10(max))); var top = Math.ceil(max / stap) * stap; if (top / stap < 3) { stap /= 2; top = Math.ceil(max / stap) * stap; }
+    if (stap < 1) { stap = 1; top = Math.max(2, Math.ceil(max)); }
+    var band = w / rijen.length, bw = Math.min(24, Math.max(2, band - 2));
+    var y = function (v) { return m.t + h - v / top * h; };
+    var svg = '<svg viewBox="0 0 ' + B + " " + H + '" width="100%" height="' + H + '" role="img" aria-label="Bezoeken per dag, laatste ' + rijen.length + ' dagen">';
+    for (var t = 0; t <= top; t += stap) {
+      svg += '<line x1="' + m.l + '" x2="' + (B - m.r) + '" y1="' + y(t) + '" y2="' + y(t) + '" class="as-lijn"/>' +
+        '<text x="' + (m.l - 8) + '" y="' + (y(t) + 4) + '" text-anchor="end" class="as-tekst">' + getal(t) + "</text>";
+    }
+    var elke = Math.ceil(rijen.length / 6);
+    rijen.forEach(function (r, i) {
+      var x = m.l + i * band + (band - bw) / 2, yy = y(r.bezoekers), hh = m.t + h - yy, rr = Math.min(4, hh);
+      if (r.bezoekers > 0) svg += '<path class="staaf" d="M' + x + "," + (m.t + h) + "V" + (yy + rr) + "Q" + x + "," + yy + " " + (x + rr) + "," + yy + "H" + (x + bw - rr) + "Q" + (x + bw) + "," + yy + " " + (x + bw) + "," + (yy + rr) + "V" + (m.t + h) + 'Z"/>';
+      svg += '<rect class="raak" x="' + (m.l + i * band) + '" y="' + m.t + '" width="' + band + '" height="' + h + '" data-i="' + i + '"/>';
+      if ((rijen.length - 1 - i) % elke === 0) svg += '<text x="' + (m.l + i * band + band / 2) + '" y="' + (H - 8) + '" text-anchor="middle" class="as-tekst">' + esc(dagLabel(r.dag)) + "</text>";
+    });
+    svg += '<line x1="' + m.l + '" x2="' + (B - m.r) + '" y1="' + (m.t + h) + '" y2="' + (m.t + h) + '" class="as-basis"/></svg><div class="bh-tip" hidden></div>';
+    vak.innerHTML = svg;
+    var tip = vak.querySelector(".bh-tip");
+    vak.querySelectorAll(".raak").forEach(function (rect) {
+      rect.addEventListener("mouseenter", function () {
+        var r = rijen[Number(rect.dataset.i)];
+        tip.innerHTML = "<strong>" + esc(dagLabel(r.dag, true)) + "</strong>" + getal(r.bezoekers) + " bezoeken · " + getal(r.weergaven) + " weergaven" + (r.bestellingen ? " · " + r.bestellingen + " bestelling" + (r.bestellingen === 1 ? "" : "en") : "");
+        tip.hidden = false;
+        var schaal = vak.clientWidth / B, xm = (Number(rect.getAttribute("x")) + band / 2) * schaal;
+        var half = tip.offsetWidth / 2;
+        tip.style.left = Math.min(Math.max(xm, half), vak.clientWidth - half) + "px";
+        rect.classList.add("actief");
+      });
+      rect.addEventListener("mouseleave", function () { tip.hidden = true; rect.classList.remove("actief"); });
+    });
+  }
+  addEventListener("resize", function () { if (!$("tab-bezoekers").hidden) laadBezoek(); });
 })();

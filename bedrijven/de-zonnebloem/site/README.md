@@ -129,3 +129,9 @@ npx wrangler d1 execute zonnebloem-bestellingen-eu --remote --file migrations/00
 - `/sitemap.xml` met datum en afbeeldingen.
 
 `robots.txt` laat zoekmachines en AI-crawlers (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, ...) expliciet toe, behalve op beheer, bestelling, inloggen en API.
+
+## Bezoekersstatistiek
+
+Eigen, anonieme teller (geen cookies, geen IP-adressen bewaard): `src/js/teller.js` stuurt per paginaweergave een seintje naar `/api/bezoek`, dat in de D1-tabel `bezoeken` komt (wordt vanzelf aangemaakt). Een bezoeker is een hash van zout + dag + IP + browser, die elke dag verandert. Bots, "Do Not Track" en wie ingelogd is in het beheer tellen niet mee. Gegevens ouder dan 400 dagen worden opgeruimd.
+
+In het beheer, tabblad **Bezoekers**: nu op de site, vandaag, bezoeken en bestellingen (met conversie) over 7, 30 of 90 dagen, een grafiek per dag (ook als tabel), herkomst (Google, Facebook, WhatsApp, AI-assistent, ...) en toestel. Tip: deel links met `?utm_source=naam` (bv. `?utm_source=nieuwsbrief`) om te zien hoeveel bezoekers die bron oplevert.
