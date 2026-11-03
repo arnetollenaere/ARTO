@@ -4,6 +4,7 @@ Nieuwste bovenaan. Eén regel per gebeurtenis: datum, wat er gebeurde, en of het
 
 | Datum | Wat | Gepubliceerd |
 |---|---|---|
+| 2026-11-03 | Prijzen bijgewerkt volgens nieuwe beginlijst van Arne: Terre di Gioia, Les Tapisseries Rosé en Tarani Malbec € 7,45 → € 7,95; Bagordi Blanco € 8,95 → € 9,45; Quinta do Noval Tawny € 12,45 → € 12,95. Nog geen bestellingen aan de oude prijs. | preview |
 | 2026-11-02 | Live gezet: knop "Bestellingen stopzetten" in het beheer, statusbalken alleen bij problemen. Live gecontroleerd: rekening- en mailbalk verborgen (alles in orde), stopbalk toont "Bestellingen staan open", IBAN groen, e-mail aan. | productie |
 | 2026-11-02 | Beheer: groene balken "Rekeningnummer is beveiligd" en "E-mails staan aan" verborgen op vraag van Arne; ze verschijnen alleen nog bij een probleem (IBAN ongeldig/gewijzigd, e-mail niet ingesteld). | preview |
 | 2026-11-02 | Knop "Bestellingen stopzetten" / "Bestellingen weer openen" bovenaan het beheer (twee klikken), werkt meteen via de database (tabel `instelling`): server weigert bestellingen, site toont "De bestellingen zijn afgesloten". Lokaal getest. Niet op preview testen: preview deelt de database met de live site. | preview |
